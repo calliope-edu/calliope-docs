@@ -67,8 +67,10 @@
   export let meta = null;
 
   /** @type {import('@svelteness/kit-docs').ResolvedSidebarConfig | null} */
-  const sidebar = {
-      links: {
+  const sidebar = 
+  {
+      links: 
+    {
       'Erste Schritte': [
         { title: 'Auspacken und Starten', slug: '/docs/erste-schritte/erster-start'},
         { title: 'Die Stromversorgung', slug: '/docs/erste-schritte/stromversorgung'},
@@ -76,6 +78,7 @@
       'Hardware': [
         { title: 'A & B Buttons', slug: '/docs/hardware/buttons'},
         { title: 'Touch Pins', slug: '/docs/hardware/touch-pins'},
+        { title: 'testmarkdown', slug: '/docs/hardware/testmarkdown'},
       ],
     }
   }
