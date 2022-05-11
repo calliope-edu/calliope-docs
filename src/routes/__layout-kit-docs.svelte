@@ -72,13 +72,18 @@
       links: 
     {
       'Erste Schritte': [
-        { title: 'Auspacken und Starten', slug: '/docs/erste-schritte/erster-start'},
-        { title: 'Die Stromversorgung', slug: '/docs/erste-schritte/stromversorgung'},
+        { title: 'Lieferumfang', slug: '/docs/erste-schritte/lieferumfang'},
+        { title: 'Aufbauen & Anschließen', slug: '/docs/erste-schritte/aufbau'},
+        { title: 'Demoprogramm', slug: '/docs/erste-schritte/demoprogramm'},
+        { title: '25 Programme', slug: '/docs/erste-schritte/25programme'},
       ],
       'Hardware': [
-        { title: 'A & B Buttons', slug: '/docs/hardware/buttons'},
-        { title: 'Touch Pins', slug: '/docs/hardware/touch-pins'},
-        { title: 'testmarkdown', slug: '/docs/hardware/testmarkdown'},
+        { title: 'Datenblätter', slug: '/docs/hardware/datenblatt'},
+        { title: 'Unterschiede mini Versionen', slug: '/docs/hardware/unterschiede'},
+        { title: 'Bauteile', slug: '/docs/hardware/bauteile'},
+      ],
+      'Fehlerbehebungen': [
+        { title: 'Bootloader', slug: '/docs/fehlerbehebungen/bootloader'},
       ],
     }
   }
