@@ -17,7 +17,7 @@
   import '@svelteness/kit-docs/client/styles/vars.css';
 
   import { page } from '$app/stores';
-  import SvelteLogo from '$img/svelte-horizontal.svg?raw';
+  // import SvelteLogo from '$img/svelte-horizontal.svg?raw';
 
   import {
     Button,
@@ -67,15 +67,23 @@
   export let meta = null;
 
   /** @type {import('@svelteness/kit-docs').ResolvedSidebarConfig | null} */
-  const sidebar = {
-      links: {
+  const sidebar = 
+  {
+      links: 
+    {
       'Erste Schritte': [
-        { title: 'Auspacken und Starten', slug: '/docs/erste-schritte/erster-start'},
-        { title: 'Die Stromversorgung', slug: '/docs/erste-schritte/stromversorgung'},
+        { title: 'Lieferumfang', slug: '/docs/erste-schritte/lieferumfang'},
+        { title: 'Aufbauen & Anschließen', slug: '/docs/erste-schritte/aufbau'},
+        { title: 'Demoprogramm', slug: '/docs/erste-schritte/demoprogramm'},
+        { title: '25 Programme', slug: '/docs/erste-schritte/25programme'},
       ],
       'Hardware': [
-        { title: 'A & B Buttons', slug: '/docs/hardware/buttons'},
-        { title: 'Touch Pins', slug: '/docs/hardware/touch-pins'},
+        { title: 'Datenblätter', slug: '/docs/hardware/datenblatt'},
+        { title: 'Unterschiede mini Versionen', slug: '/docs/hardware/unterschiede'},
+        { title: 'Bauteile', slug: '/docs/hardware/bauteile'},
+      ],
+      'Fehlerbehebungen': [
+        { title: 'Bootloader', slug: '/docs/fehlerbehebungen/bootloader'},
       ],
     }
   }
@@ -108,7 +116,8 @@
   <KitDocsLayout {navbar} {sidebar} {i18n}>
     <div class="logo" slot="navbar-left">
       <Button href="/">
-        {@html SvelteLogo}
+        <img src='/calliope_logo.png' />
+        <!-- {@html SvelteLogo} -->
       </Button>
     </div>
 
@@ -117,12 +126,17 @@
 </KitDocs>
 
 <style>
+  :global(.kit-docs > .fixed) {
+    background-color: rgb(72 82 95 / 60%);
+  }
   :global(:root) {
-    --kd-color-brand-rgb: 233, 127, 6;
+    --kd-color-brand-rgb: 66, 201, 201;
+    /* --kd-font-family-sans: 'Roboto', sans-serif;
+    --kd-font-family-mono: 'Roboto Mono', monospace; */
   }
 
   :global(:root.dark) {
-    --kd-color-brand-rgb: 213, 149, 76;
+    --kd-color-brand-rgb: 66, 201, 201;
   }
 
   .logo :global(a) {
@@ -131,7 +145,8 @@
     justify-content: center;
   }
 
-  .logo :global(svg) {
+  .logo :global(svg),
+  .logo :global(img) {
     height: 36px;
     overflow: hidden;
   }
