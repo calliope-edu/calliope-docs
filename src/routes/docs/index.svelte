@@ -5,7 +5,7 @@
   export function load() {
     return {
       status: 307,
-      redirect: '/docs/erste-schritte/erster-start',
+      redirect: '/docs/erste-schritte/lieferumfang',
     };
   }
 </script>

@@ -17,7 +17,7 @@
   import '@svelteness/kit-docs/client/styles/vars.css';
 
   import { page } from '$app/stores';
-  import SvelteLogo from '$img/svelte-horizontal.svg?raw';
+  // import SvelteLogo from '$img/svelte-horizontal.svg?raw';
 
   import {
     Button,
@@ -116,7 +116,8 @@
   <KitDocsLayout {navbar} {sidebar} {i18n}>
     <div class="logo" slot="navbar-left">
       <Button href="/">
-        {@html SvelteLogo}
+        <img src='/calliope_logo.png' />
+        <!-- {@html SvelteLogo} -->
       </Button>
     </div>
 
@@ -125,12 +126,17 @@
 </KitDocs>
 
 <style>
+  :global(.kit-docs > .fixed) {
+    background-color: rgb(72 82 95 / 60%);
+  }
   :global(:root) {
-    --kd-color-brand-rgb: 233, 127, 6;
+    --kd-color-brand-rgb: 66, 201, 201;
+    /* --kd-font-family-sans: 'Roboto', sans-serif;
+    --kd-font-family-mono: 'Roboto Mono', monospace; */
   }
 
   :global(:root.dark) {
-    --kd-color-brand-rgb: 213, 149, 76;
+    --kd-color-brand-rgb: 66, 201, 201;
   }
 
   .logo :global(a) {
@@ -139,7 +145,8 @@
     justify-content: center;
   }
 
-  .logo :global(svg) {
+  .logo :global(svg),
+  .logo :global(img) {
     height: 36px;
     overflow: hidden;
   }
