@@ -116,6 +116,7 @@
   <KitDocsLayout {navbar} {sidebar} {i18n}>
     <div class="logo" slot="navbar-left">
       <Button href="/">
+        <!-- svelte-ignore a11y-missing-attribute -->
         <img src='/calliope_logo.png' />
         <!-- {@html SvelteLogo} -->
       </Button>
