@@ -81,6 +81,7 @@
         { title: 'Datenblätter', slug: '/docs/hardware/datenblatt'},
         { title: 'Unterschiede mini Versionen', slug: '/docs/hardware/unterschiede'},
         { title: 'Bauteile', slug: '/docs/hardware/bauteile'},
+        { title: 'Pins', slug: '/docs/hardware/pins'},
       ],
       'Fehlerbehebungen': [
         { title: 'Bootloader', slug: '/docs/fehlerbehebungen/bootloader'},
