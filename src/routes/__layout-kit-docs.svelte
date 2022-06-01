@@ -74,7 +74,7 @@
       'Erste Schritte': [
         { title: 'Lieferumfang', slug: '/docs/erste-schritte/lieferumfang'},
         { title: 'Aufbauen & Anschließen', slug: '/docs/erste-schritte/aufbau'},
-        { title: 'Demoprogramm', slug: '/docs/erste-schritte/demoprogramm'},
+        { title: 'Startprogramm', slug: '/docs/erste-schritte/startprogramm'},
         { title: '25 Programme', slug: '/docs/erste-schritte/25programme'},
       ],
       'Hardware': [
