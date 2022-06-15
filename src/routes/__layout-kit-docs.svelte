@@ -86,6 +86,9 @@
       'Fehlerbehebungen': [
         { title: 'Bootloader', slug: '/docs/fehlerbehebungen/bootloader'},
       ],
+      'Erweiterungen': [
+        { title: 'Motoren', slug: '/docs/erweiterungen/motoren'},
+      ]
     }
   }
 
