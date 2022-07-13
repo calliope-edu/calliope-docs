@@ -9,24 +9,121 @@ Datenblatt für Calliope mini. Für Details zu den einzelnen Modellen bitte runt
     <thead>
         <tr>
           <th></th>
-          <th>Haus A</th>
-          <th>Haus B</th>
+          <th>Bauteil/Komponente</th>
+          <th>v2</th>
+          <th>v1.3</th>
+          <th>v0.3</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-          <th>Wohnfläche</th>
+          <th>Prozessor</th>
           <td colspan="2">100</td>
         </tr>
         <tr>
-          <th>Gartenfläche</th>
+          <th>Bluetooth Low Energy (Prozessor)</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+         <tr>
+          <th>Funk-Modul (Prozessor)</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+         <tr>
+          <th>Flash-Speicher (Prozessor)</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+         <tr>
+          <th>Flash-Speicher (25 Programme)</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+         <tr>
+          <th>Beschleunigungssensor</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+         <tr>
+          <th>Gyroskop</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+         <tr>
+          <th>Magnetometer</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+         <tr>
+          <th>5x5 LED Matrix	</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+         <tr>
+          <th>MEMS Mikrofon</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <th>DC Motortreiber</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <th>Piezo-Lautsprecher</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <th>RGB-LED</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <th>Taste Reset</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <th>2 Tasten</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <th>2 Grove-Ports</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <th>4 Touchpins / Bananenstecker</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <th>8-11 I/O Pins	</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <th>JST Batterieanschluss</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <th>USB-Programmierinterface	</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <th>USB Micro B Anschluss	</th>
           <td>50</td>
           <td>100</td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-          <th>Gesamtfläche</th>
+          <th>eg	</th>
           <td>150</td>
           <td>250</td>
         </tr>
