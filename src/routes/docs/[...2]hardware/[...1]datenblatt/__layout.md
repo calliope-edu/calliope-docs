@@ -5,10 +5,41 @@ Datenblatt für Calliope mini. Für Details zu den einzelnen Modellen bitte runt
 
 ### Technische Spezifikation
 
+<table>
+    <thead>
+        <tr>
+          <th></th>
+          <th>Haus A</th>
+          <th>Haus B</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <th>Wohnfläche</th>
+          <td colspan="2">100</td>
+        </tr>
+        <tr>
+          <th>Gartenfläche</th>
+          <td>50</td>
+          <td>100</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+          <th>Gesamtfläche</th>
+          <td>150</td>
+          <td>250</td>
+        </tr>
+        <tr>
+          <td colspan="3">Alle Angaben in Quadratmetern.</td>
+        </tr>
+    </tfoot>
+</table>
+
 
 | Bauteil/Komponente               | v2                                      | v1.3 | v0.3           |
-|----------------------------------|:-----------------------------------------|:------|:----------------|
-| Prozessor                        | 32-bit ARM Cortex M0                  |||
+|----------------------------------|:-----------------------------------------|:------|:-------------|
+| Prozessor                        | 32-bit ARM Cortex M0                                          |||
 |                                  | MKL26Z128VFM4                           |      |                |
 |                                  | 16MHz                                   |      |                |
 | RAM (Prozessor)                  | [Nordic nRF51822](https://www.nordicsemi.com/products/nrf51822)                        |      |                |
@@ -61,6 +92,5 @@ Datenblatt für Calliope mini. Für Details zu den einzelnen Modellen bitte runt
 
 ### Wähle hier das mini - Modell aus:
 <TabbedLinks {links} />
-
 
 <slot />
