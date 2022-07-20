@@ -8,7 +8,6 @@ Datenblatt für Calliope mini. Für Details zu den einzelnen Modellen bitte runt
 <table>
     <thead>
         <tr>
-          <th></th>
           <th>Bauteil/Komponente</th>
           <th>v2</th>
           <th>v1.3</th>
@@ -18,163 +17,183 @@ Datenblatt für Calliope mini. Für Details zu den einzelnen Modellen bitte runt
     <tbody>
         <tr>
           <th>Prozessor</th>
-          <td colspan="2">100</td>
+          <td colspan="3">32-bit ARM Cortex M0</td>
+        </tr>
+        <tr>
+          <th></th>
+          <td colspan="3">MKL26Z128VFM4</td>
+        </tr>
+        <tr>
+          <th></th>
+          <td colspan="3">16MHz</td>
+        </tr>
+        <tr>
+          <th>RAM (Prozessor)</th>
+          <td colspan="3">Nordic nRF51822</td>
+        </tr>
+        <tr>
+          <th></th>
+          <td>32kB</td>
+          <td colspan="2">16kb</td>
         </tr>
         <tr>
           <th>Bluetooth Low Energy (Prozessor)</th>
-          <td>50</td>
-          <td>100</td>
+          <td colspan="3">Nordic nRF51822</td>
+        </tr>
+        <tr>
+          <th></th>
+          <td colspan="3">multi-protocol Bluetooth® 4.0 low energy</td>
         </tr>
          <tr>
           <th>Funk-Modul (Prozessor)</th>
-          <td>50</td>
-          <td>100</td>
+          <td colspan="3">Nordic nRF51822</td>
         </tr>
-         <tr>
+        <tr>
+          <th></th>
+          <td colspan="3">2.4GHz RF SoC</td>
+        </tr>
+        <tr>
+          <th>Funk-Modul (Prozessor)</th>
+          <td colspan="3">Nordic nRF51822</td>
+        </tr>
+        <tr>
+          <th></th>
+          <td colspan="3">2.4GHz RF SoC</td>
+        </tr>
+        <tr>
           <th>Flash-Speicher (Prozessor)</th>
-          <td>50</td>
-          <td>100</td>
+          <td colspan="3">Nordic nRF51822</td>
         </tr>
-         <tr>
+        <tr>
+          <th></th>
+          <td colspan="3">256kB</td>
+        </tr>
+        <tr>
           <th>Flash-Speicher (25 Programme)</th>
-          <td>50</td>
-          <td>100</td>
+          <td>ISSI IS25LP</td>
+          <td>-</td>
+          <td>-</td>
         </tr>
-         <tr>
+        <tr>
+          <th></th>
+          <td>128Mb/16MB, 166MHZ</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
           <th>Beschleunigungssensor</th>
-          <td>50</td>
-          <td>100</td>
+          <td colspan="3">Bosch BMX055</td>
         </tr>
-         <tr>
+        <tr>
+          <th></th>
+          <td colspan="3">3 Achsen (x, y, z)</td>
+        </tr>
+        <tr>
           <th>Gyroskop</th>
-          <td>50</td>
-          <td>100</td>
+          <td colspan="3">Bosch BMX055</td>
         </tr>
-         <tr>
+        <tr>
+          <th></th>
+          <td colspan="3">3 Achsen (x, y, z)</td>
+        </tr>
+        <tr>
           <th>Magnetometer</th>
-          <td>50</td>
-          <td>100</td>
+          <td colspan="3">Bosch BMX055</td>
+        </tr>
+        <tr>
+          <th></th>
+          <td colspan="3">3 Achsen (x, y, z)</td>
         </tr>
          <tr>
-          <th>5x5 LED Matrix	</th>
-          <td>50</td>
-          <td>100</td>
-        </tr>
-         <tr>
+          <th>5x5 LED Matrix</th>
+          <td colspan="3">Farbe: rot, Helligkeitssensor</td>
+        </tr><tr>
           <th>MEMS Mikrofon</th>
-          <td>50</td>
-          <td>100</td>
+          <td colspan="3">SPU0410HR5H-PB</td>
+        </tr>
+        <tr>
+          <th></th>
+          <td colspan="3">-42dB ±3dB bei 94dB SPL, SNR: 59dB</td>
         </tr>
         <tr>
           <th>DC Motortreiber</th>
-          <td>50</td>
-          <td>100</td>
+          <td colspan="3">TI DRV8837</td>
+        </tr>
+        <tr>
+          <th></th>
+          <td colspan="3">Anschluss v. 2 Motoren</td>
         </tr>
         <tr>
           <th>Piezo-Lautsprecher</th>
-          <td>50</td>
-          <td>100</td>
+          <td>-</td>
         </tr>
         <tr>
           <th>RGB-LED</th>
-          <td>50</td>
-          <td>100</td>
+          <td>WS2812B</td>
         </tr>
         <tr>
           <th>Taste Reset</th>
-          <td>50</td>
-          <td>100</td>
+          <td colspan="3">PTS810SJ</td>
+        </tr>
+        <tr>
+          <th></th>
+          <td colspan="3">Neustart</td>
         </tr>
         <tr>
           <th>2 Tasten</th>
-          <td>50</td>
-          <td>100</td>
+          <td colspan="3">PTS645S (rot/blau)</td>
+        </tr>
+        <tr>
+          <th></th>
+          <td colspan="3">A und B</td>
         </tr>
         <tr>
           <th>2 Grove-Ports</th>
-          <td>50</td>
-          <td>100</td>
+          <td colspan="3">1125S-SMT-XP</td>
+        </tr>
+        <tr>
+          <th></th>
+          <td colspan="2">I2C, UART</td>
+          <td>I2C, Seriell</td>
         </tr>
         <tr>
           <th>4 Touchpins / Bananenstecker</th>
-          <td>50</td>
-          <td>100</td>
+          <td colspan="2">3,3 V, analog, digital</td>
+          <td>3,3 V, Ausgang</td>
         </tr>
         <tr>
           <th>8-11 I/O Pins	</th>
-          <td>50</td>
-          <td>100</td>
+          <td>3,3 V, 4 analog, ? digital</td>
         </tr>
         <tr>
           <th>JST Batterieanschluss</th>
-          <td>50</td>
-          <td>100</td>
+          <td>S2B-PH-SM4-TB(LF)(SN)</td>
+        </tr>
+        <tr>
+          <th></th>
+          <td colspan="3">Stromversorgung, 3,3 V</td>
         </tr>
         <tr>
           <th>USB-Programmierinterface	</th>
-          <td>50</td>
-          <td>100</td>
+          <td>PRTR5V0U2F</td>
         </tr>
         <tr>
           <th>USB Micro B Anschluss	</th>
-          <td>50</td>
-          <td>100</td>
+          <td>47642-0001</td>
+        </tr>
+        <tr>
+          <th></th>
+          <td colspan="3">Stromversorgung und Programmierung	</td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-          <th>eg	</th>
-          <td>150</td>
-          <td>250</td>
         </tr>
         <tr>
-          <td colspan="3">Alle Angaben in Quadratmetern.</td>
+          <td colspan="3"></td>
         </tr>
     </tfoot>
 </table>
-
-
-| Bauteil/Komponente               | v2                                      | v1.3 | v0.3           |
-|----------------------------------|:-----------------------------------------|:------|:-------------|
-| Prozessor                        | 32-bit ARM Cortex M0                                          |||
-|                                  | MKL26Z128VFM4                           |      |                |
-|                                  | 16MHz                                   |      |                |
-| RAM (Prozessor)                  | [Nordic nRF51822](https://www.nordicsemi.com/products/nrf51822)                        |      |                |
-|                                  | 32kB                                    | 16kb |                |
-| Bluetooth Low Energy (Prozessor) | [Nordic nRF51822](https://www.nordicsemi.com/products/nrf51822)                         |      |                |
-|                                  | ulti-protocol Bluetooth® 4.0 low energy |      |                |
-| Funk-Modul (Prozessor)           | [Nordic nRF51822](https://www.nordicsemi.com/products/nrf51822)                         |      |                |
-|                                  | 2.4GHz RF SoC                           |      |                |
-| Flash-Speicher (Prozessor)       | [Nordic nRF51822](https://www.nordicsemi.com/products/nrf51822)                         |      |                |
-|                                  | 256kB                                   |      |                |
-| Flash-Speicher (25 Programme)    | ISSI IS25LP  |      -    |    -         |        
-|                                  | 128Mb/16MB, 166MHZ     | -     |    -   |
-| Beschleunigungssensor            | Bosch BMX055                            |      |                |
-|                                  | 3 Achsen (x, y, z)                      |      |                |
-| Gyroskop                         | Bosch BMX055                            |      |                |
-|                                  | 3 Achsen (x, y, z)                      |      |                |
-| Magnetometer                     | Bosch BMX055                            |      |                |
-|                                  | 3 Achsen (x, y, z)                      |      |                |
-| 5x5 LED Matrix                   | Farbe rot, Helligkeitssensor            |      |                |
-| MEMS Mikrofon                    | SPU0410HR5H-PB                          |      |                |
-|                                  | -42dB ±3dB bei 94dB SPL, SNR: 59dB      |      |                |
-| DC Motortreiber                  | TI DRV8837                              |      |                |
-|                                  | Anschluss v. 2 Motoren                  |      |                |
-| Piezo-Lautsprecher               | -                                       |      |                |
-| RGB-LED                          | WS2812B                                 |      |                |
-| Taste Reset                      | PTS810SJ                                |      |                |
-|                                  | Neustart                                |      |                |
-| 2 Tasten                         | PTS645S (red/blue)                      |      |                |
-|                                  | A und B                                 |      |                |
-| 2 Grove-Ports                    | 1125S-SMT-XP                            |      |                |
-|                                  | I2C, UART                               |      | I2C, Seriell   |
-| 4 Touchpins / Bananenstecker     | 3,3 V, analog, digital                  |      | 3,3 V, Ausgang |
-| 8-11 I/O Pins                    | 3,3 V, 4 analog, ? digital              |      |                |
-| JST Batterieanschluss            | S2B-PH-SM4-TB(LF)(SN)                   |      |                |
-|                                  | Stromversorgung, 3,3 V                  |      |                |
-| USB-Programmierinterface         | PRTR5V0U2F                              |      |                |
-| USB Micro B Anschluss            | 47642-0001                              |      |                |
-|                                  | Stromversorgung und Programmierung      |      |                |
 
 <script>
 
