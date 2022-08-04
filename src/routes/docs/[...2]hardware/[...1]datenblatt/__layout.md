@@ -194,7 +194,6 @@ Datenblatt für Calliope mini. Für Details zu den einzelnen Modellen bitte runt
     </tfoot>
 </table>
 
-          <td colspan="3">Bosch BMX055</td>
 <script>
 
   const libs = ['v2.0', 'v1.3', 'v0.3'];
