@@ -1,0 +1,29 @@
+/**
+ * Theme: Calliope
+ */
+
+// Variables
+@import "../variables";
+@import "calliope/colors";
+
+// Commons styles
+@import "calliope/styles";
+
+// Light theme (calliope)
+// Can be forced with data-theme="light"
+@import "calliope/light";
+
+// Dark theme (Auto)
+// Automatically enabled if user has Dark mode enabled
+// @import "calliope/dark";
+// @media only screen and (prefers-color-scheme: dark) {
+//   :root:not([data-theme="light"]) {
+//     @include dark;
+//   }
+// }
+
+// Dark theme (Forced)
+// Enabled if forced with data-theme="dark"
+// [data-theme="dark"] {
+//   @include dark;
+// }

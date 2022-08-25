@@ -1,0 +1,55 @@
+---
+title: "Moin"
+description: "..."
+template: default,foo,bar
+published: true
+---
+
+.de.svx file
+
+::: output typewriter
+
+    TypeWriter 
+
+:::
+
+# h1
+
+## h2
+
+- gfdgfd
+- gfdgfdg
+
+
+Import image with 300px width and dont show figcaption (! in front of alt text)
+
+![!Bild](./[...01]first-page/image.jpg|w=300)
+
+Import image from subpage with default size and show exif title or file basename as figcaption (leaving alt text blank)
+
+![](./[...01]first-page/image.jpg)
+
+Import tiff image
+
+![](./image.tiff)
+
+Import all images from subfolder and use them in swiper.js
+
+::: output swiper
+
+    ![](./*/*.{jpg,jpeg,png}|h=400|w=auto|swiper=true)
+
+:::
+
+Import all images from subfolder with 400px. Sicne we use Glob import we have to mask the [ ] inside the path.
+
+![](./?...03?page-with-images/images/*.{jpg,jpeg,png}|w=400)
+
+Import images from all subfolders in 200px width and show the exif title, which falls back to the file basename.
+
+![](./*/*.{jpg,jpeg,png}|w=200)
+
+Import images from subfolders and show the exif.title
+
+![exif.title](./*/*.{jpg,jpeg,png})
+
