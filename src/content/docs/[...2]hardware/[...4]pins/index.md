@@ -56,6 +56,8 @@ Es können bis zu 3 PWM-Signale gleichzeitig generiert werden, bevor diese anfan
 
 
 ## Pinbelegung
+<div style='max-width: 100%; overflow: auto;'>
+
 | Chip  | mbed Core | TARGET\_CALLIOPE | DAL                         | Protokoll | Pins     | Info                                              | Digital In/Out | Analog In/OWM out |
 | ----- | --------- | ---------------- | --------------------------- | --------- | -------- | ------------------------------------------------- | -------------- | ----------------- |
 | P0.00 | p0        | PAD1             | MICROBIT\_PIN\_P12          |           | C0       | Touchpin P0                                       | X              | \-                |
@@ -90,6 +92,7 @@ Es können bis zu 3 PWM-Signale gleichzeitig generiert werden, bevor diese anfan
 | P0.29 | p29       | MOTOR\_IN1       | CALLIOPE\_PIN\_MOTOR\_IN1   |           |          | Motor Port IN1 pin                                | \-             | \-                |
 | P0.30 | p30       | MOTOR\_IN2       | CALLIOPE\_PIN\_MOTOR\_IN2   |           |          | Motor Port IN2 pin                                | \-             | \-                |
 
+</div>
 <!-- | C1 | digital | |
 | C0 | digital | I/O Pin | 
 | C2 | digital/analog | |
