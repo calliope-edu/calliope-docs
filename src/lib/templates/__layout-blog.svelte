@@ -3,6 +3,15 @@
 
 	export let meta;
 
+	
+		$: id = meta.title
+			.toLowerCase()
+			.replace(/[^a-zA-Z ]/g, '')
+			.replace(/\s/g, '-');
+	
+		$: href = meta.slug ? `/${meta.slug}` : '#' + id;
+		$: formattedDate = new Date(meta.date).toDateString();
+
 </script>
 
 <PageHead title={meta.title} description={''} />
@@ -10,20 +19,7 @@
 
 <main class="prose-base">
 
-	<script>
-		export let slug = '';
-		export let title;
-	
-		const id = title
-			.toLowerCase()
-			.replace(/[^a-zA-Z ]/g, '')
-			.replace(/\s/g, '-');
-	
-		const href = slug ? `/${slug}` : '#' + id;
-		const formattedDate = new Date(meta.date).toDateString();
-	</script>
-
-		<h2 class="heading" class:large={!slug} {id}>
+		<h2 class="heading" class:large={!meta.slug} {id}>
 			<a {href}>
 				{meta.title}
 			</a>
@@ -32,7 +28,6 @@
 	
 		<p>
 			<span class="author">{meta.author}</span>
-			<span class="date">{formattedDate}</span>
 		</p>
 		
 
