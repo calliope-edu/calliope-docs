@@ -50,6 +50,7 @@ jobs:
         username: '${{ secrets.FTP_USER }}'
         password: ${{ secrets.FTP_PRIVATE_KEY }}
         port: ${{ secrets.FTP_PORT }}
+        protocol: ${{ secrets.FTP_PROTOCOL }}
         local-dir: ./build/
         server-dir: ./staging/
         exclude: |
