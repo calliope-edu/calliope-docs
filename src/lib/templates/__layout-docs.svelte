@@ -16,7 +16,7 @@
     let next = null;
 </script>
 
-<div class="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
+<div class="max-w-8xl mx-auto px-4 sm:px-6 md:px-8 pt-20">
 
     <aside class="hidden lg:block fixed z-20 inset-0 top-[3.8125rem] left-[max(0px,calc(50%-45rem))] right-auto w-[19.5rem] pb-10 px-8 overflow-y-auto">
         <DocsMenu bind:prev={prev} bind:next={next} />
