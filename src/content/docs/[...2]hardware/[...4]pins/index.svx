@@ -40,8 +40,10 @@ Verwendete stattdessen verschiedene I/O Pins oder eine Transistorenschaltung. Be
 
 <Box type='info'>
 In der Signalverarbeitung wird werden Daten verallgemeinert in zwei verschiedenen Formen übertragen: 
+
 - **Digital**: Ein binäres, digitales Signal ist an oder aus, 1 oder 0. Es ist abgestuft, abzählbar und verlustbehaftet (diskrete Werte).
 - **Analog**: Ein analoges Signal, dahingegen hat einen zeitlich kontinuierlichen, stufenlosen Verlauf. Es kann theoretisch unendlich viele Werte in einem Wertebereich annehmen.
+
 </Box>
 
 ### Digital Analog-Umsetzer (DAU/DAC)
@@ -56,44 +58,38 @@ Es können bis zu 3 PWM-Signale gleichzeitig generiert werden, bevor diese anfan
 
 
 ## Pinbelegung
-<div style='max-width: 100%; overflow: auto;'>
 
-| Chip  | mbed Core | TARGET\_CALLIOPE | DAL                         | Protokoll | Pins     | Info                                              | Digital In/Out | Analog In/OWM out |
-| ----- | --------- | ---------------- | --------------------------- | --------- | -------- | ------------------------------------------------- | -------------- | ----------------- |
-| P0.00 | p0        | PAD1             | MICROBIT\_PIN\_P12          |           | C0       | Touchpin P0                                       | X              | \-                |
-| P0.01 | p1        | PAD2             | MICROBIT\_PIN\_P0           |           | C1       | Touchpin P1                                       | X              | X                 |
-| P0.02 | p2        | PAD3             | MICROBIT\_PIN\_P1           |           | C2       | Touchpin P2                                       | X              | X                 |
-| P0.03 | p3        | MIC              | MICROBIT\_PIN\_P21          | MIC       | C21      | Microphone pin                                    |                | X                 |
-| P0.04 | p4        | COL1             | MICROBIT\_PIN\_P3           |           | C4       | Use only if LED matrix is not initialized         | X              | X                 |
-| P0.05 | p5        | COL2             | MICROBIT\_PIN\_P4           |           | C5       | Use only if LED matrix is not initialized         | X              | X                 |
-| P0.06 | p6        | COL3             | MICROBIT\_PIN\_P10          |           | C6       | Use only if LED matrix is not initialized         | X              | X                 |
-| P0.07 | p7        | COL4             | MICROBIT\_PIN\_P13          | SPI, SCK  | C7       | Use only if LED matrix is not initialized         | X              | \-                |
-| P0.08 | p8        | COL5             | MICROBIT\_PIN\_P14          | SPI, MISO | C8       | Use only if LED matrix is not initialized         | X              | \-                |
-| P0.09 | p9        | COL6             | MICROBIT\_PIN\_P15          | SPI, MOSI | C9       | Use only if LED matrix is not initialized         | X              | \-                |
-| P0.10 | p10       | COL7             | MICROBIT\_PIN\_P9           |           | C10      | Use only if LED matrix is not initialized         | X              | \-                |
-| P0.11 | p11       | COL8             | MICROBIT\_PIN\_P7           |           | C11      | Use only if LED matrix is not initialized         | X              | \-                |
-| P0.12 | p12       | COL9             | MICROBIT\_PIN\_P6           |           | C12      | Use only if LED matrix is not initialized         | X              | \-                |
-| P0.13 | p13       | ROW1             |                             |           |          | Use only if LED matrix is not initialized         | \-             | \-                |
-| P0.14 | p14       | ROW2             |                             |           |          | Use only if LED matrix is not initialized         | \-             | \-                |
-| P0.15 | p15       | ROW3             |                             |           |          | Use only if LED matrix is not initialized         | \-             | \-                |
-| P0.16 | p16       | BUTTON\_B        | MICROBIT\_PIN\_P11          |           |          | B Button                                          |                | \-                |
-| P0.17 | p17       | BUTTON\_A        | MICROBIT\_PIN\_P5           |           |          | A Button                                          |                | \-                |
-| P0.18 | p18       | RGBLED           | CALLIOPE\_PIN\_RGB\_LED     |           |          | RGB LED data pin                                  |                | \-                |
-| P0.19 | p19       | SCL              | MICROBIT\_PIN\_P19          | I²C, SCL  | C19 (A0) | I²C, left Grove connector                         | X              | \-                |
-| P0.20 | p20       | SDA              | MICROBIT\_PIN\_P20          | I²C, SDA  | C18 (A0) | I²C, left Grove connector                         | X              | \-                |
-| P0.21 | p21       | ACCEL\_INT       | CALLIOPE\_PIN\_ACCEL\_INT   |           |          | BMX055 Accelerator Interrupt pin                  |                | \-                |
-| P0.22 | p22       | PAD4             | MICROBIT\_PIN\_P16          |           | C3       | Touchpin P3                                       | X              | \-                |
-| P0.23 | p23       |                  |                             |           |          | BMX055 DATARDY (Magnetometer) pin                 | \-             | \-                |
-| P0.24 | p24       | USBTX            |                             | USB TX    |          | USB Serial TX                                     |                | \-                |
-| P0.25 | p25       | USBRX            |                             | USB RX    |          | USB Serial RX                                     |                | \-                |
-| P0.26 | p26       | A\_RX            | MICROBIT\_PIN\_P2           | UART, RX  | C16 (A1) | ext. Serial Port RX (right Grove connector)       | X              | X                 |
-| P0.27 | p27       | A\_TX            | MICROBIT\_PIN\_P8           | UART, TX  | C17 (A1) | UART, ext. Serial Port TX (right Grove connector) | X              | X                 |
-| P0.28 | p28       | MOTOR\_NSLEEP    | CALLIOPE\_PIN\_MOTOR\_SLEEP |           |          | Motor Port NSLEEP pin                             |                | ?                 |
-| P0.29 | p29       | MOTOR\_IN1       | CALLIOPE\_PIN\_MOTOR\_IN1   |           |          | Motor Port IN1 pin                                | \-             | \-                |
-| P0.30 | p30       | MOTOR\_IN2       | CALLIOPE\_PIN\_MOTOR\_IN2   |           |          | Motor Port IN2 pin                                | \-             | \-                |
+| Chip<hr>mbed | TARGET\_CALLIOPE<hr>DAL                             | Pin<hr>Info                                                              | Digital In / Digital Out | Analog In / OWM out |
+| ----------------  | ---------------------------------------------- | ------------------------------------------------------------------------ | -------------- | ----------------- |
+| P0.00<br>p0        | PAD1          <br>MICROBIT\_PIN\_P12          | C0      <br>Touchpin P0                                                  | <Yes />        | <No />            |
+| P0.01<br>p1        | PAD2          <br>MICROBIT\_PIN\_P0           | C1      <br>Touchpin P1                                                  | <Yes />        | <Yes />           |
+| P0.02<br>p2        | PAD3          <br>MICROBIT\_PIN\_P1           | C2      <br>Touchpin P2                                                  | <Yes />        | <Yes />           |
+| P0.03<br>p3        | MIC           <br>MICROBIT\_PIN\_P21          | C21 (MIC)     <br>Microphone pin                                         | <No />         | <Yes />           |
+| P0.04<br>p4        | COL1          <br>MICROBIT\_PIN\_P3           | C4      <br>Use only if LED matrix is not initialized                    | <Yes />        | <Yes />           |
+| P0.05<br>p5        | COL2          <br>MICROBIT\_PIN\_P4           | C5      <br>Use only if LED matrix is not initialized                    | <Yes />        | <Yes />           |
+| P0.06<br>p6        | COL3          <br>MICROBIT\_PIN\_P10          | C6      <br>Use only if LED matrix is not initialized                    | <Yes />        | <Yes />           |
+| P0.07<br>p7        | COL4          <br>MICROBIT\_PIN\_P13          | C7 (SPI, SCK)      <br>Use only if LED matrix is not initialized         | <Yes />        | <No />            |
+| P0.08<br>p8        | COL5          <br>MICROBIT\_PIN\_P14          | C8 (SPI, MISO)     <br>Use only if LED matrix is not initialized         | <Yes />        | <No />            |
+| P0.09<br>p9        | COL6          <br>MICROBIT\_PIN\_P15          | C9 (SPI, MOSI)     <br>Use only if LED matrix is not initialized         | <Yes />        | <No />            |
+| P0.10<br>p10       | COL7          <br>MICROBIT\_PIN\_P9           | C10     <br>Use only if LED matrix is not initialized                    | <Yes />        | <No />            |
+| P0.11<br>p11       | COL8          <br>MICROBIT\_PIN\_P7           | C11     <br>Use only if LED matrix is not initialized                    | <Yes />        | <No />            |
+| P0.12<br>p12       | COL9          <br>MICROBIT\_PIN\_P6           | C12     <br>Use only if LED matrix is not initialized                    | <Yes />        | <No />            |
+| P0.13<br>p13       | ROW1          <br>                            |         <br>Use only if LED matrix is not initialized                    | <No />         | <No />            |
+| P0.14<br>p14       | ROW2          <br>                            |         <br>Use only if LED matrix is not initialized                    | <No />         | <No />            |
+| P0.15<br>p15       | ROW3          <br>                            |         <br>Use only if LED matrix is not initialized                    | <No />         | <No />            |
+| P0.16<br>p16       | BUTTON\_B     <br>MICROBIT\_PIN\_P11          |         <br>B Button                                                     | <No />         | <No />            |
+| P0.17<br>p17       | BUTTON\_A     <br>MICROBIT\_PIN\_P5           |         <br>A Button                                                     | <No />         | <No />            |
+| P0.18<br>p18       | RGBLED        <br>CALLIOPE\_PIN\_RGB\_LED     |         <br>RGB LED data pin                                             | <No />         | <No />            |
+| P0.19<br>p19       | SCL           <br>MICROBIT\_PIN\_P19          | C19 / A0 (SCL)<br>I²C, left Grove connector                              | <Yes />        | <No />            |
+| P0.20<br>p20       | SDA           <br>MICROBIT\_PIN\_P20          | C18 / A0 (SDA)<br>I²C, left Grove connector                              | <Yes />        | <No />            |
+| P0.21<br>p21       | ACCEL\_INT    <br>CALLIOPE\_PIN\_ACCEL\_INT   |         <br>BMX055 Accelerator Interrupt pin                             | <No />         | <No />            |
+| P0.22<br>p22       | PAD4          <br>MICROBIT\_PIN\_P16          | C3      <br>Touchpin P3                                                  | <Yes />        | <No />            |
+| P0.23<br>p23       |               <br>                            |         <br>BMX055 DATARDY (Magnetometer) pin                            | <No />         | <No />            |
+| P0.24<br>p24       | USBTX         <br>                            | USB TX            <br>USB Serial TX                                      | <No />         | <No />            |
+| P0.25<br>p25       | USBRX         <br>                            | USB RX            <br>USB Serial RX                                      | <No />         | <No />            |
+| P0.26<br>p26       | A\_RX         <br>MICROBIT\_PIN\_P2           | C16 / A1 (UART, RX)<br>ext. Serial Port RX (right Grove connector)       | <Yes />        | <Yes />           |
+| P0.27<br>p27       | A\_TX         <br>MICROBIT\_PIN\_P8           | C17 / A1 (UART, TX)<br>UART, ext. Serial Port TX (right Grove connector) | <Yes />        | <Yes />           |
+| P0.28<br>p28       | MOTOR\_NSLEEP <br>CALLIOPE\_PIN\_MOTOR\_SLEEP |         <br>Motor Port NSLEEP pin                                        | <No />         | ?                 |
+| P0.29<br>p29       | MOTOR\_IN1    <br>CALLIOPE\_PIN\_MOTOR\_IN1   |         <br>Motor Port IN1 pin                                           | <No />         | <No />            |
+| P0.30<br>p30       | MOTOR\_IN2    <br>CALLIOPE\_PIN\_MOTOR\_IN2   |         <br>Motor Port IN2 pin                                           | <No />         | <No />            |
 
-</div>
-<!-- | C1 | digital | |
-| C0 | digital | I/O Pin | 
-| C2 | digital/analog | |
-| C3 | digital | | -->

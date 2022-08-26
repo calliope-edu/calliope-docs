@@ -23,7 +23,7 @@
     </aside>
 
     <div class="lg:pl-[19.5rem]">
-        <div class="content prose-base max-w-3xl mx-auto pt-10 xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-16">
+        <div class="content prose max-w-3xl mx-auto pt-10 xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-16">
             <slot />
 
             {#if  prev != null}
