@@ -50,6 +50,6 @@ jobs:
           port: ${{ secrets.FTP_PORT }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PRIVATE_KEY }}
-          localDir: './build'
+          localDir: './.svelte-kit/build'
           remoteDir: '/staging'
           exclude: '**/env.php'
