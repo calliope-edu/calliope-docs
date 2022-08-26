@@ -25,13 +25,13 @@ Sensoren die mit 5V betrieben werden, funktionieren in den meisten Fällen nicht
 - Der Calliope mini kann bis zu **15 milli Ampere (mA) pro Pin** maximal bereitstellen
 - für alle Pins sind es **100 mA insgesamt**
 
-<!-- :::no -->
+<No>
 Schließe niemals mehre Verbraucher, mit 20mA wie z.B. 2 LEDs an einen I/O-Pin an.
-<!-- ::: -->
+</No>
 
-<!-- :::yes -->
+<Yes>
 Verwendete stattdessen verschiedene I/O Pins oder eine Transistorenschaltung. Beachte, dass ingesamt nicht die 100 mA überschritten werden.
-<!-- ::: -->
+</Yes>
 
 
 

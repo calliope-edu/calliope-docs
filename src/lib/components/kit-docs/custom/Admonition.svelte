@@ -5,10 +5,8 @@ import TipIcon from '~icons/ri/lightbulb-flash-fill';
 import WarningIcon from '~icons/ri/error-warning-fill';
 import DangerIcon from '~icons/ri/skull-2-fill';
 import ExperimentalIcon from '~icons/ri/test-tube-fill';
-import { getI18nContext } from '../../components/layout/contexts';
 export let type;
 export let title = null;
-const i18n = getI18nContext();
 const icons = {
     note: NoteIcon,
     info: InfoIcon,
@@ -17,7 +15,15 @@ const icons = {
     danger: DangerIcon,
     experimental: ExperimentalIcon,
 };
-$: heading = title ?? $i18n.admonition[type];
+const admonition = {
+        note: 'NOTE',
+        info: 'INFO',
+        tip: 'TIP',
+        warning: 'WARNING',
+        danger: 'DANGER',
+        experimental: 'EXPERIMENTAL',
+    };
+$: heading = title ?? admonition[type];
 </script>
 
 <div

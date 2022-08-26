@@ -7,8 +7,6 @@ published: true
 
 # {title}
 
-# Anschließen
-
 Der Calliope mini kann über das externe Batteriefach oder mittels des beiliegenden USB Kabels mit Strom versorgt werden. **[Hier](https://calliope.cc/los-geht-s/erste-schritte#yellow)** geht es zur Anleitung mit Bildern.
 
 ## Batteriefach

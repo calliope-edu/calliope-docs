@@ -1,33 +1,34 @@
 <script>
-	import PageHeader from '$lib/components/PageHeader.svelte';
-	import PageFooter from '$lib/components/PageFooter.svelte';
-	import { page } from '$app/stores';
+	import PageHeader from '$lib/components/layout/PageHeader.svelte';
+	import PageFooter from '$lib/components/layout/PageFooter.svelte';
 	import lazyload from 'vanilla-lazyload';
   	import { browser } from '$app/env';
 
   if (browser && !document.lazyloadInstance) {
     document.lazyloadInstance = new lazyload();
   }
+
+  import "../app.css";
   
 </script>
 
+<div>
 <PageHeader />
 
 <slot />
 
 <PageFooter />
+</div>
 
 
 <style lang="scss" global>
-	
-	// Import full Pico source code
-	@import "../scss/pico.scss";
-	@import '../app.scss';
 
-	:global(main) {
-		margin: 0 auto;
-		width: 100%;
-		max-width: 90ch;
+	body {
+		@apply bg-gray-50 font-sans leading-normal tracking-normal;
+	}
+
+	main {
+		@apply container w-full md:max-w-3xl mx-auto pt-20;
 	}
 
 </style>

@@ -1,4 +1,5 @@
-<script >import { getI18nContext } from '../../components/layout/contexts';
+<script >
+import { getI18nContext } from '../contexts';
 import clsx from 'clsx';
 import CopyFileIcon from '~icons/ri/file-copy-line';
 export let lang = null;

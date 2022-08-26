@@ -41,29 +41,32 @@
 
 </script>
 
-<nav>
+<nav class="lg:text-sm lg:leading-6 relative">
 
 	<div class='menu'>
-		<ol>
+		<ul>
 
             <div>
                 {#await menuItems}
                     <p>Loading...</p>
                 {:then items}
                     {#each items as item}
-                        <li class:active={active === '/'+item.slug || active === '/'+item.slug+'/'}>
-                            <a sveltekit:prefetch href="/{item.slug}/" on:click={()=>{active = '/'+item.slug;}}>
+                        <li class:active={active === '/'+item.slug || active === '/'+item.slug+'/'}
+                        class="mt-12 lg:mt-8">
+                            <a sveltekit:prefetch href="/{item.slug}/" on:click={()=>{active = '/'+item.slug;}}
+                                class="mb-8 lg:mb-3 font-semibold text-slate-900 dark:text-slate-200">
                                 <b>{item.title}</b>
                             </a>
-                            <ol>
+                            <ul class="space-y-6 lg:space-y-2 border-l border-slate-200 dark:border-slate-800">
                                 {#each item.subpages as page}
                                     <li class:active={active.startsWith('/'+page.slug)}>
-                                            <a sveltekit:prefetch href="/{page.slug}/" on:click={()=>{active = '/'+page.slug;}}>
+                                            <a sveltekit:prefetch href="/{page.slug}/" on:click={()=>{active = '/'+page.slug;}}
+                                                class="block border-l pl-4 -ml-px border-transparent hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
                                                 {page.title}
                                             </a>
                                     </li>
                                 {/each}
-                            </ol>
+                            </ul>
                         </li>
                     {/each}
                 {:catch error}
@@ -71,40 +74,13 @@
                 {/await}
                 </div>
 
-		</ol>
+		</ul>
 	</div>
 
 </nav>
 
-
-
-
-<style type='scss'>
-   
-   .menu ol {
-    // display: flex;
-    list-style-type: none;
-    // margin: 30px -10px;
-    padding: 0;
-    justify-content: center;
-    
-
-    li {
-        
-        & > a {
-            padding: 10px;
-            color: var(--color-grey);
-            
-            
-        }
-
-        &.active {
-            & > a {
-                color: var(--primary);
-            }
-        }
+<style>
+    .active a {
+        @apply block border-l pl-4 -ml-px text-sky-500 border-current font-semibold dark:text-sky-400;
     }
-   }
-    
 </style>
-    
