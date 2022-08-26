@@ -26,17 +26,52 @@
         <div class="content prose max-w-3xl mx-auto pt-10 xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-16">
             <slot />
 
-            {#if  prev != null}
-                <a sveltekit:prefetch href="/{prev.slug}/">
-                    ← {prev.title}
+            <hr class="mt-20" />
+
+            <div class="flex items-center pt-12 pb-20 font-semibold">
+                {#if  prev != null}
+                    <a sveltekit:prefetch href="/{prev.slug}/" class="group no-underline mb-4 flex flex-col items-start ">
+                        
+                            <span class="text-calliope-500 ml-2 mb-1 inline-block font-semibold ">
+                                Vorherige
+                            </span>
+                            <div clas="transform-gpu transition-transform hover:scale-105">
+                                <span class="opacity-0 transition-opacity duration-100 group-hover:visible group-hover:opacity-100">
+                                    ←
+                                </span> 
+                                <span class="inline-block transform transition-transform duration-100 group-hover:translate-x-0 -translate-x-3">
+                                    {prev.title}
+                                </span>
+                            </div>
+                     
+                    </a>
+                {/if}
+
+
+                {#if  next != null}
+                <a sveltekit:prefetch href="/{next.slug}/" class="group no-underline ml-auto mb-4 flex flex-col items-end">
+                   
+                        <span class="text-calliope-500 mr-2 mb-1 inline-block font-semibold ">
+                            Nächste
+                        </span>
+                        <div
+                        clas="transform-gpu transition-transform hover:scale-105">
+                            
+                            <span class="inline-block transform transition-transform duration-100 group-hover:translate-x-0 translate-x-2">
+                                {next.title}
+                            </span>
+                            <span class="opacity-0 transition-opacity duration-100 group-hover:visible group-hover:opacity-100">
+                                →
+                            </span> 
+                        </div>
+                 
                 </a>
-            {/if}
-            |
-            {#if  next != null}
-                <a sveltekit:prefetch href="/{next.slug}/">
-                    {next.title} →
-                </a>
-            {/if}
+
+                {/if}
+
+            </div>
+
+
         </div>
 
     </div>
