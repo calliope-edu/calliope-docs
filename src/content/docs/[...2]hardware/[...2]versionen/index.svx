@@ -22,8 +22,8 @@ Es gibt einige Calliope mini, welche als Versionsnummer die v1.2 tragen. Diese s
 #### Weitere Merkmale
 Welchen mini du vor dir liegen hast, kannst du anhand einiger Merkmale erkennen: 
 
-|           | v2            | v1.3 | v0.3           |
-|-----------|:------------------|:------|:------|
-|Rückseite| vollflächig weiß| weißes Namensfeld auf Blauem grund|vollflächig Blau|
-|Logo auf Vorderseite|links|links|rechts|
-|Flash-Speicher  |oben rechts aufgelötet|ohne, Lötstelle vorhanden|ohne|
+|                      | v2                     | v1.3                               | v0.3             |
+| -------------------- | ---------------------- | ---------------------------------- | ---------------- |
+| Rückseite            | vollflächig weiß       | weißes Namensfeld auf blauem Grund | vollflächig Blau |
+| Logo auf Vorderseite | links                  | links                              | rechts           |
+| Flash-Speicher       | oben rechts aufgelötet | ohne, Lötstelle vorhanden          | ohne             |
