@@ -2,7 +2,21 @@
 module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts,svx,md}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        calliope: {
+          100: "#d9f4f5",
+          200: "#b3e9ea",
+          300: "#8edfe0",
+          400: "#68d4d5",
+          500: "#42c9cb",
+          600: "#35a1a2",
+          700: "#28797a",
+          800: "#1a5051",
+          900: "#0d2829"
+        },
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),

@@ -54,7 +54,7 @@ $: heading = title ?? admonition[type];
     </span>
   </div>
 
-  <div class="pl-1 text-lg text-gray-inverse">
+  <div class="pl-1 text-gray-inverse">
     <slot />
   </div>
 </div>

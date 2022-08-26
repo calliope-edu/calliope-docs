@@ -37,10 +37,10 @@ class={clsx('w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg
 <style type='scss'>
 
     li.active a {
-		@apply inline-block py-2 px-4 text-gray-900 font-bold no-underline;
+		@apply inline-block py-2 px-4 text-calliope-500 font-bold no-underline;
 	}
 	li:not(.active) a {
-		@apply inline-block text-gray-600 no-underline hover:text-gray-900 hover:underline py-2 px-4;
+		@apply inline-block text-gray-600 no-underline hover:text-calliope-500 hover:underline py-2 px-4;
 	}
 
 </style>

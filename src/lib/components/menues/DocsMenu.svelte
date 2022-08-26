@@ -81,6 +81,6 @@
 
 <style>
     .active a {
-        @apply block border-l pl-4 -ml-px text-sky-500 border-current font-semibold dark:text-sky-400;
+        @apply block border-l pl-4 -ml-px text-calliope-500 border-current font-semibold dark:text-calliope-400;
     }
 </style>

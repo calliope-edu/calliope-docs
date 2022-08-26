@@ -32,10 +32,17 @@ Bei der Lieferung ist das Startprogramm bereits auf den mini draufgespielt und k
 Soll das Startprogramm nachträglich auf den mini gespielt werden, so ist es bei den **[25 Programmen](https://calliope.cc/calliope-mini/25programme)** zu finden, die es fertig programmiert für den mini gibt. Hier ist das Startprogramm das letzte Programm mit der Nummer 25.
 
 ## Startprogramm aus dem Flash Speicher laden
-
-1. Drücke für 5-6 Sekunden die Reset-Taste, bis die LED-Matrix aufblinkt.  
-2. Navigiere bis zum 25. Programm, indem mit Taste A ein Schritt zurück gegangen wird.  
-3. Drücke die Taste A und B gleichzeitig. Nun wird das Demoprogramm auf den mini geladen.  
+<Steps>
+    <Step>
+        Drücke für 5-6 Sekunden die Reset-Taste, bis die LED-Matrix aufblinkt. 
+    </Step> 
+    <Step>
+        Navigiere bis zum 25. Programm, indem mit Taste A ein Schritt zurück gegangen wird.  
+    </Step> 
+    <Step>
+        Drücke die Taste A und B gleichzeitig. Nun wird das Demoprogramm auf den mini geladen.  
+    </Step> 
+</Steps>
 
 
 <button href='https://calliope.cc/media/pages/calliope-mini/25programme/589dc979af-1601938460/25originalprogramme.zip' >25 Programme hier herunterladen</button>
