@@ -44,12 +44,13 @@ jobs:
         pnpm run build
     
     - name: 📂 Sync files
-      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      uses: wangyucode/sftp-upload-action@v1.4.5
       with:
           username: ${{ secrets.FTP_USER }}
-          server: ${{ secrets.FTP_HOST }}
+          host: ${{ secrets.FTP_HOST }}
           port: ${{ secrets.FTP_PORT }}
-          local_path: './build/*'
+          localDir: './build'
           remote_path: '/staging'
           sftp_only: true
           password: ${{ secrets.FTP_PRIVATE_KEY }}
+          exclude: '**/env.php'
