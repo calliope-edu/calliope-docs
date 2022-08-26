@@ -7,7 +7,7 @@
     }
 
     div :global(thead) {
-        @apply text-xs text-left text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400;
+        @apply text-xs text-left text-gray-700 bg-gray-100 dark:bg-gray-700 dark:text-gray-400;
     }
 
     div :global(thead th) {
