@@ -3,7 +3,7 @@
     import DocsMenu from '$lib/components/menues/DocsMenu.svelte';
     import Toc from '$lib/components/menues/Toc.svelte'
 
-    let headingSelector = '.content :where(h2, h3, h4):not(.toc-exclude)';
+    let headingSelector = '.content :where(h2, h3):not(.toc-exclude)';
     let breakpoint = 1200;
     let headings = [];
     let desktop = false;

@@ -33,7 +33,7 @@
   $: desktop = windowWidth > breakpoint
 
   function close(event: MouseEvent) {
-    // if (!aside.contains(event.target as Node)) open = false
+    if (!aside.contains(event.target as Node)) open = false
   }
 
   // (re-)query headings on mount and on route changes
@@ -88,7 +88,7 @@
   on:click={close}
 />
 {#if !hide}
-  <aside class="toc" class:desktop class:mobile={!desktop} bind:this={aside}>
+  <aside class="toc px-8" class:desktop class:mobile={!desktop} bind:this={aside}>
     {#if !open && !desktop}
       <button
         on:click|preventDefault|stopPropagation={() => (open = true)}
@@ -102,15 +102,20 @@
         {#if title}
           <h2>{title}</h2>
         {/if}
-        <ul>
+        <ul class="text-slate-700 text-sm leading-6">
           {#each headings as heading, idx}
+          {@const level = (levels[idx] - minLevel)}
+          <!-- style:transform="translateX({levels[idx] - minLevel}em)"
+          style:font-size="{2 - 0.2 * (levels[idx] - minLevel)}ex" -->
             <li
               tabindex={idx + 1}
-              style:transform="translateX({levels[idx] - minLevel}em)"
-              style:font-size="{2 - 0.2 * (levels[idx] - minLevel)}ex"
+              class="{`level${level}`} group"
               class:active={activeHeading === heading}
               on:click={clickHandler(heading)}
             >
+              {#if level > 0}
+                <svg width="3" height="24" viewBox="0 -9 3 24" class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 dark:text-slate-600 dark:group-hover:text-slate-500"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+              {/if}
               <slot name="tocItem" {heading} {idx}>
                 {getHeadingTitles(heading)}
               </slot>
@@ -122,60 +127,19 @@
   </aside>
 {/if}
 
-<style>
-  :where(aside.toc) {
-    z-index: var(--toc-z-index, 1);
-  }
-  :where(aside.toc > nav) {
-    min-width: var(--toc-min-width);
-    max-width: var(--toc-max-width);
-    width: var(--toc-width);
-    list-style: none;
-    max-height: var(--toc-max-height, 90vh);
-    overflow: auto;
-    overscroll-behavior: contain;
-  }
-  :where(aside.toc > nav > ul) {
-    list-style: none;
-    padding: 0;
-  }
-  :where(aside.toc > nav > ul > li) {
-    margin-top: 5pt;
-    cursor: pointer;
-    scroll-margin: var(--toc-li-scroll-margin, 50pt 0);
-  }
-  :where(aside.toc > nav > ul > li:hover) {
-    color: var(--toc-hover-color, cornflowerblue);
-  }
-  :where(aside.toc > nav > ul > li.active) {
-    color: var(--toc-active-color, smokewhite);
-    background: var(--toc-active-bg, cornflowerblue);
-    font-weight: var(--toc-active-font-weight);
-    padding: var(--toc-active-padding);
-    margin: var(--toc-active-margin);
-    border-radius: 2pt;
-  }
-  :where(aside.toc > button) {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 2;
-    cursor: pointer;
-    font-size: 2em;
-    line-height: 0;
-    border-radius: 5pt;
-    padding: 2pt 4pt;
-    border: none;
-    color: var(--toc-mobile-btn-color, black);
-    background: var(--toc-mobile-btn-bg, rgba(255, 255, 255, 0.2));
-  }
-  :where(aside.toc > nav) {
-    margin: 1em 0;
-    padding: 1em 1em 1ex;
-  }
-  :where(aside.toc > nav > h2) {
-    margin-top: 0;
-  }
+<style> 
+li {
+  @apply cursor-pointer py-1 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300;
+}
+.level0 {
+   @apply block font-medium;
+}
+.level1 {
+  @apply ml-4 flex items-start;
+}
+.active {
+  @apply text-calliope-500 dark:text-calliope-400;
+}
 
   :where(aside.toc.mobile) {
     position: fixed;
@@ -189,17 +153,5 @@
     right: 0;
     z-index: -1;
     background-color: var(--toc-mobile-bg, white);
-  }
-
-  :where(aside.toc.desktop) {
-    margin: var(--toc-desktop-aside-margin);
-  }
-  :where(aside.toc.desktop > nav) {
-    position: sticky;
-    padding: 12pt 14pt 0;
-    margin: var(--toc-desktop-nav-margin);
-    top: var(--toc-desktop-sticky-top, 2em);
-    background-color: var(--toc-desktop-bg);
-    border-radius: 5pt;
   }
 </style>
