@@ -54,7 +54,7 @@
                         <li class:active={active === '/'+item.slug || active === '/'+item.slug+'/'}
                         class="mt-12 lg:mt-8">
                             <a sveltekit:prefetch href="/{item.slug}/" on:click={()=>{active = '/'+item.slug;}}
-                                class="mb-8 lg:mb-3 font-semibold text-slate-900 dark:text-slate-200">
+                                class="mb-8 lg:mb-3 font-semibold text-slate-900 dark:text-slate-200 block">
                                 <b>{item.title}</b>
                             </a>
                             <ul class="space-y-6 lg:space-y-2 border-l border-slate-200 dark:border-slate-800">
@@ -80,7 +80,7 @@
 </nav>
 
 <style>
-    .active a {
+    .active > a {
         @apply block border-l pl-4 -ml-px text-calliope-500 border-current font-semibold dark:text-calliope-400;
     }
 </style>
