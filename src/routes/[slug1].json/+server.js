@@ -31,8 +31,10 @@ export async function GET({ url, params }) {
 		}
 	));
 
-	const limit = Number(url.searchParams.get('limit') ?? Infinity);
-	const orderBy = Number(url.searchParams.get('orderBy') ?? null);
+	// const limit = Number(url.searchParams.get('limit') ?? Infinity);
+	// const orderBy = Number(url.searchParams.get('orderBy') ?? null);
+	const limit = Infinity;
+	const orderBy = null;
 
 	if (Number.isNaN(limit)) {
 		return {
