@@ -53,4 +53,4 @@ jobs:
           localDir: './build'
           remoteDir: '/staging'
           exclude: '**/env.php'
-          dryRun: true
+          dryRun: false
