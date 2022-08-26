@@ -206,9 +206,9 @@ Datenblatt für Calliope mini. Für Details zu den einzelnen Modellen bitte runt
 </script>
 
 
-:::  output admonition type=info
+<Box type='info'>
 Manche v1.3 minis besitzen bereits wie der v2 mini 32kB RAM.<br>Die Grundausführung sind allerdings 16kB.
-:::
+</Box>
 
 ### Wähle hier das mini - Modell aus:
 <TabbedLinks {links} />

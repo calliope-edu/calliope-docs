@@ -5,13 +5,20 @@ template: default,foo,bar
 published: true
 ---
 
+<script>
+    let a = "A";
+</script>
+
+{a}
+
 .de.svx file
 
-::: output typewriter
+<Typewriter>
 
     TypeWriter 
 
-:::
+</Typewriter>
+
 
 # h1
 
@@ -35,11 +42,11 @@ Import tiff image
 
 Import all images from subfolder and use them in swiper.js
 
-::: output swiper
+<ImageSwiper>
 
     ![](./*/*.{jpg,jpeg,png}|h=400|w=auto|swiper=true)
 
-:::
+</ImageSwiper>
 
 Import all images from subfolder with 400px. Sicne we use Glob import we have to mask the [ ] inside the path.
 

@@ -1,7 +1,6 @@
 <script context="module">
     import img from '$lib/mdsvex/img.svelte';
-    import output from '$lib/mdsvex/output.svelte';
-    export { img, output };
+    export { img };
 </script>
 
 <script>

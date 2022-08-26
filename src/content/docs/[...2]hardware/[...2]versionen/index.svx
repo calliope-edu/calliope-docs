@@ -15,9 +15,9 @@ Die Nummer der Produktionsserie befindet sich auf der Rückseite oben rechts neb
 
 ![Lage Nummer der Produktionsserie](./CalliopeNr.png)
 
-::: output admonition type=note
+<Box type='note'>
 Es gibt einige Calliope mini, welche als Versionsnummer die v1.2 tragen. Diese sind zu den Boards v1.3 identisch und werden daher als v1.3 behandelt.
-:::
+</Box>
 
 #### Weitere Merkmale
 Welchen mini du vor dir liegen hast, kannst du anhand einiger Merkmale erkennen: 
