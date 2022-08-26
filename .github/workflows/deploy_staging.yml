@@ -46,11 +46,10 @@ jobs:
     - name: 📂 Sync files
       uses: wangyucode/sftp-upload-action@v1.4.5
       with:
-          username: ${{ secrets.FTP_USER }}
           host: ${{ secrets.FTP_HOST }}
           port: ${{ secrets.FTP_PORT }}
-          localDir: './build'
-          remote_path: '/staging'
-          sftp_only: true
+          username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PRIVATE_KEY }}
+          localDir: './build'
+          remoteDir: '/staging'
           exclude: '**/env.php'
