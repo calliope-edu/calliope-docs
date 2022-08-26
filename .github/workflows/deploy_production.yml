@@ -44,17 +44,12 @@ jobs:
         pnpm run build
     
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
-        server: '${{ secrets.FTP_HOST }}'
-        username: '${{ secrets.FTP_USER }}'
-        password: ${{ secrets.FTP_PRIVATE_KEY }}
-        port: ${{ secrets.FTP_PORT }}
-        protocol: ${{ secrets.FTP_PROTOCOL }}
-        local-dir: ./build/
-        server-dir: ./production/
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-          **/env.php
+          username: ${{ secrets.FTP_USER }}
+          server: ${{ secrets.FTP_HOST }}
+          port: ${{ secrets.FTP_PORT }}
+          local_path: './build/*'
+          remote_path: '/production'
+          sftp_only: true
+          password: ${{ secrets.FTP_PRIVATE_KEY }}
