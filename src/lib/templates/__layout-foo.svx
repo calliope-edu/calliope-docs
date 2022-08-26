@@ -1,0 +1,13 @@
+<script>
+    export let meta
+</script>
+
+foo
+<hr>
+
+# {meta.title}
+
+<slot />
+
+<hr>
+Foo

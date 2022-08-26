@@ -1,0 +1,36 @@
+---
+title: Bootloader
+description: Manchmal wird der Calliope mini nicht mehr als USB-Laufwerk erkannt. In diesem Fall muss die Bootloader-Firmware neu auf den Calliope mini geladen werden. Auch wenn der mini ganz allgemein ein Update erhalten soll, kann die neuste Bootloader-Firmware aufgespielt werden.
+template: docs
+published: true
+---
+
+# {title}
+
+{description}
+
+## Installation
+
+### Schritt 1: Download Bootloader
+
+Der Bootloader für fast alle Systeme ist dieser:
+<button href='https://calliope.cc/media/pages/start/tipps/96fe22d2a5-1602240640/jlink_ob_calliope_mini.hex' >Download Bootloader</button>
+
+
+Falls ihr Windows 7 benutzt, empfehlen wir folgende Version und die zusätzliche *selectr*-Datei: 
+<button href='https://calliope.cc/media/pages/start/tipps/1f01bf3129-1604570158/kl26z_calliope_if_crc.hex' >Download Bootloader Windows 7</button>
+
+<button href='https://calliope.cc/media/pages/start/tipps/1f01bf3129-1604570158/kl26z_calliope_if_crc.hex' >Download selectr Windows 7</button>
+
+### Schritt 2: Auf mini Aufspielen
+
+So kann die Datei installiert werden: <br>
+1) Das USB-Kabel und den Batteriepack vom Calliope mini trennen.
+2) Den Reset-Knopf gedrückt halten und stecken das USB-Kabel mit dem Calliope mini verbinden. Nun sollte im Dateimanager das Laufwerk mit dem Namen MAINTENANCE (anstelle von MINI und FLASH) angezeigt werden.
+3) Die neue Bootloader .HEX-Datei per Drag & Drop auf das Laufwerk MAINTENANCE ziehen und warten, bis die gelbe Status-LED nicht mehr blinkt. Wenn das Upgrade abgeschlossen ist, wird der Calliope mini zurückgesetzt, startet neu und erscheint wieder im normalen Laufwerksmodus mit dem MINI und FLASH Laufwerk.
+
+
+<Box type='tip'>
+Falls ihr Windows 7 benutzt, empfehlen wir den obenstehenden Bootloader für Windows 7.
+Sobald der Calliope mini dann neugestartet ist (Schitt 3), müsst ihr bei dieser Version noch die *selectr.hex* - Datei einmalig auf das Laufwerk "FLASH" kopieren. Dieser Schritt ist nur für Windows 7 nötig.
+</Box>

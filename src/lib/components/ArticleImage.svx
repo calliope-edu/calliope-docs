@@ -1,0 +1,12 @@
+<script>
+	export let image = null;
+	export let slug = '';
+    export let alt = slug
+    let src = image ?? null;
+</script>
+
+{#if src != null}
+
+   <img {src} {alt} />
+
+{/if}
