@@ -53,4 +53,5 @@ jobs:
           localDir: './build'
           remoteDir: '/staging'
           exclude: '**/env.php'
+          forceUpload: true
           dryRun: false
