@@ -53,5 +53,5 @@ jobs:
           localDir: './build'
           remoteDir: '/production'
           exclude: '**/env.php'
-          forceUpload: true
+          forceUpload: false
           dryRun: true
