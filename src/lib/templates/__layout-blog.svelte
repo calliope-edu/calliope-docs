@@ -3,14 +3,13 @@
 
 	export let meta;
 
-	
-		$: id = meta.title
-			.toLowerCase()
-			.replace(/[^a-zA-Z ]/g, '')
-			.replace(/\s/g, '-');
-	
-		$: href = meta.slug ? `/${meta.slug}` : '#' + id;
-		$: formattedDate = new Date(meta.date).toDateString();
+	$: id = meta.title
+		.toLowerCase()
+		.replace(/[^a-zA-Z ]/g, '')
+		.replace(/\s/g, '-');
+
+	$: href = meta.slug ? `/${meta.slug}` : '#' + id;
+	$: formattedDate = new Date(meta.date).toDateString();
 
 </script>
 
