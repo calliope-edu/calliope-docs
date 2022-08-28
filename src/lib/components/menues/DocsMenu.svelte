@@ -40,44 +40,44 @@
     const menuItems = getMenuItems();    
 
 </script>
+<div class="overflow-y-auto z-20 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-4rem)] pb-6 lg:block lg:sticky top:16 lg:top-16 lg:mr-0">
+    <nav class="lg:text-sm lg:leading-6 relative">
+        <div class='menu'>
+            <ul>
 
-<nav class="lg:text-sm lg:leading-6 relative">
+                <div>
+                    {#await menuItems}
+                        <p>Loading...</p>
+                    {:then items}
+                        {#each items as item}
+                            <li class:active={active === '/'+item.slug || active === '/'+item.slug+'/'}
+                            class="mt-12 lg:mt-8">
+                                <a sveltekit:prefetch href="/{item.slug}/" on:click={()=>{active = '/'+item.slug;}}
+                                    class="mb-8 lg:mb-3 font-semibold text-slate-900 dark:text-slate-200 block">
+                                    <b>{item.title}</b>
+                                </a>
+                                <ul class="space-y-6 lg:space-y-2 border-l border-slate-200 dark:border-slate-800">
+                                    {#each item.subpages as page}
+                                        <li class:active={active.startsWith('/'+page.slug)}>
+                                                <a sveltekit:prefetch href="/{page.slug}/" on:click={()=>{active = '/'+page.slug;}}
+                                                    class="block border-l pl-4 -ml-px border-transparent hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
+                                                    {page.title}
+                                                </a>
+                                        </li>
+                                    {/each}
+                                </ul>
+                            </li>
+                        {/each}
+                    {:catch error}
+                        <p style="color: red">{error.message}</p>
+                    {/await}
+                    </div>
 
-	<div class='menu'>
-		<ul>
+            </ul>
+        </div>
 
-            <div>
-                {#await menuItems}
-                    <p>Loading...</p>
-                {:then items}
-                    {#each items as item}
-                        <li class:active={active === '/'+item.slug || active === '/'+item.slug+'/'}
-                        class="mt-12 lg:mt-8">
-                            <a sveltekit:prefetch href="/{item.slug}/" on:click={()=>{active = '/'+item.slug;}}
-                                class="mb-8 lg:mb-3 font-semibold text-slate-900 dark:text-slate-200 block">
-                                <b>{item.title}</b>
-                            </a>
-                            <ul class="space-y-6 lg:space-y-2 border-l border-slate-200 dark:border-slate-800">
-                                {#each item.subpages as page}
-                                    <li class:active={active.startsWith('/'+page.slug)}>
-                                            <a sveltekit:prefetch href="/{page.slug}/" on:click={()=>{active = '/'+page.slug;}}
-                                                class="block border-l pl-4 -ml-px border-transparent hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
-                                                {page.title}
-                                            </a>
-                                    </li>
-                                {/each}
-                            </ul>
-                        </li>
-                    {/each}
-                {:catch error}
-                    <p style="color: red">{error.message}</p>
-                {/await}
-                </div>
-
-		</ul>
-	</div>
-
-</nav>
+    </nav>
+</div>
 
 <style>
     .active > a {

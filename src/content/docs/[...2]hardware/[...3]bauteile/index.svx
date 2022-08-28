@@ -19,17 +19,14 @@ published: true
     <div slot='title'>
 
         ### 5x5 LED Matrix
-
-    </div>
+        </div>
     <div slot='board'>
 
         ![!](./board/calliope_feature_components_matrix.svg)
-
-    </div><div slot='icon'>
+        </div><div slot='icon'>
 
         ![!](./icons/calliope_feature_icon_matrix.svg)
-
-    </div>
+        </div>
 
     Die roten Lämpchen sind sogenannte LED ( aus dem englischen Light-Emitting Diodes ). Sie bilden ein 5x5-Raster und können einzeln angesteuert werden.
 </Bauteil>
@@ -38,16 +35,13 @@ published: true
     <div slot='title'>
 
       ### RGB LED  
-
     </div>
     <div slot='board'>
 
         ![!](./board/calliope_feature_components_rgb.svg)
-
     </div><div slot='icon'>
 
         ![!](./icons/calliope_feature_icon_rgb.svg)
-
     </div>
 
     Die unter dem 5x5 Raster liegende einzelne (RGB-LED ) ermöglicht die Darstellung unzähliger weiterer Farben.
@@ -58,16 +52,13 @@ published: true
     <div slot='title'>
 
         ### Lautsprecher
-
     </div>
     <div slot='board'>
 
         ![!](./board/calliope_feature_components_speaker.svg)
-
     </div><div slot='icon'>
 
         ![!](./icons/calliope_feature_icon_speaker.svg)
-
     </div>
 
     Mit dem integrierten Lautsprecher kannst du Musik abspielen oder ihn einfach piepsen lassen – was auch immer dein Projekt benötigt.
@@ -79,16 +70,13 @@ published: true
     <div slot='title'>
 
         ### Knöpfe und Tasten
-
     </div>
     <div slot='board'>
 
         ![!](./board/calliope_feature_components_buttons.svg)
-
     </div><div slot='icon'>
 
         ![!](./icons/calliope_feature_icon_buttons.svg)
-
     </div>
 
     Mit den Tastern A und B links und rechts von den roten LED kannst du Eingaben vornehmen. Wenn du einen Knopf drückst, wird ein Schaltkreis geschlossen. Das Board kann erkennen, ob nur einer oder beide Knöpfe gedrückt werden. Über ein Programm kannst du selbst bestimmen, was passiert, wenn du einen oder beide Taster drückst.
@@ -101,16 +89,13 @@ published: true
     <div slot='title'>
 
         ### Touch-Pins
-
     </div>
     <div slot='board'>
 
         ![!](./board/calliope_feature_components_pins.svg)
-
     </div><div slot='icon'>
 
         ![!](./icons/calliope_feature_icon_pins.svg)
-
     </div>
 
     An die mit P0, P1 und P2 beschrifteten Pins des Calliope mini kannst du Sensoren wie Temperaturfühler oder Feuchtigkeitsmesser anschließen. Zudem sind sie berührungsempfindlich, so wie du es beispielsweise von Touchscreens kennst. Die mit "+" und "-" beschrifteten Ecken kannst du nutzen, um mittels Klemmen eine Batterie anzuschließen oder Strom auszugeben, um eine LED dauerhaft zum Leuchten zu bringen.
@@ -123,16 +108,13 @@ published: true
     <div slot='title'>
 
         ### Lagesensor
-
     </div>
     <div slot='board'>
 
         ![!](./board/calliope_feature_components_lage.svg)
-
     </div><div slot='icon'>
 
         ![!](./icons/calliope_feature_icon_lage.svg)
-
     </div>
 
     Das kombinierte Bauteil neben dem Taster A enthält einen Kompass, einen Bewegungssensor und einen Beschleunigungssensor. Dadurch kann der Calliope mini zum Beispiel messen, in welche Richtung und mit welcher Geschwindigkeit er bewegt wird.
@@ -143,16 +125,13 @@ published: true
     <div slot='title'>
 
         ### Lichtsensor
-
     </div>
     <div slot='board'>
 
         ![!](./board/calliope_feature_components_licht.svg)
-
     </div><div slot='icon'>
 
         ![!](./icons/calliope_feature_icon_licht.svg)
-
     </div>
 
     Der Lichtsensor misst über einige der roten LED die Helligkeit in der Umgebung.
@@ -430,17 +409,14 @@ Genauere Informationen können aus dem Datenblatt entnommen werden: <a href="htt
     <div slot='title'>
 
         ### Reset Taste
-
     </div>
     <div slot='board'>
 
         ![!](./board/calliope_feature_components_reset.svg)
         
-
     </div><div slot='icon'>
 
         ![!](./icons/calliope_feature_icon_reset.svg)
-
     </div>
 
     Der Knopf RESET ermöglicht das Zurücksetzen des Calliope mini auf den vorher definierten Start-Zustand.
