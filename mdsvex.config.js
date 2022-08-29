@@ -16,11 +16,11 @@ const config = defineConfig({
 	extensions: ['.svelte.md', '.md', '.svx'],
 
 	smartypants: {
-		dashes: 'oldschool'
+		
 	},
 
 	remarkPlugins: [
-		[remarkAbbr, { expandFirst: true }], // Parses markdown to html
+		// [remarkAbbr, { expandFirst: true }], // parse html abbreviations
 		// remarkContainers, // processes `:::`-Tags to html-tags
 		// [remarkMermaid, { simple: true }],
 		// remarkGfm,
