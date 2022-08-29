@@ -1,5 +1,7 @@
 
 <script>
+  import DocsMenuItem from './DocsMenuItem.svelte';
+
 	import { page } from '$app/stores'
 
     export let prev = null;
@@ -18,10 +20,9 @@
     $: curr = allPagesFlat[currentIndex] ?? null;
     $: next = (currentIndex < allPagesFlat.length) ? allPagesFlat[currentIndex+1] : null;
 
-    function getPrevNext(slug, arr){
-        
-        console.log(currIndex)
-    }
+    // function getPrevNext(slug, arr){
+        // console.log(currIndex)
+    // }
 
     async function getMenuItems(){
     let menuItems = await fetch(`/docs.json`).then((res) => res.json());
@@ -33,11 +34,44 @@
         allPagesFlat = [...allPagesFlat, ...item.subpages]
     }
     allPages = menuItems;
-
+    console.log(menuItems)
     return menuItems
     }
-
+    
     const menuItems = getMenuItems();    
+
+
+import { slugFromPath } from '$lib/util';
+
+
+// Dummy menu for SSR
+const modules = {
+    ...import.meta.glob(`../../../content/docs/{[!index]*,*/index}{.,.de.,.en.}md`),
+    ...import.meta.glob(`../../../content/docs/*/{[!index]*,*/index}{.,.de.,.en.}md`)
+}
+let posts = {};
+
+for (let [path] of Object.entries(modules)) {
+    const slug = slugFromPath(path);
+    const slugArr = slug.split("/")
+    const depth = slugArr.length - 1
+    const title = slugArr[depth]
+    let pageMeta = ({
+            slug,
+            depth,
+            title: title.charAt(0).toUpperCase() + title.slice(1),
+            subpages: []
+        })
+    if(depth == 1) {
+        posts[title] = pageMeta;
+    } else if (depth == 2) {
+        const kategorie = slugArr[depth-1]
+        if(kategorie != undefined) {
+            posts[kategorie].subpages.push(pageMeta);
+        }
+    }
+}
+
 
 </script>
 
@@ -48,26 +82,12 @@
 
                 <div>
                     {#await menuItems}
-                        <p>Loading...</p>
+                    {#each Object.values(posts) as item}
+                        <DocsMenuItem {item} {active} />
+                    {/each}
                     {:then items}
                         {#each items as item}
-                            <li class:active={active === '/'+item.slug || active === '/'+item.slug+'/'}
-                            class="mt-12 lg:mt-8">
-                                <a sveltekit:prefetch href="/{item.slug}/" on:click={()=>{active = '/'+item.slug;}}
-                                    class="mb-8 lg:mb-3 font-semibold text-slate-900 dark:text-slate-200 block">
-                                    <b>{item.title}</b>
-                                </a>
-                                <ul class="space-y-6 lg:space-y-2 border-l border-slate-200 dark:border-slate-800">
-                                    {#each item.subpages as page}
-                                        <li class:active={active.startsWith('/'+page.slug)}>
-                                                <a sveltekit:prefetch href="/{page.slug}/" on:click={()=>{active = '/'+page.slug;}}
-                                                    class="block border-l pl-4 -ml-px border-transparent hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
-                                                    {page.title}
-                                                </a>
-                                        </li>
-                                    {/each}
-                                </ul>
-                            </li>
+                            <DocsMenuItem {item} {active} />
                         {/each}
                     {:catch error}
                         <p style="color: red">{error.message}</p>

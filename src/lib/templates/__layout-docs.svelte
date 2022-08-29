@@ -3,6 +3,8 @@
     import DocsMenu from '$lib/components/menues/DocsMenu.svelte';
     import Toc from '$lib/components/menues/Toc.svelte'
 
+    export let currKategorie = null;
+
     let headingSelector = '.content :where(h2, h3):not(.toc-exclude)';
     let breakpoint = 1200;
     let headings = [];
@@ -24,7 +26,7 @@
 ">
 
     <aside class="fixed inset-0 z-20 flex-none hidden h-full w-72 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-48 lg:block">
-        <DocsMenu bind:prev={prev} bind:next={next} />
+        <DocsMenu bind:prev={prev} bind:next={next} bind:currKategorie={currKategorie} />
     </aside>
     <div class="fixed inset-0 z-10 hidden bg-gray-900/50 dark:bg-gray-900/60"></div>
 

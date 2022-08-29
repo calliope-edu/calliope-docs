@@ -1,27 +1,12 @@
 
 <script>
-    import DocsMenu from '$lib/components/menues/DocsMenu.svelte';
-    import Toc from 'svelte-toc'
-
-    let headingSelector = 'main :where(h2, h3, h4):not(.toc-exclude)';
-    let breakpoint = 1200;
-    let headings = [];
-    let desktop = false;
-    $: hide = (headings.length < 2);
-    $: gridColumns = (!desktop) ? '' : ' 200px';
-    $: gridMaxWidth = (!desktop) ? 1 : 2;
+    import DocsLayout from './__layout-docs.svelte';
 
     let currKategorie = null;
 
 </script>
 
-<div style='grid-template-columns: 200px 1fr {gridColumns}; max-width: calc(75ch + {gridMaxWidth} * (200px + 20px))'>
-
-    <aside>
-        <DocsMenu bind:currKategorie={currKategorie} />
-    </aside>
-
-    <main>
+<DocsLayout bind:currKategorie={currKategorie}>
         {#if currKategorie != null}
             <h1>{currKategorie.title}</h1>
             <ol>
@@ -37,14 +22,9 @@
             </ol>
         {/if}
         <!-- <slot /> -->
-    </main>
-    
-    <Toc title="Auf dieser Seite" {headingSelector} {breakpoint} hide={true}
-        bind:headings={headings} 
-        bind:desktop={desktop}
-    />
+</DocsLayout>  
 
-</div>
+
 
 <style>
 
