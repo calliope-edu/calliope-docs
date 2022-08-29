@@ -36,6 +36,5 @@ export default function autoImportComponents() {
         value: `<script>\n${scripts}</script>`
     });
     }
-
   };
 }

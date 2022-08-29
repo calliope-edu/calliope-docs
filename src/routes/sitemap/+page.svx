@@ -1,0 +1,33 @@
+<script>
+    import { slugFromPath } from '$lib/util';
+
+    const modules = import.meta.glob(`../../content/**/[!!]*.md`)
+    
+	let posts = [];
+
+	for (let [path, resolver] of Object.entries(modules)) {
+		const slug = slugFromPath(path);
+		// const Page = await resolver();
+		// const PageRendered = Page.default.render() // Make sure rehype plugins are parsed
+		let pageMeta = ({
+				slug,
+                depth: (slug.split("/").length - 1)
+				// ...Page.metadata
+			})
+		posts.push(pageMeta);
+	}
+
+
+    export const sitemap = posts
+
+
+</script>
+<main>
+    <ul>
+        {#each sitemap as page}
+            <li>
+                <a href="../{page.slug}">./contents/{page.slug}.svx</a>
+            </li>
+        {/each}
+    </ul>
+</main>

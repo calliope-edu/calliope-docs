@@ -27,8 +27,6 @@
   let windowWidth: number = 0;
   let windowHeight: number = 0;
 
-  $: console.log(headings)
-
   let aside: HTMLElement
   $: levels = headings.map(getHeadingLevels)
   $: minLevel = Math.min(...levels)

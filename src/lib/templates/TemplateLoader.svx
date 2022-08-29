@@ -1,15 +1,20 @@
-<script context="module">
+<script>
+    import Bar from '$lib/templates/__layout-bar.svx';
+    import Blog from '$lib/templates/__layout-blog.svelte';
+    import Default from '$lib/templates/__layout-default.svx';
+    import DocsContents from '$lib/templates/__layout-docs-contents.svelte';
+    import Docs from '$lib/templates/__layout-docs.svelte';
+    import Foo from '$lib/templates/__layout-foo.svx';
 
-    async function loadTemplates() {
-        const files = await import.meta.globEager(`./*.{svelte,md,svx}`);
-        return files;
+    let availTemplatesArray = {
+      bar: Bar,
+      blog: Blog,
+      default: Default,
+      docs_contents: DocsContents,
+      docs: Docs,
+      foo: Foo
     }
 
-    const templates = loadTemplates();
-
-</script>
-
-<script>
     export let meta;
     export let template = meta.template ?? 'default';
     export let depth = 0;
@@ -22,27 +27,12 @@
         templatesArray = tmpl.split(',')
         currentTemplate = templatesArray[depth];
     }
-
+    
     $: template = meta.template ?? 'default';
     $: changeTemplate(template);
-  
 
-    $: if(currentTemplate != ''){
-        templates.then(function(value) {
-            let match;
-            for (const [path, resolver] of Object.entries(value)) {
-                let filename = path.slice(0, path.lastIndexOf("."));
-                // console.log(filename)
-                if (filename === `./__layout-${currentTemplate}`) {
-                    match = [path, resolver];
-                    break;
-                }
-            }
-            // console.log(match)
-            if(match){
-                TemplateComponent = match[1]?.default;
-            }
-        });
+    $: if(currentTemplate != '' && (currentTemplate in availTemplatesArray)){
+        TemplateComponent = availTemplatesArray[currentTemplate]
     }
 
 </script>

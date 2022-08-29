@@ -9,9 +9,7 @@ export async function load({ url, fetch, params }) {
 
 	let Page;
 
-	const pagesIndex = await import.meta.globEager(`../../../content/*/*/index{.,.de.,.en.}{md,svx,svelte}`);
-	const pagesFolders = await import.meta.globEager(`../../../content/*/*{.,.de.,.en.}{md,svx,svelte}`);
-	const pages = {...pagesIndex, ...pagesFolders}
+	const pages = await import.meta.globEager(`../../../content/*/{[!index]*,*/index}{.,.de.,.en.}md`)
 	let match;
         for (const [path, resolver] of Object.entries(pages)) {
             if (slugFromPath(path) === `${params.slug1}/${params.slug2}`) {

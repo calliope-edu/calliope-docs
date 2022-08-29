@@ -12,16 +12,10 @@ export async function GET({ url, params }) {
 	let modules = [];
 	let folder = '';
 	if(params.slug1 === 'index'){
-		modules = {
-			...(import.meta.glob(`../../content/*/index.{md,svx,svelte}`)),
-			...(import.meta.glob(`../../content/*.{md,svx,svelte}`))
-		};
+		modules = {...import.meta.glob(`../../content/{[!index]*,*/index}{.,.de.,.en.}md`)}
 	} else {
 		folder = `${params.slug1}/`
-		modules = {
-			...(import.meta.glob(`../../content/*/*/index.{md,svx,svelte}`)),
-			...(import.meta.glob(`../../content/*/*.{md,svx,svelte}`))
-		};
+		modules = {...import.meta.glob(`../../content/*/{[!index]*,*/index}{.,.de.,.en.}md`)}
 	}
 
 	let matches = Object.fromEntries(
