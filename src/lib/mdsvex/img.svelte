@@ -11,6 +11,9 @@
         figcaption = false;
         alt = alt.replace('!', '')
     }
+    if (typeof src.meta === 'string') {
+        src = src.meta;
+    }
 
     if((alt.startsWith('exif.') || alt === '') && typeof src === 'object' && typeof src.exif === 'object') {
         switch(alt) {
@@ -32,12 +35,14 @@
 </script>
 
 {#if typeof src === 'string'}
-
-    <figure>
-        <img {src} {alt} {...$$restProps} />
-        <figcaption>{alt}</figcaption>
-    </figure>
-
+    {#if figcaption}
+        <figure>
+            <img {src} {alt} {...$$restProps} />
+                <figcaption>{alt}</figcaption>
+        </figure>
+    {:else}
+        <img {src} alt='' {...$$restProps} />
+    {/if}    
 {:else if typeof src === 'object' && typeof src.meta === 'object'}
     {@const sources = [
         { srcset: src.srcsetJpeg, type: 'image/webp' },

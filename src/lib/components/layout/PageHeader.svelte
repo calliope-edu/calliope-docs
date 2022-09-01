@@ -9,7 +9,7 @@
 
 <svelte:window bind:scrollY={y}/>
 
-<nav class={clsx('fixed w-full z-10 top-0', addBg && 'bg-white shadow')}>
+<nav class={clsx('fixed w-full z-30 top-0', addBg && 'bg-white shadow')}>
 
     <div class="w-full md:max-w-8xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
 

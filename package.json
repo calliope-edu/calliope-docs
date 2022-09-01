@@ -3,8 +3,9 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev --port 3000",
-		"build": "vite build",
+		"pack": "node ./prebuild/packStaticFolder/index.js",
+		"dev": "node ./prebuild/packStaticFolder/index.js && vite dev --port 3000",
+		"build": "node ./prebuild/packStaticFolder/index.js && vite build",
 		"preview": "vite preview",
 		"test": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -15,7 +16,7 @@
 	"devDependencies": {
 		"@iconify/json": "^2.1.97",
 		"@playwright/test": "^1.25.0",
-		"@rodneylab/sveltekit-components": "^0.2.16",
+		"@rodneylab/sveltekit-components": "^1.0.0",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/adapter-static": "^1.0.0-next.39",
 		"@sveltejs/kit": "next",
@@ -51,7 +52,7 @@
 		"unist-util-visit": "^4.1.1",
 		"unplugin-icons": "^0.14.8",
 		"vanilla-lazyload": "^17.8.3",
-		"vite": "^3.0.4",
+		"vite": "^3.1.0-beta.1",
 		"vite-imagetools": "^4.0.4"
 	},
 	"type": "module",

@@ -1,4 +1,4 @@
-<footer class="bg-calliope-500 dark:bg-gray-900 mt-16 z-20 relative">
+<footer class="bg-calliope-500 dark:bg-gray-900 mt-16 z-30 relative">
     <div class="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
         <div>
             <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-gray-400">Company</h2>

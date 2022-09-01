@@ -10,7 +10,8 @@ const config = {
 		Icons({
 			compiler: 'svelte',
 		}),
-	]
+	],
+	// publicDir: 'static_' // gets overwritten by sveltekit
 };
 
 export default config;

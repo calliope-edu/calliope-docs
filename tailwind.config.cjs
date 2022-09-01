@@ -24,4 +24,13 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
   ],
+  safelist: [
+    'bg-slate-600',
+    'text-slate-600',
+    'hover:bg-slate-600',
+    {
+      pattern: /border-(slate|calliope)-.+/,
+      variants: ['hover'],
+    }
+  ]
 }

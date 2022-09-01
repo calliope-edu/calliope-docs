@@ -1,0 +1,60 @@
+<script>
+    import Bar from '$lib/templates/__layout-bar.svx';
+    import Blog from '$lib/templates/__layout-blog.svelte';
+    import Default from '$lib/templates/__layout-default.svx';
+    import DocsContents from '$lib/templates/__layout-docs-contents.svelte';
+    import Docs from '$lib/templates/__layout-docs.svelte';
+    import Foo from '$lib/templates/__layout-foo.svx';
+
+    let availTemplatesArray = {
+      bar: Bar,
+      blog: Blog,
+      default: Default,
+      docs_contents: DocsContents,
+      docs: Docs,
+      foo: Foo
+    }
+
+    export let meta;
+    export let template = meta.template ?? 'default';
+    export let depth = 0;
+    let TemplateComponent;
+    let templatesArray = template.split(',')
+    let currentTemplate = templatesArray[depth];
+    let nextDepth = depth + 1;
+
+    function changeTemplate(tmpl) {
+        templatesArray = tmpl.split(',')
+        currentTemplate = templatesArray[depth];
+    }
+    
+    $: template = meta.template ?? 'default';
+    $: changeTemplate(template);
+
+    $: if(currentTemplate != '' && (currentTemplate in availTemplatesArray)){
+        TemplateComponent = availTemplatesArray[currentTemplate]
+    }
+
+</script>
+
+{#if depth < templatesArray.length}
+    {#if TemplateComponent != undefined}
+        <svelte:component this={TemplateComponent} {meta}>
+                <svelte:self depth={nextDepth} {meta}>
+                    <slot />
+                </svelte:self>
+        </svelte:component>
+    {:else}
+        <svelte:self depth={nextDepth} {meta}>
+            <slot />
+        </svelte:self>
+    {/if}
+{:else}
+    {#if TemplateComponent != undefined}
+        <svelte:component this={TemplateComponent} {meta}>
+            <slot />
+        </svelte:component>
+    {:else}
+        <slot />
+    {/if}
+{/if}

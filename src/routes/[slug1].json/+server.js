@@ -12,16 +12,10 @@ export async function GET({ url, params }) {
 	let modules = [];
 	let folder = '';
 	if(params.slug1 === 'index'){
-		modules = {
-			...(import.meta.glob(`../../content/*/index.{md,svx,svelte}`)),
-			...(import.meta.glob(`../../content/*.{md,svx,svelte}`))
-		};
+		modules = {...import.meta.glob(`../../content/{[!index]*,*/index}{.,.de.,.en.}md`)}
 	} else {
 		folder = `${params.slug1}/`
-		modules = {
-			...(import.meta.glob(`../../content/*/*/index.{md,svx,svelte}`)),
-			...(import.meta.glob(`../../content/*/*.{md,svx,svelte}`))
-		};
+		modules = {...import.meta.glob(`../../content/*/{[!index]*,*/index}{.,.de.,.en.}md`)}
 	}
 
 	let matches = Object.fromEntries(
@@ -31,8 +25,10 @@ export async function GET({ url, params }) {
 		}
 	));
 
-	const limit = Number(url.searchParams.get('limit') ?? Infinity);
-	const orderBy = Number(url.searchParams.get('orderBy') ?? null);
+	// const limit = Number(url.searchParams.get('limit') ?? Infinity);
+	// const orderBy = Number(url.searchParams.get('orderBy') ?? null);
+	const limit = Infinity;
+	const orderBy = null;
 
 	if (Number.isNaN(limit)) {
 		return {

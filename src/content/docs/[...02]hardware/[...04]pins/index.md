@@ -1,0 +1,95 @@
+---
+title: Pins
+description: Der Calliope mini verfügt über diverse Schnittstellen mit unterschiedlichen Protokollen, die programmiert werden können und womit Daten ausgetauscht werden.
+template: docs
+published: true
+---
+
+# {title} 
+
+{description}
+
+
+## Stromversorgung
+
+### Spannung
+
+- Alle ein und Ausgabe-Pins liefern 3,3 V und werden auch mit 3,3 V betrieben.
+
+<Box type='info'>
+Sensoren die mit 5V betrieben werden, funktionieren in den meisten Fällen nicht.
+</Box>
+
+### Stromstärke
+
+- Der Calliope mini kann bis zu **15 milli Ampere (mA) pro Pin** maximal bereitstellen
+- für alle Pins sind es **100 mA insgesamt**
+
+<No>
+Schließe niemals mehre Verbraucher, mit 20mA wie z.B. 2 LEDs an einen I/O-Pin an.
+</No>
+
+<Yes>
+Verwendete stattdessen verschiedene I/O Pins oder eine Transistorenschaltung. Beachte, dass ingesamt nicht die 100 mA überschritten werden.
+</Yes>
+
+
+
+
+## Analoge Pins
+
+<Box type='info'>
+In der Signalverarbeitung wird werden Daten verallgemeinert in zwei verschiedenen Formen übertragen: 
+
+- **Digital**: Ein binäres, digitales Signal ist an oder aus, 1 oder 0. Es ist abgestuft, abzählbar und verlustbehaftet (diskrete Werte).
+- **Analog**: Ein analoges Signal, dahingegen hat einen zeitlich kontinuierlichen, stufenlosen Verlauf. Es kann theoretisch unendlich viele Werte in einem Wertebereich annehmen.
+
+</Box>
+
+### Digital Analog-Umsetzer (DAU/DAC)
+Der integrierte Digital-Analog-Umsetzer des Calliope mini sorgt dafür, dass die analogen Signale vom Prozessor - der nur digital Signale verarbeiten kann - umgewandelt werden. Die Daten werden in den Bereich **0 - 1023** geschrieben und können auch so in dem jeweiligen Editor oder auch seriell als analoge Werte ausgelesen werden.
+
+### PWM
+
+Um eine LED zu dimmen oder die Geschwindigkeit eines Motors zu varieren, müsste analog die Spannung verändert werden. Der Ausgang der Pins liegt allerdigns immer bei 3,3 V. Mit der Pulsweitenmodulation wird durch schnelles ein und auschalten in unterschiedlicher Periodendauer ein analoges Signal simuliert werden, welches unterschiedliche abgestufte Werte annehmen kann. 
+
+**Wieviele PWM-Pins können parallel verwendet werden?** 
+Es können bis zu 3 PWM-Signale gleichzeitig generiert werden, bevor diese anfangen unflüssig und abgestuft zu werden. 
+
+
+## Pinbelegung
+
+| Chip         | mbed / DAL                       | Pin / Info                                                                            | Digital        | Analog            |
+| ------------ | --------------------------------------------- | ------------------------------------------------------------------------ | -------------- | ----------------- |
+| P0.00        | PAD1          <br>MICROBIT\_PIN\_P12          | **C0**      <br>Touchpin P0                                                  | <Yes />        | <No />            |
+| P0.01        | PAD2          <br>MICROBIT\_PIN\_P0           | **C1**      <br>Touchpin P1                                                  | <Yes />        | <Yes />           |
+| P0.02        | PAD3          <br>MICROBIT\_PIN\_P1           | **C2**      <br>Touchpin P2                                                  | <Yes />        | <Yes />           |
+| P0.03        | MIC           <br>MICROBIT\_PIN\_P21          | **C21** (MIC)     <br>Microphone pin                                         | <No />         | <Yes />           |
+| P0.04        | COL1          <br>MICROBIT\_PIN\_P3           | **C4**      <br>*Use only if LED matrix is not initialized*                    | <Yes />        | <Yes />           |
+| P0.05        | COL2          <br>MICROBIT\_PIN\_P4           | **C5**      <br>*Use only if LED matrix is not initialized*                    | <Yes />        | <Yes />           |
+| P0.06        | COL3          <br>MICROBIT\_PIN\_P10          | **C6**      <br>*Use only if LED matrix is not initialized*                    | <Yes />        | <Yes />           |
+| P0.07        | COL4          <br>MICROBIT\_PIN\_P13          | **C7** (SPI, SCK)      <br>*Use only if LED matrix is not initialized*         | <Yes />        | <No />            |
+| P0.08        | COL5          <br>MICROBIT\_PIN\_P14          | **C8** (SPI, MISO)     <br>*Use only if LED matrix is not initialized*         | <Yes />        | <No />            |
+| P0.09        | COL6          <br>MICROBIT\_PIN\_P15          | **C9** (SPI, MOSI)     <br>*Use only if LED matrix is not initialized*         | <Yes />        | <No />            |
+| P0.10        | COL7          <br>MICROBIT\_PIN\_P9           | **C10**     <br>*Use only if LED matrix is not initialized*                    | <Yes />        | <No />            |
+| P0.11        | COL8          <br>MICROBIT\_PIN\_P7           | **C11**     <br>*Use only if LED matrix is not initialized*                    | <Yes />        | <No />            |
+| P0.12        | COL9          <br>MICROBIT\_PIN\_P6           | **C12**     <br>*Use only if LED matrix is not initialized*                    | <Yes />        | <No />            |
+| P0.13        | ROW1          <br>                            |         *Use only if LED matrix is not initialized*                        | <No />         | <No />            |
+| P0.14        | ROW2          <br>                            |         *Use only if LED matrix is not initialized*                        | <No />         | <No />            |
+| P0.15        | ROW3          <br>                            |         *Use only if LED matrix is not initialized*                        | <No />         | <No />            |
+| P0.16        | BUTTON\_B     <br>MICROBIT\_PIN\_P11          |         **B Button**                                                         | <No />         | <No />            |
+| P0.17        | BUTTON\_A     <br>MICROBIT\_PIN\_P5           |         **A Button**                                                         | <No />         | <No />            |
+| P0.18        | RGBLED        <br>CALLIOPE\_PIN\_RGB\_LED     |         **RGB LED**                                                 | <No />         | <No />            |
+| P0.19        | SCL           <br>MICROBIT\_PIN\_P19          | **C19** / A0 (SCL)<br>I²C, left Grove connector                              | <Yes />        | <No />            |
+| P0.20        | SDA           <br>MICROBIT\_PIN\_P20          | **C18** / A0 (SDA)<br>I²C, left Grove connector                              | <Yes />        | <No />            |
+| P0.21        | ACCEL\_INT    <br>CALLIOPE\_PIN\_ACCEL\_INT   |         **BMX055** Interrupt<br>Accelerator                                | <No />         | <No />            |
+| P0.22        | PAD4          <br>MICROBIT\_PIN\_P16          | **C3**      <br>Touchpin P3                                                  | <Yes />        | <No />            |
+| P0.23        |               <br>                            |         **BMX055** Data Ready<br>Magnetometer                                | <No />         | <No />            |
+| P0.24        | USBTX         <br>                            | **USB TX**            <br>USB Serial TX                                      | <No />         | <No />            |
+| P0.25        | USBRX         <br>                            | **USB RX**            <br>USB Serial RX                                      | <No />         | <No />            |
+| P0.26        | A\_RX         <br>MICROBIT\_PIN\_P2           | **C16** / A1 (UART, RX)<br>ext. Serial Port RX (right Grove connector)       | <Yes />        | <Yes />           |
+| P0.27        | A\_TX         <br>MICROBIT\_PIN\_P8           | **C17** / A1 (UART, TX)<br>UART, ext. Serial Port TX (right Grove connector) | <Yes />        | <Yes />           |
+| P0.28        | MOTOR\_NSLEEP <br>CALLIOPE\_PIN\_MOTOR\_SLEEP |         **Motor** <br>NSLEEP                                            | <No />         |                  |
+| P0.29        | MOTOR\_IN1    <br>CALLIOPE\_PIN\_MOTOR\_IN1   |         **Motor** <br>IN1                                              | <No />         | <No />            |
+| P0.30        | MOTOR\_IN2    <br>CALLIOPE\_PIN\_MOTOR\_IN2   |         **Motor** <br>IN2                                              | <No />         | <No />            |
+

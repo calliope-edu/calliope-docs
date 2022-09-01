@@ -64,12 +64,21 @@
     }
   }
 
+  function getOffsetTop(element) {
+    return element ? (element.offsetTop + getOffsetTop(element.offsetParent)) : 0;
+  }
+
   const clickHandler = (node: HTMLHeadingElement) => () => {
     open = false
     // Chrome doesn't (yet?) support multiple simultaneous smooth scrolls (https://stackoverflow.com/q/49318497)
     // with node.scrollIntoView(). Use window.scrollTo() instead.
-    const scrollMargin = Number(getComputedStyle(node).scrollMarginTop.replace(`px`, ``))
-    window.scrollTo({ top: node.offsetTop - scrollMargin, behavior: `smooth` })
+    const scrollMargin = Number(getComputedStyle(node).scrollMarginTop.replace(`px`, ``)) || 92
+    window.scrollTo({ top: getOffsetTop(node) - scrollMargin, behavior: `smooth` })
+
+    
+// const scrollMargin = Number(getComputedStyle(node).scrollMarginTop.replace(`px`, ``)) || 92;
+
+    // window.scrollBy({left: 0, top: node.getBoundingClientRect().top - scrollMargin, behavior: `smooth`})
 
     const id = getHeadingIds && getHeadingIds(node)
     if (id) history.replaceState({}, ``, `#${id}`)
@@ -109,7 +118,7 @@
           style:font-size="{2 - 0.2 * (levels[idx] - minLevel)}ex" -->
             <li
               tabindex={idx + 1}
-              class="{`level${level}`} group"
+              class="{`level${level}`} group hover:text-calliope-500 dark:hover:text-calliope-400"
               class:active={activeHeading === heading}
               on:click={clickHandler(heading)}
             >
@@ -129,7 +138,7 @@
 
 <style> 
 li {
-  @apply cursor-pointer py-1 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300;
+  @apply cursor-pointer py-1 dark:text-slate-400;
 }
 .level0 {
    @apply block font-medium;

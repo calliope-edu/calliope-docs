@@ -1,0 +1,39 @@
+
+<div class="mt-10">
+    <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 flex items-center">
+
+        <div class="relative">
+            <dt class="flex items-center">
+                <div class="icon absolute flex items-center justify-center rounded-md not-prose">
+                    <slot name='icon' />
+                </div>
+                <div class="ml-16">
+                    <slot name='title' />
+                </div>
+            </dt>
+            <dd class="mt-2 text-base text-gray-500">
+                <slot />
+            </dd>
+        </div>
+
+        <slot name='board' />
+
+    </dl>
+
+</div>
+
+
+<style>
+    .icon :global(img) {
+        @apply h-12 w-12;
+    }
+    .relative :global(h3) {
+        margin: 0 !important;
+    }
+</style>
+
+
+
+
+
+
