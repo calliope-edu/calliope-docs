@@ -2,7 +2,7 @@
 	import PageHeader from '$lib/components/layout/PageHeader.svelte';
 	import PageFooter from '$lib/components/layout/PageFooter.svelte';
 	import lazyload from 'vanilla-lazyload';
-  	import { browser } from '$app/env';
+  	import { browser } from '$app/environment';
 
   if (browser && !document.lazyloadInstance) {
     document.lazyloadInstance = new lazyload();

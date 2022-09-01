@@ -5,6 +5,10 @@ template: docs
 published: true
 ---
 
+<script>
+    import Buttons from './components/EditorButtons.svx'
+</script>
+
 # {title}
 
 
@@ -20,9 +24,25 @@ Auf der LED-Matrix des Calliope mini befinden sich 5 x 5 = 25 rote LEDs, mit den
 
 Es können einzelne Buchstaben oder auch ganze Wörter und Sätze angezeigt werden. In Open Roberta kann eingestellt werden, ob der Text als einzelne Zeichen angezeigt wird, oder durch den Bildschirm als Animation durchläuft. In MakeCode läuft der Text automatisch über die LED-Anzeige, wenn dieser länger als ein Buchstabe ist.
 
+![!](./boards/string.gif)
+
+<Buttons 
+    mind='./files/text/calliope_mini_string.sb3'
+    makecode='./files/text/calliope_mini_string.hex'
+    makecodeUrl='https://makecode.calliope.cc/_CiuafTRkW1M0'
+    nepo='./files/text/calliope_mini_string.xml'
+    />
+
 #### Zahlen anzeigen
 
 Es können einzelne Ziffern oder auch größere Zahlen mit Nachkommastellen angezeigt werden. In Open Roberta kann eingestellt werden, ob größere Zahlen als einzelne Ziffern angezeigt werden, oder durch den Bildschirm als Animation durchlaufen. In MakeCode laufen Zahlen, die mehr als eine Stelle haben, automatisch als Animation durch.
+
+<Buttons 
+    mind='./files/zahl/calliope_mini_number.sb3'
+    makecode='./files/zahl/calliope_mini_number.hex'
+    makecodeUrl='https://makecode.calliope.cc/_ep2KuJ1pyfs4'
+    nepo='./files/zahl/calliope_mini_number.xml'
+    />
 
 #### Symbole anzeigen
 
