@@ -12,7 +12,7 @@
     $: fileName = link.split('/').pop();
     $: isDownload = (fileName.indexOf('.') > -1) ? true : false;
     $: downloadName = isDownload ? fileName : null;
-    $: isInternal = (browser) ? a?.host == window.location.host : false;
+    $: isInternal = (browser) ? a?.host == window.location.host : true;
     $: target = (isInternal) ? null : '_blank';
     
 </script>
