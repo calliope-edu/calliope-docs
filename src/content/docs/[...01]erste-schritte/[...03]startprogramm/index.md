@@ -1,5 +1,5 @@
 ---
-title: Startprogramm (Programm 25)
+title: Das Startprogramm
 description: Der Calliope mini kommt mit dem vorinstallierten Programm, das dir einen Startpunkt in der Nutzung bieten soll.
 template: docs
 published: true
@@ -9,7 +9,7 @@ published: true
 // import {Button} from '@svelteness/kit-docs';
 </script>
 
-# {title}
+# {title} (Programm 25)
 
 {description}
 
@@ -19,7 +19,7 @@ Das Startprogramm setzt den Calliope mini wieder in den Ursprungszustand mit der
 
 Das Startprogramm führt dich einmal durch die Grundfunktionen des mini und stellt zudem fünf Modi bereit, um den mini kennenzulernen. Der fünfte Modus wird für Playground gestartet.
 
-Eine Übersicht der 5 Modi des Startprogramms gibt es **[HIER](https://calliope.cc/los-geht-s/erste-schritte#turquoise)** 
+Eine Übersicht der 5 Modi des Startprogramms gibt es [HIER](https://calliope.cc/los-geht-s/erste-schritte#turquoise) 
 
 <Box type='note'>
 Das Startprogramm wird manchmal auch "Demoprogramm" oder "Programm 25" genannt.
@@ -33,19 +33,13 @@ Soll das Startprogramm nachträglich auf den mini gespielt werden, so ist es bei
 
 ## Startprogramm aus dem Flash Speicher laden
 <Steps>
-    <Step>
-        Drücke für 5-6 Sekunden die Reset-Taste, bis die LED-Matrix aufblinkt. 
-    </Step> 
-    <Step>
-        Navigiere bis zum 25. Programm, indem mit Taste A ein Schritt zurück gegangen wird.  
-    </Step> 
-    <Step>
-        Drücke die Taste A und B gleichzeitig. Nun wird das Demoprogramm auf den mini geladen.  
-    </Step> 
+    <Step title="Für 5 Sekunden die Reset-Taste gedrückt halten" description="Drücke für 5-6 Sekunden die Reset-Taste, bis die LED-Matrix aufblinkt." />
+    <Step title="Taste A drücken" description="Navigiere bis zum 25. Programm, indem mit Taste A ein Schritt zurück gegangen wird." />
+    <Step title="A+B Drücken" description="Drücke die Taste A und B gleichzeitig. Nun wird das Demoprogramm auf den mini geladen." />
 </Steps>
 
 
-<button href='https://calliope.cc/media/pages/calliope-mini/25programme/589dc979af-1601938460/25originalprogramme.zip' >25 Programme hier herunterladen</button>
+[Programme herunterladen](https://calliope.cc/media/pages/calliope-mini/25programme/589dc979af-1601938460/25originalprogramme.zip)
 
 <Box type='tip'>
 Drücke den weißen kleinen reset-Knopf oben rechts neben dem micro-USB-Abschluss, um das Programm zu starten.

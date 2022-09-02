@@ -6,6 +6,8 @@ const scripts = `
     import ImageSwiper from '$lib/components/ImageSwiper.svelte';
     // import Box from '$lib/components/Box.svelte';
 
+    import Button from '$lib/components/elements/Button.svx'
+
     // Import KitDocs components https://github.com/svelteness/kit-docs/
     import Box from '$lib/components/kit-docs/custom/Admonition.svelte';
     import No from '$lib/components/kit-docs/custom/No.svelte';

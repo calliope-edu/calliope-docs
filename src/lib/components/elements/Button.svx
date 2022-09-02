@@ -7,11 +7,12 @@
     export let link = '';
     export let type = 'default'; // default | border
     export let color = 'slate-600'; // grey | calliope | ...
+    export let download = false; // set download name
 
     let a;
     $: fileName = link.split('/').pop();
     $: isDownload = (fileName.indexOf('.') > -1) ? true : false;
-    $: downloadName = isDownload ? fileName : null;
+    $: downloadName = (download) ? download : ((isDownload) ? fileName : null);
     $: isInternal = (browser) ? a?.host == window.location.host : true;
     $: target = (isInternal) ? null : '_blank';
     
