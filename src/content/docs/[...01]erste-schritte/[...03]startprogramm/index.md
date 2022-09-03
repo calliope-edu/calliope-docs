@@ -38,8 +38,7 @@ Soll das Startprogramm nachträglich auf den mini gespielt werden, so ist es bei
     <Step title="A+B Drücken" description="Drücke die Taste A und B gleichzeitig. Nun wird das Demoprogramm auf den mini geladen." />
 </Steps>
 
-
-[Programme herunterladen](https://calliope.cc/media/pages/calliope-mini/25programme/589dc979af-1601938460/25originalprogramme.zip)
+<Button text='25 Programme herunterladen' link='https://calliope.cc/media/pages/calliope-mini/25programme/589dc979af-1601938460/25originalprogramme.zip' />
 
 <Box type='tip'>
 Drücke den weißen kleinen reset-Knopf oben rechts neben dem micro-USB-Abschluss, um das Programm zu starten.

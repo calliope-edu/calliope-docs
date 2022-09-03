@@ -15,8 +15,7 @@ Wenn du Taste A+B gleichzeitig drückst, startest du das ausgewählte Programm. 
 
 [Hier](https://calliope.cc/start/tipps) findest du weitere Informationen zum Flash Speicher und Abspielen der Programme. 
 
-[25 Programme herunterladen](https://calliope.cc/media/pages/calliope-mini/25programme/589dc979af-1601938460/25originalprogramme.zip)
 
-
-
+<Button text='25 Programme herunterladen' link='https://calliope.cc/media/pages/calliope-mini/25programme/589dc979af-1601938460/25originalprogramme.zip' />
+  
 
