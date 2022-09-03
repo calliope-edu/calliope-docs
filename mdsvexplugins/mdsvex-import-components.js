@@ -2,7 +2,8 @@ import { visit } from 'unist-util-visit';
 
 const scripts = `
     import Typewriter from 'svelte-typewriter';
-    import Gap from '$lib/components/Gap.svelte';
+    import Gap from '$lib/components/layout/Gap.svelte';
+    import Grid from '$lib/components/layout/Grid.svelte';
     import ImageSwiper from '$lib/components/ImageSwiper.svelte';
     // import Box from '$lib/components/Box.svelte';
 

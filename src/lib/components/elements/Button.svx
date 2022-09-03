@@ -10,15 +10,17 @@
     export let download = false; // set download name
 
     let a;
+    $: linkParts = link.split('/').length;
     $: fileName = link.split('/').pop();
-    $: isDownload = (fileName.indexOf('.') > -1) ? true : false;
+    
     $: downloadName = (download) ? download : ((isDownload) ? fileName : null);
     $: isInternal = (browser) ? a?.host == window.location.host : true;
+    $: isDownload = (fileName.indexOf('.') > -1) && !(!isInternal && linkParts <= 3) ? true : false;
     $: target = (isInternal) ? null : '_blank';
     
 </script>
-
-<a href={link} bind:this={a} {target} download={downloadName} class='box-border mx-1 text-center py-1 px-6 rounded-full uppercase no-underline border border-4 border-{color} hover:opacity-70
+{linkParts}
+<a href={link} bind:this={a} {target} download={downloadName} class='inline-block box-border mx-1 text-center py-1 px-6 rounded-full uppercase no-underline border border-4 border-{color} hover:opacity-70
     {type == 'default' ? 
         `text-white bg-${color}` : 
         `text-${color} bg-white hover:text-white hover:bg-${color}`

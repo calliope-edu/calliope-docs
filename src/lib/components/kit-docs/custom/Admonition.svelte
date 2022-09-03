@@ -16,12 +16,12 @@ const icons = {
     experimental: ExperimentalIcon,
 };
 const admonition = {
-        note: 'NOTE',
+        note: 'HINWEIS',
         info: 'INFO',
-        tip: 'TIP',
-        warning: 'WARNING',
-        danger: 'DANGER',
-        experimental: 'EXPERIMENTAL',
+        tip: 'TIPP',
+        warning: 'WARNUNG',
+        danger: 'ACHTUNG',
+        experimental: 'EXPERIMENTEL',
     };
 $: heading = title ?? admonition[type];
 </script>

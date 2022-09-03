@@ -29,7 +29,7 @@ module.exports = {
     'text-slate-600',
     'hover:bg-slate-600',
     {
-      pattern: /border-(slate|calliope)-.+/,
+      pattern: /(border|bg|text)-(slate|calliope)-.+/,
       variants: ['hover'],
     }
   ]
