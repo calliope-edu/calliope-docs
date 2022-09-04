@@ -37,6 +37,8 @@ Es können einzelne Buchstaben oder auch ganze Wörter und Sätze angezeigt werd
 
 Es können einzelne Ziffern oder auch größere Zahlen mit Nachkommastellen angezeigt werden. In Open Roberta kann eingestellt werden, ob größere Zahlen als einzelne Ziffern angezeigt werden, oder durch den Bildschirm als Animation durchlaufen. In MakeCode laufen Zahlen, die mehr als eine Stelle haben, automatisch als Animation durch.
 
+![!](./boards/numbers.gif)
+
 <Buttons 
     mind='./files/zahl/calliope_mini_number.sb3'
     makecode='./files/zahl/calliope_mini_number.hex'
@@ -48,9 +50,13 @@ Es können einzelne Ziffern oder auch größere Zahlen mit Nachkommastellen ange
 
 Es können vordefinierten Symbole und Bildern ausgewählt und auf der LED-Matrix angezeigt werden.
 
+![!](./boards/symbols.gif)
+
 #### Eigene Bilder anzeigen
 
 Für eigene Symbole können die einzelnen Leuchtpunkte individuell an- oder ausgeschaltet werden.
+
+![!](./boards/grid.gif)
 
 
 ### RGB-LED
@@ -59,10 +65,14 @@ Die RGB-LED kann in den verschiedensten Farben leuchten. Genau genommen in 256^3
 
 #### Farben anzeigen
 
+![!](./boards/rgb.gif)
+
 
 ### Lautsprecher
 
 Der Calliope mini kann Musik und Töne mit seinem eingebauten Piezolautsprecher abspielen. Ein Piezolautsprecher beruht auf dem piezoelektrischen Effekt, der aus dem altgriechischen piezein abgeleitet ist, was so viel wie drücken oder pressen bedeutet. Wird an dem Material eine elektrische Spannung angelegt, verformt sich diese im Rhythmus der Frequenz. So kann ein Audiosignal aus verschiedenen Frequenzen in Schallwellen umgewandelt werden. Das gleiche Prinzip funktioniert auch umgekehrt als Mikrofon.
+
+![!](./boards/buzzer.gif)
 
 
 
@@ -73,10 +83,14 @@ Der Calliope mini kann Musik und Töne mit seinem eingebauten Piezolautsprecher 
 
 Überall in unserem Leben finden wir Knöpfe/Tasten, die wir drücken müssen, um Aktionen und Funktionen auszulösen, z.B. eine PC-Tastatur, ein Spielcontroller oder die Knöpfe an einem Getränkeautomaten. Eine Taste funktioniert so ähnlich wie ein Schalter, nur dass dieser den Stromkreis so lange schließt, wie die Taste gedrückt wird. Der Calliope mini hat zwei Tasten: A und B. Gleichzeitig gedrückt, können sie auch eine dritte Eingabemöglichkeit ergeben: A + B
 
+![!](./boards/buttons.gif)
+
 
 ### Touchpins - 0, 1, 2, 3
 
 Die Touchpins sind I/O Eingabe/Ausgabe-Pins, die sich gut dafür eignen, mit den Fingern einen Schaltkreis zu schließen oder Krokodilklemmen anzulegen. An dem 6-eckigen Calliope mini gibt es insgesamt vier Touchpins, die von 0 bis 3 durchnummeriert sind sowie einen Plus- und einen Minuspol. Sowohl die Pins als auch der Pluspol speisen alle eine Spannung von 3,3 Volt. Es ist wichtig, den Minuspol zu berühren, um ein "drücken der Pins" auszulösen. Alle Pins sind digital. Die Pins 1 und 2 sind außerdem analog, womit sich z.B. Servomotoren ansteuern oder die analogen Werte eines Potentiometers ausgeben lassen können.
+
+![!](./boards/touchpins.gif)
 
 
 
@@ -90,6 +104,8 @@ Der Bewegungs- und Lagesensor (Bosch BMX055) enthält einen Beschleunigungssenso
 #### Gesten
 
 Die verschiedenen Gesten mit dem der Calliope bewegt, geschüttelt usw. wird, können als Events in der jeweiligen Programmierumgebung abgerufen werden.
+
+![!](./boards/motion.gif)
 
 #### Beschleunigungssensor
 
@@ -108,20 +124,28 @@ Das integrierte Magnetometer kann die Magnetkraft des Erdmagnetfelds messen und 
 
 Leuchtdioden (LEDs) können nicht nur Licht abstrahlen, sondern auch das Licht als Fotodioden einfangen. Die LED-Matrix beim Calliope mini ist gleichzeitig auch der Lichtsensor, mit dem das Umgebungslicht gemessen werden kann. Dadurch können Helligkeitsunterschiede von dem Calliope mini zwischen drinnen und draußen oder Tag und Nacht erkannt werden. Die Helligkeit wird im jeweiligen Editor in einem unterschiedlichen Wertebereich ausgegeben. In Open Roberta in Prozent 0 - 100 und in MakeCode in 8-Bit von 0 - 255.
 
+![!](./boards/light.gif)
+
 
 ### Temperatursensor
 
 Im Prozessor (Nordic nRF51822) ist ein eingebauter Temperatursensor integriert, mit dem der Calliope mini die ungefähre Umgebungstemperatur messen kann. Die Temperatur wird in Grad Celsius (°C) ausgegeben.
+
+![!](./boards/temperature.gif)
 
 
 ### Mikrofon / Lautstärkesensor
 
 Mit dem MEMS-Mikrofon kann die Lautstärke gemessen werden. Sie reicht von 0 - 100 Prozent.
 
+![!](./boards/microphone.gif)
+
 
 ### Funk
 
 Der Calliope mini besitzt eine kleine Antenne, mit der elektromagnetische Wellen abgestrahlt und empfangen werden können. Dieser unterstützt zwei kabellose Übertragungsdienste: den Funk, womit Nachrichten zwischen verschiedenen Calliope mini übermittelt werden und Bluetooth, mit dem der Calliope mini mit anderen Geräten wie z.B. Handys und Tablets gekoppelt werden kann, um Daten zu übermitteln oder selbst programmiert zu werden. Es kann nur ein Dienst zur gleichen Zeit aktiviert sein. Es kann über verschiedene Funkgruppen/-kanäle, die in der Programmierung festgelegt werden, gefunkt werden. Nur Calliope mini der gleichen Funkgruppe können untereinander kommunizieren.
+
+![!](./boards/funk.gif)
 
 #### Werte senden
 
