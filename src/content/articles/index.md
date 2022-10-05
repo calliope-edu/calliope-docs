@@ -7,6 +7,7 @@ published: true
 
 <script>
     let a = "A";
+    import Typewriter from 'svelte-typewriter';
 </script>
 
 {a}

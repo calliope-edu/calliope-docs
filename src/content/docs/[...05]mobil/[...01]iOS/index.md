@@ -5,4 +5,35 @@ template: docs
 published: true
 ---
 
+<script>
+    import TestButton from "./testbutton.svelte"
+</script>
+
 # {title}
+
+<Grid s=2 m=3 w_s="100px" w_m='300px'>
+    <div>A</div>
+    <div>B</div>
+    <div>C</div>
+    <div>D</div>
+    <Grid s=1 m=2 l=3 w_s="50px" w_m='100px' w_l='120px'>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+    </Grid>
+</Grid>
+
+<TestButton>
+
+![!](./image.avif)
+
+<img src="./image.avif" />
+
+</TestButton>
+
+
+<style>
+    div {
+        background: red;
+    }
+    </style>

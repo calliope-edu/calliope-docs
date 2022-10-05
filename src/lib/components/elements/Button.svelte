@@ -1,9 +1,10 @@
 <script>
-    import { browser } from '$app/environment';
-    import IconExternalLink from '~icons/ri/external-link-line'
-    import IconDownloadLink from '~icons/ri/download-cloud-2-line'
+    // import { browser } from '$app/environment';
+    // import IconExternalLink from '~icons/ri/external-link-line'
+    // import IconDownloadLink from '~icons/ri/download-cloud-2-line'
 
-    export let text = '';
+    let browser =false;
+    export let text = 'a';
     export let link = '';
     export let type = 'default'; // default | border
     export let color = 'slate-600'; // grey | calliope | ...
@@ -28,12 +29,12 @@
         {text}
         {#if !isInternal}
             <div class="pl-3">
-                <IconExternalLink />
+                <!-- <IconExternalLink /> -->
             </div>
         {/if}
         {#if isDownload}
             <div class="pl-3">
-                <IconDownloadLink />
+                <!-- <IconDownloadLink /> -->
             </div>
         {/if}
     </div>

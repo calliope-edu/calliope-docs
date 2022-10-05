@@ -1,5 +1,5 @@
 <script>
-    export let h = 1;;
+    export let h = 1;
 </script>
 
 <div style="--h: {h}rem"></div>
