@@ -39,14 +39,23 @@ export let gap = '1rem';
     /* grid-template-columns: repeat(var(--rows), 1fr); */
     grid-template-columns:
     repeat(auto-fill,
-      minmax(clamp(clamp(clamp(  
-            100%/(var(--rows_l) + 1) + 0.1%,
+      minmax(
+        clamp(
+          clamp(
+            clamp(  
+              100%/(var(--rows_l) + 1) + 0.1%,
               (var(--w_l) - 100%)*1000,
-            100%/(var(--rows_m) + 1) + 0.1%), 
-              (var(--w_m) - 100%)*1000,
-            100%/(var(--rows_s) + 1) + 0.1%), 
-              (var(--w_s) - 100%)*1000,
-            100%), 1fr));
+              100%/(var(--rows_m) + 1) + 0.1%
+            ), 
+            (var(--w_m) - 100%)*1000,
+            100%/(var(--rows_s) + 1) + 0.1%
+          ), 
+          (var(--w_s) - 100%)*1000,
+          100%
+        ),
+        1fr
+      )
+    );
     }
     .grid-container > :global(*) {
         direction: initial;
