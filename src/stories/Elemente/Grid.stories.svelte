@@ -1,7 +1,7 @@
 <script>
     import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
 
-    import Grid from '../lib/components/layout/Grid.svelte'
+    import Grid from '../../lib/components/layout/Grid.svelte'
 
     let items = [...Array(12).keys()];
 
@@ -33,9 +33,9 @@
 
 <Story name="Default Grid" />
 
-<Story name="Small Gaps (gap=2px)" args={{gap: '2px'}}/>
+<Story name="Small Gaps (gap=2px)" args={{gap: '2px'}} />
 
-<Story name="Right-to-Left (direction:rtl)" args={{direction: 'rtl'}}/>
+<Story name="Right-to-Left (direction:rtl)" args={{direction: 'rtl'}} />
 
 <Story name="Rowspan">
     <Grid>
@@ -47,6 +47,18 @@
         <div style="grid-column: span 2;">6</div>
     </Grid>
 </Story>
+
+<Story name="Two Third">
+    <Grid s=1 m=3 l=3>
+        <div style="grid-column: span 2;">1</div>
+        <div>2</div>
+    </Grid>
+    <Grid  s=1 m=3 l=3 direction="rtl">
+        <div style="grid-column: span 2;">1</div>
+        <div>2</div>
+    </Grid>
+</Story>
+
 
 <Story name="Nested Grid">
     <Grid s=2>

@@ -2,7 +2,7 @@
     import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
 
 
-    import Gap from '../lib/components/layout/Gap.svelte'
+    import Gap from '../../lib/components/layout/Gap.svelte'
 
 
 </script>

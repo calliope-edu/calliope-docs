@@ -8,8 +8,10 @@ const config = {
 		sveltekit(),
 		imagetools({ force: true }),
 		Icons({
+			defaultStyle: '',
+			defaultClass: '',
 			compiler: 'svelte',
-		}),
+		  }),
 	],
 	// publicDir: 'static_' // gets overwritten by sveltekit
 };

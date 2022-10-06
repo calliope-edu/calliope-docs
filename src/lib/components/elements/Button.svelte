@@ -1,6 +1,6 @@
 <script>
-    // import IconExternalLink from '~icons/ri/external-link-line'
-    // import IconDownloadLink from '~icons/ri/download-cloud-2-line'
+    import IconExternalLink from '~icons/ri/external-link-line'
+    import IconDownloadLink from '~icons/ri/download-cloud-2-line'
 
     export let text = '';
     export let link = '';
@@ -27,12 +27,12 @@
         {text}
         {#if !isInternal}
             <div class="pl-3">
-                <!-- <IconExternalLink /> --> EXTERNAL LINK
+                <IconExternalLink />
             </div>
         {/if}
         {#if isDownload}
             <div class="pl-3">
-                <!-- <IconDownloadLink /> --> DOWNLOAD ICON
+                <IconDownloadLink />
             </div>
         {/if}
     </div>

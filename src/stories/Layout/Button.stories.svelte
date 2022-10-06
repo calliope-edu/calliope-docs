@@ -1,9 +1,8 @@
 <script>
+	import ProseDecorator from './../Decorators/ProseDecorator.svelte';
     import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
 
-
-    import Button from '../lib/components/elements/Button.svelte';
-
+    import Button from '../../lib/components/elements/Button.svelte';
 
 </script>
 
@@ -16,7 +15,9 @@
 />
 
 <Template let:args>
-    <Button {...args} />
+    <ProseDecorator>
+        <Button {...args} />
+    </ProseDecorator>
 </Template>
 
 <Story name="Default"  args={{text: "Button", link: '', type: 'default', color: 'slate-600'}} />
