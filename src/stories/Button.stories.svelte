@@ -23,4 +23,7 @@
 
 <Story name="Bordered" args={{text: "Button", link: './index.zip', type: 'border', color: 'calliope-500', download: "INDEX.zip"}}/>
 
+<Story name="External" args={{text: "Button", link: 'https://google.de'}}/>
+
+
 <Story name="None" args={{}}/>

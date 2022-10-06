@@ -1,21 +1,20 @@
 <script>
-    // import { browser } from '$app/environment';
+    import IconExternalLink from '~icons/ri/external-link-line'
     // import IconExternalLink from '~icons/ri/external-link-line'
     // import IconDownloadLink from '~icons/ri/download-cloud-2-line'
 
-    let browser =false;
     export let text = '';
     export let link = '';
     export let type = 'default'; // default | border
     export let color = 'slate-600'; // grey | calliope | ...
     export let download = false; // set download name
 
-    let a;
+    let a = false;
     $: linkParts = link.split('/').length;
     $: fileName = link.split('/').pop();
     
     $: downloadName = (download) ? download : ((isDownload) ? fileName : null);
-    $: isInternal = (browser) ? a?.host == window.location.host : true;
+    $: isInternal = (a) ? a?.host == window.location.host : true;
     $: isDownload = (fileName.indexOf('.') > -1) && !(!isInternal && linkParts <= 3) ? true : false;
     $: target = (isInternal) ? null : '_blank';
     
