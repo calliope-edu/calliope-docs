@@ -1,5 +1,4 @@
 <script>
-    import IconExternalLink from '~icons/ri/external-link-line'
     // import IconExternalLink from '~icons/ri/external-link-line'
     // import IconDownloadLink from '~icons/ri/download-cloud-2-line'
 
@@ -28,12 +27,12 @@
         {text}
         {#if !isInternal}
             <div class="pl-3">
-                <!-- <IconExternalLink /> -->
+                <!-- <IconExternalLink /> --> EXTERNAL LINK
             </div>
         {/if}
         {#if isDownload}
             <div class="pl-3">
-                <!-- <IconDownloadLink /> -->
+                <!-- <IconDownloadLink /> --> DOWNLOAD ICON
             </div>
         {/if}
     </div>
