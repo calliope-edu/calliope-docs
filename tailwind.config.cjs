@@ -31,6 +31,10 @@ module.exports = {
     {
       pattern: /(border|bg|text)-(slate|calliope)-.+/,
       variants: ['hover'],
+    },
+    {
+      pattern: /(slate|calliope)-.+/,
+      variants: ['hover'],
     }
   ]
 }

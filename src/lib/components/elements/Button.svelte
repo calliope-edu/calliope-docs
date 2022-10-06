@@ -4,7 +4,7 @@
     // import IconDownloadLink from '~icons/ri/download-cloud-2-line'
 
     let browser =false;
-    export let text = 'a';
+    export let text = '';
     export let link = '';
     export let type = 'default'; // default | border
     export let color = 'slate-600'; // grey | calliope | ...
