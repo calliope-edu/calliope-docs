@@ -17,7 +17,7 @@ module.exports = {
           '800': '#164E4F',
           '900': '#0A2323'
         },
-        'pink': {
+        'rosa': {
           DEFAULT: '#E6007D',
           '50': '#FF9FD3',
           '100': '#FF8ACA',
@@ -30,20 +30,20 @@ module.exports = {
           '800': '#3E0022',
           '900': '#060003'
         },
-        'blue': {
+        'blau': {
           DEFAULT: '#6476FD',
-          '50': '#FFFFFF',
-          '100': '#FFFFFF',
-          '200': '#DDE1FF',
-          '300': '#B5BDFE',
-          '400': '#8C9AFE',
-          '500': '#6476FD',
-          '600': '#2D45FC',
-          '700': '#031FEE',
-          '800': '#0218B6',
-          '900': '#02107F'
+          '50': '#F1F3FF',
+          '100': '#DDE1FF',
+          '200': '#B5BDFE',
+          '300': '#8C9AFE',
+          '400': '#6476FD',
+          '500': '#2D45FC',
+          '600': '#031FEE',
+          '700': '#0218B6',
+          '800': '#02107F',
+          '900': '#010948'
         },
-        'green': {
+        'gruen': {
           DEFAULT: '#3FC863',
           '50': '#CEF1D7',
           '100': '#BEECCA',
@@ -56,20 +56,20 @@ module.exports = {
           '800': '#154A23',
           '900': '#091E0E'
         },
-        'purple': {
+        'lila': {
           DEFAULT: '#8073E5',
-          '50': '#FFFFFF',
-          '100': '#FDFDFF',
-          '200': '#DEDAF8',
-          '300': '#BEB8F2',
-          '400': '#9F95EB',
-          '500': '#8073E5',
-          '600': '#5544DC',
-          '700': '#3624C3',
-          '800': '#291C94',
-          '900': '#1C1365'
+          '50': '#EDEBFB',
+          '100': '#DEDAF8',
+          '200': '#BEB8F2',
+          '300': '#9F95EB',
+          '400': '#8073E5',
+          '500': '#5544DC',
+          '600': '#3624C3',
+          '700': '#291C94',
+          '800': '#1C1365',
+          '900': '#0F0A36'
         },
-        'yellow': {
+        'gelb': {
           DEFAULT: '#F7C425',
           '50': '#FDF4D6',
           '100': '#FDEFC2',
@@ -82,7 +82,7 @@ module.exports = {
           '800': '#705504',
           '900': '#392C02'
         },
-        'orange': {
+        'apricot': {
           DEFAULT: '#FF4600',
           '50': '#FFCBB8',
           '100': '#FFBCA3',
@@ -95,18 +95,18 @@ module.exports = {
           '800': '#571800',
           '900': '#1F0800'
         },
-        'gray': {
+        'grau': {
           DEFAULT: '#48525F',
-          '50': '#A4AEBA',
-          '100': '#99A3B1',
-          '200': '#828FA0',
-          '300': '#6B7A8D',
-          '400': '#5A6676',
-          '500': '#48525F',
-          '600': '#30363F',
-          '700': '#181B1F',
-          '800': '#000000',
-          '900': '#000000'
+          '50': '#D3D7DD',
+          '100': '#C7CDD5',
+          '200': '#B0B8C3',
+          '300': '#99A3B1',
+          '400': '#828FA0',
+          '500': '#6B7A8D',
+          '600': '#5A6676',
+          '700': '#48525F',
+          '800': '#30363F',
+          '900': '#181B1F'
         },
       },
       maxWidth: {
@@ -125,12 +125,13 @@ module.exports = {
     'bg-black',
     'text-slate-600',
     'hover:bg-slate-600',
+    { pattern: /font-(medium|bold|black)/ },
     {
-      pattern: /(border|bg|text)-(slate|calliope)-.+/,
+      pattern: /(border|bg|text)-(slate|calliope).*/,
       variants: ['hover'],
     },
     {
-      pattern: /(slate|calliope)-.+/,
+      pattern: /(calliope|rosa|blau|gruen|lila|gelb|apricot|grau).*/,
       variants: ['hover'],
     }
   ]

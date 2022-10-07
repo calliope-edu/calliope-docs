@@ -79,7 +79,6 @@
 
 <style>
     div {
-        padding: .1rem;
         background: grey;
         background-image: linear-gradient(to bottom right, grey , silver);
         text-align: center;

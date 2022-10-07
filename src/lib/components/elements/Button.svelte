@@ -5,7 +5,7 @@
     export let text = '';
     export let link = '';
     export let type = 'default'; // default | border
-    export let color = 'slate-600'; // grey | calliope | ...
+    export let color = 'grau'; // grey | calliope | ...
     export let download = false; // set download name
 
     let a = false;
@@ -25,6 +25,7 @@
     }'>
     <div class="flex items-center"> 
         {text}
+        <slot />
         {#if !isInternal}
             <div class="pl-3">
                 <IconExternalLink />
