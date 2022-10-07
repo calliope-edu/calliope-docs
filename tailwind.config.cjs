@@ -125,6 +125,8 @@ module.exports = {
     'bg-black',
     'text-slate-600',
     'hover:bg-slate-600',
+    'rounded',
+    { pattern: /rounded-(none|full|r-full|l-full)/ },
     { pattern: /font-(medium|bold|black)/ },
     {
       pattern: /(border|bg|text)-(slate|calliope).*/,

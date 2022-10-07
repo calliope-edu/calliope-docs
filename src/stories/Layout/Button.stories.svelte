@@ -10,9 +10,15 @@
     title="Elements/Button" 
     component={Button}
     argTypes={{
-        download: { description: 'Force a download `true` or provide a name' },
+        download: { control: {type: 'text'}, description: 'Definiert einen Namen für den Download.' },
         type: { options: ['default', 'border'],
                 control: { type: 'radio' },
+            },
+        color: { options: ['calliope', 'rosa', 'blau', 'gruen', 'lila', 'gelb', 'apricot', 'grau', 'regenbogen'],
+                control: { type: 'inline-radio' },
+            },
+        rounded: { options: ['full', 'none', 'l-full', 'r-full', 'rounded', ''],
+                control: { type: 'inline-radio' },
             }
     }}
 />
@@ -25,28 +31,43 @@
     </ProseDecorator>
 </Template>
 
-<Story name="Default" args={{type: 'default', link: ''}} />
+<Story name="Default" args={{type: 'default', link: '//google.de/sample.hex', download: 'Beispiel.hex', color: 'grau', rounded: 'full'}} />
 
 <Story name="Farben">
-    <Button color='calliope'>Button</Button>
-    <Button color='rosa'>Button</Button>
-    <Button color='blau'>Button</Button>
-    <Button color='gruen'>Button</Button>
-    <Button color='lila'>Button</Button>
-    <Button color='gelb'>Button</Button>
-    <Button color='apricot'>Button</Button>
-    <Button color='grau'>Button</Button>
+    <Button color='calliope'>Calliope</Button>
+    <Button color='rosa'>Rosa</Button>
+    <Button color='blau'>Blau</Button>
+    <Button color='gruen'>Gruen</Button>
+    <Button color='lila'>Lila</Button>
+    <Button color='gelb'>Gelb</Button>
+    <Button color='apricot'>Apricot</Button>
+    <Button color='grau'>Grau</Button>
+    <Button color='regenbogen'>Grau</Button>
 </Story>
 
 <Story name="Rahmen">
-    <Button type='border' color='calliope'>Button</Button>
-    <Button type='border' color='rosa'>Button</Button>
-    <Button type='border' color='blau'>Button</Button>
-    <Button type='border' color='gruen'>Button</Button>
-    <Button type='border' color='lila'>Button</Button>
-    <Button type='border' color='gelb'>Button</Button>
-    <Button type='border' color='apricot'>Button</Button>
-    <Button type='border' color='grau'>Button</Button>
+    <Button type='border' color='calliope'>Calliope</Button>
+    <Button type='border' color='rosa'>Rosa</Button>
+    <Button type='border' color='blau'>Blau</Button>
+    <Button type='border' color='gruen'>Gruen</Button>
+    <Button type='border' color='lila'>Lila</Button>
+    <Button type='border' color='gelb'>Gelb</Button>
+    <Button type='border' color='apricot'>Apricot</Button>
+    <Button type='border' color='grau'>Grau</Button>
+    <Button type='border' color='regenbogen'>Grau</Button>
+</Story>
+
+<Story name="Rundung">
+    <Button rounded='l-full'>Links Full</Button>
+    <Button rounded='none'>None</Button>
+    <Button rounded='r-full'>Rechts Full</Button>
+
+    <Button rounded='full'>Full</Button>
+
+    <Button rounded='rounded'>Rounded</Button>
+    <Button rounded=''>Rounded</Button>
+
+    
 </Story>
 
 <Story name="Link Arten">
@@ -61,6 +82,8 @@
 <Story name="Buttoninhalt definieren">
     <Button>Slot</Button>
     <Button text="Prop"></Button>
-    <Button link="//google.de"><img src='https://calliope.cc/assets/images/calliope_logo.png' alt='' /></Button>
+    <Button link="//google.de" rounded='none'>
+        <img src='https://calliope.cc/assets/images/calliope_logo.png' alt='' />
+    </Button>
 
 </Story>
