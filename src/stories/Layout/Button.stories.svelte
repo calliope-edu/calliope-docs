@@ -42,7 +42,7 @@
     <Button color='gelb'>Gelb</Button>
     <Button color='apricot'>Apricot</Button>
     <Button color='grau'>Grau</Button>
-    <Button color='regenbogen'>Grau</Button>
+    <Button color='regenbogen'>Regenbogen</Button>
 </Story>
 
 <Story name="Rahmen">
@@ -54,7 +54,7 @@
     <Button type='border' color='gelb'>Gelb</Button>
     <Button type='border' color='apricot'>Apricot</Button>
     <Button type='border' color='grau'>Grau</Button>
-    <Button type='border' color='regenbogen'>Grau</Button>
+    <Button type='border' color='regenbogen'>Regenbogen</Button>
 </Story>
 
 <Story name="Rundung">
@@ -77,12 +77,15 @@
     <Button link="./sample.hex">Download Link</Button>
     <Button link="./sample.hex" download="Beispiel.hex">Download Namen Setzen</Button>
     <Button link="//google.de/sample.hex">Externer Download Link</Button>
+
+    <Button link="//google.de/sample.hex" color="regenbogen">Externer Download Link Regenbogen</Button>
+    <Button link="//google.de/sample.hex"color="regenbogen" type="border">Externer Download Link Border Regenbogen</Button>
 </Story>
 
 <Story name="Buttoninhalt definieren">
     <Button>Slot</Button>
     <Button text="Prop"></Button>
-    <Button link="//google.de" rounded='none'>
+    <Button link="//google.de" rounded='' color="regenbogen">
         <img src='https://calliope.cc/assets/images/calliope_logo.png' alt='' />
     </Button>
 

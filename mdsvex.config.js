@@ -13,7 +13,7 @@ const config = defineConfig({
 	layout: {
 		_: "./src/lib/mdsvex/layouts/default.svelte"
 	},
-	extensions: ['.svelte.md', '.md', '.svx'],
+	extensions: ['.svelte.md', '.md', '.svx', '.page'],
 
 	smartypants: {
 		

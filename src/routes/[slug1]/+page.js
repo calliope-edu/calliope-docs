@@ -19,7 +19,7 @@ export async function load({ url, fetch, params }) {
 
 	let Page;
 
-	const pages = await import.meta.globEager(`../../content/{[!index]*,*/index}{.,.de.,.en.}md`)
+	const pages = await import.meta.globEager(`../../content/{[!index]*,*/index}{.,.de.,.en.}page`)
 
 	console.log(pages)
 

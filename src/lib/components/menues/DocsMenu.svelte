@@ -46,8 +46,8 @@ import { slugFromPath } from '$lib/util';
 
 // Dummy menu for SSR
 const modules = {
-    ...import.meta.glob(`../../../content/docs/{[!index]*,*/index}{.,.de.,.en.}md`),
-    ...import.meta.glob(`../../../content/docs/*/{[!index]*,*/index}{.,.de.,.en.}md`)
+    ...import.meta.glob(`../../../content/docs/{[!index]*,*/index}{.,.de.,.en.}page`),
+    ...import.meta.glob(`../../../content/docs/*/{[!index]*,*/index}{.,.de.,.en.}page`)
 }
 let posts = {};
 

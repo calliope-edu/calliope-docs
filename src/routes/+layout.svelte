@@ -1,4 +1,5 @@
 <script>
+	export const prerender = true
 	import PageHeader from '$lib/components/layout/PageHeader.svelte';
 	import PageFooter from '$lib/components/layout/PageFooter.svelte';
 	import lazyload from 'vanilla-lazyload';
