@@ -21,11 +21,6 @@
       active = ($current[group] === item);
     }
 
-    // let mounted
-    // onMount(() => {
-    //     mounted = true 
-    // })
-
     const dispatch = createEventDispatcher();
 
     function handleClick(event) {
@@ -85,7 +80,7 @@
       
   <!-- {/if} -->
 
-  <!-- <noscript>
+  <noscript>
       <span class='flex'>
         <details class="title">
             <summary>
@@ -96,7 +91,7 @@
             </slot>
         </details>
       </span>
-  </noscript> -->
+  </noscript>
 
 
 <style lang="scss">
