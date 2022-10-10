@@ -30,15 +30,17 @@
 
 <Story name="Simple usage">
 
+<div>
     <h2>Nicht schließbare Gruppe</h2>
     <UnfoldItem title="Lorem Ipsum" group='A' noclose active>
         Dolor ist amed
     </UnfoldItem>
 
-    <UnfoldItem title="Lorem Ipsum"  group='A' noclose active>
+    <UnfoldItem title="Lorem Ipsum"  group='A' noclose>
         Dolor ist amed
     </UnfoldItem>
-
+</div>
+<div>
     <h2>Gruppe</h2>
     <UnfoldItem title="Lorem Ipsum" group='B' active>
         Dolor ist amed
@@ -47,7 +49,8 @@
     <UnfoldItem title="Lorem Ipsum" group='B'>
         Dolor ist amed
     </UnfoldItem>
-
+</div>
+<div>
     <h2>Voneinander unabhängie elemente</h2>
     <UnfoldItem title="Lorem Ipsum">
         Dolor ist amed
@@ -60,7 +63,7 @@
     <UnfoldItem title="Lorem Ipsum">
         Dolor ist amed
     </UnfoldItem>
-
+</div>
 
 </Story>
 
