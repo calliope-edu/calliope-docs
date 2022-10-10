@@ -46,7 +46,7 @@
 
   <!-- {#if mounted} -->
   <span class='flex' bind:this={item}>
-    <div class="item" class:active={active}>
+    <div class="item" class:active class:noclose>
 
           <span class="before">
             <slot name="before"></slot>
@@ -132,6 +132,12 @@ align-items: center
       .btn svg {
         transform: scaleY(-1);
       }
+
+      &.noclose {
+        .btn svg {
+          opacity: .4;
+        }
+      }
     }
 
     .btn {
@@ -149,7 +155,7 @@ align-items: center
       }
 
       svg {
-        transition: transform 0.2s;
+        transition: all 0.2s;
       }
 
       & + .description {
