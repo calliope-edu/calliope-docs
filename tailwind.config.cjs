@@ -129,7 +129,7 @@ module.exports = {
     { pattern: /rounded-(none|full|r-full|l-full)/ },
     { pattern: /font-(medium|bold|black)/ },
     {
-      pattern: /(border|bg|text)-(slate|calliope).*/,
+      pattern: /(border|bg|text|fill|stroke)-(slate|calliope).*/,
       variants: ['hover'],
     },
     {

@@ -2,15 +2,13 @@
     import IconExternalLink from '~icons/ri/external-link-line'
     import IconDownloadLink from '~icons/ri/download-cloud-2-line'
 
-    export let text = '';
+    export let text = ''; //
     export let link = '';
     export let type = 'default'; // default | border
-    export let color = 'grau'; // grey | calliope | ...
+    export let color = 'grau';
     export let download = false; // set download name
-    export let rounded = 'full'
+    export let rounded = 'full';
     $: roundedClass = (rounded == '' || rounded == 'rounded') ? 'rounded' : `rounded-${rounded}`;
-
-    
 
     let a = false;
     $: linkParts = link.split('/').length;
@@ -31,12 +29,13 @@
     :
         type == 'default' ? 
             `text-white rainbow rainbow-fill` : 
-            `rainbow rainbow-border bg-white hover:text-white hover:bg-${color}`
+            `rainbow rainbow-border bg-white hover:text-white`
     }'>
     <div class="flex items-center py-1 px-6">
             <span class="{(color=='regenbogen' && type=='border') ? 'text-transparent group-hover:text-white bg-clip-text rainbow-text' : ''}">
-                {text}
-                <slot />
+                <slot>
+                  {text}
+                </slot>
             </span>
             
             {#if !isInternal}
