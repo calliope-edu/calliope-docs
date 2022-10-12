@@ -6,5 +6,7 @@
 <slot></slot></div>
 
 <style>
-
+	.container > h1 {
+		margin-bottom: 0px !important;
+	}
 </style>
