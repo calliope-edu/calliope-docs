@@ -44,27 +44,40 @@
 
 <Story name='Gruppen'>
     <div class="prose">
-        <h2>Gruppe B</h2>
-        <UnfoldItem title="Lorem Ipsum" group='B' active>
+        <h2>Gruppe A</h2>
+        <UnfoldItem title="Lorem Ipsum" group='A' active>
             Dolor sit amed
         </UnfoldItem>
-        <UnfoldItem title="Lorem Ipsum" group='B'>
+        <UnfoldItem title="Lorem Ipsum" group='A'>
             Dolor sit amed
         </UnfoldItem>
-        <UnfoldItem title="Lorem Ipsum" group='B'>
+        <UnfoldItem title="Lorem Ipsum" group='A'>
             Dolor sit amed
         </UnfoldItem>
     </div>
 
     <div class="prose">
-        <h2>Gruppe A (noclose) </h2>
-        <UnfoldItem title="Lorem Ipsum" group='A' noclose active>
+        <h2>Gruppe B (noclose) </h2>
+        <UnfoldItem title="Lorem Ipsum" group='B' noclose active>
             Dolor sit amed
         </UnfoldItem>
-        <UnfoldItem title="Lorem Ipsum"  group='A' noclose>
+        <UnfoldItem title="Lorem Ipsum"  group='B' noclose>
             Dolor sit amed
         </UnfoldItem>
-        <UnfoldItem title="Lorem Ipsum"  group='A' noclose>
+        <UnfoldItem title="Lorem Ipsum"  group='B' noclose>
+            Dolor sit amed
+        </UnfoldItem>
+    </div>
+
+    <div class="prose">
+        <h2>Noch mal Gruppe A</h2>
+        <UnfoldItem title="Lorem Ipsum" group='A'>
+            Dolor sit amed
+        </UnfoldItem>
+        <UnfoldItem title="Lorem Ipsum" group='A'>
+            Dolor sit amed
+        </UnfoldItem>
+        <UnfoldItem title="Lorem Ipsum" group='A'>
             Dolor sit amed
         </UnfoldItem>
     </div>
