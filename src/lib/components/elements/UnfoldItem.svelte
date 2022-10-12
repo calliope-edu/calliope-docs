@@ -1,5 +1,6 @@
 <script context="module">
   import { writable } from 'svelte/store';
+  import ExpandIcon from '~icons/ri/arrow-down-s-line'
   const current = writable({});
 </script>
 
@@ -14,6 +15,7 @@
     export let controlled = false;
     export let group = '';
     export let noclose = false;
+    export let color = 'grau';
     let item;
     let opened = active;
 
@@ -45,25 +47,18 @@
 </script>
 
   <!-- {#if mounted} -->
-  <span class='flex' bind:this={item}>
+  <span class='flex border-{color}' bind:this={item}>
     <div class="item" class:active class:noclose>
 
-          <span class="before">
+          <span class="before text-{color}">
             <slot name="before"></slot>
           </span>
 
-          <div on:click={handleClick} class='btn'>
+          <div on:click={handleClick} class='btn text-{color}'>
               <slot name='title'>{title}</slot>
-              <svg
-              width="16"
-              height="9"
-              viewBox="0 0 16 9"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                  d="M7.69582 7.43966L8.03537 7.75362L8.37483 7.43957L15.3174 1.01671L15.4399 1.12995L8.03171 7.98328L0.625303 1.1316L0.749564 1.0167L7.69582 7.43966ZM15.5351 1.21799C15.5351 1.21796 15.5351 1.21794 15.535 1.21791L15.5351 1.21799Z"
-                  class="fill-calliope stroke-calliope" />
-              </svg>
+              <div class='icon'>
+                <ExpandIcon width="64" height="32" />
+            </div>
           </div>
         
           {#if active}
@@ -117,7 +112,7 @@ align-items: center
     align-items: start;
 
        &:not(:last-child) {
-        border-bottom: 1px solid #eee;
+        border-bottom-width: 1px;
     }
 
     .before {
@@ -129,12 +124,12 @@ align-items: center
     width: 100%;
 
     &.active {
-      .btn svg {
+      .btn .icon {
         transform: scaleY(-1);
       }
 
       &.noclose {
-        .btn svg {
+        .btn .icon {
           opacity: .4;
         }
       }
@@ -154,7 +149,7 @@ align-items: center
         text-align: left;
       }
 
-      svg {
+      .icon {
         transition: all 0.2s;
       }
 
