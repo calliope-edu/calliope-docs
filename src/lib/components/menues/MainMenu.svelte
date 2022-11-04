@@ -58,7 +58,7 @@ class={clsx('w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg
 		{#each pages as {url, name, sub, subHover = false}}
 			<li class="mr-3 group" class:active={active.startsWith(url)}
 			on:mouseenter={()=>{subHover=true}} on:mouseleave={()=>{subHover=false}} >
-				<svelte:element this="{(sub.length) ? 'div' : 'a'}" tabindex="0" sveltekit:prefetch href={url} on:click={()=>{if(!sub.length) active=url;}} class="link inline-block py-2 px-4 no-underline cursor-pointer" on:focus={()=>{subHover=true}} on:blur={()=>{subHover=false}}>
+				<svelte:element this="{(sub.length) ? 'button' : 'a'}" tabindex="0" sveltekit:prefetch href={url} on:click={()=>{if(!sub.length) active=url;}} class="link inline-block py-2 px-4 no-underline cursor-pointer" on:focus={()=>{subHover=true}} on:blur={()=>{subHover=false}}>
 					{name}
 					{#if sub.length}
 						<svg class="fill-current h-4 w-4 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
