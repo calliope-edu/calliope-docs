@@ -40,8 +40,7 @@
 		{url: '/community/', name: 'Community', sub: []},
 		{url: '/articles/', name: 'Blog', sub: []},
 		{url: '/docs/', name: 'Docs', sub: []},
-		
-	]
+	];
 </script>
 
 <div class="block lg:hidden pr-4">
@@ -57,8 +56,9 @@
 class={clsx('w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg:mt-0 md:bg-transparent z-20', addBg && 'bg-white', !addBg && 'bg-gray-100')}>
 	<ul class="list-reset lg:flex justify-end flex-1 items-center" on:click={()=>{menuOpen = false;}}>
 		{#each pages as {url, name, sub, subHover = false}}
-			<li class="mr-3 group" class:active={active.startsWith(url)} on:mouseenter={()=>{subHover=true}} on:mouseleave={()=>{subHover=false}}>
-				<svelte:element this="{(sub.length) ? 'div' : 'a'}" sveltekit:prefetch href={url} on:click={()=>{if(!sub.length) active=url;}} class="link inline-block py-2 px-4 no-underline cursor-pointer">
+			<li class="mr-3 group" class:active={active.startsWith(url)}
+			on:mouseenter={()=>{subHover=true}} on:mouseleave={()=>{subHover=false}} >
+				<svelte:element this="{(sub.length) ? 'div' : 'a'}" tabindex="0" sveltekit:prefetch href={url} on:click={()=>{if(!sub.length) active=url;}} class="link inline-block py-2 px-4 no-underline cursor-pointer" on:focus={()=>{subHover=true}} on:blur={()=>{subHover=false}}>
 					{name}
 					{#if sub.length}
 						<svg class="fill-current h-4 w-4 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
@@ -67,9 +67,9 @@ class={clsx('w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg
 				{#if sub.length && subHover}
 					<!-- <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 w-min-content group-hover:block shadow-md"> -->
 					<ul class="dropdown-menu absolute text-gray-700 pt-1 w-min-content shadow-md" transition:fade={{duration:100}}>
-						{#each sub as p,i}
+						{#each sub as p,j}
 							<li class:active={active.startsWith(p.url)}>
-								<a sveltekit:prefetch href={p.url} on:click={()=>{active=p.url}} class="link {(i===1) ? 'rounded-t' : (i===sub.length) ? 'rounded-b' : ''} bg-white hover:bg-gray-100 py-2 px-4 block whitespace-no-wrap w-full">{p.name}</a>
+								<a sveltekit:prefetch href={p.url} on:click={()=>{active=p.url}} tabindex="0" class="link {(j===1) ? 'rounded-t' : (j===sub.length) ? 'rounded-b' : ''} bg-white hover:bg-gray-100 py-2 px-4 block whitespace-no-wrap w-full" on:focus={()=>{subHover=true}} on:blur={()=>{subHover=false}}>{p.name}</a>
 							</li>
 						{/each}
 					</ul>
