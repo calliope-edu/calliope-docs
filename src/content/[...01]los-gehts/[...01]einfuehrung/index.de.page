@@ -126,10 +126,8 @@ Wir haben einige andere Mikrocontroller mit Kindern ausprobiert und am Ende war 
         
         Was macht ihn so besonders? Hier findet ihr eine genaue Beschreibung: [Was für Eingabe- und was für Ausgabemöglichkeiten gibt es?](./calliope-mini/uebersicht) 
 
-        <Grid>
-            <Button link="./files/calliopemini_poster_hardware.pdf" color="gelb">Poster</Button>
-            <Button link="./files/calliope-mini_ab_sus.pptx" color="gelb">Arbeitsmaterial Calliope mini</Button>
-        </Grid>
+        <Button link="./files/calliopemini_poster_hardware.pdf" color="gelb">Poster</Button>
+        <Button link="./files/calliope-mini_ab_sus.pptx" color="gelb">Arbeitsmaterial Calliope mini</Button>
 
     </div>
 </Grid>

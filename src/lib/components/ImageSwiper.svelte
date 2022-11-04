@@ -72,7 +72,7 @@
         z-index: 2;
         height: 400px;
         top: 0;
-        right: -120px;
+        right: 0px;
         border: none;
         width: 100px;
         background: none;
