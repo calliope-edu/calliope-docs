@@ -64,7 +64,7 @@
     <Grid s=2>
         <div>1</div>
         <div>2</div>
-        <div><Grid s=2 >
+        <div><Grid w_s="0px" >
             <div>1</div>
             <div>2</div>
             <div>3</div>

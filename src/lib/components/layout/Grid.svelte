@@ -1,10 +1,10 @@
 <script>
-export let s = 1;
+export let s = 2;
 export let m = s;
-export let l = m*2;
-export let w_l = '800px';
-export let w_m = '600px';
-export let w_s = '0px';
+export let l = m;
+export let w_l = '900px';
+export let w_m = '700px';
+export let w_s = '500px';
 export let direction = 'ltr';
 export let styles = '';
 export let gap = '1rem';

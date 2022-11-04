@@ -4,6 +4,7 @@ const scripts = `
     import Gap from '$lib/components/layout/Gap.svelte';
     import Grid from '$lib/components/layout/Grid.svelte';
     import ImageSwiper from '$lib/components/ImageSwiper.svelte';
+    import { SwiperSlide } from 'swiper/svelte';
     // import Box from '$lib/components/Box.svelte';
 
     import Button from '$lib/components/elements/Button.svelte'

@@ -1,0 +1,215 @@
+Title: Intro
+
+----
+
+Slug: intro
+
+----
+
+Hidepage: false
+
+----
+
+Headline: Calliope mini - How to get started
+
+----
+
+Subline: 
+
+----
+
+Text:
+
+(columns...)
+
+(image: calliopemini-preview.svg)
+
+**Everything about Calliope mini**
+Why did we develop the Calliope mini? Why is the Calliope mini particularly suitable for use at school?  And what exactly is the Calliope mini? What is on the board and what do the most important components do?
+
+(cta: #yellow  text: More &#10230; color: yellow)
+
+++++
+
+(image: project_preview.gif)
+
+**Facts about the Calliope project**
+An important part of our work involves networking among teachers and supporting the Open Educational Resources movement so that teachers can help themselves with freely available information and documents.
+
+(cta: #blue text: More &#10230; color: turquoise)
+
+++++
+
+(image: header-green.svg)
+
+**Convincing the teaching staff**
+You think the Calliope mini is great and would like to use it at your school? Then it is helpful to find fellow students. Here we have put together some materials that might be helpful in your work with colleagues and answer related questions.
+
+(cta: #green  text: More &#10230; color: green)
+
+(…columns)
+
+(anchor: yellow)
+<div class="a"><p1><b>Everything about Calliope mini</b></p1></div>
+(pushdown:20)
+
+We tried some other microcontrollers with primary school children and in the end it was clear: We need a board that the children can handle without easily producing short circuits. A board that teachers, pupils and students can use in the classroom without necessarily having to distribute and solder other small parts. A board that is loud and colourful. And last but not least, we also need the possibility for children and teachers to bring the minicomputer to life with a simple programming language.
+
+(columns...)
+
+(image: poster_yellow.gif)
+
+++++
+
+## Calliope mini - what is it?
+There are single-board computers that you can use to solve problems, implement ideas or just to create fun projects using code and hardware. The Calliope mini is designed to be used by children from the third grade on. What makes it so special? Here's a detailed description: (link: https://calliope.cc/en/calliope-mini/features text: What input and output options are there?)
+
+(cta: dateien/pdf/en_poster_hello_mini.pdf text:Poster )
+
+
+(...columns)
+
+(pushdown: 30)
+
+(columns...)
+
+## What else do I need?
+The Calliope mini is not a complete computer - it's a microcontroller. In order for the mini to do what it is told, you need a programming environment. You can write programs in this environment and then transfer them to the Calliope mini. 
+We call this programming environment the Editor. Whether you use it on a mobile or desktop computer, there are different ways to program the Calliope mini. Take a closer look at the different editors and find the right one for your project.
+
+(cta:https://calliope.cc/en/coding/editors text:Editors)
+
+++++
+
+(image: editoren_transparent.png)
+
+(...columns)
+
+(pushdown:30)
+
+(columns...)
+
+(image: betterplace_calliope_klassensatz.jpg)
+
+++++
+
+## Where can I buy the Calliope mini?
+We produce in Germany and sell the Calliope mini internationally through a variety of dealers. 
+
+(cta: https://calliope.cc/en/calliope-mini/shops text:Shops)
+
+(...columns)
+
+(anchor: blue)
+<div class="b"><p1><b>Facts about the Calliope project</b></p1></div>
+(pushdown:20)
+
+We are convinced that education should be easily accessible for all. Regardless of the size of the parents' wallets or the school the child goes to. This is why Calliope gGmbH is committed to the topic of "open knowledge". We are an Open Hardware and an Open Software project. This means, for example, that you can take the board layout and build your own board or that you can adapt the software to meet individual requirements. We want to encourage exchange or even small and large collaborations on all project levels!
+
+(columns...)
+
+## The Calliope mini-community
+When you work with the Calliope mini, you are probably breaking new ground in some areas. This makes it all the more important to exchange ideas with other people, for example about the best projects you've done with your class, the best way to explain the concept of the loop, or to find out where to get the right sensor for your planned project. This is what the (link:https://forum.calliope.cc/ text:Calliope Forum class:blue target: _blank) is for. 
+If you want to exchange project ideas (link:https://www.hackster.io/calliope-mini text:hackster.io class:blue target: _blank) or - if you want to have a closer look at the technical details or want to help improving the mini - have a look at (link:https://github.com/calliope-mini text:github class:blue target:_blank). 
+And of course we'll be happy to answer questions from the community and are looking forward to receiving projects you want to submit (email: info@calliope.cc text:email to the Calliope team class:blue).
+
+(cta: https://calliope.cc/en/community text:Calliope Community color:turquoise)
+
+++++
+
+(image: community_pic.png)
+
+(...columns)
+
+(anchor: green)
+<div class="c"><p1><b>Convincing the teaching staff</b></p1></div>
+(pushdown:20)
+
+At best, the Calliope mini's use at school does not rest on one's own shoulders, but is driven forward by a network of interested parties. In this way, it is possible to exchange ideas, develop interdisciplinary (sub-)projects and establish the mini in the school in the long term. In order to win over comrades-in-arms, we have compiled information, substantiations and practical summaries here. 
+
+(columns...)
+
+(image: calliope-2558_edit2.jpg)
+
+++++
+
+## Coding from primary school on
+We have summarized five reasons why - from our point of view - coding belongs in primary school. 
+But not only in primary school, but also in secondary schools, coding is an important part of contemporary education. After all, school is the place where the knowledge and skills needed by responsible citizens are taught in social settings. An important component of this is the experience of self-efficacy. An insight that we always wish for when working with the mini: "I can determine what a computer does". And last but not least: "I can help shape the digital world!"
+
+(cta: https://calliope.cc/en/lets-start/mission text:Five reasons color: green)
+
+(...columns)
+
+(pushdown: 20)
+
+(columns...)
+
+## Prepared information about the Calliope project
+There are many different reasons why you might need support for your own project: as help in class, as a financial supporter or simply to strengthen your back. Here we have put together various materials that you can use when you want to tell others about the mini. 
+
+(cta: dateien/pdf/en_calliope_flyer_v1.pdf text: Flyer &#040;PDF&#041;  color: green target: _blank) (cta: dateien/pdf/-1111867712-1599059830/en_project_brief_calliope_project.pdf text: Project brief color: green target: _blank) 
+
+++++
+
+(image: fyler_green.gif)
+
+(...columns)
+
+(zigzag:true)
+(pushdown:20)
+(center…)
+
+
+(image: smiley_green.svg height:100)
+You have now learned some information about the Calliope project.<br>
+On the next page we connect the Calliope mini to the power and prepare for coding. (pushdown: 40)
+(cta:https://calliope.cc/en/lets-start/first-steps text: Preparation for coding color: green)
+
+(…center)
+(pushdown:20)
+
+<style>
+p1{
+font-size: 150%;
+font-family: 'Roboto Mono';
+color: #FFFFFF;
+}
+div.a {
+text-align: center;
+width: 100%;
+box-sizing: border-box;
+background-color:#F7C425;
+padding-top:12px;
+padding-bottom:8px;
+}
+div.b {
+text-align: center;
+width: 100%;
+box-sizing: border-box;
+background-color:#42c9c9;
+padding-top:12px;
+padding-bottom:8px;
+}
+div.c {
+text-align: center;
+width: 100%;
+box-sizing: border-box;
+background-color:#3FC863;
+padding-top:12px;
+padding-bottom:8px;
+}
+</style>
+<link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+
+----
+
+Secondary-nav: true
+
+----
+
+Securedpageenabled: false
+
+----
+
+Securedpageroles: 

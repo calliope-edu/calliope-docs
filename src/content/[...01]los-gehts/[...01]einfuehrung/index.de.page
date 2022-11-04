@@ -1,0 +1,281 @@
+---
+title: "Einführung"
+description: "Calliope mini - Informationen zum Einstieg"
+template: 
+published: true
+---
+
+
+
+# CALLIOPE MINI - INFORMATIONEN ZUM EINSTIEG
+
+<Grid m=3>
+    <div>
+
+        ![!](./img/calliopemini-preview.svg)
+
+        **Alles zum Calliope mini**
+
+        Warum haben wir den Calliope mini entwickelt? Warum kann man den Calliope mini besonders gut in der Schule einsetzen?  Und was genau ist eigentlich der Calliope mini? Was ist auf dem Board alles drauf und was machen die wichtigsten Komponenten überhaupt?
+
+        <Button link="#yellow" color="gelb">Mehr &#10230;</Button>
+
+    </div>
+    <div>
+
+        ![!](./img/project_preview.gif)
+
+        **Wissenswertes zum Calliope-Projekt**
+
+        Ein wichtiger Teil unserer Arbeit beinhaltet die Vernetzung der Lehrer*innen untereinander und die Unterstützung der Open Educational Resources-, Open Hardware- und Open Software-Bewegung, damit Bildung von allen zusammen gestaltbar ist.
+
+        <Button link="#blue" color="calliope">Mehr &#10230;</Button>
+
+    </div>
+    <div>
+
+        ![!](./img/header-green.svg)
+
+        **Das Kollegium überzeugen**
+
+        Du findest den Calliope mini toll und möchtest ihn an deiner Schule einsetzen? Dann ist es hilfreich, Mitstreiter*innen zu finden. Hier haben wir dir Materialien zusammengestellt, die in der Arbeit mit dem Kollegium hilfreich sein könnten und damit zusammenhängende Fragen beantworten.
+
+        <Button link="#green" color="gruen">Mehr &#10230;</Button>
+
+    </div>
+</Grid>
+
+<Gap h=6 />
+
+<script>
+    import Swiper from '$lib/components/Swiper.svelte'
+</script>
+
+<Swiper>
+        <SwiperSlide>
+
+            [![!](./wird_5/calliope_mini_wird5_1.gif)](./los-geht-s/einfuehrung)
+
+        </SwiperSlide>
+        <SwiperSlide>
+
+            [![!](./wird_5/calliope_mini_wird5_2.png)](./schulen/schulmaterial)
+
+        </SwiperSlide>
+        <SwiperSlide>
+
+            [![!](./wird_5/calliope_mini_wird5_3.png)](./projekte)
+
+        </SwiperSlide>
+        <SwiperSlide>
+
+            [![!](./wird_5/calliope_mini_wird5_4.gif)](./calliope-mini/uebersicht)
+
+        </SwiperSlide>
+        <SwiperSlide>
+
+            <!-- [![!](./wird_5/calliope_mini_wird5_5.gif)](./schulen/fortbildungen) -->
+
+        </SwiperSlide>
+        <SwiperSlide>
+
+            [![!](./wird_5/calliope_mini_wird5_6.gif)](./calliopeo)
+
+        </SwiperSlide>
+</Swiper>
+
+
+
+<div style="text-align: center; max-width:600px; margin:auto;">
+
+    ## Persönlichen Online-Termin vereinbaren
+
+    Ihr habt euch einen Klassensatz beschafft oder seid kurz davor, habt aber noch Fragen?
+    Wir bieten individuelle Online-Termine an, um über Themen zu informieren, die euch interessieren, wie z.B. 
+    die Unterschiede zwischen dem Klassensatz GS und SEK I, Programmierumgebungen und Unterrichtsmaterial.
+
+    <Button link="./formulare/klassensatz-support/" color='rosa'>Termin vereinbaren</Button>
+
+</div>
+
+
+
+<div id="yellow" />
+<Gap h=6 />
+
+![!](./img/header_yellow.svg)
+
+Wir haben einige andere Mikrocontroller mit Kindern ausprobiert und am Ende war klar: Wir brauchen ein Board, mit dem die Kinder hantieren können, ohne dass sie leicht Kurzschlüsse produzieren. Ein Board, mit dem die Lehrkräfte, Schülerinnen und Schüler im Klassenraum loslegen können, ohne dass unbedingt noch andere Kleinteile verteilt und angelötet werden müssen. Ein Board, das laut und bunt ist. Und nicht zuletzt brauchen wir auch die Möglichkeit, dass die Kinder und die Pädagoginnen und Pädagogen auch mit einer einfachen Programmiersprache den Minicomputer zum Leben erwecken können.
+
+
+<Grid>
+
+<div>
+
+    ![!](./img/poster_yellow.gif)
+
+</div>
+<div>
+
+    ## Calliope mini - was ist das?
+
+    Es gibt Einplatinencomputer, die man nutzen kann, um mit Hilfe von Code und Hardware Probleme zu lösen, Ideen umzusetzen oder einfach um lustige Projekte zu verwirklichen. 
+
+    Der Calliope mini wurde extra so entwickelt, dass er schon von Kindern ab der dritten Klasse genutzt werden kann. 
+    
+    Was macht ihn so besonders? Hier findet ihr eine genaue Beschreibung: [Was für Eingabe- und was für Ausgabemöglichkeiten gibt es?](./calliope-mini/uebersicht) 
+
+    <Grid>
+        <Button link="./files/calliopemini_poster_hardware.pdf" color="gelb">Poster</Button>
+        <Button link="./files/calliope-mini_ab_sus.pptx" color="gelb">Arbeitsmaterial Calliope mini</Button>
+    </Grid>
+
+</div>
+<div>
+
+    ## Was brauche ich noch?
+
+    Der Calliope mini ist kein kompletter Computer - ein Mikrocontroller eben. Damit der mini macht, was man ihm sagt, braucht man eine Programmierumgebung. In der kann man Programme schreiben, die dann auf den Calliope mini übertragen werden. 
+    Diese Programmierumgebung nennen wir Editor. Egal ob mobil oder auf einem Desktop Rechner, es gibt unterschiedliche Möglichkeiten, den Calliope mini zu programmieren. Schau dir doch mal die einzelnen Editoren genauer an und finde den für dein Projekt Richtigen.
+
+    <Button link="./programmieren/editoren/" color="gelb">Editoren</Button>
+
+</div>
+<div>
+
+    ![!](./img/editoren_transparent.png)
+
+</div>
+<div>
+
+    ![!](./img/betterplace_calliope_klassensatz.jpg)
+
+</div>
+<div>
+
+    ## Wo kann ich den Calliope mini kaufen?
+
+    Wir produzieren in Deutschland und verkaufen den Calliope mini auch international über eine Vielzahl von Händlern. 
+
+    <Button link="./calliope-mini/shops/" color="gelb">Shops</Button>
+
+</div>
+</Grid>
+
+<div id="blue" />
+<Gap h=6 />
+
+![!](./img/header_blue.svg)
+
+
+Wir sind davon überzeugt, dass Bildung für alle einfach erreichbar sein soll. Unabhängig davon, wie groß der Geldbeutel der Eltern ist oder auf welche Schule das jeweilige Kind geht. Deshalb setzt sich die Calliope gGmbH für das Thema "offenes Wissen" ein. Wir sind ein offenes Projekt und freuen uns über rege Mitarbeit, eure Ideen, Anregungen und Eigenkreationen. Das heißt, dass man beispielsweise das Board Layout als Referenz nehmen und sich ein ganz eigenes Board bauen kann oder dass man einen Editor so anpassen kann, dass er individuelle Anforderungen erfüllt. Wir möchten auf allen Projektebenen den Austausch oder sogar kleine und große Kollaborationen fördern!
+
+
+<Grid>
+
+    <div>
+
+        ![!](./img/mabb_cornelsen.gif)
+
+    </div>
+    <div>
+
+    ## Ein offenes Projekt - Calliope mini
+
+    Wir sind Unterstützer*innen der Open Hardware, Open Source und Open Content-Bewegung: 
+    **Open Hardware**: Die Schaltpläne des Calliope mini sind veröffentlicht.
+    Die meisten Editoren sind als **Open Source Produkte** frei verfügbar und veränderbar.
+    Sehr viele der Schulmaterialien rund um den Calliope mini sind als  **Open Educational Resources** frei lizenziert:
+
+    »Unter OER, (...), sind Lehr- und Lernmaterialien zu verstehen, die ungehindert genutzt, kopiert, verändert und wiederveröffentlicht werden können als herkömmliche Lehr- und Lernmaterialien.« *Zitiert aus: [Offene Bildungsressourcen in der Praxis](https://www.mabb.de/information/service-center/download-center/details/oer-broschuere-2-auflage-6.html)*
+
+    <Button link="./files/Template_OER_Calliope.pptx" color="calliope">OER Vorlage</Button>
+
+    </div>
+    <div>
+
+    ## Die Calliope mini-Community
+
+    Wenn ihr mit dem Calliope mini arbeitet, betretet ihr vielleicht in einigen Bereichen Neuland. Umso wichtiger ist es, sich mit anderen Menschen auszutauschen, zum Beispiel über die besten Projekte, die ihr mit eurer Klasse gemacht habt, über die beste Möglichkeit, das Konzept der Schleife zu erklären oder um herauszufinden, wo man den passenden Sensor für das geplante Projekt beziehen kann. Dafür bietet sich das [Calliope Forum](https://forum.calliope.cc/) an. 
+    Für den Austausch von Projektideen eignet sich [hackster.io](https://www.hackster.io/calliope-mini)  oder - wenn ihr die technischen Details genau anschauen wollt oder mithelfen wollt, den Calliope mini zu verbessern - guckt auf [github](https://github.com/calliope-mini) vorbei. 
+    Und wir beantworten natürlich auch gerne die Fragen aus der Community und freuen uns über Projekte, die ihr einreichen möchtet ([E-Mail an das Calliope-Team](mailto:info@calliope.cc)).
+
+    <Button link="./community/" color="calliope">Calliope Community</Button>
+
+    </div>
+    <div>
+
+    ![!](./img/community_pic.png)
+
+    </div>
+</Grid>
+
+<div id="green" />
+<Gap h=6 />
+
+![!](./img/header_green.svg)
+
+Der Einsatz des Calliope mini an der Schule ruht im besten Falle nicht nur auf den eigenen Schultern, sondern wird von einem Netz von Interessierten vorangetrieben. So kann man sich an der Schule untereinander austauschen, fächerübergreifende (Teil-)Projekte entwickeln und den mini nachhaltig an der Schule etablieren.
+
+Für das Gewinnen von Mitstreiter*innen, haben wir hier Informationen, inhaltliche Begründungen und praktische Zusammenfassungen zusammengestellt. 
+
+<Grid>
+    <div>
+
+        ![!](./img/calliope-2558_edit2.jpg)
+
+    </div>
+    <div>
+
+        ## Programmieren in der Schule
+
+        Wir haben fünf Gründe zusammengefasst, warum - aus unserer Sicht - das Programmieren in die Schule gehört. 
+        In weiterführende Schulen ohnehin, aber auch in Grundschulen, sind erste Programmiererfahrungen ein wichtiger Bestandteil von zeitgemäßer Bildung. Denn die Schule ist der Ort, an dem in sozialen Settings das Wissen und die Kompetenzen vermittelt werden, die mündige Bürger*innen brauchen. Ein wichtiger Baustein ist dabei die Erfahrung von Selbstwirksamkeit. Eine Erkenntnis, die wir uns bei der Arbeit mit dem mini immer wünschen: "Ich kann bestimmen, was ein Computer macht." Und nicht zuletzt: "Ich kann die digitale Welt mitgestalten!"
+
+        <Button link="./idee/mission/" color="gruen">Fünf GRÜNDE</Button>
+
+    </div>
+    <div>
+
+        ## Und die Bildungspolitik?
+        
+        Ende 2016 hat die Kultusministerkonferenz das Strategiepapier (link:https:// text:“Bildung in der digitalen Welt” class:blue target:_blank) verabschiedet. Diese Strategie der KMK hat schnell für Bewegung im Bildungssystem gesorgt. Warum? Weil alle Bundesländer aufgefordert wurden, eine Antwort auf dieses Papier zu entwickeln. In der KMK-Strategie wird deutlich, dass die digitale Bildung nicht erst in der weiterführenden Schule beginnen kann.
+
+        <Button link="./files/kmk-und-calliope.pdf" color="gruen">KMK-Strategie und Calliope mini</Button>
+
+    </div>
+    <div>
+
+        ![!](./img/kmk_green.png)
+
+    </div>
+    <div>
+
+        ![!](./img/fyler_green.gif)
+
+    </div>
+    <div>
+
+        ## Aufbereitete Informationen zum Calliope-Projekt
+
+        Mitstreiter*innen für das eigene Vorhaben kann man aus ganz unterschiedlichen Gründen brauchen:  als Unterstützung im Unterricht, als finanzielle Unterstützer oder einfach, um einem den Rücken zu stärken.  Hier haben wir verschiedene Materialien zusammengestellt, die man nutzen kann, wenn man anderen etwas über den Calliope mini erzählen möchte. 
+
+        <Button link="https://calliope.cc/downloads/Calliope_flyer_de.pdf" color="gruen">Flyer</Button>
+        <Button link="./files/projektbrief_calliope-mini.pdf" color="gruen">Projektbrief</Button>
+
+    </div>
+</Grid>
+
+(zigzag:true)
+
+<div style="max-width: 65ch; margin:auto; text-align:center;">
+
+    ![!](./img/smiley_green.svg)
+
+    Nun hast du einige Informationen und Eindrücke über das Calliope-Projekt erhalten.
+
+    Auf der nächsten Seite schließen wir den Calliope mini an den Strom an und bereiten die Programmierung vor.
+
+    <Button link="./los-geht-s/erste-schritte/" color="gruen">Erste Schritte</Button>
+
+</div>
