@@ -21,7 +21,7 @@
     $: iconCount = (!isInternal ? 1 : 0) + (isDownload ? 1 : 0);
     
 </script>
-<a href={link} bind:this={a} {target} download={downloadName} class='group icons-{iconCount} inline-block box-border mx-1 text-center {roundedClass} uppercase no-underline border border-4 border-{color} hover:opacity-70 font-bold
+<a href={link} bind:this={a} {target} download={downloadName} class='group icons-{iconCount} font-mono inline-block box-border mx-1 text-center {roundedClass} uppercase no-underline border border-4 border-{color} hover:opacity-70 font-bold
     {color != 'regenbogen' ? 
         type == 'default' ? 
             `text-white bg-${color}` : 

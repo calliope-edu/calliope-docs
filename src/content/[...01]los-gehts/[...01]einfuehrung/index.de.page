@@ -5,6 +5,10 @@ template:
 published: true
 ---
 
+<script>
+    import Swiper from '$lib/components/Swiper.svelte'
+    import Divider from '$lib/components/elements/Divider.svelte'
+</script>
 
 
 # CALLIOPE MINI - INFORMATIONEN ZUM EINSTIEG
@@ -47,10 +51,6 @@ published: true
 
 <Gap h=6 />
 
-<script>
-    import Swiper from '$lib/components/Swiper.svelte'
-</script>
-
 <Swiper>
         <SwiperSlide>
 
@@ -88,7 +88,7 @@ published: true
 
 <div style="text-align: center; max-width:600px; margin:auto;">
 
-    ## Persönlichen Online-Termin vereinbaren
+    ### Persönlichen Online-Termin vereinbaren
 
     Ihr habt euch einen Klassensatz beschafft oder seid kurz davor, habt aber noch Fragen?
     Wir bieten individuelle Online-Termine an, um über Themen zu informieren, die euch interessieren, wie z.B. 
@@ -103,10 +103,13 @@ published: true
 <div id="yellow" />
 <Gap h=6 />
 
-![!](./img/header_yellow.svg)
+<Divider color="gelb">
+
+    ## Alles zum Calliope mini
+    
+</Divider>
 
 Wir haben einige andere Mikrocontroller mit Kindern ausprobiert und am Ende war klar: Wir brauchen ein Board, mit dem die Kinder hantieren können, ohne dass sie leicht Kurzschlüsse produzieren. Ein Board, mit dem die Lehrkräfte, Schülerinnen und Schüler im Klassenraum loslegen können, ohne dass unbedingt noch andere Kleinteile verteilt und angelötet werden müssen. Ein Board, das laut und bunt ist. Und nicht zuletzt brauchen wir auch die Möglichkeit, dass die Kinder und die Pädagoginnen und Pädagogen auch mit einer einfachen Programmiersprache den Minicomputer zum Leben erwecken können.
-
 
 <Grid>
 
@@ -117,7 +120,7 @@ Wir haben einige andere Mikrocontroller mit Kindern ausprobiert und am Ende war 
 </div>
 <div>
 
-    ## Calliope mini - was ist das?
+    ### Calliope mini - was ist das?
 
     Es gibt Einplatinencomputer, die man nutzen kann, um mit Hilfe von Code und Hardware Probleme zu lösen, Ideen umzusetzen oder einfach um lustige Projekte zu verwirklichen. 
 
@@ -133,7 +136,7 @@ Wir haben einige andere Mikrocontroller mit Kindern ausprobiert und am Ende war 
 </div>
 <div>
 
-    ## Was brauche ich noch?
+    ### Was brauche ich noch?
 
     Der Calliope mini ist kein kompletter Computer - ein Mikrocontroller eben. Damit der mini macht, was man ihm sagt, braucht man eine Programmierumgebung. In der kann man Programme schreiben, die dann auf den Calliope mini übertragen werden. 
     Diese Programmierumgebung nennen wir Editor. Egal ob mobil oder auf einem Desktop Rechner, es gibt unterschiedliche Möglichkeiten, den Calliope mini zu programmieren. Schau dir doch mal die einzelnen Editoren genauer an und finde den für dein Projekt Richtigen.
@@ -153,7 +156,7 @@ Wir haben einige andere Mikrocontroller mit Kindern ausprobiert und am Ende war 
 </div>
 <div>
 
-    ## Wo kann ich den Calliope mini kaufen?
+    ### Wo kann ich den Calliope mini kaufen?
 
     Wir produzieren in Deutschland und verkaufen den Calliope mini auch international über eine Vielzahl von Händlern. 
 
@@ -165,8 +168,11 @@ Wir haben einige andere Mikrocontroller mit Kindern ausprobiert und am Ende war 
 <div id="blue" />
 <Gap h=6 />
 
-![!](./img/header_blue.svg)
+<Divider>
 
+    ## Wissenswertes zum Calliope-Projekt
+
+</Divider>
 
 Wir sind davon überzeugt, dass Bildung für alle einfach erreichbar sein soll. Unabhängig davon, wie groß der Geldbeutel der Eltern ist oder auf welche Schule das jeweilige Kind geht. Deshalb setzt sich die Calliope gGmbH für das Thema "offenes Wissen" ein. Wir sind ein offenes Projekt und freuen uns über rege Mitarbeit, eure Ideen, Anregungen und Eigenkreationen. Das heißt, dass man beispielsweise das Board Layout als Referenz nehmen und sich ein ganz eigenes Board bauen kann oder dass man einen Editor so anpassen kann, dass er individuelle Anforderungen erfüllt. Wir möchten auf allen Projektebenen den Austausch oder sogar kleine und große Kollaborationen fördern!
 
@@ -180,7 +186,7 @@ Wir sind davon überzeugt, dass Bildung für alle einfach erreichbar sein soll. 
     </div>
     <div>
 
-    ## Ein offenes Projekt - Calliope mini
+    ### Ein offenes Projekt - Calliope mini
 
     Wir sind Unterstützer*innen der Open Hardware, Open Source und Open Content-Bewegung: 
     **Open Hardware**: Die Schaltpläne des Calliope mini sind veröffentlicht.
@@ -194,7 +200,7 @@ Wir sind davon überzeugt, dass Bildung für alle einfach erreichbar sein soll. 
     </div>
     <div>
 
-    ## Die Calliope mini-Community
+    ### Die Calliope mini-Community
 
     Wenn ihr mit dem Calliope mini arbeitet, betretet ihr vielleicht in einigen Bereichen Neuland. Umso wichtiger ist es, sich mit anderen Menschen auszutauschen, zum Beispiel über die besten Projekte, die ihr mit eurer Klasse gemacht habt, über die beste Möglichkeit, das Konzept der Schleife zu erklären oder um herauszufinden, wo man den passenden Sensor für das geplante Projekt beziehen kann. Dafür bietet sich das [Calliope Forum](https://forum.calliope.cc/) an. 
     Für den Austausch von Projektideen eignet sich [hackster.io](https://www.hackster.io/calliope-mini)  oder - wenn ihr die technischen Details genau anschauen wollt oder mithelfen wollt, den Calliope mini zu verbessern - guckt auf [github](https://github.com/calliope-mini) vorbei. 
@@ -213,7 +219,11 @@ Wir sind davon überzeugt, dass Bildung für alle einfach erreichbar sein soll. 
 <div id="green" />
 <Gap h=6 />
 
-![!](./img/header_green.svg)
+<Divider color="gruen">
+
+    ## Das Kollegium überzeugen
+
+</Divider>
 
 Der Einsatz des Calliope mini an der Schule ruht im besten Falle nicht nur auf den eigenen Schultern, sondern wird von einem Netz von Interessierten vorangetrieben. So kann man sich an der Schule untereinander austauschen, fächerübergreifende (Teil-)Projekte entwickeln und den mini nachhaltig an der Schule etablieren.
 
@@ -227,7 +237,7 @@ Für das Gewinnen von Mitstreiter*innen, haben wir hier Informationen, inhaltlic
     </div>
     <div>
 
-        ## Programmieren in der Schule
+        ### Programmieren in der Schule
 
         Wir haben fünf Gründe zusammengefasst, warum - aus unserer Sicht - das Programmieren in die Schule gehört. 
         In weiterführende Schulen ohnehin, aber auch in Grundschulen, sind erste Programmiererfahrungen ein wichtiger Bestandteil von zeitgemäßer Bildung. Denn die Schule ist der Ort, an dem in sozialen Settings das Wissen und die Kompetenzen vermittelt werden, die mündige Bürger*innen brauchen. Ein wichtiger Baustein ist dabei die Erfahrung von Selbstwirksamkeit. Eine Erkenntnis, die wir uns bei der Arbeit mit dem mini immer wünschen: "Ich kann bestimmen, was ein Computer macht." Und nicht zuletzt: "Ich kann die digitale Welt mitgestalten!"
@@ -237,7 +247,7 @@ Für das Gewinnen von Mitstreiter*innen, haben wir hier Informationen, inhaltlic
     </div>
     <div>
 
-        ## Und die Bildungspolitik?
+        ### Und die Bildungspolitik?
         
         Ende 2016 hat die Kultusministerkonferenz das Strategiepapier (link:https:// text:“Bildung in der digitalen Welt” class:blue target:_blank) verabschiedet. Diese Strategie der KMK hat schnell für Bewegung im Bildungssystem gesorgt. Warum? Weil alle Bundesländer aufgefordert wurden, eine Antwort auf dieses Papier zu entwickeln. In der KMK-Strategie wird deutlich, dass die digitale Bildung nicht erst in der weiterführenden Schule beginnen kann.
 
@@ -256,7 +266,7 @@ Für das Gewinnen von Mitstreiter*innen, haben wir hier Informationen, inhaltlic
     </div>
     <div>
 
-        ## Aufbereitete Informationen zum Calliope-Projekt
+        ### Aufbereitete Informationen zum Calliope-Projekt
 
         Mitstreiter*innen für das eigene Vorhaben kann man aus ganz unterschiedlichen Gründen brauchen:  als Unterstützung im Unterricht, als finanzielle Unterstützer oder einfach, um einem den Rücken zu stärken.  Hier haben wir verschiedene Materialien zusammengestellt, die man nutzen kann, wenn man anderen etwas über den Calliope mini erzählen möchte. 
 
