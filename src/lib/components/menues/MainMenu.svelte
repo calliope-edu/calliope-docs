@@ -64,7 +64,7 @@ class={clsx('w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg
 						<svg class="fill-current h-4 w-4 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
 					{/if}
 				</svelte:element>
-				{#if sub.length && subHover}
+				{#if (sub.length && subHover) || !$page.url.pathname}
 					<!-- <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 w-min-content group-hover:block shadow-md"> -->
 					<ul class="dropdown-menu absolute text-gray-700 pt-1 w-min-content shadow-md" transition:fade={{duration:100}}>
 						{#each sub as p,j}
