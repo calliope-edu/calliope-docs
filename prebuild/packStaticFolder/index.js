@@ -9,7 +9,7 @@ function checkFolder(folder) {
         // Cicle files on current folder
         // console.log('reading', folder)
         const regexRename = /^!?\[\.\.\.[\d]+\]/g
-        const regexDelete = /(^!|\.md$|\.svx$|\.svelte$)/g
+        const regexDelete = /(^!|\.md$|\.svx$|\.svelte$|\.page$)/g
         for (const file of files) {
             // console.log('Check', file)
             // Test regular expression
