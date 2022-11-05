@@ -85,9 +85,9 @@
     button.next:hover {
         /* background: rgba(0,0,0,.2); */
     }
-    .wrapper figure {
+    /* .wrapper figure {
         cursor: zoom-in;
-    }
+    } */
 
      .wrapper :global(.slide figure) {
         width: min-content;

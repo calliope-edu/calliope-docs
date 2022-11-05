@@ -12,9 +12,9 @@ export let active;
         <b>{item.title}</b>
     </a>
     <ul class="space-y-6 lg:space-y-2 border-l border-slate-200 dark:border-slate-800">
-        {#each item.subpages as page}
+        {#each item.subpages as page, i}
             <li class:active={active.startsWith('/'+page.slug)}>
-                    <a sveltekit:prefetch href="/{page.slug}/" on:click={()=>{active = '/'+page.slug;}}
+                    <a sveltekit:prefetch href="/{page.slug}/" on:click={()=>{active = '/'+page.slug;}} tabindex="0"
                         class="block border-l pl-4 -ml-px border-transparent hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
                         {page.title}
                     </a>

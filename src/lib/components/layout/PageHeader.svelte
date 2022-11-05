@@ -14,7 +14,7 @@
     <div class="w-full md:max-w-8xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
 
         <div class="pl-4">
-            <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="/">
+            <a sveltekit:prefetch class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="/">
                 Calliope
             </a>
         </div>

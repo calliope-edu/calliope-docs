@@ -287,10 +287,7 @@ published: true
 </Bauteil>
 
 
-
-
-
-Genauere Informationen können aus dem Datenblatt entnommen werden: <a href="https://www.ti.com/lit/ds/symlink/drv8837.pdf" target="_blank">Datenblatt: DRV8837</a>
+Genauere Informationen können aus dem Datenblatt entnommen werden: [Datenblatt: DRV8837](https://www.ti.com/lit/ds/symlink/drv8837.pdf)
 
 #### Motorzustände und Wahrheitstabelle
 

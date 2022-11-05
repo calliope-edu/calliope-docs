@@ -13,4 +13,4 @@ published: true
 
 /docs/erste-schritte/lieferumfang
 
-<a href="/docs/erste-schritte">Test</a>
+[Test](/docs/erste-schritte)

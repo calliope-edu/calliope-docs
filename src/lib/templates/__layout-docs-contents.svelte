@@ -28,25 +28,4 @@
 
 <style>
 
-div {
-    
-    margin: auto;
-    position: relative;
-    display: grid;
-    column-gap: 40px;
-    /* grid-template-columns: 200px 1fr 200px; */
-    /* max-width: calc(75ch + 2 * 200px + 2* 40px); */
-}
-
-aside {
-    position: sticky;
-    top: 2em;
-    height: max-content;
-}
-
-div :global(.toc-clicked) {
-  color: cornflowerblue;
-}
-
-
 </style>

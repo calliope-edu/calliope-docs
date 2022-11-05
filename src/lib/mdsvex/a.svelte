@@ -10,14 +10,14 @@
     let a;
     $: fileName = href.split('/').pop();
     $: isMailto = (href.split(':')[0].toLocaleLowerCase() == 'mailto');
-    $: isDownload = (fileName.indexOf('.') > -1) ? true : false;
+    $: isDownload = ((fileName.indexOf('.') > -1) && !['html', 'htm', 'php'].includes(fileName.split('.').pop())) ? true : false;
     $: downloadName = (download) ? download : ((isDownload) ? fileName : null);
     $: isInternal = (browser) ? a?.host == window.location.host : true;
     $: target = (isInternal) ? null : '_blank';
-    
+    $: rel = (isInternal) ? null : 'noopener noreferrer';
 </script>
 
-<a href={href} bind:this={a} {target} download={downloadName} 
+<a href={href} bind:this={a} {target} download={downloadName} {rel}
 class='no-underline hover:opacity-70 hover:underline'>
     <div class="inline-flex items-center">
         

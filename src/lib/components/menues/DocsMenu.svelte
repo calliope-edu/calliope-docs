@@ -34,7 +34,7 @@
         allPagesFlat = [...allPagesFlat, ...item.subpages]
     }
     allPages = menuItems;
-    console.log(menuItems)
+    // console.log(menuItems)
     return menuItems
     }
     
@@ -101,7 +101,5 @@ for (let [path] of Object.entries(modules)) {
 </div>
 
 <style>
-    .active > a {
-        @apply block border-l pl-4 -ml-px text-calliope-500 border-current font-semibold dark:text-calliope-400;
-    }
+
 </style>

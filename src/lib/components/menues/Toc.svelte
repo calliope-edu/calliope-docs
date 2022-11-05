@@ -116,18 +116,18 @@
           {@const level = (levels[idx] - minLevel)}
           <!-- style:transform="translateX({levels[idx] - minLevel}em)"
           style:font-size="{2 - 0.2 * (levels[idx] - minLevel)}ex" -->
-            <li
-              tabindex={idx + 1}
+            <li>
+              <button tabindex="0"
               class="{`level${level}`} group hover:text-calliope-500 dark:hover:text-calliope-400"
               class:active={activeHeading === heading}
-              on:click={clickHandler(heading)}
-            >
-              {#if level > 0}
-                <svg width="3" height="24" viewBox="0 -9 3 24" class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 dark:text-slate-600 dark:group-hover:text-slate-500"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
-              {/if}
-              <slot name="tocItem" {heading} {idx}>
-                {getHeadingTitles(heading)}
-              </slot>
+              on:click={clickHandler(heading)}>
+                {#if level > 0}
+                  <svg width="3" height="24" viewBox="0 -9 3 24" class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 dark:text-slate-600 dark:group-hover:text-slate-500"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+                {/if}
+                <slot name="tocItem" {heading} {idx}>
+                  {getHeadingTitles(heading)}
+                </slot>
+              </button>
             </li>
           {/each}
         </ul>

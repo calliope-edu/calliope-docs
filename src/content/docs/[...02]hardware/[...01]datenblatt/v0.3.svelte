@@ -16,13 +16,14 @@ Weitere Informationen sowie Schaltplan, Blockschaltbild & Pinbelegung fndest du 
 
 ### Schaltplan
 
-<a href="datenblaetter/Calliope mini rev0.3.3_schaltplan.pdf" target="_blank">PDF, <a> 
-<a href={MiniRevSchaltplanPNG} target="_blank" alt="mini rev0.3 Schaltplan">PNG, <a>
-(*Eagle* 
-<a href="datenblaetter/Calliope mini rev0.3.3_schaltplan.sch" download target="_blank">SCH, <a>
-<a href="datenblaetter/Calliope mini rev0.3.3_schaltplan.brd" download target="_blank">BRD<a>)
+[PDF](./datenblaetter/Calliope mini rev0.3.3_schaltplan.pdf)
+[PNG](./datenblaetter/Calliope mini rev0.3.3_schaltplan.png)
 
-<img src={MiniRevSchaltplanPNG} alt="mini rev0.3 Schaltplan" />
+
+[SCH](./datenblaetter/Calliope mini rev0.3.3_schaltplan.sch)
+[BRD](./datenblaetter/Calliope mini rev0.3.3_schaltplan.brd)
+
+![Calliope mini rev0.3 Schaltplan](./datenblaetter/Calliope mini rev0.3.3_schaltplan.png)
 
 ### Software
 

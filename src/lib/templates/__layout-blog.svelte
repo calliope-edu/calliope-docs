@@ -61,7 +61,7 @@
 				margin-right: calc(var(--spacing-unit) * 2);
 			}
 		
-			.date {
+			/* .date {
 				color: var(--color-text-secondary);
-			}
+			} */
 </style>

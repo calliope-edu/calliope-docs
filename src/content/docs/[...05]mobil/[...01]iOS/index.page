@@ -27,7 +27,7 @@ published: true
 
 ![!](./image.avif)
 
-<img src="./image.avif" />
+<img src="./image.avif" alt='Avif Image' />
 
 </TestButton>
 
