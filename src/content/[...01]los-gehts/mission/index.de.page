@@ -1,0 +1,86 @@
+---
+title: "Los geht`s"
+description: "Los gehts"
+template: 
+published: true
+---
+
+
+# {title}
+
+
+
+Title: Mission
+
+----
+
+Hidepage: false
+
+----
+
+Headline: UNSERE MISSION
+
+----
+
+Subline: 
+
+----
+
+Text:
+
+<Grid><div>
+
+## Unsere Mission ist es, jedem Schulkind in Deutschland ab der 3. Klasse einen kreativen Zugang zur digitalen Welt zu ermöglichen.
+
+Wir wollen aber nicht nur Schülerinnen und Schüler, sondern auch die Lehrkräfte und das Bildungssystem erreichen, um langfristig dazu beizutragen, dass mehr digitale Inhalte an den Schulen vermittelt werden.
+Davon versprechen wir uns besser ausgebildete Kinder, aber auch kritischere und souveräne Nutzerinnen und Nutzer der neuen Technologien, die sowohl Begeisterung für die Möglichkeiten als auch ein Gefühl für die Gefahren vermittelt bekommen haben.
+
+</div><div>
+
+(image: calliope_mini_gruen.gif)
+
+</div></Grid>
+
+(pushdown: 20)
+
+<Grid><div>
+
+(image: fuenfgruende.gif)
+
+</div><div>
+
+(num: 1 text: Alle zusammen)
+In der Grundschule ist die Neugier in allen Unterrichtsfächern noch sehr ausgeprägt, sodass man mit einem kindgerechten, kreativen Ansatz leicht fürs Programmieren begeistern kann. Genderstereotype sind noch nicht so stark ausgeprägt, das heißt, so dass in der Grundschule auch sehr viele Mädchen aktiv dabei sind. Außerdem lernen in der Grundschule im besten Falle noch alle zusammen. 
+
+</div><div> 
+
+(num: 2 text: Kreativität fördern)
+Coden ist wie Basteln ein kreativer Prozess: man startet mit einer Idee und hat am Ende ein Ergebnis in der Hand. Die Kinder können sich zum Beispiel Fantasiegestalten ausdenken und basteln und diese dann mit dem Calliope mini zum Leben erwecken - ganz nebenbei haben sie einen “Roboter” programmiert, der lächeln oder vielleicht den Arm heben kann?
+Sie sehen ein “Problem”, sie nehmen sich etwas vor und entdecken eine weitere Ebene in ihrem Leben auf der sie diesem Vorhaben kreativ begegnen können.
+ 
+</div></Grid>
+
+(pushdown:20)
+
+<Grid><div>
+
+(num: 3 text: Kompetenzen fördern)
+Programmieren fördert viele Kompetenzen gleichzeitig. Nicht nur Kompetenzen,  wie das bedienen eines PC oder das Speichern einer Datei am richtigen Ort, sondern auch um Kompetenzen, die darüber hinaus für die Entwicklung junger Menschen wichtig sind. Beim Programmieren geht es um kreative Lösungswege, um Fehlertoleranz (failure learning), um Teamwork, um Kommunikationsfähigkeiten, Präsentationskompetenz, Frustrationstoleranz und Durchhaltevermögen. Und nicht zuletzt um Selbständigkeit. In kleinen Schritten durch Ausprobieren, Überdenken und ggf. Umplanen und wieder Ausprobieren können Kinder sich schon früh eigenständig mit komplexen Projekten beschäftigen.
+
+</div><div> 
+(num: 4 text: Digitalisierte Welt)
+In einer immer weiter automatisierten Welt ist es elementar, dass schon die ganz Kleinen merken, dass wir sie nicht nur darauf vorbereiten, dass sie einmal in der von Maschinen und Automatisierung geprägten Welt zurecht kommen, sondern dass wir sie darin befähigen, diese zukünftige Welt aktiv zu gestalten. 
+Demystify tech! Ich werde nicht von Computern beherrscht, ich kann mitgestalten. Wer verstehen will, was in der Welt passiert, muss verstehen, dass Computer das machen, was Menschen ihnen sagen. Dann werden diese Kinder zu selbstbewussten und digital mündigen Bürger*innen, die volle gesellschaftliche, kulturelle und politische Teilhabe erleben können. 
+ 
+</div><div> 
+(num: 5 text: Lernen unterstützen)
+Kinder lernen am besten, indem sie Dinge ausprobieren und sie machen. Seymour Papert (der “Großvater des Codens”) sagt: ‘You learn by doing but you learn better by thinking about what you are doing. I think this is what is most important.’
+Einen Roboter zu programmieren, bringt Kinder dazu darüber nachzudenken, was sie tun und was der Roboter tun soll - Schritt für Schritt.
+
+</div></Grid>
+
+(pushdown: 20)
+
+----
+
+Secondary-nav: true
