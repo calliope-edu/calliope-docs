@@ -1,105 +1,105 @@
-
 <script>
-  import DocsMenuItem from './DocsMenuItem.svelte';
-
-	import { page } from '$app/stores'
-
+    import DocsMenuItem from './DocsMenuItem.svelte';
+    import { page } from '$app/stores';
+    import { slugFromPath } from '$lib/util';
+  
     export let prev = null;
     export let next = null;
     export let currKategorie = null;
-
+    export let menu = '/';
+    export let items = null;
+  
     let allPagesFlat = [];
     let allPages = [];
-
-	$: active = $page.url.pathname;
-    $: currentIndex = allPagesFlat.findIndex(x => ('/'+x.slug+'/' === active || '/'+x.slug === active));
+    let posts = [];
+  
+    $: active = $page.url.pathname;
+    $: currentIndex = allPagesFlat.findIndex(x => ('/'+x.slug+'/' === active || '/'+x.slug === active || active.startsWith('/'+x.slug+'/')));
     $: currKategorie = allPages?.find(x => ( (active).startsWith('/'+x?.slug) ));
-    
-
+  
     $: prev = (allPagesFlat.length > 0) ? allPagesFlat[currentIndex-1] : null;
     $: curr = allPagesFlat[currentIndex] ?? null;
     $: next = (currentIndex < allPagesFlat.length) ? allPagesFlat[currentIndex+1] : null;
-
-    // function getPrevNext(slug, arr){
-        // console.log(currIndex)
-    // }
-
-    async function getMenuItems(){
-    let menuItems = await fetch(`/docs.json`).then((res) => res.json());
-
-    for (var item of menuItems) {
+  
+    async function getMenuItems() {
+      let menuItems = await fetch(`/${menu}.json`).then((res) => res.json());
+  
+      for (var item of menuItems) {
         const url = `/${item.slug}.json`;
         const kategorieItems = await fetch(url).then((res) => res.json());
         item.subpages = kategorieItems;
-        allPagesFlat = [...allPagesFlat, ...item.subpages]
+        allPagesFlat = [...allPagesFlat, ...item.subpages];
+      }
+      allPages = menuItems;
+      items = menuItems;
+      return menuItems;
     }
-    allPages = menuItems;
-    // console.log(menuItems)
-    return menuItems
-    }
-    
-    const menuItems = getMenuItems();    
-
-
-import { slugFromPath } from '$lib/util';
-
-
-// Dummy menu for SSR
-const modules = {
-    ...import.meta.glob(`../../../content/docs/{[!index]*,*/index}{.,.de.,.en.}page`),
-    ...import.meta.glob(`../../../content/docs/*/{[!index]*,*/index}{.,.de.,.en.}page`)
-}
-let posts = {};
-
-for (let [path] of Object.entries(modules)) {
-    const slug = slugFromPath(path);
-    const slugArr = slug.split("/")
-    const depth = slugArr.length - 1
-    const title = slugArr[depth]
-    let pageMeta = ({
-            slug,
-            depth,
-            title: title.charAt(0).toUpperCase() + title.slice(1),
-            subpages: []
+  
+    const menuItems = getMenuItems();
+  
+    // Dummy menu for SSR
+    const matches = Object.fromEntries(
+      Object.entries(import.meta.glob(`../../../content/{,*/,*/*/,*/*/*/,*/*/*/*/}{[!index]*,*/index}{.,.de.,.en.}page`))
+        .sort(([pathA], [pathB]) => pathB.localeCompare(pathA))
+        .filter(([path, resolver]) => {
+          const filename = slugFromPath(path);
+          return filename.startsWith(`${menu}/`);
         })
-    if(depth == 1) {
-        posts[title] = pageMeta;
-    } else if (depth == 2) {
-        const kategorie = slugArr[depth-1]
-        if(kategorie != undefined) {
-            posts[kategorie].subpages.push(pageMeta);
+    );
+  
+    for (let [path] of Object.entries(matches)) {
+      const slug = slugFromPath(path);
+      const slugRelative = (menu && menu.length > 0) ? slug.replace(menu, '') : slug;
+      const slugArr = slugRelative.split("/");
+      const depth = slugArr.length - 1;
+      const title = slugArr[depth];
+      const kategorie = slugArr[1];
+      let pageMeta = ({
+        kategorie,
+        slug,
+        depth,
+        title: title.charAt(0).toUpperCase() + title.slice(1),
+        subpages: []
+      });
+      if (depth === 1) {
+        posts.push(pageMeta);
+      } else if (depth === 2) {
+        if (kategorie != undefined) {
+          const kategorieIndex = posts.findIndex(post => post.kategorie === kategorie);
+          if (kategorieIndex !== -1) {
+            posts[kategorieIndex].subpages.push(pageMeta);
+          }
         }
+      }
     }
-}
-
-
-</script>
-
-<div class="overflow-y-auto z-20 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-4rem)] pb-6 lg:block lg:sticky top:16 lg:top-16 lg:mr-0">
+  
+    // Reverse the order of posts
+    posts.reverse();
+    
+    // Reverse the order of subpages within each category
+    for (const post of posts) {
+      post.subpages.reverse();
+    }
+  
+  </script>
+  
+  <div class="overflow-y-auto z-20 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-4rem)] pb-6 lg:block lg:sticky top:16 lg:top-16 lg:mr-0">
     <nav class="lg:text-sm lg:leading-6 relative">
-        <div class='menu'>
-            <ul>
-
-                <div>
-                    {#await menuItems}
-                    {#each Object.values(posts) as item}
-                        <DocsMenuItem {item} {active} />
-                    {/each}
-                    {:then items}
-                        {#each items as item}
-                            <DocsMenuItem {item} {active} />
-                        {/each}
-                    {:catch error}
-                        <p style="color: red">{error.message}</p>
-                    {/await}
-                    </div>
-
-            </ul>
-        </div>
-
+      <div class='menu'>
+        <ul>
+          {#await menuItems}
+            {#each posts as item}
+              <DocsMenuItem {item} {active} />
+            {/each}
+            {:then items}
+              {#each items as item}
+                <DocsMenuItem {item} {active} />
+              {/each}
+            {:catch error}
+              <p style="color: red">{error.message}</p>
+          {/await}
+        </ul>
+      </div>
     </nav>
-</div>
-
-<style>
-
-</style>
+  </div>
+  

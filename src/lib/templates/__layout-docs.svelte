@@ -4,6 +4,11 @@
     import Toc from '$lib/components/menues/Toc.svelte'
 
     export let currKategorie = null;
+    export let items = null;
+    export let meta;
+
+    $: menu = meta.docMenu ?? 'docs';
+    $: title = meta.docTitle ?? '';
 
     let headingSelector = '.content :where(h2, h3):not(.toc-exclude)';
     let breakpoint = 1200;
@@ -26,7 +31,7 @@
 ">
 
     <aside class="fixed inset-0 z-20 flex-none hidden h-full w-72 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-48 lg:block">
-        <DocsMenu bind:prev={prev} bind:next={next} bind:currKategorie={currKategorie} />
+        <DocsMenu {menu} bind:items={items} bind:prev={prev} bind:next={next} bind:currKategorie={currKategorie} />
     </aside>
     <div class="fixed inset-0 z-10 hidden bg-gray-900/50 dark:bg-gray-900/60"></div>
 
@@ -36,6 +41,9 @@
 
                 <div class="flex-auto max-w-4xl min-w-0 pt-6 lg:px-8 lg:pt-8 pb:12 xl:pb-24 lg:pb-16">
                     <div class="content prose max-w-full">
+                        {#if title && title.length > 0}
+                            <h1 class="mb-0 font-semibold text-slate-900 dark:text-slate-200 text-xl">{title}</h1>
+                        {/if}
                         <slot />
                     </div>
 
@@ -43,7 +51,7 @@
 
                     <div class="flex items-center pt-12 pb-20 font-semibold">
                         {#if  prev != null}
-                            <a sveltekit:prefetch href="/{prev.slug}/" class="group no-underline mb-4 flex flex-col items-start ">
+                            <a data-sveltekit-prefetch href="/{prev.slug}/" class="group no-underline mb-4 flex flex-col items-start ">
                                     <span class="text-calliope-500 ml-2 mb-1 inline-block font-semibold ">
                                         Vorherige
                                     </span>
@@ -59,7 +67,7 @@
                         {/if}
 
                         {#if  next != null}
-                            <a sveltekit:prefetch href="/{next.slug}/" class="group no-underline ml-auto mb-4 flex flex-col items-end">
+                            <a data-sveltekit-prefetch href="/{next.slug}/" class="group no-underline ml-auto mb-4 flex flex-col items-end">
                                     <span class="text-calliope-500 mr-2 mb-1 inline-block font-semibold ">
                                         Nächste
                                     </span>

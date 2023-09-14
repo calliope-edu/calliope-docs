@@ -1,7 +1,7 @@
 <script>
     import { slugFromPath } from '$lib/util';
 
-    const modules = import.meta.glob(`../../content/**/[!!]*.md`)
+    const modules = import.meta.glob(`../../content/**/[!!]*.page`)
     
 	let posts = [];
 
@@ -23,10 +23,12 @@
 
 </script>
 <main>
+    ok
     <ul>
         {#each sitemap as page}
             <li>
                 <a href="../{page.slug}">{page.slug}</a>
+                <a href="../{page.slug}.json">{page.slug}.json</a>
             </li>
         {/each}
     </ul>

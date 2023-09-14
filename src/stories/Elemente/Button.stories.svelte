@@ -9,6 +9,9 @@
 <Meta 
     title="Elements/Button" 
     component={Button}
+    parameters={{
+        viewMode: 'docs',
+    }}
     argTypes={{
         download: { control: {type: 'text'}, description: 'Definiert einen Namen für den Download.' },
         type: { options: ['default', 'border'],
@@ -22,6 +25,12 @@
             }
     }}
 />
+
+<pre>
+    <code>
+        {`<Button color='calliope' type='default' rounded='full'>Calliope</Button>`}
+    </code>
+</pre>
 
 <Template let:args>
     <ProseDecorator>
@@ -66,7 +75,6 @@
 
     <Button rounded='rounded'>Rounded</Button>
     <Button rounded=''>Rounded</Button>
-
     
 </Story>
 

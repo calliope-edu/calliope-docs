@@ -5,19 +5,12 @@ template:
 published: true
 ---
 
-<script>
-    import Swiper from '$lib/components/Swiper.svelte'
-    import Divider from '$lib/components/elements/Divider.svelte'
-    import Zigzag from '$lib/components/elements/Zigzag.svelte'
-</script>
-
-
 # CALLIOPE MINI - INFORMATIONEN ZUM EINSTIEG
 
 <Grid m=3>
     <div>
 
-        ![!](./img/calliopemini-preview.svg)
+        ![](./img/calliopemini-preview.svg)
 
         **Alles zum Calliope mini**
 
@@ -28,7 +21,7 @@ published: true
     </div>
     <div>
 
-        ![!](./img/project_preview.gif|w=500)
+        ![](./img/project_preview.gif|w=500)
 
         **Wissenswertes zum Calliope-Projekt**
 
@@ -39,7 +32,7 @@ published: true
     </div>
     <div>
 
-        ![!](./img/header-green.svg)
+        ![](./img/header-green.svg)
 
         **Das Kollegium überzeugen**
 
@@ -51,40 +44,6 @@ published: true
 </Grid>
 
 <Gap h=6 />
-
-<Swiper>
-        <SwiperSlide>
-
-            [![!](./wird_5/calliope_mini_wird5_1.gif|w=500)](/los-geht-s/einfuehrung)
-
-        </SwiperSlide>
-        <SwiperSlide>
-
-            [![!](./wird_5/calliope_mini_wird5_2.png|w=500)](/schulen/schulmaterial)
-
-        </SwiperSlide>
-        <SwiperSlide>
-
-            [![!](./wird_5/calliope_mini_wird5_3.png|w=500)](/projekte)
-
-        </SwiperSlide>
-        <SwiperSlide>
-
-            [![!](./wird_5/calliope_mini_wird5_4.gif|w=500)](/calliope-mini/uebersicht)
-
-        </SwiperSlide>
-        <SwiperSlide>
-
-            <!-- [![!](./wird_5/calliope_mini_wird5_5.gif|w=500)](/schulen/fortbildungen) -->
-
-        </SwiperSlide>
-        <SwiperSlide>
-
-            [![!](./wird_5/calliope_mini_wird5_6.gif|w=500)](/calliopeo)
-
-        </SwiperSlide>
-</Swiper>
-
 
 
 <div style="text-align: center; max-width:600px; margin:auto;">
@@ -114,7 +73,7 @@ Wir haben einige andere Mikrocontroller mit Kindern ausprobiert und am Ende war 
 
 <Grid>
 
-    ![!](./img/poster_yellow.gif|w=500)
+    ![](./img/poster_yellow.gif|w=500)
 
     <div>
 
@@ -133,7 +92,7 @@ Wir haben einige andere Mikrocontroller mit Kindern ausprobiert und am Ende war 
 </Grid>
 <Grid direction="rtl">
 
-    ![!](./img/editoren_transparent.png|w=500)
+    ![](./img/editoren_transparent.png|w=500)
 
     <div>
 
@@ -149,7 +108,7 @@ Wir haben einige andere Mikrocontroller mit Kindern ausprobiert und am Ende war 
 </Grid>
 <Grid>
 
-    ![!](./img/betterplace_calliope_klassensatz.jpg|w=500)
+    ![](./img/betterplace_calliope_klassensatz.jpg|w=500)
 
     <div>
 
@@ -196,7 +155,7 @@ Wir sind davon überzeugt, dass Bildung für alle einfach erreichbar sein soll. 
 </Grid>
 <Grid direction="rtl">
 
-    ![!](./img/community_pic.png|w=500)
+    ![](./img/community_pic.png|w=500)
 
     <div>
 
@@ -226,7 +185,7 @@ Für das Gewinnen von Mitstreiter*innen, haben wir hier Informationen, inhaltlic
 
 <Grid>
 
-    ![!](./img/calliope-2558_edit2.jpg|w=500)
+    ![](./img/calliope-2558_edit2.jpg|w=500)
 
     <div>
 
@@ -241,7 +200,7 @@ Für das Gewinnen von Mitstreiter*innen, haben wir hier Informationen, inhaltlic
 </Grid>
 <Grid direction="rtl"> 
 
-    ![!](./img/kmk_green.png|w=500)
+    ![](./img/kmk_green.png|w=500)
 
     <div>
 
@@ -255,7 +214,7 @@ Für das Gewinnen von Mitstreiter*innen, haben wir hier Informationen, inhaltlic
 </Grid>
 <Grid> 
 
-    ![!](./img/fyler_green.gif|w=500)
+    ![](./img/fyler_green.gif|w=500)
 
     <div>
 

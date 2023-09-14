@@ -10,7 +10,9 @@
 	title="Elements/Box"
 	component={Box}
 	argTypes={{
-		h: { control: '', description: 'Height of Gap in `rem`' }
+		color: { options: ['calliope', 'rosa', 'blau', 'gruen', 'lila', 'gelb', 'apricot', 'grau', 'regenbogen'],
+                control: { type: 'inline-radio' },
+            },
 	}}
 />
 
@@ -22,10 +24,13 @@
 </ProseDecorator>
 </Template>
 
+<Story name="Default" args={{color: 'grau'}} />
+
+
 <Story name="Inhalt">
 	<ProseDecorator>
 		<Box border rounded>
-			<h1>1</h1>
+			1
         </Box>
 
         <Box rounded>
@@ -33,7 +38,7 @@
         </Box>
         
         <Box border>
-			<h1>1</h1>
+			1
         </Box>
         
         <Box>

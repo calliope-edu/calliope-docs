@@ -16,9 +16,9 @@ published: true
 
 - Alle ein und Ausgabe-Pins liefern 3,3 V und werden auch mit 3,3 V betrieben.
 
-<Box type='info'>
+<Admonition type='info'>
 Sensoren die mit 5V betrieben werden, funktionieren in den meisten Fällen nicht.
-</Box>
+</Admonition>
 
 ### Stromstärke
 
@@ -38,13 +38,13 @@ Verwendete stattdessen verschiedene I/O Pins oder eine Transistorenschaltung. Be
 
 ## Analoge Pins
 
-<Box type='info'>
+<Admonition type='info'>
 In der Signalverarbeitung wird werden Daten verallgemeinert in zwei verschiedenen Formen übertragen: 
 
 - **Digital**: Ein binäres, digitales Signal ist an oder aus, 1 oder 0. Es ist abgestuft, abzählbar und verlustbehaftet (diskrete Werte).
 - **Analog**: Ein analoges Signal, dahingegen hat einen zeitlich kontinuierlichen, stufenlosen Verlauf. Es kann theoretisch unendlich viele Werte in einem Wertebereich annehmen.
 
-</Box>
+</Admonition>
 
 ### Digital Analog-Umsetzer (DAU/DAC)
 Der integrierte Digital-Analog-Umsetzer des Calliope mini sorgt dafür, dass die analogen Signale vom Prozessor - der nur digital Signale verarbeiten kann - umgewandelt werden. Die Daten werden in den Bereich **0 - 1023** geschrieben und können auch so in dem jeweiligen Editor oder auch seriell als analoge Werte ausgelesen werden.

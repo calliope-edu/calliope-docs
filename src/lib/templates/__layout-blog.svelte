@@ -1,6 +1,4 @@
 <script>
-	import PageHead from '$lib/components/PageHead.svelte';
-
 	export let meta;
 
 	$: id = meta.title
@@ -12,8 +10,6 @@
 	$: formattedDate = new Date(meta.date).toDateString();
 
 </script>
-
-<PageHead title={meta.title} description={''} />
 
 
 <main class="prose-base">

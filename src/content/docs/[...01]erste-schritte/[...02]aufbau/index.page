@@ -3,6 +3,7 @@ title: Aufbau
 description: Hier erfahrt ihr, wie ihr den Calliope mini in Betrieb nehmt.
 template: docs
 published: true
+docTitle: Erste Schritte
 ---
 
 # {title}
@@ -16,9 +17,9 @@ Der Calliope mini kann über das externe Batteriefach oder mittels des beiliegen
   <li>Stecke das kleine, weiße Plastikende (JST-Stecker) vorsichtig in den auf dem Calliope mini befestigten Batterieanschluss.</li>
 </ol>
 
-<Box type='warning'>
+<Admonition type='warning'>
 Manchmal lässt sich das Kabel des Batteriefachs nur schwer wieder lösen. In dem Fall //Joern&Jasper bitte ergänzen
-</Box>
+</Admonition>
 
 ## Computer / USB-Kabel
 
@@ -29,6 +30,6 @@ Manchmal lässt sich das Kabel des Batteriefachs nur schwer wieder lösen. In de
 
 <br>
 
-<Box type='tip'>
+<Admonition type='tip'>
 Achte darauf, dass alle Kabel und Anschlüsse richtig herum und fest miteinander verbunden sind.
-</Box>
+</Admonition>

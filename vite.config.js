@@ -1,10 +1,21 @@
 import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vite';
+
 import { imagetools } from 'vite-imagetools';
 import Icons from 'unplugin-icons/vite'
+import autoImport from 'sveltekit-autoimport';
 
-/** @type {import('vite').UserConfig} */
-const config = {
+export default defineConfig({
 	plugins: [
+
+		// autoImport({
+		// 	// where to search for the components
+		// 	components: [
+		// 	  { name: './src/lib/components/', flat: true },
+		// 	],
+		// 	include: ['**/*.page'],	  
+		//   }),
+
 		sveltekit(),
 		imagetools({ force: true }),
 		Icons({
@@ -12,8 +23,6 @@ const config = {
 			defaultClass: '',
 			compiler: 'svelte',
 		  }),
-	],
-	// publicDir: 'static_' // gets overwritten by sveltekit
-};
-
-export default config;
+		],
+		assetsInclude: ['**/*.hex', '**/*.xml', '**/*.pdf'],
+});

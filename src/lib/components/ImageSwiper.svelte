@@ -2,13 +2,13 @@
     import { onMount } from 'svelte';
     // Import Swiper Svelte components
     import { fade } from 'svelte/transition';
-    import { Swiper } from 'swiper/svelte';
+    // import { Swiper } from 'swiper/svelte';
     // import {send, receive} from '../crossfade.js';
     // import { ScaleOut } from 'svelte-loading-spinners';
 
     // Import Swiper styles
     // import 'swiper/swiper.scss';
-    import 'swiper/css'
+    // import 'swiper/css'
 
     let swiperHandle = null;
 
@@ -16,7 +16,7 @@
 
 <div class='wrapper'>
     <div class='wrapper-inner'>
-        <Swiper
+        <!-- <Swiper
         spaceBetween={0}
         slidesPerView={1}
         grabCursor={"true"}
@@ -24,9 +24,9 @@
         centeredSlides={true}
         loop={true}
         on:swiper={(e) => swiperHandle = e.detail[0]}
-        >
+        > -->
         <slot />
-        </Swiper>
+        <!-- </Swiper> -->
         <!-- <button on:click={() => swiperHandle.slideTo(0)}>Anfang</button> -->
     </div>
 
@@ -34,7 +34,7 @@
         // if(swiperHandle.isEnd) {
         //     swiperHandle.slideTo(0)
         // } else {
-            swiperHandle.slideNext();
+            // swiperHandle.slideNext();
         // }
     }}>></button>
 </div>

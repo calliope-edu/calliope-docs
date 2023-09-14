@@ -33,7 +33,7 @@
   $: desktop = windowWidth > breakpoint
 
   function close(event: MouseEvent) {
-    if (!aside.contains(event.target as Node)) open = false
+    if (!aside?.contains(event.target as Node)) open = false
   }
 
   // (re-)query headings on mount and on route changes
@@ -107,7 +107,7 @@
       </button>
     {/if}
     {#if open || desktop}
-      <nav transition:blur|local>
+      <nav transition:blur>
         {#if title}
           <h2>{title}</h2>
         {/if}
@@ -117,7 +117,7 @@
           <!-- style:transform="translateX({levels[idx] - minLevel}em)"
           style:font-size="{2 - 0.2 * (levels[idx] - minLevel)}ex" -->
             <li>
-              <button tabindex="0"
+              <button 
               class="{`level${level}`} group hover:text-calliope-500 dark:hover:text-calliope-400"
               class:active={activeHeading === heading}
               on:click={clickHandler(heading)}>
@@ -136,7 +136,10 @@
   </aside>
 {/if}
 
-<style> 
+<style lang="scss">
+button {
+  text-align: left;
+}
 li {
   @apply cursor-pointer py-1 dark:text-slate-400;
 }
@@ -144,7 +147,7 @@ li {
    @apply block font-medium;
 }
 .level1 {
-  @apply ml-4 flex items-start;
+  @apply ml-4 flex items-start text-left;
 }
 .active {
   @apply text-calliope-500 dark:text-calliope-400;

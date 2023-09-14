@@ -21,9 +21,9 @@ Das Startprogramm führt dich einmal durch die Grundfunktionen des mini und stel
 
 Eine Übersicht der 5 Modi des Startprogramms gibt es [HIER](https://calliope.cc/los-geht-s/erste-schritte#turquoise) 
 
-<Box type='note'>
+<Admonition type='note'>
 Das Startprogramm wird manchmal auch "Demoprogramm" oder "Programm 25" genannt.
-</Box>
+</Admonition>
 
 ### Wo finde ich das Startprogramm?
 
@@ -40,6 +40,6 @@ Soll das Startprogramm nachträglich auf den mini gespielt werden, so ist es bei
 
 <Button text='25 Programme herunterladen' link='https://calliope.cc/media/pages/calliope-mini/25programme/589dc979af-1601938460/25originalprogramme.zip' />
 
-<Box type='tip'>
+<Admonition type='tip'>
 Drücke den weißen kleinen reset-Knopf oben rechts neben dem micro-USB-Abschluss, um das Programm zu starten.
-</Box>
+</Admonition>

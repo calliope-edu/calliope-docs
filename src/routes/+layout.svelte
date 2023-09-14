@@ -1,5 +1,4 @@
 <script>
-	export const prerender = true
 	import PageHeader from '$lib/components/layout/PageHeader.svelte';
 	import PageFooter from '$lib/components/layout/PageFooter.svelte';
 	import lazyload from 'vanilla-lazyload';
@@ -20,16 +19,3 @@
 
 <PageFooter />
 </div>
-
-
-<style lang="scss" global>
-
-	body {
-		@apply bg-gray-50 font-sans leading-normal tracking-normal;
-	}
-
-	main {
-		@apply container w-full md:max-w-3xl mx-auto pt-20;
-	}
-
-</style>

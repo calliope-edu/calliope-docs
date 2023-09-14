@@ -10,9 +10,9 @@
     let a;
     $: fileName = href.split('/').pop();
     $: isMailto = (href.split(':')[0].toLocaleLowerCase() == 'mailto');
-    $: isDownload = ((fileName.indexOf('.') > -1) && !['html', 'htm', 'php'].includes(fileName.split('.').pop())) ? true : false;
+    $: isDownload = ((fileName.indexOf('.') > -1) && !['html', 'htm', 'php', 'de', 'com', 'cc', 'org', 'net'].includes(fileName.split('.').pop())) ? true : false;
     $: downloadName = (download) ? download : ((isDownload) ? fileName : null);
-    $: isInternal = (browser) ? a?.host == window.location.host : true;
+    $: isInternal = (browser) ? a?.host == window.location.host : (href.startsWith('http')) ? false : true;
     $: target = (isInternal) ? null : '_blank';
     $: rel = (isInternal) ? null : 'noopener noreferrer';
 </script>

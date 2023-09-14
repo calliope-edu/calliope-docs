@@ -11,7 +11,7 @@ published: true
 
 # {title}
 
-![!](./calliope_mini_illustration_all.svg)
+![](./calliope_mini_illustration_all.svg)
 
 ## Eingabe und Ausgabe
 
@@ -22,10 +22,10 @@ published: true
         </div>
     <div slot='board'>
 
-        ![!](./board/calliope_feature_components_matrix.svg)
+        ![](./board/calliope_feature_components_matrix.svg)
         </div><div slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_matrix.svg)
+        ![](./icons/calliope_feature_icon_matrix.svg)
         </div>
 
     Die roten Lämpchen sind sogenannte LED ( aus dem englischen Light-Emitting Diodes ). Sie bilden ein 5x5-Raster und können einzeln angesteuert werden.
@@ -38,10 +38,10 @@ published: true
     </div>
     <div slot='board'>
 
-        ![!](./board/calliope_feature_components_rgb.svg)
+        ![](./board/calliope_feature_components_rgb.svg)
     </div><div slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_rgb.svg)
+        ![](./icons/calliope_feature_icon_rgb.svg)
     </div>
 
     Die unter dem 5x5 Raster liegende einzelne (RGB-LED ) ermöglicht die Darstellung unzähliger weiterer Farben.
@@ -55,10 +55,10 @@ published: true
     </div>
     <div slot='board'>
 
-        ![!](./board/calliope_feature_components_speaker.svg)
+        ![](./board/calliope_feature_components_speaker.svg)
     </div><div slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_speaker.svg)
+        ![](./icons/calliope_feature_icon_speaker.svg)
     </div>
 
     Mit dem integrierten Lautsprecher kannst du Musik abspielen oder ihn einfach piepsen lassen – was auch immer dein Projekt benötigt.
@@ -73,10 +73,10 @@ published: true
     </div>
     <div slot='board'>
 
-        ![!](./board/calliope_feature_components_buttons.svg)
+        ![](./board/calliope_feature_components_buttons.svg)
     </div><div slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_buttons.svg)
+        ![](./icons/calliope_feature_icon_buttons.svg)
     </div>
 
     Mit den Tastern A und B links und rechts von den roten LED kannst du Eingaben vornehmen. Wenn du einen Knopf drückst, wird ein Schaltkreis geschlossen. Das Board kann erkennen, ob nur einer oder beide Knöpfe gedrückt werden. Über ein Programm kannst du selbst bestimmen, was passiert, wenn du einen oder beide Taster drückst.
@@ -92,10 +92,10 @@ published: true
     </div>
     <div slot='board'>
 
-        ![!](./board/calliope_feature_components_pins.svg)
+        ![](./board/calliope_feature_components_pins.svg)
     </div><div slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_pins.svg)
+        ![](./icons/calliope_feature_icon_pins.svg)
     </div>
 
     An die mit P0, P1 und P2 beschrifteten Pins des Calliope mini kannst du Sensoren wie Temperaturfühler oder Feuchtigkeitsmesser anschließen. Zudem sind sie berührungsempfindlich, so wie du es beispielsweise von Touchscreens kennst. Die mit "+" und "-" beschrifteten Ecken kannst du nutzen, um mittels Klemmen eine Batterie anzuschließen oder Strom auszugeben, um eine LED dauerhaft zum Leuchten zu bringen.
@@ -111,10 +111,10 @@ published: true
     </div>
     <div slot='board'>
 
-        ![!](./board/calliope_feature_components_lage.svg)
+        ![](./board/calliope_feature_components_lage.svg)
     </div><div slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_lage.svg)
+        ![](./icons/calliope_feature_icon_lage.svg)
     </div>
 
     Das kombinierte Bauteil neben dem Taster A enthält einen Kompass, einen Bewegungssensor und einen Beschleunigungssensor. Dadurch kann der Calliope mini zum Beispiel messen, in welche Richtung und mit welcher Geschwindigkeit er bewegt wird.
@@ -128,10 +128,10 @@ published: true
     </div>
     <div slot='board'>
 
-        ![!](./board/calliope_feature_components_licht.svg)
+        ![](./board/calliope_feature_components_licht.svg)
     </div><div slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_licht.svg)
+        ![](./icons/calliope_feature_icon_licht.svg)
     </div>
 
     Der Lichtsensor misst über einige der roten LED die Helligkeit in der Umgebung.
@@ -146,11 +146,11 @@ published: true
     </span>
     <span slot='board'>
 
-        ![!](./board/calliope_feature_components_temp.svg)
+        ![](./board/calliope_feature_components_temp.svg)
 
     </span><span slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_temp.svg)
+        ![](./icons/calliope_feature_icon_temp.svg)
 
     </span>
 
@@ -166,11 +166,11 @@ published: true
     </span>
     <span slot='board'>
 
-        ![!](./board/calliope_feature_components_volume.svg)
+        ![](./board/calliope_feature_components_volume.svg)
 
     </span><span slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_volume.svg)
+        ![](./icons/calliope_feature_icon_volume.svg)
 
     </span>
 
@@ -186,12 +186,12 @@ published: true
     </span>
     <span slot='board'>
 
-        ![!](./board/calliope_feature_components_kompass.svg)
+        ![](./board/calliope_feature_components_kompass.svg)
         
 
     </span><span slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_compass.svg)
+        ![](./icons/calliope_feature_icon_compass.svg)
 
     </span>
 
@@ -208,12 +208,12 @@ published: true
     </span>
     <span slot='board'>
 
-        ![!](./board/calliope_feature_components_funk.svg)
+        ![](./board/calliope_feature_components_funk.svg)
         
 
     </span><span slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_radio.svg)
+        ![](./icons/calliope_feature_icon_radio.svg)
 
     </span>
 
@@ -229,12 +229,12 @@ published: true
     </span>
     <span slot='board'>
 
-        ![!](./board/calliope_feature_components_bluetooth.svg)
+        ![](./board/calliope_feature_components_bluetooth.svg)
         
 
     </span><span slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_bluetooth.svg)
+        ![](./icons/calliope_feature_icon_bluetooth.svg)
 
     </span>
 
@@ -253,12 +253,12 @@ published: true
     </span>
     <span slot='board'>
 
-        ![!](./board/calliope_feature_components_grove.svg)
+        ![](./board/calliope_feature_components_grove.svg)
         
 
     </span><span slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_grove.svg)
+        ![](./icons/calliope_feature_icon_grove.svg)
 
     </span>
 
@@ -274,12 +274,12 @@ published: true
     </span>
     <span slot='board'>
 
-        ![!](./board/calliope_feature_components_motor.svg)
+        ![](./board/calliope_feature_components_motor.svg)
         
 
     </span><span slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_motor.svg)
+        ![](./icons/calliope_feature_icon_motor.svg)
 
     </span>
 
@@ -324,12 +324,12 @@ Genauere Informationen können aus dem Datenblatt entnommen werden: [Datenblatt:
     </span>
     <span slot='board'>
 
-        ![!](./board/calliope_feature_components_battery.svg)
+        ![](./board/calliope_feature_components_battery.svg)
         
 
     </span><span slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_battery.svg)
+        ![](./icons/calliope_feature_icon_battery.svg)
 
     </span>
 
@@ -346,12 +346,12 @@ Genauere Informationen können aus dem Datenblatt entnommen werden: [Datenblatt:
     </span>
     <span slot='board'>
 
-        ![!](./board/calliope_feature_components_usb.svg)
+        ![](./board/calliope_feature_components_usb.svg)
         
 
     </span><span slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_usb.svg)
+        ![](./icons/calliope_feature_icon_usb.svg)
 
     </span>
 
@@ -368,12 +368,12 @@ Genauere Informationen können aus dem Datenblatt entnommen werden: [Datenblatt:
     </span>
     <span slot='board'>
 
-        ![!](./board/calliope_feature_components_prozessor.svg)
+        ![](./board/calliope_feature_components_prozessor.svg)
         
 
     </span><span slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_processor.svg)
+        ![](./icons/calliope_feature_icon_processor.svg)
 
     </span>
 
@@ -389,12 +389,12 @@ Genauere Informationen können aus dem Datenblatt entnommen werden: [Datenblatt:
     </span>
     <span slot='board'>
 
-        ![!](./board/calliope_feature_components_status.svg)
+        ![](./board/calliope_feature_components_status.svg)
         
 
     </span><span slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_status.svg)
+        ![](./icons/calliope_feature_icon_status.svg)
 
     </span>
 
@@ -409,11 +409,11 @@ Genauere Informationen können aus dem Datenblatt entnommen werden: [Datenblatt:
     </div>
     <div slot='board'>
 
-        ![!](./board/calliope_feature_components_reset.svg)
+        ![](./board/calliope_feature_components_reset.svg)
         
     </div><div slot='icon'>
 
-        ![!](./icons/calliope_feature_icon_reset.svg)
+        ![](./icons/calliope_feature_icon_reset.svg)
     </div>
 
     Der Knopf RESET ermöglicht das Zurücksetzen des Calliope mini auf den vorher definierten Start-Zustand.

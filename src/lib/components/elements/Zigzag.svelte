@@ -1,7 +1,7 @@
 <script>
     export let color = 'calliope';
     export let bg = 'white';
-    export let colors = (color!='rainbow') ? [color] : ['gelb', 'rosa', 'blau', 'gruen'];
+    export let colors = (color!='regenbogen') ? [color] : ['gelb', 'rosa', 'blau', 'gruen'];
     export let size=20;
     export let thikness = 4;
     let allColors = [...colors, bg];

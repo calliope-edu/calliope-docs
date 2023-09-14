@@ -62,7 +62,7 @@
           </div>
         
           {#if active}
-            <div class="description" transition:slide>
+            <div class="description" transition:slide|global>
               <slot>
                 {content}
               </slot>

@@ -15,13 +15,14 @@
     $: fileName = link.split('/').pop();
     
     $: downloadName = (download) ? download : ((isDownload) ? fileName : null);
-    $: isInternal = (a) ? a?.host == window.location.host : true;
+    $: isInternal = (a) ? a?.host == window.location.host : (link.startsWith('http')) ? false : true;
     $: isDownload = (fileName.indexOf('.') > -1) && !(!isInternal && linkParts <= 3) ? true : false;
     $: target = (isInternal) ? null : '_blank';
     $: iconCount = (!isInternal ? 1 : 0) + (isDownload ? 1 : 0);
+    $: relExternal = (isDownload || !isInternal) ? 'external' : undefined;
     
 </script>
-<a href={link} bind:this={a} {target} download={downloadName} class='group icons-{iconCount} font-mono inline-block box-border mx-1 text-center {roundedClass} uppercase no-underline border border-4 border-{color} hover:opacity-70 font-bold
+<a href={link} bind:this={a} {target} download={downloadName} rel={relExternal} class='group icons-{iconCount} font-mono inline-block box-border mx-1 text-center {roundedClass} uppercase no-underline border border-4 border-{color} hover:opacity-70 font-bold
     {color != 'regenbogen' ? 
         type == 'default' ? 
             `text-white bg-${color}` : 
@@ -51,7 +52,7 @@
     </div>
 </a>
 
-<style>
+<style lang="scss">
 
 
 .rainbow-text {

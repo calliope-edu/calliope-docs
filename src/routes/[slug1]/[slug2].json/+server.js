@@ -1,6 +1,6 @@
 
 // @migration task: Check imports
-export const folderFromPath = (path) => path.match(/([\w-]+)\/(\/index)?\.(svelte\.md|md|svx|page)/i)?.[1] ?? null;
+export const _folderFromPath = (path) => path.match(/([\w-]+)\/(\/index)?\.(svelte\.md|md|svx|page)/i)?.[1] ?? null;
 export const prerender = true;
 
 import { slugFromPath,  } from '$lib/util';
