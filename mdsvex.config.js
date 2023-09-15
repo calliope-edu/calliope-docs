@@ -1,8 +1,8 @@
 import { defineMDSveXConfig as defineConfig } from 'mdsvex';
-import remarkAbbr from 'remark-abbr';
+// import remarkAbbr from 'remark-abbr';
 import remarkUnwrapImages from "remark-unwrap-images";
 import remarkRelativeImages from "mdsvex-relative-images";
-import remarkContainers from 'remark-containers';
+// import remarkContainers from 'remark-containers';
 import rehypeSlug from 'rehype-slug';
 // import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import remarkFrontmatterImport from './mdsvexplugins/mdsvex-frontmatter-to-import.js'
@@ -13,7 +13,7 @@ const config = defineConfig({
 	layout: {
 		_: "./src/lib/mdsvex/layouts/default.svelte"
 	},
-	extensions: ['.svelte.md', '.md', '.svx'],
+	extensions: ['.svelte.md', '.md', '.svx', '.page'],
 
 	smartypants: {
 		

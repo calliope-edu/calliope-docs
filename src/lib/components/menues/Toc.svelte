@@ -33,7 +33,7 @@
   $: desktop = windowWidth > breakpoint
 
   function close(event: MouseEvent) {
-    if (!aside.contains(event.target as Node)) open = false
+    if (!aside?.contains(event.target as Node)) open = false
   }
 
   // (re-)query headings on mount and on route changes
@@ -107,7 +107,7 @@
       </button>
     {/if}
     {#if open || desktop}
-      <nav transition:blur|local>
+      <nav transition:blur>
         {#if title}
           <h2>{title}</h2>
         {/if}
@@ -116,18 +116,18 @@
           {@const level = (levels[idx] - minLevel)}
           <!-- style:transform="translateX({levels[idx] - minLevel}em)"
           style:font-size="{2 - 0.2 * (levels[idx] - minLevel)}ex" -->
-            <li
-              tabindex={idx + 1}
+            <li>
+              <button 
               class="{`level${level}`} group hover:text-calliope-500 dark:hover:text-calliope-400"
               class:active={activeHeading === heading}
-              on:click={clickHandler(heading)}
-            >
-              {#if level > 0}
-                <svg width="3" height="24" viewBox="0 -9 3 24" class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 dark:text-slate-600 dark:group-hover:text-slate-500"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
-              {/if}
-              <slot name="tocItem" {heading} {idx}>
-                {getHeadingTitles(heading)}
-              </slot>
+              on:click={clickHandler(heading)}>
+                {#if level > 0}
+                  <svg width="3" height="24" viewBox="0 -9 3 24" class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 dark:text-slate-600 dark:group-hover:text-slate-500"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+                {/if}
+                <slot name="tocItem" {heading} {idx}>
+                  {getHeadingTitles(heading)}
+                </slot>
+              </button>
             </li>
           {/each}
         </ul>
@@ -136,7 +136,10 @@
   </aside>
 {/if}
 
-<style> 
+<style lang="scss">
+button {
+  text-align: left;
+}
 li {
   @apply cursor-pointer py-1 dark:text-slate-400;
 }
@@ -144,7 +147,7 @@ li {
    @apply block font-medium;
 }
 .level1 {
-  @apply ml-4 flex items-start;
+  @apply ml-4 flex items-start text-left;
 }
 .active {
   @apply text-calliope-500 dark:text-calliope-400;

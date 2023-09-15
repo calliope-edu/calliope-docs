@@ -19,16 +19,3 @@
 
 <PageFooter />
 </div>
-
-
-<style lang="scss" global>
-
-	body {
-		@apply bg-gray-50 font-sans leading-normal tracking-normal;
-	}
-
-	main {
-		@apply container w-full md:max-w-3xl mx-auto pt-20;
-	}
-
-</style>

@@ -2,7 +2,7 @@
     import { slugFromPath } from '$lib/util';
 
     const modules = import.meta.glob(`../../content/**/[!!]*.md`)
-	console.log(modules)
+	// console.log(modules)
 
 	let posts = [];
 
@@ -27,7 +27,7 @@
 	// export const sitemap = JSON.stringify(publishedPosts.slice(0, limit));
     export const sitemap = posts
 
-    console.log(sitemap)
+    // console.log(sitemap)
 </script>
 
 {JSON.stringify(sitemap)}

@@ -1,6 +1,6 @@
 <h2>
 	<span class="errorCode">404</span>
-	<span class="errorMessage">Page Not Found</span>
+	<span class="errorMessage">Seite nicht gefunden</span>
 </h2>
 
 <style>

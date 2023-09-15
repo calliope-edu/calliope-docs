@@ -1,0 +1,255 @@
+---
+title: "Los geht`s"
+description: "Los gehts"
+template: 
+published: true
+---
+
+
+# {title}
+
+
+Title: Primeros-pasos
+
+----
+
+Slug: primeros-pasos
+
+----
+
+Hidepage: false
+
+----
+
+Headline: Preparación para la codificación
+
+----
+
+Subline: 
+
+----
+
+Text: 
+
+<Grid><div>
+
+(num:1 text:Connect)<br>
+En esta página aprenderá a poner en marcha la Calliope mini paso a paso. El primer paso le muestra cómo conectar correctamente la Calliope mini a la fuente de alimentación.
+<br>
+<br>
+(cta: https://calliope.cc/es/vamonos/primeros-pasos#yellow  text:más &#10230; color: turquoise)
+
+</div><div>
+
+(num:2 text:Secuencia de demostración)<br>
+Su Calliope mini se pone en marcha automáticamente en cuanto se conecta a la red eléctrica. Para darle la bienvenida, pase por una secuencia de demostración con las diferentes opciones de entrada. 
+<br>
+<br>
+(cta: https://calliope.cc/es/vamonos/primeros-pasos#blue text:más &#10230; color: turquoise)
+
+</div><div>
+
+(num:3 text:Programas preinstalados)<br>
+Calliope mini viene con algunos programas preinstalados que puede utilizar para empezar de inmediato. Aquí se explica cómo funcionan estos programas y lo que usted puede hacer con ellos. 
+<br>
+<br>
+(cta: https://calliope.cc/es/vamonos/primeros-pasos#green text:más &#10230; color: turquoise)
+
+</div></Grid>
+
+<hr>
+
+<p id="yellow"></p>
+(num:1 text:adjuntar)
+<b>suministro de Calliope mini con poder</b>br>
+Antes de poder empezar, la Calliope mini debe estar alimentada. Hay dos posibilidades:
+(pushdown:10)
+
+<Grid><div>
+
+(image: batterien_anschliessen.png)
+(pushdown:40)
+
+**Compartimiento de la batería externa**
+1. Llenar el compartimento de las pilas con dos pilas del tipo <b>AAA</b>. Asegúrese de que las pilas estén alineadas correctamente. 
+
+2. Tome el bloque de batería suministrado e introduzca con cuidado el pequeño extremo de plástico blanco (conector JST)</b> en el conector de la batería que se encuentra en el Calliope mini. 
+
+Asegúrese de que el extremo cerrado del tapón esté en la parte superior con la parte levantada en el medio. Si el conector del cable encaja fácilmente en el conector de la batería de la placa, es correcto. 
+
+</div><div>
+
+(carousel…)
+(image: computer_verbinden.jpg)
+(image: computer_verbinden2.jpg)
+(…carousel)
+
+**computadora**
+1. Tome el cable USB y conecte el lado más pequeño y estrecho en el puerto USB de la Calliope mini. Este se encuentra en la parte superior en el centro de la tabla.
+
+2. Conecte el otro extremo del cable en el puerto USB de su ordenador.
+
+</div></Grid>
+
+<hr>
+(pushdown:20)
+
+<Grid><div>
+
+<p id="blue"></p>
+(num:2 text: secuencia de demostración)
+Te presento a la miniatura de Calliope mini. La Calliope mini le mostrará en la pantalla qué entrada debe realizar.<br>
+<br>
+1. Presione el botón <b> A</b>.<br>
+2. Pulse el botón <b> B</b>.<br>
+3. Presione las teclas <b> A+B</b> simultáneamente.
+4. <b>El sensor de posición</b> - agitar el Calliope mini.<br>
+5. <b>pronto!</b><br>
+
+</div><div>
+
+(carousel…)
+(image: taste_a.svg)
+(image: taste_b.svg )
+(image: taste_ab.svg )
+(image: shake.svg )
+(image: fertig.svg )
+(…carousel)
+
+</div></Grid>
+
+<hr>
+(pushdown: 20)
+
+<p id="green"></p>
+(num:3 text: Programas preinstalados)
+
+<Grid><div>
+
+(image: calliope_buttons.svg)
+
+</div><div>
+
+El menú estándar permite la navegación a través de cinco programas preinstalados.
+<ul>
+<li>Utilice los botones A y B para desplazarse por los cinco programas.</li>
+<li>Sacudir para confirmar el programa seleccionado.</li>
+<li>Pulse los dos botones A y B simultáneamente para entrar en el menú.</li>
+</ul>
+
+</div></Grid>
+
+El funcionamiento de estos programas y lo que puede hacer con ellos se explica aquí o en el folleto de la caja mini de Calliope.
+
+<Grid><div>
+
+(num: 1 text:oráculo color:turquoise)
+
+1. hacer una pregunta que sólo se puede responder con <b>SÍ</b> o <b> NO</b>. Ahora presione el botón <b> A</b>.
+2. El Calliope mini responderá a sus preguntas con un &#x1F642; para <b>SÍ</b> o un &#x1F641; para <b>No</b>.
+3. Pulse <b> simultáneamente</b> los dos botones A y B para entrar en el menú. Seleccione un <b>más ejercicio</b> allí.
+
+</div><div>
+
+(carousel…)
+(image: halte-button-a.svg)
+(image: oracle_ja-nein.svg)
+(image: zuruck-ins-menu.svg)
+(…carousel)
+
+</div></Grid>
+
+(pushdown: 20)
+
+<Grid><div>
+
+(num: 2 text:tijeras, piedra, papel color:turquoise)
+
+1. juega en parejas. Coge tu Calliope mini en tu mano y agítala suavemente.
+2. uno de los cuatro símbolos aparecerá aleatoriamente en la pantalla LED.
+3. La fuente vence a las tijeras y a la piedra; la piedra vence a las tijeras; la tijera vence al papel; el papel vence a la piedra y a la fuente. <br>
+<br><b>¡El que consiga tres puntos primero, gana!</b>
+
+</div><div>
+
+(carousel…)
+(image: calliope-mini-schuetteln.svg)
+(image: stein_schere_papier_erklarung.svg)
+(image: stein_schere_papier_erklarung2.svg)
+(…carousel)
+
+</div></Grid>
+
+(pushdown: 20)
+
+<Grid><div>
+
+(num: 3 text:1x1 color:turquoise)
+1. Pulse la tecla <b> A </b> su miniatura de Calliope para visualizar el primer factor.
+2. A continuación, pulse el botón <b> B</b> para mostrar el segundo factor.
+3. ¡ahora estás en demanda! <br>Calcule el resultado en su cabeza. Si quieres saber si tu respuesta es correcta, agita tu Calliope mini y verás el resultado.
+<br> <b> ¡Prueba tus conocimientos de 1x1! </b>
+
+</div><div>
+
+(carousel…)
+(image: faktor_1.svg)
+(image: faktor_2.svg)
+(image: produkt.svg)
+(…carousel)
+
+</div></Grid>
+
+(pushdown: 20)
+
+<Grid><div>
+
+(num: 4 text:crash-o-meter color:turquoise)
+
+El **micrófono** se utiliza para medir el volumen ambiental. La pantalla LED le muestra el nivel de ruido.
+1. si es **silencioso**, el LED RGB se ilumina en verde.
+2. cuando **loud**, el LED RGB se ilumina en rojo.
+
+</div><div>
+
+(carousel…)
+(image: mikrofon_leise.svg)
+(image: mikrofon_laut.svg)
+(…carousel)
+
+</div></Grid>
+
+(pushdown: 20)
+
+<Grid><div>
+
+(num: 5 text:Bluetooth color:turquoise)
+
+El programa le muestra la **identificación individual** de su mini Calliope. Este patrón es necesario si desea conectar su mini a una tableta o smartphone y transferir programas de forma inalámbrica. Para obtener más información, consulte la página sobre (linkhttps://calliope.cc/es/programacion/mobil text:Bluetooth).
+
+</div><div>
+
+(image: bluetooth_pattern.svg)
+
+
+</div></Grid>
+
+(pushdown: 20)
+
+(center…)
+
+(pushdown:0)
+(zigzag:true)
+(pushdown:20)
+(image: smiley_turquoise.svg height:100)
+En la última página de la introducción de Calliope mini se puede finalmente empezar a programar. <br>No te preocupes, es muy fácil.
+(pushdown: 40)
+(cta:https://calliope.cc/los-geht-s/ersteuebungen text: Programación para principiantes color: turquoise)
+
+(…center)
+
+(pushdown:20)
+
+----
+
+Secondary-nav: true

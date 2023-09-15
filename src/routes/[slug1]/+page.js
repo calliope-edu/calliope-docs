@@ -19,9 +19,9 @@ export async function load({ url, fetch, params }) {
 
 	let Page;
 
-	const pages = await import.meta.globEager(`../../content/{[!index]*,*/index}{.,.de.,.en.}md`)
+	const pages = await import.meta.globEager(`../../content/{[!index]*,*/index}{.,.de.,.en.}page`)
 
-	console.log(pages)
+	// console.log(pages)
 
 	let match;
         for (const [path, resolver] of Object.entries(pages)) {

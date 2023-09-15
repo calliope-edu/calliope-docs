@@ -1,5 +1,4 @@
 <script>
-    import Button from './Button.svx'
     export let mind;
     export let makecode;
     export let makecodeUrl;

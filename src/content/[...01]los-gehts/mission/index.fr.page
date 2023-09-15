@@ -1,0 +1,82 @@
+---
+title: "Los geht`s"
+description: "Los gehts"
+template: 
+published: true
+---
+
+
+# {title}
+
+
+
+
+
+Title: conseils de sécurité
+
+----
+
+Headline: LA SÉCURITÉ D'ABORD !
+
+----
+
+Subline: Calliope mini C'est amusant et facile à utiliser. Comme pour tout appareil électronique, il faut veiller à ce que l'appareil reste intact. Veuillez lire attentivement ce manuel pour vous amuser le plus possible avec votre mini.
+
+----
+
+Text:  
+
+**rudiments**
+Calliope mini a été développé avec soin et peut être utilisé en toute sécurité. Contrairement aux appareils que vous achetez sur le marché de l'électronique, cependant, ce n'est pas dans un boîtier et les composants sont ouverts. C'est ce que nous voulons - nous voulons que vous voyiez comment l'appareil est structuré et où se trouvent les fonctions. C'est pourquoi il faut être particulièrement prudent.
+Un point important est d'éviter le transfert de charge électrostatique. Touchez une surface métallique telle qu'un pied de table ou un radiateur avant de travailler avec le mini. Avec cela, vous vous "terrez" vous-même - il suffit d'une petite touche.
+Une fois que vous vous êtes assuré que vous n'êtes plus chargé, commencez et branchez votre mini. Examinez régulièrement l'appareil de plus près. Y a-t-il des composants cassés ou ont-ils l'air inhabituels ? Quelque chose devient particulièrement chaud ? Si c'est le cas, débranchez immédiatement le mini de l'alimentation électrique et envoyez-nous un e-mail à (link: mailto:austausch@calliope.cc text: &amp;lt;font color="#ffff00"&amp;gt;-=austausch@calliope.cc=-)proudly presents Si vous avez acheté votre mini, veuillez contacter le revendeur.
+L'idée de base de Calliope mini est l'utilisation en classe, où les enseignants gardent un œil attentif sur l'équipement. Tes parents seront heureux de te soutenir à la maison. Si vous avez des questions, vous trouverez des trucs et astuces sur cette page. Consultez notre page "A propos de mini", où vous trouverez également des informations sur les composants et les grandes expériences.
+
+**Veuillez respecter les instructions suivantes :**
+
+transport des animaux Calliope mini dans le sac antistatique dans lequel vous l'avez mis. N'oubliez pas de vous mettre à la terre (comme décrit ci-dessus)pour éviter tout dommage.
+Ne touchez que les coins de votre mini et ne touchez pas les composants lorsqu'il est connecté à l'alimentation électrique.
+N'utilisez que le support de pile ou un câble USB approprié pour alimenter le mini. Des tensions trop élevées peuvent endommager le mini et détruire des composants.
+Le port USB ne doit être connecté qu'à un ordinateur.
+Débranchez toujours l'ordinateur lorsqu'il n'est pas utilisé.
+Le Calliope mini ne doit jamais être utilisé simultanément avec un port USB et une batterie !
+Si votre mini est connecté à l'ordinateur, assurez-vous que le porte-piles) n'est pas connecté au mini ou au moins que l'interrupteur OFF (est éteint.
+
+En fonctionnement sur batterie, l'indicateur Calliope mini fonctionner exclusivement avec des piles de type AAA ou LR03().
+Ceux qui sont liés à la Calliope mini ne doit jamais dépasser 3,3 volts.
+
+Le support moteur externe ne peut être utilisé qu'avec une batterie (9V ou 6LR61). L'utilisation de piles rechargeables n'est pas autorisée.
+
+Les petites pièces doivent être gardées hors de portée des jeunes enfants. Risque d'ingestion !
+
+Ne continuez pas à utiliser une mini planche défectueuse. Si vous constatez un dommage, contactez immédiatement austausch@calliope.cc et faites-le remplacer.
+Calliope mini ne peut plus être fait ?
+Si votre mini est arrivé défectueux ou ne fonctionne pas correctement, ne vous inquiétez pas - nous vous aiderons. Appelez-nous ou envoyez-nous un e-mail : (link: mailto:service@calliope.cc text: service@calliope.cc)!
+
+Le manuel ci-joint pour le Calliope mini (fichier : calliope_givaway_booklet16_fcc_ff.pdf text: peut être trouvé ici).
+
+**Pour une utilisation ultérieure, conservez ce document dans un endroit sûr.**
+
+(zigzag: true)
+
+**FCC ID : 2AQMD-CALLIOPE-V13**
+**&amp;LT;FONT COLOR=#38B0DE&amp;GT;-===- PROUDLY PRESENTS**
+**TÉLÉC : 001-A15055**
+
+**attestations**
+(file: CE180620D13C.pdf text: CE Zertifizierung)
+(file: RM180620D13C.pdf text: CE Test Report)
+(file: RE180620D13.pdf text: RF Test Report)
+(file: RM180620D13.pdf text: EMC Test Report)
+(file: getapplicationattachment_html-2.pdf text: FCC Test Report)
+(file: getapplicationattachment_html-2.pdf text: FCC BT LE Test Report)
+(file: fac_calliope.pdf text: FAC Zertifikat)
+(file: colombia_calliopemini_calliope_2019-04-30_permanent.pdf text: CRT Zertifikat)
+
+----
+
+Teacher-info:
+
+----
+
+Secondary-nav: true

@@ -38,9 +38,9 @@ Weitere Informationen sowie Schaltplan, Blockschaltbild & Pinbelegung fndest du 
 <img src={MiniRevSchaltplanPNG1} alt="mini rev1.3 Schaltplan" />
 <img src={MiniRevSchaltplanPNG2} alt="mini rev1.3 Schaltplan" />
 
-<Box type='info'>
+<Admonition type='info'>
 Manche v1.3 minis besitzen bereits wie der v2 mini 32kB RAM.<br>Die Grundausführung sind allerdings 16kB.
-</Box>
+</Admonition>
 
 ### Quellen und Entwicklungsumgebungen
 

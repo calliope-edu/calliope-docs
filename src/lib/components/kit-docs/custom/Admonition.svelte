@@ -1,4 +1,5 @@
-<script >import clsx from 'clsx';
+<script >
+import clsx from 'clsx';
 import NoteIcon from '~icons/ri/sticky-note-fill';
 import InfoIcon from '~icons/ri/information-fill';
 import TipIcon from '~icons/ri/lightbulb-flash-fill';
@@ -16,12 +17,12 @@ const icons = {
     experimental: ExperimentalIcon,
 };
 const admonition = {
-        note: 'NOTE',
+        note: 'HINWEIS',
         info: 'INFO',
-        tip: 'TIP',
-        warning: 'WARNING',
-        danger: 'DANGER',
-        experimental: 'EXPERIMENTAL',
+        tip: 'TIPP',
+        warning: 'VORSICHT',
+        danger: 'ACHTUNG',
+        experimental: 'EXPERIMENTEL',
     };
 $: heading = title ?? admonition[type];
 </script>
@@ -58,3 +59,9 @@ $: heading = title ?? admonition[type];
     <slot />
   </div>
 </div>
+
+<style>
+  .admonition {
+    display: grid;
+  }
+</style>

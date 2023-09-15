@@ -1,0 +1,82 @@
+---
+title: "Los geht`s"
+description: "Los gehts"
+template: 
+published: true
+---
+
+
+# {title}
+
+
+
+
+Title: Mission
+
+----
+
+Headline: OUR MISSION
+
+----
+
+Subline: 
+
+----
+
+Text: 
+
+<Grid><div>
+
+## Our mission is to give every schoolchild a playful access to the digital world.
+
+We want to reach not only pupils, but also teachers and the education system, in order to contribute in the long term to more digital content being communicated to schools.
+We hope that this will lead to better educated children, but also more critical and confident users of the new technologies, who have been given both an enthusiasm for the possibilities and a feeling for the dangers.
+
+</div><div>
+
+(image: calliope_mini_gruen.gif)
+
+</div></Grid>
+
+(pushdown: 20)
+
+<Grid><div>
+
+(image: fivereasons.gif)
+
+</div><div>
+
+(num: 1 text: In primary school)
+In primary school, curiosity is still very pronounced in all subjects, so that a playful and creative approach can inspire many children to learn programming. Gender stereotypes are not yet so pronounced, which means that many girls are actively involved in primary school. In the best case scenario, everyone learns together in primary school. 
+
+</div><div> 
+
+(num: 2 text: Fostering creativity)
+Like handicrafts, coding is a creative process: you start with an idea and at the end you have a result in your hand. The children can, for example, create fantasy figures and make them up and then bring them to life with the Calliope mini - and they have also programmed a "robot" that can smile or perhaps lift its arm?
+They see a "problem", they take on something and discover another level in their lives on which they can creatively encounter this project.
+
+</div></Grid>
+
+(pushdown:20)
+
+<Grid><div>
+
+(num: 3 text: Promote skills)
+Programming promotes many competences at the same time. Not only competences such as operating a PC or storing a file in the right place, but also competences that are also important for the development of young people. Programming is about creative solutions, failure learning, teamwork, communication skills, presentation skills, frustration tolerance and stamina. And last but not least, independence. In small steps through trial and error, rethinking and, if necessary, rescheduling and retrying, children can independently deal with complex projects from an early age.
+
+</div><div> 
+(num: 4 text: Digitalized world)
+In an ever more automated world, it is essential that even the smallest ones realize that we are not only preparing them to get along in the world of machines and automation, but that we are enabling them to actively shape this future world. Demystify tech! I am not dominated by computers, I can help shape them. If you want to understand what is happening in the world, you have to understand that computers do what people tell them to do. Then these children will become self-confident and digitally responsible citizens who can experience full social, cultural and political participation. 
+ 
+</div><div> 
+(num: 5 text: Support learning)
+Children learn best by trying things out and doing them. Seymour Papert (the "grandfather of coding") says: 'You learn by doing but you learn better by thinking about what you are doing. I think this is what is most important.'
+Programming a robot makes children think about what they should do and what the robot should do - step by step.
+
+</div></Grid>
+
+(pushdown: 20)
+
+----
+
+Secondary-nav: true

@@ -1,6 +1,8 @@
 
 // @migration task: Check imports
-export const folderFromPath = (path) => path.match(/([\w-]+)\/(\/index)?\.(svelte\.md|md|svx)/i)?.[1] ?? null;
+export const _folderFromPath = (path) => path.match(/([\w-]+)\/(\/index)?\.(svelte\.md|md|svx|page)/i)?.[1] ?? null;
+export const prerender = true;
+
 import { slugFromPath,  } from '$lib/util';
 // import { page } from '$app/stores';
 
@@ -8,7 +10,7 @@ import { slugFromPath,  } from '$lib/util';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export async function GET({ url, params }) {
-	const modules = import.meta.glob(`../../../content/*/*/{[!index]*,*/index}{.,.de.,.en.}md`)
+	const modules = import.meta.glob(`../../../content/*/*/{[!index]*,*/index}{.,.de.,.en.}page`)
 	// console.log(modules)
 	let matches = Object.fromEntries(
 		Object.entries(modules).filter(([path, resolver]) => {

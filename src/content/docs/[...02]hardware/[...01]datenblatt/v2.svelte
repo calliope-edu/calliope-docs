@@ -79,6 +79,6 @@ Weitere Informationen sowie Schaltplan, Blockschaltbild & Pinbelegung fndest du 
 
 <br>
 
-<Box type='info'>
+<Admonition type='info'>
 Die größte Neuerung des V2 mini ist der 124Mb Flash-Speicher. Hier können bis zu 25 zusätzliche Programme gespeichert werden.
-</Box>
+</Admonition>
