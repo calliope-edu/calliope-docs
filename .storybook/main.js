@@ -21,7 +21,10 @@ const workaroundSvelteDocgenPluginConflictWithUnpluginIcons = (config) => {
 
 /** @type { import('@storybook/sveltekit').StorybookConfig } */
 const config = {
-	stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx|svelte)'],
+	stories: [
+		'../src/**/*.mdx',
+		'../src/**/*.stories.@(js|jsx|mjs|ts|tsx|svelte)'
+	],
 	addons: [
         '@storybook/addon-links',
         '@storybook/addon-essentials',
@@ -38,7 +41,7 @@ const config = {
 		options: {}
 	},
 	docs: {
-		autodocs: 'tag'
+		autodocs: true
 	},
 	viteFinal(config) {
 		return workaroundSvelteDocgenPluginConflictWithUnpluginIcons(config);

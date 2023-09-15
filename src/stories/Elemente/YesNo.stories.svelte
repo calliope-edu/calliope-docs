@@ -10,6 +10,11 @@
     title="Elements/Yes & No" 
 />
 
+<Story name="Yes & No">
+    <Yes>Lorem Ipsum</Yes>
+    <No>Lorem Ipsum</No>
+</Story>
+
 <Story name="Text">
 <Yes>
     <div class='prose'>
