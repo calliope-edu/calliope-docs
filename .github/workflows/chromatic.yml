@@ -6,8 +6,8 @@ name: 'Chromatic'
 # Event for the workflow
 on: 
   push:
-    branches:
-      - storybook
+    # branches:
+    #   - storybook
 
 # List of jobs
 jobs:
