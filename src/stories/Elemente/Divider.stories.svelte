@@ -21,6 +21,7 @@
 	<Divider {...args}>
 		<div />
     </Divider>
+    <code><pre>{`<Divider`}{#each Object.keys(args) as key}{` ${key}="${args[key]}"`}{/each}{`></Divider>`}</pre></code>
 </ProseDecorator>
 </Template>
 
