@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* a {
+    @apply text-calliope-600;
+} */
+
+body {
+    @apply bg-gray-50 font-sans leading-normal tracking-normal;
+}
+
+main {
+    @apply container w-full md:max-w-3xl mx-auto pt-20 mt-10;
+
+    min-height: calc(100vh - 11rem);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @apply font-mono;
+}
+
+.prose :where(code):not(:where([class~="not-prose"] *))::after {
+    content: "";
+}
+
+.prose :where(code):not(:where([class~="not-prose"] *))::before {
+    content: "";
+}
+
+.prose :where(code):not(:where([class~="not-prose"] *)) {
+    background: rgba(0,0,0,.05);
+    border-radius: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+}

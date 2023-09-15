@@ -1,0 +1,42 @@
+<script>
+    export let mind;
+    export let makecode;
+    export let makecodeUrl;
+    export let nepo;
+
+    import iconMakecode from './makecode.svg'
+    import iconMind from './mind+.png'
+    import iconNepo from './nepo.svg'
+</script>
+
+<div class='flex items-center'>
+    {#if mind != undefined}
+            <img src={iconMind} alt='Icon mind+' />
+            <Button text='.sb3' link={mind} />
+    {/if}
+
+    {#if makecode != undefined}
+        <img src={iconMakecode} alt='Icon MakeCode' />
+        <Button text='.hex' link={makecode} />
+    {/if}
+
+    {#if makecodeUrl != undefined}
+        
+        <Button text='Code' link={makecodeUrl} type='border' />
+    {/if}
+
+    {#if nepo != undefined}
+        <img src={iconNepo} alt='Icon Nepo' />
+        <Button text='.xml' link={nepo} />
+    {/if}
+</div>
+
+<style>
+    img {
+        width: 2rem;
+        margin-left: 1rem;
+    }
+    img:first-child {
+        margin-left: 0;;
+    }
+</style>

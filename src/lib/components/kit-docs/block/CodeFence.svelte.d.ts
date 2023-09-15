@@ -1,4 +1,4 @@
-import { SvelteComponentTyped } from "svelte";
+import { SvelteComponent } from "svelte";
 declare const __propDef: {
     props: {
         lang?: string | null;
@@ -21,6 +21,6 @@ declare const __propDef: {
 export declare type CodeFenceProps = typeof __propDef.props;
 export declare type CodeFenceEvents = typeof __propDef.events;
 export declare type CodeFenceSlots = typeof __propDef.slots;
-export default class CodeFence extends SvelteComponentTyped<CodeFenceProps, CodeFenceEvents, CodeFenceSlots> {
+export default class CodeFence extends SvelteComponent<CodeFenceProps, CodeFenceEvents, CodeFenceSlots> {
 }
 export {};

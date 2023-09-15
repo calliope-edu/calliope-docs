@@ -1,0 +1,421 @@
+---
+title: Bauteile
+description: Good description of topic
+template: docs
+published: true
+---
+
+<script>
+    import Bauteil from './Bauteil.svx'
+</script>
+
+# {title}
+
+![](./calliope_mini_illustration_all.svg)
+
+## Eingabe und Ausgabe
+
+<Bauteil>
+    <div slot='title'>
+
+        ### 5x5 LED Matrix
+        </div>
+    <div slot='board'>
+
+        ![](./board/calliope_feature_components_matrix.svg)
+        </div><div slot='icon'>
+
+        ![](./icons/calliope_feature_icon_matrix.svg)
+        </div>
+
+    Die roten Lämpchen sind sogenannte LED ( aus dem englischen Light-Emitting Diodes ). Sie bilden ein 5x5-Raster und können einzeln angesteuert werden.
+</Bauteil>
+
+<Bauteil>
+    <div slot='title'>
+
+      ### RGB LED  
+    </div>
+    <div slot='board'>
+
+        ![](./board/calliope_feature_components_rgb.svg)
+    </div><div slot='icon'>
+
+        ![](./icons/calliope_feature_icon_rgb.svg)
+    </div>
+
+    Die unter dem 5x5 Raster liegende einzelne (RGB-LED ) ermöglicht die Darstellung unzähliger weiterer Farben.
+</Bauteil>
+
+
+<Bauteil>
+    <div slot='title'>
+
+        ### Lautsprecher
+    </div>
+    <div slot='board'>
+
+        ![](./board/calliope_feature_components_speaker.svg)
+    </div><div slot='icon'>
+
+        ![](./icons/calliope_feature_icon_speaker.svg)
+    </div>
+
+    Mit dem integrierten Lautsprecher kannst du Musik abspielen oder ihn einfach piepsen lassen – was auch immer dein Projekt benötigt.
+</Bauteil>
+
+
+
+<Bauteil>
+    <div slot='title'>
+
+        ### Knöpfe und Tasten
+    </div>
+    <div slot='board'>
+
+        ![](./board/calliope_feature_components_buttons.svg)
+    </div><div slot='icon'>
+
+        ![](./icons/calliope_feature_icon_buttons.svg)
+    </div>
+
+    Mit den Tastern A und B links und rechts von den roten LED kannst du Eingaben vornehmen. Wenn du einen Knopf drückst, wird ein Schaltkreis geschlossen. Das Board kann erkennen, ob nur einer oder beide Knöpfe gedrückt werden. Über ein Programm kannst du selbst bestimmen, was passiert, wenn du einen oder beide Taster drückst.
+</Bauteil>
+
+
+
+
+<Bauteil>
+    <div slot='title'>
+
+        ### Touch-Pins
+    </div>
+    <div slot='board'>
+
+        ![](./board/calliope_feature_components_pins.svg)
+    </div><div slot='icon'>
+
+        ![](./icons/calliope_feature_icon_pins.svg)
+    </div>
+
+    An die mit P0, P1 und P2 beschrifteten Pins des Calliope mini kannst du Sensoren wie Temperaturfühler oder Feuchtigkeitsmesser anschließen. Zudem sind sie berührungsempfindlich, so wie du es beispielsweise von Touchscreens kennst. Die mit "+" und "-" beschrifteten Ecken kannst du nutzen, um mittels Klemmen eine Batterie anzuschließen oder Strom auszugeben, um eine LED dauerhaft zum Leuchten zu bringen.
+</Bauteil>
+
+
+## Sensoren
+
+<Bauteil>
+    <div slot='title'>
+
+        ### Lagesensor
+    </div>
+    <div slot='board'>
+
+        ![](./board/calliope_feature_components_lage.svg)
+    </div><div slot='icon'>
+
+        ![](./icons/calliope_feature_icon_lage.svg)
+    </div>
+
+    Das kombinierte Bauteil neben dem Taster A enthält einen Kompass, einen Bewegungssensor und einen Beschleunigungssensor. Dadurch kann der Calliope mini zum Beispiel messen, in welche Richtung und mit welcher Geschwindigkeit er bewegt wird.
+</Bauteil>
+
+
+<Bauteil>
+    <div slot='title'>
+
+        ### Lichtsensor
+    </div>
+    <div slot='board'>
+
+        ![](./board/calliope_feature_components_licht.svg)
+    </div><div slot='icon'>
+
+        ![](./icons/calliope_feature_icon_licht.svg)
+    </div>
+
+    Der Lichtsensor misst über einige der roten LED die Helligkeit in der Umgebung.
+</Bauteil>
+
+
+<Bauteil>
+    <span slot='title'>
+
+        ### Temperatursensor
+
+    </span>
+    <span slot='board'>
+
+        ![](./board/calliope_feature_components_temp.svg)
+
+    </span><span slot='icon'>
+
+        ![](./icons/calliope_feature_icon_temp.svg)
+
+    </span>
+
+    Der Temperatursensor kann die Temperatur in der Umgebung messen, da er am Prozessor anliegt, ist die Temperatur allerdings nicht ganz exakt.
+</Bauteil>
+
+
+<Bauteil>
+    <span slot='title'>
+
+        ### Mikrofon
+
+    </span>
+    <span slot='board'>
+
+        ![](./board/calliope_feature_components_volume.svg)
+
+    </span><span slot='icon'>
+
+        ![](./icons/calliope_feature_icon_volume.svg)
+
+    </span>
+
+    Das Mikrofon kann als Sensor die Lautstärke der Umgebung messen.
+</Bauteil>
+
+
+<Bauteil>
+    <span slot='title'>
+
+        ### Kompass
+
+    </span>
+    <span slot='board'>
+
+        ![](./board/calliope_feature_components_kompass.svg)
+        
+
+    </span><span slot='icon'>
+
+        ![](./icons/calliope_feature_icon_compass.svg)
+
+    </span>
+
+    Das kombinierte Bauteil unter dem Knopf A enthält einen Kompass, einen Bewegungssensor und einen Beschleunigungssensor. Mit deren Hilfe kann der Calliope mini erkennen, in welche Richtung und mit welcher Geschwindigkeit er bewegt wird.
+</Bauteil>
+
+
+
+<Bauteil>
+    <span slot='title'>
+
+        ### Funk
+
+    </span>
+    <span slot='board'>
+
+        ![](./board/calliope_feature_components_funk.svg)
+        
+
+    </span><span slot='icon'>
+
+        ![](./icons/calliope_feature_icon_radio.svg)
+
+    </span>
+
+    Du kannst von einem Calliope mini zu einem anderen Signale über Funk senden und so Nachrichten weitergeben.
+</Bauteil>
+
+
+<Bauteil>
+    <span slot='title'>
+
+        ### Bluetooth
+
+    </span>
+    <span slot='board'>
+
+        ![](./board/calliope_feature_components_bluetooth.svg)
+        
+
+    </span><span slot='icon'>
+
+        ![](./icons/calliope_feature_icon_bluetooth.svg)
+
+    </span>
+
+    Du hast keine Lust auf Kabel oder willst abseits des Computers mit deinem Calliope mini arbeiten? Kein Problem: Über Bluetooth kannst du das Board mit einem Smartphone oder Tablet verbinden und Daten übertragen. Es geht aber auch andersherum - der Calliope mini kann bestimmte Funktionen auf dem Smartphone auslösen, ganz wie Du es programmiert hast.
+</Bauteil>
+
+
+
+## Erweiterungsmöglichkeiten
+
+<Bauteil>
+    <span slot='title'>
+
+        ### Grove Adapter
+
+    </span>
+    <span slot='board'>
+
+        ![](./board/calliope_feature_components_grove.svg)
+        
+
+    </span><span slot='icon'>
+
+        ![](./icons/calliope_feature_icon_grove.svg)
+
+    </span>
+
+    An die beiden Verbindungsstecker können Erweiterungsmodule angeschlossen werden, um mit dem Calliope mini z.B. Licht oder Farbe zu messen. Einfach anstecken und loslegen!
+</Bauteil>
+
+
+<Bauteil>
+    <span slot='title'>
+
+        ### Motortreiber (DRV8837)
+
+    </span>
+    <span slot='board'>
+
+        ![](./board/calliope_feature_components_motor.svg)
+        
+
+    </span><span slot='icon'>
+
+        ![](./icons/calliope_feature_icon_motor.svg)
+
+    </span>
+
+    Auf dem Calliope mini ist ein Motortreiber verbaut, der Motoren bis zu 9V versorgen über eine externe Stromversorgung steuern kann. Der Motortreiber ist eine H-Brücken Transistorenschaltung, welche die Polarität des Stromkreises ändern kann und so verschiedenen Modi des Motors, wie Vorwärts-, Rückwärtsfahren, Bremsen und Leerlauf realisiert. Der Motortreiber ist so konzipiert, dass dieser als Vollbrücke einen Motor Vorwärts- und Rückwärts bewegen kann. Für zwei Motoren wird diese in zwei Halbbrücken aufgeteilt und es können die Motoren nicht unabhängig voneinander entgegengesetzt, beziehungsweise rückwärts bewegt werden.
+</Bauteil>
+
+
+Genauere Informationen können aus dem Datenblatt entnommen werden: [Datenblatt: DRV8837](https://www.ti.com/lit/ds/symlink/drv8837.pdf)
+
+#### Motorzustände und Wahrheitstabelle
+
+***2 Motoren***
+
+| IN1 | IN2 | OUT1 | OUT2  | Modus     |
+|-----|-----|------|-------|-----------|
+| 0   | 0   | Z    | Z     | Leerlauf  |
+| 0   | 1   | L    | H     | Rückwärts |
+| 1   | 0   | H    | L     | Vorwärts  |
+| 1   | 1   | L    | L     | Bremsen   |
+
+
+***1 Motor***
+
+| IN1 | IN2 | OUT1 | OUT2  | Motor1        | Motor2        |
+|-----|-----|------|-------|---------------|---------------|
+| 0   | 0   | Z    | Z     | Bremsen       | Bremsen       |
+| 0   | 1   | L    | H     | Beschleunigen | Bremsen       |
+| 1   | 0   | H    | L     | Bremsen       | Beschleunigen |
+| 1   | 1   | L    | L     | Vorwärts      | Vorwärts      |
+
+
+*H = High-Side-Schalter an, L = Low-Side-Schalter an, Z = Beide Schalter aus*
+
+
+## System
+
+<Bauteil>
+    <span slot='title'>
+
+        ### Batterie Anschluss
+
+    </span>
+    <span slot='board'>
+
+        ![](./board/calliope_feature_components_battery.svg)
+        
+
+    </span><span slot='icon'>
+
+        ![](./icons/calliope_feature_icon_battery.svg)
+
+    </span>
+
+    An die Batteriebuchse schließt du das Kabel deines Batteriehalters an. Jetzt bist du mobil!
+</Bauteil>
+
+
+
+<Bauteil>
+    <span slot='title'>
+
+        ### USB-Anschluss
+
+    </span>
+    <span slot='board'>
+
+        ![](./board/calliope_feature_components_usb.svg)
+        
+
+    </span><span slot='icon'>
+
+        ![](./icons/calliope_feature_icon_usb.svg)
+
+    </span>
+
+    Der USB-Anschluss an der oberen Seite deines mini ist die einfachste Möglichkeit, um eigene Programme zu übertragen. Verbinde das Board einfach mit einem Micro-USB-Kabel mit deinem Computer und schon geht es los!
+</Bauteil>
+
+
+
+<Bauteil>
+    <span slot='title'>
+
+        ### Prozessor
+
+    </span>
+    <span slot='board'>
+
+        ![](./board/calliope_feature_components_prozessor.svg)
+        
+
+    </span><span slot='icon'>
+
+        ![](./icons/calliope_feature_icon_processor.svg)
+
+    </span>
+
+    Der Prozessor in der unteren linken Ecke des mini verbindet alle Funktionen deines mini miteinander. Er liefert ausreichend Rechenleistung für alle Ideen und Projekte, die du dir ausdenkst – und für noch viel mehr!
+</Bauteil>
+
+
+<Bauteil>
+    <span slot='title'>
+
+        ### Status LED
+
+    </span>
+    <span slot='board'>
+
+        ![](./board/calliope_feature_components_status.svg)
+        
+
+    </span><span slot='icon'>
+
+        ![](./icons/calliope_feature_icon_status.svg)
+
+    </span>
+
+    Die gelbe Statusleuchte oben links zeigt an, ob irgendetwas passiert ist.
+</Bauteil>
+
+
+<Bauteil>
+    <div slot='title'>
+
+        ### Reset Taste
+    </div>
+    <div slot='board'>
+
+        ![](./board/calliope_feature_components_reset.svg)
+        
+    </div><div slot='icon'>
+
+        ![](./icons/calliope_feature_icon_reset.svg)
+    </div>
+
+    Der Knopf RESET ermöglicht das Zurücksetzen des Calliope mini auf den vorher definierten Start-Zustand.
+</Bauteil>
+

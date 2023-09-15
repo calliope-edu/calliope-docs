@@ -19,13 +19,14 @@ export async function load({ url, fetch, params }) {
 
 	let Page;
 
-	const pagesIndex = await import.meta.globEager(`../../content/*/index{.,.de.,.en.}{md,svx}`);
-	const pagesFolders = await import.meta.globEager(`../../content/*{.,.de.,.en.}{md,svx}`);
-	const pages = {...pagesIndex, ...pagesFolders}
+	const pages = await import.meta.globEager(`../../content/{[!index]*,*/index}{.,.de.,.en.}page`)
+
+	// console.log(pages)
 
 	let match;
         for (const [path, resolver] of Object.entries(pages)) {
             if (slugFromPath(path) === params.slug1) {
+				slugFromPath('oK')
                 match = [path, resolver];
                 break;
             }

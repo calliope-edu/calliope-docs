@@ -1,6 +1,7 @@
-
 // @migration task: Check imports
-export const folderFromPath = (path) => path.match(/([\w-]+)\/(\/index)?\.(svelte\.md|md|svx)/i)?.[1] ?? null;
+export const _folderFromPath = (path) => path.match(/([\w-]+)\/(\/index)?\.(svelte\.md|md|svx|page)/i)?.[1] ?? null;
+export const prerender = true;
+
 import { slugFromPath,  } from '$lib/util';
 // import { page } from '$app/stores';
 
@@ -12,16 +13,10 @@ export async function GET({ url, params }) {
 	let modules = [];
 	let folder = '';
 	if(params.slug1 === 'index'){
-		modules = {
-			...(import.meta.glob(`../../content/*/index.{md,svx,svelte}`)),
-			...(import.meta.glob(`../../content/*.{md,svx,svelte}`))
-		};
+		modules = {...import.meta.glob(`../../content/[!!]{[!index]*,*/index}{.,.de.,.en.}page`)}
 	} else {
 		folder = `${params.slug1}/`
-		modules = {
-			...(import.meta.glob(`../../content/*/*/index.{md,svx,svelte}`)),
-			...(import.meta.glob(`../../content/*/*.{md,svx,svelte}`))
-		};
+		modules = {...import.meta.glob(`../../content/[!!]*/[!!]{[!index]*,*/index}{.,.de.,.en.}page`)}
 	}
 
 	let matches = Object.fromEntries(
@@ -31,8 +26,10 @@ export async function GET({ url, params }) {
 		}
 	));
 
-	const limit = Number(url.searchParams.get('limit') ?? Infinity);
-	const orderBy = Number(url.searchParams.get('orderBy') ?? null);
+	// const limit = Number(url.searchParams.get('limit') ?? Infinity);
+	// const orderBy = Number(url.searchParams.get('orderBy') ?? null);
+	const limit = Infinity;
+	const orderBy = null;
 
 	if (Number.isNaN(limit)) {
 		return {

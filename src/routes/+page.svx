@@ -1,5 +1,5 @@
 <script>
-    import TemplateLoader from '$lib/templates/TemplateLoader.svelte'
+    import TemplateLoader from '$lib/templates/TemplateLoader.svx'
 
 	/** @type {import('./$types').PageData */
 	export let data;

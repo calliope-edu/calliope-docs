@@ -1,4 +1,4 @@
-<style>
+<style lang="scss">
     div :global(*) {
         margin: 0;
     }
