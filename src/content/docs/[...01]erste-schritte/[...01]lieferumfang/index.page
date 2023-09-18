@@ -8,12 +8,12 @@ docTitle: Erste Schritte
 
 # {title}
 
-Der Calliope mini ist als Klassensatz und einzeln als Starterbox erhältlich.
+Der Calliope mini ist als Klassensatz und einzeln in der Startbox erhältlich.
 
-## Calliope mini Starterbox
+## Calliope mini Startbox
 
 
-Die Calliope mini Starterbox enthält, neben dem Calliope mini, einen Batteriehalter, 2 AAA Batterien, ein USB Kabel, ein Gummiband und eine Schnellstart-Anleitung.
+Die Calliope mini Startbox enthält, neben dem Calliope mini, einen Batteriehalter, 2 AAA Batterien, ein USB-Kabel, ein Gummiband und eine Schnellstart-Anleitung.
 
 ### Inhalt
 - Calliope mini
@@ -28,7 +28,7 @@ Die Calliope mini Starterbox enthält, neben dem Calliope mini, einen Batterieha
 
 ## Klassensätze
 
-Dem Calliope mini Klassensatz für Grundschulen liegen neben den Handreichungen für Schüler:innen und Lehrkräfte auch Krokoklemmen, Kupferklebeband und LEDs bei und kann bei Cornelsen Experimenta erworben werden. Eine Angebotsanfrage ist über <info@cornelsen-experimenta.de> möglich.  
+Dem Calliope mini Klassensatz für Grundschulen liegen neben den Handreichungen für Schüler:innen und Lehrkräfte auch Krokoklemmen, Kupferklebeband und LEDs bei und kann bei Cornelsen Experimenta erworben werden. Eine Angebotsanfrage ist direkt auf der Calliope Seite <ttps://shop.calliope.cc> oder über <info@cornelsen-experimenta.de> möglich.  
 
 Der Klassensatz für den Einsatz ab der SEK I bietet die Möglichkeit, den Calliope mini einfach und schnell (dank der integrierten Grove-Adapter) mit externen Sensoren und Aktoren zu erweitern.
 
@@ -37,11 +37,10 @@ Der Klassensatz für den Einsatz ab der SEK I bietet die Möglichkeit, den Calli
 
 ### Klassensatz Grundschule
 - 20 Calliope mini Starterboxen
-- 20 Schüler*innen - Arbeitshefte
-- Handreichung für Lehrkräfte
 - 40 Krokoklemmen
 - Kupferklebeband
-- LEDs 
+- LEDs
+- Calliope mini Arbeitsheft
 
 </div>
 <div>
@@ -50,6 +49,7 @@ Der Klassensatz für den Einsatz ab der SEK I bietet die Möglichkeit, den Calli
 - 20 Calliope mini Starterboxen
 - 10 Feuchtigkeitssensoren
 - 10 Ultraschall Entfernungssensoren
+- Calliope mini Arbeitsheft
 
 </div>
 </Grid>
