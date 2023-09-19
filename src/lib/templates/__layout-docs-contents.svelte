@@ -26,7 +26,7 @@
                             </div>
                             <h3>{page.title}</h3>
                             <p>{page.description}</p>
-                            <Button>So geht´s!</Button>
+                            <Button>So geht’s!</Button>
                         </a>            
                 {/each}
             </Grid>

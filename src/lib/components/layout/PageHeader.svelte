@@ -15,8 +15,8 @@
 
         <div class="pl-4">
             <a data-sveltekit-prefetch class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="/">
-               <img src="/Logo_Calliope_Woman.svg" style="height: 2.5rem;" alt="Calliope Logo" />
-                Technische Dokumentation
+               <img src="/Logo_Calliope_lang.svg" style="height: 2.5rem;" alt="Calliope Logo" />
+             
             </a>
         </div>
 

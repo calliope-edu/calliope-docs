@@ -53,7 +53,9 @@
 </a>
 
 <style lang="scss">
-
+a {
+  text-transform: uppercase;
+}
 
 .rainbow-text {
   background-image: linear-gradient(315deg, #F7C425 0%, #E6007E 30%, #6476FD 60%, #3FC863 110%);
