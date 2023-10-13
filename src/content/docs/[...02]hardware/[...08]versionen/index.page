@@ -11,7 +11,7 @@ published: true
 ### Boardversionen des Calliope mini unterscheiden
 
 #### Versionsnummer
-Die Nummer der Produktionsserie befindet sich auf der Rückseite oben rechts neben dem micro-USB-Anschluss. Das ist der sicherste Weg, deinen mini zu identifizieren.
+Die Nummer der Produktionsserie befindet sich auf der Rückseite oben rechts neben dem micro-USB-Anschluss. Das ist der sicherste Weg, deinen Calliope mini zu identifizieren.
 
 ![Lage Nummer der Produktionsserie](./CalliopeNr.png)
 
@@ -20,10 +20,11 @@ Es gibt einige Calliope mini, welche als Versionsnummer die v1.2 tragen. Diese s
 </Admonition>
 
 #### Weitere Merkmale
-Welchen mini du vor dir liegen hast, kannst du anhand einiger Merkmale erkennen: 
+Welchen Calliope mini du vor dir liegen hast, kannst du anhand einiger Merkmale erkennen: 
 
-|                      | v2                     | v1.3                               | v0.3             |
-| -------------------- | ---------------------- | ---------------------------------- | ---------------- |
-| Rückseite            | vollflächig weiß       | weißes Namensfeld auf blauem Grund | vollflächig Blau |
-| Logo auf Vorderseite | links                  | links                              | rechts           |
-| Flash-Speicher       | oben rechts aufgelötet | ohne, Lötstelle vorhanden          | ohne             |
+|                      | v3                     | v2                     | v1.3                               | v0.3             |
+| -------------------- | ---------------------- | ---------------------- | ---------------------------------- | ---------------- |
+| Platinenfarbe        | schwarz                | blau                   | blau                               | blau             |
+| Rückseite            | vollflächig weiß       | vollflächig weiß       | weißes Namensfeld auf blauem Grund | vollflächig blau |
+| Logo auf Vorderseite | links                  | links                  | links                              | rechts           |
+| Flash-Speicher       | ohne                   | oben rechts aufgelötet | ohne, Lötstelle vorhanden          | ohne             |
