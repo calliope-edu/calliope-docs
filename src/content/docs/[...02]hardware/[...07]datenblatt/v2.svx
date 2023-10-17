@@ -35,9 +35,6 @@ Weitere Informationen sowie Schaltplan, Blockschaltbild & Pinbelegung fndest du 
 | USB-Programmierinterface  | PRTR5V0U2F | - |
 | USB Micro B Anschluss | 47642-0001 | Stromversorgung und Programmierung | 
 
-[comment]: <> (Warum 8 - 11 IO Pins? Ich zähle mehr, was heißt je nach Softwarkonfiguration? )
-[comment]: <> (Ich würde die seriellen Schnittstellen und Protokolle extra behandeln als neuen Unterpunkt)
-
 <!-- - Nordic nRF51822 Multi-protocol Bluetooth® 4.0 low energy/4GHz RF SoC 
 - 32-bit ARM Cortex M0 processor (16MHz)
 - 32kB RAM
@@ -79,6 +76,3 @@ Weitere Informationen sowie Schaltplan, Blockschaltbild & Pinbelegung fndest du 
 
 <br>
 
-<Admonition type='info'>
-Die größte Neuerung des V2 mini ist der 124Mb Flash-Speicher. Hier können bis zu 25 zusätzliche Programme gespeichert werden.
-</Admonition>

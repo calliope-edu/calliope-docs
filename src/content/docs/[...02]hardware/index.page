@@ -8,3 +8,24 @@ published: true
 # {title} 
 
 
+<script>
+import V2Datenblatt from './components/v2.svx';
+
+let aktiv = 3;
+</script>
+
+<button on:click={()=>{aktiv=1}}>v1</button>
+<button on:click={()=>{aktiv=2}}>v2</button>
+<button on:click={()=>{aktiv=3}}>v3</button>
+
+{#if aktiv == 1}
+
+1
+
+{:else if aktiv == 2}
+
+2
+
+{:else}
+<V2Datenblatt />
+{/if}
