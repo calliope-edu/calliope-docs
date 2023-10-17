@@ -2,14 +2,14 @@
 title: Hardware
 description: 
 template: docs_contents
-published: true
+published: True
 ---
 
 # {title} 
 
 
 <script>
-import V2Datenblatt from './components/v2.svx';
+import V2Datenblatt from './[...01]components/v2.svx';
 
 let aktiv = 3;
 </script>
