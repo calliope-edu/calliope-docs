@@ -33,8 +33,17 @@ Schließe niemals mehre Verbraucher, mit 20mA wie z.B. 2 LEDs an einen I/O-Pin a
 Verwendete stattdessen verschiedene I/O Pins oder eine Transistorenschaltung. Beachte, dass ingesamt nicht die 100 mA überschritten werden.
 </Yes>
 
+## Touchpins
 
+Auf den 6 Ecken des sternenförmigen Calliope minis befinden sich jeweils große Pins, die es ermöglichen Krokodilklemmen anzuschließen oder auf Berührung zu reagieren. 2 der Pins, sind GND und 3,3V und 4 davon programmierbar.
+Die 4 Pins können alle sowohl analoge als auch digitale Werte senden und empfangen.
+<!-- ist das richtig? -->
 
+### Resistiver und capacitiver Touchmodus
+Um einer der Touchpins auf 1 zu setzen, muss GND zusätzlich berührt, wenn dieser im **resistiven Touchmodus** betrieben wird. Falls dieser im **capacitiven Touchmodus** betrieben werden soll, kann dies z.B. in der Programmierung in Makecode erfolgen. 
+Weitere Information zum Betrieb in den verschiedenen Touchmodi findest du [hier](...).
+
+----
 
 ## Analoge Pins
 
@@ -53,8 +62,9 @@ Der integrierte Digital-Analog-Umsetzer des Calliope mini sorgt dafür, dass die
 
 Um eine LED zu dimmen oder die Geschwindigkeit eines Motors zu varieren, müsste analog die Spannung verändert werden. Der Ausgang der Pins liegt allerdigns immer bei 3,3 V. Mit der Pulsweitenmodulation wird durch schnelles ein und auschalten in unterschiedlicher Periodendauer ein analoges Signal simuliert werden, welches unterschiedliche abgestufte Werte annehmen kann. 
 
-**Wieviele PWM-Pins können parallel verwendet werden?** 
-Es können bis zu 3 PWM-Signale gleichzeitig generiert werden, bevor diese anfangen unflüssig und abgestuft zu werden. 
+
+<UnfoldItem title="Wieviele PWM-Pins können parallel verwendet werden?">Es können bis zu 3 PWM-Signale gleichzeitig generiert werden, bevor diese anfangen unflüssig und abgestuft zu werden. 
+</UnfoldItem>
 
 
 ## Pinbelegung

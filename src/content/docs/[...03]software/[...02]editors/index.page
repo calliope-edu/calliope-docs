@@ -12,6 +12,18 @@ Der Calliope mini kann sowohl mit Blockbasierten, als auch textbasierten Editore
 
 ## Makecode
 
+MakeCode ist ein von Microsoft Research entwickelter Programmiereditor mit dem sowohl block-, als auch textbasiert Microcontroller programmiert werden können. Der Editor ist erweiterbar und skalierbar indem Pakete, die unter anderem von den Nutzer:innen erstellt werden, hinzugefügt werden können.
+
+Weitere Informationen findest du auf der Calliope **[Webseite](https://calliope.cc/programmieren/editoren/makecode)** 
+
+### Eventbasierte Programmierung
+
+Der Calliope mini kann mit Makecode zu einem reaktiven System programmiert werden, welches parallel auf Events von Außen reagiert. Ein Eventscheduler sorgt dafür, dass mehrere Subprogramme oder Aufgaben parallel abgearbeitet werden. 
+
+Weitere Informationen zur Funktionsweise von Makecode, kann hier nachgelesen werden: 
+
+https://makecode.microbit.org/device/reactive
+
 ## Micropython
 
 ## Open Roberta Lab

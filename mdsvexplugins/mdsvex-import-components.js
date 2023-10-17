@@ -13,6 +13,7 @@ const scripts = `
     import Zigzag from '$lib/components/elements/Zigzag.svelte'
 
     import Button from '$lib/components/elements/Button.svelte'
+    import UnfoldItem from '$lib/components/elements/UnfoldItem.svelte'
 
     // Import KitDocs components https://github.com/svelteness/kit-docs/
     import Admonition from '$lib/components/kit-docs/custom/Admonition.svelte';

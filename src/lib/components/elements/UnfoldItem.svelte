@@ -101,11 +101,14 @@ align-items: center
 }
 
 .before { grid-area: 1 / 1 / 2 / 2; }
-.btn { grid-area: 1 / 2 / 2 / 3; }
+.btn { 
+  grid-area: 1 / 2 / 2 / 3; 
+  font-weight: bold;
+  }
 .description { grid-area: 2 / 2 / 3 / 3; }
 
   .flex {
-    max-width: 600px;
+    // max-width: 600px;
     width: 100%;
     margin: auto;
     display: flex;
