@@ -1,6 +1,6 @@
 ---
 title: Pins
-description: Der Calliope mini verfügt über diverse Pins mit unterschiedlichen Funktionen, die programmiert werden können und womit Daten ausgetauscht werden.
+description: Der Calliope mini verfügt über diverse Pins, die programmiert und Daten ausgetauscht werden können.
 template: docs
 published: true
 ---
@@ -17,6 +17,8 @@ published: true
 - der Pin C12 wird von JacDac mitverwendet 
 - 4 Motor Pins
 - Pins für LED-Anzeige: <br>Um Display Pins für andere Sachen benutzen, muss die LED-Matrix über den Editor mit [LED-Anzeige aktivieren](https://makecode.calliope.cc/reference/led/enable) ausgeschaltet werden.
+
+![Pinout](/calliopev3_front.svg)
 
 <!-- Hier Grafik mit der Steckleiste einfügen: -->
 

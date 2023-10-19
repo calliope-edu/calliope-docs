@@ -5,7 +5,13 @@ template: docs
 published: true
 ---
 
-<script>
+# {title} 
+
+{description}
+
+![Pinout](/calliopev3_front.svg)
+
+<!-- <script>
 import V2Datenblatt from './v2.svx';
 
 let aktiv = 3;
@@ -27,4 +33,4 @@ let aktiv = 3;
 <V2Datenblatt />
 {/if}
 
-  {title}
+  {title} -->
