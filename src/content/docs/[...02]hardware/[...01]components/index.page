@@ -86,6 +86,8 @@ Mit dem MEMS-Mikrofon kann die der Schalldruckpegel (SPL) und die Lautstärke ge
 
 ## Motortreiber
 
+DRV8835
+
 Dieser Motortreiber besitzt 2 seperate H-Brücken Treiber und kann damit 2 Gleichspannungsmotoren von einander unabhängig steuern. Die maximale Eingangspannung beträgt 9V, der maximale Strom pro Motor beträgt 1.5A.
 Hier findest du einen Link zum [Datenblatt](https://www.ti.com/lit/ds/symlink/drv8835.pdf?ts=1697459375123)
 **Kurz Infos:**
