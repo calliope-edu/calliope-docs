@@ -1,6 +1,6 @@
 ---
 title: Pins
-description: Der Calliope mini verfügt über diverse Schnittstellen mit unterschiedlichen Protokollen, die programmiert werden können und womit Daten ausgetauscht werden.
+description: Der Calliope mini verfügt über diverse Pins, die programmiert und Daten ausgetauscht werden können.
 template: docs
 published: true
 ---
@@ -9,34 +9,69 @@ published: true
 
 {description}
 
+- Logo Pin
+- 6 Bananenstecker, 4 davon Touchpins
+- P0,P1,P2,P3,C8,C9,C17 general purpose pins
+- die Pins C16, C17 werden für den rechten Grove Anschluss mitverwendet
+- die Pins C19,C20 werden für den linken Grove Anschluss mitverwendet
+- der Pin C12 wird von JacDac mitverwendet 
+- 4 Motor Pins
+- Pins für LED-Anzeige: <br>Um Display Pins für andere Sachen benutzen, muss die LED-Matrix über den Editor mit [LED-Anzeige aktivieren](https://makecode.calliope.cc/reference/led/enable) ausgeschaltet werden.
 
-## Stromversorgung
+![Pinout](/calliopev3_front.svg)
 
-### Spannung
+<!-- Hier Grafik mit der Steckleiste einfügen: -->
 
-- Alle ein und Ausgabe-Pins liefern 3,3 V und werden auch mit 3,3 V betrieben.
+## Ausgangsspannung und -stromstärke
 
-<Admonition type='info'>
-Sensoren die mit 5V betrieben werden, funktionieren in den meisten Fällen nicht.
-</Admonition>
+Spannung:
+- Vcc (normalerweise  3.3V)
+- Sensoren und Aktoren die mit 5V betrieben werden, funktionieren in den meisten Fällen nicht.
 
-### Stromstärke
+Stromstärke:
+- Standard Drive: max 5mA, Pins: P0, P1, P3, C4, C6, C8, C9, C10, C11, C16, C17, C18,
+- High Drive: max 15mA, Pins: P2, C7, C12, C15, C5, C13, C14, C19, C20
 
-- Der Calliope mini kann bis zu **15 milli Ampere (mA) pro Pin** maximal bereitstellen
 - für alle Pins sind es **100 mA insgesamt**
 
+<Admonition type='warning'>
 <No>
-Schließe niemals mehre Verbraucher, mit 20mA wie z.B. 2 LEDs an einen I/O-Pin an.
+Schließe niemals mehre Verbraucher, mit 15mA wie z.B. 2 LEDs an einen I/O-Pin an.
 </No>
 
 <Yes>
-Verwendete stattdessen verschiedene I/O Pins oder eine Transistorenschaltung. Beachte, dass ingesamt nicht die 100 mA überschritten werden.
+Verwendete stattdessen verschiedene I/O Pins oder eine Transistorenschaltung. Beachte, dass **ingesamt die 100 mA** nicht überschritten werden.
 </Yes>
+</Admonition>
 
 
+----
 
+## Touchpins
 
-## Analoge Pins
+Auf den 6 Ecken des sternenförmigen Calliope minis befinden sich jeweils große Pins, die es ermöglichen Krokodilklemmen anzuschließen oder auf Berührung zu reagieren. Zwei der Pins, sind GND und 3,3V und 4 davon als I/O-Pin programmierbar.
+Die 4 Pins können alle sowohl analoge als auch digitale Werte senden und empfangen.
+
+### Touchmodus
+Um einer der Touchpins auf 1 zu setzen, muss GND zusätzlich berührt, wenn dieser im **resistiven Touchmodus** betrieben wird. Falls dieser im **capacitiven Touchmodus** betrieben werden soll, kann dies z.B. in der Programmierung in Makecode erfolgen. 
+Weitere Information zum Betrieb in den verschiedenen Touchmodi findest du [hier](https://makecode.microbit.org/reference/pins/touch-set-mode).
+<!-- hier später URL auf docs von makecode.calliope.cc ändern -->
+
+<Admonition type='info'>
+
+Es wird unter zwei Formen der Berührung unterschieden:
+
+- **Capacitive Touch**: Bei der kapazitiven Berührung erkennt der Calliope mini eine Änderung der Kapazität eines Pins oder einer leitenden Oberfläche (wie dem Touch-Logo), wenn der Finger diese berührt oder ihm sehr nahe kommt.
+- **Resistive Touch**: Bei der resistiven Berührung wird ein Stromfluss von dem berührten Pin zum GND-Pin festgestellt. Der Körper braucht eine Verbindung zu GND (entweder durch Berührung oder durch Anschluss eines Kabels an der Kleidung), während der Eingangspin berührt wird, um einen Stromkreis den beiden Pins zu schließen.
+
+</Admonition>
+
+----
+
+## Analoge und digitale Pins
+
+- Alle Pins können analog und digital schreiben und digital lesen
+- mehrere Pins können analog lesen: P0,P1,P2,C4,C10,C16,C18 (siehe Tabelle unten)
 
 <Admonition type='info'>
 In der Signalverarbeitung wird werden Daten verallgemeinert in zwei verschiedenen Formen übertragen: 
@@ -53,43 +88,53 @@ Der integrierte Digital-Analog-Umsetzer des Calliope mini sorgt dafür, dass die
 
 Um eine LED zu dimmen oder die Geschwindigkeit eines Motors zu varieren, müsste analog die Spannung verändert werden. Der Ausgang der Pins liegt allerdigns immer bei 3,3 V. Mit der Pulsweitenmodulation wird durch schnelles ein und auschalten in unterschiedlicher Periodendauer ein analoges Signal simuliert werden, welches unterschiedliche abgestufte Werte annehmen kann. 
 
-**Wieviele PWM-Pins können parallel verwendet werden?** 
-Es können bis zu 3 PWM-Signale gleichzeitig generiert werden, bevor diese anfangen unflüssig und abgestuft zu werden. 
+
+<UnfoldItem title="Wieviele PWM-Pins können parallel verwendet werden?">Es können bis zu 3 PWM-Signale gleichzeitig generiert werden, bevor diese anfangen unflüssig und abgestuft zu werden. 
+</UnfoldItem>
 
 
-## Pinbelegung
-
-| Chip         | mbed / DAL                       | Pin / Info                                                                            | Digital        | Analog            |
-| ------------ | --------------------------------------------- | ------------------------------------------------------------------------ | -------------- | ----------------- |
-| P0.00        | PAD1          <br>MICROBIT\_PIN\_P12          | **C0**      <br>Touchpin P0                                                  | <Yes />        | <No />            |
-| P0.01        | PAD2          <br>MICROBIT\_PIN\_P0           | **C1**      <br>Touchpin P1                                                  | <Yes />        | <Yes />           |
-| P0.02        | PAD3          <br>MICROBIT\_PIN\_P1           | **C2**      <br>Touchpin P2                                                  | <Yes />        | <Yes />           |
-| P0.03        | MIC           <br>MICROBIT\_PIN\_P21          | **C21** (MIC)     <br>Microphone pin                                         | <No />         | <Yes />           |
-| P0.04        | COL1          <br>MICROBIT\_PIN\_P3           | **C4**      <br>*Use only if LED matrix is not initialized*                    | <Yes />        | <Yes />           |
-| P0.05        | COL2          <br>MICROBIT\_PIN\_P4           | **C5**      <br>*Use only if LED matrix is not initialized*                    | <Yes />        | <Yes />           |
-| P0.06        | COL3          <br>MICROBIT\_PIN\_P10          | **C6**      <br>*Use only if LED matrix is not initialized*                    | <Yes />        | <Yes />           |
-| P0.07        | COL4          <br>MICROBIT\_PIN\_P13          | **C7** (SPI, SCK)      <br>*Use only if LED matrix is not initialized*         | <Yes />        | <No />            |
-| P0.08        | COL5          <br>MICROBIT\_PIN\_P14          | **C8** (SPI, MISO)     <br>*Use only if LED matrix is not initialized*         | <Yes />        | <No />            |
-| P0.09        | COL6          <br>MICROBIT\_PIN\_P15          | **C9** (SPI, MOSI)     <br>*Use only if LED matrix is not initialized*         | <Yes />        | <No />            |
-| P0.10        | COL7          <br>MICROBIT\_PIN\_P9           | **C10**     <br>*Use only if LED matrix is not initialized*                    | <Yes />        | <No />            |
-| P0.11        | COL8          <br>MICROBIT\_PIN\_P7           | **C11**     <br>*Use only if LED matrix is not initialized*                    | <Yes />        | <No />            |
-| P0.12        | COL9          <br>MICROBIT\_PIN\_P6           | **C12**     <br>*Use only if LED matrix is not initialized*                    | <Yes />        | <No />            |
-| P0.13        | ROW1          <br>                            |         *Use only if LED matrix is not initialized*                        | <No />         | <No />            |
-| P0.14        | ROW2          <br>                            |         *Use only if LED matrix is not initialized*                        | <No />         | <No />            |
-| P0.15        | ROW3          <br>                            |         *Use only if LED matrix is not initialized*                        | <No />         | <No />            |
-| P0.16        | BUTTON\_B     <br>MICROBIT\_PIN\_P11          |         **B Button**                                                         | <No />         | <No />            |
-| P0.17        | BUTTON\_A     <br>MICROBIT\_PIN\_P5           |         **A Button**                                                         | <No />         | <No />            |
-| P0.18        | RGBLED        <br>CALLIOPE\_PIN\_RGB\_LED     |         **RGB LED**                                                 | <No />         | <No />            |
-| P0.19        | SCL           <br>MICROBIT\_PIN\_P19          | **C19** / A0 (SCL)<br>I²C, left Grove connector                              | <Yes />        | <No />            |
-| P0.20        | SDA           <br>MICROBIT\_PIN\_P20          | **C18** / A0 (SDA)<br>I²C, left Grove connector                              | <Yes />        | <No />            |
-| P0.21        | ACCEL\_INT    <br>CALLIOPE\_PIN\_ACCEL\_INT   |         **BMX055** Interrupt<br>Accelerator                                | <No />         | <No />            |
-| P0.22        | PAD4          <br>MICROBIT\_PIN\_P16          | **C3**      <br>Touchpin P3                                                  | <Yes />        | <No />            |
-| P0.23        |               <br>                            |         **BMX055** Data Ready<br>Magnetometer                                | <No />         | <No />            |
-| P0.24        | USBTX         <br>                            | **USB TX**            <br>USB Serial TX                                      | <No />         | <No />            |
-| P0.25        | USBRX         <br>                            | **USB RX**            <br>USB Serial RX                                      | <No />         | <No />            |
-| P0.26        | A\_RX         <br>MICROBIT\_PIN\_P2           | **C16** / A1 (UART, RX)<br>ext. Serial Port RX (right Grove connector)       | <Yes />        | <Yes />           |
-| P0.27        | A\_TX         <br>MICROBIT\_PIN\_P8           | **C17** / A1 (UART, TX)<br>UART, ext. Serial Port TX (right Grove connector) | <Yes />        | <Yes />           |
-| P0.28        | MOTOR\_NSLEEP <br>CALLIOPE\_PIN\_MOTOR\_SLEEP |         **Motor** <br>NSLEEP                                            | <No />         |                  |
-| P0.29        | MOTOR\_IN1    <br>CALLIOPE\_PIN\_MOTOR\_IN1   |         **Motor** <br>IN1                                              | <No />         | <No />            |
-| P0.30        | MOTOR\_IN2    <br>CALLIOPE\_PIN\_MOTOR\_IN2   |         **Motor** <br>IN2                                              | <No />         | <No />            |
-
+## Pinout
+| Hardware Pin Name   | mini V3<br>Pinout / Signal Name | mini V3<br>Steckleiste | MakeCode                | Calliope Firmware | Function                    |
+| ------------------- | ------------ | ----------- | ----------------------- | ---------- | --------------------------- |
+| P0.00<br>XL1        | Speaker      |             |                         | speaker    | Digital I/O<br>Analog input |
+| P0.01<br>XL2        | SPI_EXT_MISO | C14         | C14                     | P14        | Digital I/O<br>Analog input |
+| P0.02<br>AIN0       | PAD0         | P0          | P0                      | P0         | Digital I/O<br>Analog input |
+| P0.03<br>AIN1       | PAD1         | P1          | P1                      | P1         | Digital I/O<br>Analog input |
+| P0.04<br>AIN2       | PAD2         | P2          | P2                      | P2         | Digital I/O<br>Analog input |
+| P0.05<br>AIN3       | MIC_IN       |             | MIC                     | microphone | Digital I/O<br>Analog input |
+| P0.06               | UART_INT_RX  |             |                         | usbTx      | Digital I/O                 |
+| P0.07<br>TRACECLK   | RGB_DIN      |             | RGB-LED                 | RGB        | Digital I/O<br>Trace clock  |
+| P0.08               | I2C_INT_SCL  |             |                         | scl        | Digital I/O                 |
+| P0.09<br>NFC1       | GPIO2        | C9          | C9                      | P9         | Digital I/O<br>NFC input    |
+| P0.10<br>NFC2       | GPIO1        | C8          | C8                      | P8         | Digital I/O<br>NFC input    |
+| P0.11<br>TRACEDATA2 | COL2         | C7          | C7                      | P7         | Digital I/O<br>Trace data   |
+| P0.12<br>TRACEDATA1 | GPIO4        | C12         | C12                     | P12        | Digital I/O<br>Trace data   |
+| P0.13               | SPI_EXT_MOSI | C15         | C15                     | P15        | Digital I/O                 |
+| P0.14               | BTN_A        | C5          | C5                      | P5         | Digital I/O                 |
+| P0.15               | ROW3         |             |                         | row3       | Digital I/O                 |
+| P0.16               | I2C_INT_SDA  |             |                         | sda        | Digital I/O                 |
+| P0.17               | SPI_EXT_SCK  | C13         | C13                     | P13        | Digital I/O                 |
+| P0.18<br>nRESET     | NC           |             |                         |            | Digital I/O                 |
+| P0.19               | ROW5         |             |                         | row5       | Digital I/O                 |
+| P0.20               | RUN_MIC      |             |                         | runmic     | Digital I/O                 |
+| P0.21               | ROW1         |             |                         | row1       | Digital I/O                 |
+| P0.22               | ROW2         |             |                         | row2       | Digital I/O                 |
+| P0.23               | BTN_B        | C11         | Knopf B                 | P11        | Digital I/O                 |
+| P0.24               | ROW4         |             |                         | row4       | Digital I/O                 |
+| P0.25               | I2C_INT_INT  |             |                         | irq1       | Digital I/O                 |
+| P0.26               | I2C_EXT_SCL  | C19         | A0 SCL                  | A0SCL      | Digital I/O                 |
+| P0.27               | MOTOR_AIN2   |             | Führt dann in Motor M0. | M_A_IN2    | Digital I/O                 |
+| P0.28<br>AIN4       | COL1         | C4          | C4                      | P4         | Digital I/O<br>Analog input |
+| P0.29<br>AIN5       | Grove1.A0    | C16         | A1 TX                   | A1TX       | Digital I/O<br>Analog input |
+| P0.30<br>AIN6       | COL5         | C10         |                         | P10        | Digital I/O<br>Analog input |
+| P0.31<br>AIN7       | COL3         | C18         |                         | P18        | Digital I/O<br>Analog input |
+| P1.00<br>TRACEDATA0 | I2C_EXT_SDA  | C20         | A0 SDA                  | A0SDA      | Digital I/O<br>Trace data   |
+| P1.01               | MOTOR_AIN1   |             | Führt dann in Motor M0. | M_A_IN1    | Digital I/O                 |
+| P1.02               | GPIO3        | C17         | A1 RX                   | A1RX       | Digital I/O                 |
+| P1.03               | PAD3         | P3          | P3                      | P3         | Digital I/O                 |
+| P1.04               | LOGO         |             | Touch-Logo              | logo       | Digital I/O                 |
+| P1.05               | COL4         | C6          | C6                      | P6         | Digital I/O                 |
+| P1.06               | MOTOR_MODE   |             |                         | M_MODE     | Digital I/O                 |
+| P1.07               | MOTOR_BIN1   |             | Führt dann in Motor M1. | M_B_IN1    | Digital I/O                 |
+| P1.08               | UART_INT_TX  |             |                         | usbRx      | Digital I/O                 |
+| P1.09<br>TRACEDATA3 | MOTOR_BIN2   |             | Führt dann in Motor M1. | M_B_IN2    | Digital I/O<br>Trace data   |

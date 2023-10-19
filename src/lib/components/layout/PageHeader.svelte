@@ -14,7 +14,7 @@
     <div class="w-full md:max-w-8xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
 
         <div class="pl-4">
-            <a data-sveltekit-prefetch class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="/">
+            <a data-sveltekit-prefetch class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="https://calliope.cc/">
                <img src="/Logo_Calliope_lang.svg" style="height: 2.5rem;" alt="Calliope Logo" />
              
             </a>

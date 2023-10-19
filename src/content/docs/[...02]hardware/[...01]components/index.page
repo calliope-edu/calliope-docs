@@ -1,0 +1,101 @@
+---
+title: Bauteile
+description: Good description of topic
+template: docs
+published: true
+---
+
+{title}
+
+
+
+## Anwendungsprozessor
+
+<a href="">NRF52833-QIAA-R</a>
+
+- Führt Programme aus und ist an alle Komponenten des mini angeschlossen
+- Memory Size: 512kB Flash, 128kB RAM
+- Serial Interfaces: ADC, I²S, PWM, SPI, UART, USB
+- Bluetooth-Antenne, Temperaturmessung
+
+
+### Laufzeit
+
+### Temperatursensor
+
+### Antenne
+
+----
+
+## Interfaceprozessor
+
+*NRF52820-QDAA-D-R7*
+
+- empfängt das Programm über USB und läd es auf den Anwendungsprozessor
+- stellt eine serielle Verbindung zum Anwendungsprozessor her (Virtual COM Port) 
+- kein Bluetooth
+
+----
+
+## LED-Matrix
+
+Auf der LED-Matrix des Calliope mini befinden sich 5 x 5 = 25 rote LEDs, mit denen nicht nur Zahlen und Texte, sondern auch Bilder und sogar Animationen dargestellt werden. Die Helligkeit der einzelnen Pixel kann verändert werden. 
+
+### Lichtmessung
+
+----
+
+## Tasten
+
+Auf dem Calliope mini befinden sich 3 Tasten.
+**Taste A und B** sind programmierbare Tasten. Als Eingabe können mit ihnen Programmabläufe gesteuert werden. Die **Reset-Taste** ist nicht programmierbar. Sie ist dauerhaft in der Firmware implementiert und dient dazu das Programm auf dem Calliope mini neu zu starten.
+
+----
+
+## Lagesensor
+
+- LSM303AGR
+- über I2C angebunden
+- 3-Achsen Accelerometer, 3-Achsen Magnetometer, 2 Achsen-Kreiselsensor
+- Link zum Datenblatt 
+
+----
+
+## RGB-LEDs
+
+WS2812C-2020
+
+Der Calliope mini hat drei integrierte RGB-LEDs, die 255 Farben pro Farbkanal (rot, grün, blau) darstellen können. Dies entspricht 256^3 = 16 777 216 Farben.
+Bei den RGB-LEDs handelt es sich um adressierbare Pixel, sogenannte Neopixels. Das sind spezielle individuell programmierbare RGB-LEDs, ähnlich wie die einzelnen Pixel auf einem Display.
+
+----
+
+## Lautsprecher
+
+MLT-8530
+
+----
+
+## Mikrofon
+
+SPU0410HR5H-PB
+
+Mit dem MEMS-Mikrofon kann die der Schalldruckpegel (SPL) und die Lautstärke gemessen werden.
+
+----
+
+## Motortreiber
+
+DRV8835
+
+Dieser Motortreiber besitzt 2 seperate H-Brücken Treiber und kann damit 2 Gleichspannungsmotoren von einander unabhängig steuern. Die maximale Eingangspannung beträgt 9V, der maximale Strom pro Motor beträgt 1.5A.
+Hier findest du einen Link zum [Datenblatt](https://www.ti.com/lit/ds/symlink/drv8835.pdf?ts=1697459375123)
+**Kurz Infos:**
+- Steuert 2 Motoren, jeder Motor kann jeweils vorwärts und rückwärts betätigt werden
+- Die Motoren können an der Steckleiste bei
+- maximale Eingangsspannung 9V; maximaler Strom 1,5A pro Motor
+- Wird im Phase/Enable Modus (Mode=1) betrieben, d.h. in der Firmware steuert ein digitales Signal die Motorenrichtung und über ein [PWM](https://de.wikipedia.org/wiki/Pulsdauermodulation) Signal die Geschwindigkeit 
+
+
+
+Weitere Informationen sowie Schaltplan, Blockschaltbild & Pinbelegung fndest du **[Hier](https://calliope-mini.github.io/v20/)** 

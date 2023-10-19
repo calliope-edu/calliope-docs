@@ -1,0 +1,24 @@
+---
+title: Firmware
+description: 
+docTitle: Software
+template: docs
+published: true
+---
+
+# {title} 
+
+## CODAL
+
+## Demoprogramm
+
+Das Demoprogramm, manchmal auch Startprogramm ist die Calliope mini Firmware. Sie befindet sich auf jedem Calliope mini im Auslieferungszustand.
+
+Das Demoprogramm setzt sich aus 3 Teilen zusammen: Der Testroutine, dem Willkommensintro und den 4 Startprogrammen.
+Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, kommt man in das Menü und kann über die Tasten A und B sich durch die vier Programm navigieren: 
+- Orakel 
+- Einmal-eins
+- Schere-Stein-Papier
+- Krach-o-meter
+
+## Universal HEX

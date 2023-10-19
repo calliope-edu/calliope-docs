@@ -1,15 +1,18 @@
 ---
-title: Hardware
-description: 
-template: docs_contents
-published: True
+title: Datenblatt
+description: ...
+template: docs
+published: true
 ---
 
 # {title} 
 
+{description}
 
-<script>
-import V2Datenblatt from './[...01]components/v2.svx';
+![Pinout](/calliopev3_front.svg)
+
+<!-- <script>
+import V2Datenblatt from './v2.svx';
 
 let aktiv = 3;
 </script>
@@ -29,3 +32,5 @@ let aktiv = 3;
 {:else}
 <V2Datenblatt />
 {/if}
+
+  {title} -->
