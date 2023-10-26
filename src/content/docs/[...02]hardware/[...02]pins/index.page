@@ -11,7 +11,7 @@ published: true
 
 - Logo Pin
 - 6 Bananenstecker, 4 davon Touchpins
-- P0,P1,P2,P3,C8,C9,C17 general purpose pins
+- P0,P1,P2,P3,C8,C9 general purpose pins
 - die Pins C16, C17 werden für den rechten Grove Anschluss mitverwendet
 - die Pins C19,C20 werden für den linken Grove Anschluss mitverwendet
 - der Pin C12 wird von JacDac mitverwendet 
@@ -21,6 +21,105 @@ published: true
 ![Pinout](/calliopev3_front.svg)
 
 <!-- Hier Grafik mit der Steckleiste einfügen: -->
+
+----
+
+## Pinleiste
+
+<script>
+    let pins = [{"name":"VCC","function":null,"analogin":null,"interface":null,"color":"red"},{"name":"GND","function":null,"analogin":null,"interface":null,"color":"black"},{"name":"P0","function":"PAD0","analogin":"AnalogIn","interface":"Touch","color":"green"},{"name":"P1","function":"PAD1","analogin":"AnalogIn","interface":"Touch","color":"green"},{"name":"P2","function":"PAD2","analogin":"AnalogIn","interface":"Touch","color":"green"},{"name":"P3","function":"PAD3","analogin":null,"interface":"Touch","color":"green"},{"name":"C4","function":"Display Spalte 1","analogin":"AnalogIn","interface":null,"color":"green"},{"name":"C5","function":"Button A","analogin":null,"interface":null,"color":"green"},{"name":"C6","function":"Display Spalte 4","analogin":null,"interface":null,"color":"green"},{"name":"C7","function":"Display Spalte 2","analogin":null,"interface":null,"color":"green"},{"name":"C8","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"C9","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"C10","function":"Display Spalte 5","analogin":"AnalogIn","interface":null,"color":"green"},{"name":"C11","function":"Button B","analogin":null,"interface":null,"color":"green"},{"name":"C12","function":"ACCESSIBILITY","analogin":null,"interface":"(JACDAC)","color":"green"},{"name":"C13","function":null,"analogin":null,"interface":"SPI CLOCK","color":"green"},{"name":"C14","function":null,"analogin":null,"interface":"SPI MISO","color":"green"},{"name":"C15","function":null,"analogin":null,"interface":"SPI MOSI","color":"green"},{"name":"C16","function":"Grove A1 Pin 0","analogin":"AnalogIn","interface":"UART RX","color":"green"},{"name":"C17","function":"Grove A1 Pin 1","analogin":null,"interface":"UART TX","color":"green"},{"name":"C18","function":"Display Spalte 3","analogin":"AnalogIn","interface":null,"color":"green"},{"name":"C19","function":"Grove A0 Pin 0","analogin":null,"interface":"I2C SCL","color":"green"},{"name":"GND","function":null,"analogin":null,"interface":null,"color":"black"},{"name":"C20","function":"Grove A0 Pin 1","analogin":null,"interface":"I2C SDA","color":"green"},{"name":"M1+","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"M0+","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"M1-","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"M0-","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"GND","function":null,"analogin":null,"interface":null,"color":"black"},{"name":"VM","function":null,"analogin":null,"interface":null,"color":"red"}];
+    let activePin = null;
+
+    function toggleVisibility(pin) {
+        if (activePin === pin) {
+            activePin = null; // Toggle off if it's already active
+        } else {
+            activePin = pin;
+        }
+    }
+</script>
+
+
+<nav class="pinout">
+    <ul>
+        {#each pins as pin, index}
+        <li on:click={() => toggleVisibility(pin)}>
+            <div class="dot" style="background-color:{pin.state === 'hidden' ? 'white' : pin.color}">
+                {pin.name}
+            </div>
+        </li>
+        {/each}
+    </ul>
+</nav>
+
+{#if activePin !== null}
+<h3>{activePin.name}</h3>
+{#if activePin.interface !== null}
+    <p>Der Pin {activePin.name} benutzt die Schnittstelle {activePin.interface}.</p>
+    {/if}
+
+{/if}
+
+<style>
+    .pinout {
+    background-color: black;
+    width: 100%;
+    height:120px;
+    position: relative;
+    margin-bottom: 2em;
+    }
+
+    .pinout ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        height: 100%;
+        padding-top: 10px;
+    padding-bottom: 10px;
+    list-style: none;
+    padding-left:0px;
+}
+
+.pinout li {
+    cursor: pointer;
+  /* justify-self: start; */
+    list-style: none;
+    height: 50%;
+    margin: 0px;
+    position: relative;
+}
+
+.pinout li .dot {
+margin: auto;
+position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+width: 35px;
+height: 35px;
+border-radius:40px;
+background-color: green;
+text-align: center;
+    color: white;
+    padding-top: 4px;
+}
+
+.pinout li .dot span {
+margin-top: 10px;
+color: white;
+text-align: center;
+}
+
+.pinout li .dot:hover {
+    width: 40px;
+height: 40px;
+font-weight: bold;
+padding-top: 6px;
+}
+    </style>
+
+----
 
 ## Ausgangsspannung und -stromstärke
 
@@ -93,48 +192,50 @@ Um eine LED zu dimmen oder die Geschwindigkeit eines Motors zu varieren, müsste
 </UnfoldItem>
 
 
-## Pinout
-| Hardware Pin Name   | mini V3<br>Pinout / Signal Name | mini V3<br>Steckleiste | MakeCode                | Calliope Firmware | Function                    |
-| ------------------- | ------------ | ----------- | ----------------------- | ---------- | --------------------------- |
-| P0.00<br>XL1        | Speaker      |             |                         | speaker    | Digital I/O<br>Analog input |
-| P0.01<br>XL2        | SPI_EXT_MISO | C14         | C14                     | P14        | Digital I/O<br>Analog input |
-| P0.02<br>AIN0       | PAD0         | P0          | P0                      | P0         | Digital I/O<br>Analog input |
-| P0.03<br>AIN1       | PAD1         | P1          | P1                      | P1         | Digital I/O<br>Analog input |
-| P0.04<br>AIN2       | PAD2         | P2          | P2                      | P2         | Digital I/O<br>Analog input |
-| P0.05<br>AIN3       | MIC_IN       |             | MIC                     | microphone | Digital I/O<br>Analog input |
-| P0.06               | UART_INT_RX  |             |                         | usbTx      | Digital I/O                 |
-| P0.07<br>TRACECLK   | RGB_DIN      |             | RGB-LED                 | RGB        | Digital I/O<br>Trace clock  |
-| P0.08               | I2C_INT_SCL  |             |                         | scl        | Digital I/O                 |
-| P0.09<br>NFC1       | GPIO2        | C9          | C9                      | P9         | Digital I/O<br>NFC input    |
-| P0.10<br>NFC2       | GPIO1        | C8          | C8                      | P8         | Digital I/O<br>NFC input    |
-| P0.11<br>TRACEDATA2 | COL2         | C7          | C7                      | P7         | Digital I/O<br>Trace data   |
-| P0.12<br>TRACEDATA1 | GPIO4        | C12         | C12                     | P12        | Digital I/O<br>Trace data   |
-| P0.13               | SPI_EXT_MOSI | C15         | C15                     | P15        | Digital I/O                 |
-| P0.14               | BTN_A        | C5          | C5                      | P5         | Digital I/O                 |
-| P0.15               | ROW3         |             |                         | row3       | Digital I/O                 |
-| P0.16               | I2C_INT_SDA  |             |                         | sda        | Digital I/O                 |
-| P0.17               | SPI_EXT_SCK  | C13         | C13                     | P13        | Digital I/O                 |
-| P0.18<br>nRESET     | NC           |             |                         |            | Digital I/O                 |
-| P0.19               | ROW5         |             |                         | row5       | Digital I/O                 |
-| P0.20               | RUN_MIC      |             |                         | runmic     | Digital I/O                 |
-| P0.21               | ROW1         |             |                         | row1       | Digital I/O                 |
-| P0.22               | ROW2         |             |                         | row2       | Digital I/O                 |
-| P0.23               | BTN_B        | C11         | Knopf B                 | P11        | Digital I/O                 |
-| P0.24               | ROW4         |             |                         | row4       | Digital I/O                 |
-| P0.25               | I2C_INT_INT  |             |                         | irq1       | Digital I/O                 |
-| P0.26               | I2C_EXT_SCL  | C19         | A0 SCL                  | A0SCL      | Digital I/O                 |
-| P0.27               | MOTOR_AIN2   |             | Führt dann in Motor M0. | M_A_IN2    | Digital I/O                 |
-| P0.28<br>AIN4       | COL1         | C4          | C4                      | P4         | Digital I/O<br>Analog input |
-| P0.29<br>AIN5       | Grove1.A0    | C16         | A1 TX                   | A1TX       | Digital I/O<br>Analog input |
-| P0.30<br>AIN6       | COL5         | C10         |                         | P10        | Digital I/O<br>Analog input |
-| P0.31<br>AIN7       | COL3         | C18         |                         | P18        | Digital I/O<br>Analog input |
-| P1.00<br>TRACEDATA0 | I2C_EXT_SDA  | C20         | A0 SDA                  | A0SDA      | Digital I/O<br>Trace data   |
-| P1.01               | MOTOR_AIN1   |             | Führt dann in Motor M0. | M_A_IN1    | Digital I/O                 |
-| P1.02               | GPIO3        | C17         | A1 RX                   | A1RX       | Digital I/O                 |
-| P1.03               | PAD3         | P3          | P3                      | P3         | Digital I/O                 |
-| P1.04               | LOGO         |             | Touch-Logo              | logo       | Digital I/O                 |
-| P1.05               | COL4         | C6          | C6                      | P6         | Digital I/O                 |
-| P1.06               | MOTOR_MODE   |             |                         | M_MODE     | Digital I/O                 |
-| P1.07               | MOTOR_BIN1   |             | Führt dann in Motor M1. | M_B_IN1    | Digital I/O                 |
-| P1.08               | UART_INT_TX  |             |                         | usbRx      | Digital I/O                 |
-| P1.09<br>TRACEDATA3 | MOTOR_BIN2   |             | Führt dann in Motor M1. | M_B_IN2    | Digital I/O<br>Trace data   |
+## Gesamte Pinout
+
+
+| mini V3<br>Pinout / Signal Name | mini V3<br>Steckleiste | MakeCode                |
+| ------------------------------- | ---------------------- | ----------------------- |
+| Speaker                         |                        |                         |
+| SPI_EXT_MISO                    | C14                    | C14                     |
+| PAD0                            | P0                     | P0                      |
+| PAD1                            | P1                     | P1                      |
+| PAD2                            | P2                     | P2                      |
+| MIC_IN                          |                        | MIC                     |
+| UART_INT_RX                     |                        |                         |
+| RGB_DIN                         |                        | RGB-LED                 |
+| I2C_INT_SCL                     |                        |                         |
+| GPIO2                           | C9                     | C9                      |
+| GPIO1                           | C8                     | C8                      |
+| COL2                            | C7                     | C7                      |
+| GPIO4                           | C12                    | C12                     |
+| SPI_EXT_MOSI                    | C15                    | C15                     |
+| BTN_A                           | C5                     | C5                      |
+| ROW3                            |                        |                         |
+| I2C_INT_SDA                     |                        |                         |
+| SPI_EXT_SCK                     | C13                    | C13                     |
+| NC                              |                        |                         |
+| ROW5                            |                        |                         |
+| RUN_MIC                         |                        |                         |
+| ROW1                            |                        |                         |
+| ROW2                            |                        |                         |
+| BTN_B                           | C11                    | Knopf B                 |
+| ROW4                            |                        |                         |
+| I2C_INT_INT                     |                        |                         |
+| I2C_EXT_SCL                     | C19                    | A0 SCL                  |
+| MOTOR_AIN2                      |                        | Führt dann in Motor M0. |
+| COL1                            | C4                     | C4                      |
+| Grove1.A0                       | C16                    | A1 TX                   |
+| COL5                            | C10                    |                         |
+| COL3                            | C18                    |                         |
+| I2C_EXT_SDA                     | C20                    | A0 SDA                  |
+| MOTOR_AIN1                      |                        | Führt dann in Motor M0. |
+| GPIO3                           | C17                    | A1 RX                   |
+| PAD3                            | P3                     | P3                      |
+| LOGO                            |                        | Touch-Logo              |
+| COL4                            | C6                     | C6                      |
+| MOTOR_MODE                      |                        |                         |
+| MOTOR_BIN1                      |                        | Führt dann in Motor M1. |
+| UART_INT_TX                     |                        |                         |
+| MOTOR_BIN2                      |                        | Führt dann in Motor M1. |
