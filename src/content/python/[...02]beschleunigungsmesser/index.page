@@ -1,0 +1,138 @@
+---
+title: Beschleunigungsmesser
+description: Beschleunigungsmesser
+template: docs
+published: True
+docMenu: python
+---
+
+Dieses Objekt ermöglicht den Zugriff auf den eingebauten Beschleunigungsmesser.
+
+Standardmäßig setzt MicroPython den Bereich des Beschleunigungsmessers auf +/- 2000 mg (g ist eine Beschleunigungseinheit, die auf der Standardgravitation basiert), was die maximalen und minimalen Werte konfiguriert, die von den Beschleunigungsmesserfunktionen zurückgegeben werden.<br>
+Der Bereich kann über accelerometer.set_range() geändert werden.
+
+Der Beschleunigungsmesser bietet auch Komfortfunktionen zur Erkennung von Gesten. Die erkannten Gesten werden als Strings dargestellt: 
+auf, ab, links, rechts, Gesicht nach oben, Gesicht nach unten, freier Fall, 3g, 6g, 8g, schütteln.
+up, down, left, right, face up, face down, freefall, 3g, 6g, 8g, shake.
+
+<Admonition type='tip'>
+
+Gesten werden nicht im Hintergrund aktualisiert, so dass ständige Aufrufe einer Beschleunigungssensor-Methode für die Gestenerkennung erforderlich sind. Normalerweise können Gesten in einer Schleife mit einer kleinen sleep()-Verzögerung erkannt werden.
+
+</Admonition>
+
+### Funktionen
+
+---basic
+accelerometer.get_x()
+/---
+
+
+
+Gibt zurück:        Die gemessene Beschleunigung auf der X-Achse in Milligramm, als positive oder negative Ganzzahl.
+
+---basic
+accelerometer.get_y()
+/---
+
+Gibt zurück:        Die gemessene Beschleunigung auf der y-Achse in Milligramm, als positive oder negative Ganzzahl.
+
+---basic
+accelerometer.get_z()
+/---
+Gibt zurück:        Die Beschleunigungsmessung in der z-Achse in Milligramm, als positive oder negative Ganzzahl.
+
+
+---basic
+accelerometer.get_values()
+/---
+Gibt zurück:        Die Beschleunigungsmessungen in allen Achsen auf einmal, als dreiteiliges Tupel von Ganzzahlen, geordnet als X, Y, Z.
+
+---basic
+accelerometer.get_strength()
+/---
+
+Ermittelt die Beschleunigungsmessung aller Achsen zusammen, als positive ganze Zahl. Dies ist die Pythagoras-Summe der X-, Y- und Z-Achsen.
+Rückgabe:        Die kombinierte Beschleunigungsstärke aller Achsen, in Milligramm.
+
+---basic
+accelerometer.current_gesture()
+/---
+
+Gibt zurück:        String mit dem Namen der aktuellen Geste.
+
+---basic
+accelerometer.is_gesture(name)
+/---
+Parameter: name - String mit dem Namen der zu prüfenden Geste.
+Gibt zurück:        Boolescher Wert, der angibt, ob die genannte Geste gerade aktiv ist.
+
+---basic
+accelerometer.was_gesture(name)
+/---
+
+Parameter: name - String mit dem Namen der zu prüfenden Geste.
+Gibt zurück:        Boolescher Wert, der angibt, ob die genannte Geste seit dem letzten Aufruf aktiv war.
+
+---basic
+accelerometer.get_gestures()
+/---
+
+Abrufen einer historischen Liste der registrierten Gesten.
+
+Durch den Aufruf dieser Funktion wird der Gestenverlauf vor der Rückkehr gelöscht.
+Gibt zurück:        Ein Tupel des Gestenverlaufs, wobei die jüngste Geste zuletzt aufgeführt wird.
+
+---basic
+accelerometer.set_range(value)
+/---
+
+Stellen Sie den Empfindlichkeitsbereich des Beschleunigungssensors in g (Standardgravitation) auf die nächstliegenden Werte ein, die von der Hardware unterstützt werden, d. h. entweder 2, 4 oder 8 g.
+Parameter: value - Neuer Bereich für den Beschleunigungsmesser, eine ganze Zahl in g.
+
+### Beispiele
+
+Eine Wahrsagekugel - stelle eine Frage und schüttel den Calliope mini, um eine Antwort zu erhalten.
+
+---Python
+# Magic 8 ball by Nicholas Tollervey. February 2016.
+#
+# Ask a question then shake.
+#
+# This program has been placed into the public domain.
+from calliopemini import *
+import random
+
+answers = [
+    "It is certain",
+    "It is decidedly so",
+    "Without a doubt",
+    "Yes, definitely",
+    "You may rely on it",
+    "As I see it, yes",
+    "Most likely",
+    "Outlook good",
+    "Yes",
+    "Signs point to yes",
+    "Reply hazy try again",
+    "Ask again later",
+    "Better not tell you now",
+    "Cannot predict now",
+    "Concentrate and ask again",
+    "Don't count on it",
+    "My reply is no",
+    "My sources say no",
+    "Outlook not so good",
+    "Very doubtful",
+]
+
+while True:
+    display.show('8')
+    if accelerometer.was_gesture('shake'):
+        display.clear()
+        sleep(1000)
+        display.scroll(random.choice(answers))
+    sleep(10)
+
+/---
+
