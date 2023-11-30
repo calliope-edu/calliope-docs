@@ -1,8 +1,9 @@
 ---
 title: Module
 description: 
-template: python_contents
+template: docs
 published: True
+docMenu: python
 ---
 
 Erste Schritte
