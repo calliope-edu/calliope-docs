@@ -1,0 +1,59 @@
+---
+title: Module
+description: 
+template: docs
+published: True
+docMenu: python
+---
+
+## Funktionen
+
+---basic log.set_labels(*labels, timestamp=log.SECONDS)/--- <br>
+Richtet die Kopfzeile der Protokolldatei ein.
+
+Diese Funktion akzeptiert eine beliebige Anzahl von Positionsargumenten, die jeweils eine Spaltenüberschrift erzeugen, z. B. log.set_labels("X", "Y", "Z").
+
+Idealerweise sollte diese Funktion ein einziges Mal aufgerufen werden, bevor irgendwelche Daten protokolliert werden, um den Kopf der Datentabelle einmal zu konfigurieren.
+
+Ist beim Programmstart bereits eine Protokolldatei vorhanden oder wird diese Funktion mehrfach aufgerufen, werden die bereits in der Protokolldatei definierten Bezeichnungen überprüft. Wenn dieser Funktionsaufruf neue Bezeichnungen enthält, die noch nicht vorhanden sind, wird eine neue Kopfzeile mit den zusätzlichen Spalten erzeugt.
+
+Standardmäßig enthält die erste Spalte einen Zeitstempel für jede Zeile. Die Zeiteinheit kann über das Argument Zeitstempel ausgewählt werden, z. B. log.set_labels("temp", timestamp=log.MINUTES)
+
+**Parameter:**        
+•**labels** - Beliebige Anzahl von Positionsargumenten, die jeweils einem Eintrag im Protokollkopf entsprechen. <br>
+•**timestamp** - Wählen Sie die Zeitstempel-Einheit, die automatisch als erste Spalte in jeder Zeile hinzugefügt wird. Der Zeitstempel kann einen der Werte log.MILLISECONDS, log.SECONDS, log.MINUTES, log.HOURS, log.DAYS oder None annehmen, um den Zeitstempel zu deaktivieren. Der Standardwert ist log.SECONDS. <br>
+
+---basic log.set_mirroring(serial)/--- <br>
+Konfigurieren Sie die Spiegelung der Datenprotokollierung auf dem seriellen Ausgang.
+
+Die serielle Spiegelung ist standardmäßig deaktiviert. Wenn sie aktiviert ist, wird jede in der Protokolldatei protokollierte Zeile seriell ausgegeben. <br>
+
+**Parameter:**
+**serial** -  True wählt eine "vollständige" Löschung und False wählt die "schnelle" Löschmethode.
+
+---basic log.delete(full=False)/--- <br>
+Löscht den Inhalt des Protokolls, einschließlich der Kopfzeilen.
+
+Um die Kopfzeilen des Protokolls wieder hinzuzufügen, sollte die Funktion set_labels nach dieser Funktion aufgerufen werden.
+
+Es gibt zwei Löschmodi: full" löscht die Daten vollständig aus dem physischen Speicher, und "fast" macht die Daten ungültig, ohne sie zu löschen." <br>
+
+---basic log.add(data_dictionary, /, *, **kwargs)/--- <br>
+Fügen Sie dem Protokoll eine Datenzeile hinzu.
+
+Es gibt zwei Möglichkeiten, Daten mit dieser Funktion zu protokollieren:
+
+1. Über Schlüsselwortargumente, wobei jeder Argumentname eine Bezeichnung darstellt.
+z.B. ```log.add({X=Kompass.get_x(), Y=Kompass.get_y() })``` <br> 
+
+2. Über ein Wörterbuch, wobei jeder Wörterbuchschlüssel eine Bezeichnung darstellt.
+z.B. log.add(X: compass.get_x(), 'Y': compass.get_y()) <br>
+
+Die Option Schlüsselwortargument kann einfacher zu verwenden sein, und die Option Wörterbuch erlaubt die Verwendung von Leerzeichen (und anderen Sonderzeichen), die mit den Schlüsselwortargumenten nicht verwendet werden können. <br>
+
+Neue Bezeichnungen, die nicht zuvor mit der Funktion set_labels oder durch einen früheren Aufruf dieser Funktion festgelegt wurden, führen dazu, dass ein neuer Kopfeintrag mit den zusätzlichen Bezeichnungen in das Protokoll aufgenommen wird. <br>
+
+Zuvor angegebene Bezeichnungen, die bei einem Aufruf dieser Funktion nicht vorhanden sind, werden übersprungen und in der Protokollzeile mit einem leeren Wert eingetragen. <br>
+
+**Löst aus:** <br>
+OSError - Wenn das Protokoll voll ist, löst diese Funktion eine OSError-Ausnahme mit dem Fehlercode 28 ENOSPC aus, die anzeigt, dass kein Platz mehr im Gerät vorhanden ist.
