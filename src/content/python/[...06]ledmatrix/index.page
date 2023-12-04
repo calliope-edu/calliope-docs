@@ -1,0 +1,44 @@
+---
+title: Module
+description: 
+template: docs
+published: True
+docMenu: python
+---
+
+## Funktionen
+---basic Calliopemini.display.get_pixel(x,y)/--- <br>
+Gibt die Helligkeit der LED in Spalte x und Zeile y als Ganzzahl zwischen 0 (aus) und 9 (hell) zurück.
+
+---basic Calliopemini.display.set_pixel(x,y, wert)/--- <br>
+Setzen Sie die Helligkeit der LED in Spalte x und Zeile y auf einen Wert, der eine ganze Zahl zwischen 0 und 9 sein muss.
+
+---basic Calliopemini.display.clear()/--- <br>
+Setzen Sie die Helligkeit aller LEDs auf 0 (aus).
+
+---basic Calliopemini.display.show(Bild)/--- <br>
+Zeigen sie das Bild.
+
+---basic Calliopemini.display.show(image, delay=400, *, wait=True, loop=False, clear=False)/--- <br>
+
+Wenn image eine Zeichenkette, eine Fließkommazahl oder eine ganze Zahl ist, werden die Buchstaben/Ziffern der Reihe nach angezeigt. Andernfalls, wenn image eine wiederholbare Folge von Bildern ist, werden diese Bilder nacheinander angezeigt. Jeder Buchstabe, jede Ziffer oder jedes Bild wird mit einer Verzögerung von Millisekunden zwischen ihnen angezeigt.
+
+Wenn wait auf True steht, wird diese Funktion blockiert, bis die Animation beendet ist, andernfalls läuft die Animation im Hintergrund ab.
+
+Wenn loop auf True steht, wird die Animation ewig wiederholt.
+
+Wenn clear auf True steht, wird die Anzeige nach Beendigung der Wiederholung gelöscht.
+
+Beachten Sie, dass die Argumente wait, loop und clear mit ihrem Schlüsselwort angegeben werden müssen.
+
+---basic Calliopemini.display.on()/--- <br>
+Verwenden Sie on(), um das Display einzuschalten.
+
+---basic Calliopemini.display.off()/--- <br>
+Verwenden Sie off(), um das Display auszuschalten (so können Sie die mit dem Display verbundenen GPIO-Pins für andere Zwecke wiederverwenden).
+
+---basic Calliopemini.display.is_on()/--- <br>
+Gibt True zurück, wenn das Display eingeschaltet ist, andernfalls False.
+
+---basic Calliopemini.display.read_light_level()/--- <br>
+Verwenden Sie die LEDs des Displays im Reverse-Bias-Modus, um die Lichtmenge zu messen, die auf das Display fällt. Gibt eine ganze Zahl zwischen 0 und 255 zurück, die den Lichtpegel darstellt, wobei ein größerer Wert mehr Licht bedeutet.
