@@ -1,0 +1,20 @@
+---
+title: Module
+description: 
+template: docs
+published: True
+docMenu: python
+---
+
+## Funktionen
+---basic Calliopemini.i2c.init(freq=100000, sda=pin20, scl=pin19)/--- <br>
+Neuinitialisierung der Peripherie mit der angegebenen Taktfrequenz freq an den angegebenen sda- und scl-Pins.
+
+---basic Calliopemini.i2c.scan()/--- <br>
+Sucht den Bus nach Geräten ab. Gibt eine Liste von 7-Bit-Adressen zurück, die den Geräten entsprechen, die auf den Scan geantwortet haben.
+
+---basic Calliopemini.i2c.read(addr,n,repeat=False)/--- <br>
+Lesen von n Bytes aus dem Gerät mit der 7-Bit-Adresse addr. Wenn repeat True ist, wird kein Stopbit gesendet.
+
+---basic Calliopemini.i2c.write(addr,buf,repeat=False)/--- <br>
+Schreiben von Bytes aus buf in das Gerät mit der 7-Bit-Adresse addr. Wenn repeat True ist, wird kein Stopbit gesendet.
