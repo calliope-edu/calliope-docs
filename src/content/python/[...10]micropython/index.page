@@ -1,0 +1,54 @@
+---
+title: Module
+description: 
+template: docs
+published: True
+docMenu: python
+---
+
+##Funktionen
+---basic micropython.const(expr)/--- <br>
+Wird verwendet, um zu erklären, dass der Ausdruck eine Konstante ist, damit der Compiler ihn optimieren kann. Die Verwendung dieser Funktion sollte wie folgt aussehen:
+
+```from micropython import const CONST_X = const(123) CONST_Y = const(2 * CONST_X + 1)``` 
+
+Auf diese Weise deklarierte Konstanten sind auch außerhalb des Moduls, in dem sie deklariert sind, als globale Variablen zugänglich. Beginnt eine Konstante hingegen mit einem Unterstrich, so ist sie versteckt, nicht als globale Variable verfügbar und belegt während der Ausführung keinen Speicherplatz.
+
+---basic micropython.opt_level([level])/--- <br>
+"Wenn level angegeben ist, legt diese Funktion die Optimierungsstufe für die nachfolgende Kompilierung von Skripten fest und gibt None zurück. Andernfalls gibt sie die aktuelle Optimierungsstufe zurück.
+
+Die Optimierungsebene steuert die folgenden Kompilierungsfunktionen:
+
+•Assertions: Auf Level 0 werden Assertion-Anweisungen aktiviert und in den Bytecode kompiliert; auf Level 1 und höher werden Assertions nicht kompiliert.
+•Eingebaute __debug__-Variable: Auf Stufe 0 wird diese Variable auf True erweitert; auf Stufe 1 und höher wird sie auf False erweitert.
+•Quellcode-Zeilennummern: Auf den Ebenen 0, 1 und 2 werden die Quellcode-Zeilennummern zusammen mit dem Bytecode gespeichert, so dass Ausnahmen die Zeilennummer, in der sie aufgetreten sind, melden können; auf den Ebenen 3 und höher werden keine Zeilennummern gespeichert.
+Die Standard-Optimierungsstufe ist normalerweise Stufe 0."
+
+---basic  micropython.mem_info([verbose])/--- <br>
+Gibt Informationen über den aktuell verwendeten Speicher aus. Wenn das Argument verbose angegeben wird, werden zusätzliche Informationen ausgegeben.
+
+---basic micropython.qstr_info([verbose])/--- <br>
+"Gibt Informationen über aktuell internierte Zeichenketten aus. Wenn das Argument verbose angegeben wird, werden zusätzliche Informationen ausgegeben.
+
+Dazu gehören die Anzahl der internierten Zeichenketten und die Menge des von ihnen verwendeten RAM. Im ausführlichen Modus werden die Namen aller RAM-internierten Zeichenketten ausgegeben."
+
+---basic micropython.stack_use()/--- <br>
+Gibt eine ganze Zahl zurück, die den aktuellen Stack-Bedarf angibt. Der absolute Wert dieses Wertes ist nicht besonders nützlich, er sollte vielmehr verwendet werden, um Unterschiede in der Stack-Nutzung zu verschiedenen Zeitpunkten zu berechnen.
+
+---basic micropython.heap_lock()/--- <br>
+
+---basic micropython.heap_unlock()/--- <br>
+Sperrt oder entsperrt den Heap. Im gesperrten Zustand kann keine Speicherzuweisung erfolgen und ein MemoryError wird ausgelöst, wenn eine Heap-Zuweisung versucht wird.
+
+---basic micropython.kbd_intr(chr)/--- <br>
+Legt das Zeichen fest, das eine KeyboardInterrupt-Ausnahme auslöst. Standardmäßig ist dies während der Skriptausführung auf 3 gesetzt, was Strg-C entspricht. Die Übergabe von -1 an diese Funktion deaktiviert die Erfassung von Ctrl-C, und die Übergabe von 3 stellt sie wieder her.
+
+Diese Funktion kann verwendet werden, um das Erfassen von Ctrl-C auf dem eingehenden Zeichenstrom zu verhindern, der normalerweise für die REPL verwendet wird, falls dieser Strom für andere Zwecke verwendet wird.
+
+
+
+
+
+
+
+
