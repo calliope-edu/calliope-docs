@@ -1,0 +1,26 @@
+---
+title: Module
+description: 
+template: docs
+published: True
+docMenu: python
+---
+
+##Funktionen
+---basic os.listdir()/--- <br>
+Gibt eine Liste der Namen aller Dateien zurück, die im lokalen persistenten On-Device-Dateisystem enthalten sind.
+
+---basic os.remove(filename)/ <br>
+Entfernt (löscht) die im Argument filename genannte Datei. Existiert die Datei nicht, wird eine OSError-Ausnahme ausgelöst.
+
+---basic os.size(filename)/--- <br>
+Gibt die Größe der im Argument filename genannten Datei in Bytes zurück. Existiert die Datei nicht, wird eine OSError-Ausnahme ausgelöst.
+
+---basic os.uname()/--- <br>
+"Liefert Informationen zur Identifizierung des aktuellen Betriebssystems. Der Rückgabewert ist ein Objekt mit fünf Attributen:
+
+•sysname - Name des Betriebssystems
+•nodename - Name des Rechners im Netzwerk (implementierungsdefiniert)
+•release - Version des Betriebssystems
+•version - Version des Betriebssystems
+•Maschine - Hardware-Bezeichner"
