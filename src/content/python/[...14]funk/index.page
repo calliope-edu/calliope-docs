@@ -1,0 +1,77 @@
+---
+title: Module
+description: 
+template: docs
+published: True
+docMenu: python
+---
+
+##Funktionen
+---basic radio.on()/--- <br>
+Schaltet das Radio ein.
+Funk ist tandardmäßig eingeschaltet, wenn das Radio-Modul importiert wird. In früheren Versionen musste diese Funktion explizit aufgerufen werden, um den Stromverbrauch zu reduzieren, bis sie benötigt wurde. Für diese Fälle kann radio.off() nach dem Import aufgerufen werden.
+
+---basic radio.off()/--- <br>
+Schaltet das Radio aus und spart so Strom und Speicherplatz.
+
+---basic radio.config(**kwargs)/--- <br>
+" Konfiguriert verschiedene schlüsselwortbasierte Einstellungen in Bezug auf das Funkgerät. Die verfügbaren Einstellungen und ihre sinnvollen Standardwerte sind unten aufgeführt.
+
+Die Länge (Standard=32) definiert die maximale Länge einer über das Funkgerät gesendeten Nachricht in Bytes. Sie kann bis zu 251 Bytes lang sein (254 - 3 Bytes für S0, LENGTH und S1-Präambel).
+
+Die Warteschlange (Standard=3) gibt die Anzahl der Nachrichten an, die in der Warteschlange für eingehende Nachrichten gespeichert werden können. Wenn in der Warteschlange kein Platz mehr für eingehende Nachrichten ist, wird die eingehende Nachricht verworfen.
+
+Der Kanal (Voreinstellung=7) kann ein ganzzahliger Wert zwischen 0 und 83 (einschließlich) sein, der einen beliebigen "Kanal" definiert, auf den das Funkgerät eingestellt ist. Nachrichten werden über diesen Kanal gesendet und nur Nachrichten, die über diesen Kanal empfangen werden, werden in die Warteschlange für eingehende Nachrichten gestellt. Jeder Schritt ist 1MHz breit, basierend auf 2400MHz.
+
+Die Leistung (Standard=6) ist ein ganzzahliger Wert von 0 bis 7 (einschließlich), der die Stärke des Signals angibt, das beim Senden einer Nachricht verwendet wird. Je höher der Wert ist, desto stärker ist das Signal, aber desto mehr Strom wird vom Gerät verbraucht. Die Nummerierung entspricht den Positionen in der folgenden Liste von dBm-Werten (Dezibel Milliwatt): -30, -20, -16, -12, -8, -4, 0, 4.
+
+Die Adresse (Standard=0x75626974) ist ein beliebiger Name, ausgedrückt als 32-Bit-Adresse, der verwendet wird, um eingehende Pakete auf der Hardware-Ebene zu filtern und nur diejenigen zu behalten, die mit der von Ihnen eingestellten Adresse übereinstimmen. Die Standardeinstellung, die von anderen micro:bit-verwandten Plattformen verwendet wird, ist die hier verwendete Standardeinstellung.
+
+Die Gruppe (Voreinstellung=0)
+
+---basic radio.reset()/--- <br>
+Setzen Sie die Einstellungen auf ihre Standardwerte zurück (wie in der Dokumentation der obigen Konfigurationsfunktion aufgeführt).
+
+---basic radio.send_bytes(message)/--- <br>
+Setzen Sie die Einstellungen auf ihre Standardwerte zurück (wie in der Dokumentation der obigen Konfigurationsfunktion aufgeführt).
+
+---basic radio.receive_bytes()/--- <br>
+Empfängt die nächste eingehende Nachricht in der Nachrichtenwarteschlange. Gibt keine zurück, wenn keine Nachrichten anstehen. Nachrichten werden als Bytes zurückgegeben.
+
+---basic radio.receive_bytes_into(buffer)/--- <br>
+Empfängt die nächste eingehende Nachricht in der Nachrichtenwarteschlange. Kopiert die Nachricht in den Puffer und schneidet das Ende der Nachricht ab, falls nötig. Gibt keine zurück, wenn keine Nachrichten anstehen, andernfalls die Länge der Nachricht (die größer als die Länge des Puffers sein kann).
+
+---basic radio.send(message)/--- <br>
+Sendet eine Nachrichtenzeichenkette. Dies ist das Äquivalent zu send_bytes(bytes(message, 'utf8')), jedoch mit vorangestelltem b'\x01\x00\x01' (um es mit anderen Plattformen kompatibel zu machen, die auf den Calliope mini abzielen).
+
+---basic radio.receive()/--- <br>
+Funktioniert genauso wie receive_bytes, gibt aber zurück, was gesendet wurde.
+
+Derzeit ist es äquivalent zu str(receive_bytes(), 'utf8'), aber mit einer Überprüfung, dass die ersten drei Bytes b'\x01\x00\x01' sind (um es mit anderen Plattformen kompatibel zu machen, die auf den Calliope mini abzielen können). Vor der Konvertierung in eine Zeichenkette werden die vorangestellten Bytes entfernt.
+
+Eine ValueError-Ausnahme wird ausgelöst, wenn die Konvertierung in einen String fehlschlägt.
+
+---basic radio.receive_full()/--- <br>
+
+"Gibt ein Tupel mit drei Werten zurück, die die nächste eingehende Nachricht in der Nachrichtenwarteschlange darstellen. Wenn es keine anstehenden Nachrichten gibt, wird None zurückgegeben.
+
+Die drei Werte im Tupel repräsentieren:
+
+die nächste eingehende Nachricht in der Nachrichtenwarteschlange in Bytes.
+die RSSI (Signalstärke): ein Wert zwischen 0 (stärkster Wert) und -255 (schwächster Wert), gemessen in dBm.
+einen Mikrosekunden-Zeitstempel: der von time.ticks_us() zurückgegebene Wert, als die Nachricht empfangen wurde.
+Zum Beispiel:"
+
+```details = radio.receive_full() if details: msg, rssi, timestamp = details```
+
+Diese Funktion ist nützlich für die Bereitstellung von Informationen, die für die Triangulation und/oder Triliteration mit anderen Calliope mini Geräten benötigt werden.
+
+
+
+
+
+
+
+
+
+
