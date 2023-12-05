@@ -1,0 +1,30 @@
+---
+title: Module
+description: 
+template: docs
+published: True
+docMenu: python
+---
+
+## Funktionen
+---basic maschine.unique_id()/--- <br>
+Gibt eine Byte-Zeichenkette mit einem eindeutigen Bezeichner für ein Board zurück. Er variiert von einer Board-Instanz zur anderen.
+
+--basic maschine.reset()/--- <br>
+Setzt das Gerät in ähnlicher Weise zurück wie das Drücken der externen RESET-Taste.
+
+---basic maschine.freq()/--- <br>
+Gibt die CPU-Frequenz in Hertz zurück.
+
+---basic maschine.disable_irq()/--- <br>
+Deaktiviert Interrupt-Anforderungen. Gibt den vorherigen IRQ-Status zurück, der als undurchsichtiger Wert betrachtet werden sollte. Dieser Rückgabewert sollte an die Funktion machine.enable_irq() übergeben werden, um die Unterbrechungen in ihren ursprünglichen Zustand zurückzusetzen, bevor machine.disable_irq() aufgerufen wurde.
+
+---basic maschine.enable_irq(state)/--- <br>
+Wiederaktivierung von Interrupt-Anforderungen. Der Parameter state sollte der Wert sein, der beim letzten Aufruf der Funktion machine.disable_irq() zurückgegeben wurde.
+
+---basic maschine.time_pulse_us(pin, pulse_level, timeout_us=1000000)/--- <br>
+Zeit einen Impuls auf dem angegebenen Pin und gibt die Dauer des Impulses in Mikrosekunden zurück. Das Argument pulse_level sollte 0 sein, um einen Low-Impuls zu verzögern, oder 1, um einen High-Impuls zu verzögern.
+
+Wenn der aktuelle Eingangswert des Pins von pulse_level abweicht, wartet die Funktion zunächst (*), bis der Pin-Eingang gleich pulse_level wird, und zählt dann (**) die Dauer, die der Pin gleich pulse_level ist. Ist der Pin bereits gleich pulse_level, beginnt die Zeitmessung sofort.
+
+Die Funktion gibt -2 zurück, wenn es eine Zeitüberschreitung beim Warten auf die oben mit (*) gekennzeichnete Bedingung gab, und -1, wenn es eine Zeitüberschreitung während der Hauptmessung gab, oben mit (**) gekennzeichnet. Die Zeitüberschreitung ist in beiden Fällen die gleiche und wird durch timeout_us (in Mikrosekunden) angegeben.
