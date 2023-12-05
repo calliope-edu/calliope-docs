@@ -1,0 +1,30 @@
+---
+title:
+description: 
+template: docs
+published: True
+docMenu: python
+---
+
+## Funktionen
+---basic Calliopemini.microphone.current_event()/--- <br>
+•Rückgabe: der Name des zuletzt aufgezeichneten Soundereignisses, SoundEvent('loud') oder SoundEvent('quiet').
+
+---basic Calliopemini.microphone.was_event(event)/--- <br>
+•event: ein Sound-Ereignis, wie z.B. SoundEvent.LOUD oder SoundEvent.QUIET. <br>
+•Rückgabe: true, wenn seit dem letzten Aufruf mindestens einmal ein Ton gehört wurde, andernfalls false. was_event() löscht auch die Tonereignishistorie, bevor es zurückkehrt.
+
+---basic Calliopemini.microphone.is_event(event)/--- <br>
+•event: ein Sound-Ereignis, wie z.B. SoundEvent.LOUD oder SoundEvent.QUIET. <br>
+•Rückgabe: true, wenn das Sound-Ereignis das jüngste seit dem letzten Aufruf ist, sonst false. Die Sound-Event-Historie wird nicht gelöscht.
+
+---basic Calliopemini.microphone.get_events()/--- <br>
+•Rückgabe: ein Tupel mit dem Ereignisverlauf. Das jüngste Ereignis wird zuletzt aufgelistet. get_events() löscht auch den Verlauf der Tonereignisse, bevor es zurückkehrt.
+
+---basic Calliopemini.microphone.set_threshold(event, value)/--- <br>
+•event: ein Schallereignis, z. B. SoundEvent.LOUD oder SoundEvent.QUIET. <br>
+•Wert: Der Schwellenwert im Bereich von 0-255. Zum Beispiel wird set_threshold(SoundEvent.LOUD, 250) nur ausgelöst, wenn der Ton sehr laut ist (>= 250).
+
+---basic Calliopemini.microphone.sound_level()/--- <br>
+Rückgabe: eine Darstellung des Schalldruckpegels im Bereich von 0 bis 255.
+
