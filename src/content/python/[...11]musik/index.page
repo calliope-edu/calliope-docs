@@ -1,0 +1,60 @@
+---
+title: Module
+description: 
+template: docs
+published: True
+docMenu: python
+---
+
+##Funktionen
+---basic music.set_tempo(ticks=4, bpm=120)/--- <br>
+" Legt das ungefähre Tempo für die Wiedergabe fest.
+
+Eine Anzahl von Ticks (ausgedrückt als ganze Zahl) bildet einen Beat. Jeder Beat soll mit einer bestimmten Frequenz pro Minute abgespielt werden (ausgedrückt als das bekanntere BPM - Beats per Minute - ebenfalls als ganze Zahl).
+
+Die vorgeschlagenen Standardwerte ermöglichen das folgende nützliche Verhalten:
+
+•music.set_tempo() - setzt das Tempo auf den Standardwert von ticks = 4, bpm = 120 zurück
+•music.set_tempo(ticks=8) - ändert die "Definition" eines Beats
+•music.set_tempo(bpm=180) - einfach das Tempo ändern
+Die Länge eines Ticks in Millisekunden lässt sich ganz einfach errechnen: 60000/bpm/ticks_per_beat . Bei den Standardwerten sind das 60000/120/4 = 125 Millisekunden oder 1 Beat = 500 Millisekunden."
+
+---basic music.get_tempo()/--- <br>
+Ruft das aktuelle Tempo als Tupel von Ganzzahlen ab: (Ticks, bpm).
+
+---basic music.play(music, pin=pin0, wait=True, loop=False)/--- <br>
+Spielt Musik, die die oben definierte musikalische DSL enthält.
+
+Wenn Musik eine Zeichenkette ist, wird erwartet, dass es sich um eine einzelne Note handelt, z. B. 'c1:4'.
+
+Wenn Musik als eine Liste von Noten angegeben wird (wie im Abschnitt über die musikalische DSL oben definiert), werden diese nacheinander abgespielt, um eine Melodie zu spielen.
+
+In beiden Fällen werden die Werte für Dauer und Oktave auf ihre Standardwerte zurückgesetzt, bevor die Musik (egal welche) abgespielt wird.
+
+Ein optionales Argument zur Angabe des Ausgangspins kann verwendet werden, um den Standardwert von pin0 zu überschreiben. Wenn kein Ton abgespielt werden soll, kann pin=None verwendet werden.
+
+Wenn wait auf True gesetzt ist, ist diese Funktion blockierend.
+
+Wenn loop auf True gesetzt ist, wird die Melodie wiederholt, bis stop aufgerufen wird (siehe unten) oder der blockierende Aufruf unterbrochen wird.
+
+---basic music.pitch(frequency, duration=-1, pin=pin0, wait=True)/--- <br>
+Spielt eine Tonhöhe mit der angegebenen ganzzahligen Frequenz für die angegebene Anzahl von Millisekunden. Wenn zum Beispiel die Frequenz auf 440 und die Länge auf 1000 eingestellt ist, hören wir eine Sekunde lang ein Standardkonzert A.
+
+Beachten Sie, dass Sie immer nur eine Tonhöhe auf einem Pin abspielen können.
+
+Ein optionales Argument zur Angabe des Ausgangspins kann verwendet werden, um die Vorgabe von pin0 zu überschreiben. Wenn kein Ton über die Pins ausgegeben werden soll, kann pin=None verwendet werden.
+
+Wenn wait auf True gesetzt ist, ist diese Funktion blockierend.
+
+Wenn duration negativ ist, wird die Tonhöhe kontinuierlich abgespielt, bis entweder der blockierende Aufruf unterbrochen wird oder, im Falle eines Hintergrundaufrufs, eine neue Frequenz eingestellt oder stop aufgerufen wird (siehe unten).
+
+---basic music.stop(pin=pin0)/--- <br>
+Stoppt die gesamte Musikwiedergabe auf dem eingebauten Lautsprecher und jedem Pin, der Ton ausgibt. Ein optionales Argument kann angegeben werden, um einen Pin zu spezifizieren, z.B. music.stop(pin1).
+
+---basic music.reset()/--- <br>
+Setzt den Zustand der folgenden Attribute auf folgende Weise zurück:
+
+•Ticks = 4
+•bpm = 120
+•Dauer = 4
+•oktave = 4
