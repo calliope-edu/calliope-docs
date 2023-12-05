@@ -1,0 +1,37 @@
+---
+title: Module
+description: 
+template: docs
+published: True
+docMenu: python
+---
+
+##Funktionen
+---basic aus()/--- <br>
+Schalten Sie die Karte in den niedrigstmöglichen Energiemodus herunter.
+
+Dies entspricht dem Drücken des Reset-Knopfes für ein paar Sekunden, um das Board in den "Aus-Modus" zu versetzen.
+
+Der Calliope mini wacht nur auf, wenn der Reset-Knopf gedrückt wird oder, wenn es mit Batterie betrieben wird, wenn ein USB-Kabel angeschlossen wird.
+
+Wenn das Board aufwacht, wird es einen Reset durchführen, so dass Ihr Programm von Anfang an läuft.
+
+---basic power.deep_sleep(ms=None, wake_on=None, run_every=True)/--- <br>
+Versetzen Sie den Calliope mini in einen stromsparenden Modus, in dem es aufwachen und den Betrieb fortsetzen kann.
+
+Der Programmstatus wird beibehalten, und nach dem Aufwachen wird der Betrieb dort fortgesetzt, wo er unterbrochen wurde.
+
+Der Tiefschlafmodus verbraucht mehr Batteriestrom als der Aus-Modus.
+
+Die Aufwachquellen werden über Argumente konfiguriert.
+
+Das Board wacht immer auf, wenn es UART-Daten empfängt, wenn der Reset-Knopf gedrückt wird (wodurch das Board zurückgesetzt wird) oder, bei Batteriebetrieb, wenn das USB-Kabel eingesteckt wird.
+
+Wenn der run_every-Parameter auf True gesetzt ist (Standardeinstellung), wird jede Funktion, die mit run_every geplant wird, das Board kurzzeitig aufwecken, um es auszuführen, und wenn es fertig ist, wird es wieder schlafen gehen.
+
+Parameter:        
+•ms - Eine Zeit in Millisekunden, die gewartet wird, bevor es aufwacht. <br>
+•wake_on - Eine einzelne Instanz oder ein Tupel von Pins und/oder Tasten, um das Board aufzuwecken, z.B. deep_sleep(wake_on=button_a) oder deep_sleep(wake_on=(pin0, pin2, button_b)). <br>
+•run_every - Ein boolescher Wert, der angibt, ob die mit run_every geplanten Funktionen während des Schlafs weiterlaufen sollen. <br>
+
+
