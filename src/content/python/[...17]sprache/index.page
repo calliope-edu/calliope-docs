@@ -1,0 +1,25 @@
+---
+title: Module
+description: 
+template: docs
+published: True
+docMenu: python
+---
+
+##Funktionen <br>
+---basic speech.translate(words)/--- <br>
+"Bei englischen Wörtern in der Zeichenkette words wird eine Zeichenkette zurückgegeben, die eine bestmögliche Schätzung der entsprechenden auszusprechenden Phoneme enthält. Die Ausgabe wird aus dieser Text-Phonem-Übersetzungstabelle generiert.
+
+Diese Funktion sollte verwendet werden, um eine erste Annäherung an die Phoneme zu erzeugen, die dann von Hand weiter bearbeitet werden kann, um Genauigkeit, Flexion und Betonung zu verbessern."
+
+---basic speech.pronounce(phonemes, *, pitch=64, speed=72, mouth=128, throat=128)/--- <br>
+---basic speech.pronounce(phonemes, *, pitch=64, speed=72, mouth=128, throat=128, pin=pin0)/--- <br>
+
+Sprechen Sie die Phoneme in der Zeichenkette phonemes aus. Siehe unten für Details zur Verwendung von Phonemen, um die Ausgabe des Sprachsynthesizers fein zu steuern. Setzen Sie die optionalen Einstellungen für Tonhöhe, Geschwindigkeit, Mund und Kehle außer Kraft, um die Klangfarbe (Qualität) der Stimme zu ändern.
+
+Bei Calliope mini kann ein optionales Argument zur Angabe des Ausgangspins verwendet werden, um den Standardwert von pin0 zu überschreiben. Wenn kein Ton über die Pins ausgegeben werden soll, kann pin=None verwendet werden.
+
+---basic speech.sing(phonemes, *, pitch=64, speed=72, mouth=128, throat=128)/--- <br>
+---basic speech.sing(phonemes, *, pitch=64, speed=72, mouth=128, throat=128, pin=pin0)/--- <br>
+
+Singen Sie die in den Saitenphonemen enthaltenen Phoneme. Das Ändern der Tonhöhe und der Dauer der Note wird im Folgenden beschrieben. Setzen Sie die optionalen Einstellungen für Tonhöhe, Geschwindigkeit, Mund und Kehle außer Kraft, um die Klangfarbe (Qualität) der Stimme zu ändern.
