@@ -1,0 +1,64 @@
+---
+title: Module
+description: 
+template: docs
+published: True
+docMenu: python
+---
+
+##Funktionen <br>
+---basic Calliopemini.uart.init(baudrate=9600, bits=8, parity=None, stop=1, *, tx=None, rx=None)
+ Initialisierung der seriellen Kommunikation mit den angegebenen Parametern an den angegebenen tx- und rx-Pins. Beachten Sie, dass für eine korrekte Kommunikation die Parameter auf beiden kommunizierenden Geräten identisch sein müssen.
+
+Die Baudrate definiert die Geschwindigkeit der Kommunikation. Übliche Baudraten sind:
+
+•9600 <br>
+•14400 <br>
+•19200 <br>
+•28800 <br>
+•38400 <br>
+•57600 <br>
+•115200 <br>
+Die Bits definieren die Größe der zu übertragenden Bytes, wobei die Karte nur 8 unterstützt. Der Paritätsparameter legt fest, wie die Parität geprüft wird, und kann None, uart.ODD oder microbit.uart.EVEN sein. Der Stop-Parameter gibt die Anzahl der Stopbits an und muss bei dieser Karte 1 sein.
+
+Wenn tx und rx nicht angegeben werden, werden die internen USB-UART TX/RX-Pins verwendet, die mit dem USB-Seriell-Wandler auf dem Calliope mini verbunden sind und somit den UART mit Ihrem PC verbinden. Sie können beliebige andere Pins angeben, indem Sie die gewünschten Pin-Objekte an die Parameter tx und rx übergeben.
+
+---basic uart.any()/--- <br>
+Gibt True zurück, wenn Daten anstehen, sonst False.
+
+---basic uart.read([nbytes])/--- <br>
+"Bytes lesen. Wenn nbytes angegeben ist, werden höchstens so viele Bytes gelesen, andernfalls werden so viele Bytes wie möglich gelesen.
+
+Rückgabewert: ein bytes-Objekt oder None bei Timeout.
+
+Ein bytes-Objekt enthält eine Folge von Bytes. Da ASCII-Zeichen in einzelne Bytes passen, wird dieser Objekttyp oft zur Darstellung von einfachem Text verwendet und bietet Methoden, um ihn als solchen zu manipulieren, z. B. können Sie den Text mit der Funktion print() anzeigen.
+
+Sie können dieses Objekt auch in ein String-Objekt umwandeln, und wenn Nicht-ASCII-Zeichen vorhanden sind, kann die Kodierung angegeben werden:"
+
+msg_bytes = uart.read()
+msg_str = str(msg, 'UTF-8')
+
+---basic uart.readall()/--- <br>
+Entfernt seit Version 1.0.
+
+Verwenden Sie stattdessen uart.read() ohne Argumente, um so viele Daten wie möglich zu lesen.
+
+---basic uart.readinto(buf[, nbytes])/--- <br>
+"Liest Bytes in den buf. Wenn nbytes angegeben ist, werden höchstens so viele Bytes gelesen. Andernfalls werden höchstens len(buf) Bytes gelesen.
+
+Rückgabewert: Anzahl der gelesenen und in buf gespeicherten Bytes oder None bei Timeout."
+
+---basic uart.readline()/--- <br>
+Schreiben Sie den Puffer auf den Bus, es kann ein Byte-Objekt oder ein String sein: <br>
+
+uart.write('hello world')
+uart.write(b'hello world')
+uart.write(bytes([1, 2, 3]))
+
+Rückgabewert: Anzahl der geschriebenen Bytes oder Keine bei Timeout.
+
+
+
+
+
+
