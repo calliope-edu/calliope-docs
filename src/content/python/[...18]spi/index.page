@@ -1,0 +1,30 @@
+---
+title: Module
+description: 
+template: docs
+published: True
+docMenu: python
+---
+
+##Funktionen <br>
+---basic Calliopemini.spi.init(baudrate=1000000, bits=8, mode=0, sclk=pin13, mosi=pin15, miso=pin14)/--- <br>
+Initialisierung der SPI-Kommunikation mit den angegebenen Parametern an den angegebenen Pins. Beachten Sie, dass für eine korrekte Kommunikation die Parameter auf beiden kommunizierenden Geräten identisch sein müssen.
+
+Die Baudrate definiert die Geschwindigkeit der Kommunikation.
+
+Die Bits definieren die Größe der zu übertragenden Bytes. Derzeit wird nur bits=8 unterstützt. Dies kann sich jedoch in Zukunft ändern.
+
+Der Modus bestimmt die Kombination von Taktpolarität und -phase gemäß der folgenden Konvention, wobei die Polarität das höherwertige Bit und die Phase das niederwertige Bit ist: <br>
+
+Polarität (auch bekannt als CPOL) 0 bedeutet, dass der Takt im Ruhezustand den logischen Wert 0 hat und im aktiven Zustand auf High (logischer Wert 1) geht; Polarität 1 bedeutet, dass der Takt im Ruhezustand den logischen Wert 1 hat und im aktiven Zustand auf Low (logischer Wert 0) geht. Phase (auch bekannt als CPHA) 0 bedeutet, dass die Daten an der Vorderflanke des Takts abgetastet werden, und 1 bedeutet, dass sie an der Hinterflanke abgetastet werden (d.h. https://en.wikipedia.org/wiki/Signal_edge).
+
+Die Argumente sclk, mosi und miso geben an, welche Pins für die einzelnen Signaltypen zu verwenden sind.
+
+---basic spi.read(nbytes)/--- <br>
+Maximal nBytes lesen. Gibt zurück, was gelesen wurde.
+
+---basic spi.write(buffer)/--- <br>
+Schreiben Sie den Puffer mit Bytes auf den Bus.
+
+---basic spi.write_readinto(out, in)/--- <br>
+" Schreiben Sie den Ausgangspuffer auf den Bus und lesen Sie eine Antwort in den Eingangspuffer. Die Länge der Puffer sollte gleich sein. Die Puffer können das gleiche Objekt sein."
