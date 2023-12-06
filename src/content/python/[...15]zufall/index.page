@@ -1,0 +1,35 @@
+---
+title: Module
+description: 
+template: docs
+published: True
+docMenu: python
+---
+
+##Funktionen <br>
+---basic random.getrandbits(n)/--- <br>
+Gibt eine ganze Zahl mit n Zufallsbits zurück.
+
+---basic random.seed(n)/--- <br>
+Initialisieren Sie den Zufallszahlengenerator mit einer bekannten ganzen Zahl n. Damit erhalten Sie reproduzierbar deterministische Zufälligkeit aus einem gegebenen Ausgangszustand (n).
+
+---basic random.randint(a, b)/--- <br>
+Gibt eine zufällige ganze Zahl N zurück, so dass ```a <= N <= b```. Alias für randrange(a, b+1).
+
+---basic random.randrange(stop)/--- <br>
+Gibt eine zufällig ausgewählte ganze Zahl zwischen Null und bis zu (aber nicht einschließlich) Stop zurück.
+
+---basic random.randrange(start, stop)/--- <br>
+Gibt eine zufällig ausgewählte ganze Zahl aus dem Bereich(start, stop) zurück.
+
+---basic random.randrange(start, stop, step)/--- <br>
+Gibt ein zufällig ausgewähltes Element aus dem Bereich (Start, Stopp, Schritt) zurück.
+
+---basic random.choice(seq)/--- <br>
+Gibt ein zufälliges Element aus der nicht leeren Sequenz seq zurück. Wenn seq leer ist, wird IndexError ausgelöst.
+
+---basic random.random()/--- <br>
+Rückgabe der nächsten zufälligen Fließkommazahl im Bereich (0.0, 1.0)
+
+---basic random.uniform(a, b)/--- <br>
+Gibt eine zufällige Gleitkommazahl N zurück, bei der ```a <= N <= b für a <= b und b <= N <= a für b < a``` gilt.
