@@ -1,0 +1,14 @@
+---
+title: Module
+description: 
+template: docs
+published: True
+docMenu: python
+---
+
+##Funktionen <br>
+---basic Calliopemini.speaker.off()/--- <br>
+Verwenden Sie off(), um den Lautsprecher auszuschalten. Dadurch wird die Tonausgabe an einem Pin des Randsteckers nicht deaktiviert.
+
+---basic Calliopemini.speaker.on()/--- <br>
+Verwenden Sie on(), um den Lautsprecher einzuschalten.
