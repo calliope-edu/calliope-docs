@@ -1,0 +1,69 @@
+---
+title: Module
+description: 
+template: docs
+published: True
+docMenu: python
+---
+
+##Funktionen <br>
+---basic utime.sleep(Sekunden)/--- <br>
+Schläft für die angegebene Anzahl von Sekunden. Sie können eine Fließkommazahl verwenden, um für eine gebrochene Anzahl von Sekunden zu schlafen, oder die Funktionen utime.sleep_ms() und utime.sleep_us() verwenden.
+
+---basic utime.sleep_ms(ms)/--- <br>
+Verzögerung für eine bestimmte Anzahl von Millisekunden, sollte positiv oder 0 sein.
+
+---basic utime.sleep_us(us)/--- <br>
+Verzögerung für eine bestimmte Anzahl von Millisekunden, sollte positiv oder 0 sein.
+
+---basic utime.ticks_ms()/--- <br>
+Gibt einen ansteigenden Millisekundenzähler mit einem beliebigen Bezugspunkt zurück, der nach einem bestimmten Wert umläuft.
+
+---basic utime.ticks_us()/--- <br>
+Genau wie utime.ticks_ms() oben, aber in Mikrosekunden.
+
+---basic utime.ticks_add(ticks, delta)/--- <br>
+Verschiebung des Tick-Wertes um eine bestimmte Zahl, die entweder positiv oder negativ sein kann. Bei einem Tick-Wert ermöglicht diese Funktion die Berechnung des Tick-Wert-Deltas vor oder nach dem Tick-Wert, gemäß der modular-arithmetischen Definition von Tick-Werten.
+
+(```Find out what ticks value there was 100ms ago
+print(ticks_add(time.ticks_ms(), -100))```)
+
+(```Calculate deadline for operation and test for it
+deadline = ticks_add(time.ticks_ms(), 200)
+while ticks_diff(deadline, time.ticks_ms()) > 0:
+    do_a_little_of_something()```)
+
+(```Find out TICKS_MAX used by this port
+print(ticks_add(0, -1))```)
+
+---basic utime.ticks_diff(ticks1, ticks2)/--- <br>
+"Misst die Ticks-Differenz zwischen den von den Funktionen utime.ticks_ms() oder ticks_us() zurückgegebenen Werten als vorzeichenbehafteter Wert, der umbrochen werden kann.
+
+Die Reihenfolge der Argumente ist die gleiche wie beim Subtraktionsoperator, ticks_diff(ticks1, ticks2) hat die gleiche Bedeutung wie ticks1 - ticks2.
+
+utime.ticks_diff() ist für verschiedene Verwendungsmuster ausgelegt, darunter:
+
+Polling mit Timeout. In diesem Fall ist die Reihenfolge der Ereignisse bekannt, und Sie werden nur mit positiven Ergebnissen von utime.ticks_diff() arbeiten:"
+
+(```Wait for GPIO pin to be asserted, but at most 500us
+start = time.ticks_us()
+while pin.value() == 0:
+    if time.ticks_diff(time.ticks_us(), start) > 500:
+        raise TimeoutError```)
+
+Terminierung von Ereignissen. In diesem Fall kann das Ergebnis von utime.ticks_diff() negativ sein, wenn ein Ereignis überfällig ist:
+
+This code snippet is not optimized
+now = time.ticks_ms()
+scheduled_time = task.scheduled_time() <br>
+
+(```if ticks_diff(scheduled_time, now) > 0:
+    print("Too early, let's nap")
+    sleep_ms(ticks_diff(scheduled_time, now))
+    task.run()```) <br>
+(```elif ticks_diff(scheduled_time, now) == 0:
+    print("Right at time!")
+    task.run()```) <br>
+(```elif ticks_diff(scheduled_time, now) < 0:
+    print("Oops, running late, tell task to run faster!")
+    task.run(run_faster=true)```)
