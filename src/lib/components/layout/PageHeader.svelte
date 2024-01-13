@@ -1,6 +1,7 @@
 <script>
     import clsx from 'clsx';
 	import MainMenu from '$lib/components/menues/MainMenu.svelte';
+    import BoardVersionSelector from '$lib/components/BoardVersionSelector.svelte';
 	import { page } from '$app/stores';
 
     let y = 0;
@@ -14,10 +15,13 @@
     <div class="w-full md:max-w-8xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
 
         <div class="pl-4">
-            <a data-sveltekit-prefetch class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="https://calliope.cc/">
+            <a data-sveltekit-prefetch class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="/docs">
                <img src="/Logo_Calliope_lang.svg" style="height: 2.5rem;" alt="Calliope Logo" />
-             
             </a>
+        </div>
+
+        <div>
+            <BoardVersionSelector />
         </div>
 
         <MainMenu {addBg} />

@@ -1,6 +1,7 @@
 import { visit } from 'unist-util-visit';
 
 const scripts = `
+    import Versions from '$lib/components/BoardVersionSelector.svelte';
     import Gap from '$lib/components/layout/Gap.svelte';
     import Grid from '$lib/components/layout/Grid.svelte';
     import ImageSwiper from '$lib/components/ImageSwiper.svelte';

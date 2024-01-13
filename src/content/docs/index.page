@@ -1,12 +1,7 @@
 ---
-title: DOCS
-description: "..."
-template: docs
-published: False
+title: Technische Dokumentation
+description: ...
+template: docs_contents
+published: true
+docsTitle: Technische Dokumentation
 ---
-
-<script>
-	// import { browser } from '$app/environment';
-	// if(browser)
-	// 	window.location.href = "./erste-schritte/lieferumfang/";
-</script>

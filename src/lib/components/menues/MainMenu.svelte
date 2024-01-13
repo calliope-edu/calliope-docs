@@ -14,7 +14,7 @@
 
 	let pages = [
 		// {url: '/#', name: 'Startseite', sub: []},
-		{url: '/docs', name: 'Dokumentation', sub: []},
+		// {url: '/docs', name: 'Dokumentation', sub: []},
 		// {url: 'https://calliope.cc/', name: 'Calliope.cc', external: true, sub: [
 		// 	{url: 'https://calliope.cc/los-geht-s/einfuehrung', name: 'Einführung', external: true, sub: []},
 		// 	{url: 'https://calliope.cc/los-geht-s/erste-schritte', name: 'Erste Schritte', external: true, sub: []},
@@ -68,9 +68,9 @@ class={clsx('w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg
 				{/if}
 			</li>
 		{/each}
-		<!-- <li class='mr-5'>
-			<Button text='Zum Shop' link='https://shop.calliope.cc' color="calliope-500" />
-		</li> -->
+		<li class='mr-5'>
+			<Button text='Calliope.cc' link='https://calliope.cc' color="calliope-500" />
+		</li>
 	</ul>
 </div>
 

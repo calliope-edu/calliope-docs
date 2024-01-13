@@ -26,14 +26,14 @@ published: true
 ### Technische Fragen
 
 <div class="prose">
-    <UnfoldItem title="Wo finde ich die CE-Zertifizierung?" group='B' active>
+    <UnfoldItem title="Wo finde ich die CE-Zertifizierung?" group='A'>
         Die wichtigsten Zertifizierungen und internationalen IDs finden sich hier:
 
     </UnfoldItem>
-    <UnfoldItem title="Welche Protokolle unterstützt das Board?" group='B'>
+    <UnfoldItem title="Welche Protokolle unterstützt das Board?" group='A'>
         Auf den beiden Grove-Konnektoren liegt einmal I2C und einmal UART. Auf dem 26-poligen GPIO-Anschluss ist auch SPI verfügbar. Der Prozessor verfügt über ein Funk und BLE Modul.
     </UnfoldItem>
-    <UnfoldItem title="Lorem Ipsum" group='B'>
+    <UnfoldItem title="Lorem Ipsum" group='A'>
         Dolor sit amed
     </UnfoldItem>
 </div>
