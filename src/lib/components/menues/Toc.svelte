@@ -118,11 +118,11 @@
           style:font-size="{2 - 0.2 * (levels[idx] - minLevel)}ex" -->
             <li>
               <button 
-              class="{`level${level}`} group hover:text-calliope-500 dark:hover:text-calliope-400"
+              class="{`level${level}`} group hover:text-calliope-500"
               class:active={activeHeading === heading}
               on:click={clickHandler(heading)}>
                 {#if level > 0}
-                  <!-- <svg width="3" height="24" viewBox="0 -9 3 24" class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 dark:text-slate-600 dark:group-hover:text-slate-500"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg> -->
+                  <!-- <svg width="3" height="24" viewBox="0 -9 3 24" class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 text-slate-600"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg> -->
                 {/if}
                 <slot name="tocItem" {heading} {idx}>
                   {getHeadingTitles(heading)}
@@ -144,7 +144,7 @@ button {
   text-align: left;
 }
 li {
-  @apply cursor-pointer py-1 text-slate-900 dark:text-slate-400;
+  @apply cursor-pointer py-1 text-slate-900;
 }
 .level0 {
    @apply block font-medium;
@@ -153,7 +153,7 @@ li {
   @apply ml-4 flex items-start text-left;
 }
 .active {
-  @apply text-calliope-500 dark:text-calliope-400;
+  @apply text-calliope-500;
 }
 
   :where(aside.toc.mobile) {

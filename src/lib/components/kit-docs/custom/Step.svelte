@@ -18,7 +18,7 @@ $: if ($steps > 0 && li) {
   class={clsx(
     'step relative pl-10 1200:grid before:content-[counter(step)] before:absolute',
     'before:left-0 before:flex before:items-center before:justify-center before:w-6',
-    'before:h-6 before:text-[0.7rem] before:font-bold before:text-white dark:before:text-black',
+    'before:h-6 before:text-[0.7rem] before:font-bold before:text-white',
     'before:rounded-full before:shadow-md before:bg before:bg-calliope-500 before:border before:border-gray-soft',
     index !== $steps &&
       'pb-1 after:absolute after:top-8 after:bottom-[-1rem] after:left-3 after:w-px after:bg-calliope-500',
