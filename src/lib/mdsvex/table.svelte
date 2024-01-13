@@ -3,11 +3,11 @@
         margin: 0;
     }
     div :global(table) {
-        @apply w-full relative text-sm text-left text-gray-500 dark:text-gray-400;
+        @apply w-full relative text-sm text-left text-gray-500;
     }
 
     div :global(thead) {
-        @apply text-xs text-left text-gray-700 bg-gray-100 dark:bg-gray-700 dark:text-gray-400;
+        @apply text-xs text-left text-gray-700 bg-gray-100;
     }
 
     div :global(thead th) {
@@ -15,11 +15,11 @@
     }
 
     div :global(tbody tr) {
-        @apply bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600;
+        @apply bg-white border-b hover:bg-gray-50;
     }
 
     div :global(tbody th) {
-        @apply py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white;
+        @apply py-4 px-6 font-medium text-gray-900 whitespace-nowrap;
     }
 
     div :global(tbody td) {

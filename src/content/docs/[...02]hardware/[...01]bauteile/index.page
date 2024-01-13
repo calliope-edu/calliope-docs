@@ -5,9 +5,23 @@ template: docs
 published: true
 ---
 
-{title}
+<script>
+    import V3Datenblatt from './v3.svx';
+    
+    let aktiv = 3;
+</script>
+
+# {title}
 
 
+<Versions>
+    <div slot="mini1">1</div>
+    <div slot="mini2">2</div>
+    <div slot="mini1-2">1 & 2</div>
+    <div slot="mini3">
+        <V3Datenblatt />
+    </div>
+</Versions>
 
 ## Anwendungsprozessor
 

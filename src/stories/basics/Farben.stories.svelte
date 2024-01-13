@@ -442,7 +442,7 @@ const brandColors = [
         <div class="flex flex-col space-y-3 sm:flex-row text-xs sm:space-y-0 sm:space-x-4">
             <div class="w-16 shrink-0">
                 <div class="h-10 flex flex-col justify-center">
-                    <div class="text-sm font-semibold text-slate-900 dark:text-slate-200"></div>
+                    <div class="text-sm font-semibold text-slate-900"></div>
                 </div>
             </div>
             <div class="min-w-0 flex-1 grid grid-cols-4 gap-x-4 gap-y-3 2xl:gap-x-2">
@@ -452,11 +452,11 @@ const brandColors = [
                     <div class="relative flex">
                         <div class="space-y-1.5 w-full">
                             <div
-                                class="h-10 shadow w-full rounded dark:ring-1 dark:ring-inset dark:ring-white/10 bg-{color.name.toLowerCase()}"
+                                class="h-10 shadow w-full rounded bg-{color.name.toLowerCase()}"
                             />
                             <div class="px-0.5 md:flex md:justify-between md:space-x-2 2xl:space-x-0 2xl:block">
-                                <div class="w-6 font-medium text-slate-900 w-full dark:text-white">{color.name}</div>
-                                <!-- <div class="text-slate-500 font-mono lowercase dark:text-slate-400">{color.name}</div> -->
+                                <div class="w-6 font-medium text-slate-900 w-full">{color.name}</div>
+                                <!-- <div class="text-slate-500 font-mono lowercase">{color.name}</div> -->
                             </div>
                         </div>
                     </div>
@@ -471,7 +471,7 @@ const brandColors = [
         <div class="flex flex-col space-y-3 sm:flex-row text-xs sm:space-y-0 sm:space-x-4">
             <div class="w-16 shrink-0">
                 <div class="h-10 flex flex-col justify-center">
-                    <div class="text-sm font-semibold text-slate-900 dark:text-slate-200"></div>
+                    <div class="text-sm font-semibold text-slate-900"></div>
                 </div>
             </div>
             <div class="min-w-0 flex-1 grid grid-cols-5 lg:grid-cols-10 gap-x-4 gap-y-3 2xl:gap-x-2">
@@ -481,10 +481,10 @@ const brandColors = [
                     <div class="relative flex">
                         <div class="space-y-1.5 w-full">
                             <div
-                                class="h-10 shadow w-full rounded dark:ring-1 dark:ring-inset dark:ring-white/10 bg-{color}"
+                                class="h-10 shadow w-full rounded bg-{color}"
                             />
                             <div class="px-0.5 md:flex md:justify-between md:space-x-2 2xl:space-x-0 2xl:block">
-                                <div class="w-6 font-medium text-slate-900 w-full dark:text-white">{color}</div>
+                                <div class="w-6 font-medium text-slate-900 w-full">{color}</div>
                             </div>
                         </div>
                     </div>
@@ -504,7 +504,7 @@ const brandColors = [
             <div class="flex flex-col space-y-3 sm:flex-row text-xs sm:space-y-0 sm:space-x-4">
                 <div class="w-16 shrink-0">
                     <div class="h-10 flex flex-col justify-center">
-                        <div class="text-sm font-semibold text-slate-900 dark:text-slate-200">{color.name}</div>
+                        <div class="text-sm font-semibold text-slate-900">{color.name}</div>
                     </div>
                 </div>
                 <div class="min-w-0 flex-1 grid grid-cols-5 lg:grid-cols-10 gap-x-4 gap-y-3 2xl:gap-x-2">
@@ -514,12 +514,12 @@ const brandColors = [
                         <div class="relative flex">
                             <div class="space-y-1.5 w-full">
                                 <div
-                                    class="h-10 shadow w-full rounded dark:ring-1 dark:ring-inset dark:ring-white/10"
+                                    class="h-10 shadow w-full rounded"
                                     style="background-color: {shade.hex};"
                                 />
                                 <div class="px-0.5 md:flex md:justify-between md:space-x-2 2xl:space-x-0 2xl:block">
-                                    <div class="w-6 font-{shade.default ? 'black' : 'medium'} text-slate-900 2xl:w-full dark:text-white">{shade.name}</div>
-                                    <div class="text-slate-500 font-mono lowercase dark:text-slate-400">{shade.hex}</div>
+                                    <div class="w-6 font-{shade.default ? 'black' : 'medium'} text-slate-900 2xl:w-full">{shade.name}</div>
+                                    <div class="text-slate-500 font-mono lowercase">{shade.hex}</div>
                                 </div>
                             </div>
                         </div>

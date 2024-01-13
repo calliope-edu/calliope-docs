@@ -2,6 +2,19 @@
 export default {
   content: ['./src/**/*.{html,js,svelte,ts,svx,md}'],
   theme: {
+    typography: {
+      DEFAULT: { // this is for prose class
+        css: {
+          a: {
+            // change anchor color and on hover
+            color: '#4075e5',
+              '&:hover': { // could be any. It's like extending css selector
+                // color: '#85a5e9',
+              },
+          },
+        },
+      },
+    },
     extend: {
       fontFamily: {
         'sans': ["Roboto", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
@@ -44,24 +57,23 @@ export default {
     require('@tailwindcss/typography'),
   ],
   safelist: [
-    'bg-inherit',
-    'bg-transparent',
-    'bg-white',
-    'bg-current',
-    'bg-black',
-    'text-slate-600',
-    'hover:bg-slate-600',
-    'rounded',
-    { pattern: /rounded-(none|full|r-full|l-full)/ },
-    { pattern: /font-(medium|bold|black)/ },
-    {
-      pattern: /(border|bg|text|fill|stroke)-(slate|calliope).*/,
-      variants: ['hover'],
-    },
-    {
-      pattern: /(calliope|rosa|blau|gruen|lila|gelb|apricot|grau).*/,
-      variants: ['hover'],
-    }
+    // 'bg-inherit',
+    // 'bg-transparent',
+    // 'bg-white',
+    // 'bg-current',
+    // 'bg-black',
+    // 'text-slate-600',
+    // 'hover:bg-slate-600',
+    // 'rounded',
+    // { pattern: /rounded-(none|full|r-full|l-full)/ },
+    // { pattern: /font-(medium|bold|black)/ },
+    // {
+    //   pattern: /(border|bg|text|fill|stroke)-(slate|calliope).*/,
+    //   variants: ['hover'],
+    // },
+    // {
+    //   pattern: /(calliope|rosa|blau|gruen|lila|gelb|apricot|grau).*/,
+    //   variants: ['hover'],
+    // }
   ]
 }
-

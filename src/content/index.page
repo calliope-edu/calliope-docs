@@ -1,17 +1,24 @@
 ---
 title: "Technische Dokumentation"
 description: "..."
-template: 
+template:
 published: true
 ---
 
 <script>
-    
+    	import { goto } from '$app/navigation';
+	import { onMount, beforeUpdate  } from 'svelte';
+
+    // Define the destination route
+  	const destinationRoute = '/docs';
+
+	// Use the `beforeUpdate` lifecycle function to perform redirection
+	beforeUpdate(() => {
+	    // goto(destinationRoute, { replace: true });
+	});
 </script>
 
-# Hi!
-
-Das ist die Startseite.
+## Wir leiten dich zur [Technischen Dokumentation](/docs) weiter ...
 
 <style lang="scss">
 

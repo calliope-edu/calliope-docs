@@ -3,7 +3,7 @@
 
 	/** @type {import('./$types').PageData */
 	export let data;
-	
+
 </script>
 
 <TemplateLoader meta={data.meta}>

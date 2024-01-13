@@ -30,10 +30,10 @@
             pt-16
 ">
 
-    <aside class="fixed inset-0 z-20 flex-none hidden h-full w-72 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-48 lg:block">
+    <aside class="fixed inset-0 z-20 flex-none  h-full hidden w-1 lg:w-52 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-48 lg:block">
         <DocsMenu {menu} bind:items={items} bind:prev={prev} bind:next={next} bind:currKategorie={currKategorie} />
     </aside>
-    <div class="fixed inset-0 z-10 hidden bg-gray-900/50 dark:bg-gray-900/60"></div>
+    <div class="fixed inset-0 z-10 hidden bg-gray-900/50"></div>
 
     <div class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
         <div class=" flex w-full">
@@ -42,7 +42,7 @@
                 <div class="flex-auto max-w-4xl min-w-0 pt-6 lg:px-8 lg:pt-8 pb:12 xl:pb-24 lg:pb-16">
                     <div class="content prose max-w-full">
                         {#if title && title.length > 0}
-                            <h1 class="mb-0 font-semibold text-slate-900 dark:text-slate-200 text-xl">{title}</h1>
+                            <h1 class="font-semibold text-slate-900 text-xl">{title}</h1>
                         {/if}
                         <slot />
                     </div>
@@ -86,7 +86,7 @@
                     </div>
                 </div>
 
-                <div class="flex-none hidden w-64 pl-8 mr-8 xl:text-sm xl:block">
+                <div class="flex-none w-1 xl:w-52 pl-8 mr-8 xl:text-sm xl:block">
                     <div class="flex overflow-y-auto sticky top-16 flex-col justify-between pt-10 pb-6 h-[calc(100vh-4rem)]">
                         <Toc title="" {headingSelector} {breakpoint} {hide} activeTopOffset={300}
                             bind:headings={headings} 
@@ -128,5 +128,7 @@ div :global(.toc-clicked) {
   color: cornflowerblue;
 }
 
-
+div :global(h1) {
+        margin-bottom: 2em;
+    }
 </style>
