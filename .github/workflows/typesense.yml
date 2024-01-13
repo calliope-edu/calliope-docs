@@ -1,0 +1,27 @@
+# .github/workflows/Typesense.yml
+
+# Workflow name
+name: 'Typesense'
+
+# Event for the workflow
+on: 
+  push:
+    branches:
+      - PRODUCTION
+
+# List of jobs
+jobs:
+    chromatic-deployment:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v3
+      
+        - name: Run DocSearch Scraper
+          uses: celsiusnarhwal/typesense-scraper@v2
+          with:
+            api-key: ${{ secrets.TYPESENSE_API_KEY }}
+            host: ${{ secrets.TYPESENSE_URL }}
+            port: 8108
+            protocol: http
+            config: docsearch.config.json

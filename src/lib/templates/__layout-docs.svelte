@@ -35,7 +35,7 @@
     </aside>
     <div class="fixed inset-0 z-10 hidden bg-gray-900/50"></div>
 
-    <div class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
+    <article class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
         <div class=" flex w-full">
             <div class="flex w-full">
 
@@ -100,7 +100,7 @@
 
         </div>
 
-    </div>
+    </article>
     
 
 

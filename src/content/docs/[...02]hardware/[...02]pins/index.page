@@ -43,42 +43,41 @@ published: true
 <nav class="pinout">
     <ul>
         {#each pins as pin, index}
-        <li on:click={() => toggleVisibility(pin)}>
-            <div class="dot" style="background-color:{pin.state === 'hidden' ? 'white' : pin.color}">
-                {pin.name}
-            </div>
-            {#if pin.function !== null}
-            <div class="tag {index % 2 === 0 ? 'down' : 'up'}">{pin.function}</div>
-            {/if}
-        </li>
+            <li on:click={() => toggleVisibility(pin)}>
+                <div class="dot" style="background-color:{pin.state === 'hidden' ? 'white' : pin.color}">
+                    {pin.name}
+                </div>
+                {#if pin.function !== null}
+                    <div class="tag {index % 2 === 0 ? 'down' : 'up'}">{pin.function}</div>
+                {/if}
+            </li>
         {/each}
     </ul>
 </nav>
 
 {#if activePin !== null}
-<h3>{activePin.name}</h3>
-{#if activePin.interface !== null}
-    <p>Der Pin {activePin.name} benutzt die Schnittstelle {activePin.interface}.</p>
+    <h3>{activePin.name}</h3>
+    {#if activePin.interface !== null}
+        <p>Der Pin {activePin.name} benutzt die Schnittstelle {activePin.interface}.</p>
     {/if}
-
 {/if}
 
 <style>
-    .pinout {
+.pinout {
     background-color: black;
     width: 100%;
     height:120px;
     position: relative;
     margin-top: 8em;
     margin-bottom: 8em;
-    }
+}
 
-    .pinout ul {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column-reverse;
-        height: 100%;
-        padding-top: 10px;
+.pinout ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    height: 100%;
+    padding-top: 10px;
     padding-bottom: 10px;
     list-style: none;
     padding-left:0px;
