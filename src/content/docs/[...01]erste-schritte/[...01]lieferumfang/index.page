@@ -23,7 +23,7 @@ Die Calliope mini Starterbox enthält, neben dem Calliope mini, einen Batterieha
 - Gummiband
 - Schnellstart-Anleitung
 
-<Button text='Zum Calliope Shop' link='https://shop.calliope.cc' type='border' color="calliope-500" />
+<Button text='Zum Calliope Shop' link='https://shop.calliope.cc' type='border' color="calliope" />
   
 
 ## Klassensätze

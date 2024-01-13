@@ -14,7 +14,7 @@ published: true
 
 	// Use the `beforeUpdate` lifecycle function to perform redirection
 	beforeUpdate(() => {
-	    // goto(destinationRoute, { replace: true });
+	    goto(destinationRoute, { replace: true });
 	});
 </script>
 

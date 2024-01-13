@@ -69,7 +69,7 @@ class={clsx('w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg
 			</li>
 		{/each}
 		<li class='mr-5'>
-			<Button text='Calliope.cc' link='https://calliope.cc' color="calliope-500" />
+			<Button text='Calliope.cc' link='https://calliope.cc' color="calliope" />
 		</li>
 	</ul>
 </div>
@@ -77,10 +77,10 @@ class={clsx('w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg
 <style lang="scss">
 
     li.active > .link {
-		@apply    text-calliope-500 font-bold;
+		@apply    text-calliope font-bold;
 	}
 	li:not(.active) > .link {
-		@apply text-gray-600 hover:text-calliope-500 hover:underline;
+		@apply text-gray-600 hover:text-calliope hover:underline;
 	}
 
 </style>

@@ -8,7 +8,7 @@
     document.lazyloadInstance = new lazyload();
   }
 
-  import "../app.css";
+  import "../app.scss";
   
 </script>
 

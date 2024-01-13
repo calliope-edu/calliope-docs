@@ -118,7 +118,7 @@
           style:font-size="{2 - 0.2 * (levels[idx] - minLevel)}ex" -->
             <li>
               <button 
-              class="{`level${level}`} group hover:text-calliope-500"
+              class="{`level${level}`} group hover:text-calliope"
               class:active={activeHeading === heading}
               on:click={clickHandler(heading)}>
                 {#if level > 0}
@@ -153,7 +153,7 @@ li {
   @apply ml-4 flex items-start text-left;
 }
 .active {
-  @apply text-calliope-500;
+  @apply text-calliope;
 }
 
   :where(aside.toc.mobile) {

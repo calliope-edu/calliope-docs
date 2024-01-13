@@ -52,7 +52,7 @@
                     <div class="flex items-center pt-12 pb-20 font-semibold">
                         {#if  prev != null}
                             <a data-sveltekit-prefetch href="/{prev.slug}/" class="group no-underline mb-4 flex flex-col items-start ">
-                                    <span class="text-calliope-500 ml-2 mb-1 inline-block font-semibold ">
+                                    <span class="text-calliope ml-2 mb-1 inline-block font-semibold ">
                                         Vorherige
                                     </span>
                                     <div clas="transform-gpu transition-transform hover:scale-105">
@@ -68,7 +68,7 @@
 
                         {#if  next != null}
                             <a data-sveltekit-prefetch href="/{next.slug}/" class="group no-underline ml-auto mb-4 flex flex-col items-end">
-                                    <span class="text-calliope-500 mr-2 mb-1 inline-block font-semibold ">
+                                    <span class="text-calliope mr-2 mb-1 inline-block font-semibold ">
                                         Nächste
                                     </span>
                                     <div

@@ -23,7 +23,7 @@
 
 <style lang="scss">
     .active > a {
-        @apply block border-l pl-4 -ml-px text-calliope-500 border-current font-semibold;
+        @apply block border-l pl-4 -ml-px text-calliope border-current font-semibold;
     }
 </style>
 

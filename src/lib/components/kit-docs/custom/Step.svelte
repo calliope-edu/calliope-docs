@@ -19,16 +19,16 @@ $: if ($steps > 0 && li) {
     'step relative pl-10 1200:grid before:content-[counter(step)] before:absolute',
     'before:left-0 before:flex before:items-center before:justify-center before:w-6',
     'before:h-6 before:text-[0.7rem] before:font-bold before:text-white',
-    'before:rounded-full before:shadow-md before:bg before:bg-calliope-500 before:border before:border-gray-soft',
+    'before:rounded-full before:shadow-md before:bg before:bg-calliope before:border before:border-gray-soft',
     index !== $steps &&
-      'pb-1 after:absolute after:top-8 after:bottom-[-1rem] after:left-3 after:w-px after:bg-calliope-500',
+      'pb-1 after:absolute after:top-8 after:bottom-[-1rem] after:left-3 after:w-px after:bg-calliope',
     orientation === 'horizontal' ? 'grid-cols-5 gap-10' : 'grid-cols-4 gap-4',
   )}
   style="counter-increment: step;"
   bind:this={li}
 >
   <div class={clsx('mb-6 1200:mb-2', orientation === 'horizontal' ? 'col-span-2' : 'col-span-4')}>
-    <span class="not-prose mb-4 text-base font-semibold leading-6 text-calliope-500">
+    <span class="not-prose mb-4 text-base font-semibold leading-6 text-calliope">
       {#if $$slots.title}
         <slot name="title" />
       {:else if title}

@@ -3,7 +3,7 @@
     import IconDownloadLink from '~icons/ri/download-cloud-2-line'
 
     export let text = ''; //
-    export let link = '';
+    export let link = undefined;
     export let type = 'default'; // default | border
     export let color = 'grau';
     export let download = false; // set download name
@@ -11,11 +11,11 @@
     $: roundedClass = (rounded == '' || rounded == 'rounded') ? 'rounded' : `rounded-${rounded}`;
 
     let a = false;
-    $: linkParts = link.split('/').length;
-    $: fileName = link.split('/').pop();
+    $: linkParts = link?.split('/').length ?? 0;
+    $: fileName = link?.split('/').pop() ?? '';
     
     $: downloadName = (download) ? download : ((isDownload) ? fileName : null);
-    $: isInternal = (a) ? a?.host == window.location.host : (link.startsWith('http')) ? false : true;
+    $: isInternal = (a) ? a?.host == window.location.host : (link?.startsWith('http')) ? false : true;
     $: isDownload = (fileName.indexOf('.') > -1) && !(!isInternal && linkParts <= 3) ? true : false;
     $: target = (isInternal) ? null : '_blank';
     $: iconCount = (!isInternal ? 1 : 0) + (isDownload ? 1 : 0);
@@ -26,7 +26,7 @@
     {color != 'regenbogen' ? 
         type == 'default' ? 
             `text-white bg-${color}` : 
-            `text-${color} bg-white hover:text-white hover:bg-${color} `
+            `text-${color} bg-white hover:text-white hover:bg-${color}`
     :
         type == 'default' ? 
             `text-white rainbow rainbow-fill` : 
@@ -102,12 +102,105 @@ a {
 
 
 
-/* .rainbow {
-  background-image: linear-gradient(transparent, transparent), 
-    linear-gradient(315deg,#833ab4,#fd1d1d 50%,#fcb045);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  @apply border-transparent;
-} */
+/* Calliope */
+.bg-calliope {
+  background-color: var(--color-calliope);
+  /* Add more styling as needed */
+}
+
+/* Rosa */
+.bg-rosa {
+  background-color: var(--color-rosa);
+  /* Add more styling as needed */
+}
+
+/* Blau */
+.bg-blau {
+  background-color: var(--color-blau);
+  /* Add more styling as needed */
+}
+
+/* Gruen */
+.bg-gruen {
+  background-color: var(--color-gruen);
+  /* Add more styling as needed */
+}
+
+/* Lila */
+.bg-lila {
+  background-color: var(--color-lila);
+  /* Add more styling as needed */
+}
+
+/* Gelb */
+.bg-gelb {
+  background-color: var(--color-gelb);
+  /* Add more styling as needed */
+}
+
+/* Apricot */
+.bg-apricot {
+  background-color: var(--color-apricot);
+  /* Add more styling as needed */
+}
+
+/* Grau */
+.bg-grau {
+  background-color: var(--color-grau);
+  /* Add more styling as needed */
+}
+
+
+
+
+
+/* Calliope */
+.border-calliope {
+  border-color: var(--color-calliope);
+  /* Add more styling as needed */
+}
+
+/* Rosa */
+.border-rosa {
+  border-color: var(--color-rosa);
+  /* Add more styling as needed */
+}
+
+/* Blau */
+.border-blau {
+  border-color: var(--color-blau);
+  /* Add more styling as needed */
+}
+
+/* Gruen */
+.border-gruen {
+  border-color: var(--color-gruen);
+  /* Add more styling as needed */
+}
+
+/* Lila */
+.border-lila {
+  border-color: var(--color-lila);
+  /* Add more styling as needed */
+}
+
+/* Gelb */
+.border-gelb {
+  border-color: var(--color-gelb);
+  /* Add more styling as needed */
+}
+
+/* Apricot */
+.border-apricot {
+  border-color: var(--color-apricot);
+  /* Add more styling as needed */
+}
+
+/* Grau */
+.border-grau {
+  border-color: var(--color-grau);
+  /* Add more styling as needed */
+}
+
 
 </style>
