@@ -11,9 +11,23 @@ on:
 
 # List of jobs
 jobs:
-    chromatic-deployment:
+    typesense-scraper:
       runs-on: ubuntu-latest
       steps:
+        - name: Await CF Pages
+          uses: WalshyDev/cf-pages-await@v1
+          with:
+
+            # Use an API token (Recommended!)
+            apiToken: ${{ secrets.CF_API_TOKEN }}
+
+            accountId: 'ccad93124cc432ec1764efad18f9ab1c'
+            project: 'calliope-docs'
+            # Add this if you want GitHub Deployments (see below)
+            githubToken: ${{ secrets.GITHUB_TOKEN }}
+            # Add this if you want to wait for a deployment triggered by a specfied commit
+            commitHash: ${{ steps.push-changes.outputs.commit-hash }}
+    
         - name: Checkout Repository
           uses: actions/checkout@v3
       

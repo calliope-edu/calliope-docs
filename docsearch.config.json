@@ -1,10 +1,10 @@
 {
     "index_name": "docusaurus-2",
     "start_urls": [
-      "https://docusaurus.io/"
+      "https://docs.calliope.cc"
     ],
     "sitemap_urls": [
-      "https://docusaurus.io/sitemap.xml"
+      "https://docs.calliope.cc/sitemap.xml"
     ],
     "sitemap_alternate_links": true,
     "stop_urls": [
