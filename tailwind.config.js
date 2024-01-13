@@ -44,24 +44,24 @@ export default {
     require('@tailwindcss/typography'),
   ],
   safelist: [
-    'bg-inherit',
-    'bg-transparent',
-    'bg-white',
-    'bg-current',
-    'bg-black',
-    'text-slate-600',
-    'hover:bg-slate-600',
-    'rounded',
-    { pattern: /rounded-(none|full|r-full|l-full)/ },
-    { pattern: /font-(medium|bold|black)/ },
-    {
-      pattern: /(border|bg|text|fill|stroke)-(slate|calliope).*/,
-      variants: ['hover'],
-    },
-    {
-      pattern: /(calliope|rosa|blau|gruen|lila|gelb|apricot|grau).*/,
-      variants: ['hover'],
-    }
+    // 'bg-inherit',
+    // 'bg-transparent',
+    // 'bg-white',
+    // 'bg-current',
+    // 'bg-black',
+    // 'text-slate-600',
+    // 'hover:bg-slate-600',
+    // 'rounded',
+    // { pattern: /rounded-(none|full|r-full|l-full)/ },
+    // { pattern: /font-(medium|bold|black)/ },
+    // {
+    //   pattern: /(border|bg|text|fill|stroke)-(slate|calliope).*/,
+    //   variants: ['hover'],
+    // },
+    // {
+    //   pattern: /(calliope|rosa|blau|gruen|lila|gelb|apricot|grau).*/,
+    //   variants: ['hover'],
+    // }
   ]
 }
 

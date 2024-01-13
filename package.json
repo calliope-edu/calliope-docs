@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "pack": "node ./prebuild/packStaticFolder/index.cjs",
-    "dev": "vite dev",
-    "build": "node ./prebuild/packStaticFolder/index.cjs && vite build",
+    "start": "vite dev",
+    "dev": "node ./prebuild/packStaticFolder/index.cjs && vite dev",
     "preview": "vite preview",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write .",

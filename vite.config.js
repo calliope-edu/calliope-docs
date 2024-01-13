@@ -17,7 +17,7 @@ export default defineConfig({
 		//   }),
 
 		sveltekit(),
-		imagetools({ force: true }),
+		imagetools(),
 		Icons({
 			defaultStyle: '',
 			defaultClass: '',
