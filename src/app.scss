@@ -7,6 +7,10 @@
     @apply text-calliope-600;
 } */
 
+:where(*) {
+    scroll-margin-top: 10vh;
+}
+
 body {
     @apply bg-gray-50 font-sans leading-normal tracking-normal;
     font-family: 'Roboto', sans-serif;
