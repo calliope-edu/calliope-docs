@@ -8,7 +8,6 @@
     ],
     "sitemap_alternate_links": true,
     "stop_urls": [
-      "/tests",
       "/1"
     ],
     "selectors": {
@@ -16,7 +15,7 @@
         "selector": "(//ul[contains(@class,'menu__list')]//a[contains(@class, 'menu__link menu__link--sublist menu__link--active')]/text() | //nav[contains(@class, 'navbar')]//a[contains(@class, 'navbar__link--active')]/text())[last()]",
         "type": "xpath",
         "global": true,
-        "default_value": "Documentation"
+        "default_value": "Dokumentation"
       },
       "lvl1": "article h1",
       "lvl2": "article h2",
