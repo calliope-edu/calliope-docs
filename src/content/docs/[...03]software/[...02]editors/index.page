@@ -51,6 +51,32 @@ Weitere Informationen zur Funktionsweise von Makecode, kann hier nachgelesen wer
 
 ## Micropython
 
+MicroPython ist eine speziell für Mikrocontroller angepasste Version von Python. Der größte Unterschied besteht darin, dass MicroPython kein Betriebssystem benötigt; sobald es verwendet wird, fungiert es quasi als das System, das auf dem Calliope mini läuft.
+Python ist eine ausgezeichnete erste textbasierte Programmiersprache. Die Anweisungen und Syntax basieren auf natürlicher Sprache, was den Code leicht lesbar, verständlich und modifizierbar macht.
+Python ist nicht nur im Bildungsbereich weit verbreitet, sondern wird auch in der Industrie eingesetzt, insbesondere in den Bereichen Datenwissenschaft und maschinelles Lernen.
+
+- Entwickler/Anbieter: Calliope und Lulububu (Optimierungen und Anpassung an den Calliope mini), Open Source Entwicklung von der Microbit Foundation mit vielen weiteren Personen aus der Community
+- Anwendungstyp: Webapplikation
+- Calliope mini Version: V3 (V1 und V2 werden aktuell nur eingeschränkt unterstützt)
+Account erforderlich: Nein
+Installation: Nein
+Offline nutzbar: Ja, einmal geladen, auch offline nutzbar.
+
+ <Button text="zum Editor" link="https://python.calliope.cc"/>
+ <Button text="Github Repository" link="https://github.com/calliope-edu/calliope-mini-python-editor"/>
+
+ |  |  |
+| -------- | ------- |
+| Blockbasierte Programmierung | <No></No> |
+| Textbasierte Programmierung | <Yes> Python</Yes> |
+| Parallelität | <No></No> |
+| Variablen | <Yes></Yes> |
+| Listen | <Yes>Ja</Yes>   |
+| Schleifen	   | <Yes>While, For, Foreach</Yes>    |
+| Funktionen | <Yes>mit Parameter und Rückgabewert</Yes> |
+| Kommunikation | <Yes>Funk, I2C, UART, SPI</Yes> | 
+| Sensoren/Aktoren-Erweiterungen | <Yes>Ja, sie können als externe Module importiert werden</Yes> | 
+
 ## Open Roberta Lab
 
 Open Roberta ist ein vom Fraunhofer Institut entwickelter Editor, mit dem sich verschiedene Microcontroller und Roboter in der grafischen Programmiersprache NEPO® programmieren lassen. In dem [Wiki von Open Roberta](https://jira.iais.fraunhofer.de/wiki/display/ORInfo/Das+Open+Roberta+Lab) befinden sich allgemeine Informationen zur Bedienung des Editors sowie eine [Einführung in die Programmierung](https://jira.iais.fraunhofer.de/wiki/display/ORInfo/Programmieren+Calliope+mini) des Calliope mini.
@@ -84,6 +110,28 @@ Weitere Informationen findest du auf der Calliope **[Webseite](https://calliope.
 
 ### MindPlus
 
+Der Mind+ Editor ist eine Version von Scratch, die eine direkte Verbindung und intuitive Programmierung des Calliope mini ermöglicht.
+So können Anwendungen auf dem Computer mit dem Calliope mini gesteuert werden und andersherum.
+
 ### Swift Playground
 
+Der Calliope mini Swift Playground eignet sich zum Einstieg ins textbasierte Programmieren mit dem Mac oder dem iPad. Die Programmiersprache Swift wird in den ersten Kapiteln durch die Eingabe und Anpassung von Parametern leicht verständlich nahegebracht.
+
 ### TigerJython for Kids
+
+TigerJython ist ein microPython Editor mit umfangreicher Anleitung für den einfachen Start in die textbasierte Programmierung. TigerJython ist, je nach Bedarf, als Webanwendung oder herunterladbare Anwendung verfügbar.
+
+### microblocks
+
+microblocks ist als erweitertes Scratch anzusehen. Ein Teil des ursprünglichen Scratch-Teams entwickelt diesen Editor, dessen Schwerpunkt die physische Interaktion in den Mittelpunkt stellt.
+
+### abbozza! Calliope
+
+abbozza! Calliope ist eine grafische Entwicklungsumgebung für den Calliope mini, die für die Verwendung in Schulen und für Maker aller Altersstufen entwickelt wird. abbozza! wird am Lehrstuhl Didaktik der Informatik der Uni Osnabrück entwickelt.
+
+### SEGGER Embedded Studio
+
+SEGGER Embedded Studio ist ein professionelles Tool und umfassendes Entwicklerpaket. Mit der Entwicklungsumgebung kann eigene Software für den Calliope mini in der Programmiersprache "C" geschrieben werden.
+
+### Arduino IDE 
+

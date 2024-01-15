@@ -1,5 +1,5 @@
 ---
-title: Error-Codes
+title: USB-Interface
 description: 
 docTitle: Software
 template: docs
@@ -10,28 +10,42 @@ published: true
 
 ## Firmware Updating
 
-Die Firmware für den Interfaceprozessor auch als "Bootloader" bezeichnet kann hier heruntergeladen werden:
+Die USB-Firmware für den Interfaceprozessor früher auch als "Bootloader" bezeichnet, kann hier heruntergeladen werden:
 
-<!-- hier die aktuelleste Version des Calliope mini Bootloader v3 einfügen -->
+<Versions>
+    <div slot="mini1">
 
-<!-- <button href='https://calliope.cc/media/pages/start/tipps/96fe22d2a5-1602240640/jlink_ob_calliope_mini.hex' >Download Bootloader</button>
+        ![mini1](./mini1_num.png)
 
+        <Button text="USB-Firmware V1" link="/downloads/v1_calliope_usbfirmware.hex"/>
+        <Button text="USB-Firmware V1.3" link="/downloads/v1_3_calliope_usbfirmware.hex"/>
+    </div>
+    <div slot="mini2">
 
-Falls ihr Windows 7 benutzt, empfehlen wir folgende Version und die zusätzliche *selectr*-Datei: 
-<button href='https://calliope.cc/media/pages/start/tipps/1f01bf3129-1604570158/kl26z_calliope_if_crc.hex' >Download Bootloader Windows 7</button>
+        ![mini3](./mini2_num.png)
 
-<button href='https://calliope.cc/media/pages/start/tipps/1f01bf3129-1604570158/kl26z_calliope_if_crc.hex' >Download selectr Windows 7</button> -->
+        <Button text="USB-Firmware V2" link="/downloads/v1_3_calliope_usbfirmware.hex"/>
+        <Button text="USB-Firmware V2.1" link="/downloads/v2_1_calliope_usbfirmware.hex"/>
+    </div>
+    <div slot="mini3">
 
-Installation der Firmware: <br>
-1) Das USB-Kabel und den Batteriepack vom Calliope mini trennen.
-2) Den Reset-Knopf gedrückt halten und stecken das USB-Kabel mit dem Calliope mini verbinden. Nun sollte im Dateimanager das Laufwerk mit dem Namen MAINTENANCE (anstelle von MINI und FLASH) angezeigt werden.
-3) Die neue Bootloader .HEX-Datei per Drag & Drop auf das Laufwerk MAINTENANCE ziehen und warten, bis die gelbe Status-LED nicht mehr blinkt. Wenn das Upgrade abgeschlossen ist, wird der Calliope mini zurückgesetzt, startet neu und erscheint wieder im normalen Laufwerksmodus mit dem MINI und FLASH Laufwerk.
+        ![mini3](./mini3_num.png)
 
+        <Button text="USB-Firmware V3" link="/downloads/v3_calliope_usbfirmware.hex"/>
 
-<Admonition type='tip'>
-Falls ihr Windows 7 benutzt, empfehlen wir den obenstehenden Bootloader für Windows 7.
-Sobald der Calliope mini dann neugestartet ist (Schitt 3), müsst ihr bei dieser Version noch die *selectr.hex* - Datei einmalig auf das Laufwerk "FLASH" kopieren. Dieser Schritt ist nur für Windows 7 nötig.
+    </div>
+</Versions>
+
+<Admonition type="info">
+Je nach Calliope mini Version unterscheidet sich die USB-Firmware, weil sie unterschiedliche Eigenschaften mitbringen muss und unterschiedliche Prozessoren unterstützt. Die Versionsnummer findet sich auf der Rückseite des Calliope mini, neben dem USB-Konnektor.
 </Admonition>
+
+Installation der USB-Firmware:
+
+1. Stromverbindung des Calliope mini trennen!
+2. Beim Einstecken des USB(C)-Kabels die Reset-Taste gedrückt halten.
+3. Jetzt meldet der Calliope mini sich unter dem Namen "MAINTENANCE" als Laufwerk an.
+4. Auf dieses Laufwerk wird die USB-Firmware Datei kopiert.
 
 
 ## HEX-Dateiformat
