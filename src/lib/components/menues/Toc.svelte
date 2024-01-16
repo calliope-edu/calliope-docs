@@ -97,7 +97,7 @@
   on:click={close}
 />
 {#if !hide}
-  <aside class="toc px-8" class:desktop class:mobile={!desktop} bind:this={aside}>
+  <aside class="toc" class:desktop class:mobile={!desktop} bind:this={aside}>
     {#if !open && !desktop}
       <button
         on:click|preventDefault|stopPropagation={() => (open = true)}
@@ -137,6 +137,10 @@
 {/if}
 
 <style lang="scss">
+  .toc {
+    padding-left: 2rem;
+    padding-right: 2rem; 
+  }
   nav {
     opacity: .4;
   }
@@ -144,16 +148,20 @@ button {
   text-align: left;
 }
 li {
-  @apply cursor-pointer py-1 text-slate-900;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem; 
+  cursor: pointer; 
 }
 .level0 {
-   @apply block font-medium;
+  display: block;
 }
 .level1 {
-  @apply ml-4 flex items-start text-left;
+  display: flex; 
+  margin-left: 1rem; 
+  align-items: flex-start; 
 }
 .active {
-  @apply text-calliope;
+  color: var(--color-calliope);
 }
 
   :where(aside.toc.mobile) {

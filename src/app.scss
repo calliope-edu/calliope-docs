@@ -1,68 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import 'colors';
-/* a {
-    @apply text-calliope-600;
-} */
+
 
 :where(*) {
     scroll-margin-top: 10vh;
 }
 
 body {
-    @apply bg-gray-50 font-sans leading-normal tracking-normal;
     font-family: 'Roboto', sans-serif;
 }
 
-main {
-    @apply container w-full md:max-w-3xl mx-auto pt-20 mt-10;
-
-    min-height: calc(100vh - 11rem);
-    font-size: 16px;
-    line-height: 23px;
-    font-weight: 400;
-    color: #333;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    @apply font-mono;
-    font-weight: 500;
-    
-}
-
-/* h1, h2 {
-    text-transform: uppercase;
-} */
-
-h1 {
-    font-size: 26px;
-    line-height: 32px;
-}
-
-h2 {
-    font-size: 20px;
-    line-height: 27px;
-}
-
-h3 {
-    margin-bottom: 1em;
-    font-size: 16px;
-    line-height: 23px;
-}
-
-.prose :where(code):not(:where([class~="not-prose"] *))::after {
-    content: "";
-}
-
-.prose :where(code):not(:where([class~="not-prose"] *))::before {
-    content: "";
-}
-
-.prose :where(code):not(:where([class~="not-prose"] *)) {
-    background: rgba(0,0,0,.05);
-    border-radius: 3px;
-    padding-left: 3px;
-    padding-right: 3px;
+img {
+    max-width: 100%;
 }

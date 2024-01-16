@@ -19,20 +19,48 @@
         {#if pages != null}
             <h1>{currTitle ?? ''}</h1>
             <slot />
-            <Grid>
+            <div class="ui two cards">
+                <!-- <Grid> -->
                 {#each pages as page}
-                        <a data-sveltekit-prefetch href="/{page.slug}/" class='unstyled'>
-                            <div class='articleImage'>
+                            
+                            <a data-sveltekit-prefetch class="ui card" href="/{page.slug}/">
                                 {#if (page.image ?? null) != null}
-                                    <img src={page.image} alt={page.title} />
+                                    <div class="image">
+                                        <img src={page.image} alt={page.title} />
+                                    </div>
                                 {/if}
-                            </div>
-                            <h3>{page.title ?? ''}</h3>
-                            <p>{page.description ?? ''}</p>
-                            <Button>Mehr</Button>
-                        </a>            
+                                <div class="content">
+                                  <div class="header">
+                                    {page.title ?? ''}
+                                  </div>
+                                  <!-- <div class="meta">
+                                    Friends of Veronika
+                                  </div> -->
+                                  <div class="description">
+                                    {page.description ?? ''}
+                                  </div>
+                                </div>
+                                <div class="ui button">
+                                    Mehr
+                                    <i class="arrow right icon"></i>
+                                </div>
+                            </a>
                 {/each}
-            </Grid>
+                <!-- 
+                    {#each pages as page}
+                            <a data-sveltekit-prefetch href="/{page.slug}/" class='unstyled'>
+                                <div class='articleImage'>
+                                    {#if (page.image ?? null) != null}
+                                        <img src={page.image} alt={page.title} />
+                                    {/if}
+                                </div>
+                                <h3>{page.title ?? ''}</h3>
+                                <p>{page.description ?? ''}</p>
+                                <Button>Mehr</Button>
+                            </a>            
+                    {/each}-->
+                <!-- </Grid>  -->
+                </div>
         {/if}
 </DocsLayout>  
 

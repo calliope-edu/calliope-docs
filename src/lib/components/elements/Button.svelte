@@ -22,30 +22,24 @@
     $: relExternal = (isDownload || !isInternal) ? 'external' : undefined;
     
 </script>
-<a href={link} bind:this={a} {target} download={downloadName} rel={relExternal} class='group icons-{iconCount} font-mono inline-block box-border mx-1 text-center {roundedClass} uppercase no-underline border border-4 border-{color} hover:opacity-70 font-bold
-    {color != 'regenbogen' ? 
-        type == 'default' ? 
-            `text-white bg-${color}` : 
-            `text-${color} bg-white hover:text-white hover:bg-${color}`
-    :
-        type == 'default' ? 
-            `text-white rainbow rainbow-fill` : 
-            `rainbow rainbow-border bg-white hover:text-white`
-    }'>
-    <div class="flex items-center py-1 px-6">
-            <span class="{(color=='regenbogen' && type=='border') ? 'text-transparent group-hover:text-white bg-clip-text rainbow-text' : ''}">
+
+<a style="--color: var(--color-{color});"
+class:default={type=='default'} class:border={type=='border'} class:rainbow={color=="regenbogen"}
+href={link} bind:this={a} {target} download={downloadName} rel={relExternal} class='button-container icons-{iconCount} {roundedClass}'>
+    <div class="container">
+            <span class="text">
                 <slot>
                   {text}
                 </slot>
             </span>
             
             {#if !isInternal}
-                <div class="pl-3 icon">
+                <div class="icon">
                     <IconExternalLink />
                 </div>
             {/if}
             {#if isDownload}
-                <div class="pl-3 icon">
+                <div class="icon">
                     <IconDownloadLink />
                 </div>
             {/if}
@@ -53,154 +47,102 @@
 </a>
 
 <style lang="scss">
-a {
+
+/* Calliope */
+.button-container {
+  cursor: pointer;
+  box-sizing: border-box; 
+  display: inline-block; 
+  margin-left: 0.25rem;
+  margin-right: 0.25rem; 
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; 
+  font-weight: 700; 
+  text-align: center; 
+  text-decoration: none; 
   text-transform: uppercase;
+  border: 4px solid var(--color);
+  border-radius: 9999px; 
+
+  &.default {
+    background-color: var(--color);
+    color: #FFF;
+    &:hover {
+      opacity: 0.7; 
+    }
+  }
+
+  &.border {
+    background-color: #FFF;
+    color: var(--color);
+    &:hover {
+      background-color: var(--color);
+      color: #FFF;
+    }
+  }
+
+  .container {
+    display: flex; 
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem; 
+    padding-left: 1.5rem;
+    padding-right: 1.5rem; 
+    align-items: center;
+
+    .icon {
+      padding-left: 0.75rem; 
+    }
+  }
 }
 
-.rainbow-text {
-  background-image: linear-gradient(315deg, #F7C425 0%, #E6007E 30%, #6476FD 60%, #3FC863 110%);
-}
-.icons-1 .rainbow-text {
-  background-image: linear-gradient(315deg, #E6007E 0%, #6476FD 50%, #3FC863 110%);
-}
-
-.icons-2 .rainbow-text {
-  background-image: linear-gradient(315deg, #6476FD 0%, #3FC863 110%);
-}
 
 .rainbow {
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    @apply border-transparent;
-}
 
-.rainbow-fill {
-  background-image: linear-gradient(transparent, transparent), 
+  color: #ffffff;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border-color: transparent;
+
+  &.default {
+    background-image: linear-gradient(transparent, transparent), 
     linear-gradient(315deg, #F7C425 10%, #E6007E 30%, #6476FD 60%, #3FC863 95%);
-}
-.rainbow-border {
-  background-image: linear-gradient(white, white), 
+  }
+
+  &.border {
+    background-color: #ffffff;
+    background-image: linear-gradient(white, white), 
     linear-gradient(315deg, #F7C425 10%, #E6007E 30%, #6476FD 60%, #3FC863 95%);
+
+    .icon:last-child {
+        color: #F7C425;
+    }
+
+    .icon:nth-last-child(2) {
+        color: #E6007E;
+    }
+
+    &:hover {
+      color: #ffffff;
+      background-image: linear-gradient(transparent, transparent), 
+      linear-gradient(315deg, #F7C425 10%, #E6007E 30%, #6476FD 60%, #3FC863 95%);
+
+      .icon {
+          color: white;
+      }
+    }
+
+    .text {
+      background-image: linear-gradient(315deg, #F7C425 0%, #E6007E 30%, #6476FD 60%, #3FC863 110%);
+      color: transparent; 
+      background-clip: text; 
+    }
+
+    &.icons-1 .text {
+      background-image: linear-gradient(315deg, #E6007E 0%, #6476FD 50%, #3FC863 110%);
+    }
+    &.icons-2 .text {
+      background-image: linear-gradient(315deg, #6476FD 0%, #3FC863 110%);
+    }
+  }
 }
-
-.rainbow-border:hover {
-  background-image: linear-gradient(transparent, transparent), 
-    linear-gradient(315deg, #F7C425 10%, #E6007E 30%, #6476FD 60%, #3FC863 95%);
-}
-
-.rainbow-border .icon:last-child {
-    color: #F7C425;
-}
-
-.rainbow-border .icon:nth-last-child(2) {
-    color: #E6007E;
-}
-
-.rainbow-border:hover .icon {
-    color: white;
-}
-
-
-
-/* Calliope */
-.bg-calliope {
-  background-color: var(--color-calliope);
-  /* Add more styling as needed */
-}
-
-/* Rosa */
-.bg-rosa {
-  background-color: var(--color-rosa);
-  /* Add more styling as needed */
-}
-
-/* Blau */
-.bg-blau {
-  background-color: var(--color-blau);
-  /* Add more styling as needed */
-}
-
-/* Gruen */
-.bg-gruen {
-  background-color: var(--color-gruen);
-  /* Add more styling as needed */
-}
-
-/* Lila */
-.bg-lila {
-  background-color: var(--color-lila);
-  /* Add more styling as needed */
-}
-
-/* Gelb */
-.bg-gelb {
-  background-color: var(--color-gelb);
-  /* Add more styling as needed */
-}
-
-/* Apricot */
-.bg-apricot {
-  background-color: var(--color-apricot);
-  /* Add more styling as needed */
-}
-
-/* Grau */
-.bg-grau {
-  background-color: var(--color-grau);
-  /* Add more styling as needed */
-}
-
-
-
-
-
-/* Calliope */
-.border-calliope {
-  border-color: var(--color-calliope);
-  /* Add more styling as needed */
-}
-
-/* Rosa */
-.border-rosa {
-  border-color: var(--color-rosa);
-  /* Add more styling as needed */
-}
-
-/* Blau */
-.border-blau {
-  border-color: var(--color-blau);
-  /* Add more styling as needed */
-}
-
-/* Gruen */
-.border-gruen {
-  border-color: var(--color-gruen);
-  /* Add more styling as needed */
-}
-
-/* Lila */
-.border-lila {
-  border-color: var(--color-lila);
-  /* Add more styling as needed */
-}
-
-/* Gelb */
-.border-gelb {
-  border-color: var(--color-gelb);
-  /* Add more styling as needed */
-}
-
-/* Apricot */
-.border-apricot {
-  border-color: var(--color-apricot);
-  /* Add more styling as needed */
-}
-
-/* Grau */
-.border-grau {
-  border-color: var(--color-grau);
-  /* Add more styling as needed */
-}
-
 
 </style>

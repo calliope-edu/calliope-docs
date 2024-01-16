@@ -1,71 +1,56 @@
 <script>
     import { selectedBoardVersion } from '$lib/store.js';
+    export let dropdown = false;
+    const versionen = [1,2,3]
 </script>
-  
-  <div>
-    <label>
-      <input type="radio" bind:group={$selectedBoardVersion} value={1} on:change={() => handleOptionChange(1)} />
-      <div class="button">mini 1</div>
-    </label>
-  
-    <label>
-      <input type="radio" bind:group={$selectedBoardVersion} value={2} on:change={() => handleOptionChange(2)} />
-      <div class="button">mini 2</div>
-    </label>
-  
-    <label>
-      <input type="radio" bind:group={$selectedBoardVersion} value={3} on:change={() => handleOptionChange(3)} />
-      <div class="button">mini 3</div>
-    </label>
+
+{#if dropdown}
+
+  <div class="ui compact tiny menu">
+    <div class="ui simple dropdown item">
+      Calliope mini {$selectedBoardVersion}
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        {#each versionen as num}
+            <div class="item" on:click={()=>{$selectedBoardVersion=num}}>
+              Calliope mini {num}
+            </div>
+        {/each}
+      </div>
+    </div>
   </div>
 
-{#if $selectedBoardVersion == 1}
-  <slot name="mini1" />
-{/if}
-{#if $selectedBoardVersion == 2}
-  <slot name="mini2" />
-{/if}
-{#if $selectedBoardVersion == 1 || $selectedBoardVersion == 2}
-  <slot name="mini1-2" />
-{/if}
-{#if $selectedBoardVersion == 3}
-  <slot name="mini3" />
+{:else}
+
+  <div class="ui basic buttons">
+    {#each versionen as num}
+      <button class="mini ui compact button" on:click={()=>{$selectedBoardVersion=num}} class:active={$selectedBoardVersion==num}>
+        v{num}
+      </button>
+    {/each}
+  </div>
+
+  <div class="content">
+    {#if $selectedBoardVersion == 1}
+      <slot name="mini1" />
+    {/if}
+    {#if $selectedBoardVersion == 2}
+      <slot name="mini2" />
+    {/if}
+    {#if $selectedBoardVersion == 1 || $selectedBoardVersion == 2}
+      <slot name="mini1-2" />
+    {/if}
+    {#if $selectedBoardVersion == 3}
+      <slot name="mini3" />
+    {/if}
+  </div>
+
 {/if}
 
 <style lang="scss">
-    div {
-    display: flex;
-    gap: 5px;
-  }
-
-  label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  input {
-    display: none;
-  }
-
-  .button {
-    background-color: #ffffff;
-    // color: #353535;
-    border: none;
-    padding: 5px 10px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    /* text-transform: uppercase; */
-    border-radius: 50px;
-  }
-
-  .button:hover {
-    background-color: #c5c5c5;
-  }
-
-  input:checked + .button {
-    background-color: rgb(66 201 203);
-    color: #fff;
+  .content {
+    border-left: solid 3px #eee;
+    padding-left: 1em;
+    padding-top: 1em;
   }
 </style>

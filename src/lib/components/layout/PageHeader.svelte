@@ -6,44 +6,43 @@
 	import { page } from '$app/stores';
 
     let y = 0;
-	$: addBg = y > 10;
+	$: isScrolled = y > 10;
 </script>
 
 <svelte:window bind:scrollY={y}/>
 
-<nav class={clsx('mb-10 fixed w-full z-30 top-0 bg-white lg:bg-transparent', addBg && 'lg:bg-white shadow')}>
+<div class="header" class:isScrolled>
+    <div class="ui wide container secondary menu">
 
-    <div class="w-full md:max-w-8xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
-
-        <div class="pl-4">
-            <a data-sveltekit-prefetch class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="/docs">
-               <img src="/Logo_Calliope_lang.svg" style="height: 2.5rem;" alt="Calliope Logo" />
+        <div class="item">
+            <a data-sveltekit-prefetch href="/docs">
+                <img src="/Logo_Calliope_lang.svg" style="height: 2.5rem;" alt="Calliope Logo" />
             </a>
         </div>
 
-        <div>
-            <BoardVersionSelector />
+        <div class="right menu">
+            <div class="item">
+                <SearchBar />
+            </div>
+            <div class="item">
+                <BoardVersionSelector dropdown />
+            </div>
         </div>
-
-        <div>
-            <SearchBar />
-        </div>
-
-        <MainMenu {addBg} />
-
     </div>
-</nav>
-
+</div>
+ 
+<!-- <MainMenu {isScrolled} /> -->
 
 <style lang="scss">
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        padding: 0.5rem 0;
+        background-color: #fff;
 
-a {
-    display: flex;
-    align-items: center;
-
-    img {
-        padding-right: 1rem;
+        &.isScrolled {
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
     }
-}
-
 </style>

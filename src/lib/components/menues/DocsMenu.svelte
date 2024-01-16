@@ -82,12 +82,9 @@
     }
   
   </script>
-  
-  <div class="overflow-y-auto z-20 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-4rem)] pb-6 lg:block lg:sticky top:16 lg:top-16 lg:mr-0">
-    <nav class="lg:text-sm lg:leading-6 relative">
-      <div class='menu'>
-        <ul>
-          {#await menuItems}
+
+<div class="ui secondary vertical fluid menu">
+  {#await menuItems}
             {#each posts as item}
               <DocsMenuItem {item} {active} />
             {/each}
@@ -98,8 +95,10 @@
             {:catch error}
               <p style="color: red">{error.message}</p>
           {/await}
-        </ul>
-      </div>
-    </nav>
   </div>
+
+
+  <style lang="scss">
+
+  </style>
   

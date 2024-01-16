@@ -17,27 +17,45 @@
     $: rel = (isInternal) ? null : 'noopener noreferrer';
 </script>
 
-<a href={href} bind:this={a} {target} download={downloadName} {rel}
-class='no-underline hover:opacity-70 hover:underline'>
-    <div class="inline-flex items-center">
+<a href={href} bind:this={a} {target} download={downloadName} {rel}>
+    <div class="a-container">
         
         <slot />
         {#if isMailto}
-            <div class="pl-1">
+            <div class="icon">
                 <IconEmailLink />
             </div>
         {:else}
             {#if !isInternal}
-                <div class="pl-1">
+                <div class="icon">
                     <IconExternalLink />
                 </div>
             {/if}
             {#if isDownload}
-                <div class="pl-1">
+                <div class="icon">
                     <IconDownloadLink />
                 </div>
             {/if}
         {/if}
     </div>
 </a>
+
+<style lang="scss">
+    a {
+        text-decoration: none; 
+
+        &:hover {
+        text-decoration: underline; 
+        opacity: 0.7; 
+        }
+
+        .a-container {
+            display: inline-flex; 
+            align-items: center;
+            .icon {
+                padding-left: 0.25rem; 
+            }
+        }
+    }
+</style>
 

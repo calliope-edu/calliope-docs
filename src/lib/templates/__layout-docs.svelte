@@ -10,7 +10,7 @@
     $: menu = meta.docMenu ?? 'docs';
     $: title = meta.docTitle ?? '';
 
-    let headingSelector = '.content :where(h2, h3):not(.toc-exclude)';
+    let headingSelector = 'main :where(h2, h3):not(.toc-exclude)';
     let breakpoint = 1200;
     let headings = [];
     let desktop = false;
@@ -23,71 +23,60 @@
     let next = null;
 </script>
 
-<div class="lg:flex
-            max-w-8xl 
-            mx-auto 
-            px-4 sm:px-6 md:px-8
-            pt-16
-">
+<div class="page-content ui wide container">
 
-    <aside class="fixed inset-0 z-20 flex-none  h-full hidden w-1 lg:w-52 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-48 lg:block">
+    <aside class="docs-menu">
         <DocsMenu {menu} bind:items={items} bind:prev={prev} bind:next={next} bind:currKategorie={currKategorie} />
     </aside>
-    <div class="fixed inset-0 z-10 hidden bg-gray-900/50"></div>
 
-    <article class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
-        <div class=" flex w-full">
-            <div class="flex w-full">
+    <div class="background"></div>
 
-                <div class="flex-auto max-w-4xl min-w-0 pt-6 lg:px-8 lg:pt-8 pb:12 xl:pb-24 lg:pb-16">
-                    <div class="content prose max-w-full">
+    <article class="">
+        <div class="full-flex">
+            <div class="full-flex">
+
+                <div class="docs-center">
+                    <main>
                         {#if title && title.length > 0}
                             <h1 class="font-semibold text-slate-900 text-xl">{title}</h1>
                         {/if}
                         <slot />
-                    </div>
+                    </main>
 
-                    <hr class="mt-20" />
+                    <hr style="margin-top: 5rem;" />
 
-                    <div class="flex items-center pt-12 pb-20 font-semibold">
-                        {#if  prev != null}
-                            <a data-sveltekit-prefetch href="/{prev.slug}/" class="group no-underline mb-4 flex flex-col items-start ">
-                                    <span class="text-calliope ml-2 mb-1 inline-block font-semibold ">
-                                        Vorherige
-                                    </span>
-                                    <div clas="transform-gpu transition-transform hover:scale-105">
-                                        <span class="opacity-0 transition-opacity duration-100 group-hover:visible group-hover:opacity-100">
-                                            ←
-                                        </span> 
-                                        <span class="inline-block transform transition-transform duration-100 group-hover:translate-x-0 -translate-x-3">
-                                            {prev.title}
-                                        </span>
+                    <div class="next-prev-menu">
+
+                        <div>
+                            {#if  prev != null}
+                                <a data-sveltekit-prefetch class="ui horizontal card" href="/{prev?.slug}/">
+                                    <div class="content">
+                                        <div class="header">Vorherige</div>
+                                        <div class="meta">
+                                            <span class="category">{prev.title}</span>
+                                        </div>
                                     </div>
-                            </a>
-                        {/if}
+                                </a>
+                            {/if}
+                        </div>
 
-                        {#if  next != null}
-                            <a data-sveltekit-prefetch href="/{next.slug}/" class="group no-underline ml-auto mb-4 flex flex-col items-end">
-                                    <span class="text-calliope mr-2 mb-1 inline-block font-semibold ">
-                                        Nächste
-                                    </span>
-                                    <div
-                                    clas="transform-gpu transition-transform hover:scale-105">
-                                        
-                                        <span class="inline-block transform transition-transform duration-100 group-hover:translate-x-0 translate-x-2">
-                                            {next.title}
-                                        </span>
-                                        <span class="opacity-0 transition-opacity duration-100 group-hover:visible group-hover:opacity-100">
-                                            →
-                                        </span> 
+                        <div>
+                            {#if  next != null}
+                                <a data-sveltekit-prefetch class="ui horizontal card" href="/{next?.slug}/" style="text-align:right;">
+                                    <div class="content">
+                                        <div class="header">Nächste</div>
+                                        <div class="meta">
+                                            <span class="category">{next.title}</span>
+                                        </div>
                                     </div>
-                            </a>
-                        {/if}
+                                </a>
+                            {/if}
+                        </div>
                     </div>
                 </div>
 
-                <div class="flex-none w-1 xl:w-52 pl-8 mr-8 xl:text-sm xl:block">
-                    <div class="flex overflow-y-auto sticky top-16 flex-col justify-between pt-10 pb-6 h-[calc(100vh-4rem)]">
+                <div class="toc-menu-container">
+                    <div class="toc-menu">
                         <Toc title="" {headingSelector} {breakpoint} {hide} activeTopOffset={300}
                             bind:headings={headings} 
                             bind:desktop={desktop}
@@ -101,12 +90,142 @@
         </div>
 
     </article>
-    
-
 
 </div>
 
-<style>
+<style lang="scss">
+
+    .next-prev-menu {
+        display: flex; 
+        padding-top: 3rem; 
+        padding-bottom: 5rem; 
+        align-items: center; 
+        font-weight: 600;
+        justify-content: space-between;
+        gap: 1rem;
+
+        .card {
+            margin: 0;
+            max-width: 100px;
+        }
+    }
+
+.page-content {
+    padding-left: 1rem;
+    padding-right: 1rem; 
+    padding-top: 4rem; 
+
+    @media (min-width: 640px) { 
+        padding-left: 1.5rem;
+        padding-right: 1.5rem; 
+    }
+    @media (min-width: 768px) { 
+        padding-left: 2rem;
+        padding-right: 2rem; 
+    }
+    @media (min-width: 1024px) { 
+        display: flex; 
+    }
+
+    .background {
+        display: none; 
+        position: fixed; 
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0; 
+        z-index: 10; 
+    }
+
+    .docs-menu {
+        display: none; 
+        position: fixed; 
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0; 
+        z-index: 20; 
+        flex: none; 
+        width: 0.25rem; 
+        height: 100%; 
+
+        @media (min-width: 1024px) { 
+            display: block; 
+            overflow-y: visible; 
+            position: static; 
+            padding-top: 0; 
+            width: 12rem; 
+            width: 13rem; 
+            height: auto; 
+        }
+    }
+
+    article {
+        flex: 1 1 auto; 
+        width: 100%; 
+        min-width: 0; 
+
+        @media (min-width: 1024px) { 
+            overflow: visible; 
+            position: static; 
+            max-height: 100%; 
+        }
+
+        .full-flex {
+            display: flex; 
+            width: 100%; 
+        }
+
+        .docs-center {
+            padding-top: 1.5rem; 
+            flex: 1 1 auto; 
+            min-width: 0; 
+            max-width: 56rem; 
+
+
+
+            @media (min-width: 1024px) { 
+            padding-left: 2rem;
+            padding-right: 2rem; 
+            padding-top: 2rem; 
+            padding-bottom: 4rem; 
+            }
+            @media (min-width: 1280px) { 
+            padding-bottom: 6rem; 
+            }
+
+        }
+    }
+
+    .toc-menu-container {
+        padding-left: 2rem; 
+        margin-right: 2rem; 
+        flex: none; 
+        width: 0.25rem; 
+
+        @media (min-width: 1280px) { 
+            display: block; 
+            width: 13rem; 
+            font-size: 0.875rem;
+            line-height: 1.25rem; 
+        }
+
+        .toc-menu {
+            display: flex; 
+            overflow-y: auto; 
+            position: sticky; 
+            top: 4rem; 
+            padding-bottom: 1.5rem; 
+            padding-top: 2.5rem; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            height: calc(100vh - 4rem);
+        }
+
+    }
+
+
+}
 
 /* div {
     
