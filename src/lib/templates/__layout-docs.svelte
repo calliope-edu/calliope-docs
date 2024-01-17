@@ -81,7 +81,7 @@
 
                 <div class="toc-menu-container">
                     <Sticky top={100}>
-                        <Toc title="" {headingSelector} {breakpoint} {hide} activeTopOffset={300}
+                        <Toc title="Auf dieser Seite" {headingSelector} {breakpoint} {hide} activeTopOffset={300}
                             bind:headings={headings} 
                             bind:desktop={desktop}
                         />

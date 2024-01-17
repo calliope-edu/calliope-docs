@@ -47,14 +47,14 @@
 </script>
 
   <!-- {#if mounted} -->
-  <span class='flex border-{color}' bind:this={item}>
+  <span class='flex border-{color}' style="--color:var(--color-{color}" bind:this={item}>
     <div class="item" class:active class:noclose>
 
-          <span class="before text-{color}">
+          <span class="before color" >
             <slot name="before"></slot>
           </span>
 
-          <div on:click={handleClick} class='btn text-{color}'>
+          <div on:click={handleClick} class='btn color'>
               <slot name='title'>{title}</slot>
               <div class='icon'>
                 <ExpandIcon width="64" height="32" />
@@ -90,6 +90,10 @@
 
 
 <style lang="scss">
+
+  .color {
+    color: var(--color);
+  }
 
 .item {
 display: grid;

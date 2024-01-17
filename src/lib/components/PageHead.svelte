@@ -3,7 +3,7 @@
 	export let description;
 
 	const siteTitle = 'Calliope Dokumentation';
-	const formattedTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+	$: formattedTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 </script>
 
 <svelte:head>

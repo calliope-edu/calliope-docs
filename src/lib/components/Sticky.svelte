@@ -3,7 +3,7 @@
     import { onMount } from 'svelte';
     
     export let top = 0;
-    // export let bottomGap = 0;
+    export let bottom = 0;
         
     let stickyElement;
     let lastPos = 0;
@@ -17,7 +17,7 @@
             window.addEventListener(`resize`, ()=>{
                 lastPos = window.scrollY;
                 updateSticky();
-            });   
+            });
             //Follow the main function when scrolling
             document.addEventListener(`scroll`, updateSticky, {
                 capture: true,
@@ -30,8 +30,8 @@
             const screenHeight = window.innerHeight;
             const stickyElementHeight = stickyElement.offsetHeight;
             const currPos = window.scrollY;
-            const endScroll = window.innerHeight - stickyElementHeight;
-            if (stickyElementHeight+top>screenHeight) {
+            const endScroll = window.innerHeight - stickyElementHeight - bottom;
+            if (stickyElementHeight+top+bottom>screenHeight) {
                 if (currPos < lastPos) {
                     //Scroll up
                     if (posTop < top) {

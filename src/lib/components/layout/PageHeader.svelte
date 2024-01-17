@@ -1,9 +1,6 @@
 <script>
-    import clsx from 'clsx';
-	import MainMenu from '$lib/components/menues/MainMenu.svelte';
     import BoardVersionSelector from '$lib/components/BoardVersionSelector.svelte';
     import SearchBar from '$lib/components/SearchBar.svelte';
-	import { page } from '$app/stores';
 
     let y = 0;
 	$: isScrolled = y > 10;

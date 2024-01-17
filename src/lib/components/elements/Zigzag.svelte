@@ -7,10 +7,10 @@
     let allColors = [...colors, bg];
 </script>
 
-<div class="container my-4" style="--size:{size}px; --count:{colors.length}; --shift:{thikness}px">
+<div class="container" style="--size:{size}px; --count:{colors.length}; --shift:{thikness}px">
     <!-- <div class="zigzag text-{color}"></div> -->
     {#each allColors as c, i}
-        <div class="zigzag text-{c}" style="--shift:{thikness * i}px;"></div>
+        <div class="zigzag" style="--text-color: var(--color-{c}) ;--shift:{thikness * i}px;"></div>
     {/each}
 </div>
 
@@ -19,6 +19,8 @@
         position: relative;
         width: 100%;
         height: calc(var(--size) + (var(--count) * var(--shift)));
+        margin-top: 1rem;
+        margin-bottom: 1rem; 
     }
 
     .zigzag {
@@ -26,6 +28,7 @@
         --halfSize: calc(var(--size) / 2);
         --color: currentcolor;
         --shift: 0px;
+        color: var(--text-color);
         background: linear-gradient(135deg, var(--color) 25%, transparent 25%) var(--halfSize) var(--halfSize),
             linear-gradient(-135deg, var(--color) 25%, transparent 25%) var(--halfSize) var(--halfSize),
             linear-gradient(45deg, var(--color) 25%, transparent 25%) 0 var(--halfSize),

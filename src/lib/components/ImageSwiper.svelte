@@ -36,7 +36,7 @@
         // } else {
             // swiperHandle.slideNext();
         // }
-    }}>></button>
+    }}>→</button>
 </div>
 
 <style>

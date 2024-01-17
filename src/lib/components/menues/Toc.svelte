@@ -14,8 +14,8 @@
     Number(node.nodeName[1]) // get the number from H1, H2, ...
   export let activeHeading: HTMLHeadingElement | null = null
   export let open = false
-  export let title = `On this page`
-  export let openButtonLabel = `Open table of contents`
+  export let title = ``
+  export let openButtonLabel = `Inhaltsverzeichnis dieser Seite`
   export let breakpoint = 1000
   export let flashClickedHeadingsFor = 1500
   export let keepActiveTocItemInView = true
@@ -98,11 +98,15 @@
   <aside class="toc" class:desktop class:mobile={!desktop} bind:this={aside}>
     
     {#if open || desktop}
-      <div class="ui secondary vertical fluid tiny menu" transition:blur>
+      <div class="ui compact secondary vertical fluid menu" transition:blur>
+        <div class="item">
         {#if title}
-          <h2>{title}</h2>
+        <div class="header">
+          {title}
+        </div>
         {/if}
         <!-- <div class="text-slate-700 text-sm leading-6"> -->
+          <div class="menu">
           {#each headings as heading, idx}
           {@const level = (levels[idx] - minLevel)}
           <!-- style:transform="translateX({levels[idx] - minLevel}em)"
@@ -121,6 +125,8 @@
               </a>
             <!-- </li> -->
           {/each}
+        </div>
+      </div>
         <!-- </ul> -->
       </div>
     {/if}
@@ -142,15 +148,14 @@
   }
 
 
-.level0 {
-  font-weight: bold;
-}
-.level1 {
-  font-weight: bold;
-}
-.active {
-  color: var(--color-calliope);
-}
+// .level0 {
+// }
+// .level1 {
+// }
+
+  .active {
+    color: var(--color-calliope);
+  }
 
   :where(aside.toc.mobile) {
     position: fixed;
@@ -165,4 +170,15 @@
     z-index: -1;
     background-color: var(--toc-mobile-bg, white);
   }
+
+  .header {
+        color: inherit;
+    }
+    .item.active {
+        color: var(--color-calliope) !important;
+    }
+
+  .menu .menu {
+      margin-top: 1rem !important;
+    }
 </style>

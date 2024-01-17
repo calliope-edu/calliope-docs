@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let color = 'var(--primary-hover)';
+    export let color = 'transparent';
     export let image = 'none';
     export let minH = 'auto';
 </script>

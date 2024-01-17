@@ -1,11 +1,15 @@
-<div class="not-prose my-10 flex items-start">
+<div class="wrapper">
   <div
-    class="relative -ml-1 mr-2.5 flex h-6 min-h-[24px] w-6 min-w-[24px] items-center justify-center rounded-full bg-green-400 text-white"
+    class="inner"
   >
     <svg
       width="6"
+      height="6"
+      aria-hidden="true"
+    >
+    <svg
+      width="6"
       height="4.5"
-      class="scale-x-[1.3] scale-y-[1.3] transform overflow-visible"
       aria-hidden="true"
     >
       <path
@@ -18,7 +22,39 @@
       />
     </svg>
   </div>
-  <div class="mt-px leading-6">
+  <div class="content">
     <slot />
   </div>
 </div>
+
+<style lang="scss">
+  .wrapper {
+    display: flex; 
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem; 
+    align-items: flex-start; 
+    .inner {
+      display: flex; 
+      position: relative; 
+      margin-right: 0.625rem; 
+      margin-left: -0.25rem; 
+      justify-content: center; 
+      align-items: center; 
+      border-radius: 9999px; 
+      width: 1.5rem; 
+      height: 1.5rem; 
+      color: #ffffff; 
+      background-color: #34D399; ; 
+      min-height: 24px;
+      min-width: 24px;
+      svg {
+        overflow: visible; 
+        transform: scale(1.3);
+      }
+    }
+    .content {
+      margin-top: 1px; 
+      line-height: 1.5rem; 
+    }
+  }
+</style>

@@ -28,29 +28,17 @@ $: heading = title ?? admonition[type];
 </script>
 
 <div
-  class={clsx(
-    'admonition my-8 border-2 border-l-8 p-4 rounded-md mx-auto shadow-xl',
-    type === 'note' && 'border-pink-400 bg-pink-300/10',
-    type === 'info' && 'border-blue-400 bg-blue-300/10',
-    type === 'tip' && 'border-green-400 bg-green-300/10',
-    type === 'warning' && 'border-yellow-400 bg-yellow-400/10',
-    type === 'danger' && 'border-red-400 bg-red-300/10',
-    type === 'experimental' && 'border-indigo-400 bg-indigo-300/10',
-  )}
+  class="admonition"
+  class:note={type=='note'}
+  class:info={type=='info'}
+  class:tip={type=='tip'}
+  class:warning={type=='warning'}
+  class:danger={type=='danger'}
+  class:experimental={type=='experimental'}
 >
-  <div
-    class={clsx(
-      'flex h-full items-center font-bold',
-      type === 'note' && 'text-pink-400',
-      type === 'info' && 'text-blue-400',
-      type === 'tip' && 'text-green-400',
-      type === 'warning' && 'text-yellow-400',
-      type === 'danger' && 'text-red-400',
-      type === 'experimental' && 'text-indigo-400',
-    )}
-  >
-    <svelte:component this={icons[type]} class="mr-1.5 text-xl" />
-    <span class="flex items-center">
+  <div class="head">
+    <svelte:component this={icons[type]} class="icon" />
+    <span class="text">
       {heading}
     </span>
   </div>
@@ -60,8 +48,83 @@ $: heading = title ?? admonition[type];
   </div>
 </div>
 
-<style>
+<style lang="scss">
   .admonition {
     display: grid;
+    padding: 1rem; 
+    margin-top: 2rem;
+    margin-bottom: 2rem; 
+    border-radius: 0.375rem; 
+    border-width: 2px; 
+    border-left-width: 8px; 
+    border-style: solid;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); 
+    .head {
+      display: flex; 
+      align-items: center; 
+      height: 100%; 
+      font-weight: 700;
+      margin-bottom: .75rem;
+
+      .icon {
+        margin-right: 0.375rem; 
+        font-size: 1.25rem;
+        line-height: 1.75rem; 
+      }
+
+      .text {
+        display: flex; 
+        align-items: center;
+      }
+    }
+
+    &.note {
+      border-color: rgb(244, 114, 182); 
+      background-color: rgba(249, 168, 212, 0.1); 
+      .head {
+        color: rgb(244, 114, 182); 
+      }
+    }
+
+    &.info {
+      border-color: rgb(96, 165, 250); 
+      background-color: rgba(147, 197, 253, 0.1); 
+      .head {
+        color: rgb(96, 165, 250); 
+      }
+    }
+
+    &.tip {
+      border-color: rgb(74, 222, 128); 
+      background-color: rgba(134, 239, 172, 0.1); 
+      .head {
+        color: rgb(74, 222, 128); 
+      }
+    }
+
+    &.warning {
+      border-color: rgb(250, 204, 21); 
+      background-color: rgba(250, 204, 21, 0.1); 
+      .head {
+        color: rgb(250, 204, 21); 
+      }
+    }
+
+    &.danger {
+      border-color: rgb(248, 113, 113); 
+      background-color: rgba(252, 165, 165, 0.1); 
+      .head {
+        color: rgb(248, 113, 113); 
+      }
+    }
+
+    &.experimental {
+      border-color: rgb(129, 140, 248); 
+      background-color: rgba(165, 180, 252, 0.1); 
+      .head {
+        color: rgb(129, 140, 248); 
+      }
+    }
+  
   }
 </style>

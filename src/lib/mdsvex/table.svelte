@@ -1,36 +1,32 @@
 <style lang="scss">
-    div :global(*) {
-        margin: 0;
-    }
-    div :global(table) {
-        @apply w-full relative text-sm text-left text-gray-500;
-    }
+    // div :global(*) {
+    //     margin: 0;
+    // }
+    // div :global(table) {
+    // }
 
     div :global(thead) {
-        @apply text-xs text-left text-gray-700 bg-gray-100;
+        position: sticky; 
+        top: 75px; 
     }
 
-    div :global(thead th) {
-        @apply py-3 px-6;
-    }
+    // div :global(thead th) {
+    // }
 
-    div :global(tbody tr) {
-        @apply bg-white border-b hover:bg-gray-50;
-    }
+    // div :global(tbody tr) {
+    // }
 
-    div :global(tbody th) {
-        @apply py-4 px-6 font-medium text-gray-900 whitespace-nowrap;
-    }
+    // div :global(tbody th) {
+    // }
 
-    div :global(tbody td) {
-        @apply py-4 px-6 align-middle;
-    }
+    // div :global(tbody td) {
+    // }
 </style>
 
 
 
-<div class="overflow-auto shadow-md sm:rounded-lg">
-    <table>
+<div class="overflow-auto">
+    <table class="ui celled striped table">
         <slot />
     </table>
 </div>
