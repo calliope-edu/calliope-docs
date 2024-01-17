@@ -11,5 +11,5 @@
 <slot />
 </div>
 
-<style>
+<style lang="scss">
 </style>

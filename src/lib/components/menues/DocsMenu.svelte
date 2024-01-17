@@ -84,18 +84,18 @@
   </script>
 
 <div class="ui secondary vertical fluid menu">
-  {#await menuItems}
-            {#each posts as item}
-              <DocsMenuItem {item} {active} />
-            {/each}
-            {:then items}
-              {#each items as item}
-                <DocsMenuItem {item} {active} />
-              {/each}
-            {:catch error}
-              <p style="color: red">{error.message}</p>
-          {/await}
-  </div>
+    {#await menuItems}
+      {#each posts as item}
+        <DocsMenuItem {item} {active} />
+      {/each}
+      {:then items}
+        {#each items as item}
+          <DocsMenuItem {item} {active} />
+        {/each}
+      {:catch error}
+        <p style="color: red">{error.message}</p>
+    {/await}
+</div>
 
 
   <style lang="scss">

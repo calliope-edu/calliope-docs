@@ -1,7 +1,8 @@
 
 <script>
     import DocsMenu from '$lib/components/menues/DocsMenu.svelte';
-    import Toc from '$lib/components/menues/Toc.svelte'
+    import Toc from '$lib/components/menues/Toc.svelte';
+    import Sticky from "$lib/components/Sticky.svelte";
 
     export let currKategorie = null;
     export let items = null;
@@ -25,9 +26,11 @@
 
 <div class="page-content ui wide container">
 
-    <aside class="docs-menu">
-        <DocsMenu {menu} bind:items={items} bind:prev={prev} bind:next={next} bind:currKategorie={currKategorie} />
-    </aside>
+    <Sticky top={100}>
+        <aside class="docs-menu ui sticky fixed top">
+            <DocsMenu {menu} bind:items={items} bind:prev={prev} bind:next={next} bind:currKategorie={currKategorie} />
+        </aside>
+    </Sticky>
 
     <div class="background"></div>
 
@@ -51,10 +54,11 @@
                             {#if  prev != null}
                                 <a data-sveltekit-prefetch class="ui horizontal card" href="/{prev?.slug}/">
                                     <div class="content">
-                                        <div class="header">Vorherige</div>
-                                        <div class="meta">
+                                        <div class="meta">Vorherige</div>
+                                        <div class="header">
                                             <span class="category">{prev.title}</span>
                                         </div>
+                                        
                                     </div>
                                 </a>
                             {/if}
@@ -64,8 +68,8 @@
                             {#if  next != null}
                                 <a data-sveltekit-prefetch class="ui horizontal card" href="/{next?.slug}/" style="text-align:right;">
                                     <div class="content">
-                                        <div class="header">Nächste</div>
-                                        <div class="meta">
+                                        <div class="meta">Nächste</div>
+                                        <div class="header">
                                             <span class="category">{next.title}</span>
                                         </div>
                                     </div>
@@ -76,12 +80,12 @@
                 </div>
 
                 <div class="toc-menu-container">
-                    <div class="toc-menu">
+                    <Sticky top={100}>
                         <Toc title="" {headingSelector} {breakpoint} {hide} activeTopOffset={300}
                             bind:headings={headings} 
                             bind:desktop={desktop}
                         />
-                    </div>
+                    </Sticky>
                 </div>
 
                 </div>
@@ -182,8 +186,6 @@
             min-width: 0; 
             max-width: 56rem; 
 
-
-
             @media (min-width: 1024px) { 
             padding-left: 2rem;
             padding-right: 2rem; 
@@ -208,18 +210,6 @@
             width: 13rem; 
             font-size: 0.875rem;
             line-height: 1.25rem; 
-        }
-
-        .toc-menu {
-            display: flex; 
-            overflow-y: auto; 
-            position: sticky; 
-            top: 4rem; 
-            padding-bottom: 1.5rem; 
-            padding-top: 2.5rem; 
-            flex-direction: column; 
-            justify-content: space-between; 
-            height: calc(100vh - 4rem);
         }
 
     }

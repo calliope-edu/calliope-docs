@@ -75,9 +75,7 @@
     const scrollMargin = Number(getComputedStyle(node).scrollMarginTop.replace(`px`, ``)) || 92
     window.scrollTo({ top: getOffsetTop(node) - scrollMargin, behavior: `smooth` })
 
-    
-// const scrollMargin = Number(getComputedStyle(node).scrollMarginTop.replace(`px`, ``)) || 92;
-
+    // const scrollMargin = Number(getComputedStyle(node).scrollMarginTop.replace(`px`, ``)) || 92;
     // window.scrollBy({left: 0, top: node.getBoundingClientRect().top - scrollMargin, behavior: `smooth`})
 
     const id = getHeadingIds && getHeadingIds(node)
@@ -98,6 +96,34 @@
 />
 {#if !hide}
   <aside class="toc" class:desktop class:mobile={!desktop} bind:this={aside}>
+    
+    {#if open || desktop}
+      <div class="ui secondary vertical fluid tiny menu" transition:blur>
+        {#if title}
+          <h2>{title}</h2>
+        {/if}
+        <!-- <div class="text-slate-700 text-sm leading-6"> -->
+          {#each headings as heading, idx}
+          {@const level = (levels[idx] - minLevel)}
+          <!-- style:transform="translateX({levels[idx] - minLevel}em)"
+          style:font-size="{2 - 0.2 * (levels[idx] - minLevel)}ex" -->
+            <!-- <li> -->
+              <a href=#{getHeadingIds(heading)}
+              class="item {`level${level}`} group hover:text-calliope"
+              class:active={activeHeading === heading}
+              on:click|preventDefault={clickHandler(heading)}>
+                {#if level > 0}
+                  <!-- <svg width="3" height="24" viewBox="0 -9 3 24" class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 text-slate-600"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg> -->
+                {/if}
+                <slot name="tocItem" {heading} {idx}>
+                  {getHeadingTitles(heading)}
+                </slot>
+              </a>
+            <!-- </li> -->
+          {/each}
+        <!-- </ul> -->
+      </div>
+    {/if}
     {#if !open && !desktop}
       <button
         on:click|preventDefault|stopPropagation={() => (open = true)}
@@ -106,59 +132,21 @@
         Toc
       </button>
     {/if}
-    {#if open || desktop}
-      <nav transition:blur>
-        {#if title}
-          <h2>{title}</h2>
-        {/if}
-        <ul class="text-slate-700 text-sm leading-6">
-          {#each headings as heading, idx}
-          {@const level = (levels[idx] - minLevel)}
-          <!-- style:transform="translateX({levels[idx] - minLevel}em)"
-          style:font-size="{2 - 0.2 * (levels[idx] - minLevel)}ex" -->
-            <li>
-              <button 
-              class="{`level${level}`} group hover:text-calliope"
-              class:active={activeHeading === heading}
-              on:click={clickHandler(heading)}>
-                {#if level > 0}
-                  <!-- <svg width="3" height="24" viewBox="0 -9 3 24" class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 text-slate-600"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg> -->
-                {/if}
-                <slot name="tocItem" {heading} {idx}>
-                  {getHeadingTitles(heading)}
-                </slot>
-              </button>
-            </li>
-          {/each}
-        </ul>
-      </nav>
-    {/if}
   </aside>
 {/if}
 
 <style lang="scss">
   .toc {
-    padding-left: 2rem;
-    padding-right: 2rem; 
+    // padding-left: 2rem;
+    // padding-right: 2rem; 
   }
-  nav {
-    opacity: .4;
-  }
-button {
-  text-align: left;
-}
-li {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem; 
-  cursor: pointer; 
-}
+
+
 .level0 {
-  display: block;
+  font-weight: bold;
 }
 .level1 {
-  display: flex; 
-  margin-left: 1rem; 
-  align-items: flex-start; 
+  font-weight: bold;
 }
 .active {
   color: var(--color-calliope);
