@@ -37,7 +37,9 @@ $: heading = title ?? admonition[type];
   class:experimental={type=='experimental'}
 >
   <div class="head">
-    <svelte:component this={icons[type]} class="icon" />
+    <div class="icon">
+      <svelte:component this={icons[type]} />
+    </div>
     <span class="text">
       {heading}
     </span>
@@ -69,7 +71,8 @@ $: heading = title ?? admonition[type];
       .icon {
         margin-right: 0.375rem; 
         font-size: 1.25rem;
-        line-height: 1.75rem; 
+        line-height: 1.75rem;
+        display: flex;
       }
 
       .text {
