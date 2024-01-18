@@ -9,28 +9,24 @@ published: true
 
 {description}
 
-![Pinout](/calliopev3_front.svg)
 
-<!-- <script>
-import V2Datenblatt from './v2.svx';
+<Versions>
+  <div slot="mini1">
 
-let aktiv = 3;
-</script>
+    <!-- ![Pinout](./calliope_mini_1.3_pinout_fin.jpg) -->
 
-<button on:click={()=>{aktiv=1}}>v1</button>
-<button on:click={()=>{aktiv=2}}>v2</button>
-<button on:click={()=>{aktiv=3}}>v3</button>
+    <Button text="Schaltplan V1.3" link="https://calliope-mini.github.io/assets/v10/img/Calliope%20mini%20rev1.3.pdf"/>
 
-{#if aktiv == 1}
+  </div>
+  <div slot="mini2">
 
-1
+    <Button text="Schaltplan V2" link="https://calliope-mini.github.io/assets/v20/img/Calliope%20mini%20rev2.0.pdf"/>
+    <Button text="Schaltplan V2.1" link="https://calliope-mini.github.io/assets/v21/img/Calliope%20mini%20rev2.1.pdf"/>
 
-{:else if aktiv == 2}
+  </div>
+  <div slot="mini3">
 
-2
+    <Button text="Schaltplan V3" link="https://calliope-mini.github.io/assets/v30/img/Calliope_mini_3.pdf"/>
 
-{:else}
-<V2Datenblatt />
-{/if}
-
-  {title} -->
+    </div>
+  </Versions>
