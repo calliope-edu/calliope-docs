@@ -10,12 +10,36 @@ published: true
 
 ## Bluetooth
 
+Bluetooth Low Energy (BLE) ist eine drahtlose Kommunikationstechnologie, die speziell für Anwendungen mit geringem Stromverbrauch entwickelt wurde. 
+
 ## Funk
+
+Der Calliope mini kann über Funk und das 2,4 GHz-Band drahtlos kommunizeren, welches von dem Anwendungsprozessor (Nordic nRF52833) bereitgestellt wird. 
 
 ## I2C
 
+Der I2C-Bus (Inter-Integrated Circuit) ist ein serieller Kommunikationsbus, der es ermöglicht, Daten zwischen Mikrocontrollern und anderen integrierten Schaltungen auszutauschen. Er verwendet zwei Signalleitungen, eine für Daten (SDA) und eine für Takt (SCL). Durch die Verwendung von Adressen können mehrere Geräte auf demselben Bus kommunizieren.
+
+Bei dem Calliope mini läuft das UART Protokoll auf dem rechten Grove Port A0 mit den Pins **C19 (SCL)** und **C20 (SDA)**.
+
 ## UART/Serial
 
-### Serielle Monitore
+UART (Universal Asynchronous Receiver/Transmitter) Serial ist eine serielle Kommunikationstechnologie, die für den bidirektionalen Datenaustausch zwischen elektronischen Geräten verwendet wird. Sie arbeitet asynchron, was bedeutet, dass Sender und Empfänger nicht auf einen gemeinsamen Takt synchronisiert sind. UART verwendet Start- und Stoppbits, um den Anfang und das Ende jedes Datenbytes zu kennzeichnen.
+
+Bei dem Calliope mini läuft das UART Protokoll auf dem rechten Grove Port A1 mit den Pins C16 (RX) und C17 (TX)
+
+## USB / Serielle Monitore
+
+Es kann mit dem Calliope mini auch über USB und der seriellen Schnittstelle kommuniziert werden, um z.B. Sensoren auszulesen oder den Code zu debuggen. 
+#### Makecode
+Mit dem Calliope mini V3 können in der neusten Makecode Version die seriellen Daten über WebUSB in dem Editor angezeigt und dargestellt werden.
+#### Micropython 
+In dem Micropython Editor gibt es ebenfalls die Option die seriellen Daten mit ```print('Calliope mini ist prima')``` über WebUSB ausgelesen werden.
+#### weitere serielle Editoren
+Es gibt eine Vielzahl von weiteren seriellen Monitoren, wie z.B. Putty oder die Arduino IDE, mit dem die seriellen Daten ausgelesen werden können.
+
+
 
 ## SPI
+
+SPI (Serial Peripheral Interface) ist eine serielle Schnittstellentechnologie, die für die bidirektionale Kommunikation zwischen einem Master-Gerät und mehreren Slave-Geräten in einem synchronen Datenübertragungsmodus verwendet wird. Sie verwendet separate Leitungen für Datenübertragung (MOSI - Master Out Slave In, MISO - Master In Slave Out), Takt (SCLK) und Slave-Auswahl (SS/CS - Slave Select/Chip Select). SPI ermöglicht eine schnelle und effiziente Kommunikation und wird häufig in der Mikrocontroller- und Peripheriegerätekommunikation eingesetzt.
