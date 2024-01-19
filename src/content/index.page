@@ -10,7 +10,7 @@ published: true
 	import { onMount, beforeUpdate  } from 'svelte';
 
     // Define the destination route
-  	const destinationRoute = '/docs';
+  	const destinationRoute = '/tech';
 
 	// Use the `beforeUpdate` lifecycle function to perform redirection
 	beforeUpdate(() => {
@@ -18,7 +18,7 @@ published: true
 	});
 </script>
 
-## Wir leiten dich zur [Technischen Dokumentation](/docs) weiter ...
+## Wir leiten dich zur [Technischen Dokumentation](/tech) weiter ...
 
 <style lang="scss">
 

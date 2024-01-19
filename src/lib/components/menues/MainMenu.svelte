@@ -14,7 +14,7 @@
 
 	let pages = [
 		// {url: '/#', name: 'Startseite', sub: []},
-		// {url: '/docs', name: 'Dokumentation', sub: []},
+		// {url: '/tech', name: 'Dokumentation', sub: []},
 		// {url: 'https://calliope.cc/', name: 'Calliope.cc', external: true, sub: [
 		// 	{url: 'https://calliope.cc/los-geht-s/einfuehrung', name: 'Einführung', external: true, sub: []},
 		// 	{url: 'https://calliope.cc/los-geht-s/erste-schritte', name: 'Erste Schritte', external: true, sub: []},

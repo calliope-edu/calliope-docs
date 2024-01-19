@@ -12,7 +12,7 @@
     <div class="ui wide container secondary menu">
 
         <div class="item">
-            <a data-sveltekit-prefetch href="/docs">
+            <a data-sveltekit-prefetch href="/tech">
                 <img src="/Logo_Calliope_lang.svg" style="height: 2.5rem;" alt="Calliope Logo" />
             </a>
         </div>
