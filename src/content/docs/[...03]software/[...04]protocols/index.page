@@ -6,8 +6,6 @@ template: docs
 published: true
 ---
 
-# {title} 
-
 ## Bluetooth
 
 Bluetooth Low Energy (BLE) ist eine drahtlose Kommunikationstechnologie, die speziell für Anwendungen mit geringem Stromverbrauch entwickelt wurde. 

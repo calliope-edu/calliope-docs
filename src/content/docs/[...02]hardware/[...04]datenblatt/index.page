@@ -7,26 +7,23 @@ published: true
 ---
 
 <script>
-  import V1 from './v1.3.svx'
-  // import V2 from './v2.svelte'
+  import V1 from './v1.svx'
+  import V2 from './v2.svx'
+  import V3 from './v3.svx'
 
 </script>
 
 <Versions>
   <div slot="mini1">
-
     <V1 />
-
   </div>
   <div slot="mini2">
-
+    <V2 />
     <Button text="Schaltplan V2" link="https://calliope-mini.github.io/assets/v20/img/Calliope%20mini%20rev2.0.pdf"/>
     <Button text="Schaltplan V2.1" link="https://calliope-mini.github.io/assets/v21/img/Calliope%20mini%20rev2.1.pdf"/>
-
   </div>
   <div slot="mini3">
-
+    <V3 />
     <Button text="Schaltplan V3" link="https://calliope-mini.github.io/assets/v30/img/Calliope_mini_3.pdf"/>
-
     </div>
   </Versions>
