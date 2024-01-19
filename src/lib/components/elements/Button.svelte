@@ -89,7 +89,8 @@ href={link} bind:this={a} {target} download={downloadName} rel={relExternal} cla
     align-items: center;
 
     .icon {
-      padding-left: 0.75rem; 
+      padding-left: 0.75rem;
+      display: flex;
     }
   }
 }

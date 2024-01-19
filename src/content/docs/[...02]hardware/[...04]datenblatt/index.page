@@ -1,21 +1,21 @@
 ---
 title: Datenblatt
+docTitle: Hardware
 description: ...
 template: docs
 published: true
 ---
 
-# {title} 
+<script>
+  import V1 from './v1.3.svx'
+  // import V2 from './v2.svelte'
 
-{description}
-
+</script>
 
 <Versions>
   <div slot="mini1">
 
-    <!-- ![Pinout](./calliope_mini_1.3_pinout_fin.jpg) -->
-
-    <Button text="Schaltplan V1.3" link="https://calliope-mini.github.io/assets/v10/img/Calliope%20mini%20rev1.3.pdf"/>
+    <V1 />
 
   </div>
   <div slot="mini2">

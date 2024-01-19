@@ -26,18 +26,6 @@ MakeCode ist ein von Microsoft Research entwickelter Programmiereditor mit dem s
 <Button text='zum Editor' link='https://makecode.calliope.cc/' />
 <br><br>
 
-|  |  |
-| -------- | ------- |
-| Blockbasierte Programmierung | <Yes></Yes> |
-| Textbasierte Programmierung | <Yes> Python und Javascript</Yes> |
-| Parallelität | <Yes>Eventbasierte Programmierung, mehrere Dauerhaftschleifen möglich</Yes> |
-| Variablen | <Yes></Yes> |
-| Listen | <Yes>Ja, auch mehrdimensional</Yes>   |
-| Schleifen	   | <Yes>While, For, Foreach</Yes>    |
-| Funktionen | <Yes>mit Parameter und Rückgabewert</Yes> |
-| Kommunikation | <Yes>Funk, Serial, UART, I2C, BLE</Yes> | 
-| Sensoren/Aktoren-Erweiterungen | <Yes>Erweiterungen können selbst von der Community erstellt und hinzugefügt werden</Yes> | 
-
 Weitere Informationen findest du auf der Calliope **[Webseite](https://calliope.cc/programmieren/editoren/makecode)** 
 
 ### Eventbasierte Programmierung
@@ -64,18 +52,7 @@ Offline nutzbar: Ja, einmal geladen, auch offline nutzbar.
 
  <Button text="zum Editor" link="https://python.calliope.cc"/>
  <Button text="Github Repository" link="https://github.com/calliope-edu/calliope-mini-python-editor"/>
-
- |  |  |
-| -------- | ------- |
-| Blockbasierte Programmierung | <No></No> |
-| Textbasierte Programmierung | <Yes> Python</Yes> |
-| Parallelität | <No></No> |
-| Variablen | <Yes></Yes> |
-| Listen | <Yes>Ja</Yes>   |
-| Schleifen	   | <Yes>While, For, Foreach</Yes>    |
-| Funktionen | <Yes>mit Parameter und Rückgabewert</Yes> |
-| Kommunikation | <Yes>Funk, I2C, UART, SPI</Yes> | 
-| Sensoren/Aktoren-Erweiterungen | <Yes>Ja, sie können als externe Module importiert werden</Yes> | 
+ <br><br>
 
 ## Open Roberta Lab
 
@@ -90,23 +67,25 @@ Open Roberta ist ein vom Fraunhofer Institut entwickelter Editor, mit dem sich v
 - Gruppenverwaltung, um Programme mit Klassen/Gruppen zu teilen und zu überprüfen
 
 <Button text='zum Editor' link='https://lab.open-roberta.org/' />
-<br><br>
-
-|  |  |
-| -------- | ------- |
-| Blockbasierte Programmierung | <Yes></Yes> |
-| Textbasierte Programmierung | <No> Nein, der Quellcode kann aber in C/C++ angezeigt werden</No> |
-| Parallelität | <No>Prozedurale Programmierung</No> |
-| Variablen | <Yes></Yes> |
-| Listen | <Yes>Ja, keine merdimensionalen Listen</Yes>   |
-| Schleifen	   | <Yes>While, For, Foreach</Yes>    |
-| Funktionen | <Yes>mit Parameter und Rückgabewert</Yes> |
-| Kommunikation | <Yes>Funk, Serial</Yes> | 
-| Sensoren/Aktoren-Erweiterungen | <Yes>Es gibt Erweiterungen zu ein paar Sensoren/Aktoren. Eigene können nicht erstellt werden.</Yes> | 
 
 Weitere Informationen findest du auf der Calliope **[Webseite](https://calliope.cc/programmieren/editoren/makecode)** 
 
-## weitere Editoren
+## Funktionsvergleich
+
+|                              | MakeCode                     | Micropython                  | Open Roberta                  |
+| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
+| Blockbasierte Programmierung | <Yes />                  | <No />                    | <Yes />                  |
+| Textbasierte Programmierung  | <Yes> Python und Javascript</Yes> | <Yes>Python</Yes>          | <No> Nein, der Quellcode kann aber in C/C++ angezeigt werden</No> |
+| Parallelität                | <Yes>Eventbasierte Programmierung, mehrere Dauerhaftschleifen möglich</Yes> | <No />                  | <No>Prozedurale Programmierung</No> |
+| Variablen                   | <Yes />                  | <Yes />                  | <Yes />                  |
+| Listen                      | <Yes>Ja, auch mehrdimensional</Yes> | <Yes>Ja</Yes>              | <Yes>Ja, keine merdimensionalen Listen</Yes> |
+| Schleifen<br>(`While`, `For`, `Foreach`) | <Yes /> | <Yes /> | <Yes /> |
+| Funktionen                  | <Yes /> | <Yes /> | <Yes /> |
+| Kommunikation               | <Yes>Funk, Serial, UART, I2C, BLE</Yes> | <Yes>Funk, I2C, UART, SPI</Yes> | <Yes>Funk, Serial</Yes>       |
+| Sensoren/Aktoren-Erweiterungen | <Yes>Erweiterungen können selbst von der Community erstellt und hinzugefügt werden</Yes> | <Yes>Ja, als externe Module importierbar</Yes> | <Yes>Es gibt Erweiterungen zu ausgewählten Sensoren/Aktoren. Eigene können nicht erstellt werden.</Yes> |
+
+
+## Weitere Editoren
 
 ### MindPlus
 

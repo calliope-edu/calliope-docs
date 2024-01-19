@@ -9,7 +9,8 @@
     export let meta;
 
     $: menu = meta.docMenu ?? 'docs';
-    $: title = meta.docTitle ?? '';
+    $: docTitle = meta.docTitle ?? '';
+    $: title = meta.title ?? '';
 
     let headingSelector = 'main :where(h2, h3):not(.toc-exclude)';
     let breakpoint = 1200;
@@ -40,9 +41,14 @@
 
                 <div class="docs-center">
                     <main>
-                        {#if title && title.length > 0}
-                            <h1 class="font-semibold text-slate-900 text-xl">{title}</h1>
+                        <h1>
+                        {#if docTitle && docTitle.length > 0}
+                            <span class="docTitle">{docTitle}</span>
                         {/if}
+                        {#if title && title.length > 0}
+                            <span>{title}</span>
+                        {/if}
+                    </h1>
                         <slot />
                     </main>
 
@@ -98,6 +104,13 @@
 </div>
 
 <style lang="scss">
+
+    .docTitle {
+        font-size: 1.25rem;
+        line-height: 1.75rem; 
+        font-weight: 600;
+        display: block;
+    }
 
     .next-prev-menu {
         display: flex; 

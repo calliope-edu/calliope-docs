@@ -148,10 +148,13 @@
   }
 
 
-// .level0 {
-// }
-// .level1 {
-// }
+.level0 {
+}
+.level1, .level2, .level3 {
+  font-size: .7em !important;
+  margin-left: 1em !important;
+  font-style: italic;
+}
 
   .active {
     color: var(--color-calliope);

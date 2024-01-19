@@ -1,0 +1,6 @@
+
+
+
+<Admonition type='info'>
+    Manche v1.3 minis besitzen bereits wie der v2 mini 32kB RAM.<br>Die Grundausführung sind allerdings 16kB.
+</Admonition>

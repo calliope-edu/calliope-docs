@@ -1,4 +1,3 @@
-## Überblick
 
 | Bauteil/Komponente | Modellbezeichnung | Eigenschaften |
 | :------ | :-- | :------------- |

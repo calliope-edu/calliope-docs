@@ -1,16 +1,12 @@
 ---
 title: Stromversorgung
+docTitle: Hardware
 description: Stromversorgung
 template: docs
 published: true
 ---
 
-# {title} 
 
-{description}
-
-
-bestehender Text
 - mit 2x AAA Batterien über JST Batterie Connector S2B-PH-SM4-TB
 - über den USB-C Anschluss (5V)
 - über den VM Pin (maximal 9V)

@@ -17,7 +17,6 @@
 <DocsLayout bind:currKategorie={currKategorie} bind:items={items} {meta}>
 
         {#if pages != null}
-            <h1>{currTitle ?? ''}</h1>
             <slot />
             <div class="ui two cards">
                 <!-- <Grid> -->

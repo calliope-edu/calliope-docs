@@ -1,11 +1,10 @@
 ---
 title: Pins
+docTitle: Hardware
 description: Der Calliope mini verfügt über diverse Pins, die programmiert und Daten ausgetauscht werden können.
 template: docs
 published: true
 ---
-
-# {title} 
 
 {description}
 
