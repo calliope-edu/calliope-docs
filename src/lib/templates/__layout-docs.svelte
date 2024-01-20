@@ -8,7 +8,7 @@
     export let items = null;
     export let meta;
 
-    $: menu = meta.docMenu ?? 'docs';
+    $: menu = meta.docMenu ?? 'tech';
     $: docTitle = meta.docTitle ?? '';
     $: title = meta.title ?? '';
 
