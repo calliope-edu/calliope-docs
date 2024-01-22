@@ -7,14 +7,19 @@ published: true
 
 <script>
     import V3Datenblatt from './v3.svx';
+    import V2Datenblatt from './v2.svx';
+    import V1Datenblatt from './v1.svx';
 </script>
 
 # {title}
 
 <Versions>
-    <div slot="mini1">1</div>
-    <div slot="mini2">2</div>
-    <div slot="mini1-2">1 & 2</div>
+    <div slot="mini1">
+        <V1Datenblatt />
+    </div>
+    <div slot="mini2">
+        <V2Datenblatt />
+    </div>
     <div slot="mini3">
         <V3Datenblatt />
     </div>
@@ -22,29 +27,56 @@ published: true
 
 ## Anwendungsprozessor
 
-<a href="">NRF52833-QIAA-R</a>
 
-- Führt Programme aus und ist an alle Komponenten des mini angeschlossen
-- Memory Size: 512kB Flash, 128kB RAM
-- Serial Interfaces: ADC, I²S, PWM, SPI, UART, USB
-- Bluetooth-Antenne, Temperaturmessung
+<Versions>
 
+    <div slot="mini1-2">
+        Nordic nRF51822
 
-### Laufzeit
+        - 256kB Flash, 16kB RAM
+    
+    </div>
+    <div slot="mini3">
+        <a href="">NRF52833-QIAA-R</a>
 
-### Temperatursensor
+    </div>
+    <ul>
+        <li>Führt Programme aus und ist an alle Komponenten des mini angeschlossen</li>
+        <li>Memory Size: 512kB Flash, 128kB RAM</li>
+        <li>Serial Interfaces: ADC, I²S, PWM, SPI, UART, USB</li>
+        <li>Bluetooth-Antenne, Temperaturmessung</li>
+    </ul>
+    
+</Versions>
 
-### Antenne
 
 ----
 
 ## Interfaceprozessor
 
-*NRF52820-QDAA-D-R7*
+
+
+<Versions>
+    <div slot="mini1">
+        NXP KL26z
+    </div>
+    <div slot="mini2">
+        NXP KL26z
+
+        wegen Bauteilverknappung wurde in der Mini Version 2.1 der Prozessor gegen den
+        Raspberry Pi RP2040 Dual-core Arm Cortex-M0+ Prozessor ausgetauscht 
+    
+    </div>
+    <div slot="mini3">
+        <a href="">NRF52833-QIAA-R</a>
+
+    </div>
 
 - empfängt das Programm über USB und läd es auf den Anwendungsprozessor
 - stellt eine serielle Verbindung zum Anwendungsprozessor her (Virtual COM Port) 
 - kein Bluetooth
+    
+</Versions>
 
 ----
 
@@ -97,7 +129,42 @@ Mit dem MEMS-Mikrofon kann die der Schalldruckpegel (SPL) und die Lautstärke ge
 
 ## Motortreiber
 
-DRV8835
+<Versions>
+    <div slot="mini1-2">
+        DRV8837
+
+        Der Motortreiber für die Calliope mini Versionen 1 und 2 ist der DRV8837 Der Motortreiber besteht aus einer H-Brückenschaltung. Es kann damit ein Motor 
+        Es können bis zu zwei Motoren angeschlossen werden. Wird ein Motor angeschlossen, können alle Motormodi verwendet werden. Werden zwei Motoren angeschlossen, dann müssen sich diese die H-Brücke teilen und die Motoren können nur beide gleichzeitig vor- oder zurückfahren, aber nicht entgegengesetzt laufen. 
+     
+        **Ein Motor Logik:**
+
+        | IN1 | IN2 | OUT1 | OUT2  | Modus     |
+        |-----|-----|------|-------|-----------|
+        | 0   | 0   | Z    | Z     | Leerlauf  |
+        | 0   | 1   | L    | H     | Rückwärts |
+        | 1   | 0   | H    | L     | Vorwärts  |
+        | 1   | 1   | L    | L     | Bremsen   |
+
+
+
+*H = High-Side-Schalter an, L = Low-Side-Schalter an, Z = Beide Schalter aus*
+
+         [Datenblatt DRV8837](https://www.ti.com/lit/ds/symlink/drv8837.pdf?ts=1654067963185&ref_url=https%253A%252F%252Fwww.google.com%252F)
+     
+         **Zwei Motoren Logik:**
+
+         | IN1 | IN2 | OUT1 | OUT2  | Motor1        | Motor2        |
+         |-----|-----|------|-------|---------------|---------------|
+         | 0   | 0   | Z    | Z     | Bremsen       | Bremsen       |
+         | 0   | 1   | L    | H     | Beschleunigen | Bremsen       |
+         | 1   | 0   | H    | L     | Bremsen       | Beschleunigen |
+         | 1   | 1   | L    | L     | Vorwärts      | Vorwärts      |
+
+*H = High-Side-Schalter an, L = Lowside-Schalter an, Z = Beide Schalter aus*
+
+    </div>
+    <div slot="mini3">
+        DRV8835
 
 Dieser Motortreiber besitzt 2 seperate H-Brücken Treiber und kann damit 2 Gleichspannungsmotoren von einander unabhängig steuern. Die maximale Eingangspannung beträgt 9V, der maximale Strom pro Motor beträgt 1.5A.
 Hier findest du einen Link zum [Datenblatt](https://www.ti.com/lit/ds/symlink/drv8835.pdf?ts=1697459375123)
@@ -110,3 +177,7 @@ Hier findest du einen Link zum [Datenblatt](https://www.ti.com/lit/ds/symlink/dr
 
 
 Weitere Informationen sowie Schaltplan, Blockschaltbild & Pinbelegung fndest du **[Hier](https://calliope-mini.github.io/v20/)** 
+    </div>
+</Versions>
+
+
