@@ -10,10 +10,9 @@ published: true
     import V1Datenblatt from './v1.svx';
     import V2Datenblatt from './v2.svx';
     import V3Datenblatt from './v3.svx';
-    import V2Datenblatt from './v2.svx';
-    import V1Datenblatt from './v1.svx';
 </script>
 
+## Überblick
 <Versions>
     <div slot="mini1">
         <V1Datenblatt />
@@ -32,30 +31,29 @@ published: true
 <Versions>
 
     <div slot="mini1-2">
+
         Nordic nRF51822
 
-        - 256kB Flash, 16kB RAM
-    
-    </div>
-    <div slot="mini3">
-        <a href="">NRF52833-QIAA-R</a>
+    - 256kB Flash, 16kB RAM
+
 
     </div>
-    <ul>
-        <li>Führt Programme aus und ist an alle Komponenten des mini angeschlossen</li>
-        <li>Memory Size: 512kB Flash, 128kB RAM</li>
-        <li>Serial Interfaces: ADC, I²S, PWM, SPI, UART, USB</li>
-        <li>Bluetooth-Antenne, Temperaturmessung</li>
-    </ul>
-    
+    <div slot="mini3">
+        NRF52833-QIAA-R
+    </div>
+
+    - Führt Programme aus und ist an alle Komponenten des mini angeschlossen
+    - Memory Size: 512kB Flash, 128kB RAM
+    - Serial Interfaces: ADC, I²S, PWM, SPI, UART, USB
+    - Bluetooth-Antenne, Temperaturmessung
+
+
 </Versions>
 
 
 ----
 
 ## Interfaceprozessor
-
-
 
 <Versions>
     <div slot="mini1">
@@ -69,13 +67,12 @@ published: true
     
     </div>
     <div slot="mini3">
-        <a href="">NRF52833-QIAA-R</a>
-
+        NRF52833-QIAA-R
     </div>
 
-- empfängt das Programm über USB und läd es auf den Anwendungsprozessor
-- stellt eine serielle Verbindung zum Anwendungsprozessor her (Virtual COM Port) 
-- kein Bluetooth
+    - empfängt das Programm über USB und läd es auf den Anwendungsprozessor
+    - stellt eine serielle Verbindung zum Anwendungsprozessor her (Virtual COM Port) 
+    - kein Bluetooth
     
 </Versions>
 

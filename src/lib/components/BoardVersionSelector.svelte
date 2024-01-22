@@ -43,6 +43,7 @@
     {#if $selectedBoardVersion == 3}
       <slot name="mini3" />
     {/if}
+    <slot />
   </div>
 
 {/if}
