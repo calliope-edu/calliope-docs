@@ -130,7 +130,8 @@
 .page-content {
     padding-left: 1rem;
     padding-right: 1rem; 
-    padding-top: 4rem; 
+    padding-top: 4rem;
+    min-height: calc(100vh - 221px);
 
     @media (min-width: 640px) { 
         padding-left: 1.5rem;

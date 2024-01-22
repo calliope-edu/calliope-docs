@@ -1,4 +1,4 @@
-<footer class="bg-calliope mt-16 z-30 relative">
+<footer>
     <!-- <div class="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4"> -->
         <!-- <div>
             <h2 class="mb-6 text-sm font-semibold text-white uppercase">Company</h2>
@@ -66,13 +66,16 @@
             </ul>
         </div> -->
     <!-- </div> -->
-    <div class="py-6 px-4 bg-calliope-400 md:flex md:items-center md:justify-between">
-        <span class="text-sm text-white sm:text-center">© {new Date().getFullYear()} <a href="https://calliope.cc">Calliope gGmbH</a>. All Rights Reserved.
+    <div class="container">
+        <span class="copyright">© {new Date().getFullYear()} <a href="https://calliope.cc">Calliope gGmbH</a>. All Rights Reserved.
         </span>
-        <div class="flex mt-4 space-x-6 sm:justify-center md:mt-0">
-            <ul class="text-white">
+        <div class="menu">
+            <ul>
                 <li>
-                    <a href="/impressum/" class="hover:underline">Impressum</a>
+                    <a href="https://calliope.cc/impressum" target="_blank">Impressum</a>
+                </li>
+                <li>
+                    <a href="https://calliope.cc/dataprotection" target="_blank">Datenschutz</a>
                 </li>
             </ul>
             <!-- <a href="./#" class="text-white hover:text-gray-900">
@@ -98,3 +101,60 @@
         </div>
     </div>
 </footer>
+
+<style lang="scss">
+    footer {
+        position: relative; 
+        z-index: 30; 
+        margin-top: 4rem;
+        background-color: var(--color-calliope);
+
+        a {
+            color: #ffffff;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .container {
+            padding-left: 1rem;
+            padding-right: 1rem; 
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem; 
+
+            @media (min-width: 768px) { 
+                display: flex; 
+                justify-content: space-between; 
+                align-items: center; 
+            }
+
+            .copyright {
+                font-size: 0.875rem;
+                line-height: 1.25rem; 
+                color: #ffffff; 
+
+                @media (min-width: 640px) { 
+                text-align: center; 
+                }
+            }
+
+            .menu {
+                display: flex; 
+                margin-top: 1rem; 
+                margin-left: 1.5rem; 
+
+                @media (min-width: 640px) { 
+                justify-content: center; 
+                }
+                @media (min-width: 768px) { 
+                margin-top: 0; 
+                }
+            }
+        }
+    }
+</style>
