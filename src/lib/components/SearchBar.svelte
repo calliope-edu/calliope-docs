@@ -28,7 +28,7 @@
 <div class="ui icon input">
   <input type="search" placeholder="Suche..." bind:value={inputValue} id="typesense">
   {#if inputValue.length == 0}
-  <i class="search icon"></i>
+    <i class="search icon"></i>
   {/if}
 </div>
 
