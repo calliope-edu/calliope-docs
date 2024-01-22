@@ -113,7 +113,7 @@
           style:font-size="{2 - 0.2 * (levels[idx] - minLevel)}ex" -->
             <!-- <li> -->
               <a href=#{getHeadingIds(heading)}
-              class="item {`level${level}`} group hover:text-calliope"
+              class="item {`level${level}`}"
               class:active={activeHeading === heading}
               on:click|preventDefault={clickHandler(heading)}>
                 {#if level > 0}
@@ -157,7 +157,7 @@
 }
 
   .active {
-    color: var(--color-calliope);
+    color: #005F61;
   }
 
   :where(aside.toc.mobile) {
@@ -175,10 +175,17 @@
   }
 
   .header {
-        color: inherit;
-    }
-    .item.active {
-        color: var(--color-calliope) !important;
+      color: inherit;
+  }
+  .item {
+        color: rgba(0,0,0,.6) !important;
+        &:hover {
+            color: rgba(0,0,0,.9) !important;
+        }
+        &.active {
+        // color: var(--color-calliope) !important;
+        color: #005F61 !important;
+        }
     }
 
   .menu .menu {

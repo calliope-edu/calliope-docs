@@ -37,8 +37,15 @@
     .header {
         color: inherit;
     }
-    .item.active {
-        color: var(--color-calliope) !important;
+    .item {
+        color: rgba(0,0,0,.6) !important;
+        &:hover {
+            color: rgba(0,0,0,.9) !important;
+        }
+        &.active {
+        // color: var(--color-calliope) !important;
+        color: #005F61 !important;
+        }
     }
 
     .menu {
@@ -51,7 +58,8 @@
         border-left: 1px solid #eee;
         &.active {
             border-radius: 0;
-            border-left: 1px solid var(--color-calliope);
+            // border-left: 1px solid var(--color-calliope);
+            border-left: 1px solid #005F61;
         }
     }
   

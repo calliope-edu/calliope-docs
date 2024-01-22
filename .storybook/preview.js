@@ -1,7 +1,7 @@
 import { withThemeByClassName } from '@storybook/addon-styling';
 
 /* TODO: update import to your tailwind styles file. If you're using Angular, inject this through your angular.json config instead */
-import '../src/app.scss';
+import '../src/scss/app.scss';
 /** @type { import('@storybook/svelte').Preview } */
 const preview = {
 	parameters: {

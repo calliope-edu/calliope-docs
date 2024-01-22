@@ -36,8 +36,6 @@
 
 <PageHead title={meta.title} description={meta.description} />
 
-
-
 {#if depth < templatesArray.length}
     {#if TemplateComponent != undefined}
         <svelte:component this={TemplateComponent} {meta}>
