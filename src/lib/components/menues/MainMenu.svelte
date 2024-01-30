@@ -1,4 +1,3 @@
-
 <script>
 	import clsx from 'clsx';
 	import { page } from '$app/stores'
@@ -22,7 +21,6 @@
 		// ]},
 		// {url: '/idee/', name: 'Idee', sub: []},
 		// {url: '/kontakt/', name: 'Kontakt', sub: []},
-		
 	];
 </script>
 

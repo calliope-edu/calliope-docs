@@ -32,8 +32,7 @@
             <DocsMenu {menu} bind:items={items} bind:prev={prev} bind:next={next} bind:currKategorie={currKategorie} />
         </aside>
     </Sticky>
-
-    <div class="background"></div>
+    <!-- <button id="toggle-mobile-menu" class="ui button tiny fluid" style="background-color: #e34c26; color: white;">Menu</button> -->
 
     <article class="">
         <div class="full-flex">
@@ -145,16 +144,6 @@
         display: flex; 
     }
 
-    .background {
-        display: none; 
-        position: fixed; 
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0; 
-        z-index: 10; 
-    }
-
     .docs-menu {
         display: none; 
         position: fixed; 
@@ -201,13 +190,13 @@
             max-width: 56rem; 
 
             @media (min-width: 1024px) { 
-            padding-left: 2rem;
-            padding-right: 2rem; 
-            padding-top: 2rem; 
-            padding-bottom: 4rem; 
+                padding-left: 2rem;
+                padding-right: 2rem; 
+                padding-top: 2rem; 
+                padding-bottom: 4rem; 
             }
             @media (min-width: 1280px) { 
-            padding-bottom: 6rem; 
+                padding-bottom: 6rem; 
             }
 
         }

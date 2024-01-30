@@ -4,6 +4,7 @@
     const versionen = [1,2,3]
 </script>
 
+<div>
 {#if dropdown}
 
   <div class="ui compact tiny menu">
@@ -47,6 +48,7 @@
   </div>
 
 {/if}
+</div>
 
 <style lang="scss">
   .content {

@@ -6,8 +6,60 @@ template: docs
 published: true
 ---
 
+<!-- TODO: Die default einstellungen je Firmware & Calliope mini Version für Yotta (BLE, RAM, ...) aufschlüßeln -->
 
-## CODAL
+<!-- <Versions>
+    <div slot="mini1-2">
+        ## Yotta Target
+            <GitLink repo="calliope-mini/target-calliope-mini-classic-gcc" />
+        ## DAL
+            <GitLink repo="calliope-mini/microbit" />
+    </div>
+    <div slot="mini3">
+        ## CODAL
+            <GitLink repo="codal-microbit-v2" />
+    </div>
+</Versions> -->
+
+## Quellcode für die Firmware des Calliope mini
+
+<UnfoldItem title="Samples" group='A' active>
+
+<Versions>
+
+    <div slot="mini1-2">
+
+        <GitLink repo="calliope-mini/microbit" branch="v2.2.0-rc6-calliope.rc4" size="big" />
+
+        ### Abhängigkeiten
+            - <GitLink repo="calliope-mini/microbit-dal" branch="v2.2.0-rc6-calliope.rc4" />
+
+                - <GitLink repo="calliope-mini/mbed-classic" branch="microbit_hfclk+mb6-calliope-1.0.0" />
+                - <GitLink repo="lancaster-university/BLE_API" branch="v2.5.0+mb3" />
+                - <GitLink repo="lancaster-university/nrf51822" branch="v2.5.0+mb7" />
+                - <GitLink repo="lancaster-university/nrf51-sdk" branch="v2.2.0+mb4" />
+
+
+    </div>
+    <div slot="mini3">
+
+        <GitLink repo="calliope-edu/microbit-v2-samples" branch="calliope" size="big" />
+
+        ### Abhängigkeiten
+
+            - `codal.json`: <GitLink repo="calliope-edu/codal-microbit-v2" branch="v0.2.57-calliope-1.5" inline />
+            - `module.json`: <GitLink repo="calliope-edu/codal-microbit-v2" branch="calliope" inline />
+                - <GitLink repo="calliope-edu/codal-core" branch="mini3_proto2" />
+                - <GitLink repo="lancaster-university/codal-nrf52" branch="master" />
+                - <GitLink repo="microbit-foundation/codal-microbit-nrf5sdk" branch="master" />
+
+
+    </div>
+
+</Versions>
+
+</UnfoldItem>
+<UnfoldItem title="Demoprogramm" group='A'>
 
 ## Demoprogramm
 
@@ -15,9 +67,91 @@ Das Demoprogramm, manchmal auch Startprogramm ist die Calliope mini Firmware. Si
 
 Das Demoprogramm setzt sich aus 3 Teilen zusammen: Der Testroutine, dem Willkommensintro und den 4 Startprogrammen.
 Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, kommt man in das Menü und kann über die Tasten A und B sich durch die vier Programm navigieren: 
+
 - Orakel 
 - Einmal-eins
 - Schere-Stein-Papier
 - Krach-o-meter
 
-## Universal HEX
+<Versions>
+
+    <div slot="mini1-2">
+
+        <!-- TODO -->
+
+    </div>
+    <div slot="mini3">
+
+        <GitLink repo="calliope-edu/microbit-v2-samples" branch="calliope-demo" size="big" />
+
+        ### Abhängigkeiten (identisch zu `Samples`)
+
+            - `codal.json`: <GitLink repo="calliope-edu/codal-microbit-v2" branch="v0.2.57-calliope-1.5" inline />
+            - `module.json`: <GitLink repo="calliope-edu/codal-microbit-v2" branch="calliope" inline />
+                - <GitLink repo="calliope-edu/codal-core" branch="mini3_proto2" />
+                - <GitLink repo="lancaster-university/codal-nrf52" branch="master" />
+                - <GitLink repo="microbit-foundation/codal-microbit-nrf5sdk" branch="master" />
+
+
+    </div>
+
+</Versions>
+
+</UnfoldItem>
+<UnfoldItem title="MakeCode" group='A'>
+
+## MakeCode
+
+<GitLink repo="microsoft/pxt-calliope" branch="master" />
+
+<Versions>
+
+    <div slot="mini1-2">
+
+        ### Yotta Target
+
+        <GitLink repo="calliope-mini/target-calliope-mini-classic-gcc" branch="v1.2.4" />
+
+                - <GitLink repo="lancaster-university/target-mbed-gcc" branch="v0.1.3" />
+
+
+        ### Core Paket
+        
+        <GitLink repo="calliope-mini/microbit" branch="v2.2.0-rc6-calliope.rc5" size="big" />
+
+            - <GitLink repo="calliope-mini/microbit-dal" branch="v2.2.0-rc6-calliope.rc4" />
+
+                - <GitLink repo="calliope-mini/mbed-classic" branch="microbit_hfclk+mb6-calliope-1.0.0" />
+                - <GitLink repo="lancaster-university/BLE_API" branch="v2.5.0+mb3" />
+                - <GitLink repo="lancaster-university/nrf51822" branch="v2.5.0+mb7" />
+                - <GitLink repo="lancaster-university/nrf51-sdk" branch="v2.2.0+mb4" />
+
+
+    </div>
+    <div slot="mini3">
+
+        ### CODAL
+        
+        <GitLink repo="codal-microbit-v2" branch="v0.2.63-calliope-rc1" size="big" />
+
+                - <GitLink repo="calliope-edu/codal-core" branch="mini3_proto2" />
+                - <GitLink repo="lancaster-university/codal-nrf52" branch="master" />
+                - <GitLink repo="microbit-foundation/codal-microbit-nrf5sdk" branch="master" />
+
+
+        ### Core
+        
+        <GitLink repo="lancaster-university/microbit-v2-samples" branch="v0.2.13" size="big" />
+
+            - <GitLink repo="lancaster-university/codal-microbit-v2" branch="master" inline />
+
+                - <GitLink repo="lancaster-university/codal-core" branch="master" />
+                - <GitLink repo="lancaster-university/codal-nrf52" branch="master" />
+                - <GitLink repo="microbit-foundation/codal-microbit-nrf5sdk" branch="master" />
+
+
+    </div>
+
+</Versions>
+
+</UnfoldItem>
