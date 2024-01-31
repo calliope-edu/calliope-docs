@@ -3,7 +3,7 @@
     import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
     import SvelteLogo from '~icons/logos/svelte-icon'
 
-	import Admonition from '../../lib/components/kit-docs/custom/Admonition.svelte';
+	import Admonition from '../../lib/components/elements/Admonition.svelte';
 </script>
 
 <Meta

@@ -1,34 +1,10 @@
-import { error } from '@sveltejs/kit';
-
-import { slugFromPath } from '$lib/util';
+import { loadPage } from '$lib/scripts/pageLoader';
 
 /**
  * @type {import('@sveltejs/kit').PageLoad}
  */
-export async function load({ url, fetch, params }) {
+export async function load({ params }) {
 
-	let Page;
-
-	const pages = await import.meta.globEager(`../../../../content/*/*/{[!index]*,*/index}{.,.de.,.en.}page`)
-
-	let match;
-        for (const [path, resolver] of Object.entries(pages)) {
-            if (slugFromPath(path) === `${params.slug1}/${params.slug2}/${params.slug3}`) {
-                match = [path, resolver];
-                break;
-            }
-        }
-
-        if (!match) {
-            throw error(404);
-        }
-
-	
-    Page = match[1].default;
-	let meta = match[1].metadata ?? {}		
-
-	return {
-		Page,
-		meta
-	};
+   return await loadPage({ params });
+   
 }

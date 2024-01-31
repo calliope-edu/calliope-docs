@@ -1,7 +1,7 @@
 <script>
     import DocsMenuItem from './DocsMenuItem.svelte';
     import { page } from '$app/stores';
-    import { slugFromPath } from '$lib/util';
+    import { slugFromPath } from '$lib/scripts/util.js';
   
     export let prev = null;
     export let next = null;

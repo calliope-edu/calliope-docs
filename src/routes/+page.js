@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
 
-import { slugFromPath } from '$lib/util';
+import { slugFromPath } from '$lib/scripts/util.js';
 
 /**
  * @type {import('@sveltejs/kit').PageLoad}

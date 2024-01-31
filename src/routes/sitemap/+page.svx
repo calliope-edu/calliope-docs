@@ -1,5 +1,5 @@
 <script>
-    import { slugFromPath } from '$lib/util';
+    import { slugFromPath } from '$lib/scripts/util.js';
 
     const modules = import.meta.glob(`../../content/**/[!!]*.page`)
     

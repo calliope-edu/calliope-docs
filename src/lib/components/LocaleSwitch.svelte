@@ -1,5 +1,5 @@
 <script>
-    import { _l } from '$lib/store.js';
+    import { _l } from '$lib/scripts/store.js';
     import { onMount } from "svelte";
 
     function setCookie(name,value,days) {

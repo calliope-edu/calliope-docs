@@ -1,5 +1,5 @@
 <script>
-    import { selectedBoardVersion } from '$lib/store.js';
+    import { selectedBoardVersion } from '$lib/scripts/store.js';
     export let dropdown = false;
     const versionen = [1,2,3]
 </script>

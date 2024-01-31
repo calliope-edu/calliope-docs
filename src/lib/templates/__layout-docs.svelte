@@ -3,6 +3,7 @@
     import DocsMenu from '$lib/components/menues/DocsMenu.svelte';
     import Toc from '$lib/components/menues/Toc.svelte';
     import Sticky from "$lib/components/Sticky.svelte";
+    // import page from '$app/stores/page';
 
     export let currKategorie = null;
     export let items = null;
@@ -82,6 +83,12 @@
                             {/if}
                         </div>
                     </div>
+
+                    <a href="https://github.com/calliope-edu/calliope-docs/edit/PRODUCTION/{meta.filepath}" target="_blank">
+                        <i class="edit icon" />
+                        Diese Seite auf GitHub bearbeiten
+                    </a>
+                    
                 </div>
 
                 <div class="toc-menu-container">
@@ -95,10 +102,10 @@
 
                 </div>
 
-
         </div>
 
     </article>
+    
 
 </div>
 

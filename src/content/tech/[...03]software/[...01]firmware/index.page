@@ -6,60 +6,7 @@ template: docs
 published: true
 ---
 
-<!-- TODO: Die default einstellungen je Firmware & Calliope mini Version für Yotta (BLE, RAM, ...) aufschlüßeln -->
-
-<!-- <Versions>
-    <div slot="mini1-2">
-        ## Yotta Target
-            <GitLink repo="calliope-mini/target-calliope-mini-classic-gcc" />
-        ## DAL
-            <GitLink repo="calliope-mini/microbit" />
-    </div>
-    <div slot="mini3">
-        ## CODAL
-            <GitLink repo="codal-microbit-v2" />
-    </div>
-</Versions> -->
-
-## Quellcode für die Firmware des Calliope mini
-
-<UnfoldItem title="Samples" group='A' active>
-
-<Versions>
-
-    <div slot="mini1-2">
-
-        <GitLink repo="calliope-mini/microbit" branch="v2.2.0-rc6-calliope.rc4" size="big" />
-
-        ### Abhängigkeiten
-            - <GitLink repo="calliope-mini/microbit-dal" branch="v2.2.0-rc6-calliope.rc4" />
-
-                - <GitLink repo="calliope-mini/mbed-classic" branch="microbit_hfclk+mb6-calliope-1.0.0" />
-                - <GitLink repo="lancaster-university/BLE_API" branch="v2.5.0+mb3" />
-                - <GitLink repo="lancaster-university/nrf51822" branch="v2.5.0+mb7" />
-                - <GitLink repo="lancaster-university/nrf51-sdk" branch="v2.2.0+mb4" />
-
-
-    </div>
-    <div slot="mini3">
-
-        <GitLink repo="calliope-edu/microbit-v2-samples" branch="calliope" size="big" />
-
-        ### Abhängigkeiten
-
-            - `codal.json`: <GitLink repo="calliope-edu/codal-microbit-v2" branch="v0.2.57-calliope-1.5" inline />
-            - `module.json`: <GitLink repo="calliope-edu/codal-microbit-v2" branch="calliope" inline />
-                - <GitLink repo="calliope-edu/codal-core" branch="mini3_proto2" />
-                - <GitLink repo="lancaster-university/codal-nrf52" branch="master" />
-                - <GitLink repo="microbit-foundation/codal-microbit-nrf5sdk" branch="master" />
-
-
-    </div>
-
-</Versions>
-
-</UnfoldItem>
-<UnfoldItem title="Demoprogramm" group='A'>
+<!-- Abgrenzung zu https://microbit.org/get-started/user-guide/firmware/ ? Vielleicht ganz auf Firmware als begriff verzichten? -->
 
 ## Demoprogramm
 
@@ -73,36 +20,101 @@ Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, komm
 - Schere-Stein-Papier
 - Krach-o-meter
 
+
+
+<!-- TODO: Die default einstellungen je Firmware & Calliope mini Version für Yotta (BLE, RAM, ...) aufschlüßeln -->
+
+<Versions>
+    <div slot="mini1-2">
+
+        ### Demoprogramm herunterladen
+
+        <Button link="./demo/miniV1-V2_start.hex">Demoprogram Calliope mini 1 & 2 (.hex)</Button>
+        
+        <!-- ### Quellcode
+        <GitLink repo="" branch="" size="big" /> -->
+    </div>
+    <div slot="mini3">
+
+        ### Demoprogramm herunterladen
+
+        <Button link="./demo/miniV3_start.hex">Demoprogram Calliope mini 3 (.hex)</Button>
+
+    </div>
+</Versions>
+
+## Quellcode
+
 <Versions>
 
     <div slot="mini1-2">
 
-        <!-- TODO -->
+        ### Skeleton
+        <GitLink repo="calliope-mini/microbit" branch="v2.2.0-rc6-calliope.rc4" />
 
+        <UnfoldItem title="Abhängigkeiten">
+
+            - <GitLink repo="calliope-mini/microbit-dal" branch="v2.2.0-rc6-calliope.rc4" />
+
+                - <GitLink repo="calliope-mini/mbed-classic" branch="microbit_hfclk+mb6-calliope-1.0.0" />
+                - <GitLink repo="lancaster-university/BLE_API" branch="v2.5.0+mb3" />
+                - <GitLink repo="lancaster-university/nrf51822" branch="v2.5.0+mb7" />
+                - <GitLink repo="lancaster-university/nrf51-sdk" branch="v2.2.0+mb4" />
+
+
+            </UnfoldItem>
     </div>
     <div slot="mini3">
 
-        <GitLink repo="calliope-edu/microbit-v2-samples" branch="calliope-demo" size="big" />
+        ### Demoprogramm:
+        <GitLink repo="calliope-edu/microbit-v2-samples" branch="calliope-demo" />
 
-        ### Abhängigkeiten (identisch zu `Samples`)
+        ### Skeleton:
+        <GitLink repo="calliope-edu/microbit-v2-samples" branch="calliope" />
 
-            - `codal.json`: <GitLink repo="calliope-edu/codal-microbit-v2" branch="v0.2.57-calliope-1.5" inline />
-            - `module.json`: <GitLink repo="calliope-edu/codal-microbit-v2" branch="calliope" inline />
+        <UnfoldItem title="Abhängigkeiten">
+
+            - `codal.json`: <GitLink repo="calliope-edu/codal-microbit-v2" branch="v0.2.57-calliope-1.5" />
+            - `module.json`: <GitLink repo="calliope-edu/codal-microbit-v2" branch="calliope" />
                 - <GitLink repo="calliope-edu/codal-core" branch="mini3_proto2" />
                 - <GitLink repo="lancaster-university/codal-nrf52" branch="master" />
                 - <GitLink repo="microbit-foundation/codal-microbit-nrf5sdk" branch="master" />
 
 
+        </UnfoldItem>
     </div>
+
+    <UnfoldItem title="Kompilieren">
+
+          ### Docker 
+          Mit einem Docker Image kann die für das Kompilieren benötigte Toolchain genutzt werden, ohne alle Programme einzeln zu installieren
+
+          Ein passendes Docker Image findet sich unter <GitLink repo="carlosperate/docker-microbit-toolchain" inline />. Dort ist auch die verwendung ausführlich beschrieben.
+
+          Über die im Ordner `/docker` hinterlegten Scripte kann das Docker image auch automatisiert geladen und die gewünschten Befehle ausgeführt werden:
+
+          #### Yotta
+          Windows Powershell: `./docker/toolchain.bat yotta build`<br>
+          Unix: `./docker/toolchain.sh yotta build`
+
+          #### Build.py
+          Windows Powershell: `./docker/toolchain.bat ./build.py`<br>
+          Unix: `./docker/toolchain.sh ./build.py`
+
+    </UnfoldItem>
 
 </Versions>
 
-</UnfoldItem>
-<UnfoldItem title="MakeCode" group='A'>
+
+<UnfoldItem title="MakeCode">
 
 ## MakeCode
 
-<GitLink repo="microsoft/pxt-calliope" branch="master" />
+Je nach Editor kann die in dem Programm verwendete Firmware abweichen.
+Die in MakeCode verwendeten Abhängigkeiten können direkt dem GitHub repository entnommen:
+ <GitLink repo="microsoft/pxt-calliope" branch="master" />
+
+ Für die derzeit aktuelle MakeCode Version sind die Abhängigkeiten hier noch ein mal aufgeführt:
 
 <Versions>
 

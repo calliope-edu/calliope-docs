@@ -19,12 +19,12 @@ const scripts = `
     import UnfoldItem from '$lib/components/elements/UnfoldItem.svelte'
 
     // Import KitDocs components https://github.com/svelteness/kit-docs/
-    import Admonition from '$lib/components/kit-docs/custom/Admonition.svelte';
-    import No from '$lib/components/kit-docs/custom/No.svelte';
-    import Yes from '$lib/components/kit-docs/custom/Yes.svelte';
-    import Step from '$lib/components/kit-docs/custom/Step.svelte';
-    import Steps from '$lib/components/kit-docs/custom/Steps.svelte';
-    import TabbedLinks from '$lib/components/kit-docs/custom/TabbedLinks.svelte';
+    import Admonition from '$lib/components/elements/Admonition.svelte';
+    import No from '$lib/components/elements/No.svelte';
+    import Yes from '$lib/components/elements/Yes.svelte';
+    import Step from '$lib/components/elements/Step.svelte';
+    import Steps from '$lib/components/elements/Steps.svelte';
+    import TabbedLinks from '$lib/components/elements/TabbedLinks.svelte';
 `;
 
 const RE_SCRIPT_START =

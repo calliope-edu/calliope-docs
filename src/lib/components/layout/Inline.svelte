@@ -3,7 +3,8 @@
 </script>
 
 <div class="container flex justify-{align} items-center">
-<slot></slot></div>
+	<slot />
+</div>
 
 <style>
 	.container > h1 {
