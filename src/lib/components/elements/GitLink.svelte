@@ -9,7 +9,7 @@
     $: elm = (inline? 'span' : 'p');
 </script>
 <svelte:element this={elm}>
-    <a href={link} target="_blank" class="ui label {size}">
+    <a href={link} target="_blank" class="ui blue image label {size}">
         <i class="github icon"></i>
             {repo}
         {#if branch}

@@ -6,7 +6,7 @@ template: docs
 published: true
 ---
 
-<!-- Abgrenzung zu https://microbit.org/get-started/user-guide/firmware/ ? Vielleicht ganz auf Firmware als begriff verzichten? -->
+<!-- https://microbit.org/get-started/user-guide/firmware/ -->
 
 ## Demoprogramm
 
@@ -84,24 +84,22 @@ Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, komm
         </UnfoldItem>
     </div>
 
-    <UnfoldItem title="Kompilieren">
+    ### Kompilieren
 
-          ### Docker 
+          #### Docker 
           Mit einem Docker Image kann die für das Kompilieren benötigte Toolchain genutzt werden, ohne alle Programme einzeln zu installieren
 
           Ein passendes Docker Image findet sich unter <GitLink repo="carlosperate/docker-microbit-toolchain" inline />. Dort ist auch die verwendung ausführlich beschrieben.
 
           Über die im Ordner `/docker` hinterlegten Scripte kann das Docker image auch automatisiert geladen und die gewünschten Befehle ausgeführt werden:
 
-          #### Yotta
+          ##### Yotta
           Windows Powershell: `./docker/toolchain.bat yotta build`<br>
           Unix: `./docker/toolchain.sh yotta build`
 
-          #### Build.py
+          ##### Build.py
           Windows Powershell: `./docker/toolchain.bat ./build.py`<br>
           Unix: `./docker/toolchain.sh ./build.py`
-
-    </UnfoldItem>
 
 </Versions>
 
@@ -129,7 +127,7 @@ Die in MakeCode verwendeten Abhängigkeiten können direkt dem GitHub repository
 
         ### Core Paket
         
-        <GitLink repo="calliope-mini/microbit" branch="v2.2.0-rc6-calliope.rc5" size="big" />
+        <GitLink repo="calliope-mini/microbit" branch="v2.2.0-rc6-calliope.rc5" />
 
             - <GitLink repo="calliope-mini/microbit-dal" branch="v2.2.0-rc6-calliope.rc4" />
 
@@ -144,7 +142,7 @@ Die in MakeCode verwendeten Abhängigkeiten können direkt dem GitHub repository
 
         ### CODAL
         
-        <GitLink repo="codal-microbit-v2" branch="v0.2.63-calliope-rc1" size="big" />
+        <GitLink repo="codal-microbit-v2" branch="v0.2.63-calliope-rc1" />
 
                 - <GitLink repo="calliope-edu/codal-core" branch="mini3_proto2" />
                 - <GitLink repo="lancaster-university/codal-nrf52" branch="master" />
@@ -153,7 +151,7 @@ Die in MakeCode verwendeten Abhängigkeiten können direkt dem GitHub repository
 
         ### Core
         
-        <GitLink repo="lancaster-university/microbit-v2-samples" branch="v0.2.13" size="big" />
+        <GitLink repo="lancaster-university/microbit-v2-samples" branch="v0.2.13" />
 
             - <GitLink repo="lancaster-university/codal-microbit-v2" branch="master" inline />
 
