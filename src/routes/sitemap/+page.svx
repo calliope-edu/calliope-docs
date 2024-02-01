@@ -26,8 +26,10 @@
     <ul>
         {#each sitemap as page}
             <li>
-                <a href="../{page.slug}">{page.slug}</a>
-                <a href="../{page.slug}.json">{page.slug}.json</a>
+                <a href="/{page.slug}">/{page.slug}</a>
+                <a href="/{page.slug}.json">/{page.slug}.json</a>
+                <a href="/de/{page.slug}.json">/de/{page.slug}.json</a>
+                <a href="/en/{page.slug}.json">/en/{page.slug}.json</a>
             </li>
         {/each}
     </ul>
