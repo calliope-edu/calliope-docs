@@ -29,7 +29,7 @@
   
     async function getMenuItems() {
       let menuItems = await fetch(`/${menu}.json`).then((res) => res.json());
-      console.log(menu)
+      console.log(menuItems)
       for (var item of menuItems) {
         const url = `/${lang}/${item.slug}.json`;
         const kategorieItems = await fetch(url).then((res) => res.json());

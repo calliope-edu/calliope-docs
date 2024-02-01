@@ -23,7 +23,6 @@
 
 </script>
 <main>
-    ok
     <ul>
         {#each sitemap as page}
             <li>
