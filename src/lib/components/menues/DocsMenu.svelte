@@ -29,7 +29,7 @@
   
     async function getMenuItems() {
       let menuItems = await fetch(`/${menu}.json`).then((res) => res.json());
-      console.log(menuItems)
+      // console.log(menuItems)
       for (var item of menuItems) {
         const url = `/${lang}/${item.slug}.json`;
         const kategorieItems = await fetch(url).then((res) => res.json());
@@ -53,7 +53,7 @@
           return filename.startsWith(`${menu}/`);
         });
 
-        console.log(matchesCurrentPath)
+        // console.log(matchesCurrentPath)
   let matches = {};
 
 	matchesCurrentPath.forEach(([path, value]) => {
@@ -75,7 +75,7 @@
 		}
 	});
 
-  console.log(matches)
+  // console.log(matches)
   
     for (let [path] of Object.entries(matches)) {
       const slug = slugFromPath(path);

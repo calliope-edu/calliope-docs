@@ -29,8 +29,6 @@
   import "../scss/app.scss";
 
   $: currentPath = `${$page.url.pathname}${$page.url.search}`.replace(/^\/(en|de)\//, '/');
-
-  console.log($page)
   
 </script>
 
@@ -42,7 +40,7 @@
 </svelte:head>
 
 <div>
-  {currentPath}
+
 <PageHeader />
 
 <slot />
