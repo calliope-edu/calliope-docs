@@ -2,4 +2,5 @@
 # Tell Google not to crawl any URLs in the dummy urls,
 # because they won't be useful in Google Search results.
 User-agent: *
+Disallow: *
 Disallow: /1/
