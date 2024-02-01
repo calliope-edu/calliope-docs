@@ -19,7 +19,7 @@
     let allPages = [];
     let posts = [];
   
-    $: active = $page.url.pathname;
+    $: active = $page.url.pathname.replace(/^\/(en|de)\//, '/');
     $: currentIndex = allPagesFlat.findIndex(x => ('/'+x.slug+'/' === active || '/'+x.slug === active || active.startsWith('/'+x.slug+'/')));
     $: currKategorie = allPages?.find(x => ( (active).startsWith('/'+x?.slug) ));
   

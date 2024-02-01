@@ -1,8 +1,8 @@
-
 <script>
     import DocsMenu from '$lib/components/menues/DocsMenu.svelte';
     import Toc from '$lib/components/menues/Toc.svelte';
     import Sticky from "$lib/components/Sticky.svelte";
+    import { _l, _l_path } from '$lib/scripts/store.js';
     // import page from '$app/stores/page';
 
     export let currKategorie = null;
@@ -58,7 +58,7 @@
 
                         <div>
                             {#if  prev != null}
-                                <a data-sveltekit-prefetch class="ui horizontal card" href="/{prev?.slug}/">
+                                <a data-sveltekit-prefetch class="ui horizontal card" href="/{$_l_path}{prev?.slug}/">
                                     <div class="content">
                                         <div class="meta">Vorherige</div>
                                         <div class="header">
@@ -72,7 +72,7 @@
 
                         <div>
                             {#if  next != null}
-                                <a data-sveltekit-prefetch class="ui horizontal card" href="/{next?.slug}/" style="text-align:right;">
+                                <a data-sveltekit-prefetch class="ui horizontal card" href="/{$_l_path}{next?.slug}/" style="text-align:right;">
                                     <div class="content">
                                         <div class="meta">Nächste</div>
                                         <div class="header">
