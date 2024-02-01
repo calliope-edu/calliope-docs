@@ -17,14 +17,14 @@ export async function loadPage({ params }) {
     //const baseGlob = `$lib/../content/${'*'.repeat(depth)}{[!index]*,*/index}`;
     
 	const pagesMap = {
-     'de': import.meta.globEager(`$lib/../content/**/{[!!][!index]*,*/index}{.,.de.}page`),
-     'en': import.meta.globEager(`$lib/../content/**/{[!!][!index]*,*/index}.en.page`)
+     'de': import.meta.globEager(`$lib/../{content/**/,content}{[!!][!index]*,*/index}{.,.de.}page`),
+     'en': import.meta.globEager(`$lib/../{content/**/,content}{[!!][!index]*,*/index}.en.page`)
     };
 
 	let match;
 
     for (const [path, resolver] of Object.entries(pagesMap[lang])) {
-        if (slugFromPath(path) === `${slugArray.join('/')}`) {
+        if (slugFromPath(path) === `${slugArray.join('/')}` || `${slugArray.join('/')}` == '' && slugFromPath(path) == 'index') {
             match = [path, resolver];
             break;
         }
@@ -32,7 +32,8 @@ export async function loadPage({ params }) {
 
     if (!match && lang != 'de') {
         for (const [path, resolver] of Object.entries(pagesMap['de'])) {
-            if (slugFromPath(path) === `${slugArray.join('/')}`) {
+            // console.log('slug:', slugFromPath(path))
+            if (slugFromPath(path) === `${slugArray.join('/')}` || `${slugArray.join('/')}` == '' && slugFromPath(path) == 'index') {
                 match = [path, resolver];
                 break;
             }
@@ -40,6 +41,7 @@ export async function loadPage({ params }) {
     }
 
     if (!match) {
+        // console.log('test', slugArray.join('/'))
         throw error(404);
     }
 	

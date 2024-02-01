@@ -28,7 +28,8 @@
 
   import "../scss/app.scss";
 
-  $: currentPath = `${$page.url.pathname}${$page.url.search}`.replace(/^\/(en|de)\//, '/');
+  // $: currentPath = `${$page.url.pathname}${$page.url.search}`.replace(/^\/(en|de)\//, '/');
+  $: currentPath = `${$page.url.pathname}`.replace(/^\/(en|de)\//, '/');
   
 </script>
 

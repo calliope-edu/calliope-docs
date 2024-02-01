@@ -43,7 +43,7 @@
   
     const menuItems = getMenuItems();
 
-    const pages = import.meta.globEager(`$lib/../content/**/{[!!][!index]*,*/index}{.,.de.,.en.}page`);
+    const pages = import.meta.globEager(`$lib/../{content/**/,content}{[!!][!index]*,*/index}{.,.de.,.en.}page`);
   
     // Dummy menu for SSR
     const matchesCurrentPath = Object.entries(pages)

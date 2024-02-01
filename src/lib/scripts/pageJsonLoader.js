@@ -4,7 +4,7 @@ export async function loadJson({ params }) {
     const slugArray = Object.values(params);
     let lang = 'de';
 
-	const modules = import.meta.glob(`$lib/../content/**/{[!!][!index]*,*/index}{.,.de.,.en.}page`)
+	const modules = import.meta.glob(`$lib/../{content/**/,content}{[!!][!index]*,*/index}{.,.de.,.en.}page`)
 
     if(slugArray[0] == 'de') {
         slugArray.shift();

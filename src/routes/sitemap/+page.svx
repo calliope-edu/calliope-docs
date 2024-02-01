@@ -1,7 +1,7 @@
 <script>
     import { slugFromPath } from '$lib/scripts/util.js';
 
-    const modules = import.meta.glob(`../../content/**/[!!]*.page`)
+    const modules = import.meta.glob(`../../{content/**/,content}[!!]*.page`)
     
 	let posts = [];
 
