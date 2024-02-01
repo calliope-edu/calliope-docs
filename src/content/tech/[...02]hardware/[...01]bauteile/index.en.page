@@ -1,0 +1,181 @@
+---
+title: Parts
+docTitle: Hardware
+description: Good description of topic
+template: docs
+published: true
+---
+
+<script>
+    import V1Datenblatt from './v1.svx';
+    import V2Datenblatt from './v2.svx';
+    import V3Datenblatt from './v3.svx';
+</script>
+
+## Überblick
+<Versions>
+    <div slot="mini1">
+        <V1Datenblatt />
+    </div>
+    <div slot="mini2">
+        <V2Datenblatt />
+    </div>
+    <div slot="mini3">
+        <V3Datenblatt />
+    </div>
+</Versions>
+
+## Anwendungsprozessor
+
+
+<Versions>
+
+    <div slot="mini1-2">
+
+        Nordic nRF51822
+
+    - 256kB Flash, 16kB RAM
+
+
+    </div>
+    <div slot="mini3">
+        NRF52833-QIAA-R
+    </div>
+
+    - Führt Programme aus und ist an alle Komponenten des mini angeschlossen
+    - Memory Size: 512kB Flash, 128kB RAM
+    - Serial Interfaces: ADC, I²S, PWM, SPI, UART, USB
+    - Bluetooth-Antenne, Temperaturmessung
+
+
+</Versions>
+
+
+----
+
+## Interfaceprozessor
+
+<Versions>
+    <div slot="mini1">
+        NXP KL26z
+    </div>
+    <div slot="mini2">
+        NXP KL26z
+
+        wegen Bauteilverknappung wurde in der Mini Version 2.1 der Prozessor gegen den
+        Raspberry Pi RP2040 Dual-core Arm Cortex-M0+ Prozessor ausgetauscht 
+    
+    </div>
+    <div slot="mini3">
+        NRF52833-QIAA-R
+    </div>
+
+    - empfängt das Programm über USB und läd es auf den Anwendungsprozessor
+    - stellt eine serielle Verbindung zum Anwendungsprozessor her (Virtual COM Port) 
+    - kein Bluetooth
+    
+</Versions>
+
+----
+
+## LED-Matrix
+
+Auf der LED-Matrix des Calliope mini befinden sich 5 x 5 = 25 rote LEDs, mit denen nicht nur Zahlen und Texte, sondern auch Bilder und sogar Animationen dargestellt werden. Die Helligkeit der einzelnen Pixel kann verändert werden. 
+
+### Lichtmessung
+
+----
+
+## Tasten
+
+Auf dem Calliope mini befinden sich 3 Tasten.
+**Taste A und B** sind programmierbare Tasten. Als Eingabe können mit ihnen Programmabläufe gesteuert werden. Die **Reset-Taste** ist nicht programmierbar. Sie ist dauerhaft in der Firmware implementiert und dient dazu das Programm auf dem Calliope mini neu zu starten.
+
+----
+
+## Lagesensor
+
+- LSM303AGR
+- über I2C angebunden
+- 3-Achsen Accelerometer, 3-Achsen Magnetometer, 2 Achsen-Kreiselsensor
+- Link zum Datenblatt 
+
+----
+
+## RGB-LEDs
+
+WS2812C-2020
+
+Der Calliope mini hat drei integrierte RGB-LEDs, die 255 Farben pro Farbkanal (rot, grün, blau) darstellen können. Dies entspricht 256^3 = 16 777 216 Farben.
+Bei den RGB-LEDs handelt es sich um adressierbare Pixel, sogenannte Neopixels. Das sind spezielle individuell programmierbare RGB-LEDs, ähnlich wie die einzelnen Pixel auf einem Display.
+
+----
+
+## Lautsprecher
+
+MLT-8530
+
+----
+
+## Mikrofon
+
+SPU0410HR5H-PB
+
+Mit dem MEMS-Mikrofon kann die der Schalldruckpegel (SPL) und die Lautstärke gemessen werden.
+
+----
+
+## Motortreiber
+
+<Versions>
+    <div slot="mini1-2">
+        DRV8837
+
+        Der Motortreiber für die Calliope mini Versionen 1 und 2 ist der DRV8837 Der Motortreiber besteht aus einer H-Brückenschaltung. Es kann damit ein Motor 
+        Es können bis zu zwei Motoren angeschlossen werden. Wird ein Motor angeschlossen, können alle Motormodi verwendet werden. Werden zwei Motoren angeschlossen, dann müssen sich diese die H-Brücke teilen und die Motoren können nur beide gleichzeitig vor- oder zurückfahren, aber nicht entgegengesetzt laufen. 
+     
+        **Ein Motor Logik:**
+
+        | IN1 | IN2 | OUT1 | OUT2  | Modus     |
+        |-----|-----|------|-------|-----------|
+        | 0   | 0   | Z    | Z     | Leerlauf  |
+        | 0   | 1   | L    | H     | Rückwärts |
+        | 1   | 0   | H    | L     | Vorwärts  |
+        | 1   | 1   | L    | L     | Bremsen   |
+
+
+
+*H = High-Side-Schalter an, L = Low-Side-Schalter an, Z = Beide Schalter aus*
+
+         [Datenblatt DRV8837](https://www.ti.com/lit/ds/symlink/drv8837.pdf?ts=1654067963185&ref_url=https%253A%252F%252Fwww.google.com%252F)
+     
+         **Zwei Motoren Logik:**
+
+         | IN1 | IN2 | OUT1 | OUT2  | Motor1        | Motor2        |
+         |-----|-----|------|-------|---------------|---------------|
+         | 0   | 0   | Z    | Z     | Bremsen       | Bremsen       |
+         | 0   | 1   | L    | H     | Beschleunigen | Bremsen       |
+         | 1   | 0   | H    | L     | Bremsen       | Beschleunigen |
+         | 1   | 1   | L    | L     | Vorwärts      | Vorwärts      |
+
+*H = High-Side-Schalter an, L = Lowside-Schalter an, Z = Beide Schalter aus*
+
+    </div>
+    <div slot="mini3">
+        DRV8835
+
+Dieser Motortreiber besitzt 2 seperate H-Brücken Treiber und kann damit 2 Gleichspannungsmotoren von einander unabhängig steuern. Die maximale Eingangspannung beträgt 9V, der maximale Strom pro Motor beträgt 1.5A.
+Hier findest du einen Link zum [Datenblatt](https://www.ti.com/lit/ds/symlink/drv8835.pdf?ts=1697459375123)
+**Kurz Infos:**
+- Steuert 2 Motoren, jeder Motor kann jeweils vorwärts und rückwärts betätigt werden
+- Die Motoren können an der Steckleiste bei
+- maximale Eingangsspannung 9V; maximaler Strom 1,5A pro Motor
+- Wird im Phase/Enable Modus (Mode=1) betrieben, d.h. in der Firmware steuert ein digitales Signal die Motorenrichtung und über ein [PWM](https://de.wikipedia.org/wiki/Pulsdauermodulation) Signal die Geschwindigkeit 
+
+
+
+Weitere Informationen sowie Schaltplan, Blockschaltbild & Pinbelegung fndest du **[Hier](https://calliope-mini.github.io/v20/)** 
+    </div>
+</Versions>
+
+

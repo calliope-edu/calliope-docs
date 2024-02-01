@@ -1,59 +1,9 @@
-// @migration task: Check imports
-export const _folderFromPath = (path) => path.match(/([\w-]+)\/(\/index)?\.(svelte\.md|md|svx|page)/i)?.[1] ?? null;
 export const prerender = true;
 
-import { slugFromPath,  } from '$lib/scripts/util.js';
-// import { page } from '$app/stores';
-
-
-// const pathname = $page.url.pathname;
+import { loadJson } from '$lib/scripts/pageJsonLoader.js';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
-export async function GET({ url, params }) {
-	let modules = [];
-	let folder = '';
-	if(params.slug1 === 'index'){
-		modules = {...import.meta.glob(`../../content/[!!]{[!index]*,*/index}{.,.de.,.en.}page`)}
-	} else {
-		folder = `${params.slug1}/`
-		modules = {...import.meta.glob(`../../content/[!!]*/[!!]{[!index]*,*/index}{.,.de.,.en.}page`)}
-	}
-
-	let matches = Object.fromEntries(
-		Object.entries(modules).filter(([path, resolver]) => {
-			let filename = slugFromPath(path);
-			return (filename.startsWith(folder))
-		}
-	));
-
-	// const limit = Number(url.searchParams.get('limit') ?? Infinity);
-	// const orderBy = Number(url.searchParams.get('orderBy') ?? null);
-	const limit = Infinity;
-	const orderBy = null;
-
-	if (Number.isNaN(limit)) {
-		return {
-			status: 400
-		};
-	}
-	let posts = [];
-
-	for (let [path, resolver] of Object.entries(matches)) {
-		const slug = slugFromPath(path);
-		const Page = await resolver();
-		const PageRendered = Page.default.render() // Make sure rehype plugins are parsed
-		let pageMeta = ({
-				slug,
-				...Page.metadata
-			})
-		posts.push(pageMeta);
-	}
-
-	const publishedPosts = posts.filter((post) => post.published).slice(0, limit);
-
-	// if(orderBy != undefined) {
-	// 	publishedPosts.sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1));
-	// }
-
-	return new Response(JSON.stringify(publishedPosts.slice(0, limit)));
+export async function GET({ params }) {
+	
+	return new Response(await loadJson({ params }));
 }

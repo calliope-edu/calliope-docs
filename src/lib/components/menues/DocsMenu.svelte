@@ -6,8 +6,14 @@
     export let prev = null;
     export let next = null;
     export let currKategorie = null;
-    export let menu = '/';
+    export let menu = '';
     export let items = null;
+    let lang = 'de';
+
+    const firstSlug = $page.params.slug1;
+    if(firstSlug == 'en' || firstSlug == 'de') {
+      lang = firstSlug;
+    }
   
     let allPagesFlat = [];
     let allPages = [];
@@ -23,9 +29,9 @@
   
     async function getMenuItems() {
       let menuItems = await fetch(`/${menu}.json`).then((res) => res.json());
-  
+      console.log(menu)
       for (var item of menuItems) {
-        const url = `/${item.slug}.json`;
+        const url = `/${lang}/${item.slug}.json`;
         const kategorieItems = await fetch(url).then((res) => res.json());
         item.subpages = kategorieItems;
         allPagesFlat = [...allPagesFlat, ...item.subpages];
@@ -36,16 +42,40 @@
     }
   
     const menuItems = getMenuItems();
+
+    const pages = import.meta.globEager(`$lib/../content/**/{[!!][!index]*,*/index}{.,.de.,.en.}page`);
   
     // Dummy menu for SSR
-    const matches = Object.fromEntries(
-      Object.entries(import.meta.glob(`../../../content/{,*/,*/*/,*/*/*/,*/*/*/*/}{[!index]*,*/index}{.,.de.,.en.}page`))
+    const matchesCurrentPath = Object.entries(pages)
         .sort(([pathA], [pathB]) => pathB.localeCompare(pathA))
         .filter(([path, resolver]) => {
           const filename = slugFromPath(path);
           return filename.startsWith(`${menu}/`);
-        })
-    );
+        });
+
+        console.log(matchesCurrentPath)
+  let matches = {};
+
+	matchesCurrentPath.forEach(([path, value]) => {
+		const pathWithoutLang = path.replace(/\.de\.|\.en\./, '.');
+		const isCurrentLanguagePath = path.includes(`.${lang}.page`);
+		const isLanguagePath = /(\.de\.|\.en\.)page/.test(path);
+		const currentLangPath = pathWithoutLang.replace(/\.page/, `.${lang}.page`)
+
+		// Stop if current lang is allready in the array, or if it is a language path for another language
+		if (matches[currentLangPath] || (isLanguagePath && !isCurrentLanguagePath)) {
+			return;
+		} else if(isCurrentLanguagePath) {
+			matches[path] = value;
+			if (matches[pathWithoutLang]) {
+				delete matches[pathWithoutLang];
+			}
+		} else {
+			matches[path] = value;
+		}
+	});
+
+  console.log(matches)
   
     for (let [path] of Object.entries(matches)) {
       const slug = slugFromPath(path);

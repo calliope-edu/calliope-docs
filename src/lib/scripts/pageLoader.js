@@ -5,18 +5,37 @@ import { slugFromPath } from '$lib/scripts/util.js';
 export async function loadPage({ params }) {
 
     const slugArray = Object.values(params);
+    let lang = 'de';
+
+    if(slugArray[0] == 'de') {
+        slugArray.shift();
+    } else if(slugArray[0] == 'en') {
+        lang = 'en';
+        slugArray.shift();
+    }
     //const depth = slugArray.length;
     //const baseGlob = `$lib/../content/${'*'.repeat(depth)}{[!index]*,*/index}`;
     
-    console.log(slugArray)
+	const pagesMap = {
+     'de': import.meta.globEager(`$lib/../content/**/{[!!][!index]*,*/index}{.,.de.}page`),
+     'en': import.meta.globEager(`$lib/../content/**/{[!!][!index]*,*/index}.en.page`)
+    };
 
-	const pages = await import.meta.globEager(`$lib/../content/**/{[!index]*,*/index}{.,.de.,.en.}page`)
 	let match;
 
-    for (const [path, resolver] of Object.entries(pages)) {
+    for (const [path, resolver] of Object.entries(pagesMap[lang])) {
         if (slugFromPath(path) === `${slugArray.join('/')}`) {
             match = [path, resolver];
             break;
+        }
+    }
+
+    if (!match && lang != 'de') {
+        for (const [path, resolver] of Object.entries(pagesMap['de'])) {
+            if (slugFromPath(path) === `${slugArray.join('/')}`) {
+                match = [path, resolver];
+                break;
+            }
         }
     }
 

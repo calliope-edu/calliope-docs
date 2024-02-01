@@ -1,13 +1,26 @@
 <script>
     export let item;
     export let active;
+
+    import { page } from '$app/stores';
+    let lang = 'de';
+    const firstSlug = $page.params.slug1;
+    if(firstSlug == 'en' || firstSlug == 'de') {
+        lang = firstSlug;
+    }
+
+    let regex = new RegExp(`^/?(${lang}/)?${item.slug}(/.*)?$`)
+    console.log(regex)
+    console.log(active)
+    console.log(regex.test(active))
 </script>
 
     <div class="item">
-        <a class="header" href="/{item.slug}/" on:click={()=>{active = '/'+item.slug;}} class:active={active === '/'+item.slug || active === '/'+item.slug+'/'}>{item.title}</a>
+        <a class="header" href="/{item.slug}/" on:click={()=>{active = '/'+item.slug;}} class:active={regex.test(active)}>{item.title}</a>
         <div class="menu">
             {#each item.subpages as page, i}
-                <a data-sveltekit-prefetch href="/{page.slug}/" class="item" class:active={active.startsWith('/'+page.slug)} on:click={()=>{active = '/'+page.slug;}}>
+            {@const regexSub = new RegExp(`^/?(${lang}/)?${page.slug}(/.*)?$`)}
+                <a data-sveltekit-prefetch href="/{page.slug}/" class="item" class:active={regexSub.test(active)} on:click={()=>{active = '/'+page.slug;}}>
                     {page.title}
                 </a>
             {/each}
@@ -17,6 +30,9 @@
 <style lang="scss">
     .header {
         color: inherit;
+        &.active {
+            color: #005F61 !important;
+        }
     }
     .item {
         color: rgba(0,0,0,.6) !important;
