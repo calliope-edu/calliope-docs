@@ -3,10 +3,11 @@ import { error } from '@sveltejs/kit';
 import { slugFromPath } from '$lib/scripts/util.js';
 
 export async function loadPage({ params }) {
-
-    const slugArray = Object.values(params);
+    const slugArray = params.slugs.split('/').filter((str) => str !== "");;
+    // console.log(slugArray)
+    // const slugArray = Object.values(params);
+    
     let lang = 'de';
-
     if(slugArray[0] == 'de') {
         slugArray.shift();
     } else if(slugArray[0] == 'en') {

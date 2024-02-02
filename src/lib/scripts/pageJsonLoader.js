@@ -1,17 +1,19 @@
 import { slugFromPath,  } from '$lib/scripts/util.js';
 
 export async function loadJson({ params }) {
-    const slugArray = Object.values(params);
-    let lang = 'de';
-
-	const modules = import.meta.glob(`$lib/../{content/**/,content}{[!!][!index]*,*/index}{.,.de.,.en.}page`)
-
+	const slugArray = params.slugs.split('/');
+    // const slugArray = Object.values(params);
+	
+	let lang = 'de';
     if(slugArray[0] == 'de') {
         slugArray.shift();
     } else if(slugArray[0] == 'en') {
 		lang = 'en';
         slugArray.shift();
     }
+
+
+	const modules = import.meta.glob(`$lib/../{content/**/,content}{[!!][!index]*,*/index}{.,.de.,.en.}page`)
 
     const regex = new RegExp(`^${slugArray.join('/')}/[^/]+$`);
 
