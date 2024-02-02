@@ -10,9 +10,10 @@
     export let meta;
 
     $: pages = (currKategorie != null) ? currKategorie.subpages : items
-    $: currTitle = (currKategorie != null) ? currKategorie.title
-                    : (meta.docTitle) ?  meta.docTitle
-                    : meta.title
+    $: console.log('pages', pages, currKategorie, items)
+    // $: currTitle = (currKategorie != null) ? currKategorie.title
+    //                 : (meta.docTitle) ?  meta.docTitle
+    //                 : meta.title
 </script>
 
 <DocsLayout bind:currKategorie={currKategorie} bind:items={items} {meta}>

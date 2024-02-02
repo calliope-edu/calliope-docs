@@ -16,19 +16,16 @@
   
     $: active = $page.url.pathname.replace(/^\/((en|de)\/)?/, '');
     $: currentIndex = allPagesFlat.findIndex(x => ('/'+x.slug+'/' === active || '/'+x.slug === active || active.startsWith('/'+x.slug+'/')));
-    $: currKategorie = allPages?.find(x => ( (active).startsWith('/'+x?.slug) ));
-  
+    $: currKategorie = allPages?.find(x => ( (active).startsWith(x?.slug) ));
+    
     $: prev = (allPagesFlat.length > 0) ? allPagesFlat[currentIndex-1] : null;
     $: curr = allPagesFlat[currentIndex] ?? null;
     $: next = (currentIndex < allPagesFlat.length) ? allPagesFlat[currentIndex+1] : null;
   
     async function getMenuItems() {
       let menuItems = await fetch(`/${menu}.json`).then((res) => res.json());
-      // console.log(`/${menu}.json`)
-      // console.log(menuItems)
       for (var item of menuItems) {
         const url = `${$_lang.path}${item.slug}.json`;
-        // console.log(url)
         const kategorieItems = await fetch(url).then((res) => res.json());
         item.subpages = kategorieItems;
         allPagesFlat = [...allPagesFlat, ...item.subpages];
