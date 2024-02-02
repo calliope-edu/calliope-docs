@@ -1,5 +1,5 @@
 <script>
-  import { _l, _l_path } from '$lib/scripts/store.js';
+  import { _lang } from '$lib/scripts/store.js';
     import DocsMenuItem from './DocsMenuItem.svelte';
     import { page } from '$app/stores';
     import { slugFromPath } from '$lib/scripts/util.js';
@@ -24,11 +24,11 @@
   
     async function getMenuItems() {
       let menuItems = await fetch(`/${menu}.json`).then((res) => res.json());
-      console.log(`/${menu}.json`)
+      // console.log(`/${menu}.json`)
       // console.log(menuItems)
       for (var item of menuItems) {
-        const url = `/${$_l_path}${item.slug}.json`;
-        console.log(url)
+        const url = `${$_lang.path}${item.slug}.json`;
+        // console.log(url)
         const kategorieItems = await fetch(url).then((res) => res.json());
         item.subpages = kategorieItems;
         allPagesFlat = [...allPagesFlat, ...item.subpages];
@@ -55,9 +55,9 @@
 
 	matchesCurrentPath.forEach(([path, value]) => {
 		const pathWithoutLang = path.replace(/\.de\.|\.en\./, '.');
-		const isCurrentLanguagePath = path.includes(`.${$_l}.page`);
+		const isCurrentLanguagePath = path.includes(`.${$_lang.code}.page`);
 		const isLanguagePath = /(\.de\.|\.en\.)page/.test(path);
-		const currentLangPath = pathWithoutLang.replace(/\.page/, `.${$_l}.page`)
+		const currentLangPath = pathWithoutLang.replace(/\.page/, `.${$_lang.code}.page`)
 
 		// Stop if current lang is allready in the array, or if it is a language path for another language
 		if (matches[currentLangPath] || (isLanguagePath && !isCurrentLanguagePath)) {

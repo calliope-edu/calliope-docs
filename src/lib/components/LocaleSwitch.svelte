@@ -1,95 +1,48 @@
 <script>
-    import { _l, _l_path } from '$lib/scripts/store.js';
-    import { onMount } from "svelte";
 
-    function setCookie(name,value,days) {
-        var expires = "";
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + (days*24*60*60*1000));
-            expires = "; expires=" + date.toUTCString();
-        }
-        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
-    }
-    function getCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0;i < ca.length;i++) {
-            var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1,c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-        }
-        // if no coockie set
-        let languages = navigator.languages;
-        if(languages.includes('de') || languages.includes('de-DE')  || languages.includes('de-AT') || languages.includes('de-CH')) {
-            setCookie('language', 'de', 365);
-            return 'de';
-        } else if(languages.includes('en') || languages.includes('en-US') || languages.includes('en-AU') || languages.includes('en-GB')) {
-            setCookie('language', 'en', 365);
-            return 'en';
-        } else {
-            return 'en';
-        }
-    }
+  import { _lang, languages } from '$lib/scripts/store.js';
+  import { page } from '$app/stores';
+  import { browser } from '$app/environment';
 
-    function handleLocaleChange() {
-        let lang = this.value;
-        _l.update(n => lang);
-        setCookie('language', lang, 365);
-    }
+  $: if(browser) document.documentElement.lang = $_lang.code;
 
-    onMount(() => {
-        _l.update(n => getCookie('language'));
-    })
+  $: firstSlug = $page.params.slugs.split('/')[0];
+  $: if(languages[firstSlug] != undefined) {
+    $_lang = languages[firstSlug];
+    if(browser) document.documentElement.lang = languages[firstSlug].code;
+  } else {
+    $_lang = languages['de']
+    if(browser) document.documentElement.lang = languages['de'].code;
+  }
 
-// $: currentPath = (typeof window !== 'undefined') ? location.protocol + '//' + location.host + location.pathname : '';
+  // $: currentPath = `${$page.url.pathname}${$page.url.search}`.replace(/^\/(en|de)\//, '/');
+  $: currentPath = `${$page.url.pathname}`.replace(/^\/((en|de)\/)?/, '');
 </script>
 
 <svelte:head>
-    <meta http-equiv="content-language" content="{$_l}">
-    <!-- <link rel="alternate" hreflang="en" href="{currentPath}?l=en">
-    <link rel="alternate" hreflang="de" href="{currentPath}?l=de"> -->
+    <meta http-equiv="content-language" content="{$_lang.code}">
+    {#each Object.values(languages) as language}
+      <link rel="alternate" hreflang="{language.code}" href="{language.path}{currentPath}">
+  {/each}
 </svelte:head>
 
-<select value={$_l} on:change={handleLocaleChange} aria-label="{$_l}, Select your language" size="1">
-    <option value="de">DE</option>
-    <option value="en">EN</option>
-</select>
+<div class="localeSelect" aria-label="{$_lang.code}, Select your language">
+  {#each Object.values(languages) as language}
+  {@const active = $_lang.code == language.code}
+    <a class="ui image label" class:blue={active} href="{language.path}{currentPath}" lang="{language.code}" hreflang="{language.code}">
+      {#if active}
+        <i class="check icon" />
+      {/if}
+      {language.name}
+      <div class="detail">{language.code.toUpperCase()}</div>
+    </a>
+{/each}
+</div>
 
 <style>
-    select {
-  background:none;
-  width:auto;
-  height:auto;
-  padding:0;
-  margin:0;
-  border-style: inset;
-  -moz-appearance: menulist;
-  -webkit-appearance: menulist;
-  appearance: menulist;
-
-
-  -moz-appearance:none;
-    -moz-border-radius:1px;
-    -moz-box-sizing:border-box;
-    -webkit-appearance:none;
-    -webkit-border-radius:1px;
-    appearance:none;
-    background:none;
-    border:none;
-    font-size:1.8em;
-    height:36px;
-    resize:none;
-    vertical-align:baseline;
-    width:260px;
-    /* padding:9px 7px 9px 17px; */
-}
-select:focus {
-    border: none;
-}
-option {
-    display: inline-block;
-    /* height:100px;
-	width:100px; */
-}
+    .localeSelect {
+      /* position: absolute;
+      top: 0;
+      left: 0; */
+    }
 </style>

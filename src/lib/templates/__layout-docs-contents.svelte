@@ -3,7 +3,7 @@
     import DocsLayout from './__layout-docs.svelte';
     import Grid from '$lib/components/layout/Grid.svelte';
     import Button from '$lib/components/elements/Button.svelte';
-    import { _l, _l_path } from '$lib/scripts/store.js';
+    import { _lang } from '$lib/scripts/store.js';
 
     let currKategorie = null;
     let items = null;
@@ -23,7 +23,7 @@
                 <!-- <Grid> -->
                 {#each pages as page}
                             
-                            <a data-sveltekit-prefetch class="ui card" href="/{$_l_path}{page.slug}/">
+                            <a data-sveltekit-prefetch class="ui card" href="/{$_lang.path}{page.slug}/">
                                 {#if (page.image ?? null) != null}
                                     <div class="image">
                                         <img src={page.image} alt={page.title} />
@@ -48,7 +48,7 @@
                 {/each}
                 <!-- 
                     {#each pages as page}
-                            <a data-sveltekit-prefetch href="/{$_l_path}{page.slug}/" class='unstyled'>
+                            <a data-sveltekit-prefetch href="/{$_lang.path}{page.slug}/" class='unstyled'>
                                 <div class='articleImage'>
                                     {#if (page.image ?? null) != null}
                                         <img src={page.image} alt={page.title} />

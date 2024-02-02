@@ -8,10 +8,10 @@ published: true
 <script>
     import { goto } from '$app/navigation';
 	import { onMount, beforeUpdate  } from 'svelte';
-	import { _l, _l_path } from '$lib/scripts/store.js';
+	import { _lang } from '$lib/scripts/store.js';
 
     // Define the destination route
-  	const destinationRoute = `/${$_l_path}tech`;
+  	const destinationRoute = `${$_lang.path}tech`;
 
 	// Use the `beforeUpdate` lifecycle function to perform redirection
 	beforeUpdate(() => {
@@ -19,7 +19,7 @@ published: true
 	});
 </script>
 
-## Wir leiten dich zur [Technischen Dokumentation](/{$_l_path}tech) weiter ...
+## Wir leiten dich zur [Technischen Dokumentation]({_lang.path}tech) weiter ...
 
 <style lang="scss">
 

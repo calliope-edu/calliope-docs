@@ -1,17 +1,17 @@
 <script>
-    import { _l, _l_path } from '$lib/scripts/store.js';
+    import { _lang } from '$lib/scripts/store.js';
     export let item;
     export let active;
 
-    let regex = new RegExp(`^/?(${_l_path})?${item.slug}(/.*)?$`)
+    let regex = new RegExp(`^(${$_lang.path})?${item.slug}(/.*)?$`)
 </script>
 
     <div class="item">
-        <a class="header" href="/{$_l_path}{item.slug}/" on:click={()=>{active = '/'+item.slug;}} class:active={regex.test(active)}>{item.title}</a>
+        <a class="header" href="{$_lang.path}{item.slug}/" on:click={()=>{active = '/'+item.slug;}} class:active={regex.test(active)}>{item.title}</a>
         <div class="menu">
             {#each item.subpages as page, i}
-            {@const regexSub = new RegExp(`^/?(${_l_path})?${page.slug}(/.*)?$`)}
-                <a data-sveltekit-prefetch href="/{$_l_path}{page.slug}/" class="item" class:active={regexSub.test(active)} on:click={()=>{active = '/'+page.slug;}}>
+            {@const regexSub = new RegExp(`^(${$_lang.path})?${page.slug}(/.*)?$`)}
+                <a data-sveltekit-prefetch href="{$_lang.path}{page.slug}/" class="item" class:active={regexSub.test(active)} on:click={()=>{active = '/'+page.slug;}}>
                     {page.title}
                 </a>
             {/each}
