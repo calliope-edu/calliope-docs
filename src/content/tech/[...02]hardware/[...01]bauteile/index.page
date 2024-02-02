@@ -1,7 +1,10 @@
 ---
 title: Bauteile
 docTitle: Hardware
-description: Good description of topic
+seotitle: "Calliope Mini Bauteile: Hardware, Prozessoren, LEDs, Tasten, Sensoren, und mehr"
+description: "Erkunde die vielfältigen Bauteile der Calliope mini Hardware, darunter Prozessoren, LEDs, Tasten, Sensoren und mehr. Erfahre mehr über Spezifikationen, Funktionen und technische Details. Finde Informationen zu Versionen, Datenblättern und Motortreibern für ein fesselndes Programmiererlebnis."
+tags: "Calliope Mini Hardware, Mikrocontroller-Komponenten, Prozessor-Spezifikationen, LED-Matrix, Programmierbare Tasten, Sensorintegration, RGB-LEDs, Audiokomponenten, Motortreiber, Calliope Mini Dokumentation"
+description: 
 template: docs
 published: true
 ---

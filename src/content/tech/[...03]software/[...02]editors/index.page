@@ -1,7 +1,9 @@
 ---
 title: Editoren
-description: 
 docTitle: Software
+seotitle: "Calliope Mini Editoren"
+description: "Erfahre mehr über die verschiedenen Programmiereditoren für den Calliope Mini, einschließlich MakeCode, Micropython und Open Roberta Lab. Vergleiche Funktionen und entdecke weitere verfügbare Editoren für den Calliope Mini."
+tags: "Calliope Mini, Programmiereditoren, MakeCode, Micropython, Open Roberta Lab, MindPlus, Swift Playground, TigerJython, microblocks, abbozza!, SEGGER Embedded Studio, Arduino IDE"
 template: docs
 published: true
 ---

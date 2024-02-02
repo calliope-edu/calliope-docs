@@ -24,7 +24,7 @@
                 <!-- <Grid> -->
                 {#each pages as page}
                             
-                            <a data-sveltekit-prefetch class="ui card" href="/{$_lang.path}{page.slug}/">
+                            <a data-sveltekit-prefetch class="ui card" href="{$_lang.path}{page.slug}/">
                                 {#if (page.image ?? null) != null}
                                     <div class="image">
                                         <img src={page.image} alt={page.title} />

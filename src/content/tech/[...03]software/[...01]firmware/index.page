@@ -1,7 +1,9 @@
 ---
 title: Firmware
 docTitle: Software
-description: 
+seotitle: "Calliope Mini Firmware"
+description: "Erfahre mehr über die Calliope Mini Firmware, einschließlich des Demoprogramms und des Quellcodes. Lade die Firmware für verschiedene Calliope Mini Versionen herunter und erkunde die Quellcode-Abhängigkeiten. Finde heraus, wie du die Firmware kompilieren und mit MakeCode verwenden kannst."
+tags: "Calliope Mini, Firmware, Demoprogramm, Quellcode, MakeCode, Kompilieren"
 template: docs
 published: true
 ---
