@@ -1,17 +1,17 @@
 ---
-title: "Technische Dokumentation"
-description: "..."
-template:
+title: "Sitemap"
+description: ""
+template: 
 published: true
 ---
 
 <script>
     import { goto } from '$app/navigation';
-	import { onMount, beforeUpdate  } from 'svelte';
+	import { beforeUpdate  } from 'svelte';
 	import { _lang } from '$lib/scripts/store.js';
 
     // Define the destination route
-  	const destinationRoute = `${$_lang.path}tech`;
+  	const destinationRoute = `/sitemap`;
 
 	// Use the `beforeUpdate` lifecycle function to perform redirection
 	beforeUpdate(() => {
@@ -19,8 +19,7 @@ published: true
 	});
 </script>
 
-## Wir leiten dich zur [Technischen Dokumentation]({$_lang.path}tech) weiter ...
 
-<style lang="scss">
+## Sitemap ist nur auf deutsch Verfügbar.
 
-</style>
+Wir leiten dich zur [Sitemap](/sitemap) weiter ...

@@ -1,5 +1,5 @@
 <script>
-  import { _lang } from '$lib/scripts/store.js';
+  import { _lang, languages } from '$lib/scripts/store.js';
     import DocsMenuItem from './DocsMenuItem.svelte';
     import { page } from '$app/stores';
     import { slugFromPath } from '$lib/scripts/util.js';
@@ -14,7 +14,7 @@
     let allPages = [];
     let posts = [];
   
-    $: active = $page.url.pathname.replace(/^\/(en|de)\//, '/');
+    $: active = $page.url.pathname.replace(/^\/((en|de)\/)?/, '');
     $: currentIndex = allPagesFlat.findIndex(x => ('/'+x.slug+'/' === active || '/'+x.slug === active || active.startsWith('/'+x.slug+'/')));
     $: currKategorie = allPages?.find(x => ( (active).startsWith('/'+x?.slug) ));
   
@@ -109,7 +109,7 @@
     }
   
   </script>
-
+  
 <div class="ui secondary vertical fluid menu">
     {#await menuItems}
       {#each posts as item}

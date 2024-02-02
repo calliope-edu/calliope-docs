@@ -6,7 +6,7 @@
 
   $: if(browser) document.documentElement.lang = $_lang.code;
 
-  $: firstSlug = $page.params.slugs.split('/')[0];
+  $: firstSlug = $page.params.slugs?.split('/')[0] ?? '';
   $: if(languages[firstSlug] != undefined) {
     $_lang = languages[firstSlug];
     if(browser) document.documentElement.lang = languages[firstSlug].code;

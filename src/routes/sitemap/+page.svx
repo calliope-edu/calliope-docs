@@ -1,5 +1,6 @@
 <script>
     import { slugFromPath } from '$lib/scripts/util.js';
+    import { languages } from '$lib/scripts/store.js';
 
     const modules = import.meta.glob(`../../{content/**/,content}[!!]*.page`)
     
@@ -9,28 +10,53 @@
 		const slug = slugFromPath(path);
 		// const Page = await resolver();
 		// const PageRendered = Page.default.render() // Make sure rehype plugins are parsed
+
+        // Use fs.stat to get file metadata including the last modified date
+        // const stat = fs.stat(path);
+        // const lastModifiedDate = stat.mtime.toISOString();
+
 		let pageMeta = ({
+                path,
 				slug,
-                depth: (slug.split("/").length - 1)
+                depth: (slug.split("/").length - 1),
+                // lastModifiedDate,
 				// ...Page.metadata
 			})
 		posts.push(pageMeta);
 	}
+
+    posts.sort((a, b) => a.slug.localeCompare(b.slug));
 
 
     export const sitemap = posts
 
 
 </script>
-<main>
-    <ul>
-        {#each sitemap as page}
-            <li>
-                <a href="/{page.slug}">/{page.slug}</a>
-                <a href="/{page.slug}.json">/{page.slug}.json</a>
-                <a href="/de/{page.slug}.json">/de/{page.slug}.json</a>
-                <a href="/en/{page.slug}.json">/en/{page.slug}.json</a>
-            </li>
-        {/each}
-    </ul>
+<main class="ui container">
+    <table class="ui celled striped table">
+        <thead>
+            <tr>
+                <th>Page Slug</th>
+                {#each Object.values(languages) as language}
+                    <th>{language.name}</th>
+                {/each}
+            </tr>
+        </thead>
+        <tbody>
+            {#each sitemap as page}
+                <tr>
+                    <td>
+                        <h2>{page.slug}</h2>
+                        <p>{page.path}</p>
+                    </td>
+                    {#each Object.values(languages) as language}
+                        <td>
+                            <a href="{language.path}{page.slug}">Seite</a>
+                            <a href="{language.path}{page.slug}.json">.json</a>
+                        </td>
+                    {/each}
+                </tr>
+            {/each}
+        </tbody>
+    </table>
 </main>
