@@ -60,7 +60,7 @@
 
                         <div>
                             {#if  prev != null}
-                                <a data-sveltekit-prefetch class="ui horizontal card" href="/{_lang.path}{prev?.slug}/">
+                                <a data-sveltekit-prefetch class="ui horizontal card" href="/{$_lang.path}{prev?.slug}/">
                                     <div class="content">
                                         <div class="meta">Vorherige</div>
                                         <div class="header">
@@ -74,7 +74,7 @@
 
                         <div>
                             {#if  next != null}
-                                <a data-sveltekit-prefetch class="ui horizontal card" href="/{_lang.path}{next?.slug}/" style="text-align:right;">
+                                <a data-sveltekit-prefetch class="ui horizontal card" href="/{$_lang.path}{next?.slug}/" style="text-align:right;">
                                     <div class="content">
                                         <div class="meta">Nächste</div>
                                         <div class="header">
