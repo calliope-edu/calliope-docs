@@ -31,11 +31,11 @@ export async function loadJson({ params }) {
 		// Stop if current lang is allready in the array, or if it is a language path for another language
 		if (matches[currentLangPath] || (isLanguagePath && !isCurrentLanguagePath)) {
 			return;
-		} else if(isCurrentLanguagePath) {
-			matches[path] = value;
+		} else if(isLanguagePath && isCurrentLanguagePath) {
 			if (matches[pathWithoutLang]) {
 				delete matches[pathWithoutLang];
 			}
+			matches[path] = value;
 		} else {
 			matches[path] = value;
 		}
