@@ -16,7 +16,7 @@
   
     $: active = $page.url.pathname.replace(/^\/((en|de)\/)?/, '/');
     $: currentIndex = allPagesFlat.findIndex(x => ('/'+x.slug+'/' === active || '/'+x.slug === active || active.startsWith('/'+x.slug+'/')));
-    $: currKategorie = allPages?.find(x => ( (active).startsWith(x?.slug) ));
+    $: currKategorie = allPages?.find(x => ( (active).startsWith(`/${x?.slug}`) ));
     
     $: prev = (allPagesFlat.length > 0) ? allPagesFlat[currentIndex-1] : null;
     $: curr = allPagesFlat[currentIndex] ?? null;
