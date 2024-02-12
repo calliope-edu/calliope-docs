@@ -8,7 +8,9 @@ docMenu: python
 
 ## Funktionen
 
----basic audio.play(source, wait=True, pin=pin0, return_pin=None)/---
+```js
+audio.play(source, wait=True, pin=pin0, return_pin=None)
+```
 Spielen Sie die Audioquelle bis zum Ende ab.
 
 **Parameter:**   **•Quelle-** <br>
@@ -21,10 +23,14 @@ Es gibt drei Arten von Daten, die als Quelle verwendet werden können:
 • pin - Ein optionales Argument zur Angabe des Ausgangspins kann verwendet werden, um die Vorgabe von pin0 zu überschreiben. Wenn kein Ton abgespielt werden soll, kann pin=None verwendet werden. <br>
 • return_pin - gibt einen differentiellen Steckerpin an, der anstelle von Masse mit einem externen Lautsprecher verbunden wird. <br>
 
----bacic audio.is_playing()/--- <br>
+```js
+audio.is_playing()
+```
 Gibt zurück:        True, wenn Audio abgespielt wird, andernfalls wird False zurückgegeben. <br>
 
----basic audio.stop()/--- <br>
+```js
+audio.stop()
+```
 Stoppt die gesamte Audiowiedergabe. <br>
 
 

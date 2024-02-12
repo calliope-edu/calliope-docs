@@ -10,48 +10,48 @@ Mit dem Calliope-Modul hast du Zugriff auf die gesamte Hardware, die im Calliope
 
 ### Funktionen
 
----basic
+```js
 panic(n)
-/---
+```
 
----python
+```python
 panic(255)
-/---
+```
 
 Ruft einen Panikmodus auf, der die gesamte Ausführung stoppt, einen Fehlercode auf dem Calliope mini-Display anzeigt und einen Neustart erfordert:
 
 **Parameter:** n - Eine beliebige ganze Zahl zwischen 0 und 255 zur Angabe eines Fehlercodes.
 
----basic
+```js
 reset()
-/---
+```
 
 Starten Sie das Board neu.
 
----python
+```python
 running_time()
-/---
+```
 
 **Rückgabe:** Die Anzahl der Millisekunden seit dem Einschalten oder Neustart.
 
----basic
+```js
 scale(value, from_, to)
-/---
+```
 
 Konvertiert einen Wert aus einem Bereich in einen anderen Bereich.
 Zum Beispiel, um 30 Grad von Celsius in Fahrenheit umzurechnen:
 
----python
+```python
 temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
-/---
+```
 
 Dies kann nützlich sein, um Werte zwischen Eingängen und Ausgängen zu konvertieren, z. B. einen Beschleunigungsmesserwert in eine Lautsprecherlautstärke.
 
 Wenn eine der Zahlen im Parameter to eine Fließkommazahl ist (z. B. eine Dezimalzahl wie 10.0), gibt die Funktion eine Fließkommazahl zurück. Handelt es sich bei beiden um ganze Zahlen (z. B. 10), gibt sie eine ganze Zahl zurück:
 
----python
+```python
 returns_int = scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 255))
-/---
+```
 
 Negative Skalierung wird ebenfalls unterstützt, zum Beispiel liefert scale(25, from_=(0, 100), to=(0, -200)) -50.
 
@@ -62,30 +62,30 @@ Negative Skalierung wird ebenfalls unterstützt, zum Beispiel liefert scale(25, 
 
 **Rückgabe:** Der in den Bereich bis umgewandelte Wert.
 
----basic
+```js
 set_volume(volume)
-/---
+```
 
 Konfiguriere die Ausgangslautstärke des Calliope mini Lautsprechers und der Pins:
 
----python
+```python
 set_volume(127)
-/---
+```
 
 **Parameter:** volume - Eine ganze Zahl zwischen 0 und 255 zur Einstellung der Lautstärke.
 
 
----basic
+```js
 sleep(n)
-/---
+```
 
 Warte für n Millisekunden. Eine Sekunde entspricht 1000 Millisekunden, so dass sleep(1000) die Ausführung eine Sekunde lang unterbricht.
 
 **Parameter:** n - Eine Ganzzahl oder Fließkommazahl, die die Anzahl der zu wartenden Millisekunden angibt.
 
----basic
+```js
 un_every(callback, days=None, h=None, min=None, s=None, ms=None)
-/---
+```
 
 Zeitplan für die Ausführung einer Funktion in dem durch die Zeitargumente angegebenen Intervall.
 
@@ -93,15 +93,15 @@ run_every kann auf zwei Arten verwendet werden:
 
 Als **Decorator** - wird über die zu planende Funktion gelegt. Zum Beispiel:
 
----python
+```python
 set_volume(127)
-/---
+```
 
 Als **Funktion** - Übergabe des Rückrufs als Positionsargument. Zum Beispiel:
 
----python
+```python
 set_volume(127)
-/---
+```
 
 Jedes Argument entspricht einer anderen Zeiteinheit und sie sind additiv. Mit run_every(min=1, s=30) wird der Callback also alle anderthalb Minuten ausgeführt.
 
@@ -116,9 +116,9 @@ Wenn innerhalb der Callback-Funktion eine Ausnahme ausgelöst wird, wird die Fun
 • ms - Legt die Millisekundenmarkierung für die Terminierung fest.<br>
 
 
----basic
+```js
 temperature()
-/---
+```
 
 **Rückgabe:** Eine Ganzzahl mit der Temperatur des Calliope mini in Grad Celcius.
 

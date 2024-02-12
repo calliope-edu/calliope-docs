@@ -8,17 +8,29 @@ import rehypeSlug from 'rehype-slug';
 import remarkFrontmatterImport from './mdsvexplugins/mdsvex-frontmatter-to-import.js'
 import remarkAutoloadComponents from './mdsvexplugins/mdsvex-import-components.js'
 import remarkAutoloadTemplates from './mdsvexplugins/mdsvex-import-templates.js'
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeCodeTitles from 'rehype-code-titles';
+
+const rehypePrettyCodeOptions = {
+	theme: "catppuccin-frappe",
+  };
 
 const config = defineConfig({
 	layout: {
 		_: "./src/lib/mdsvex/layouts/default.svelte"
 	},
 	extensions: ['.svelte.md', '.md', '.svx', '.page'],
-
+	highlight: false,
 	smartypants: {
 		
 	},
-
+	rehypePlugins: [
+		rehypeCodeTitles,
+		[rehypePrettyCode, rehypePrettyCodeOptions],
+		
+		rehypeSlug, // Add IDs to headings
+		// [rehypeAutolinkHeadings, { behavior: 'before' }]
+	],
 	remarkPlugins: [
 		// [remarkAbbr, { expandFirst: true }], // parse html abbreviations
 		// remarkContainers, // processes `:::`-Tags to html-tags
@@ -29,10 +41,6 @@ const config = defineConfig({
 		remarkRelativeImages, // Imports relative linked images and makes them available to vite imagetools
 		remarkAutoloadComponents, // Adds js import scrip for components
 		remarkAutoloadTemplates, // Adds js import script for templates
-	],
-	rehypePlugins: [
-		rehypeSlug, // Add IDs to headings
-		// [rehypeAutolinkHeadings, { behavior: 'before' }]
 	]
 });
 

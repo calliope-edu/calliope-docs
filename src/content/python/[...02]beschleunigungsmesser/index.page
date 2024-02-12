@@ -23,69 +23,69 @@ Gesten werden nicht im Hintergrund aktualisiert, so dass ständige Aufrufe einer
 
 ### Funktionen
 
----basic
+```js
 accelerometer.get_x()
-/---
+```
 
 
 
 Gibt zurück:        Die gemessene Beschleunigung auf der X-Achse in Milligramm, als positive oder negative Ganzzahl.
 
----basic
+```js
 accelerometer.get_y()
-/---
+```
 
 Gibt zurück:        Die gemessene Beschleunigung auf der y-Achse in Milligramm, als positive oder negative Ganzzahl.
 
----basic
+```js
 accelerometer.get_z()
-/---
+```
 Gibt zurück:        Die Beschleunigungsmessung in der z-Achse in Milligramm, als positive oder negative Ganzzahl.
 
 
----basic
+```js
 accelerometer.get_values()
-/---
+```
 Gibt zurück:        Die Beschleunigungsmessungen in allen Achsen auf einmal, als dreiteiliges Tupel von Ganzzahlen, geordnet als X, Y, Z.
 
----basic
+```js
 accelerometer.get_strength()
-/---
+```
 
 Ermittelt die Beschleunigungsmessung aller Achsen zusammen, als positive ganze Zahl. Dies ist die Pythagoras-Summe der X-, Y- und Z-Achsen.
 Rückgabe:        Die kombinierte Beschleunigungsstärke aller Achsen, in Milligramm.
 
----basic
+```js
 accelerometer.current_gesture()
-/---
+```
 
 Gibt zurück:        String mit dem Namen der aktuellen Geste.
 
----basic
+```js
 accelerometer.is_gesture(name)
-/---
+```
 Parameter: name - String mit dem Namen der zu prüfenden Geste.
 Gibt zurück:        Boolescher Wert, der angibt, ob die genannte Geste gerade aktiv ist.
 
----basic
+```js
 accelerometer.was_gesture(name)
-/---
+```
 
 Parameter: name - String mit dem Namen der zu prüfenden Geste.
 Gibt zurück:        Boolescher Wert, der angibt, ob die genannte Geste seit dem letzten Aufruf aktiv war.
 
----basic
+```js
 accelerometer.get_gestures()
-/---
+```
 
 Abrufen einer historischen Liste der registrierten Gesten.
 
 Durch den Aufruf dieser Funktion wird der Gestenverlauf vor der Rückkehr gelöscht.
 Gibt zurück:        Ein Tupel des Gestenverlaufs, wobei die jüngste Geste zuletzt aufgeführt wird.
 
----basic
+```js
 accelerometer.set_range(value)
-/---
+```
 
 Stellen Sie den Empfindlichkeitsbereich des Beschleunigungssensors in g (Standardgravitation) auf die nächstliegenden Werte ein, die von der Hardware unterstützt werden, d. h. entweder 2, 4 oder 8 g.
 Parameter: value - Neuer Bereich für den Beschleunigungsmesser, eine ganze Zahl in g.
@@ -94,7 +94,7 @@ Parameter: value - Neuer Bereich für den Beschleunigungsmesser, eine ganze Zahl
 
 Eine Wahrsagekugel - stelle eine Frage und schüttel den Calliope mini, um eine Antwort zu erhalten.
 
----Python
+```python title="hello.js"
 # Magic 8 ball by Nicholas Tollervey. February 2016.
 #
 # Ask a question then shake.
@@ -133,6 +133,4 @@ while True:
         sleep(1000)
         display.scroll(random.choice(answers))
     sleep(10)
-
-/---
-
+```

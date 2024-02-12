@@ -8,27 +8,43 @@ docMenu: python
 
 ## Funktionen
 
----basic Calliopemini.compass.calibrate()/--- <br>
+```js
+Calliopemini.compass.calibrate()
+```
 Startet den Kalibrierungsprozess. Dem Benutzer wird eine instruktive Meldung angezeigt, nach der er das Gerät drehen muss, um einen Kreis auf der LED-Anzeige zu zeichnen. <br>
 
----basic Calliopemini.compassis_calibrate()/--- <br>
+```js
+Calliopemini.compassis_calibrate()
+```
 Gibt True zurück, wenn der Kompass erfolgreich kalibriert wurde, und andernfalls False. <br>
 
----basic Calliopemini.compass.clear_calibrate()/--- <br>
+```js
+Calliopemini.compass.clear_calibrate()
+```
 Macht die Kalibrierung rückgängig, so dass der Kompass wieder unkalibriert ist. <br>
 
----basic Calliopemini.compass.get_x()/--- <br>
+```js
+Calliopemini.compass.get_x()
+```
 Gibt den Wert der magnetischen Feldstärke auf der x-Achse in Nanotesla an, je nach Richtung des Feldes als positive oder negative ganze Zahl. <br>
 
----basic Calliopemini.compass.get_y()/--- <br>
+```js
+Calliopemini.compass.get_y()
+```
 Gibt den Wert der magnetischen Feldstärke auf der y-Achse in Nano-Tesla an, je nach Richtung des Feldes als positive oder negative Ganzzahl. <br>
 
----basic Calliopemini.compass.get_z()/--- <br>
+```js
+Calliopemini.compass.get_z()
+```
 Gibt den Wert der magnetischen Feldstärke auf der z-Achse in Nanotesla an, je nach Richtung des Feldes als positive oder negative Ganzzahl. <br>
 
----basic Calliopemini.compass.heading()/--- <br>
+```js
+Calliopemini.compass.heading()
+    ```
 Gibt den aus den obigen Messwerten berechneten Kompasskurs als ganze Zahl im Bereich von 0 bis 360 an, die den Winkel in Grad im Uhrzeigersinn angibt, mit Norden als 0. <br>
 
----basic Calliopemini.compass.get_filed_strength()/--- <br>
+```js
+Calliopemini.compass.get_filed_strength()
+```
 Gibt eine ganzzahlige Angabe der Stärke des Magnetfelds um das Gerät in Nanotesla zurück. 
 

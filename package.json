@@ -67,7 +67,9 @@
     "unplugin-icons": "^0.16.5",
     "vanilla-lazyload": "^17.8.4",
     "vite": "^4.4.2",
-    "vite-imagetools": "^5.0.7"
+    "vite-imagetools": "^5.0.7",
+    "rehype-code-titles": "^1.2.0",
+    "rehype-pretty-code": "^0.13.0"
   },
   "type": "module",
   "readme": "ERROR: No README data found!",
