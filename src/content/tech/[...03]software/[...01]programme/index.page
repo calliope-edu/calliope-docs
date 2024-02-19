@@ -1,20 +1,20 @@
 ---
-title: Firmware
+title: Programme
 docTitle: Software
-seotitle: "Calliope Mini Firmware"
-description: "Erfahre mehr über die Calliope Mini Firmware, einschließlich des Demoprogramms und des Quellcodes. Lade die Firmware für verschiedene Calliope Mini Versionen herunter und erkunde die Quellcode-Abhängigkeiten. Finde heraus, wie du die Firmware kompilieren und mit MakeCode verwenden kannst."
-tags: "Calliope Mini, Firmware, Demoprogramm, Quellcode, MakeCode, Kompilieren"
+seotitle: "Calliope Mini Programme"
+description: "Erfahre mehr über die Calliope Mini Programme, einschließlich des Demoprogramms und des Quellcodes. Lade die Programme für verschiedene Calliope Mini Versionen herunter und erkunde die Quellcode-Abhängigkeiten. Finde heraus, wie du die Programme kompilieren und mit MakeCode verwenden kannst."
+tags: "Calliope Mini, Programme, Demoprogramm, Quellcode, MakeCode, Kompilieren"
 template: docs
 published: true
 ---
 
 <!-- https://microbit.org/get-started/user-guide/firmware/ -->
 
-## Demoprogramm
+## Startprogramm
 
-Das Demoprogramm, manchmal auch Startprogramm ist die Calliope mini Firmware. Sie befindet sich auf jedem Calliope mini im Auslieferungszustand.
+Das Startprogramm, manchmal auch Demoprogramm ist die Calliope mini Firmware. Sie befindet sich auf jedem Calliope mini im Auslieferungszustand.
 
-Das Demoprogramm setzt sich aus 3 Teilen zusammen: Der Testroutine, dem Willkommensintro und den 4 Startprogrammen.
+Das Startprogramm setzt sich aus 3 Teilen zusammen: Der Testroutine, dem Willkommensintro und den 4 Startprogrammen.
 Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, kommt man in das Menü und kann über die Tasten A und B sich durch die vier Programm navigieren: 
 
 - Orakel 
@@ -29,18 +29,18 @@ Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, komm
 <Versions>
     <div slot="mini1-2">
 
-        ### Demoprogramm herunterladen
+        ### Startprogramm herunterladen
 
-        <Button link="./demo/miniV1-V2_start.hex">Demoprogram Calliope mini 1 & 2 (.hex)</Button>
+        <Button link="./demo/miniV1-V2_start.hex">Startprogram Calliope mini 1 & 2 (.hex)</Button>
         
         <!-- ### Quellcode
         <GitLink repo="" branch="" size="big" /> -->
     </div>
     <div slot="mini3">
 
-        ### Demoprogramm herunterladen
+        ### Startprogramm herunterladen
 
-        <Button link="./demo/miniV3_start.hex">Demoprogram Calliope mini 3 (.hex)</Button>
+        <Button link="./demo/miniV3_start.hex">Startprogram Calliope mini 3 (.hex)</Button>
 
     </div>
 </Versions>
@@ -110,7 +110,7 @@ Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, komm
 
 ## MakeCode
 
-Je nach Editor kann die in dem Programm verwendete Firmware abweichen.
+Je nach Editor kann die in dem Programm verwendete Konfiguration abweichen.
 Die in MakeCode verwendeten Abhängigkeiten können direkt dem GitHub repository entnommen:
  <GitLink repo="microsoft/pxt-calliope" branch="master" />
 
