@@ -46,7 +46,7 @@ published: true
 
     - Führt Programme aus und ist an alle Komponenten des mini angeschlossen
     - Memory Size: 512kB Flash, 128kB RAM
-    - Serial Interfaces: ADC, I²S, PWM, SPI, UART, USB
+    - Serial Interfaces: ADC, I²C, PWM, SPI, UART, USB
     - Bluetooth-Antenne, Temperaturmessung
 
 
@@ -75,10 +75,20 @@ published: true
     - empfängt das Programm über USB und läd es auf den Anwendungsprozessor
     - stellt eine serielle Verbindung zum Anwendungsprozessor her (Virtual COM Port) 
     - kein Bluetooth
-    
+
+
 </Versions>
 
 ----
+
+<Versions>
+    <div slot="mini2">
+## Flash
+
+ISSI IS25LP, 16MB, 166MHZ	
+    
+    </div>
+</Versions>
 
 ## LED-Matrix
 

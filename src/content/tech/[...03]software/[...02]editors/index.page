@@ -93,25 +93,41 @@ Weitere Informationen findest du auf der Calliope **[Webseite](https://calliope.
 Der Mind+ Editor ist eine Version von Scratch, die eine direkte Verbindung und intuitive Programmierung des Calliope mini ermöglicht.
 So können Anwendungen auf dem Computer mit dem Calliope mini gesteuert werden und andersherum.
 
+<Button text='weitere Infos' link='https://calliope.cc/programmieren/editoren/mindplus' />
+
 ### Swift Playground
 
 Der Calliope mini Swift Playground eignet sich zum Einstieg ins textbasierte Programmieren mit dem Mac oder dem iPad. Die Programmiersprache Swift wird in den ersten Kapiteln durch die Eingabe und Anpassung von Parametern leicht verständlich nahegebracht.
+
+<Button text='weitere Infos' link='https://calliope.cc/playground' />
 
 ### TigerJython for Kids
 
 TigerJython ist ein microPython Editor mit umfangreicher Anleitung für den einfachen Start in die textbasierte Programmierung. TigerJython ist, je nach Bedarf, als Webanwendung oder herunterladbare Anwendung verfügbar.
 
+<Button text='Editor' link='https://www.tigerjython4kids.ch/index.php?inhalt_links=robotik/navigation.inc.php&inhalt_mitte=robotik/calliope/loslegen.inc.php' />
+
 ### microblocks
 
 microblocks ist als erweitertes Scratch anzusehen. Ein Teil des ursprünglichen Scratch-Teams entwickelt diesen Editor, dessen Schwerpunkt die physische Interaktion in den Mittelpunkt stellt.
+
+<Button text='Editor' link='https://microblocks.fun/run-pilot/microblocks.html' />
 
 ### abbozza! Calliope
 
 abbozza! Calliope ist eine grafische Entwicklungsumgebung für den Calliope mini, die für die Verwendung in Schulen und für Maker aller Altersstufen entwickelt wird. abbozza! wird am Lehrstuhl Didaktik der Informatik der Uni Osnabrück entwickelt.
 
+<Button text='Editor' link='https://abbozza.informatik.uni-osnabrueck.de/abbozza/web/' />
+
 ### SEGGER Embedded Studio
 
 SEGGER Embedded Studio ist ein professionelles Tool und umfassendes Entwicklerpaket. Mit der Entwicklungsumgebung kann eigene Software für den Calliope mini in der Programmiersprache "C" geschrieben werden.
 
+<Button text='Editor' link='https://www.segger.com/evaluate-our-software/nordic-semiconductor/calliope-mini/' />
+
 ### Arduino IDE 
+
+Die Arduino IDE ist in hohen Klassenstufen und bei Studierenden beliebt. Für alle, die an der rein textbasierten Programmierumgebung Spaß haben, wird dort nun auch der Calliope mini unterstützt. Nach dem integrieren, können direkt Sketches auf den Calliope mini übertragen werden und Daten auf der seriellen Ausgabe angezeigt werden.
+
+<Button text='weitere Infos' link='https://calliope.cc/programmieren/editoren/arduino' />
 
