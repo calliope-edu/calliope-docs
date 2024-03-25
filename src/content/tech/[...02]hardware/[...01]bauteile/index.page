@@ -8,6 +8,7 @@ template: docs
 published: true
 ---
 
+<VersionNav/>
 <script>
     import V1Datenblatt from './v1.svx';
     import V2Datenblatt from './v2.svx';
@@ -57,7 +58,7 @@ published: true
 
 ## Interfaceprozessor
 
-<Versions>
+<Versions navbar={false}>
     <div slot="mini1">
         NXP KL26z
     </div>
@@ -81,11 +82,15 @@ published: true
 
 ----
 
-<Versions>
-    <div slot="mini2">
+<Versions navbar={false}>
+
+    <div slot="mini2" >
+
 ## Flash
 
-ISSI IS25LP, 16MB, 166MHZ	
+ISSI IS25LP, 16MB, 166MHZ
+
+Auf dem Calliope mini 2 befindet sich ein eingebauter Flash-Speicher aus dem Programme 
     
     </div>
 </Versions>

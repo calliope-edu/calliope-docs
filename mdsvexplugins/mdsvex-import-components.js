@@ -3,7 +3,8 @@ import { visit } from 'unist-util-visit';
 const scripts = `
     import Svg from '$lib/components/elements/Svg.svelte';
     import GitLink from '$lib/components/elements/GitLink.svelte';  
-    import Versions from '$lib/components/BoardVersionSelector.svelte';
+    import VersionNav from '$lib/components/BoardVersionSelector.svelte';
+    import Versions from '$lib/components/BoardVersionSwitch.svelte';
     import Gap from '$lib/components/layout/Gap.svelte';
     import Grid from '$lib/components/layout/Grid.svelte';
     import ImageSwiper from '$lib/components/ImageSwiper.svelte';
