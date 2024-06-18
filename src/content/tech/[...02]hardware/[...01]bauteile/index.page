@@ -13,6 +13,7 @@ published: true
     import V1Datenblatt from './v1.svx';
     import V2Datenblatt from './v2.svx';
     import V3Datenblatt from './v3.svx';
+    import { selectedBoardVersion } from '$lib/scripts/store.js';
 </script>
 
 ## Überblick
@@ -90,7 +91,9 @@ published: true
 
 ISSI IS25LP, 16MB, 166MHZ
 
-Auf dem Calliope mini 2 befindet sich ein eingebauter Flash-Speicher aus dem Programme 
+Auf dem Calliope mini 2 befindet sich ein eingebauter Flash-Speicher auf dem bis zu 25 Programm gespeichert werden können.
+Weitere Informationen zu den 25 Programmen befinden sich auf der **[Calliope-Seite](https://calliope.cc/calliope-mini/25programme )** 
+
     
     </div>
 </Versions>
@@ -112,25 +115,66 @@ Auf dem Calliope mini befinden sich 3 Tasten.
 
 ## Lagesensor
 
-- LSM303AGR
-- über I2C angebunden
-- 3-Achsen Accelerometer, 3-Achsen Magnetometer, 2 Achsen-Kreiselsensor
-- Link zum Datenblatt 
+Mit dem Lagesensor kann der Calliope mini messen, in welche Lage er sich befindet und in welche Richtung mit welcher Stärke er bewegt wird.
+
+<Versions navbar={false}>
+    <div slot="mini1-2">
+
+        <p><i>Bosch BMX055</i>
+        <br></p>
+        <li>Beschleunigungsmesser, Gyroskop, Magnetometer, 9 Achsen Sensor</li>
+
+    </div>
+    <div slot="mini3">
+        <p><i>LSM303AGR
+        <br></p>
+        <li>Beschleunigungsmesser, Magnetometer, Temperatur</li>
+        <li>6 Achsen Sensor</li>
+        <li><a href="https://www.mouser.de/datasheet/2/389/lsm303agr-1849768.pdf">Datenblatt</a></li>
+
+    </div>
+
+    <li>über I2C angebunden</li>
+
+</Versions>
 
 ----
 
 ## RGB-LEDs
 
-WS2812C-2020
 
-Der Calliope mini hat drei integrierte RGB-LEDs, die 255 Farben pro Farbkanal (rot, grün, blau) darstellen können. Dies entspricht 256^3 = 16 777 216 Farben.
-Bei den RGB-LEDs handelt es sich um adressierbare Pixel, sogenannte Neopixels. Das sind spezielle individuell programmierbare RGB-LEDs, ähnlich wie die einzelnen Pixel auf einem Display.
+
+<Versions navbar={false}>
+    <div slot="mini1-2">
+        
+        <p>SK6812MINI</p>
+        <p>
+        Der Calliope mini hat eine integrierte RGB-LED, die 255 Farben pro Farbkanal (rot, grün, blau) darstellen kann. Dies entspricht 256^3 = 16 777 216 Farben.</p>
+    </div>
+    <div slot="mini3">
+
+<p>WS2812C-2020</p>
+    <p>
+        Der Calliope mini hat drei integrierte RGB-LEDs, die 255 Farben pro Farbkanal (rot, grün, blau) darstellen können. Dies entspricht 256^3 = 16 777 216 Farben.</p>
+    </div>
+    Bei den RGB-LEDs handelt es sich um adressierbare Pixel, sogenannte Neopixels. Das sind spezielle individuell programmierbare RGB-LEDs, ähnlich wie die einzelnen Pixel auf einem Display.
+</Versions>
+
 
 ----
 
 ## Lautsprecher
 
-MLT-8530
+<Versions navbar={false}>
+    <div slot="mini1-2">
+        Piezolautsprecher
+    </div>
+    <div slot="mini3">
+        Piezolautsprecher (MLT-8530)
+    </div>
+
+Der Calliope mini kann Musik und Töne mit seinem eingebauten Piezolautsprecher abspielen. Ein Piezolautsprecher beruht auf dem piezoelektrischen Effekt, der aus dem altgriechischen piezein abgeleitet ist, was so viel wie drücken oder pressen bedeutet. Wird an dem Material eine elektrische Spannung angelegt, verformt sich diese im Rhythmus der Frequenz. So kann ein Audiosignal aus verschiedenen Frequenzen in Schallwellen umgewandelt werden. 
+</Versions>
 
 ----
 

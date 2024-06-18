@@ -21,8 +21,5 @@
 
 <style lang="scss">
 .content {
-    // border-left: solid 3px #eee;
-    // padding-left: 1em;
-    padding-top: 1em;
 }
 </style>
