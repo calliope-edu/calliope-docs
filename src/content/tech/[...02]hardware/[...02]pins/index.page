@@ -2,11 +2,26 @@
 title: Pins
 docTitle: Hardware
 seotitle: "Calliope Mini Pins: Hardware, Steckleiste, Funktionen"
-description: "Der Calliope mini verfügt über diverse Pins, die programmiert und Daten ausgetauscht werden können. Erfahre mehr über die Pinbelegung, Funktionen und technischen Details. Bilder der Pinouts für verschiedene Versionen werden ebenfalls bereitgestellt."
+description: "Der Calliope mini verfügt über diverse Pins, die programmiert und über die Daten ausgetauscht werden können. Erfahre mehr über die Pinbelegung, Funktionen und technischen Details. Bilder der Pinouts für verschiedene Versionen werden ebenfalls bereitgestellt."
 tags: "Calliope Mini Pins, Hardware, Steckleiste, Funktionen, Pinout, MakeCode"
 template: docs
 published: true
 ---
+
+<script>
+    import { selectedBoardVersion } from '$lib/scripts/store.js';
+
+    let pins = [{"name":"VCC","function":null,"analogin":null,"interface":null,"color":"red"},{"name":"GND","function":null,"analogin":null,"interface":null,"color":"black"},{"name":"P0","function":"PAD0","analogin":"AnalogIn","interface":"Touch","color":"green"},{"name":"P1","function":"PAD1","analogin":"AnalogIn","interface":"Touch","color":"green"},{"name":"P2","function":"PAD2","analogin":"AnalogIn","interface":"Touch","color":"green"},{"name":"P3","function":"PAD3","analogin":null,"interface":"Touch","color":"green"},{"name":"C4","function":"Display Spalte 1","analogin":"AnalogIn","interface":null,"color":"green"},{"name":"C5","function":"Button A","analogin":null,"interface":null,"color":"green"},{"name":"C6","function":"Display Spalte 4","analogin":null,"interface":null,"color":"green"},{"name":"C7","function":"Display Spalte 2","analogin":null,"interface":null,"color":"green"},{"name":"C8","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"C9","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"C10","function":"Display Spalte 5","analogin":"AnalogIn","interface":null,"color":"green"},{"name":"C11","function":"Button B","analogin":null,"interface":null,"color":"green"},{"name":"C12","function":"JacDac","analogin":null,"interface":"JACDAC","color":"green"},{"name":"C13","function":null,"analogin":null,"interface":"SPI CLOCK","color":"green"},{"name":"C14","function":null,"analogin":null,"interface":"SPI MISO","color":"green"},{"name":"C15","function":null,"analogin":null,"interface":"SPI MOSI","color":"green"},{"name":"C16","function":"Grove A1 Pin 0","analogin":"AnalogIn","interface":"UART RX","color":"green"},{"name":"C17","function":"Grove A1 Pin 1","analogin":null,"interface":"UART TX","color":"green"},{"name":"C18","function":"Display Spalte 3","analogin":"AnalogIn","interface":null,"color":"green"},{"name":"C19","function":"Grove A0 Pin 0","analogin":null,"interface":"I2C SCL","color":"green"},{"name":"GND","function":null,"analogin":null,"interface":null,"color":"black"},{"name":"C20","function":"Grove A0 Pin 1","analogin":null,"interface":"I2C SDA","color":"green"},{"name":"M1+","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"M0+","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"M1-","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"M0-","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"GND","function":null,"analogin":null,"interface":null,"color":"black"},{"name":"VM","function":null,"analogin":null,"interface":null,"color":"red"}];
+    let activePin = null;
+
+    function toggleVisibility(pin) {
+        if (activePin === pin) {
+            activePin = null; // Toggle off if it's already active
+        } else {
+            activePin = pin;
+        }
+    }
+</script>
 
 {description}
 
@@ -15,17 +30,29 @@ published: true
 <VersionNav />
 
 <ul>
-<li>6 Bananenstecker, 4 davon programmierbare Touchpins</li>
-<li>P0, P1, P2, P3, C8, C9 sind unbelegte I/O Pins zur allgemeinen Verwendung</li>
-<li>die Pins C16, C17 werden für den rechten Grove Anschluss A1 mitverwendet</li>
-<li>die Pins C19, C20 werden für den linken Grove Anschluss A0 mitverwendet</li>
-<li>Pins für LED-Anzeige: <br>Um Display Pins für andere Sachen benutzen, muss die LED-Matrix über den Editor mit <a href="https://makecode.calliope.cc/reference/led/enable">LED-Anzeige aktivieren</a> ausgeschaltet werden.</li>
-<li>4 Motor-Pins für den Anschluss von zwei Motoren</li>
+
+    <!-- <li>Pins für LED-Anzeige: <br>Um Display Pins für andere Sachen benutzen, muss die LED-Matrix über den Editor mit <a href="https://makecode.calliope.cc/reference/led/enable">LED-Anzeige aktivieren</a> ausgeschaltet werden.</li> -->
+
 <Versions>
-    <div slot="mini1">text</div>
-    <div slot="mini2">
+    <div slot="mini1-2">
+        <li>Die Pinleiste verfügt über 20 programmierbare GPIO-Pins.<br>Manche Pins sind durch andere Funktionen vorbelegt.</li>
+        <li>6 Ringpads für Bananenstecker oder Krokodilklemmen, 4 davon programmierbare Touchpins</li>
+        <li>P0, P1, P2, P3 sind unbelegte I/O Pins zur allgemeinen Verwendung</li>
+        <li>C4 - C15 sind Displaypins und können verwendet werden, wenn das Display deaktiviert wird.</li>
+        <li>C16, C17 werden für den rechten Grove Anschluss A1 mitverwendet</li>
+        <li>C18, C19 werden für den linken Grove Anschluss A0 mitverwendet</li>
+        <li>A+ und B+ sind Motorpins für den Anschluss von bis zu zwei Motoren</li>
     </div>
     <div slot="mini3"> 
+        <li>Die Pinleiste verfügt über 21 programmierbare GPIO-Pins.<br>Manche Pins sind durch andere Funktionen vorbelegt.</li>
+        <li>6 Ringpads für Bananenstecker oder Krokodilklemmen, 4 davon programmierbare Touchpins</li>
+        <li>P0, P1, P2, P3, C8, C9, C13, C14, C15 sind unbelegte I/O Pins zur allgemeinen Verwendung</li>
+        <li>C4, C6, C7, C10, C18 sind Displaypins und können verwendet werden, wenn das Display deaktiviert wird.</li>
+        <li>C12 wird für den JacDac-Anschluss verwendet.</li>
+        <li>C13, C14, C15 können als SPI-Pins verwendet werden.</li>
+        <li>C16, C17 werden für den rechten Grove Anschluss A1 mitverwendet</li>
+        <li>C19, C20 werden für den linken Grove Anschluss A0 mitverwendet</li>
+        <li>M0-, M1-, M0+, M1+ sind Motorpins für den Anschluss von zwei Motoren</li>
         <li>Logo Pin auf der Rückseite</li>
 </div>
     </Versions>
@@ -74,133 +101,12 @@ published: true
 
 <!-- Hier Grafik mit der Steckleiste einfügen: -->
 
-
-<script>
-    let pins = [{"name":"VCC","function":null,"analogin":null,"interface":null,"color":"red"},{"name":"GND","function":null,"analogin":null,"interface":null,"color":"black"},{"name":"P0","function":"PAD0","analogin":"AnalogIn","interface":"Touch","color":"green"},{"name":"P1","function":"PAD1","analogin":"AnalogIn","interface":"Touch","color":"green"},{"name":"P2","function":"PAD2","analogin":"AnalogIn","interface":"Touch","color":"green"},{"name":"P3","function":"PAD3","analogin":null,"interface":"Touch","color":"green"},{"name":"C4","function":"Display Spalte 1","analogin":"AnalogIn","interface":null,"color":"green"},{"name":"C5","function":"Button A","analogin":null,"interface":null,"color":"green"},{"name":"C6","function":"Display Spalte 4","analogin":null,"interface":null,"color":"green"},{"name":"C7","function":"Display Spalte 2","analogin":null,"interface":null,"color":"green"},{"name":"C8","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"C9","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"C10","function":"Display Spalte 5","analogin":"AnalogIn","interface":null,"color":"green"},{"name":"C11","function":"Button B","analogin":null,"interface":null,"color":"green"},{"name":"C12","function":"JacDac","analogin":null,"interface":"JACDAC","color":"green"},{"name":"C13","function":null,"analogin":null,"interface":"SPI CLOCK","color":"green"},{"name":"C14","function":null,"analogin":null,"interface":"SPI MISO","color":"green"},{"name":"C15","function":null,"analogin":null,"interface":"SPI MOSI","color":"green"},{"name":"C16","function":"Grove A1 Pin 0","analogin":"AnalogIn","interface":"UART RX","color":"green"},{"name":"C17","function":"Grove A1 Pin 1","analogin":null,"interface":"UART TX","color":"green"},{"name":"C18","function":"Display Spalte 3","analogin":"AnalogIn","interface":null,"color":"green"},{"name":"C19","function":"Grove A0 Pin 0","analogin":null,"interface":"I2C SCL","color":"green"},{"name":"GND","function":null,"analogin":null,"interface":null,"color":"black"},{"name":"C20","function":"Grove A0 Pin 1","analogin":null,"interface":"I2C SDA","color":"green"},{"name":"M1+","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"M0+","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"M1-","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"M0-","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"GND","function":null,"analogin":null,"interface":null,"color":"black"},{"name":"VM","function":null,"analogin":null,"interface":null,"color":"red"}];
-    let activePin = null;
-
-    function toggleVisibility(pin) {
-        if (activePin === pin) {
-            activePin = null; // Toggle off if it's already active
-        } else {
-            activePin = pin;
-        }
-    }
-</script>
-
 {#if activePin !== null}
     <h3>{activePin.name}</h3>
     {#if activePin.interface !== null}
         <p>Der Pin {activePin.name} benutzt die Schnittstelle {activePin.interface}.</p>
     {/if}
 {/if}
-
-<style>
-.pinout {
-    background-color: black;
-    width: 100%;
-    height:120px;
-    position: relative;
-    margin-top: 9em;
-    margin-bottom: 9em;
-}
-
-.pinout ul {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column-reverse;
-    height: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    list-style: none;
-    padding-left:0px;
-}
-
-.pinout ul li .tag {
-    position: absolute;
-    /* font-size: 1pt; */
-    text-wrap: nowrap;
-    left: 75%;
-    /* height: 28px; */
-    /* background-color: red; */
-    border: 2px solid;
-    border-radius: 0px 30px 30px 0px;
-    padding: 0px 6px 0px 6px;
-    left: 40px;
-}
-
-
-.pinout ul li .tag.up {
-    transform-origin: bottom left;
-    margin-top: -32px;
-    transform: rotateZ(-90deg);
-}
-.pinout ul li .tag.down {
-    transform-origin: top left;
-    margin-top: 58px;
-    transform: rotateZ(90deg);
-}
-.pinout li {
-    cursor: pointer;
-  /* justify-self: start; */
-    list-style: none;
-    height: 50%;
-    margin: 0px;
-    position: relative;
-}
-
-.pinout li .dot {
-margin: auto;
-position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-width: 35px;
-height: 35px;
-border-radius:40px;
-background-color: #3fc863;
-text-align: center;
-    color: white;
-    padding-top: 4px;
-}
-
-.pinout li .dot span {
-    color: white;
-    left: 50%;
-    top: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.pinout li:hover 
-{
-    .tag {
-        background-color: #3fc863;
-    }
-.dot {
-    width: 40px;
-height: 40px;
-font-weight: bold;
-padding-top: 6px;
-}
-}
-
-@media (max-width: 767px) {
-    .pinout li .dot span {
-        display: none;
-    }
-    .pinout li .dot:hover span {
-    display: block;
-}
-    .pinout li .dot {
-    width: 20px;
-    height: 20px;
-}
-}
-
-    </style>
 
 ----
 
@@ -252,8 +158,16 @@ Es wird unter zwei Formen der Berührung unterschieden:
 
 ## Analoge und digitale Pins
 
-- Alle Pins können analog und digital schreiben und digital lesen
-- mehrere Pins können analog lesen: P0,P1,P2,C4,C10,C16,C18 (siehe Tabelle unten)
+<li>Alle Pins können analog und digital schreiben und digital lesen</li>
+    <Versions>
+        <div slot="mini1-2">
+            <li>mehrere Pins können analog lesen: P1, P2, C4, C5, C6, C16, C17 (siehe Tabelle unten)</li>
+        </div>
+        <div slot="mini3">
+            <li>mehrere Pins können analog lesen: P0, P1, P2, C4, C10, C16, C18 (siehe Tabelle unten)</li>
+        </div>
+    </Versions>
+
 
 <Admonition type='info'>
 In der Signalverarbeitung wird werden Daten verallgemeinert in zwei verschiedenen Formen übertragen: 
@@ -270,8 +184,13 @@ Der integrierte Digital-Analog-Umsetzer des Calliope mini sorgt dafür, dass die
 
 Um eine LED zu dimmen oder die Geschwindigkeit eines Motors zu varieren, müsste analog die Spannung verändert werden. Der Ausgang der Pins liegt allerdigns immer bei 3,3 V. Mit der Pulsweitenmodulation wird durch schnelles ein und auschalten in unterschiedlicher Periodendauer ein analoges Signal simuliert werden, welches unterschiedliche abgestufte Werte annehmen kann. 
 
-
-<UnfoldItem title="Wieviele PWM-Pins können parallel verwendet werden?">Es können bis zu 3 PWM-Signale gleichzeitig generiert werden, bevor diese anfangen unflüssig und abgestuft zu werden. 
+<UnfoldItem title="Wieviele PWM-Pins können parallel verwendet werden?">
+    {#if $selectedBoardVersion == 3}
+    Es können bis zu 4 PWM-Signale gleichzeitig generiert werden, bevor diese anfangen unflüssig und abgestuft zu werden.
+{:else}
+    Es können bis zu 3 PWM-Signale gleichzeitig generiert werden, bevor diese anfangen unflüssig und abgestuft zu werden.
+{/if}
+ PWM-Signale gleichzeitig generiert werden, bevor diese anfangen unflüssig und abgestuft zu werden. 
 </UnfoldItem>
 
 
@@ -322,3 +241,112 @@ Um eine LED zu dimmen oder die Geschwindigkeit eines Motors zu varieren, müsste
 | MOTOR_BIN1                      |                        | Führt dann in Motor M1. |
 | UART_INT_TX                     |                        |                         |
 | MOTOR_BIN2                      |                        | Führt dann in Motor M1. |
+
+
+
+<style>
+    .pinout {
+        background-color: black;
+        width: 100%;
+        height:120px;
+        position: relative;
+        margin-top: 9em;
+        margin-bottom: 9em;
+    }
+    
+    .pinout ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        height: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        list-style: none;
+        padding-left:0px;
+    }
+    
+    .pinout ul li .tag {
+        position: absolute;
+        /* font-size: 1pt; */
+        text-wrap: nowrap;
+        left: 75%;
+        /* height: 28px; */
+        /* background-color: red; */
+        border: 2px solid;
+        border-radius: 0px 30px 30px 0px;
+        padding: 0px 6px 0px 6px;
+        left: 40px;
+    }
+    
+    
+    .pinout ul li .tag.up {
+        transform-origin: bottom left;
+        margin-top: -32px;
+        transform: rotateZ(-90deg);
+    }
+    .pinout ul li .tag.down {
+        transform-origin: top left;
+        margin-top: 58px;
+        transform: rotateZ(90deg);
+    }
+    .pinout li {
+        cursor: pointer;
+      /* justify-self: start; */
+        list-style: none;
+        height: 50%;
+        margin: 0px;
+        position: relative;
+    }
+    
+    .pinout li .dot {
+    margin: auto;
+    position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    width: 35px;
+    height: 35px;
+    border-radius:40px;
+    background-color: #3fc863;
+    text-align: center;
+        color: white;
+        padding-top: 4px;
+    }
+    
+    .pinout li .dot span {
+        color: white;
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    
+    .pinout li:hover 
+    {
+        .tag {
+            background-color: #3fc863;
+        }
+    .dot {
+        width: 40px;
+    height: 40px;
+    font-weight: bold;
+    padding-top: 6px;
+    }
+    }
+    
+    @media (max-width: 767px) {
+        .pinout li .dot span {
+            display: none;
+        }
+        .pinout li .dot:hover span {
+        display: block;
+    }
+        .pinout li .dot {
+        width: 20px;
+        height: 20px;
+    }
+    }
+    
+        </style>
