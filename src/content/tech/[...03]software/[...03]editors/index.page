@@ -47,9 +47,9 @@ Python ist nicht nur im Bildungsbereich weit verbreitet, sondern wird auch in de
 - Entwickler/Anbieter: Calliope und Lulububu (Optimierungen und Anpassung an den Calliope mini), Open Source Entwicklung von der Microbit Foundation mit vielen weiteren Personen aus der Community
 - Anwendungstyp: Webapplikation
 - Calliope mini Version: V3 (V1 und V2 werden aktuell nur eingeschränkt unterstützt)
-Account erforderlich: Nein
-Installation: Nein
-Offline nutzbar: Ja, einmal geladen, auch offline nutzbar.
+- Account erforderlich: Nein
+- Installation: Nein
+- Offline nutzbar: Ja, einmal geladen, auch offline nutzbar.
 
  <Button text="zum Editor" link="https://python.calliope.cc"/>
  <Button text="Github Repository" link="https://github.com/calliope-edu/calliope-mini-python-editor"/>

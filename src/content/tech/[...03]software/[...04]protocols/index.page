@@ -20,7 +20,19 @@ Der Calliope mini kann über Funk und das 2,4 GHz-Band drahtlos kommunizeren, we
 
 Der I2C-Bus (Inter-Integrated Circuit) ist ein serieller Kommunikationsbus, der es ermöglicht, Daten zwischen Mikrocontrollern und anderen integrierten Schaltungen auszutauschen. Er verwendet zwei Signalleitungen, eine für Daten (SDA) und eine für Takt (SCL). Durch die Verwendung von Adressen können mehrere Geräte auf demselben Bus kommunizieren.
 
-Bei dem Calliope mini läuft das UART Protokoll auf dem rechten Grove Port A0 mit den Pins **C19 (SCL)** und **C20 (SDA)**.
+<Versions>
+    <div slot="mini1-2">
+        
+        Bei dem Calliope mini läuft das UART Protokoll auf dem rechten Grove Port A0 mit den Pins **C19 (SCL)** und **C18 (SDA)**.
+
+      </div>
+      <div slot="mini3">
+
+        Bei dem Calliope mini läuft das UART Protokoll auf dem rechten Grove Port A0 mit den Pins **C19 (SCL)** und **C20 (SDA)**.
+
+      </div>
+</Versions>
+
 
 ## UART/Serial
 

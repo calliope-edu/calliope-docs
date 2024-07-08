@@ -22,7 +22,7 @@
                 <SearchBar />
             </div>
             <div class="item">
-                <BoardVersionSelector dropdown />
+                <BoardVersionSelector dropdown/>
             </div>
         </div>
     </div>
