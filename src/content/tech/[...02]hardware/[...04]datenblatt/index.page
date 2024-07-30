@@ -20,9 +20,12 @@ published: true
     <V1 />
   </div>
   <div slot="mini2">
-    <V2 />
+
     <Button text="Schaltplan V2" link="https://calliope-mini.github.io/assets/v20/img/Calliope%20mini%20rev2.0.pdf"/>
     <Button text="Schaltplan V2.1" link="https://calliope-mini.github.io/assets/v21/img/Calliope%20mini%20rev2.1.pdf"/>
+    <V2 />
+
+
   </div>
   <div slot="mini3">
     <V3 />

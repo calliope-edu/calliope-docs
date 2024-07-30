@@ -104,6 +104,9 @@ Auf der LED-Matrix des Calliope mini befinden sich 5 x 5 = 25 rote LEDs, mit den
 
 ### Lichtmessung
 
+Über die Leuchtdioden kann ebenfalls die Lichtstärke gemessen werden.
+Die Stärke des Lichts, wird in den meisten Editoren als Zahl von 0 bis 255 ausgegeben, wobei 0 der dunkelste und 255 der hellste Wert ist. 
+
 ----
 
 ## Tasten

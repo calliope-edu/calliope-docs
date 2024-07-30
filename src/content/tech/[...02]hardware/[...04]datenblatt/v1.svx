@@ -1,10 +1,10 @@
-## Blockschaltbild
+## Blockschaltbild Calliope mini 1.3
 
 <Button link="./assets/v1-3/Calliope-mini-Blockschaltbild-01.png">PNG</Button>
 
 ![Blockchaltbild Calliope mini 1.3](./assets/v1-3/Calliope-mini-Blockschaltbild-01.png)
 
-## Schaltplan
+## Schaltplan Calliope mini 1.3
 
 <Button link="./assets/v1-3/Calliope-mini-1-3.pdf">PDF</Button>
 <Button link="./assets/v1-3/Calliope-mini-1-3-seite1.png">PNG Seite 1</Button>

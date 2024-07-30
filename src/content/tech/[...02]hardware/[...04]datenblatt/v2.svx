@@ -1,17 +1,37 @@
+## Blockschaltbild Calliope mini 2.0
 
-<!-- ### Blockschaltbild
+<Button link="./assets/calliope-mini-2-blockschaltbild.png">PNG</Button>
 
-<a href={MiniRevBlock} target="_blank">PNG <a>
-<img src={MiniRevBlock} alt="mini rev2.0 Schaltplan" />
+![Blockchaltbild Calliope mini 1.3](./assets/calliope-mini-2-blockschaltbild.png)
 
-### Schaltplan
+## Schaltplan Calliope mini 2.0
 
-<a href="/datenblaetter/Calliope mini rev2.0_schaltplan.pdf" target="_blank">PDF, <a> 
-<a href={MiniRevSchaltplanPNG1} target="_blank">PNG1, <a>
-<a href={MiniRevSchaltplanPNG2} target="_blank">PNG2, <a>
-(*Eagle* 
-<a href="/datenblaetter/Calliope mini rev2.0_schaltplan.sch" download target="_blank">SCH, <a>
-<a href="/datenblaetter/Calliope mini rev2.0_schaltplan.brd" download target="_blank">BRD<a>)
+<Button link="./assets/calliope-mini-2-schaltplan.pdf">PDF</Button>
+<Button link="./assets/calliope-mini-2-schaltplan-1.png">PNG Seite 1</Button>
+<Button link="./assets/calliope-mini-2-schaltplan-2.png">PNG Seite 2</Button><br>
+<Button link="https://calliope-mini.github.io/assets/v20/eagle/Calliope%20mini%20rev2.0.sch">SCH</Button>
+<Button link="https://calliope-mini.github.io/assets/v20/eagle/Calliope%20mini%20rev2.0.brd">BRD</Button>
 
-<img src={MiniRevSchaltplanPNG1} alt="mini rev1.3 Schaltplan" />
-<img src={MiniRevSchaltplanPNG2} alt="mini rev1.3 Schaltplan" /> -->
+![Schaltplan Calliope mini 1.3 Seite 1](./assets/v1-3/Calliope-mini-1-3-seite1.png)
+
+![Schaltplan Calliope mini 1.3 Seite 2](./assets/v1-3/Calliope-mini-1-3-seite2.png)
+
+
+## Blockschaltbild Calliope mini 2.1
+
+<Button link="./assets/calliope-mini-2-blockschaltbild.png">PNG</Button>
+
+![Blockchaltbild Calliope mini 1.3](./assets/calliope-mini-2-blockschaltbild.png)
+
+## Schaltplan Calliope mini 2.1
+
+<Button link="./assets/calliope-mini-2-schaltplan.pdf">PDF</Button>
+<Button link="./assets/calliope-mini-2-schaltplan-1.png">PNG Seite 1</Button>
+<Button link="./assets/calliope-mini-2-schaltplan-2.png">PNG Seite 2</Button>
+<Button link="https://calliope-mini.github.io/assets/v21/eagle/Calliope%20mini%20rev2.1.sch">SCH</Button>
+<Button link="https://calliope-mini.github.io/assets/v21/eagle/Calliope%20mini%20rev2.1.brd">BRD</Button>
+
+![Schaltplan Calliope mini 1.3 Seite 1](./assets/v1-3/Calliope-mini-1-3-seite1.png)
+
+![Schaltplan Calliope mini 1.3 Seite 2](./assets/v1-3/Calliope-mini-1-3-seite2.png)
+

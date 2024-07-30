@@ -53,7 +53,7 @@ $: heading = title ?? admonition[type];
 <style lang="scss">
   .admonition {
     display: grid;
-    padding: 1rem; 
+    padding: 0.5rem; 
     margin-top: 2rem;
     margin-bottom: 2rem; 
     border-radius: 0.375rem; 

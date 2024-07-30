@@ -53,8 +53,9 @@ href={link} bind:this={a} {target} download={downloadName} rel={relExternal} cla
   cursor: pointer;
   box-sizing: border-box; 
   display: inline-block; 
-  margin-left: 0.25rem;
-  margin-right: 0.25rem; 
+  // margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0.5rem; 
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; 
   font-weight: 700; 
   text-align: center; 
