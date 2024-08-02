@@ -7,6 +7,7 @@ import WarningIcon from '~icons/ri/error-warning-fill';
 import DangerIcon from '~icons/ri/skull-2-fill';
 import ExperimentalIcon from '~icons/ri/test-tube-fill';
 export let type;
+export let center = false;
 export let title = null;
 const icons = {
     note: NoteIcon,
@@ -35,6 +36,7 @@ $: heading = title ?? admonition[type];
   class:warning={type=='warning'}
   class:danger={type=='danger'}
   class:experimental={type=='experimental'}
+  style={center ? 'text-align: center;' : ''}
 >
   <div class="head">
     <div class="icon">

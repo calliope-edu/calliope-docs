@@ -110,7 +110,9 @@ published: true
 
 ----
 
-## Ausgangsspannung und -stromstärke
+## Ausgangsspannung
+
+<!-- 
 
 Spannung:
 - Vcc (normalerweise  3.3V)
@@ -130,8 +132,14 @@ Schließe niemals mehre Verbraucher, mit 15mA wie z.B. 2 LEDs an einen I/O-Pin a
 <Yes>
 Verwendete stattdessen verschiedene I/O Pins oder eine Transistorenschaltung. Beachte, dass ingesamt die <b>100 mA</b> nicht überschritten werden.
 </Yes>
-</Admonition>
+</Admonition> -->
 
+Die Ausgangspannung der Pins beträgt in der Regel 3,3V.
+
+    <Admonition type='note' center=true>
+        Detailliertere Infos zur Stromversorgung über die Pins findest du hier.<br>
+        <Button link="../stromversorgung">Stromversorgung</Button>
+        </Admonition>
 
 ----
 
