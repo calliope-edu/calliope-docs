@@ -147,6 +147,7 @@ align-items: center
       justify-content: space-between;
       align-items: center;
       width: 100%;
+      border-top: 2px solid;
       cursor: pointer;
 
       span {

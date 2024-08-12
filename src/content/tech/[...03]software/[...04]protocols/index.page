@@ -23,12 +23,12 @@ Der I2C-Bus (Inter-Integrated Circuit) ist ein serieller Kommunikationsbus, der 
 <Versions>
     <div slot="mini1-2">
         
-        Bei dem Calliope mini läuft das UART Protokoll auf dem rechten Grove Port A0 mit den Pins **C19 (SCL)** und **C18 (SDA)**.
+        Bei dem Calliope mini läuft das UART Protokoll auf dem rechten Grove Port A0 mit den Pins <b>C19 (SCL)</b> und <b>C18 (SDA)</b>.
 
       </div>
       <div slot="mini3">
 
-        Bei dem Calliope mini läuft das UART Protokoll auf dem rechten Grove Port A0 mit den Pins **C19 (SCL)** und **C20 (SDA)**.
+        Bei dem Calliope mini läuft das UART Protokoll auf dem rechten Grove Port A0 mit den Pins <b>C19 (SCL)</b> und <b>C20 (SDA)</b>.
 
       </div>
 </Versions>
@@ -55,3 +55,24 @@ Es gibt eine Vielzahl von weiteren seriellen Monitoren, wie z.B. Putty oder die 
 ## SPI
 
 SPI (Serial Peripheral Interface) ist eine serielle Schnittstellentechnologie, die für die bidirektionale Kommunikation zwischen einem Master-Gerät und mehreren Slave-Geräten in einem synchronen Datenübertragungsmodus verwendet wird. Sie verwendet separate Leitungen für Datenübertragung (MOSI - Master Out Slave In, MISO - Master In Slave Out), Takt (SCLK) und Slave-Auswahl (SS/CS - Slave Select/Chip Select). SPI ermöglicht eine schnelle und effiziente Kommunikation und wird häufig in der Mikrocontroller- und Peripheriegerätekommunikation eingesetzt.
+
+<Versions>
+
+  <div slot="mini3">
+    
+<h2>JacDac </h2>
+
+Jacdac ist ein hard- und software basiertes System, welches erlaubt externe Module wie Sensoren und Aktoren einfach an den Calliope mini V3 anzuschließen. Die Vorteile sind:
+
+- Steuerung und Visualisierung von Messdaten in Echtzeit  
+- automatische Erkennung der Module
+- kinderfreundliches Stecksystem
+- Reihen- und Parallelschaltung von Sensoren
+- Versorgung von stromintensiveren Modulen mittels Jacdac Power Supplies
+
+Voraussetzung ist ein Calliope mini V3, die Verwendung Makecode des Makecode Editors und eine Verbindung via WebUSB, siehe: 
+[USB-Interface](../usb-interface/)
+
+</div>
+
+</Versions>

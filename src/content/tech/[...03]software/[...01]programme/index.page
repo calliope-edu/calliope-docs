@@ -12,17 +12,41 @@ published: true
 
 ## Startprogramm
 
-Das Startprogramm, manchmal auch Demoprogramm ist die Calliope mini Firmware. Sie befindet sich auf jedem Calliope mini im Auslieferungszustand.
+Das Startprogramm ist die Calliope mini Firmware. Sie befindet sich auf jedem Calliope mini im Auslieferungszustand.
 
-Das Startprogramm setzt sich aus 3 Teilen zusammen: Der Testroutine, dem Willkommensintro und den 4 Startprogrammen.
+<Admonition type='warning'>
+    Das Startprogramm wird in manchen Fällen auch als Demoprogramm bezeichnet. In beiden Fällen ist damit die Calliope mini Firmware gemeint.
+    </Admonition>
+
+
+<Versions>
+    <div slot="mini1-2">
+
+Das Startprogramm setzt sich aus 3 Teilen zusammen: Der Testroutine, dem Willkommensintro und den fünf Startprogrammen.
+Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, kommt man in das Menü und kann über die Tasten A und B sich durch die fünf Programm navigieren: 
+
+
+<li>Orakel </li>
+<li>Einmal-eins</li>
+<li>Schere-Stein-Papier</li>
+<li>Krach-o-meter</li>
+<li>Bluetooth</li>
+</div>
+<div slot="mini3">
+
+Das Startprogramm setzt sich aus 3 Teilen zusammen: Der Testroutine, dem Willkommensintro und den vier Startprogrammen.
 Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, kommt man in das Menü und kann über die Tasten A und B sich durch die vier Programm navigieren: 
 
-- Orakel 
-- Einmal-eins
-- Schere-Stein-Papier
-- Krach-o-meter
+<li>Orakel </li>
+<li>Einmal-eins</li>
+<li>Schere-Stein-Papier</li>
+<li>Krach-o-meter</li>
 
-
+<Admonition type='tip'>
+    Wird der Calliope mini V3 verwendet, gelangst du über 3 x kurzes drücken der Reset Taste in den Kopplungsmodus.
+    </Admonition>
+</div>
+</Versions>
 
 <!-- TODO: Die default einstellungen je Firmware & Calliope mini Version für Yotta (BLE, RAM, ...) aufschlüßeln -->
 
@@ -54,7 +78,7 @@ Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, komm
         ### Skeleton
         <GitLink repo="calliope-mini/microbit" branch="v2.2.0-rc6-calliope.rc4" />
 
-        <UnfoldItem title="Abhängigkeiten">
+        <UnfoldItem title="Abhängigkeiten" color="calliope">
 
             - <GitLink repo="calliope-mini/microbit-dal" branch="v2.2.0-rc6-calliope.rc4" />
 
@@ -106,7 +130,7 @@ Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, komm
 </Versions>
 
 
-<UnfoldItem title="MakeCode">
+<UnfoldItem title="MakeCode" color="calliope">
 
 ## MakeCode
 

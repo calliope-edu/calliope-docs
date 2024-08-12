@@ -24,7 +24,7 @@
   
   <style lang="scss">
     .wrapper {
-      display: flex; 
+      display: inline-flex; 
       margin-top: 1rem;
       margin-bottom: 1rem; 
       align-items: flex-start; 
