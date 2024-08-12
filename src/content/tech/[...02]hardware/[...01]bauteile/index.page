@@ -86,6 +86,7 @@ published: true
 <Versions navbar={false}>
 
     <div slot="mini2" >
+        <Gap h="1" />
 
 ## Flash
 
@@ -119,19 +120,17 @@ Auf dem Calliope mini befinden sich 3 Tasten.
 
 ## Lagesensor
 
-Mit dem Lagesensor kann der Calliope mini messen, in welche Lage er sich befindet und in welche Richtung mit welcher Stärke er bewegt wird.
-
 <Versions navbar={false}>
     <div slot="mini1-2">
 
-        <p><i>Bosch BMX055</i>
-        <br></p>
+        Bosch BMX055
+        <br>
         <li>Beschleunigungsmesser, Gyroskop, Magnetometer, 9 Achsen Sensor</li>
 
     </div>
     <div slot="mini3">
-        <p><i>LSM303AGR
-        <br></p>
+        LSM303AGR
+        <Gap h="1" />
         <li>Beschleunigungsmesser, Magnetometer, Temperatur</li>
         <li>6 Achsen Sensor</li>
         <li><a href="https://www.mouser.de/datasheet/2/389/lsm303agr-1849768.pdf">Datenblatt</a></li>
@@ -139,6 +138,8 @@ Mit dem Lagesensor kann der Calliope mini messen, in welche Lage er sich befinde
     </div>
 
     <li>über I2C angebunden</li>
+    <Gap h="1" />
+    Mit dem Lagesensor kann der Calliope mini messen, in welche Lage er sich befindet und in welche Richtung mit welcher Stärke er bewegt wird.
 
 </Versions>
 

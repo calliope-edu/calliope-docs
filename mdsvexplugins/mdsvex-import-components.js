@@ -4,7 +4,6 @@ const scripts = `
     import Svg from '$lib/components/elements/Svg.svelte';
     import GitLink from '$lib/components/elements/GitLink.svelte';  
     import VersionNav from '$lib/components/BoardVersionSelector.svelte';
-    import Version from '$lib/components/VersionTag.svelte';
     import Versions from '$lib/components/BoardVersionSwitch.svelte';
     import Gap from '$lib/components/layout/Gap.svelte';
     import Grid from '$lib/components/layout/Grid.svelte';
@@ -24,6 +23,7 @@ const scripts = `
     import Admonition from '$lib/components/elements/Admonition.svelte';
     import No from '$lib/components/elements/No.svelte';
     import Yes from '$lib/components/elements/Yes.svelte';
+    import V from '$lib/components/elements/Highlight.svelte';
     import Step from '$lib/components/elements/Step.svelte';
     import Steps from '$lib/components/elements/Steps.svelte';
     import TabbedLinks from '$lib/components/elements/TabbedLinks.svelte';

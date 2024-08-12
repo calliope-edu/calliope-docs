@@ -135,10 +135,12 @@ Verwendete stattdessen verschiedene I/O Pins oder eine Transistorenschaltung. Be
 </Admonition> -->
 
 Die Ausgangspannung der Pins beträgt in der Regel 3,3V.
+        
 
-    <Admonition type='note' center=true>
-        Detailliertere Infos zur Stromversorgung über die Pins findest du hier.<br>
-        <Button link="../stromversorgung">Stromversorgung</Button>
+    <Admonition type='note'>
+        
+        Detailliertere Infos zur Stromversorgung des Calliope mini über die Pins findest du unter <a href="../stromversorgung">Stromversorgung</a>
+
         </Admonition>
 
 ----
@@ -160,6 +162,10 @@ Es wird unter zwei Formen der Berührung unterschieden:
 - **Capacitive Touch**: Bei der kapazitiven Berührung erkennt der Calliope mini eine Änderung der Kapazität eines Pins oder einer leitenden Oberfläche (wie dem Touch-Logo), wenn der Finger diese berührt oder ihm sehr nahe kommt.
 - **Resistive Touch**: Bei der resistiven Berührung wird ein Stromfluss von dem berührten Pin zum GND-Pin festgestellt. Der Körper braucht eine Verbindung zu GND (entweder durch Berührung oder durch Anschluss eines Kabels an der Kleidung), während der Eingangspin berührt wird, um einen Stromkreis den beiden Pins zu schließen.
 
+</Admonition>
+
+<Admonition type='note'>
+<V>V1</V> und <V>V2</V> unterstützen keinen kapazitiven Touch.
 </Admonition>
 
 ----
