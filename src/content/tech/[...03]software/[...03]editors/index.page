@@ -3,26 +3,82 @@ title: Editoren
 docTitle: Software
 seotitle: "Calliope Mini Editoren"
 description: "Erfahre mehr über die verschiedenen Programmiereditoren für den Calliope Mini, einschließlich MakeCode, Micropython und Open Roberta Lab. Vergleiche Funktionen und entdecke weitere verfügbare Editoren für den Calliope Mini."
-tags: "Calliope Mini, Programmiereditoren, MakeCode, Micropython, Open Roberta Lab, MindPlus, Swift Playground, TigerJython, microblocks, abbozza!, SEGGER Embedded Studio, Arduino IDE"
+tags: "Calliope Mini, Programmiereditoren, Calliope mini Blocks, Scratch, Blocks, MakeCode, Micropython, Open Roberta Lab, MindPlus, Swift Playground, TigerJython, microblocks, abbozza!, SEGGER Embedded Studio, Arduino IDE"
 template: docs
 published: true
 ---
 
+<script>
+import EditorComparison from "./editors.svx";
+</script>
+
+<style>
+	.info {
+	font-size: inherit;
+	 border-collapse: collapse;
+	}
+	.info td {
+	vertical-align: top;
+	  border-bottom: 1px solid black;
+	padding: 2px 0px 2px 0px;
+	border-color: #ddd;
+	}
+	.info td:first-child {
+	white-space: nowrap;
+	}
+	.info td:last-child {
+	padding-left: 20px;
+	width: 100%;
+	}
+	.info tr:last-child td {
+	  border-bottom: none;
+	}
+	@media (max-width: 752px) {
+	.info td:first-child {
+	white-space: unset;
+	}
+	}
+	</style>
 
 Der Calliope mini kann sowohl mit blockbasierten, als auch textbasierten Editoren programmiert und zum Leben erweckt werden.
 
+
 ## MakeCode
+
+<Grid m="3">
+	<div>	<img src="/images/makecode.svg" alt="" width="200px" /></div>
+    <div style="grid-column: span 2;">
+
+		<table class="info">
+			<tr>
+			<td>Entwickler/Anbieter:</td><td>Microsoft Research</td>
+			</tr>
+			<tr>
+			<td>Anwendungstyp:</td><td>Webapplikation</td>
+			</tr>
+			<tr>
+			<td>Betriebssystem:</td><td>Cross-Platform</td>
+			</tr>
+			<tr>
+			<td>Calliope mini Version:</td><td><V>V3</V> <V>V2</V> <V>V1</V></td>
+			</tr>
+			<tr>
+			<td>Account erforderlich:</td><td>Nein</td>
+			</tr>
+			<tr>
+			<td>Installation:</td><td>Nein, nur bei der Offline-Version</td>
+			</tr>
+			<tr>
+			<td>Offline nutzbar:</td><td> Ja, nach dem ersten Speichern im lokalen Cache oder als Programm. Zusätzlich können Offline-Versionen für unterschiedliche Betriebssysteme <a href="https://github.com/calliope-edu/pxt-calliope/releases" target="_blank">hier</a> geladen werden.</td>
+			</tr>
+			</table>
+	</div>
+
+	</Grid>
+	<Gap h="2" />
 
 MakeCode ist ein von Microsoft Research entwickelter Programmiereditor mit dem sowohl block-, als auch textbasiert Microcontroller programmiert werden können. Der Editor ist erweiterbar und skalierbar indem Pakete, die unter anderem von den Nutzer:innen erstellt werden, hinzugefügt werden können.
 
-- Entwickler: Microsoft Research
-- Anwendungstyp: Webapplikation 
-- kein Account erforderlich
-- keine Installation erforderlich
-- offline nutzbar nach dem ersten Speichern im lokalen Cache
-- eigene Erweiterungen hinzufügbar
-- eventbasierte Programmierung
-- Programme können per Link geteilt werden 
 
 <Button text='zum Editor' link='https://makecode.calliope.cc/' />
 <br><br>
@@ -37,54 +93,157 @@ Weitere Informationen zur Funktionsweise von Makecode, kann hier nachgelesen wer
 
 [Der Calliope mini - ein reaktives System](https://makecode.calliope.cc/device/reactive)
 
+----
 
 ## Micropython
+
+<Grid m="3">
+	<div>	<img src="/images/python.svg" alt="" width="200px" /></div>
+    <div style="grid-column: span 2;">
+
+		<table class="info">
+			<tr>
+			<td>Entwickler/Anbieter:</td><td>Calliope und Lulububu (Optimierungen und Anpassung an den Calliope mini), Open Source Entwicklung von der Microbit Foundation mit vielen weiteren Personen aus der Community</td>
+			</tr>
+			<tr>
+			<td>Anwendungstyp:</td><td> Webapplikation </td>
+			</tr>
+			<tr>
+			<td>Betriebssystem:</td><td>Windows-, Mac-, Linux- oder Chromebook-Computer</td>
+			</tr>
+			<tr>
+			<td>Calliope mini Version:</td><td><V>V3</V>, <V>V1</V> und <V>V2</V> werden aktuell nur eingeschränkt unterstützt</td>
+			</tr>
+			<tr>
+			<td>Account erforderlich:</td><td>Nein</td>
+			</tr>
+			<tr>
+			<td>Installation:</td><td>Nein</td>
+			</tr>
+			<tr>
+			<td>Offline nutzbar:</td><td>Ja, einmal geladen, auch offline nutzbar.</td>
+			</tr>
+			</table>
+	</div>
+
+	</Grid>
+	<Gap h="2" />
 
 MicroPython ist eine speziell für Mikrocontroller angepasste Version von Python. Der größte Unterschied besteht darin, dass MicroPython kein Betriebssystem benötigt; sobald es verwendet wird, fungiert es quasi als das System, das auf dem Calliope mini läuft.
 Python ist eine ausgezeichnete erste textbasierte Programmiersprache. Die Anweisungen und Syntax basieren auf natürlicher Sprache, was den Code leicht lesbar, verständlich und modifizierbar macht.
 Python ist nicht nur im Bildungsbereich weit verbreitet, sondern wird auch in der Industrie eingesetzt, insbesondere in den Bereichen Datenwissenschaft und maschinelles Lernen.
 
-- Entwickler/Anbieter: Calliope und Lulububu (Optimierungen und Anpassung an den Calliope mini), Open Source Entwicklung von der Microbit Foundation mit vielen weiteren Personen aus der Community
-- Anwendungstyp: Webapplikation
-- Calliope mini Version: V3 (V1 und V2 werden aktuell nur eingeschränkt unterstützt)
-- Account erforderlich: Nein
-- Installation: Nein
-- Offline nutzbar: Ja, einmal geladen, auch offline nutzbar.
-
  <Button text="zum Editor" link="https://python.calliope.cc"/>
  <Button text="Github Repository" link="https://github.com/calliope-edu/calliope-mini-python-editor"/>
  <br><br>
 
+ Weitere Informationen findest du auf der Calliope **[Webseite](https://calliope.cc/programmieren/editoren/python)** 
+
+---- 
+
+<Versions>
+<div slot="mini2-3">
+	<Gap h="2" />
+
+## Calliope mini Blocks (Scratch)
+
+<Grid m="3">
+	<div>	<img src="/images/blocks.svg" alt="" width="200px" /></div>
+    <div style="grid-column: span 2;">
+		<table class="info">
+			<tr>
+			<td>Entwickler/Anbieter:</td><td>Calliope, Scratch Foundation, Konek.to</td>
+			</tr>
+			<tr>
+			<td>Anwendungstyp:</td><td> Webapplikation, iOS App </td>
+			</tr>
+			<tr>
+			<td>Betriebssystem:</td><td>Windows-, Mac-, Linux- oder Chromebook-Computer</td>
+			</tr>
+			<tr>
+			<td>Calliope mini Version:</td><td><V>V3</V> <V>V2</V></td>
+			<tr>
+			<td>Account erforderlich:</td><td>Nein</td>
+			</tr>
+			<tr>
+			<td>Installation:</td><td>Nein</td>
+			</tr>
+			<tr>
+			<td>Offline nutzbar:</td><td>Ja, einmal geladen, auch offline nutzbar.</td>
+			</tr>
+			</table>
+	</div>
+
+	</Grid>
+	<Gap h="2" />
+
+Der neue Calliope mini Blocks Editor basierend auf Scratch ermöglicht eine weitere intuitive Programmierung des Calliope mini.
+Ab jetzt können Anwendungen auf dem Computer mit dem Calliope mini gesteuert werden und andersherum: eigene Bilder, eigene Geräusche und unendlich viele neue Möglichkeiten. Der Kreativität sind keine Grenzen gesetzt.
+
+<Button text='zum Editor' link='https://blocks.calliope.cc/' />
+
+
+
+Weitere Informationen findest du auf der Calliope **[Webseite](https://calliope.cc/programmieren/editoren/calliope-mini-blocks-scratch-programmieren)** 
+
+----
+
+</div>
+
+</Versions>
+
 ## Open Roberta Lab
 
-Open Roberta ist ein vom Fraunhofer Institut entwickelter Editor, mit dem sich verschiedene Microcontroller und Roboter in der grafischen Programmiersprache NEPO® programmieren lassen. In dem [Wiki von Open Roberta](https://jira.iais.fraunhofer.de/wiki/display/ORInfo/Das+Open+Roberta+Lab) befinden sich allgemeine Informationen zur Bedienung des Editors sowie eine [Einführung in die Programmierung](https://jira.iais.fraunhofer.de/wiki/display/ORInfo/Programmieren+Calliope+mini) des Calliope mini.
+<!-- ![Pinout](./editors_logo_nepo.png)  -->
 
-- Entwickler: Fraunhofer IAIS
-- Anwendungstyp: Webapplikation 
-- Account optional für mehr Funktionen
-- keine Installation erforderlich
-- offline nutzbar mit  [lokaler Installation](https://www.open-roberta.org/lokale-installation/)
-- prozedurale Programmierung
-- Gruppenverwaltung, um Programme mit Klassen/Gruppen zu teilen und zu überprüfen
+<Grid m="3">
+	<div>	<img src="/images/nepo.svg" alt="" width="200px" /></div>
+    <div style="grid-column: span 2;">
+
+			<table class="info">
+				<tr>
+				<td>Entwickler/Anbieter:</td><td>Fraunhofer IAIS</td>
+				</tr>
+				<tr>
+				<td>Anwendungstyp:</td><td>Webapplikation</td>
+				</tr>
+				<tr>
+				<td>Betriebssystem:</td><td>Cross-Platform</td>
+				</tr>
+				<tr>
+				<td>Calliope mini Version:</td><td><V>V3</V> <V>V2</V> <V>V1</V></td>
+				</tr>
+				<tr>
+				<td>Account erforderlich:</td><td>Nein, optional für mehr Funktionen</td>
+				</tr>
+				<tr>
+				<td>Installation:</td><td>Nein</td>
+				</tr>
+				<tr>
+				<td>Offline nutzbar:</td><td>Ja, es kann ein komplett eigener Server mit einem Image von Open Roberta gehostet werden:  <a href="https://www.open-roberta.org/lokale-installation/" target="_blank">Lokale Installation</a></td>
+				</tr>
+				</table>
+	</div>
+
+	</Grid>
+	<Gap h="2" />
+
+	Open Roberta ist ein vom Fraunhofer Institut entwickelter Editor, mit dem sich verschiedene Microcontroller und Roboter in der grafischen Programmiersprache NEPO® programmieren lassen. In dem [Wiki von Open Roberta](https://jira.iais.fraunhofer.de/wiki/display/ORInfo/Das+Open+Roberta+Lab) befinden sich allgemeine Informationen zur Bedienung des Editors sowie eine [Einführung in die Programmierung](https://jira.iais.fraunhofer.de/wiki/display/ORInfo/Programmieren+Calliope+mini) des Calliope mini.
+
+
+
 
 <Button text='zum Editor' link='https://lab.open-roberta.org/' />
 
 Weitere Informationen findest du auf der Calliope **[Webseite](https://calliope.cc/programmieren/editoren/makecode)** 
 
+----
+
 ## Funktionsvergleich
 
-|                              | MakeCode                     | Micropython                  | Open Roberta                  |
-| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
-| Blockbasierte Programmierung | <Yes />                  | <No />                    | <Yes />                  |
-| Textbasierte Programmierung  | <Yes> Python und Javascript</Yes> | <Yes>Python</Yes>          | <No> Nein, der Quellcode kann aber in C/C++ angezeigt werden</No> |
-| Parallelität                | <Yes>Eventbasierte Programmierung, mehrere Dauerhaftschleifen möglich</Yes> | <No />                  | <No>Prozedurale Programmierung</No> |
-| Variablen                   | <Yes />                  | <Yes />                  | <Yes />                  |
-| Listen                      | <Yes>Ja, auch mehrdimensional</Yes> | <Yes>Ja</Yes>              | <Yes>Ja, keine merdimensionalen Listen</Yes> |
-| Schleifen<br>(`While`, `For`, `Foreach`) | <Yes /> | <Yes /> | <Yes /> |
-| Funktionen                  | <Yes /> | <Yes /> | <Yes /> |
-| Kommunikation               | <Yes>Funk, Serial, UART, I2C, BLE</Yes> | <Yes>Funk, I2C, UART, SPI</Yes> | <Yes>Funk, Serial</Yes>       |
-| Sensoren/Aktoren-Erweiterungen | <Yes>Erweiterungen können selbst von der Community erstellt und hinzugefügt werden</Yes> | <Yes>Ja, als externe Module importierbar</Yes> | <Yes>Es gibt Erweiterungen zu ausgewählten Sensoren/Aktoren. Eigene können nicht erstellt werden.</Yes> |
+In allen unten aufgeführten Editoren können die internen Sensoren und Aktoren des Calliope mini, digitale und analoge Pins (PWM), DC-Motoren, sowie Servomotoren programmiert werden. Grundlegende Programmierbausteine wie Variablen, bedingte Anweisungen/Verzweigungen und Schleifen sind in allen Editoren verfügbar.
 
+<EditorComparison />
 
 ## Weitere Editoren
 

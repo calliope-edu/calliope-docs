@@ -8,15 +8,33 @@ template: docs
 published: true
 ---
 
+Der Calliope mini kann über verschiedene Mobilapplikationen programmiert werden:
 
-## iOS App
+## iOS
 
-### Installation
+### Calliope mini App (Makecode/Open Roberta)
 
-### Mini verbinden
+<Button link="https://itunes.apple.com/de/app/calliope-mini/id1309545545?mt=8">App Store</Button>
 
-## Android App
+Weitere Informationen auf der Calliope **[Webseite](https://calliope.cc/programmieren/mobil/ipad)** 
 
-### Installation
 
-### Mini verbinden
+### Calliope mini Blocks (Scratch)
+
+<Button link="https://apps.apple.com/de/app/calliope-mini-blocks/id6480199471">App Store</Button>
+
+Weitere Informationen auf der Calliope **[Webseite](https://calliope.cc/programmieren/editoren/calliope-mini-blocks-scratch-programmieren)** 
+
+
+### Swift Playground 
+
+<Button link="https://itunes.apple.com/de/app/swift-playgrounds/id908519492?mt=8">App Store</Button>
+
+Weitere Informationen auf der Calliope **[Webseite](https://calliope.cc/programmieren/editoren/playground)** 
+
+
+## Android 
+
+### Calliope mini App (Makecode/Open Roberta)
+
+<Button link="https://play.google.com/store/apps/details?id=cc.calliope.mini">Google Play Store</Button>

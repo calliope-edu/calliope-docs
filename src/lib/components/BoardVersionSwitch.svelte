@@ -13,6 +13,9 @@
     {#if $selectedBoardVersion == 1 || $selectedBoardVersion == 2}
         <slot name="mini1-2" />
     {/if}
+    {#if $selectedBoardVersion == 2 || $selectedBoardVersion == 3}
+    <slot name="mini2-3" />
+    {/if}
     {#if $selectedBoardVersion == 3}
         <slot name="mini3" />
     {/if}

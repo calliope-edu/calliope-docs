@@ -86,10 +86,10 @@
                         </div>
                     </div>
 
-                    <a href="https://github.com/calliope-edu/calliope-docs/edit/PRODUCTION/{meta.filepath}" target="_blank">
+                    <!-- <a href="https://github.com/calliope-edu/calliope-docs/edit/PRODUCTION/{meta.filepath}" target="_blank">
                         <i class="edit icon" />
                         Diese Seite auf GitHub bearbeiten
-                    </a>
+                    </a> -->
                     
                 </div>
 

@@ -1,0 +1,15 @@
+## Schaltplan Calliope mini 3
+
+<Button link="./assets/calliope-mini-3-schaltplan.pdf">PDF</Button>
+
+![Schaltplan Calliope 3.0](./assets/Calliope_mini_3-01.png)
+![Schaltplan Calliope 3.0](./assets/Calliope_mini_3-02.png)
+![Schaltplan Calliope 3.0](./assets/Calliope_mini_3-03.png)
+![Schaltplan Calliope 3.0](./assets/Calliope_mini_3-04.png)
+![Schaltplan Calliope 3.0](./assets/Calliope_mini_3-05.png)
+![Schaltplan Calliope 3.0](./assets/Calliope_mini_3-06.png)
+![Schaltplan Calliope 3.0](./assets/Calliope_mini_3-07.png)
+![Schaltplan Calliope 3.0](./assets/Calliope_mini_3-08.png)
+![Schaltplan Calliope 3.0](./assets/Calliope_mini_3-09.png)
+![Schaltplan Calliope 3.0](./assets/Calliope_mini_3-10.png)
+![Schaltplan Calliope 3.0](./assets/Calliope_mini_3-11.png)

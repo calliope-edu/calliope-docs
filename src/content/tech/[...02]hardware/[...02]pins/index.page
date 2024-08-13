@@ -110,11 +110,13 @@ published: true
 
 ----
 
-## Ausgangsspannung und -stromstärke
+## Ausgangsspannung
+
+<!-- 
 
 Spannung:
 - Vcc (normalerweise  3.3V)
-- Sensoren und Aktoren die mit 5V betrieben werden, funktionieren in den meisten Fällen nicht.
+- Sensoren und Aktoren, die mit 5V betrieben werden, funktionieren in den meisten Fällen nicht und sollten mit einer externen Spannungsquelle versorgt und einem Pegelwandler an den Calliope mini angeschlossen werden.
 
 Stromstärke:
 - Standard Drive: max 5mA, Pins: P0, P1, P3, C4, C6, C8, C9, C10, C11, C16, C17, C18,
@@ -130,8 +132,16 @@ Schließe niemals mehre Verbraucher, mit 15mA wie z.B. 2 LEDs an einen I/O-Pin a
 <Yes>
 Verwendete stattdessen verschiedene I/O Pins oder eine Transistorenschaltung. Beachte, dass ingesamt die <b>100 mA</b> nicht überschritten werden.
 </Yes>
-</Admonition>
+</Admonition> -->
 
+Die Ausgangspannung der Pins beträgt in der Regel 3,3V.
+        
+
+    <Admonition type='note'>
+        
+        Detailliertere Infos zur Stromversorgung des Calliope mini über die Pins findest du unter <a href="../stromversorgung">Stromversorgung</a>
+
+        </Admonition>
 
 ----
 
@@ -152,6 +162,10 @@ Es wird unter zwei Formen der Berührung unterschieden:
 - **Capacitive Touch**: Bei der kapazitiven Berührung erkennt der Calliope mini eine Änderung der Kapazität eines Pins oder einer leitenden Oberfläche (wie dem Touch-Logo), wenn der Finger diese berührt oder ihm sehr nahe kommt.
 - **Resistive Touch**: Bei der resistiven Berührung wird ein Stromfluss von dem berührten Pin zum GND-Pin festgestellt. Der Körper braucht eine Verbindung zu GND (entweder durch Berührung oder durch Anschluss eines Kabels an der Kleidung), während der Eingangspin berührt wird, um einen Stromkreis den beiden Pins zu schließen.
 
+</Admonition>
+
+<Admonition type='note'>
+<V>V1</V> und <V>V2</V> unterstützen keinen kapazitiven Touch.
 </Admonition>
 
 ----

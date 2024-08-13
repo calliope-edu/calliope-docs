@@ -8,3 +8,16 @@ template: docs
 published: true
 ---
 
+Der Calliope mini Autouploader kann verwendet werden, um Programm automatisch aus dem Downloadordner auf den Calliope mini zu laden. Das kann insbesondere für die Calliope mini Versionen 1 und 2 hilfreich sein oder falls WebUSB nicht unterstützt wird. 
+
+<Button link="https://calliope.cc/downloads/CalliopeMiniUploader.exe">Download</Button>
+
+- CalliopeMiniUploader.exe herunterladen
+- CalliopeMiniUploader.exe ausführen
+- Fenster im Hintergrund offen lassen
+- Neue .hex Dateien im Downloads Ordner werden jetzt im Hintergrund auf den Calliope mini kopiert.
+- Unter Einstellungen kann ein benutzerdefinierter Pfad ausgewählt werden von dem die .hex-Datein auf den Calliope mini geladen werden.
+
+<Admonition type='danger'>
+    Durch das Update "22H2" für Windows 10 und Windows 11 kommt es zu Kopierproblemen bei vielen Mikrocontrollern, das betrifft leider auch sämtliche Calliope mini. Langfristig sind wir hier darauf angewiesen, dass Microsoft das Problem behebt, können aber mithilfe des CalliopeMiniUploaders eine vorläufige Lösung anbieten.
+    </Admonition>

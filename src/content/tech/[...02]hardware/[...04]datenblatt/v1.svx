@@ -1,20 +1,18 @@
-## Blockschaltbild
+## Schaltplan Calliope mini 1.3
 
-<Button link="./assets/v1-3/Calliope-mini-Blockschaltbild-01.png">PNG</Button>
+<Button link="./assets/Calliope-mini-1-3.pdf">PDF</Button>
+<Button link="./assets/Calliope-mini-1-3-seite1.png">PNG Seite 1</Button>
+<Button link="./assets/Calliope-mini-1-3-seite2.png">PNG Seite 2</Button><br>
+<Button link="./assets/Calliope-mini-1-3.sch">SCH</Button>
+<Button link="./assets/Calliope-mini-1-3.brd">BRD</Button>
 
-![Blockchaltbild Calliope mini 1.3](./assets/v1-3/Calliope-mini-Blockschaltbild-01.png)
+![Schaltplan Calliope mini 1.3 Seite 1](./assets/Calliope-mini-1-3-seite1.png)
 
-## Schaltplan
+![Schaltplan Calliope mini 1.3 Seite 2](./assets/Calliope-mini-1-3-seite2.png)
 
-<Button link="./assets/v1-3/Calliope-mini-1-3.pdf">PDF</Button>
-<Button link="./assets/v1-3/Calliope-mini-1-3-seite1.png">PNG Seite 1</Button>
-<Button link="./assets/v1-3/Calliope-mini-1-3-seite2.png">PNG Seite 2</Button>
+## Blockschaltbild Calliope mini 1.3
 
-![Schaltplan Calliope mini 1.3 Seite 1](./assets/v1-3/Calliope-mini-1-3-seite1.png)
+<Button link="./assets/calliope-mini-1.3-blockschaltbild.png">PNG</Button>
 
-![Schaltplan Calliope mini 1.3 Seite 2](./assets/v1-3/Calliope-mini-1-3-seite2.png)
+![Blockchaltbild Calliope mini 1.3](./assets/calliope-mini-1.3-blockschaltbild.png)
 
-### Eagle Files
-
-<Button link="./assets/v1-3/Calliope-mini-1-3.sch">SCH</Button>
-<Button link="./assets/v1-3/Calliope-mini-1-3.brd">BRD</Button>

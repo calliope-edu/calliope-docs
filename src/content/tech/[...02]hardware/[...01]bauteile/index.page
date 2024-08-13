@@ -86,6 +86,7 @@ published: true
 <Versions navbar={false}>
 
     <div slot="mini2" >
+        <Gap h="1" />
 
 ## Flash
 
@@ -94,6 +95,7 @@ ISSI IS25LP, 16MB, 166MHZ
 Auf dem Calliope mini 2 befindet sich ein eingebauter Flash-Speicher auf dem bis zu 25 Programm gespeichert werden können.
 Weitere Informationen zu den 25 Programmen befinden sich auf der **[Calliope-Seite](https://calliope.cc/calliope-mini/25programme )** 
 
+----
     
     </div>
 </Versions>
@@ -103,6 +105,9 @@ Weitere Informationen zu den 25 Programmen befinden sich auf der **[Calliope-Sei
 Auf der LED-Matrix des Calliope mini befinden sich 5 x 5 = 25 rote LEDs, mit denen nicht nur Zahlen und Texte, sondern auch Bilder und sogar Animationen dargestellt werden. Die Helligkeit der einzelnen Pixel kann verändert werden. 
 
 ### Lichtmessung
+
+Über die Leuchtdioden kann ebenfalls die Lichtstärke gemessen werden.
+Die Stärke des Lichts, wird in den meisten Editoren als Zahl von 0 bis 255 ausgegeben, wobei 0 der dunkelste und 255 der hellste Wert ist. 
 
 ----
 
@@ -115,19 +120,17 @@ Auf dem Calliope mini befinden sich 3 Tasten.
 
 ## Lagesensor
 
-Mit dem Lagesensor kann der Calliope mini messen, in welche Lage er sich befindet und in welche Richtung mit welcher Stärke er bewegt wird.
-
 <Versions navbar={false}>
     <div slot="mini1-2">
 
-        <p><i>Bosch BMX055</i>
-        <br></p>
+        Bosch BMX055
+        <br>
         <li>Beschleunigungsmesser, Gyroskop, Magnetometer, 9 Achsen Sensor</li>
 
     </div>
     <div slot="mini3">
-        <p><i>LSM303AGR
-        <br></p>
+        LSM303AGR
+        <Gap h="1" />
         <li>Beschleunigungsmesser, Magnetometer, Temperatur</li>
         <li>6 Achsen Sensor</li>
         <li><a href="https://www.mouser.de/datasheet/2/389/lsm303agr-1849768.pdf">Datenblatt</a></li>
@@ -135,6 +138,8 @@ Mit dem Lagesensor kann der Calliope mini messen, in welche Lage er sich befinde
     </div>
 
     <li>über I2C angebunden</li>
+    <Gap h="1" />
+    Mit dem Lagesensor kann der Calliope mini messen, in welche Lage er sich befindet und in welche Richtung mit welcher Stärke er bewegt wird.
 
 </Versions>
 
