@@ -2,7 +2,7 @@
 title: USB-Interface
 docTitle: Software
 seotitle: "USB-Interface"
-description: "Erfahren Sie, wie Sie die USB-Firmware Ihres Calliope mini aktualisieren können. Laden Sie die passende Firmware-Version herunter und folgen Sie den Anweisungen für eine reibungslose Aktualisierung."
+description: "Hier gibt es Informationen darüber, wie die USB-Firmware Ihres Calliope mini aktualisiert werden kann und wie Programme über USB oder WebUSB auf den Calliope mini geladen werden können."
 tags: "Calliope mini, USB-Firmware, Aktualisierung, Anleitung"
 template: docs
 published: true
@@ -40,7 +40,7 @@ Die USB-Firmware für den Interfaceprozessor früher auch als "Bootloader" bezei
 Je nach Calliope mini Version unterscheidet sich die USB-Firmware, weil sie unterschiedliche Eigenschaften mitbringen muss und unterschiedliche Prozessoren unterstützt. Die Versionsnummer findet sich auf der Rückseite des Calliope mini, neben dem USB-Konnektor.
 </Admonition>
 
-Installation der USB-Firmware:
+**Installation der USB-Firmware:**
 
 1. Stromverbindung des Calliope mini trennen!
 2. Beim Einstecken des USB-Kabels die Reset-Taste gedrückt halten.
