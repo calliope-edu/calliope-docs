@@ -2,9 +2,16 @@
 title: ML-Machine
 docTitle: Tools
 seotitle: "ML-Machine"
-description: ""
+description: "Mit dem ML-Machine Tool können Bewegungsgesten, durch den Calliope mini aufgezeichnet und ein neuronales Netz trainiert werden."
 tags: "KI, AI, Machine-Learning, Neuronale Netze, maschinelles Lernen, künstliche Intelligenz, KI im Unterricht"
 template: docs
 published: true
 ---
 
+### Calliope mini Machine Learning
+
+Mit dem ML-Machine Tool können Bewegungsgesten, durch den Calliope mini aufgezeichnet und ein neuronales Netz trainiert werden. Im Anschluss können die Muster der Gesten von dem Calliope mini erkannt und klassifiziert werden.
+Der Calliope mini wird über das Gerät mit Bluetooth verbunden, um die Beschleunigungsdaten an das Tool zu senden.
+ML-Machine wurde vom Center for Computational Thinking and Design, Universität Aarhus entwickelt - <a href="https://cctd.au.dk/">cctd.au.dk</a>
+
+<Button link="https://ml-machine.calliope.cc/">ML-Machine</Button>
