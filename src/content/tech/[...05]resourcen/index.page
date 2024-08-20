@@ -8,8 +8,26 @@ published: true
 ---
 
 
-| Ressource | Link | Inhalte |
-| --- | --- | --- |
-| Github Calliope-Edu |  |  |
-| Calliope Forum |  |  |
+## Calliope
 
+- [Calliope Webseite](https://calliope.cc/) - Start und Programmierhilfe, Lehrinhalte, Projekte, Kursangebote - rund um den Calliope mini
+- [Github Calliope-mini](https://github.com/calliope-mini) - Calliope mini Anwendungen, wie DAL, Firmware und Micropython
+- [Github Calliope-Edu](https://github.com/calliope-edu) - Repositories zu PXT/MakeCode, Python-Editor, diverse Erweiterungen und Apps für den Calliope mini
+    <!-- - [pxt-calliope](https://github.com/calliope-edu/ml-machine) -  Microsoft Programming Experience Toolkit (PXT) / MakeCode für den Callope mini
+    - [ML-Machine](https://github.com/calliope-edu/ml-machine) - Machine Learning für den Calliope mini -->
+- [Calliope Forum](https://forum.calliope.cc/) - Fragen und Wissen werden hier rund um den Calliope mini ausgetauscht.
+
+## Erweiterungen
+
+- [Github Michael Klein](https://github.com/MKleinSB) - Vielzahl an Erweiterungen für den Calliope mini und den MakeCode-Editor
+
+## weitere Lehrinhalte
+- [Calliope Schulmaterial](https://calliope.cc/schulen/schulmaterial) - Sammlung an Lehrmaterial
+- [Hackster Calliope mini](https://www.hackster.io/calliope-mini) - Sammlung an Calliope mini Projekten für Anfänger bis Fortgeschrittene
+- [Hackster Thorsten Kimmeskamp](https://www.hackster.io/thorsten-kimmeskamp) - Sammlung an Projekten und Experimenten mit dem Calliope mini
+- [Calliope mini info](https://calliopemini.info/) - Lehrinhalte für den Calliope mini, jeweils für MakeCode und Open Roberta Lab
+
+## Social media
+- [Calliope mini Twitter](https://twitter.com/calliopemini)
+- [Calliope mini Facebook](https://www.facebook.com/calliopemini)
+- [Calliope mini Instagram](https://www.instagram.com/calliope_mini/)

@@ -51,19 +51,20 @@ Installation der USB-Firmware:
 ## HEX-Dateiformat
 
 Die kompilierten Programme werden zur Drag und Drop Übertragung auf den Calliope mini im Intel HEX Dateiformat gespeichert. 
-Die Calliope mini V1-2 benötigen hier wegen ihres unterschiedlichen Anwendungsprozessors andere HEX Dateien als der Calliope mini V3. Um Programme für alle Calliope minis in einer einzigen Datei speichern zu können, kann das sogenannte Universal HEX Format verwendet werden. Dabei werden die jeweiligen HEX Dateien einfach hintereinander in einer Datei zusammengefügt, deshalb ist die Datei Größe mit über 1MegaByte auch sichtbar größer. Weitere Infos zum HEX Format finden sich auf die Tech Seite des micro:bits, welcher das Format kreiert hat, unter https://tech.microbit.org/software/hex-format/.
+Die Calliope mini <V>V1</V> und <V>V2</V> benötigen hier wegen ihres unterschiedlichen Anwendungsprozessors andere HEX Dateien als der Calliope mini <V>V3</V>. 
+<!-- Um Programme für alle Calliope minis in einer einzigen Datei speichern zu können, kann das sogenannte Universal HEX Format verwendet werden. Dabei werden die jeweiligen HEX Dateien einfach hintereinander in einer Datei zusammengefügt, deshalb ist die Datei Größe mit über 1MegaByte auch sichtbar größer. Weitere Infos zum HEX Format finden sich auf die Tech Seite des micro:bits, welcher das Format kreiert hat, unter https://tech.microbit.org/software/hex-format/. -->
 
 
 <Versions>
     <div slot="mini1-2">
 
 <Admonition type="info">
-    Hinweis: Calliope minis der Version 1 und 2 unterstützen die Übertragung von Universal HEX Dateien mit der neuesten Version der USB Firmware, siehe den Abschnitt "Firmware Updating" am Anfang dieser Seite.
+    Hinweis: Calliope minis der Version <V>V1</V> und <V>V2</V> unterstützen die Übertragung von Universal HEX Dateien mit der neuesten Version der USB-Firmware, siehe den Abschnitt "Firmware Updating" am Anfang dieser Seite.
     </Admonition>
 
 
-### Universal HEX Creator
-Der Universal HEX Creator kann benutzt werden um HEX Dateien für den Calliope mini V1-2 mit HEX Dateien für den Calliope mini V3 in einer Datei zu speichern, das Ergebnis ist ein Programm in einer einzigen Datei (Universal HEX Format), welches sich auf jeden Calliope mini übertragen lässt. Der Universal HEX Creator ist abrufbar unter: https://tech.microbit.org/software/universal-hex-creator/
+<!-- ### Universal HEX Creator
+Der Universal HEX Creator kann benutzt werden um HEX Dateien für den Calliope mini V1-2 mit HEX Dateien für den Calliope mini V3 in einer Datei zu speichern, das Ergebnis ist ein Programm in einer einzigen Datei (Universal HEX Format), welches sich auf jeden Calliope mini übertragen lässt.  -->
 </div>
 
 </Versions>
@@ -80,12 +81,12 @@ WebUSB ermöglicht eine direkte Verbindung zwischen dem Calliope mini und dem Br
         <Versions>
             <div slot="mini1">
                 <Admonition type="note">
-                WebUSB übertragung funktioniert bei dem Calliope mini V1.x mit der neuesten USB Firmware.
+                WebUSB übertragung funktioniert bei dem Calliope mini <V>V1.x</V> mit der neuesten USB-Firmware.
         </Admonition>
     </div>
     <div slot="mini2">
         <Admonition type="note">
-         WebUSB funktioniert unoffiziell bei dem Calliope mini V2.0 mit der USB Firmware für den Calliope mini V1. 
+         WebUSB funktioniert unoffiziell bei dem Calliope mini <V>V2.0</V> mit der USB-Firmware für den Calliope mini <V>V1</V>. 
         </Admonition>
 </div>
 </Versions>
@@ -93,7 +94,7 @@ WebUSB ermöglicht eine direkte Verbindung zwischen dem Calliope mini und dem Br
 
     <div slot="mini2">
     <Admonition type="warning">
-        Die Funktionialität des seperaten Flash Laufwerks wird dabei deaktiviert, diese funktioniert erst wieder wenn die USB Firmware für V2 aufgespielt wird.
+        Die Funktionalität des seperaten Flash Laufwerks wird dabei deaktiviert, diese funktioniert erst wieder wenn die USB-Firmware für <V>V2</V> aufgespielt wird.
         </Admonition>
     </div>
 

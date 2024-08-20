@@ -21,8 +21,8 @@
 <style>
   .highlight {
       color: #fff;
-      padding: .2em .5em .1em .5em;
-      border-radius: 6px;
+      padding: 0.1em .3em 0em .3em;
+      border-radius: 7px;
       display: inline-block; /* Ensures proper padding and background */
   }
 </style>

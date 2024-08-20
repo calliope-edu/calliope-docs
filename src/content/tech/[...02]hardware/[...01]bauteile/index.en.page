@@ -68,7 +68,7 @@ published: true
     
     </div>
     <div slot="mini3">
-        NRF52833-QIAA-R
+        NRF52820-QDAA-D
     </div>
 
     - Receives the program via USB and loads it onto the application processor

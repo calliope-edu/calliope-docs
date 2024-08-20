@@ -35,7 +35,7 @@ published: true
 
 <Versions>
     <div slot="mini1-2">
-        <li>Die Pinleiste verfügt über 20 programmierbare GPIO-Pins.<br>Manche Pins sind durch andere Funktionen vorbelegt.</li>
+        <li>Die Pinleiste verfügt über 20 programmierbare General Purpose Input/Output (GPIO) Pins.<br>Manche Pins sind durch andere Funktionen vorbelegt.</li>
         <li>6 Ringpads für Bananenstecker oder Krokodilklemmen, 4 davon programmierbare Touchpins</li>
         <li>P0, P1, P2, P3 sind unbelegte I/O Pins zur allgemeinen Verwendung</li>
         <li>C4 - C15 sind Displaypins und können verwendet werden, wenn das Display deaktiviert wird.</li>
@@ -44,7 +44,7 @@ published: true
         <li>A+ und B+ sind Motorpins für den Anschluss von bis zu zwei Motoren</li>
     </div>
     <div slot="mini3"> 
-        <li>Die Pinleiste verfügt über 21 programmierbare GPIO-Pins.<br>Manche Pins sind durch andere Funktionen vorbelegt.</li>
+        <li>Die Pinleiste verfügt über 21 programmierbare General Purpose Input/Output (GPIO) Pins.<br>Manche Pins sind durch andere Funktionen vorbelegt.</li>
         <li>6 Ringpads für Bananenstecker oder Krokodilklemmen, 4 davon programmierbare Touchpins</li>
         <li>P0, P1, P2, P3, C8, C9, C13, C14, C15 sind unbelegte I/O Pins zur allgemeinen Verwendung</li>
         <li>C4, C6, C7, C10, C18 sind Displaypins und können verwendet werden, wenn das Display deaktiviert wird.</li>
@@ -101,12 +101,12 @@ published: true
 
 <!-- Hier Grafik mit der Steckleiste einfügen: -->
 
-{#if activePin !== null}
+<!-- {#if activePin !== null}
     <h3>{activePin.name}</h3>
     {#if activePin.interface !== null}
         <p>Der Pin {activePin.name} benutzt die Schnittstelle {activePin.interface}.</p>
     {/if}
-{/if}
+{/if} -->
 
 ----
 
@@ -134,7 +134,7 @@ Verwendete stattdessen verschiedene I/O Pins oder eine Transistorenschaltung. Be
 </Yes>
 </Admonition> -->
 
-Die Ausgangspannung der Pins beträgt in der Regel 3,3V.
+Die Ausgangspannung der Pins ist so hoch wie die VCC-Spannung.
         
 
     <Admonition type='note'>
@@ -151,7 +151,7 @@ Auf den 6 Ecken des sternenförmigen Calliope minis befinden sich jeweils große
 Die 4 Pins können alle sowohl analoge als auch digitale Werte senden und empfangen.
 
 ### Touchmodus
-Um einer der Touchpins auf 1 zu setzen, muss GND zusätzlich berührt, wenn dieser im **resistiven Touchmodus** betrieben wird. Falls dieser im **capacitiven Touchmodus** betrieben werden soll, kann dies z.B. in der Programmierung in Makecode erfolgen. 
+Um einer der Touchpins auf 1 zu setzen, muss GND zusätzlich berührt, wenn dieser im **resistiven Touchmodus** betrieben wird. Falls dieser im **kapazitiven Touchmodus** betrieben werden soll, kann dies z.B. in der Programmierung in Makecode erfolgen. 
 Weitere Information zum Betrieb in den verschiedenen Touchmodi findest du [hier](https://makecode.microbit.org/reference/pins/touch-set-mode).
 <!-- hier später URL auf docs von makecode.calliope.cc ändern -->
 
@@ -159,8 +159,8 @@ Weitere Information zum Betrieb in den verschiedenen Touchmodi findest du [hier]
 
 Es wird unter zwei Formen der Berührung unterschieden:
 
-- **Capacitive Touch**: Bei der kapazitiven Berührung erkennt der Calliope mini eine Änderung der Kapazität eines Pins oder einer leitenden Oberfläche (wie dem Touch-Logo), wenn der Finger diese berührt oder ihm sehr nahe kommt.
-- **Resistive Touch**: Bei der resistiven Berührung wird ein Stromfluss von dem berührten Pin zum GND-Pin festgestellt. Der Körper braucht eine Verbindung zu GND (entweder durch Berührung oder durch Anschluss eines Kabels an der Kleidung), während der Eingangspin berührt wird, um einen Stromkreis den beiden Pins zu schließen.
+- **Kapazitiven Touch**: Bei der kapazitiven Berührung erkennt der Calliope mini eine Änderung der Kapazität eines Pins oder einer leitenden Oberfläche (wie dem Touch-Logo), wenn der Finger diese berührt oder ihm sehr nahe kommt.
+- **Resistiven Touch**: Bei der resistiven Berührung wird ein Stromfluss von dem berührten Pin zum GND-Pin festgestellt. Der Körper braucht eine Verbindung zu GND (entweder durch Berührung oder durch Anschluss eines Kabels an der Kleidung), während der Eingangspin berührt wird, um einen Stromkreis den beiden Pins zu schließen.
 
 </Admonition>
 
@@ -207,6 +207,9 @@ Um eine LED zu dimmen oder die Geschwindigkeit eines Motors zu varieren, müsste
  PWM-Signale gleichzeitig generiert werden, bevor diese anfangen unflüssig und abgestuft zu werden. 
 </UnfoldItem>
 
+<Versions>
+
+<div slot="mini3">
 
 ## Gesamte Pinout
 
@@ -256,7 +259,9 @@ Um eine LED zu dimmen oder die Geschwindigkeit eines Motors zu varieren, müsste
 | UART_INT_TX                     |                        |                         |
 | MOTOR_BIN2                      |                        | Führt dann in Motor M1. |
 
+</div>
 
+</Versions>
 
 <style>
     .pinout {

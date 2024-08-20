@@ -1,5 +1,5 @@
 ---
-title: Programme
+title: Anwendungen
 docTitle: Software
 seotitle: "Calliope Mini Programme"
 description: "Erfahre mehr über die Calliope Mini Programme, einschließlich des Demoprogramms und des Quellcodes. Lade die Programme für verschiedene Calliope Mini Versionen herunter und erkunde die Quellcode-Abhängigkeiten. Finde heraus, wie du die Programme kompilieren und mit MakeCode verwenden kannst."
@@ -23,7 +23,7 @@ Das Startprogramm ist die Calliope mini Firmware. Sie befindet sich auf jedem Ca
     <div slot="mini1-2">
 
 Das Startprogramm setzt sich aus 3 Teilen zusammen: Der Testroutine, dem Willkommensintro und den fünf Startprogrammen.
-Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, kommt man in das Menü und kann über die Tasten A und B sich durch die fünf Programm navigieren: 
+Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, kommt man in das Menü und kann über die Tasten A und B sich durch die fünf Programme navigieren: 
 
 
 <li>Orakel </li>
@@ -31,11 +31,12 @@ Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, komm
 <li>Schere-Stein-Papier</li>
 <li>Krach-o-meter</li>
 <li>Bluetooth</li>
+<br>
 </div>
 <div slot="mini3">
 
-Das Startprogramm setzt sich aus 3 Teilen zusammen: Der Testroutine, dem Willkommensintro und den vier Startprogrammen.
-Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, kommt man in das Menü und kann über die Tasten A und B sich durch die vier Programm navigieren: 
+Das Startprogramm setzt sich aus 2 Teilen zusammen:  Dem Willkommensintro und den vier Startprogrammen.
+Sobald man das Willkommensintro einmal durchlaufen hat, kommt man in das Menü und kann über die Tasten A und B sich durch die vier Programme navigieren: 
 
 <li>Orakel </li>
 <li>Einmal-eins</li>
@@ -75,7 +76,8 @@ Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, komm
 
     <div slot="mini1-2">
 
-        ### Skeleton
+        ### Template
+        Das Template ist ein leeres Programm, welches die Nutzer:innen anpassen können:
         <GitLink repo="calliope-mini/microbit" branch="v2.2.0-rc6-calliope.rc4" />
 
         <UnfoldItem title="Abhängigkeiten" color="calliope">
@@ -95,7 +97,8 @@ Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, komm
         ### Demoprogramm:
         <GitLink repo="calliope-edu/microbit-v2-samples" branch="calliope-demo" />
 
-        ### Skeleton:
+        ### Template
+        Das Template ist ein leeres Programm, welches die Nutzer:innen anpassen können:
         <GitLink repo="calliope-edu/microbit-v2-samples" branch="calliope" />
 
         <UnfoldItem title="Abhängigkeiten">
@@ -115,7 +118,7 @@ Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, komm
           #### Docker 
           Mit einem Docker Image kann die für das Kompilieren benötigte Toolchain genutzt werden, ohne alle Programme einzeln zu installieren
 
-          Ein passendes Docker Image findet sich unter <GitLink repo="carlosperate/docker-microbit-toolchain" inline />. Dort ist auch die verwendung ausführlich beschrieben.
+          Ein passendes Docker Image findet sich unter <GitLink repo="carlosperate/docker-microbit-toolchain" inline />. Dort ist auch die Verwendung ausführlich beschrieben.
 
           Über die im Ordner `/docker` hinterlegten Scripte kann das Docker image auch automatisiert geladen und die gewünschten Befehle ausgeführt werden:
 
