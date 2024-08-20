@@ -1,4 +1,4 @@
-| Bauteil/Komponente | Modellbezeichnung | Eigenschaften |
+| Bauteil/Komponente | Herstellerbezeichnung | Eigenschaften |
 | :------ | :-- | :------------- |
 | Anwendungsprozessor | Nordic nRF51822 | 32-bit ARM Cortex M0 processor (16MHz)<br>Memory Size: 256kB Flash, 16kB RAM |
 | Interfaceprozessor | NXP KL26z | 512KB flash, 128KB SRAM |
@@ -8,8 +8,8 @@
 | DC Motortreiber | TI DRV8837 | Anschluss für 2 DC-Motoren |
 | Lautsprecher | MLT-8530 | - |
 | RGB-LED | SK6812MINI | - |
-| Taste Reset | PTS810SJ | Neustart |
-| 2 Tasten | PTS645S (red/blue) | A und B |
+| Reset-Taste | - | Neustart |
+| 2 Tasten | - | A und B |
 | 2 Grove-Ports | 1125S-SMT-XP | I2C, UART |
 | JST Batterieanschluss | S2B-PH-SM4-TB(LF)(SN) | Stromversorgung, 3,3 V |
 | USB Micro B Anschluss | - | Stromversorgung und Programmierung | 

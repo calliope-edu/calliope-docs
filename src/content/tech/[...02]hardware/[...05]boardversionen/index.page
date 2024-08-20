@@ -11,7 +11,7 @@ published: true
 ## Boardversionen unterscheiden
 
 ### Versionsnummer
-Die Nummer der Produktionsserie befindet sich auf der Rückseite oben rechts neben dem micro-USB-Anschluss. Das ist der sicherste Weg, deinen Calliope mini zu identifizieren.
+Die Versionsnummer befindet sich auf der Rückseite oben rechts neben dem USB-Anschluss. Das ist der sicherste Weg, deinen Calliope mini zu identifizieren.
 
 ![Lage Nummer der Produktionsserie](./mini3_num.png)
 
@@ -22,7 +22,7 @@ Es gibt einige Calliope mini, welche als Versionsnummer die v1.2 tragen. Diese s
 ### weitere Merkmale
 Welchen Calliope mini du vor dir liegen hast, kannst du anhand einiger Merkmale erkennen: 
 
-|                      | v3                     | v2                     | v1.3                               | v0.3             |
+|                      | <V>v3</V>                    | <V>v2</V>                     | <V>v1.3</V>                               | <V>v0.3</V>             |
 | -------------------- | ---------------------- | ---------------------- | ---------------------------------- | ---------------- |
 | Platinenfarbe        | schwarz                | blau                   | blau                               | blau             |
 | Rückseite            | vollflächig weiß       | vollflächig weiß       | weißes Namensfeld auf blauem Grund | vollflächig blau |
@@ -31,22 +31,22 @@ Welchen Calliope mini du vor dir liegen hast, kannst du anhand einiger Merkmale 
 
 ## Versionen
 
-### v0.3
+### <V>v0.3</V>
 
 Die Revision 0.3 des Calliope mini wurde für den IT Gipfel der Bundesregierung 2016 produziert und an verschiedene Schulen und Tester ausgegeben. Das Gerät ist daran zu erkennen, dass das Calliope mini Logo rechts der 5x5 LED Matrix aufgedruckt ist und die Taster oberhalb der Grove Anschlüsse liegen.
 
-### v1.3
+### <V>v1.3</V>
 
 Die Revision 1.3 ist eine überarbeitete Version des Calliope mini. Wichtige Änderungen sind der Austausch der Taster mit den Grove Anschlüssen, so dass diese besser bedient werden können. Ausserdem wurden auf den Grove Anschlüssen zwei Analoge Eingänge verfügbar gemacht. Zusätzlich wurde eine verbesserter Schutz gegen elektrostatische Entladung eingebracht. Der Logoaufdruck befindet sich hier auf der linken Seite der Platine auf der Antenne. Mit der v1.3 wurde eine weitere Masseleitung zum Motorport hinzugefügt und die Stromversorgung so aktualisiert, dass Batterie und USB bei gleichzeitigem Anschluss getrennt sind.
 
-### v2.0
+### <V>v2.0</V>
 
 Calliope mini REV2 ist eine überarbeitete Version des Calliope mini 1.3. Die größte Neuerung ist hierbei die zusätzliche Bestückung mit einem 128Mb Flash-Speicher, der mit bis zu 25 HEX-Dateien bespielt werden kann.
 
-### v2.1
+### <V>v2.1</V>
 
 Aufgrund der veränderten Verfügbarkeit von Bauteilen, wurden an der Version 2.0 geringe Hardwareveränderungen vorgenommen. Diese überarbeitete Version trägt die Nummer 2.1. Die Arbeitsweise und der Funktionsumfang zur Version 2.0 haben sich nicht geändert.
 
-### v3.0
+### <V>v3.0</V>
 
 Der Calliope mini 3 erhält nun schnellere Prozessoren, USB-C, 3 RGB-LED, einen besseren Motortreiber, Jacdac Konnektoren, sowie eine Pinleiste.

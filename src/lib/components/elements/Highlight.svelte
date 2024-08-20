@@ -3,13 +3,15 @@
   let data;
 
   // Reactive statement to check and set color based on innerHTML
-  $: if (data?.innerHTML.trim() === "V1") {
-      color = "v1";
-  } else if (data?.innerHTML.trim() === "V2") {
-      color = "v2";
-  } else if (data?.innerHTML.trim() === "V3") {
-      color = "v3";
-  }
+  $: if (data?.innerHTML.trim().toUpperCase().startsWith("V1")) {
+    color = "v1";
+} else if (data?.innerHTML.trim().toUpperCase().startsWith("V2")) {
+    color = "v2";
+} else if (data?.innerHTML.trim().toUpperCase().startsWith("V3")) {
+    color = "v3";
+} else if (data?.innerHTML.trim().toUpperCase().startsWith("V0")) {
+    color = "v0";
+}
 </script>
 
 <b bind:this={data} class="highlight" style="background-color: var(--color-{color});">
@@ -19,8 +21,8 @@
 <style>
   .highlight {
       color: #fff;
-      padding: .2em .5em .1em .5em;
-      border-radius: 6px;
+      padding: 0.1em .3em 0em .3em;
+      border-radius: 7px;
       display: inline-block; /* Ensures proper padding and background */
   }
 </style>

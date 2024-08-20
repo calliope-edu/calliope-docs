@@ -2,7 +2,7 @@
 title: Protokolle
 docTitle: Software
 seotitle: "Kommunikationsprotokolle des Calliope mini"
-description: "Erfahren Sie mehr über die verschiedenen Kommunikationsprotokolle, die der Calliope mini unterstützt, darunter Bluetooth, Funk, I2C, UART/Serial, USB/Serielle Monitore und SPI. Entdecken Sie, wie diese Protokolle für die drahtlose Kommunikation und den Datenaustausch genutzt werden können."
+description: "Erfahre mehr über die verschiedenen Kommunikationsprotokolle, die der Calliope mini unterstützt, darunter Bluetooth, Funk, I2C, UART/Serial, USB/Serielle Monitore und SPI und JacDac."
 tags: "Calliope mini, Kommunikationsprotokolle, Bluetooth, Funk, I2C, UART, Serial, USB, WebUSB, SPI"
 template: docs
 published: true

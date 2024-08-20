@@ -18,6 +18,8 @@ Der Calliope mini kann über verschiedene Mobilapplikationen programmiert werden
 
 Weitere Informationen auf der Calliope **[Webseite](https://calliope.cc/programmieren/mobil/ipad)** 
 
+<Versions>
+<div slot="mini2-3">
 
 ### Calliope mini Blocks (Scratch)
 
@@ -25,6 +27,8 @@ Weitere Informationen auf der Calliope **[Webseite](https://calliope.cc/programm
 
 Weitere Informationen auf der Calliope **[Webseite](https://calliope.cc/programmieren/editoren/calliope-mini-blocks-scratch-programmieren)** 
 
+</div>
+</Versions>
 
 ### Swift Playground 
 

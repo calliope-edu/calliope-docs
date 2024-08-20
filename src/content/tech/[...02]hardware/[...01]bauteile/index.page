@@ -36,14 +36,14 @@ published: true
 
     <div slot="mini1-2">
 
-        Nordic nRF51822
+        <i>Herstellerbezeichnung: Nordic nRF51822</i>
 
     - 256kB Flash, 16kB RAM
 
 
     </div>
     <div slot="mini3">
-        NRF52833-QIAA-R
+        <i>Herstellerbezeichnung: NRF52833-QIAA-R</i>
     </div>
 
     - Führt Programme aus und ist an alle Komponenten des mini angeschlossen
@@ -71,7 +71,7 @@ published: true
     
     </div>
     <div slot="mini3">
-        NRF52833-QIAA-R
+        NRF52820-QDAA-D
     </div>
 
     - empfängt das Programm über USB und läd es auf den Anwendungsprozessor
@@ -90,7 +90,7 @@ published: true
 
 ## Flash
 
-ISSI IS25LP, 16MB, 166MHZ
+<i>Herstellerbezeichnung: ISSI IS25LP, 16MB, 166MHZ</i>
 
 Auf dem Calliope mini 2 befindet sich ein eingebauter Flash-Speicher auf dem bis zu 25 Programm gespeichert werden können.
 Weitere Informationen zu den 25 Programmen befinden sich auf der **[Calliope-Seite](https://calliope.cc/calliope-mini/25programme )** 
@@ -123,13 +123,13 @@ Auf dem Calliope mini befinden sich 3 Tasten.
 <Versions navbar={false}>
     <div slot="mini1-2">
 
-        Bosch BMX055
+        <i>Herstellerbezeichnung:Bosch BMX055</i>
         <br>
         <li>Beschleunigungsmesser, Gyroskop, Magnetometer, 9 Achsen Sensor</li>
 
     </div>
     <div slot="mini3">
-        LSM303AGR
+        <i>Herstellerbezeichnung:LSM303AGR</i>
         <Gap h="1" />
         <li>Beschleunigungsmesser, Magnetometer, Temperatur</li>
         <li>6 Achsen Sensor</li>
@@ -152,15 +152,14 @@ Auf dem Calliope mini befinden sich 3 Tasten.
 <Versions navbar={false}>
     <div slot="mini1-2">
         
-        <p>SK6812MINI</p>
-        <p>
-        Der Calliope mini hat eine integrierte RGB-LED, die 255 Farben pro Farbkanal (rot, grün, blau) darstellen kann. Dies entspricht 256^3 = 16 777 216 Farben.</p>
+        <i>Herstellerbezeichnung: SK6812MINI</i>
+        <Gap h="1" />
+        Der Calliope mini hat eine integrierte RGB-LED, die 255 Farben pro Farbkanal (rot, grün, blau) darstellen kann. Dies entspricht 256^3 = 16 777 216 Farben.
     </div>
     <div slot="mini3">
-
-<p>WS2812C-2020</p>
-    <p>
-        Der Calliope mini hat drei integrierte RGB-LEDs, die 255 Farben pro Farbkanal (rot, grün, blau) darstellen können. Dies entspricht 256^3 = 16 777 216 Farben.</p>
+        <i>Herstellerbezeichnung: WS2812C-2020</i>
+        <Gap h="1" />
+        Der Calliope mini hat drei integrierte RGB-LEDs, die 255 Farben pro Farbkanal (rot, grün, blau) darstellen können. Dies entspricht 256^3 = 16 777 216 Farben.
     </div>
     Bei den RGB-LEDs handelt es sich um adressierbare Pixel, sogenannte Neopixels. Das sind spezielle individuell programmierbare RGB-LEDs, ähnlich wie die einzelnen Pixel auf einem Display.
 </Versions>
@@ -171,11 +170,9 @@ Auf dem Calliope mini befinden sich 3 Tasten.
 ## Lautsprecher
 
 <Versions navbar={false}>
-    <div slot="mini1-2">
-        Piezolautsprecher
-    </div>
     <div slot="mini3">
-        Piezolautsprecher (MLT-8530)
+        <i>Herstellerbezeichnung: Piezolautsprecher (MLT-8530)<i>
+            <Gap h="1" />
     </div>
 
 Der Calliope mini kann Musik und Töne mit seinem eingebauten Piezolautsprecher abspielen. Ein Piezolautsprecher beruht auf dem piezoelektrischen Effekt, der aus dem altgriechischen piezein abgeleitet ist, was so viel wie drücken oder pressen bedeutet. Wird an dem Material eine elektrische Spannung angelegt, verformt sich diese im Rhythmus der Frequenz. So kann ein Audiosignal aus verschiedenen Frequenzen in Schallwellen umgewandelt werden. 
@@ -185,8 +182,8 @@ Der Calliope mini kann Musik und Töne mit seinem eingebauten Piezolautsprecher 
 
 ## Mikrofon
 
-SPU0410HR5H-PB
-
+<i>Herstellerbezeichnung: SPU0410HR5H-PB</i>
+<Gap h="1" />
 Mit dem MEMS-Mikrofon kann die der Schalldruckpegel (SPL) und die Lautstärke gemessen werden.
 
 ----
@@ -195,8 +192,8 @@ Mit dem MEMS-Mikrofon kann die der Schalldruckpegel (SPL) und die Lautstärke ge
 
 <Versions>
     <div slot="mini1-2">
-        DRV8837
-
+        <i>Herstellerbezeichnung: DRV8837</i>
+        <Gap h="1" />
         Der Motortreiber für die Calliope mini Versionen 1 und 2 ist der DRV8837 Der Motortreiber besteht aus einer H-Brückenschaltung. Es kann damit ein Motor 
         Es können bis zu zwei Motoren angeschlossen werden. Wird ein Motor angeschlossen, können alle Motormodi verwendet werden. Werden zwei Motoren angeschlossen, dann müssen sich diese die H-Brücke teilen und die Motoren können nur beide gleichzeitig vor- oder zurückfahren, aber nicht entgegengesetzt laufen. 
      
@@ -228,8 +225,8 @@ Mit dem MEMS-Mikrofon kann die der Schalldruckpegel (SPL) und die Lautstärke ge
 
     </div>
     <div slot="mini3">
-        DRV8835
-
+        <i>Herstellerbezeichnung: DRV8835</i>
+        <Gap h="1" />
 Dieser Motortreiber besitzt 2 seperate H-Brücken Treiber und kann damit 2 Gleichspannungsmotoren von einander unabhängig steuern. Die maximale Eingangspannung beträgt 9V, der maximale Strom pro Motor beträgt 1.5A.
 Hier findest du einen Link zum [Datenblatt](https://www.ti.com/lit/ds/symlink/drv8835.pdf?ts=1697459375123)
 **Kurz Infos:**
