@@ -105,7 +105,7 @@ set_volume(127)
 
 Jedes Argument entspricht einer anderen Zeiteinheit und sie sind additiv. Mit run_every(min=1, s=30) wird der Callback also alle anderthalb Minuten ausgeführt.
 
-Wenn innerhalb der Callback-Funktion eine Ausnahme ausgelöst wird, wird die Funktion abgebrochen. Um dies zu vermeiden, können Sie Ausnahmen mit try/except abfangen.
+Wenn innerhalb der Callback-Funktion eine Ausnahme ausgelöst wird, wird die Funktion abgebrochen. Um dies zu vermeiden, können Ausnahmen mit try/except abfangen.
 
 **Parameter:**<br>
 • callback - Funktion, die in dem angegebenen Intervall aufgerufen wird.<br>
