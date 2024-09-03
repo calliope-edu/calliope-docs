@@ -1,7 +1,7 @@
 ---
 title: Software
 seotitle: "Calliope mini Software-Dokumentation"
-description: "Entdecken Sie die Softwareseite des Calliope mini, einschließlich der verfügbaren Editoren (MakeCode, Micropython, Open Roberta Lab), Firmware-Updates, unterstützter Protokolle (Bluetooth, Funk, I2C, UART/Serial, USB, SPI) und Informationen zu Fehlercodes. Hier finden Sie alles, was Sie für die Programmierung und Nutzung Ihres Calliope mini benötigen."
+description: "Entdecke die Softwareseite des Calliope mini, einschließlich der verfügbaren Editoren (MakeCode, Micropython, Open Roberta Lab), Firmware-Updates, unterstützter Protokolle (Bluetooth, Funk, I2C, UART/Serial, USB, SPI) und Informationen zu Fehlercodes. Hier befinden sich wesentliche Informationen, zur Programmierung und Nutzung des Calliope mini."
 tags: "Calliope mini, Software, Editoren, Firmware, Protokolle, Fehlercodes, Programmierung"
 template: docs_contents
 published: true

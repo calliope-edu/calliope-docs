@@ -17,7 +17,7 @@ published: true
 
 Das Startprogramm setzt den Calliope mini wieder in den Ursprungszustand mit der Introsequenz und den 5 Modi zurück. Außerdem aktiviert es die Bluetooth-Funktion.
 
-Das Startprogramm führt dich einmal durch die Grundfunktionen des mini und stellt zudem fünf Modi bereit, um den mini kennenzulernen. Der fünfte Modus wird für Playground gestartet.
+Das Startprogramm führt dich einmal durch die Grundfunktionen des Calliope mini und stellt zudem fünf Modi bereit, um den Calliope mini kennenzulernen. Der fünfte Modus wird für Playground gestartet.
 
 Eine Übersicht der 5 Modi des Startprogramms gibt es [HIER](https://calliope.cc/los-geht-s/erste-schritte#turquoise) 
 
@@ -27,15 +27,15 @@ Das Startprogramm wird manchmal auch "Demoprogramm" oder "Programm 25" genannt.
 
 ### Wo finde ich das Startprogramm?
 
-Bei der Lieferung ist das Startprogramm bereits auf den mini draufgespielt und kann direkt genutzt werden.
+Bei der Lieferung ist das Startprogramm bereits auf den Calliope mini draufgespielt und kann direkt genutzt werden.
 
-Soll das Startprogramm nachträglich auf den mini gespielt werden, so ist es bei den **[25 Programmen](https://calliope.cc/calliope-mini/25programme)** zu finden, die es fertig programmiert für den mini gibt. Hier ist das Startprogramm das letzte Programm mit der Nummer 25.
+Soll das Startprogramm nachträglich auf den Calliope mini gespielt werden, so ist es bei den **[25 Programmen](https://calliope.cc/calliope-mini/25programme)** zu finden, die es fertig programmiert für den Calliope mini gibt. Hier ist das Startprogramm das letzte Programm mit der Nummer 25.
 
 ## Startprogramm aus dem Flash Speicher laden
 <Steps>
     <Step title="Für 5 Sekunden die Reset-Taste gedrückt halten" description="Drücke für 5-6 Sekunden die Reset-Taste, bis die LED-Matrix aufblinkt." />
     <Step title="Taste A drücken" description="Navigiere bis zum 25. Programm, indem mit Taste A ein Schritt zurück gegangen wird." />
-    <Step title="A+B Drücken" description="Drücke die Taste A und B gleichzeitig. Nun wird das Demoprogramm auf den mini geladen." />
+    <Step title="A+B Drücken" description="Drücke die Taste A und B gleichzeitig. Nun wird das Demoprogramm auf den Calliope mini geladen." />
 </Steps>
 
 <Button text='25 Programme herunterladen' link='https://calliope.cc/media/pages/calliope-mini/25programme/589dc979af-1601938460/25originalprogramme.zip' />

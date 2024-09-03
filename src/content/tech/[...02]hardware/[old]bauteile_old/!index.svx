@@ -355,7 +355,7 @@ Genauere Informationen können aus dem Datenblatt entnommen werden: [Datenblatt:
 
     </span>
 
-    Der USB-Anschluss an der oberen Seite deines mini ist die einfachste Möglichkeit, um eigene Programme zu übertragen. Verbinde das Board einfach mit einem Micro-USB-Kabel mit deinem Computer und schon geht es los!
+    Der USB-Anschluss an der oberen Seite deines Calliope mini ist die einfachste Möglichkeit, um eigene Programme zu übertragen. Verbinde das Board einfach mit einem Micro-USB-Kabel mit deinem Computer und schon geht es los!
 </Bauteil>
 
 
@@ -377,7 +377,7 @@ Genauere Informationen können aus dem Datenblatt entnommen werden: [Datenblatt:
 
     </span>
 
-    Der Prozessor in der unteren linken Ecke des mini verbindet alle Funktionen deines mini miteinander. Er liefert ausreichend Rechenleistung für alle Ideen und Projekte, die du dir ausdenkst – und für noch viel mehr!
+    Der Prozessor in der unteren linken Ecke des Calliope mini verbindet alle Funktionen deines Calliope mini miteinander. Er liefert ausreichend Rechenleistung für alle Ideen und Projekte, die du dir ausdenkst – und für noch viel mehr!
 </Bauteil>
 
 
