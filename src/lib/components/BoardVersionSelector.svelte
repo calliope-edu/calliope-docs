@@ -34,7 +34,7 @@
 						}}
 						class:active={$selectedBoardVersion == num}
 					>
-						v{num}
+						V{num}
 					</button>
 				{/each}
 			</div>

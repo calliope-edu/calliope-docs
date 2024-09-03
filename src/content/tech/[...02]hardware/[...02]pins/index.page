@@ -1,9 +1,9 @@
 ---
 title: Pins
 docTitle: Hardware
-seotitle: "Calliope Mini Pins: Hardware, Steckleiste, Funktionen"
+seotitle: "Calliope mini Pins: Hardware, Steckleiste, Funktionen"
 description: "Der Calliope mini verfügt über diverse Pins, die programmiert und über die Daten ausgetauscht werden können. Erfahre mehr über die Pinbelegung, Funktionen und technischen Details. Bilder der Pinouts für verschiedene Versionen werden ebenfalls bereitgestellt."
-tags: "Calliope Mini Pins, Hardware, Steckleiste, Funktionen, Pinout, MakeCode"
+tags: "Calliope mini Pins, Hardware, Steckleiste, Funktionen, Pinout, MakeCode"
 template: docs
 published: true
 ---
@@ -11,8 +11,14 @@ published: true
 <script>
     import { selectedBoardVersion } from '$lib/scripts/store.js';
 
-    let pins = [{"name":"VCC","function":null,"analogin":null,"interface":null,"color":"red"},{"name":"GND","function":null,"analogin":null,"interface":null,"color":"black"},{"name":"P0","function":"PAD0","analogin":"AnalogIn","interface":"Touch","color":"green"},{"name":"P1","function":"PAD1","analogin":"AnalogIn","interface":"Touch","color":"green"},{"name":"P2","function":"PAD2","analogin":"AnalogIn","interface":"Touch","color":"green"},{"name":"P3","function":"PAD3","analogin":null,"interface":"Touch","color":"green"},{"name":"C4","function":"Display Spalte 1","analogin":"AnalogIn","interface":null,"color":"green"},{"name":"C5","function":"Button A","analogin":null,"interface":null,"color":"green"},{"name":"C6","function":"Display Spalte 4","analogin":null,"interface":null,"color":"green"},{"name":"C7","function":"Display Spalte 2","analogin":null,"interface":null,"color":"green"},{"name":"C8","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"C9","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"C10","function":"Display Spalte 5","analogin":"AnalogIn","interface":null,"color":"green"},{"name":"C11","function":"Button B","analogin":null,"interface":null,"color":"green"},{"name":"C12","function":"JacDac","analogin":null,"interface":"JACDAC","color":"green"},{"name":"C13","function":null,"analogin":null,"interface":"SPI CLOCK","color":"green"},{"name":"C14","function":null,"analogin":null,"interface":"SPI MISO","color":"green"},{"name":"C15","function":null,"analogin":null,"interface":"SPI MOSI","color":"green"},{"name":"C16","function":"Grove A1 Pin 0","analogin":"AnalogIn","interface":"UART RX","color":"green"},{"name":"C17","function":"Grove A1 Pin 1","analogin":null,"interface":"UART TX","color":"green"},{"name":"C18","function":"Display Spalte 3","analogin":"AnalogIn","interface":null,"color":"green"},{"name":"C19","function":"Grove A0 Pin 0","analogin":null,"interface":"I2C SCL","color":"green"},{"name":"GND","function":null,"analogin":null,"interface":null,"color":"black"},{"name":"C20","function":"Grove A0 Pin 1","analogin":null,"interface":"I2C SDA","color":"green"},{"name":"M1+","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"M0+","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"M1-","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"M0-","function":null,"analogin":null,"interface":null,"color":"green"},{"name":"GND","function":null,"analogin":null,"interface":null,"color":"black"},{"name":"VM","function":null,"analogin":null,"interface":null,"color":"red"}];
+    let pins = [{"name":"VCC","function":"","analogin":"","interface":"","color":"red"},{"name":"GND","function":"","analogin":"","interface":"","color":"black"},{"name":"P0","function":"PAD0","analogin":"AnalogIn","interface":"Touch","color":"green"},{"name":"P1","function":"PAD1","analogin":"AnalogIn","interface":"Touch","color":"green"},{"name":"P2","function":"PAD2","analogin":"AnalogIn","interface":"Touch","color":"green"},{"name":"P3","function":"PAD3","analogin":"","interface":"Touch","color":"green"},{"name":"C4","function":"Display Spalte 1","analogin":"AnalogIn","interface":"","color":"green"},{"name":"C5","function":"Button A","analogin":"","interface":"","color":"green"},{"name":"C6","function":"Display Spalte 4","analogin":"","interface":"","color":"green"},{"name":"C7","function":"Display Spalte 2","analogin":"","interface":"","color":"green"},{"name":"C8","function":"","analogin":"","interface":"","color":"green"},{"name":"C9","function":"","analogin":"","interface":"","color":"green"},{"name":"C10","function":"Display Spalte 5","analogin":"AnalogIn","interface":"","color":"green"},{"name":"C11","function":"Button B","analogin":"","interface":"","color":"green"},{"name":"C12","function":"JacDac","analogin":"","interface":"JACDAC","color":"green"},{"name":"C13","function":"","analogin":"","interface":"SPI CLOCK","color":"green"},{"name":"C14","function":"","analogin":"","interface":"SPI MISO","color":"green"},{"name":"C15","function":"","analogin":"","interface":"SPI MOSI","color":"green"},{"name":"C16","function":"Grove A1 Pin 0","analogin":"AnalogIn","interface":"UART RX","color":"green"},{"name":"C17","function":"Grove A1 Pin 1","analogin":"","interface":"UART TX","color":"green"},{"name":"C18","function":"Display Spalte 3","analogin":"AnalogIn","interface":"","color":"green"},{"name":"C19","function":"Grove A0 Pin 0","analogin":"","interface":"I2C SCL","color":"green"},{"name":"GND","function":"","analogin":"","interface":"","color":"black"},{"name":"C20","function":"Grove A0 Pin 1","analogin":"","interface":"I2C SDA","color":"green"},{"name":"M1+","function":"Pluspol Motor 1","analogin":"","interface":"","color":"green"},{"name":"M0+","function":"Pluspol Motor 0","analogin":"","interface":"","color":"green"},{"name":"M1-","function":"Minuspol Motor 1","analogin":"","interface":"","color":"green"},{"name":"M0-","function":"Minuspol Motor 0","analogin":"","interface":"","color":"green"},{"name":"GND","function":"","analogin":"","interface":"","color":"black"},{"name":"VM","function":"","analogin":"","interface":"","color":"red"}];
     let activePin = null;
+
+    let activeButton = 'function'; // Default to "function" view
+
+    function setActive(button) {
+        activeButton = button;
+    }
 
     function toggleVisibility(pin) {
         if (activePin === pin) {
@@ -78,18 +84,49 @@ published: true
 
 ## Pinleiste
 
+<button
+    id="function"
+    class="button-container icons-0 rounded-full s-Gkb4jWJe_kum border {activeButton === 'function' ? 'active' : ''}"
+    style="--color: var(--color-calliope);"
+    on:click={() => setActive('function')}>
+    <div class="container s-Gkb4jWJe_kum"><span class="text s-Gkb4jWJe_kum">Funktion</span></div>
+</button>
+
+<button
+    id="interface"
+    class="button-container icons-0 rounded-full s-Gkb4jWJe_kum border {activeButton === 'interface' ? 'active' : ''}"
+    style="--color: var(--color-calliope);"
+    on:click={() => setActive('interface')}>
+    <div class="container s-Gkb4jWJe_kum"><span class="text s-Gkb4jWJe_kum">Schnittstelle</span></div>
+</button>
+<div class="button-container s-Gkb4jWJe_kum" >	
+    <div class="analogin_dot"></div> 
+<span class="text" style="color: var(--color-blau);">Analog lesen</span>
+</div>
+<!-- <Button id="interface" text='Schnittstelle' link="" type='border' color="calliope" />
+<Button id="function" text='Funktion' link="" type='border' color="calliope" /> -->
     <nav class="pinout">
         <ul>
             {#each pins as pin, index}
                 <li on:click={() => toggleVisibility(pin)}>
                     <div 
                     class="dot" 
-                    style="background-color: {pin.state === 'hidden' ? 'white' : pin.color === 'red' ? '#e6007d' : pin.color === 'green' ? '#3fc863' : pin.color === 'black' ? '#034855' : pin.color}">
+                    style="
+                        background-color: {pin.state === 'hidden' ? 'white' : pin.color === 'red' ? '#e6007d' : pin.color === 'green' ? '#3fc863' : pin.color === 'black' ? '#034855' : pin.color};
+                        {pin.analogin === 'AnalogIn' ? 'outline: 5px solid var(--color-blau);' : ''}
+                    ">
+                    <span>{pin.name}</span>
                     <span>{pin.name}</span>
                 </div>
-                    {#if pin.function !== null}
-                        <div class="tag {index % 2 === 0 ? 'down' : 'up'}">{pin.function}</div>
+                {#if (activeButton === 'function' && pin.function !== "") || (activeButton === 'interface' && pin.interface !== "")}
+                <div class="tag {index % 2 === 0 ? 'down' : 'up'}">
+                    {#if activeButton === 'function'}
+                        {pin.function}    
+                    {:else if activeButton === 'interface'}     
+                        {pin.interface}
                     {/if}
+                </div>
+            {/if}            
                 </li>
             {/each}
         </ul>
@@ -101,9 +138,9 @@ published: true
 
 <!-- Hier Grafik mit der Steckleiste einfügen: -->
 
-<!-- {#if activePin !== null}
+<!-- {#if activePin !== ""}
     <h3>{activePin.name}</h3>
-    {#if activePin.interface !== null}
+    {#if activePin.interface !== ""}
         <p>Der Pin {activePin.name} benutzt die Schnittstelle {activePin.interface}.</p>
     {/if}
 {/if} -->
@@ -197,25 +234,22 @@ Der integrierte Digital-Analog-Umsetzer des Calliope mini sorgt dafür, dass die
 
 ### PWM
 
-Um eine LED zu dimmen oder die Geschwindigkeit eines Motors zu varieren, müsste analog die Spannung verändert werden. Der Ausgang der Pins liegt allerdigns immer bei 3,3 V. Mit der Pulsweitenmodulation wird durch schnelles ein und auschalten in unterschiedlicher Periodendauer ein analoges Signal simuliert werden, welches unterschiedliche abgestufte Werte annehmen kann. 
-
-<UnfoldItem title="Wieviele PWM-Pins können parallel verwendet werden?">
+Um eine LED zu dimmen oder die Geschwindigkeit eines Motors zu varieren, müsste analog die Spannung verändert werden. Der Ausgang der Pins liegt allerdigns immer bei 3,3 V. Mit der Pulsweitenmodulation wird durch schnelles ein und auschalten in unterschiedlicher Periodendauer ein analoges Signal simuliert werden, welches unterschiedliche abgestufte Werte annehmen kann. <br>
     {#if $selectedBoardVersion == 3}
     Es können bis zu 4 PWM-Signale gleichzeitig generiert werden, bevor diese anfangen unflüssig und abgestuft zu werden.
 {:else}
     Es können bis zu 3 PWM-Signale gleichzeitig generiert werden, bevor diese anfangen unflüssig und abgestuft zu werden.
 {/if}
- PWM-Signale gleichzeitig generiert werden, bevor diese anfangen unflüssig und abgestuft zu werden. 
-</UnfoldItem>
+
 
 <Versions>
 
 <div slot="mini3">
 
-## Gesamte Pinout
+## Gesamtes Pinout
 
 
-| mini V3<br>Pinout / Signal Name | mini V3<br>Steckleiste | MakeCode                |
+| Calliope mini V3<br>Pinout / Signal Name | Calliope mini V3<br>Pinleiste | MakeCode                |
 | ------------------------------- | ---------------------- | ----------------------- |
 | Speaker                         |                        |                         |
 | SPI_EXT_MISO                    | C14                    | C14                     |
@@ -355,6 +389,17 @@ Um eine LED zu dimmen oder die Geschwindigkeit eines Motors zu varieren, müsste
     padding-top: 6px;
     }
     }
+    .analogin_dot {
+    width: 30px;
+    display: inline-block;
+    margin-bottom: -10px;
+    height: 30px;
+    padding-top: 30px;
+    font-weight: bold;
+    padding-top: 6px;
+    border-radius: 30px;
+    border: 5px solid var(--color-blau);
+}
     
     @media (max-width: 767px) {
         .pinout li .dot span {

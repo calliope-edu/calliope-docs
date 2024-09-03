@@ -73,9 +73,3 @@ import { selectedBoardVersion } from '$lib/scripts/store.js';
     </Yes>
     </Admonition>
     
-    
-
-<!-- Ja V1-2 und V3 unterscheiden sich bei 
-- USB-C/Mikro USB; 
-- der mini V1-2 kann nicht über VM versorgt werden, der Motortreiber aber genau mit maximal 9V
-- mini V1-2 braucht maximal 40mA und kann allermaximalst 100mA abgeben (eigentlich sagt microbit1 90 und wir haben ja noch mehr drauf); mini3 braucht maximal 60mA und kann maximal 200mA abgeben. (hab die werte teilweise etwas angepasst) -->

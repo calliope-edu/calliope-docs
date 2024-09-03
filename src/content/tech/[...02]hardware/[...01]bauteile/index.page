@@ -46,7 +46,7 @@ published: true
         <i>Herstellerbezeichnung: NRF52833-QIAA-R</i>
     </div>
 
-    - Führt Programme aus und ist an alle Komponenten des mini angeschlossen
+    - Führt Programme aus und ist an alle Komponenten des Calliope mini angeschlossen
     - Memory Size: 512kB Flash, 128kB RAM
     - Serial Interfaces: ADC, I²C, PWM, SPI, UART, USB
     - Bluetooth-Antenne, Temperaturmessung
@@ -61,17 +61,17 @@ published: true
 
 <Versions navbar={false}>
     <div slot="mini1">
-        NXP KL26z
+        <i>Herstellerbezeichnung: NXP KL26z</i>
     </div>
     <div slot="mini2">
         NXP KL26z
 
-        wegen Bauteilverknappung wurde in der Mini Version 2.1 der Prozessor gegen den
+        wegen Bauteilverknappung wurde in der Calliope mini Version <V>2.1</V> der Prozessor gegen den
         Raspberry Pi RP2040 Dual-core Arm Cortex-M0+ Prozessor ausgetauscht 
     
     </div>
     <div slot="mini3">
-        NRF52820-QDAA-D
+        <i>Herstellerbezeichnung: NRF52820-QDAA-D</i>
     </div>
 
     - empfängt das Programm über USB und läd es auf den Anwendungsprozessor
@@ -124,7 +124,7 @@ Auf dem Calliope mini befinden sich 3 Tasten.
     <div slot="mini1-2">
 
         <i>Herstellerbezeichnung:Bosch BMX055</i>
-        <br>
+        <Gap h="1" />
         <li>Beschleunigungsmesser, Gyroskop, Magnetometer, 9 Achsen Sensor</li>
 
     </div>
@@ -231,7 +231,7 @@ Dieser Motortreiber besitzt 2 seperate H-Brücken Treiber und kann damit 2 Gleic
 Hier findest du einen Link zum [Datenblatt](https://www.ti.com/lit/ds/symlink/drv8835.pdf?ts=1697459375123)
 **Kurz Infos:**
 - Steuert 2 Motoren, jeder Motor kann jeweils vorwärts und rückwärts betätigt werden
-- Die Motoren können an der Steckleiste bei
+- Die Motoren können an der Pinleiste bei
 - maximale Eingangsspannung 9V; maximaler Strom 1,5A pro Motor
 - Wird im Phase/Enable Modus (Mode=1) betrieben, d.h. in der Firmware steuert ein digitales Signal die Motorenrichtung und über ein [PWM](https://de.wikipedia.org/wiki/Pulsdauermodulation) Signal die Geschwindigkeit 
 

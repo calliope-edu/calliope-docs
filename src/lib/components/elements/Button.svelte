@@ -79,6 +79,10 @@ href={link} bind:this={a} {target} download={downloadName} rel={relExternal} cla
       background-color: var(--color);
       color: #FFF;
     }
+    &.active {
+      background-color: var(--color);
+      color: #FFF;
+    }
   }
 
   .container {
