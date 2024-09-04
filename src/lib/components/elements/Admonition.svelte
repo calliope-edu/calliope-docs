@@ -1,5 +1,4 @@
 <script >
-import clsx from 'clsx';
 import NoteIcon from '~icons/ri/sticky-note-fill';
 import InfoIcon from '~icons/ri/information-fill';
 import TipIcon from '~icons/ri/lightbulb-flash-fill';
@@ -47,7 +46,7 @@ $: heading = title ?? admonition[type];
     </span>
   </div>
 
-  <div class="pl-1 text-gray-inverse">
+  <div class="admonition-content">
     <slot />
   </div>
 </div>
@@ -59,10 +58,15 @@ $: heading = title ?? admonition[type];
     margin-top: 2rem;
     margin-bottom: 2rem; 
     border-radius: 0.375rem; 
-    border-width: 2px; 
-    border-left-width: 8px; 
+    border-width: 0px; 
+    border-left-width: 5px; 
     border-style: solid;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); 
+    // box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); 
+
+    .admonition-content {
+      padding: 1rem 0.5rem 1rem 1.5rem;
+      color: rgba(0,0,0,.75);
+    }
     .head {
       display: flex; 
       align-items: center; 

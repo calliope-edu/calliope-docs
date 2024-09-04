@@ -2,31 +2,38 @@
     import { onMount } from 'svelte';
 
     let inputValue = '';
-  
-    onMount(() => {
-      docsearch({
-        inputSelector: '#typesense',
-        typesenseCollectionName: 'calliope-docs',
-        typesenseServerConfig: { 
-          nodes: [{
-            host: 'search.docs.calliope.cc',
-            port: '443', 
-            protocol: 'https' 
-          }],
-          apiKey: 'tNEoljSnhaBUD3To5spLNEuPWNKLiVxQ',
-        },
-        typesenseSearchParameters: {
-          query_by:
-            'hierarchy.lvl0,hierarchy.lvl1,hierarchy.lvl2,hierarchy.lvl3,hierarchy.lvl4,hierarchy.lvl5,hierarchy.lvl6,content,embedding',
-             vector_query: 'embedding:([], k: 5, distance_threshold: 1.0, alpha: 0.2)' // Optional vector search fine-tuning
-        },
-      });
+    export let inline = false;
+
+  onMount(() => {
+    docsearch({
+      inputSelector: (inline) ? '#typesenseInline' : '#typesense',
+      typesenseCollectionName: 'calliope-docs',
+      typesenseServerConfig: { 
+        nodes: [{
+          host: 'search.docs.calliope.cc',
+          port: '443', 
+          protocol: 'https' 
+        }],
+        apiKey: 'tNEoljSnhaBUD3To5spLNEuPWNKLiVxQ',
+      },
+      typesenseSearchParameters: {
+        query_by:
+          'hierarchy.lvl0,hierarchy.lvl1,hierarchy.lvl2,hierarchy.lvl3,hierarchy.lvl4,hierarchy.lvl5,hierarchy.lvl6,content,embedding',
+          vector_query: 'embedding:([], k: 5, distance_threshold: 1.0, alpha: 0.2)' // Optional vector search fine-tuning
+      },
     });
+
+  });
+
 
   </script>
 
-<div class="ui icon input">
+<div class="ui icon input" class:inline>
+  {#if inline}
+  <input type="search" placeholder="Suche..." bind:value={inputValue} id="typesenseInline">
+  {:else}
   <input type="search" placeholder="Suche..." bind:value={inputValue} id="typesense">
+  {/if}
   {#if inputValue.length == 0}
     <i class="search icon"></i>
   {/if}
@@ -41,6 +48,28 @@
       border-radius: 5px;
       outline: none;
     }
+
+    .inline, .inline input {
+      width: 100%;
+    }
+
+    .inline :global(.algolia-autocomplete) {
+      width: 100% !important;
+    }
+
+    .inline :global(.algolia-autocomplete .ds-dropdown-menu) {
+    position: static !important;  /* Remove the floating behavior */
+    width: 100%;       /* Make it the same width as the input */
+    margin-top: 10px;  /* Add some space between the input and the dropdown */
+    border: 1px solid #ccc;  /* Optional: Add a border around the dropdown */
+    box-shadow: none;  /* Remove shadow if there's any */
+  }
+
+  .inline :global(.algolia-autocomplete .ds-dropdown-menu .ds-suggestions) {
+    width: 100%;
+    max-height: 600px;  /* Set a max-height for the dropdown */
+    overflow-y: auto;   /* Allow scrolling if content exceeds max-height */
+  }
 
 
     :global(.algolia-autocomplete .ds-dropdown-menu) {

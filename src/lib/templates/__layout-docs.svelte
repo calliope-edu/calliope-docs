@@ -17,6 +17,7 @@
     let breakpoint = 1200;
     let headings = [];
     let desktop = false;
+    let menuVisible = false;
     $: hide = (headings.length < 2);
     // $: gridColumns = (!desktop) ? '' : ' 200px';
     // $: gridMaxWidth = (!desktop) ? 1 : 2;
@@ -27,17 +28,17 @@
 </script>
 
 <div class="page-content ui wide container">
-
+    <div style="z-index: 99; position: relative;">
     <Sticky top={100}>
-        <aside class="docs-menu ui sticky fixed top">
+        <aside on:click={()=>{menuVisible=false;}} class="docs-menu ui sticky fixed top" class:visible={menuVisible}>
             {#key $_lang.code}
             <DocsMenu {menu} bind:items={items} bind:prev={prev} bind:next={next} bind:currKategorie={currKategorie} />
             {/key}
         </aside>
     </Sticky>
-    <!-- <button id="toggle-mobile-menu" class="ui button tiny fluid" style="background-color: #e34c26; color: white;">Menu</button> -->
-
-    <article class="">
+    <button on:click={()=>{menuVisible=!menuVisible;}} class="toggle-mobile-menu ui button tiny fluid">Menu</button>
+</div>
+    <article>
         <div class="full-flex">
             <div class="full-flex">
 
@@ -86,10 +87,10 @@
                         </div>
                     </div>
 
-                    <!-- <a href="https://github.com/calliope-edu/calliope-docs/edit/PRODUCTION/{meta.filepath}" target="_blank">
+                    <a href="https://github.com/calliope-edu/calliope-docs/edit/PRODUCTION/{meta.filepath}" target="_blank" class="edit-link">
                         <i class="edit icon" />
                         Diese Seite auf GitHub bearbeiten
-                    </a> -->
+                    </a>
                     
                 </div>
 
@@ -120,6 +121,11 @@
         display: block;
     }
 
+    .edit-link {
+        // color: inherit;
+        opacity: .7;
+    }
+
     .next-prev-menu {
         display: flex; 
         padding-top: 3rem; 
@@ -135,11 +141,26 @@
         }
     }
 
+    .toggle-mobile-menu {
+        display: none;
+        background-color: var(--color-calliope); color: white;
+        position: fixed;
+        bottom: 1rem;
+        left: 1rem;
+        width: min-content;
+        border: 1px solid white;
+
+        @media (max-width: 1024px) { 
+            display: block;
+            
+        }
+    }
+
 .page-content {
     padding-left: 1rem;
     padding-right: 1rem; 
     padding-top: 4rem;
-    min-height: calc(100vh - 221px);
+    // min-height: calc(100vh - 221px);
 
     @media (min-width: 640px) { 
         padding-left: 1.5rem;
@@ -160,17 +181,34 @@
         right: 0;
         bottom: 0;
         left: 0; 
-        z-index: 20; 
+        z-index: 99; 
         flex: none; 
         width: 0.25rem; 
-        height: 100%; 
+        height: 100%;
+
+        &.visible {
+            @media (max-width: 1024px) { 
+                display: flex;
+                align-items: flex-end;
+                background: rgba(255,255,255,.8);
+                overflow-y: auto; 
+                top: auto;
+                bottom: 0rem;
+                width: 100vw; 
+                padding: 1rem;
+                padding-bottom:5rem;
+                padding-top: 8rem;
+                height: 100%;
+                -webkit-backdrop-filter: blur(6px);
+                backdrop-filter: blur(6px);
+            }
+        }
 
         @media (min-width: 1024px) { 
             display: block; 
             overflow-y: visible; 
             position: static; 
             padding-top: 0; 
-            width: 12rem; 
             width: 13rem; 
             height: auto; 
         }

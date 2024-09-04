@@ -10,14 +10,27 @@ published: true
 
 Der Calliope mini Autouploader kann verwendet werden, um Programm automatisch aus dem Downloadordner auf den Calliope mini zu laden. Das kann insbesondere für die Calliope mini Versionen <V>V1</V>  und <V>V2</V>  hilfreich sein oder falls WebUSB nicht unterstützt wird. 
 
-<Button link="https://calliope.cc/downloads/CalliopeMiniUploader.exe">Download</Button>
 
-- CalliopeMiniUploader.exe herunterladen
-- CalliopeMiniUploader.exe ausführen
-- Fenster im Hintergrund offen lassen
-- Neue .hex Dateien im Downloads Ordner werden jetzt im Hintergrund auf den Calliope mini kopiert.
-- Unter Einstellungen kann ein benutzerdefinierter Pfad ausgewählt werden von dem die .hex-Datein auf den Calliope mini geladen werden.
 
-<Admonition type='danger'>
-Durch das Update "22H2" für Windows 10 und Windows 11 kommt es zu Kopierproblemen bei vielen Mikrocontrollern, das betrifft leider auch sämtliche Calliope mini. Microsoft hat das Problem in der Zwischenzeit behoben, so dass es genügen sollte, fehlende Updates zu installieren. Sollte das nicht möglich sein, kann der Calliope mini Autouploader als Abhilfe dienen.
-    </Admonition>
+<Steps>
+    <Step title="CalliopeMiniUploader.exe herunterladen" orientation="vertical">
+        <Button link="https://calliope.cc/downloads/CalliopeMiniUploader.exe">Download</Button>
+    </Step>
+    <Step title="CalliopeMiniUploader.exe ausführen" orientation="vertical">
+        Das Fenster im Hintergrund offen lassen.
+    </Step>
+    <Step title="Dateien herunterladen" orientation="vertical">
+        Neue .hex Dateien im Downloads Ordner werden jetzt im Hintergrund auf den Calliope mini kopiert.
+    </Step>
+    <Step title="Einstellungen" orientation="vertical">
+
+        Unter `Einstellungen` kann ein benutzerdefinierter Pfad ausgewählt werden von dem die .hex-Datein auf den Calliope mini geladen werden.
+
+    </Step>
+</Steps>
+
+<Admonition type='note'>
+
+Durch das Update `22H2` für Windows 10 und Windows 11 kommt es zu Kopierproblemen bei vielen Mikrocontrollern, das betrifft leider auch sämtliche Calliope mini. **Microsoft hat das Problem in der Zwischenzeit behoben**, so dass es genügen sollte, fehlende Updates zu installieren. Sollte das nicht möglich sein, kann der Calliope mini Autouploader als Abhilfe dienen.
+
+</Admonition>

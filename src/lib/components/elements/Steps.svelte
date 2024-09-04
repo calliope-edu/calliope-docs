@@ -19,6 +19,17 @@ setContext(CONTEXT_KEY, {
 });
 </script>
 
-<ol class="steps relative m-0 list-none space-y-6 p-0 992:space-y-4" style="counter-reset: 0;">
+<ol class="steps">
   <slot />
 </ol>
+
+
+<style lang="scss">
+.steps {
+  position: relative;
+  margin: 0;
+  list-style-type: none;
+  padding: 1rem 0;
+  counter-reset: step;
+}
+</style>

@@ -1,7 +1,7 @@
 <footer>
     <div class="ui container">
         <span class="copyright">
-            © {new Date().getFullYear()} <a href="https://calliope.cc">Calliope gGmbH</a>. All Rights Reserved.
+            © {new Date().getFullYear()} <a href="https://calliope.cc">Calliope gGmbH</a>.
         </span>
         <ul class="menu">
                 <li>

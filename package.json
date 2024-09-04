@@ -51,6 +51,8 @@
     "prettier-plugin-svelte": "^2.10.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rehype-code-titles": "^1.2.0",
+    "rehype-pretty-code": "^0.13.0",
     "rehype-slug": "^5.1.0",
     "remark-unwrap-images": "^3.0.1",
     "sass": "^1.65.1",
@@ -67,14 +69,13 @@
     "unplugin-icons": "^0.16.5",
     "vanilla-lazyload": "^17.8.4",
     "vite": "^4.4.2",
-    "vite-imagetools": "^5.0.7",
-    "rehype-code-titles": "^1.2.0",
-    "rehype-pretty-code": "^0.13.0"
+    "vite-imagetools": "^5.0.7"
   },
   "type": "module",
   "readme": "ERROR: No README data found!",
   "_id": "shopify-svelte@0.0.1",
   "dependencies": {
+    "body-scroll-lock": "^4.0.0-beta.0",
     "svelte-persisted-store": "^0.9.0"
   }
 }

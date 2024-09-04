@@ -1,85 +1,223 @@
 <script>
-	import clsx from 'clsx';
-	import { page } from '$app/stores'
-	import { fade } from 'svelte/transition';
-	import { browser } from '$app/environment';
-	import Button from '$lib/components/elements/Button.svelte';
+    // npm i body-scroll-lock
+	import BoardVersionSelector from '$lib/components/BoardVersionSelector.svelte';
+    import SearchBar from '$lib/components/SearchBar.svelte';
+    import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+    import { page } from '$app/stores'
+    $: active = $page.url.pathname;
+    
+    let items = [
+        // {
+        //     slug: '/tech/',
+        //     name: 'Technische Dokumentation',
+        // }
+        // ,{
+        //     slug: '/python/',
+        //     name: 'Python Blocks',
+        // },
+    ]
 
-	export let addBg;
-	let menuOpen = false;
+    let mobileMenuElement;
+    let maxWidth = 0;
+    let width = 1;
+    $: menuWidth = (width > menuWidth) ? width : menuWidth || 1;
+    let menuOpen = false;
+    $: mobileMenu = ((maxWidth != 0) && (menuWidth > (maxWidth - 300))) ? true : false;
 
-	$: active = $page.url.pathname;
-	// $: console.log(active);
-
-	let pages = [
-		// {url: '/#', name: 'Startseite', sub: []},
-		// {url: '/tech', name: 'Dokumentation', sub: []},
-		// {url: 'https://calliope.cc/', name: 'Calliope.cc', external: true, sub: [
-		// 	{url: 'https://calliope.cc/los-geht-s/einfuehrung', name: 'Einführung', external: true, sub: []},
-		// 	{url: 'https://calliope.cc/los-geht-s/erste-schritte', name: 'Erste Schritte', external: true, sub: []},
-		// 	{url: 'https://calliope.cc/los-geht-s/erste-uebungen', name: 'Erste Übungen', external: true, sub: []},
-		// ]},
-		// {url: '/idee/', name: 'Idee', sub: []},
-		// {url: '/kontakt/', name: 'Kontakt', sub: []},
-	];
+    function toggleMenu() {
+        if(menuOpen) {
+            enableBodyScroll(mobileMenuElement);
+            menuOpen = false;
+        } else {
+            disableBodyScroll(mobileMenuElement, {reserveScrollBarGap: true});
+            menuOpen = true;
+        }
+    }
 </script>
 
-<div class="block lg:hidden pr-4">
-	<button on:click={()=>{menuOpen = !menuOpen;}} aria-expanded={menuOpen} class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-green-500 appearance-none" >
-		<svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-			<title>Menu</title>
-			<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-		</svg>
-	</button>
-</div>
+<div bind:clientWidth={maxWidth} class="sizer"></div>
 
-<div class:hidden={!menuOpen}
-class={clsx('w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg:mt-0 md:bg-transparent z-20', addBg && 'bg-white', !addBg && 'bg-gray-100')}>
-	<ul class="list-reset lg:flex justify-end flex-1 items-center">
-		{#each pages as {url, name, sub, external = false, expanded = false, hover=false}}
-			<li class="mr-3 group" class:active={active.startsWith(url)}
-			on:mouseenter={()=>{expanded=true;hover=true}} on:mouseleave={()=>{expanded=false;hover=false}} >
-				<svelte:element this="{(sub.length) ? 'button' : 'a'}" target={(external)?'_blank':'_self'} data-sveltekit-prefetch href={url}
-				on:click={()=>{
-					if(!sub.length){
-						active=url;
-						menuOpen=false;
-					}else{
-						if(!hover)
-							expanded=!expanded;
-					}
-				}} class="link inline-block py-2 px-4 no-underline cursor-pointer"
-				aria-expanded={expanded}>
-					{name}
-					{#if sub.length}
-						<svg class="fill-current h-4 w-4 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-					{/if}
-				</svelte:element>
-				{#if sub.length && (expanded || !browser)}
-					<ul class="dropdown-menu absolute text-gray-700 pt-1 w-min-content shadow-md" transition:fade|global={{duration:100}}>
-						{#each sub as p,j}
-							<li class:active={active.startsWith(p.url)}>
-								<a data-sveltekit-prefetch href={p.url} target={(p.external ?? false)?'_blank':'_self'} on:click={()=>{active=p.url;menuOpen=false;}} class="link {(j===1) ? 'rounded-t' : (j===sub.length) ? 'rounded-b' : ''} bg-white hover:bg-gray-100 py-2 px-4 block whitespace-no-wrap w-full">{p.name}</a>
-							</li>
-						{/each}
-					</ul>
-				{/if}
-			</li>
-		{/each}
-		<li class='mr-5'>
-			<Button text='Calliope.cc' link='https://calliope.cc' color="calliope" />
+<button on:click={toggleMenu} aria-expanded={menuOpen} tabindex="1" class:none={!mobileMenu}>
+    <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <title>Menu</title>
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+    </svg> Menü
+</button>
+
+<nav class:none={!menuOpen || !mobileMenu} class="mobileMenu" bind:this={mobileMenuElement}>
+
+    <ul style="margin-top:10rem;">
+		<li>
+			<BoardVersionSelector dropdown />
 		</li>
-	</ul>
-</div>
+		<li style="width: 100%;">
+            {#if mobileMenu}
+			    <SearchBar inline />
+            {/if}
+		</li>
+        {#each items as {slug, name}}
+        <li>
+            <a
+            sveltekit:prefetch href="{slug}"
+            on:click={()=>{active=slug; toggleMenu();}}
+            class:active={active === slug}
+            >
+                {name}
+            </a>
+        </li>
+        {/each}
+    </ul>
+</nav>
 
-<style lang="scss">
 
-    li.active > .link {
-		@apply    text-calliope font-bold;
-	}
-	li:not(.active) > .link {
-		@apply text-gray-600 hover:text-calliope hover:underline;
-	}
+<nav class:hidden={mobileMenu} class="dekstopMenu" bind:clientWidth={width}>
+        <ul>
+            {#each items as {slug, name}}
+                <li>
+                    <a
+                    sveltekit:prefetch href="{slug}"
+                    on:click={()=>{active=slug}}
+                    class:active={active === slug}
+                    >
+                        {name}
+                    </a>
+                </li>
+            {/each}
+        </ul>
+        <div class="item">
+            {#if !mobileMenu}
+                <SearchBar />
+            {/if}
+        </div>
+        <div class="item">
+            <BoardVersionSelector dropdown/>
+        </div>
+</nav>
+
+<style lang='scss'>
+
+    .dekstopMenu {
+        display: flex;
+    }
+
+    .sizer {
+        height: 0px;
+        width: 100%;
+		position: absolute;
+    }
+    .none {
+        display: none;
+        height: 0px;
+    }
+    .hidden {
+        display: none;
+    }
+
+    button {
+        position: relative;
+        z-index: 101;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        border-radius: 0.25rem; 
+        border-width: 1px; 
+        border: 1px var(--color-calliope) solid;
+        padding: 1rem 2rem;
+        background: transparent;
+        color: var(--color-calliope);
+        font-family: sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 250ms ease-in-out, 
+                    transform 150ms ease;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:focus {
+            outline: 1px solid #fff;
+            outline-offset: -3px;
+        }
+
+        svg {
+            width: 1rem; 
+            height: 1rem; 
+            margin-right: .5em;
+            fill: currentColor;
+        }
+    }
+    nav {
+        width: max-content;
+        margin:auto;
+        margin-right: 0;
+        font-size: 120%;
+
+        ul {
+            list-style-type: none;
+            display: flex;
+
+            a {
+                margin-right: .5em;
+                padding: .5em;
+                text-decoration: none;
+                border: solid rgba(255,255,255,0) 1px;
+                transition: color 250ms ease-in-out;
+
+                &:hover, &.active {
+                    // color: white;
+                    border: solid currentColor 1px;
+                }
+                &:hover {
+                    // background: var(--color-calliope);
+                }
+                &.active {
+                    // background: var(--color-calliope);
+                    opacity: 1;
+                }
+            }
+        }
+        &.mobileMenu {
+            position: fixed;
+            z-index: 100;
+            background: var(--color-calliope-800);
+            transition: background 250ms ease-in-out;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding-top: var(--headerHeight);
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            // max-height: calc(100vh - var(--headerHeight));
+            overflow: auto;
+
+            ul {
+                flex-direction: column;
+                li {
+                    margin: auto;
+                    padding: .5em;
+                }
+            }
+        }
+    }
+
+    :global(.dark) {
+
+        button {
+            color: var(--color-calliope-800);
+            border-color: var(--color-calliope-800);
+        }
+
+        a {
+            color: white;
+        }
+
+        .mobileMenu {
+            background: var(--color-calliope);
+        }
+    }
 
 </style>
-    

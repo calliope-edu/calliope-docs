@@ -14,6 +14,8 @@ published: true
     import V3Datenblatt from './v3.svx';
 </script>
 
+<VersionNav/>
+
 ## Overview
 <Versions>
     <div slot="mini1">

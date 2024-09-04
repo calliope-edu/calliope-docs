@@ -61,7 +61,7 @@ import { selectedBoardVersion } from '$lib/scripts/store.js';
     - An externe Verbraucher kann der Calliope mini insgesamt <b>{#if $selectedBoardVersion == 3}200{:else}
 100{/if}mA abgeben</b>
     
-
+<!-- 
     <Admonition type='warning'>
     <No>
     Schließe niemals mehre Verbraucher, mit 15mA wie z.B. 2 LEDs an einen I/O-Pin an.
@@ -71,5 +71,5 @@ import { selectedBoardVersion } from '$lib/scripts/store.js';
     Verwendete stattdessen verschiedene I/O Pins oder eine Transistorenschaltung. Beachte, dass ingesamt die <b>{#if $selectedBoardVersion == 3}200{:else}
 100{/if}mA</b> nicht überschritten werden.
     </Yes>
-    </Admonition>
+    </Admonition> -->
     

@@ -15,7 +15,7 @@ published: true
 
 </script>
 
-<Versions navbar={true}>
+<Versions navbar>
   <div slot="mini1">
     <V1 />
   </div>

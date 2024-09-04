@@ -10,11 +10,13 @@ published: true
 
 <!-- https://microbit.org/get-started/user-guide/firmware/ -->
 
+<VersionNav/>
+
 ## Startprogramm
 
 Das Startprogramm ist die Calliope mini Firmware. Sie befindet sich auf jedem Calliope mini im Auslieferungszustand.
 
-<Admonition type='warning'>
+<Admonition type='tip'>
     Das Startprogramm wird in manchen Fällen auch als Demoprogramm bezeichnet. In beiden Fällen ist damit die Calliope mini Firmware gemeint.
     </Admonition>
 
@@ -31,6 +33,7 @@ Sobald man die Testroutine und das Willkommensintro einmal durchlaufen hat, komm
 <li>Schere-Stein-Papier</li>
 <li>Krach-o-meter</li>
 <li>Bluetooth</li>
+
 <br>
 </div>
 <div slot="mini3">
@@ -43,10 +46,12 @@ Sobald man das Willkommensintro einmal durchlaufen hat, kommt man in das Menü u
 <li>Schere-Stein-Papier</li>
 <li>Krach-o-meter</li>
 
-<Admonition type='tip'>
+<Admonition type='info'>
     Wird der Calliope mini <V>V3</V> verwendet, gelangst du über 3 x kurzes drücken der Reset Taste in den Kopplungsmodus.
-    </Admonition>
+</Admonition>
+
 </div>
+
 </Versions>
 
 <!-- TODO: Die default einstellungen je Firmware & Calliope mini Version für Yotta (BLE, RAM, ...) aufschlüßeln -->
@@ -80,7 +85,7 @@ Sobald man das Willkommensintro einmal durchlaufen hat, kommt man in das Menü u
         Das Template ist ein leeres Programm, welches die Nutzer:innen anpassen können:
         <GitLink repo="calliope-mini/microbit" branch="v2.2.0-rc6-calliope.rc4" />
 
-        <UnfoldItem title="Abhängigkeiten" color="calliope">
+        <!-- <UnfoldItem title="Abhängigkeiten" color="calliope">
 
             - <GitLink repo="calliope-mini/microbit-dal" branch="v2.2.0-rc6-calliope.rc4" />
 
@@ -90,18 +95,18 @@ Sobald man das Willkommensintro einmal durchlaufen hat, kommt man in das Menü u
                 - <GitLink repo="lancaster-university/nrf51-sdk" branch="v2.2.0+mb4" />
 
 
-            </UnfoldItem>
+            </UnfoldItem> -->
     </div>
     <div slot="mini3">
 
-        ### Demoprogramm:
+        ### Startprogramm:
         <GitLink repo="calliope-edu/microbit-v2-samples" branch="calliope-demo" />
 
         ### Template
         Das Template ist ein leeres Programm, welches die Nutzer:innen anpassen können:
         <GitLink repo="calliope-edu/microbit-v2-samples" branch="calliope" />
 
-        <UnfoldItem title="Abhängigkeiten">
+        <!-- <UnfoldItem title="Abhängigkeiten">
 
             - `codal.json`: <GitLink repo="calliope-edu/codal-microbit-v2" branch="v0.2.57-calliope-1.5" />
             - `module.json`: <GitLink repo="calliope-edu/codal-microbit-v2" branch="calliope" />
@@ -110,29 +115,28 @@ Sobald man das Willkommensintro einmal durchlaufen hat, kommt man in das Menü u
                 - <GitLink repo="microbit-foundation/codal-microbit-nrf5sdk" branch="master" />
 
 
-        </UnfoldItem>
+        </UnfoldItem> -->
     </div>
 
-    ### Kompilieren
+    ### Kompilieren mit Docker 
 
-          #### Docker 
-          Mit einem Docker Image kann die für das Kompilieren benötigte Toolchain genutzt werden, ohne alle Programme einzeln zu installieren
+    Mit einem Docker Image kann die für das Kompilieren benötigte Toolchain genutzt werden, ohne alle Programme einzeln zu installieren
 
-          Ein passendes Docker Image findet sich unter <GitLink repo="carlosperate/docker-microbit-toolchain" inline />. Dort ist auch die Verwendung ausführlich beschrieben.
+    Ein passendes Docker Image findet sich unter <GitLink repo="carlosperate/docker-microbit-toolchain" inline />. Dort ist auch die Verwendung ausführlich beschrieben.
 
-          Über die im Ordner `/docker` hinterlegten Scripte kann das Docker image auch automatisiert geladen und die gewünschten Befehle ausgeführt werden:
+    Über die im Ordner `/docker` hinterlegten Scripte kann das Docker image auch automatisiert geladen und die gewünschten Befehle ausgeführt werden:
 
-          ##### Yotta
-          Windows Powershell: `./docker/toolchain.bat yotta build`<br>
-          Unix: `./docker/toolchain.sh yotta build`
+    #### Yotta
+    Windows Powershell: `./docker/toolchain.bat yotta build`<br>
+    Unix: `./docker/toolchain.sh yotta build`
 
-          ##### Build.py
-          Windows Powershell: `./docker/toolchain.bat ./build.py`<br>
-          Unix: `./docker/toolchain.sh ./build.py`
+    #### Build.py
+    Windows Powershell: `./docker/toolchain.bat ./build.py`<br>
+    Unix: `./docker/toolchain.sh ./build.py`
 
 </Versions>
 
-
+<!-- 
 <UnfoldItem title="MakeCode" color="calliope">
 
 ## MakeCode
@@ -193,4 +197,4 @@ Die in MakeCode verwendeten Abhängigkeiten können direkt dem GitHub repository
 
 </Versions>
 
-</UnfoldItem>
+</UnfoldItem> -->

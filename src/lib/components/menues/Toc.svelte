@@ -134,8 +134,8 @@
       <button
         on:click|preventDefault|stopPropagation={() => (open = true)}
         aria-label={openButtonLabel}
-      >
-        Toc
+        class="ui button tiny fluid" style="background-color: var(--color-calliope); color: white;">
+        {title}
       </button>
     {/if}
   </aside>
@@ -145,6 +145,8 @@
   .toc {
     // padding-left: 2rem;
     // padding-right: 2rem; 
+    background: #fff;
+    border-radius: 3px;
   }
 
 

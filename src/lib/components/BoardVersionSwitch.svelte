@@ -1,7 +1,14 @@
 <script>
 	import { selectedBoardVersion } from '$lib/scripts/store.js';
+	import BoardVersionSelector from '$lib/components/BoardVersionSelector.svelte';
 	const versionen = [1, 2, 3];
+    export let navbar = false;
 </script>
+{#if navbar}
+<div class="boardSelector">
+<BoardVersionSelector />
+</div>
+{/if}
 
 <div class="content">
     {#if $selectedBoardVersion == 1}
@@ -23,6 +30,7 @@
 </div>
 
 <style lang="scss">
-.content {
+.boardSelector {
+    margin-bottom: calc(2rem - 0.1428571429em);
 }
 </style>

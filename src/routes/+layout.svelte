@@ -1,7 +1,7 @@
 <script>
 	import PageHeader from '$lib/components/layout/PageHeader.svelte';
 	import PageFooter from '$lib/components/layout/PageFooter.svelte';
-  import LocaleSwitch from '$lib/components/LocaleSwitch.svelte';
+
 	import lazyload from 'vanilla-lazyload';
   import { browser } from '$app/environment';
 
@@ -15,13 +15,30 @@
   
 </script>
 
-<LocaleSwitch />
+<div class="page">
 
-<div>
+  
+  <PageHeader />
+ 
 
-<PageHeader />
+  <div class="page-content">
+    <slot />
+  </div>
 
-<slot />
-
-<PageFooter />
+  <div>
+    <PageFooter />
+  </div>
 </div>
+
+<style lang="scss">
+  .page {
+    min-height: calc(100vh + 1px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .page-content {
+      flex-grow: 1;
+    }
+  }
+</style>

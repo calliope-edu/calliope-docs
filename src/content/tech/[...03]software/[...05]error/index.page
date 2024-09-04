@@ -13,42 +13,50 @@ Diese Nummer ist ein Fehler-Code. Verschiedene Nummer haben unterschiedliche Bed
 
 ## Boardsystem Fehler
 
-Die Calliope mini Systemfehler liegen zwischen 01 und 99.
+| Fehlercode | Beschreibung                                                                 |
+|------------|-------------------------------------------------------------------------------|
+| **010**     | Der interne I2C Bus funktioniert nicht                                        |
+| **020**     | Es gibt keinen freien Speicher auf dem Calliope mini                          |
+| **030**     | Ein Problem im Heap-Bereich                                                   |
+| **040**     | Der Calliope mini kann das Skript nicht richtig ausführen. Flashen Sie eine andere .hex-Datei und versuchen Sie es erneut. |
+| **042**     | Der Calliope mini kann das Skript nicht richtig ausführen. Flashen Sie eine andere .hex-Datei und versuchen Sie es erneut. |
+| **043**     | Ein Fehler trat mit der Funk-Komponente des Calliope mini auf                |
+| **050**     | Ein Fehler trat mit der Beschleunigungskomponente des Calliope mini auf      |
+| **051**     | Bei der Magnetometerkomponente des Calliope mini ist ein Fehler aufgetreten   |
+| **090**     | Ein Peripheriegerät (z. B. SPI) wurde falsch initialisiert. Stellen Sie sicher, dass die "Start" oder "Init"-Blöcke in MakeCode nur einmal in "on start" enthalten sind. |
+| **98**     | Assertion fehlgeschlagen. Dieser Fehler tritt auf, wenn eine Bedingung in MakeCode falsch ist. |
 
-- 10 Der interne I2C Bus funktioniert nicht
-- 20 Es gibt keinen freien Speicher auf dem Calliope mini
-- 30 Ein Problem im Heap-Bereich
-- 40 Es gab eine NULL-Dereferenz, der Calliope mini versuchte einen ungültigen Objektzeiger zu verwalten
-- 42 Es gibt eine Fehlerbedingung in der Calliope mini Systemsoftware
-- 43 Der Calliope mini kann den Funk nicht aktivieren
-- 50 Ein Fehler trat mit der Calliope mini-Beschleunigungskomponente auf
-- 51 Bei der Magnetometerkomponente des Calliope mini ist ein Fehler aufgetreten
-- 90 Aktuelle Board-Hardware stimmt nicht mit der Konfigurationsbeschreibung überein
 
 ## Speicherfehler
 
-Speicherfehler-Codes reichen von 800 - 909.
-
 ### Garbage Collector-Fehler
 
-- 840 Zuweisungszeiger ist null oder ungültig
-- 841 Fehler in der Warteschlange für die Garbage Collection
-- 843 VTable Eintrag ist nicht frei
-- 844 GC-Zuweisung für die angeforderte Anzahl von Bytes fehlgeschlagen
-- 846 Ungültiger Zuordnungsthread
-- 848 Zuteilungszeiger über den Zuteilungs-Header hinaus
-- 849 Zuweisungszeiger ist null
+| Fehlercode | Beschreibung                                                                |
+|------------|------------------------------------------------------------------------------|
+| **840**    | Zuweisungszeiger ist null oder ungültig                                      |
+| **841**    | Fehler in der Warteschlange für die Garbage Collection                       |
+| **843**    | VTable Eintrag ist nicht frei                                                |
+| **844**    | GC-Zuweisung für die angeforderte Anzahl von Bytes fehlgeschlagen            |
+| **846**    | Ungültiger Zuordnungsthread                                                  |
+| **848**    | Zuteilungszeiger über den Zuteilungs-Header hinaus                           |
+| **849**    | Zuweisungszeiger ist null                                                    |
+
 
 ### Programmzugriffsfehler
 
-- 901 Der Type-Header des Objekts ist nicht gültig
-- 902 Der Datenteil des Objekts ist größer als die für ihn festgelegte Länge
-- 903 Die Objektreferenz wurde gelöscht und das Objekt ist nicht mehr gültig
-- 904 Die Objektgröße stimmt nicht mit der für den Type definierten Größe überein
-- 905 Ein Objekt vtable ist ungültig oder nicht initialisiert
-- 906 Ein interner Ressourcenfehler
-- 907 Die angegebene Geräteressource ist nicht vorhanden
-- 909 Der Wert des Arguments liegt außerhalb des Bereichs oder der Type oder das Format ist ungültig
+| Fehlercode | Beschreibung                                                                 |
+|------------|-------------------------------------------------------------------------------|
+| **901**    | Der Type-Header des Objekts ist nicht gültig                                  |
+| **902**    | Der Datenteil des Objekts ist größer als die für ihn festgelegte Länge        |
+| **903**    | Die Objektreferenz wurde gelöscht und das Objekt ist nicht mehr gültig        |
+| **904**    | Die Objektgröße stimmt nicht mit der für den Type definierten Größe überein   |
+| **905**    | Ein Objekt vtable ist ungültig oder nicht initialisiert                       |
+| **906**    | Ein interner Ressourcenfehler                                                 |
+| **907**    | Die angegebene Geräteressource ist nicht vorhanden                            |
+| **909**    | Der Wert des Arguments liegt außerhalb des Bereichs oder der Type oder das Format ist ungültig |
+| **927**    | Das Programm ist mit der verwendeten Calliope mini-Version nicht kompatibel. |
+| **928**    | Der Calliope mini Datenlog ist voll. Löschen Sie die vorhandenen Daten oder flashen Sie ein neues Programm. |
+
 
 ## JavaScript runtime Fehler
 
@@ -56,10 +64,28 @@ Speicherfehler-Codes reichen von 800 - 909.
 
 Wenn der statische Typ von x eine Klasse C ist, der dynamische Type von x aber nicht C ist, und du versuchst, auf ein Feld von x zuzugreifen oder eine Methode von x aufzurufen, erhältst du – je nach dynamischem Type von x – einen der folgenden Codes.
 
-- 980 Wenn der Wert von x undefiniert ist
-- 981 Wenn der Wert von x wahr oder falsch ist
-- 982 Wenn x eine Zahl ist
-- 983 Wenn x eine Zeichenkette ist
-- 984 Wenn x ein Objekt eines bestimmten Types ist
-- 985 Wenn x eine Funktion ist
-- 989 Wenn x Null ist
+
+| Fehlercode | Beschreibung                                                                 |
+|------------|-------------------------------------------------------------------------------|
+| **980**    | Wenn der Wert von x undefiniert ist                                           |
+| **981**    | Wenn der Wert von x wahr oder falsch ist                                      |
+| **982**    | Wenn x eine Zahl ist                                                          |
+| **983**    | Wenn x eine Zeichenkette ist                                                  |
+| **984**    | Wenn x ein Objekt eines bestimmten Types ist                                  |
+| **985**    | Wenn x eine Funktion ist                                                      |
+| **989**    | Wenn x Null ist                                                               |
+
+
+
+
+## USB DAPLink Fehler
+
+| Fehlercode | Beschreibung                                                                 |
+|------------|-------------------------------------------------------------------------------|
+| **502**    | Der Calliope mini hat einen internen Fehler festgestellt. Dies kann während des Drag-and-Drop-Flashvorgangs auftreten. Versuchen Sie, den Calliope mini zu trennen und wieder anzuschließen. |
+| **503**    | Ein Fehler trat während der Übertragung auf. Der Calliope mini hat eine Unstimmigkeit im Fortschritt der Übertragung festgestellt. |
+| **504**    | Die Übertragung der Hex-Datei zum Calliope mini hat zu lange gedauert und wurde abgebrochen. |
+| **506**    | Die Hex-Datei ist außerhalb der erwarteten Reihenfolge. Dies kann passieren, wenn eine neue Hex-Datei übertragen wird, bevor die vorherige Übertragung abgeschlossen ist. |
+| **521**    | Die Übertragung der Hex-Datei wurde aufgrund einer Prüfsummenfehler im Dateiformat unterbrochen. |
+| **528**    | Der Calliope mini hat ein nicht unterstütztes Update erkannt. |
+| **529**    | Der Calliope mini hat ein inkompatibles Image erkannt. |

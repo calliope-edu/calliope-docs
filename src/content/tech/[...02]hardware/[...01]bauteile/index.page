@@ -8,13 +8,13 @@ template: docs
 published: true
 ---
 
-<VersionNav/>
 <script>
     import V1Datenblatt from './v1.svx';
     import V2Datenblatt from './v2.svx';
     import V3Datenblatt from './v3.svx';
-    import { selectedBoardVersion } from '$lib/scripts/store.js';
 </script>
+
+<VersionNav/>
 
 ## Überblick
 <Versions>
@@ -59,7 +59,7 @@ published: true
 
 ## Interfaceprozessor
 
-<Versions navbar={false}>
+<Versions>
     <div slot="mini1">
         <i>Herstellerbezeichnung: NXP KL26z</i>
     </div>
@@ -83,7 +83,7 @@ published: true
 
 ----
 
-<Versions navbar={false}>
+<Versions>
 
     <div slot="mini2" >
         <Gap h="1" />
@@ -120,7 +120,7 @@ Auf dem Calliope mini befinden sich 3 Tasten.
 
 ## Lagesensor
 
-<Versions navbar={false}>
+<Versions>
     <div slot="mini1-2">
 
         <i>Herstellerbezeichnung:Bosch BMX055</i>
@@ -149,7 +149,7 @@ Auf dem Calliope mini befinden sich 3 Tasten.
 
 
 
-<Versions navbar={false}>
+<Versions>
     <div slot="mini1-2">
         
         <i>Herstellerbezeichnung: SK6812MINI</i>
@@ -169,7 +169,7 @@ Auf dem Calliope mini befinden sich 3 Tasten.
 
 ## Lautsprecher
 
-<Versions navbar={false}>
+<Versions>
     <div slot="mini3">
         <i>Herstellerbezeichnung: Piezolautsprecher (MLT-8530)<i>
             <Gap h="1" />
