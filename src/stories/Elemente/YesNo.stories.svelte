@@ -1,8 +1,8 @@
 <script>
     import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
 
-    import Yes from '../../lib/components/elements/custom/Yes.svelte';
-    import No from '../../lib/components/elements/custom/No.svelte';
+    import Yes from '../../lib/components/elements/Yes.svelte';
+    import No from '../../lib/components/elements/No.svelte';
   
 </script>
 
