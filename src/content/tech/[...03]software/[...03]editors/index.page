@@ -266,9 +266,10 @@ TigerJython ist ein microPython Editor mit umfangreicher Anleitung für den einf
 
 <Button text='Editor' link='https://www.tigerjython4kids.ch/index.php?inhalt_links=robotik/navigation.inc.php&inhalt_mitte=robotik/calliope/loslegen.inc.php' />
 
-### microblocks
+### MicroBlocks 
 
-microblocks ist als erweitertes Scratch anzusehen. Ein Teil des ursprünglichen Scratch-Teams entwickelt diesen Editor, dessen Schwerpunkt die physische Interaktion in den Mittelpunkt stellt.
+MicroBlocks ist eine Blockprogrammiersprache, die die direkte Programmierung von Mikrocontroller-Plattformen wie dem Calliope mini ermöglicht. Programme werden in Echtzeit ausgeführt und automatisch auf dem Board gespeichert – ohne den Umweg über Dateitransfers. 
+Diese Programme können später ausgelesen und weiter bearbeitet werden. MicroBlocks eignet sich für Anfänger und Fortgeschrittene.
 
 <Button text='Editor' link='https://microblocks.fun/run-pilot/microblocks.html' />
 
