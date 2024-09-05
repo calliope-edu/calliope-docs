@@ -8,6 +8,8 @@ template: docs
 published: true
 ---
 
+<VersionNav/>
+
 ## Firmware Updating
 
 Die USB-Firmware für den Interfaceprozessor früher auch als "Bootloader" bezeichnet, kann hier heruntergeladen werden:

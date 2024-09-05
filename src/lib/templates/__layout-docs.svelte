@@ -3,6 +3,7 @@
     import Toc from '$lib/components/menues/Toc.svelte';
     import Sticky from "$lib/components/Sticky.svelte";
     import { _lang } from '$lib/scripts/store.js';
+    import { selectedBoardVersion } from '$lib/scripts/store.js';
     // import page from '$app/stores/page';
 
     export let currKategorie = null;
@@ -96,10 +97,12 @@
 
                 <div class="toc-menu-container">
                     <Sticky top={100}>
+                        {#key $selectedBoardVersion}
                         <Toc title="Auf dieser Seite" {headingSelector} {breakpoint} {hide} activeTopOffset={300}
                             bind:headings={headings} 
                             bind:desktop={desktop}
                         />
+                        {/key}
                     </Sticky>
                 </div>
 
