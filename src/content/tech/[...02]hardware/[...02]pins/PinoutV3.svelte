@@ -1,113 +1,159 @@
 <script>
+	import Button from "$lib/components/elements/Button.svelte";
+	import Admonition from "$lib/components/elements/Admonition.svelte";
+
 	let pins = [
-        { name: 'VCC', function: null, analogin: null, interface: null, color: '#E6007D' },
-        { name: 'P1', function: 'PAD1', analogin: 'AnalogIn', interface: 'Touch', color: '#3FC863' },
-        { name: 'P3', function: 'PAD3', analogin: null, interface: 'Touch', color: '#3FC863' },
-        { name: 'C5', function: 'Button A', analogin: null, interface: null, color: '#42C9C9' },
-        { name: 'C7', function: 'Display Spalte 2', analogin: null, interface: null, color: '#42C9C9' },
-        { name: 'C9', function: null, analogin: null, interface: null, color: '#3FC863' },
-        { name: 'C11', function: 'Button B', analogin: null, interface: null, color: '#42C9C9' },
-        { name: 'C13', function: null, analogin: null, interface: 'SPI CLOCK', color: '#3FC863' },
-        { name: 'C15', function: null, analogin: null, interface: 'SPI MOSI', color: '#3FC863' },
+        { name: 'VCC', fullName: 'Stromversorgung VCC', description: '', function: null, analogin: null, interface: null, color: '#E6007D', assignedPin: false },
+        { name: 'P1', fullName: 'Touch Pin ', description: '', function: 'PAD1', analogin: true, interface: 'Touch', color: '#3FC863', assignedPin: true },
+        { name: 'P3', fullName: 'Touch Pin', description: '', function: 'PAD3', analogin: null, interface: 'Touch', color: '#3FC863', assignedPin: true },
+        { name: 'C5', fullName: 'Taste A', description: '', function: 'Button A', analogin: null, interface: null, color: '#42C9C9', assignedPin: false },
+        { name: 'C7', fullName: 'Display Spalte 2', description: '', function: 'Display Spalte 2', analogin: null, interface: null, color: '#42C9C9', assignedPin: false },
+        { name: 'C9', fullName: 'Allgemeiner I/O Pin', description: '', function: null, analogin: null, interface: null, color: '#3FC863', assignedPin: true },
+        { name: 'C11', fullName: 'Taste B', description: '', function: 'Button B', analogin: null, interface: null, color: '#42C9C9', assignedPin: false },
+        { name: 'C13', fullName: 'SPI Takt', description: '', function: null, analogin: null, interface: 'SPI CLOCK', color: '#3FC863', assignedPin: true },
+        { name: 'C15', fullName: 'SPI MOSI', description: '', function: null, analogin: null, interface: 'SPI MOSI', color: '#3FC863', assignedPin: true },
         {
-			name: 'C17',
+			name: 'C17', fullName: 'UART TX (Grove A1 TX)',
 			function: 'Grove A1 TX',
 			analogin: null,
 			interface: 'UART TX',
 			color: '#42C9C9'
 		},
         {
-			name: 'C19',
+			name: 'C19', fullName: 'I2C SCL (Grove A0 SCL)',
 			function: 'Grove A0 SCL',
 			analogin: null,
 			interface: 'I2C SCL',
 			color: '#42C9C9'
 		},
-        { name: 'GND', function: null, analogin: null, interface: null, color: '#044854' },
-        { name: 'M1+', function: null, analogin: null, interface: null, color: '#3FC863' },
-        { name: 'M1-', function: null, analogin: null, interface: null, color: '#3FC863' },
-        { name: 'GND', function: null, analogin: null, interface: null, color: '#044854' },
+        { name: 'GND', fullName: 'Masse', description: '', function: null, analogin: null, interface: null, color: '#044854', assignedPin: false },
+        { name: 'M1+', fullName: 'Motortreiber Ausgang +', description: '', function: "Pluspol Motor 1", analogin: null, interface: null, color: '#3FC863', assignedPin: true },
+        { name: 'M1-', fullName: 'Motortreiber Ausgang -', description: '', function: "Minuspol Motor 1", analogin: null, interface: null, color: '#3FC863', assignedPin: true },
+        { name: 'GND', fullName: 'Masse (GND)', description: '', function: null, analogin: null, interface: null, color: '#044854', assignedPin: false },
 
-        { name: 'GND', function: null, analogin: null, interface: null, color: '#044854' },
-		{ name: 'P0', function: 'PAD0', analogin: 'AnalogIn', interface: 'Touch', color: '#3FC863' },
-		{ name: 'P2', function: 'PAD2', analogin: 'AnalogIn', interface: 'Touch', color: '#3FC863' },
+        { name: 'GND', fullName: 'Masse (GND)', description: '', function: null, analogin: null, interface: null, color: '#044854', assignedPin: false },
+		{ name: 'P0', fullName: 'Touch Pin', description: '', function: 'PAD0', analogin: true, interface: 'Touch', color: '#3FC863', assignedPin: true },
+		{ name: 'P2', fullName: 'Touch Pin', description: '', function: 'PAD2', analogin: true, interface: 'Touch', color: '#3FC863', assignedPin: true },
 		{
-			name: 'C4',
+			name: 'C4', fullName: 'Display Spalte 1',
 			function: 'Display Spalte 1',
-			analogin: 'AnalogIn',
+			analogin: true,
 			interface: null,
 			color: '#42C9C9'
 		},
-		{ name: 'C6', function: 'Display Spalte 4', analogin: null, interface: null, color: '#42C9C9' },
-		{ name: 'C8', function: null, analogin: null, interface: null, color: '#3FC863' },
+		{ name: 'C6', fullName: 'Display Spalte 4', description: '', function: 'Display Spalte 4', analogin: null, interface: null, color: '#42C9C9', assignedPin: false },
+		{ name: 'C8', fullName: 'Allgemeiner I/O Pin', description: '', function: null, analogin: null, interface: null, color: '#3FC863', assignedPin: true },
 		{
-			name: 'C10',
+			name: 'C10', fullName: 'Display Spalte 5',
 			function: 'Display Spalte 5',
-			analogin: 'AnalogIn',
+			analogin: true,
 			interface: null,
 			color: '#42C9C9'
 		},
 		{
-			name: 'C12',
+			name: 'C12', fullName: 'JACDAC & Barrierefreiheit',
 			function: 'ACCESSIBILITY',
 			analogin: null,
-			interface: '(JACDAC)',
+			interface: 'JACDAC',
 			color: '#42C9C9'
 		},
-		{ name: 'C14', function: null, analogin: null, interface: 'SPI MISO', color: '#3FC863' },
+		{ name: 'C14', fullName: 'SPI MISO', description: '', function: null, analogin: null, interface: 'SPI MISO', color: '#3FC863', assignedPin: true },
 		{
-			name: 'C16',
+			name: 'C16', fullName: 'UART RX (Grove A1 RX)',
 			function: 'Grove A1 RX',
-			analogin: 'AnalogIn',
+			analogin: true,
 			interface: 'UART RX',
 			color: '#42C9C9'
 		},
 		{
-			name: 'C18',
+			name: 'C18', fullName: 'Display Spalte 3',
 			function: 'Display Spalte 3',
-			analogin: 'AnalogIn',
+			analogin: true,
 			interface: null,
 			color: '#42C9C9'
 		},
 		{
-			name: 'C20',
+			name: 'C20', fullName: ' I2C SDA (Grove A0 SDA)',
 			function: 'Grove A0 SDA',
 			analogin: null,
 			interface: 'I2C SDA',
 			color: '#42C9C9'
 		},
-		{ name: 'M0+', function: null, analogin: null, interface: null, color: '#3FC863' },
-		{ name: 'M0-', function: null, analogin: null, interface: null, color: '#3FC863' },
-        { name: 'VM', function: null, analogin: null, interface: null, color: '#E6007D' },
-		
+		{ name: 'M0+', fullName: 'Motortreiber Ausgang +', description: '', function: "Pluspol Motor 0", analogin: null, interface: null, color: '#3FC863', assignedPin: true },
+		{ name: 'M0-', fullName: 'Motortreiber Ausgang -', description: '', function: "Minuspol Motor 0", analogin: null, interface: null, color: '#3FC863', assignedPin: true },
+        { name: 'VM', fullName: 'Motor Stromversorgung', description: '', function: null, analogin: null, interface: null, color: '#E6007D', assignedPin: false },
 	];
+	let viewMode = 'function'; // Default to "function" view
 
 	let activePin = null;
 	function toggleVisibility(pin) {
 		activePin = activePin === pin ? null : pin;
 	}
+	
 </script>
+
+
+<Button color="calliope"
+        type={(viewMode) != 'function' ? 'border' : 'default'}
+        on:click={()=>{viewMode='function'}}
+        text="Funktion"
+/>
+<Button color="calliope" 
+        type={(viewMode) != 'interface' ? 'border' : 'default'} 
+        on:click={()=>{viewMode='interface'}}
+        text="Schnittstelle"
+/>
 
 <nav class="pinout">
 	<ul>
 		{#each pins as pin, index}
 			<li on:click={() => toggleVisibility(pin)}>
-				<div class="dot" style="background-color:{pin.state === 'hidden' ? 'white' : pin.color}">
+				<div class="dot" class:analogin_dot={pin.analogin} style="background-color:{pin.state === 'hidden' ? 'white' : pin.color}">
 					{pin.name}
 				</div>
-				{#if pin.function}
-					<div class="tag {index > 15 ? 'down' : 'up'}">{pin.function}</div>
+				{#if (pin.function && viewMode === 'function') || (pin.interface && viewMode === 'interface')}
+					<div class="tag" class:down={index > 15} class:up={index <= 15}>
+						{#if viewMode === 'function'}
+                        	{pin.function}    
+						{:else if viewMode === 'interface'}     
+							{pin.interface}
+						{/if}
+					</div>
 				{/if}
 			</li>
 		{/each}
 	</ul>
 </nav>
 
+<div class="legende">
+	<div style="color: var(--color-blau);">
+		<div class="color-bar"></div> 
+		<span >Analog lesen</span>
+	</div>
+
+	<div style="color: var(--color-calliope);">
+		<div class="color-bar"></div> 
+		<span >belegter Pin</span>
+	</div>
+
+	<div style="color: var(--color-rosa);">
+		<div class="color-bar"></div> 
+		<span >Stromversorgung</span>
+	</div>
+
+	<div style="color: #044854;">
+		<div class="color-bar"></div> 
+		<span >Masse</span>
+	</div>
+</div>
+
 {#if activePin}
-	<h3>{activePin.name}</h3>
-	{#if activePin.interface}
-		<p>Der Pin {activePin.name} benutzt die Schnittstelle {activePin.interface}.</p>
-	{/if}
+	<Admonition title="Ausgewählter Pin">
+		<h3>{activePin.fullName}</h3>
+		{#if activePin.description}
+			<p>{activePin.description}</p>
+		{/if}
+	</Admonition>
 {/if}
 
 <style>
@@ -185,4 +231,41 @@
 	.pinout li .dot:hover {
         opacity: .9;
 	}
+
+
+	.analogin_dot {
+		/* width: 30px; */
+		/* display: inline-block; */
+		/* margin-bottom: -10px; */
+		/* height: 30px; */
+		/* padding-top: 30px; */
+		/* font-weight: bold; */
+		/* padding-top: 6px; */
+		/* border-radius: 30px; */
+		border: 2px solid var(--color-blau);
+	}
+	.legende {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.legende .color-bar {
+		border: 3px solid currentColor;
+	}
+
+
+	@media (max-width: 820px) {
+        .pinout li .dot {
+            color: transparent;
+
+        }
+        .pinout li:hover .dot {
+        display: block;
+		color: white;
+    }
+    .pinout li .dot {
+        width: 3.5vw;
+        height: 3.5vw;
+    }
+    }
 </style>
