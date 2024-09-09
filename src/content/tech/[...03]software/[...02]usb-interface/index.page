@@ -26,8 +26,8 @@ Die USB-Firmware für den Interfaceprozessor früher auch als "Bootloader" bezei
 
         ![mini3](./mini2_num.png)
 
-        <Button text="USB-Firmware V2" link="/downloads/v1_3_calliope_usbfirmware.hex"/>
-        <Button text="USB-Firmware V2.1" link="/downloads/v2_1_calliope_usbfirmware.hex"/>
+        <Button text="USB-Firmware V2" link="/downloads/v2_calliope_usbfirmware.hex"/>
+        <Button text="USB-Firmware V2.1" download link="https://app.calliope.cc/usb_firmware/v2_1_calliope_usbfirmware.uf2"/>
     </div>
     <div slot="mini3">
 
