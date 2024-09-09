@@ -47,8 +47,8 @@ published: true
     </div>
 
     - Führt Programme aus und ist an alle Komponenten des Calliope mini angeschlossen
-    - Memory Size: 512kB Flash, 128kB RAM
-    - Serial Interfaces: ADC, I²C, PWM, SPI, UART, USB
+    - Memory Größe: 512kB Flash, 128kB RAM
+    - Serielle Schnittstellen: ADC, I²C, PWM, SPI, UART, USB
     - Bluetooth-Antenne, Temperaturmessung
 
 
@@ -66,15 +66,15 @@ published: true
     <div slot="mini2">
         NXP KL26z
 
-        wegen Bauteilverknappung wurde in der Calliope mini Version <V>2.1</V> der Prozessor gegen den
-        Raspberry Pi RP2040 Dual-core Arm Cortex-M0+ Prozessor ausgetauscht 
+        in der Calliope mini Version <V>2.1</V> wurde der Prozessor mit dem
+        Raspberry Pi RP2040 ersetzt. 
     
     </div>
     <div slot="mini3">
         <i>Herstellerbezeichnung: NRF52820-QDAA-D</i>
     </div>
 
-    - empfängt das Programm über USB und läd es auf den Anwendungsprozessor
+    - empfängt das Programm über USB und lädt es auf den Anwendungsprozessor
     - stellt eine serielle Verbindung zum Anwendungsprozessor her (Virtual COM Port) 
     - kein Bluetooth
 
@@ -102,11 +102,11 @@ Weitere Informationen zu den 25 Programmen befinden sich auf der **[Calliope-Sei
 
 ## LED-Matrix
 
-Auf der LED-Matrix des Calliope mini befinden sich 5 x 5 = 25 rote LEDs, mit denen nicht nur Zahlen und Texte, sondern auch Bilder und sogar Animationen dargestellt werden. Die Helligkeit der einzelnen Pixel kann verändert werden. 
+Auf der LED-Matrix des Calliope mini befinden 25 rote LEDs in einem 5x5 Raster, mit denen nicht nur Zahlen und Texte, sondern auch Bilder und sogar Animationen dargestellt werden. Die Helligkeit der einzelnen Pixel kann verändert werden. 
 
 ### Lichtmessung
 
-Über die Leuchtdioden kann ebenfalls die Lichtstärke gemessen werden.
+Über einige der Leuchtdioden kann ebenfalls die Lichtstärke gemessen werden.
 Die Stärke des Lichts, wird in den meisten Editoren als Zahl von 0 bis 255 ausgegeben, wobei 0 der dunkelste und 255 der hellste Wert ist. 
 
 ----
@@ -194,7 +194,7 @@ Mit dem MEMS-Mikrofon kann die der Schalldruckpegel (SPL) und die Lautstärke ge
     <div slot="mini1-2">
         <i>Herstellerbezeichnung: DRV8837</i>
         <Gap h="1" />
-        Der Motortreiber für die Calliope mini Versionen 1 und 2 ist der DRV8837 Der Motortreiber besteht aus einer H-Brückenschaltung. Es kann damit ein Motor 
+        Dieser Motortreiber besteht aus einer H-Brückenschaltung.
         Es können bis zu zwei Motoren angeschlossen werden. Wird ein Motor angeschlossen, können alle Motormodi verwendet werden. Werden zwei Motoren angeschlossen, dann müssen sich diese die H-Brücke teilen und die Motoren können nur beide gleichzeitig vor- oder zurückfahren, aber nicht entgegengesetzt laufen. 
      
         **Ein Motor Logik:**
@@ -227,17 +227,17 @@ Mit dem MEMS-Mikrofon kann die der Schalldruckpegel (SPL) und die Lautstärke ge
     <div slot="mini3">
         <i>Herstellerbezeichnung: DRV8835</i>
         <Gap h="1" />
-Dieser Motortreiber besitzt 2 seperate H-Brücken Treiber und kann damit 2 Gleichspannungsmotoren von einander unabhängig steuern. Die maximale Eingangspannung beträgt 9V, der maximale Strom pro Motor beträgt 1.5A.
+Dieser Motortreiber besitzt 2 seperate H-Brücken Treiber und kann damit 2 Gleichspannungsmotoren von einander unabhängig steuern. Die maximale Eingangspannung geben wir mit 9V an. Der maximale Strom pro Motor beträgt 1.5A.
 Hier findest du einen Link zum [Datenblatt](https://www.ti.com/lit/ds/symlink/drv8835.pdf?ts=1697459375123)
 **Kurz Infos:**
 - Steuert 2 Motoren, jeder Motor kann jeweils vorwärts und rückwärts betätigt werden
-- Die Motoren können an der Pinleiste bei
+- Die Motoren können an der Pinleiste am M0+- und M1+- angeschlossen werden
 - maximale Eingangsspannung 9V; maximaler Strom 1,5A pro Motor
-- Wird im Phase/Enable Modus (Mode=1) betrieben, d.h. in der Firmware steuert ein digitales Signal die Motorenrichtung und über ein [PWM](https://de.wikipedia.org/wiki/Pulsdauermodulation) Signal die Geschwindigkeit 
+- Wird im Phase/Enable Modus (Mode=1) betrieben, d.h. in der Firmware steuert ein digitales Signal die Motorenrichtung und ein [PWM](https://de.wikipedia.org/wiki/Pulsdauermodulation) Signal die Geschwindigkeit 
 
 
 
-Weitere Informationen sowie Schaltplan, Blockschaltbild & Pinbelegung fndest du **[Hier](https://calliope-mini.github.io/v20/)** 
+Weitere Informationen sowie Schaltplan, Blockschaltbild & Pinbelegung fndest du **[Hier](https://calliope-mini.github.io/v30/)** 
     </div>
 </Versions>
 
