@@ -92,6 +92,10 @@ published: true
     <div class="container s-Gkb4jWJe_kum"><span class="text s-Gkb4jWJe_kum">Funktion</span></div>
 </button>
 
+<Button link="#">Funktion</Button>
+<Button link="#">Schnittstelle</Button>
+
+
 <button
     id="interface"
     class="button-container icons-0 rounded-full s-Gkb4jWJe_kum border {activeButton === 'interface' ? 'active' : ''}"
