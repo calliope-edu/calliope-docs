@@ -136,14 +136,14 @@
 		<span >unbelegte I/O Pins</span>
 	</div>
 
-	<div style="color: var(--color-calliope);">
+	<div style="color: var(--color-rosa);">
 		<div class="color-bar"></div> 
-		<span >unbelegte I/O Pins</span>
+		<span >Stromversorgung</span>
 	</div>
 
-	<div style="color: var(--color-calliope);">
+	<div style="color: #044854;">
 		<div class="color-bar"></div> 
-		<span >unbelegte I/O Pins</span>
+		<span >Masse</span>
 	</div>
 </div>
 
