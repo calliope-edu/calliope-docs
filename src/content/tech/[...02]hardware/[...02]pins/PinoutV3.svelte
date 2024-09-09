@@ -103,7 +103,7 @@
         on:click={()=>{viewMode='interface'}}
         text="Schnittstelle"
 />
-
+<div class="pinout-wrapper">
 <nav class="pinout">
 	<ul>
 		{#each pins as pin, index}
@@ -124,6 +124,7 @@
 		{/each}
 	</ul>
 </nav>
+</div>
 
 <div class="legende">
 	<div style="color: var(--color-blau);">
@@ -157,9 +158,14 @@
 {/if}
 
 <style>
+
+	.pinout-wrapper {
+		overflow: auto;
+	}
 	.pinout {
 		background-color: #1E1E21;
 		width: 100%;
+		min-width: fit-content;
 		position: relative;
 		margin: 10em 0em;
         padding: 1em;
@@ -242,10 +248,11 @@
 		/* font-weight: bold; */
 		/* padding-top: 6px; */
 		/* border-radius: 30px; */
-		border: 2px solid var(--color-blau);
+		border: 4px solid var(--color-blau);
 	}
 	.legende {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 1rem;
 	}
 
@@ -260,12 +267,12 @@
 
         }
         .pinout li:hover .dot {
-        display: block;
-		color: white;
-    }
-    .pinout li .dot {
-        width: 3.5vw;
-        height: 3.5vw;
-    }
+			display: block;
+			color: white;
+		}
+		.pinout li .dot {
+			width: 3.5vw;
+			height: 3.5vw;
+		}
     }
 </style>

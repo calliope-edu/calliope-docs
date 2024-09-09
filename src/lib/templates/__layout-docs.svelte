@@ -257,10 +257,10 @@
     }
 
     .toc-menu-container {
-        padding-left: 2rem; 
-        margin-right: 2rem; 
-        flex: none; 
-        width: 0.25rem; 
+        // padding-left: 2rem; 
+        // margin-right: 2rem; 
+        // flex: none; 
+        // width: 0.25rem; 
 
         @media (min-width: 1280px) { 
             display: block; 

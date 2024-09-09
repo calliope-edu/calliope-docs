@@ -32,7 +32,7 @@
                 <BoardVersionSelector dropdown/>
             </div>
         </div> -->
-        <div class="ui secondary fluid right menu">
+        <div class="ui secondary fluid right menu" style="align-items: center;">
             <MainMenu />
         </div>
 

@@ -39,9 +39,9 @@
 
 <button on:click={toggleMenu} aria-expanded={menuOpen} tabindex="1" class:none={!mobileMenu}>
     <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <title>Menu</title>
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-    </svg> Menü
+        <title>Suche</title>
+        <path fill="currentColor" d="M15.25 0a8.25 8.25 0 0 0-6.18 13.72L1 22.88l1.12 1l8.05-9.12A8.251 8.251 0 1 0 15.25.01zm0 15a6.75 6.75 0 1 1 0-13.5a6.75 6.75 0 0 1 0 13.5"/>
+    </svg> Suche
 </button>
 
 <nav class:none={!menuOpen || !mobileMenu} class="mobileMenu" bind:this={mobileMenuElement}>
@@ -122,7 +122,7 @@
         border-radius: 0.25rem; 
         border-width: 1px; 
         border: 1px var(--color-calliope) solid;
-        padding: 1rem 2rem;
+        padding: .5rem 1rem;
         background: transparent;
         color: var(--color-calliope);
         font-family: sans-serif;
@@ -143,9 +143,9 @@
         }
 
         svg {
-            width: 1rem; 
+            width: 1.5rem; 
             height: 1rem; 
-            margin-right: .5em;
+            margin-right: .5rem;
             fill: currentColor;
         }
     }
