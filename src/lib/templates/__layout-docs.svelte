@@ -138,6 +138,10 @@
         justify-content: space-between;
         gap: 1rem;
 
+        @media (max-width: 720px) {
+            flex-direction: column
+        }
+
         .card {
             margin: 0;
             max-width: 100px;

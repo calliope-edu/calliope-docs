@@ -252,4 +252,20 @@
 	.legende .color-bar {
 		border: 3px solid currentColor;
 	}
+
+
+	@media (max-width: 820px) {
+        .pinout li .dot {
+            color: transparent;
+
+        }
+        .pinout li:hover .dot {
+        display: block;
+		color: white;
+    }
+    .pinout li .dot {
+        width: 3.5vw;
+        height: 3.5vw;
+    }
+    }
 </style>
