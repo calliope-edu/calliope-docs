@@ -24,5 +24,5 @@ export default defineConfig({
 			compiler: 'svelte',
 		  }),
 		],
-		assetsInclude: ['**/*.hex', '**/*.xml', '**/*.pdf', '**/*.uf2'],
+		assetsInclude: ['**/*.hex', '**/*.xml', '**/*.pdf', '**/*.uf2', '**/*.zip'],
 });
