@@ -16,10 +16,6 @@ published: true
 
     let activeButton = 'function'; // Default to "function" view
 
-    function setActive(button) {
-        activeButton = button;
-    }
-
     function toggleVisibility(pin) {
         if (activePin === pin) {
             activePin = null; // Toggle off if it's already active
@@ -84,31 +80,17 @@ published: true
 
 ## Pinleiste
 
-<button
-    id="function"
-    class="button-container icons-0 rounded-full s-Gkb4jWJe_kum border {activeButton === 'function' ? 'active' : ''}"
-    style="--color: var(--color-calliope);"
-    on:click={() => setActive('function')}>
-    <div class="container s-Gkb4jWJe_kum"><span class="text s-Gkb4jWJe_kum">Funktion</span></div>
-</button>
+<Button color="calliope"
+        type={(activeButton) != 'function' ? 'border' : 'default'}
+        on:click={()=>{activeButton='function'}}
+        text="Funktion"
+/>
+<Button color="calliope" 
+        type={(activeButton) != 'interface' ? 'border' : 'default'} 
+        on:click={()=>{activeButton='interface'}}
+        text="Schnittstelle"
+/>
 
-<Button link="#">Funktion</Button>
-<Button link="#">Schnittstelle</Button>
-
-
-<button
-    id="interface"
-    class="button-container icons-0 rounded-full s-Gkb4jWJe_kum border {activeButton === 'interface' ? 'active' : ''}"
-    style="--color: var(--color-calliope);"
-    on:click={() => setActive('interface')}>
-    <div class="container s-Gkb4jWJe_kum"><span class="text s-Gkb4jWJe_kum">Schnittstelle</span></div>
-</button>
-<div class="button-container s-Gkb4jWJe_kum" >	
-    <div class="analogin_dot"></div> 
-<span class="text" style="color: var(--color-blau);">Analog lesen</span>
-</div>
-<!-- <Button id="interface" text='Schnittstelle' link="" type='border' color="calliope" />
-<Button id="function" text='Funktion' link="" type='border' color="calliope" /> -->
     <nav class="pinout">
         <ul>
             {#each pins as pin, index}
@@ -135,6 +117,11 @@ published: true
             {/each}
         </ul>
     </nav>
+
+    <div class="button-container s-Gkb4jWJe_kum" >	
+        <div class="analogin_dot"></div> 
+    <span style="color: var(--color-blau);">Analog lesen</span>
+    </div>
 
     
   </div>

@@ -23,7 +23,7 @@
     
 </script>
 
-<a style="--color: var(--color-{color});"
+<a on:click style="--color: var(--color-{color});"
 class:default={type=='default'} class:border={type=='border'} class:rainbow={color=="regenbogen"}
 href={link} bind:this={a} {target} download={downloadName} rel={relExternal} class='button-container icons-{iconCount} {roundedClass}'>
     <div class="container">
@@ -33,7 +33,7 @@ href={link} bind:this={a} {target} download={downloadName} rel={relExternal} cla
                 </slot>
             </span>
             
-            {#if !isInternal}
+            {#if !isInternal && link !== undefined}
                 <div class="icon">
                     <IconExternalLink />
                 </div>
