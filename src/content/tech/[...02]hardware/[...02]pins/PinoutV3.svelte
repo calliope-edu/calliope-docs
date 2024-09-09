@@ -3,15 +3,15 @@
 	import Admonition from "$lib/components/elements/Admonition.svelte";
 
 	let pins = [
-        { name: 'VCC', fullName: 'Stromversorgung VCC', description: '', function: null, analogin: null, interface: null, color: '#E6007D', unassignedIO: false },
-        { name: 'P1', fullName: 'Touch Pin ', description: '', function: 'PAD1', analogin: true, interface: 'Touch', color: '#3FC863', unassignedIO: true },
-        { name: 'P3', fullName: 'Touch Pin', description: '', function: 'PAD3', analogin: null, interface: 'Touch', color: '#3FC863', unassignedIO: true },
-        { name: 'C5', fullName: 'Taste A', description: '', function: 'Button A', analogin: null, interface: null, color: '#42C9C9', unassignedIO: false },
-        { name: 'C7', fullName: 'Display Spalte 2', description: '', function: 'Display Spalte 2', analogin: null, interface: null, color: '#42C9C9', unassignedIO: false },
-        { name: 'C9', fullName: 'Allgemeiner I/O Pin', description: '', function: null, analogin: null, interface: null, color: '#3FC863', unassignedIO: true },
-        { name: 'C11', fullName: 'Taste B', description: '', function: 'Button B', analogin: null, interface: null, color: '#42C9C9', unassignedIO: false },
-        { name: 'C13', fullName: 'SPI Takt', description: '', function: null, analogin: null, interface: 'SPI CLOCK', color: '#3FC863', unassignedIO: true },
-        { name: 'C15', fullName: 'SPI MOSI', description: '', function: null, analogin: null, interface: 'SPI MOSI', color: '#3FC863', unassignedIO: true },
+        { name: 'VCC', fullName: 'Stromversorgung VCC', description: '', function: null, analogin: null, interface: null, color: '#E6007D', assignedPin: false },
+        { name: 'P1', fullName: 'Touch Pin ', description: '', function: 'PAD1', analogin: true, interface: 'Touch', color: '#3FC863', assignedPin: true },
+        { name: 'P3', fullName: 'Touch Pin', description: '', function: 'PAD3', analogin: null, interface: 'Touch', color: '#3FC863', assignedPin: true },
+        { name: 'C5', fullName: 'Taste A', description: '', function: 'Button A', analogin: null, interface: null, color: '#42C9C9', assignedPin: false },
+        { name: 'C7', fullName: 'Display Spalte 2', description: '', function: 'Display Spalte 2', analogin: null, interface: null, color: '#42C9C9', assignedPin: false },
+        { name: 'C9', fullName: 'Allgemeiner I/O Pin', description: '', function: null, analogin: null, interface: null, color: '#3FC863', assignedPin: true },
+        { name: 'C11', fullName: 'Taste B', description: '', function: 'Button B', analogin: null, interface: null, color: '#42C9C9', assignedPin: false },
+        { name: 'C13', fullName: 'SPI Takt', description: '', function: null, analogin: null, interface: 'SPI CLOCK', color: '#3FC863', assignedPin: true },
+        { name: 'C15', fullName: 'SPI MOSI', description: '', function: null, analogin: null, interface: 'SPI MOSI', color: '#3FC863', assignedPin: true },
         {
 			name: 'C17', fullName: 'UART TX (Grove A1 TX)',
 			function: 'Grove A1 TX',
@@ -26,14 +26,14 @@
 			interface: 'I2C SCL',
 			color: '#42C9C9'
 		},
-        { name: 'GND', fullName: 'Masse', description: '', function: null, analogin: null, interface: null, color: '#044854', unassignedIO: false },
-        { name: 'M1+', fullName: 'Motortreiber Ausgang +', description: '', function: "Pluspol Motor 1", analogin: null, interface: null, color: '#3FC863', unassignedIO: true },
-        { name: 'M1-', fullName: 'Motortreiber Ausgang -', description: '', function: "Minuspol Motor 1", analogin: null, interface: null, color: '#3FC863', unassignedIO: true },
-        { name: 'GND', fullName: 'Masse (GND)', description: '', function: null, analogin: null, interface: null, color: '#044854', unassignedIO: false },
+        { name: 'GND', fullName: 'Masse', description: '', function: null, analogin: null, interface: null, color: '#044854', assignedPin: false },
+        { name: 'M1+', fullName: 'Motortreiber Ausgang +', description: '', function: "Pluspol Motor 1", analogin: null, interface: null, color: '#3FC863', assignedPin: true },
+        { name: 'M1-', fullName: 'Motortreiber Ausgang -', description: '', function: "Minuspol Motor 1", analogin: null, interface: null, color: '#3FC863', assignedPin: true },
+        { name: 'GND', fullName: 'Masse (GND)', description: '', function: null, analogin: null, interface: null, color: '#044854', assignedPin: false },
 
-        { name: 'GND', fullName: 'Masse (GND)', description: '', function: null, analogin: null, interface: null, color: '#044854', unassignedIO: false },
-		{ name: 'P0', fullName: 'Touch Pin', description: '', function: 'PAD0', analogin: true, interface: 'Touch', color: '#3FC863', unassignedIO: true },
-		{ name: 'P2', fullName: 'Touch Pin', description: '', function: 'PAD2', analogin: true, interface: 'Touch', color: '#3FC863', unassignedIO: true },
+        { name: 'GND', fullName: 'Masse (GND)', description: '', function: null, analogin: null, interface: null, color: '#044854', assignedPin: false },
+		{ name: 'P0', fullName: 'Touch Pin', description: '', function: 'PAD0', analogin: true, interface: 'Touch', color: '#3FC863', assignedPin: true },
+		{ name: 'P2', fullName: 'Touch Pin', description: '', function: 'PAD2', analogin: true, interface: 'Touch', color: '#3FC863', assignedPin: true },
 		{
 			name: 'C4', fullName: 'Display Spalte 1',
 			function: 'Display Spalte 1',
@@ -41,8 +41,8 @@
 			interface: null,
 			color: '#42C9C9'
 		},
-		{ name: 'C6', fullName: 'Display Spalte 4', description: '', function: 'Display Spalte 4', analogin: null, interface: null, color: '#42C9C9', unassignedIO: false },
-		{ name: 'C8', fullName: 'Allgemeiner I/O Pin', description: '', function: null, analogin: null, interface: null, color: '#3FC863', unassignedIO: true },
+		{ name: 'C6', fullName: 'Display Spalte 4', description: '', function: 'Display Spalte 4', analogin: null, interface: null, color: '#42C9C9', assignedPin: false },
+		{ name: 'C8', fullName: 'Allgemeiner I/O Pin', description: '', function: null, analogin: null, interface: null, color: '#3FC863', assignedPin: true },
 		{
 			name: 'C10', fullName: 'Display Spalte 5',
 			function: 'Display Spalte 5',
@@ -57,7 +57,7 @@
 			interface: 'JACDAC',
 			color: '#42C9C9'
 		},
-		{ name: 'C14', fullName: 'SPI MISO', description: '', function: null, analogin: null, interface: 'SPI MISO', color: '#3FC863', unassignedIO: true },
+		{ name: 'C14', fullName: 'SPI MISO', description: '', function: null, analogin: null, interface: 'SPI MISO', color: '#3FC863', assignedPin: true },
 		{
 			name: 'C16', fullName: 'UART RX (Grove A1 RX)',
 			function: 'Grove A1 RX',
@@ -79,9 +79,9 @@
 			interface: 'I2C SDA',
 			color: '#42C9C9'
 		},
-		{ name: 'M0+', fullName: 'Motortreiber Ausgang +', description: '', function: "Pluspol Motor 0", analogin: null, interface: null, color: '#3FC863', unassignedIO: true },
-		{ name: 'M0-', fullName: 'Motortreiber Ausgang -', description: '', function: "Minuspol Motor 0", analogin: null, interface: null, color: '#3FC863', unassignedIO: true },
-        { name: 'VM', fullName: 'Motor Stromversorgung', description: '', function: null, analogin: null, interface: null, color: '#E6007D', unassignedIO: false },
+		{ name: 'M0+', fullName: 'Motortreiber Ausgang +', description: '', function: "Pluspol Motor 0", analogin: null, interface: null, color: '#3FC863', assignedPin: true },
+		{ name: 'M0-', fullName: 'Motortreiber Ausgang -', description: '', function: "Minuspol Motor 0", analogin: null, interface: null, color: '#3FC863', assignedPin: true },
+        { name: 'VM', fullName: 'Motor Stromversorgung', description: '', function: null, analogin: null, interface: null, color: '#E6007D', assignedPin: false },
 	];
 	let viewMode = 'function'; // Default to "function" view
 
@@ -133,7 +133,7 @@
 
 	<div style="color: var(--color-calliope);">
 		<div class="color-bar"></div> 
-		<span >unbelegte I/O Pins</span>
+		<span >belegter Pin</span>
 	</div>
 
 	<div style="color: var(--color-rosa);">
