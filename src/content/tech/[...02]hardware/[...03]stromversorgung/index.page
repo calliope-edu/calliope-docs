@@ -11,6 +11,9 @@ published: true
 <script>	
 import { selectedBoardVersion } from '$lib/scripts/store.js';
 </script>
+
+<VersionNav />
+
 ## Eingangspannung und -stromstärke des Calliope mini
 
 <Versions>
@@ -43,7 +46,7 @@ import { selectedBoardVersion } from '$lib/scripts/store.js';
     </div>
 
 
-    </Versions>
+</Versions>
 
 
 
