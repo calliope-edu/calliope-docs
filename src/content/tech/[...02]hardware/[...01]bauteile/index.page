@@ -194,10 +194,10 @@ Mit dem MEMS-Mikrofon kann die der Schalldruckpegel (SPL) und die Lautstärke ge
     <div slot="mini1-2">
         <i>Herstellerbezeichnung: DRV8837</i>
         <Gap h="1" />
-        Der Motortreiber für die Calliope mini Versionen 1 und 2 ist der DRV8837 Der Motortreiber besteht aus einer H-Brückenschaltung. Es kann damit ein Motor 
-        Es können bis zu zwei Motoren angeschlossen werden. Wird ein Motor angeschlossen, können alle Motormodi verwendet werden. Werden zwei Motoren angeschlossen, dann müssen sich diese die H-Brücke teilen und die Motoren können nur beide gleichzeitig vor- oder zurückfahren, aber nicht entgegengesetzt laufen. 
-     
-        **Ein Motor Logik:**
+        <p>Der Motortreiber für die Calliope mini Versionen 1 und 2 ist der DRV8837 Der Motortreiber besteht aus einer H-Brückenschaltung. Es kann damit ein Motor 
+        Es können bis zu zwei Motoren angeschlossen werden. Wird ein Motor angeschlossen, können alle Motormodi verwendet werden. Werden zwei Motoren angeschlossen, dann müssen sich diese die H-Brücke teilen und die Motoren können nur beide gleichzeitig vor- oder zurückfahren, aber nicht entgegengesetzt laufen. </p>
+        
+        <b>Ein Motor Logik:</b>
 
         | IN1 | IN2 | OUT1 | OUT2  | Modus     |
         |-----|-----|------|-------|-----------|
@@ -212,7 +212,7 @@ Mit dem MEMS-Mikrofon kann die der Schalldruckpegel (SPL) und die Lautstärke ge
 
          [Datenblatt DRV8837](https://www.ti.com/lit/ds/symlink/drv8837.pdf?ts=1654067963185&ref_url=https%253A%252F%252Fwww.google.com%252F)
      
-         **Zwei Motoren Logik:**
+         <b>Zwei Motoren Logik:</b>
 
          | IN1 | IN2 | OUT1 | OUT2  | Motor1        | Motor2        |
          |-----|-----|------|-------|---------------|---------------|
@@ -225,19 +225,24 @@ Mit dem MEMS-Mikrofon kann die der Schalldruckpegel (SPL) und die Lautstärke ge
 
     </div>
     <div slot="mini3">
+
         <i>Herstellerbezeichnung: DRV8835</i>
         <Gap h="1" />
+
+
 Dieser Motortreiber besitzt 2 seperate H-Brücken Treiber und kann damit 2 Gleichspannungsmotoren von einander unabhängig steuern. Die maximale Eingangspannung beträgt 9V, der maximale Strom pro Motor beträgt 1.5A.
 Hier findest du einen Link zum [Datenblatt](https://www.ti.com/lit/ds/symlink/drv8835.pdf?ts=1697459375123)
+
+
 **Kurz Infos:**
+
+
 - Steuert 2 Motoren, jeder Motor kann jeweils vorwärts und rückwärts betätigt werden
-- Die Motoren können an der Pinleiste bei
-- maximale Eingangsspannung 9V; maximaler Strom 1,5A pro Motor
+- Die Motoren können an der Pinleiste beide angeschlossen werden
+- maximale Eingangsspannung 9V, maximaler Strom 1,5A pro Motor
 - Wird im Phase/Enable Modus (Mode=1) betrieben, d.h. in der Firmware steuert ein digitales Signal die Motorenrichtung und über ein [PWM](https://de.wikipedia.org/wiki/Pulsdauermodulation) Signal die Geschwindigkeit 
 
 
-
-Weitere Informationen sowie Schaltplan, Blockschaltbild & Pinbelegung fndest du **[Hier](https://calliope-mini.github.io/v20/)** 
     </div>
 </Versions>
 
