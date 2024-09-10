@@ -46,13 +46,16 @@
         position: sticky;
         top: 0;
         z-index: 100;
-        padding: 0.5rem 0;
+        padding: .25rem 0;
         padding-top: 3rem;
+        margin-bottom: 0rem;
         background-color: #fff;
+        transition: margin 200ms, padding 300ms;
 
         &.isScrolled {
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            padding-top: 0rem;
+            padding-top: .25rem;
+            margin-bottom: 3rem;
         }
     }
 </style>
