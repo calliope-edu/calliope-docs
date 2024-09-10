@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 
 import { imagetools } from 'vite-imagetools';
 import Icons from 'unplugin-icons/vite'
-import autoImport from 'sveltekit-autoimport';
+// import autoImport from 'sveltekit-autoimport';
 
 export default defineConfig({
 	plugins: [

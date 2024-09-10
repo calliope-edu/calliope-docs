@@ -15,7 +15,7 @@ Die Versionsnummer befindet sich auf der Rückseite oben rechts neben dem USB-An
 
 <Grid s={1} gap={0}>
 
-    ![Lage Nummer der Produktionsserie](./mini3_num.png|width=784)
+    ![Lage Nummer der Produktionsserie](./mini3_num.png)
 
 </Grid>
 
