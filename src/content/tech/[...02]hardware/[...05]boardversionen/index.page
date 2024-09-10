@@ -13,7 +13,18 @@ published: true
 ### Versionsnummer
 Die Versionsnummer befindet sich auf der Rückseite oben rechts neben dem USB-Anschluss. Das ist der sicherste Weg, deinen Calliope mini zu identifizieren.
 
-![Lage Nummer der Produktionsserie](./mini3_num.png)
+<Grid s={1} gap={0}>
+
+    ![Lage Nummer der Produktionsserie](./mini3_num.png|width=784)
+
+</Grid>
+
+<Grid s={2} gap={0}>
+
+    ![Lage Nummer der Produktionsserie](./mini2_num.png)
+    ![Lage Nummer der Produktionsserie](./mini1_num.png)
+
+</Grid>
 
 <!-- <Admonition type='note'>
 Es gibt einige Calliope mini, welche als Versionsnummer die V1.2 tragen. Diese sind zu den Boards V1.3 identisch und werden daher als V1.3 behandelt.
