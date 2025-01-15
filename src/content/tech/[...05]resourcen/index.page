@@ -21,7 +21,7 @@ published: true
 
 - [Github Michael Klein](https://github.com/MKleinSB) - Vielzahl an Erweiterungen für den Calliope mini und den MakeCode-Editor
 
-## weitere Lehrinhalte
+## Weitere Lehrinhalte
 - [Calliope Schulmaterial](https://calliope.cc/schulen/schulmaterial) - Sammlung an Lehrmaterial
 - [Hackster Calliope mini](https://www.hackster.io/calliope-mini) - Sammlung an Calliope mini Projekten für Anfänger bis Fortgeschrittene
 - [Hackster Thorsten Kimmeskamp](https://www.hackster.io/thorsten-kimmeskamp) - Sammlung an Projekten und Experimenten mit dem Calliope mini
@@ -31,3 +31,7 @@ published: true
 - [Calliope mini Twitter](https://twitter.com/calliopemini)
 - [Calliope mini Facebook](https://www.facebook.com/calliopemini)
 - [Calliope mini Instagram](https://www.instagram.com/calliope_mini/)
+
+## Rust-Entwicklung
+- [Calliope mini auf crates.io](https://crates.io/crates/calliope-mini) - Rust-Crate zur Entwicklung von Anwendungen für den Calliope mini
+  -   Dieses Paket stellt alle notwendigen Werkzeuge bereit, um Firmware mit Rust für den Calliope mini zu erstellen. Es unterstützt die Versionen Calliope mini 1 und 3, die Kompatibilität mit dem mini 2 wurde noch nicht getestet. Da sich das Projekt in aktiver Entwicklung befindet, können sich die APIs noch ändern.
