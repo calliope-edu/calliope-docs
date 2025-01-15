@@ -88,7 +88,9 @@
                         </div>
                     </div>
 
-                    <a href="https://github.com/calliope-edu/calliope-docs/edit/PRODUCTION/{meta.filepath}" target="_blank" class="edit-link">
+                    <a href="https://github.com/calliope-edu/calliope-docs/edit/PRODUCTION{encodeURIComponent(
+                            meta.filepath.startsWith('/') ? meta.filepath : '/' + meta.filepath
+                        )}" target="_blank" class="edit-link">
                         <i class="edit icon" />
                         Diese Seite auf GitHub bearbeiten
                     </a>
