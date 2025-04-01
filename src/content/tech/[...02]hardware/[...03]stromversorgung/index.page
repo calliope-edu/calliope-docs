@@ -59,8 +59,7 @@ import { selectedBoardVersion } from '$lib/scripts/store.js';
     
 
 ### Stromstärke:
-    - Standard Drive: max 5mA, Pins: P0, P1, P3, C4, C6, C8, C9, C10, C11, C16, C17, C18,
-    - High Drive: max 15mA, Pins: P2, C7, C12, C15, C5, C13, C14, C19, C20
+    - maximal 5mA pro Pin
     - An externe Verbraucher kann der Calliope mini insgesamt <b>{#if $selectedBoardVersion == 3}200{:else}
 100{/if}mA abgeben</b>
     
