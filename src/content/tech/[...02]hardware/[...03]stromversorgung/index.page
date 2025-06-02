@@ -15,12 +15,12 @@ import { selectedBoardVersion } from '$lib/scripts/store.js';
 <VersionNav />
 
 ## Eingangspannung und -stromstärke des Calliope mini
-
+Der Calliope mini kann über die folgenden Möglichkeiten mit Spannung versorgt werden:
 <Versions>
     <div slot="mini1-2">
         <ul>
         <li>mit 2x AAA Batterien über JST Batterie Connector</li>
-        <li>über den Mikro-USB Anschluss (5V)</li>
+        <li>über den Micro-USB Anschluss (5V)</li>
         <li>über den Pluspin (VCC) maximal 3,3V
             <ul>
                 <li>Hier sollte die Schaltung mit Verpol- und Überspannungsschutz abgesichert werden!</li></ul></li>
@@ -41,7 +41,7 @@ import { selectedBoardVersion } from '$lib/scripts/store.js';
 <li>über den Pluspin (VCC) maximal 3,3V
     <ul>
         <li>Hier sollte die Schaltung mit Verpol- und Überspannungsschutz abgesichert werden!</li></ul></li>
-<li>Der Calliope mini benötigt maximal 60mA, jenachdem wie viele Komponenten eingeschaltet sind.</li>
+<li>Der Calliope mini benötigt maximal 60mA, je nachdem wie viele Komponenten eingeschaltet sind.</li>
 </ul>
     </div>
 
@@ -50,19 +50,20 @@ import { selectedBoardVersion } from '$lib/scripts/store.js';
 
 
 
-    ## Ausgangsspannung und -stromstärke an den Pins
-
+## Ausgangsspannung und -stromstärke an den Pins
+Der Calliope mini kann externe Geräte über die folgenden Möglichkeiten mit Spannung versorgen.
 ### Spannung:
-    - VCC (normalerweise  3.3V)
-        - bei Batteriebetrieb hängt sie von dem Ladestand der Batterie ab.
-    - Sensoren und Aktoren, die mit 5V betrieben werden, funktionieren in den meisten Fällen nicht und sollten mit einer externen Spannungsquelle versorgt werden.<b>{#if $selectedBoardVersion == 3} Die externe Spannungsquelle kann an der Pinleiste am VM Pin(max 9V) angeschlossen werden um den Calliope mini zu versorgen.{:else}
-Der Calliope mini kann über einen Pegelwandler mit 3.3V an den VCC und GND Ecken versorgt werden.{/if}</b>
+    - VCC Ecke (normalerweise  3.3V)
+        - bei Batteriebetrieb hängt die tatsächliche Spannung vom Ladestand der Batterien ab.
+    - Sensoren und Aktoren, die mit 5V betrieben werden, funktionieren in den meisten Fällen nicht und sollten mit einer externen Spannungsquelle 
+    versorgt werden. {#if $selectedBoardVersion == 3} Die externe Spannungsquelle kann an der Pinleiste am VM Pin(max 9V) angeschlossen werden 
+    um den Calliope mini mit zu versorgen.{:else} Der Calliope mini kann über einen Pegelwandler mit 3.3V an den VCC und GND Ecken mit versorgt werden.{/if}
     
 
 ### Stromstärke:
-    - maximal 5mA pro Pin
     - An externe Verbraucher kann der Calliope mini bei ausgeschalteten RGB LEDs insgesamt <b>{#if $selectedBoardVersion == 3}200{:else}
-100{/if}mA abgeben</b>
+100{/if}mA </b>abgeben.
+    - Jeder Pin kann maximal 5mA Strom abgeben
     
 <!-- 
     <Admonition type='warning'>
@@ -71,8 +72,7 @@ Der Calliope mini kann über einen Pegelwandler mit 3.3V an den VCC und GND Ecke
     </No>
     
     <Yes>
-    Verwendete stattdessen verschiedene I/O Pins oder eine Transistorenschaltung. Beachte, dass ingesamt die <b>{#if $selectedBoardVersion == 3}200{:else}
-100{/if}mA</b> nicht überschritten werden.
+    Verwendete stattdessen verschiedene I/O Pins oder eine Transistorenschaltung. Beachte, dass ingesamt die 
+    <b>{#if $selectedBoardVersion == 3}200{:else}100{/if}mA</b> nicht überschritten werden.
     </Yes>
     </Admonition> -->
-    
