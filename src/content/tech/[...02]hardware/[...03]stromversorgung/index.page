@@ -19,7 +19,7 @@ Der Calliope mini kann über die folgenden Möglichkeiten mit Spannung versorgt 
 <Versions>
     <div slot="mini1-2">
         <ul>
-        <li>mit 2x AAA Batterien über JST Batterie Connector</li>
+        <li>mit 2x AAA Batterien über JST Batterie Connector (max 3.3V) </li>
         <li>über den Micro-USB Anschluss (5V)</li>
         <li>über den Pluspin (VCC) maximal 3,3V
             <ul>
@@ -35,7 +35,10 @@ Der Calliope mini kann über die folgenden Möglichkeiten mit Spannung versorgt 
 
     <div slot="mini3"> 
         <ul>
-        <li>mit 2x AAA Batterien über JST Batterie Connector</li>
+        <li> über den JST Batterie Konnector (max 5V):
+<ul> <li> mit 2x AAA Batterien (Standard)
+<li> oder auch einer LiPo Zelle.
+<br> <b> Vorsicht: Der Calliope mini 1 und 2 verträgt hier nur maximal 3.3V! Eine höhre Spannung würde zu einem Defekt führen. </b> </li> </ul>
 <li>über den USB-C Anschluss (5V)</li>
 <li>über den VM Pin (maximal 9V)</li>
 <li>über den Pluspin (VCC) maximal 3,3V
