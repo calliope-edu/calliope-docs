@@ -882,31 +882,54 @@
       listEl.innerHTML = '';
       
       allBranches.forEach(branch => {
+        // Handle both old format (string) and new format (object)
+        const branchName = typeof branch === 'string' ? branch : branch.name;
+        const isLocalOnly = typeof branch === 'object' ? branch.isLocalOnly : false;
+        const isRemoteOnly = typeof branch === 'object' ? branch.isRemoteOnly : false;
+        
         const item = document.createElement('div');
         item.className = 'branch-item';
-        if (branch === currentBranch) {
+        if (branchName === currentBranch) {
           item.classList.add('current');
         }
         
-        // Create branch name with badge if current
+        // Create branch name with badges
         const content = document.createElement('div');
         content.style.display = 'flex';
         content.style.alignItems = 'center';
         content.style.gap = '8px';
         
         const name = document.createElement('span');
-        name.textContent = branch;
+        name.textContent = branchName;
         content.appendChild(name);
         
-        if (branch === currentBranch) {
+        if (branchName === currentBranch) {
           const badge = document.createElement('span');
           badge.className = 'badge current';
           badge.textContent = 'aktuell';
           content.appendChild(badge);
         }
         
+        if (isLocalOnly) {
+          const badge = document.createElement('span');
+          badge.className = 'badge';
+          badge.style.backgroundColor = '#ffa500';
+          badge.textContent = '📍 lokal';
+          badge.title = 'Nur lokal, noch nicht gepusht';
+          content.appendChild(badge);
+        }
+        
+        if (isRemoteOnly) {
+          const badge = document.createElement('span');
+          badge.className = 'badge';
+          badge.style.backgroundColor = '#6c757d';
+          badge.textContent = '☁️ remote';
+          badge.title = 'Nur auf Remote, nicht ausgecheckt';
+          content.appendChild(badge);
+        }
+        
         item.appendChild(content);
-        item.onclick = () => selectBranch(branch);
+        item.onclick = () => selectBranch(branchName);
         listEl.appendChild(item);
       });
     }

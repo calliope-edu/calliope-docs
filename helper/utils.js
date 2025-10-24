@@ -104,13 +104,60 @@ export function getCurrentBranch() {
 
 export function getBranches() {
   try {
-    const branches = execSync('git branch -r', { encoding: 'utf-8', cwd: projectRoot })
+    // Get remote branches
+    const remoteBranchesRaw = execSync('git branch -r', { encoding: 'utf-8', cwd: projectRoot })
       .split('\n')
       .filter((b) => b.includes('origin/') && !b.includes('HEAD'))
       .map((b) => b.trim().replace('origin/', ''))
-      .filter((b) => b !== MAIN_BRANCH && b !== '')
-      .sort();
-    return branches;
+      .filter((b) => b !== MAIN_BRANCH && b !== '');
+    
+    const remoteBranchesSet = new Set(remoteBranchesRaw);
+    
+    // Get local branches with detailed info
+    const localBranchesRaw = execSync('git branch -vv', { encoding: 'utf-8', cwd: projectRoot })
+      .split('\n')
+      .filter((b) => b.trim() !== '');
+    
+    const branches = [];
+    
+    for (const line of localBranchesRaw) {
+      // Parse format: "* branch-name  abc1234 [origin/branch-name] commit message"
+      // or: "  branch-name  abc1234 commit message" (local only)
+      const match = line.match(/^[\s*]+([^\s]+)\s+([a-f0-9]+)(?:\s+\[([^\]]+)\])?\s+(.*)$/);
+      
+      if (match) {
+        const branchName = match[1];
+        const commitHash = match[2];
+        const trackingBranch = match[3]; // e.g., "origin/branch-name" or undefined
+        
+        // Skip main branch
+        if (branchName === MAIN_BRANCH) continue;
+        
+        const hasRemote = remoteBranchesSet.has(branchName);
+        const isLocalOnly = !hasRemote;
+        
+        branches.push({
+          name: branchName,
+          isLocalOnly,
+          hasRemote,
+          commitHash: commitHash.substring(0, 7)
+        });
+      }
+    }
+    
+    // Add remote-only branches (branches that exist on remote but not locally)
+    for (const remoteBranch of remoteBranchesRaw) {
+      if (!branches.find(b => b.name === remoteBranch)) {
+        branches.push({
+          name: remoteBranch,
+          isLocalOnly: false,
+          hasRemote: true,
+          isRemoteOnly: true
+        });
+      }
+    }
+    
+    return branches.sort((a, b) => a.name.localeCompare(b.name));
   } catch {
     return [];
   }
