@@ -20,7 +20,5 @@
 </svelte:element>
 
 <style lang="scss">
-    // .label {
-    //     margin-bottom: 0.25rem;
-    // }
+    
 </style>

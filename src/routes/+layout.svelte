@@ -1,19 +1,28 @@
 <script>
+	// import { ParaglideJS } from '@inlang/paraglide-sveltekit'
+    import { page } from '$app/state';
+    import { locales, localizeHref, getLocale } from '$lib/paraglide/runtime';
+
 	import PageHeader from '$lib/components/layout/PageHeader.svelte';
 	import PageFooter from '$lib/components/layout/PageFooter.svelte';
 
-	import lazyload from 'vanilla-lazyload';
-  import { browser } from '$app/environment';
+  let { children } = $props();
+
+	// import lazyload from 'vanilla-lazyload';
+  // import { browser } from '$app/environment';
 
 
-  if (browser && !document.lazyloadInstance) {
-    document.lazyloadInstance = new lazyload();
-  }
+  // if (browser && !document.lazyloadInstance) {
+  //   document.lazyloadInstance = new lazyload();
+  // }
 
   import "../scss/app.scss";
 	
-  
 </script>
+<svelte:head>
+  <meta name="docsearch:language_tag" content={getLocale()} />
+</svelte:head>
+
 
 <div class="page">
 
@@ -22,12 +31,20 @@
  
 
   <div class="page-content">
-    <slot />
+    {#key getLocale()}
+      {@render children()}
+    {/key}
   </div>
 
   <div>
     <PageFooter />
   </div>
+</div>
+
+<div style="display:none">
+ {#each locales as locale}\
+		<a href={localizeHref(page.url.pathname, { locale })}>{locale}</a>
+ {/each}
 </div>
 
 <style lang="scss">

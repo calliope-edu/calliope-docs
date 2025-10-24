@@ -1,33 +1,55 @@
-<script>
-    import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
+<script context="module">
+	import { defineMeta } from '@storybook/addon-svelte-csf';
+	import Gap from '../../lib/components/layout/Gap.svelte';
 
-
-    import Gap from '../../lib/components/layout/Gap.svelte'
-
-
+	const { Story } = defineMeta({
+		title: 'Layout/Gap',
+		component: Gap,
+		argTypes: {
+			h: { control: 'number', description: 'Height of Gap in `rem`' }
+		}
+	});
 </script>
 
-<Meta 
-    title="Layout/Gap" 
-    component={Gap}
-    argTypes={{
-        h: { control: 'number', description: 'Height of Gap in `rem`' },
-    }}
-/>
+<Story name="All Props" args={{ h: 1 }}>
+    {#snippet template(args)}
+        <div>Block Above</div>
+        <Gap {...args} />
+        <div>Block Below</div>
+    {/snippet}
+</Story>
 
-<Template let:args>
-    <div></div>
-    <Gap {...args} />
-    <div></div>
-</Template>
+<Story name="Default h=1">
+    {#snippet template(args)}
+        <div>Block Above</div>
+        <Gap {...args} />
+        <div>Block Below</div>
+    {/snippet}
+</Story>
 
-<Story name="Default h=1" />
+<Story name="Small h=0.5" args={{ h: 0.5 }}>
+    {#snippet template(args)}
+        <div>Block Above</div>
+        <Gap {...args} />
+        <div>Block Below</div>
+    {/snippet}
+</Story>
 
-<Story name="Small h=0.5" args={{h: 0.5}}/>
+<Story name="None h=0" args={{ h: 0 }}>
+    {#snippet template(args)}
+        <div>Block Above</div>
+        <Gap {...args} />
+        <div>Block Below</div>
+    {/snippet}
+</Story>
 
-<Story name="None h=0" args={{h: 0}}/>
-
-<Story name="Large h=4" args={{h: 4}}/>
+<Story name="Large h=4" args={{ h: 4 }}>
+    {#snippet template(args)}
+        <div>Block Above</div>
+        <Gap {...args} />
+        <div>Block Below</div>
+    {/snippet}
+</Story>
 
 
 <style>

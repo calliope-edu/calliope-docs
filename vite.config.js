@@ -1,28 +1,46 @@
+// import { paraglide } from '@inlang/paraglide-sveltekit/vite';
+import { paraglideVitePlugin } from '@inlang/paraglide-js';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
-
-import { imagetools } from 'vite-imagetools';
 import Icons from 'unplugin-icons/vite'
-// import autoImport from 'sveltekit-autoimport';
+import { enhancedImages } from '@sveltejs/enhanced-img';
 
 export default defineConfig({
 	plugins: [
-
-		// autoImport({
-		// 	// where to search for the components
-		// 	components: [
-		// 	  { name: './src/lib/components/', flat: true },
-		// 	],
-		// 	include: ['**/*.page'],	  
-		//   }),
-
+		enhancedImages(),
 		sveltekit(),
-		imagetools(),
+		// paraglide({
+		// 	project: './project.inlang',
+		// 	outdir: './src/lib/paraglide'
+		// }),
+		paraglideVitePlugin({
+			project: './project.inlang',
+			outdir: './src/lib/paraglide',
+			strategy: ['url', 'localStorage', "preferredLanguage", 'baseLocale'],
+			disableAsyncLocalStorage: true,
+			urlPatterns: [
+				{
+					pattern: "/:path(.*)?",
+					localized: [
+						["de", "/de/:path(.*)?"],
+						["en", "/en/:path(.*)?"],
+					],
+				},
+			],
+		}),
 		Icons({
 			defaultStyle: '',
 			defaultClass: '',
 			compiler: 'svelte',
-		  }),
-		],
-		assetsInclude: ['**/*.hex', '**/*.xml', '**/*.pdf', '**/*.uf2', '**/*.zip'],
+		}),
+	],
+	assetsInclude: ['**/*.hex', '**/*.xml', '**/*.pdf', '**/*.uf2', '**/*.zip'],
+	server: {
+		proxy: {
+			'/api': {
+			target: 'http://localhost:3000',
+			changeOrigin: true
+			}
+		}
+	}
 });

@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Development Helper</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f8f9fa;
+      color: #0f172a;
+      padding: 24px;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      padding: 40px;
+    }
+    
+    h1 {
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      margin-bottom: 6px;
+      color: #0f172a;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 32px 0 12px 0;
+      color: #0f172a;
+      letter-spacing: -0.01em;
+    }
+    
+    .subtitle {
+      font-size: 15px;
+      color: #64748b;
+      margin-bottom: 32px;
+    }
+    
+    .page {
+      display: none;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    button {
+      padding: 10px 16px;
+      background: #0f172a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      margin: 4px 8px 4px 0;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    button:hover {
+      background: #1e293b;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    button:active {
+      transform: translateY(1px);
+    }
+    
+    button.secondary {
+      background: white;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+    }
+    
+    button.secondary:hover {
+      background: #f8f9fa;
+      border-color: #cbd5e1;
+      color: #0f172a;
+    }
+    
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    button.danger {
+      background: #dc2626;
+    }
+
+    button.danger:hover {
+      background: #b91c1c;
+    }
+
+    button.success {
+      background: #16a34a;
+    }
+
+    button.success:hover {
+      background: #15803d;
+    }
+    
+    input[type="text"] {
+      padding: 10px 14px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-right: 8px;
+      flex: 1;
+      color: #0f172a;
+      transition: border 0.2s;
+    }
+    
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #94a3b8;
+      box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.1);
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      gap: 8px;
+    }
+    
+    .info-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .info-box strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    .info-box.warning {
+      background: #fffbeb;
+      border-color: #fde68a;
+      color: #78350f;
+    }
+
+    .info-box.warning strong {
+      color: #78350f;
+    }
+
+    .info-box.success {
+      background: #f0fdf4;
+      border-color: #86efac;
+      color: #14532d;
+    }
+
+    .info-box.success strong {
+      color: #14532d;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+    }
+
+    .badge.modified {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #fde68a;
+    }
+
+    .badge.new {
+      background: #dbeafe;
+      color: #1e40af;
+      border-color: #bfdbfe;
+    }
+
+    .badge.deleted {
+      background: #fee2e2;
+      color: #991b1b;
+      border-color: #fecaca;
+    }
+
+    .badge.current {
+      background: #d1fae5;
+      color: #065f46;
+      border-color: #86efac;
+    }
+
+    .file-item .name.deleted {
+      text-decoration: line-through;
+      opacity: 0.7;
+      color: #64748b;
+    }
+    
+    .branch-list, .file-list {
+      max-height: 340px;
+      overflow-y: auto;
+      margin: 16px 0;
+      padding: 4px;
+    }
+    
+    .branch-item, .file-item {
+      padding: 12px 16px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+    }
+    
+    .branch-item:hover, .file-item:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .branch-item.current {
+      background: #f0fdf4;
+      border-color: #86efac;
+    }
+
+    .branch-item.current:hover {
+      background: #dcfce7;
+    }
+
+    .file-item .name {
+      font-size: 14px;
+      color: #0f172a;
+      flex: 1;
+    }
+
+    .git-tree {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 24px;
+      margin: 16px 0;
+      overflow-x: auto;
+    }
+
+    .git-branch-row {
+      display: flex;
+      align-items: center;
+      margin: 16px 0;
+      position: relative;
+      padding: 10px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    .git-branch-row:hover {
+      background: #f1f5f9;
+    }
+
+    .git-commit-row {
+      display: flex;
+      align-items: center;
+      margin: 6px 0 6px 40px;
+      padding: 6px;
+      position: relative;
+    }
+
+    .git-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 12px;
+      border: 2px solid;
+      flex-shrink: 0;
+      cursor: help;
+      position: relative;
+      transition: all 0.2s;
+    }
+
+    .git-dot:hover {
+      transform: scale(1.2);
+    }
+
+    .git-dot.current {
+      background: #16a34a;
+      border-color: #16a34a;
+      width: 12px;
+      height: 12px;
+      box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.1);
+    }
+
+    .git-dot.main {
+      background: #3b82f6;
+      border-color: #3b82f6;
+      width: 12px;
+      height: 12px;
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+    }
+
+    .git-dot.commit {
+      background: #e2e8f0;
+      border-color: #94a3b8;
+      width: 8px;
+      height: 8px;
+    }
+
+    .git-dot.merge-point {
+      background: #fbbf24;
+      border-color: #f59e0b;
+      box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+    }
+
+    .git-branch-name {
+      font-size: 15px;
+      font-weight: 500;
+      flex: 1;
+      color: #0f172a;
+    }
+
+    .git-branch-name.current {
+      color: #16a34a;
+    }
+
+    .git-branch-name.main {
+      color: #3b82f6;
+    }
+
+    .git-branch-meta {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-left: 12px;
+    }
+
+    .git-line {
+      position: absolute;
+      left: 4px;
+      top: 30px;
+      width: 2px;
+      height: calc(100% - 10px);
+      background: #e2e8f0;
+    }
+
+    .git-commit-line {
+      position: absolute;
+      left: -34px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: #f1f5f9;
+    }
+
+    .git-tooltip {
+      position: absolute;
+      background: #1e293b;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      white-space: nowrap;
+      z-index: 1000;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      left: 30px;
+      top: -8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .git-dot:hover .git-tooltip {
+      opacity: 1;
+    }
+
+    .git-commit-info {
+      font-size: 12px;
+      color: #64748b;
+    }
+    
+    .spinner {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 2px solid #e2e8f0;
+      border-top-color: #64748b;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .section {
+      margin: 32px 0;
+      padding: 0;
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #0f172a;
+      letter-spacing: -0.01em;
+    }
+
+    .card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 12px 0;
+    }
+
+    .log {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 16px;
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+      font-size: 12px;
+      max-height: 240px;
+      overflow-y: auto;
+      margin-top: 20px;
+      color: #94a3b8;
+      line-height: 1.7;
+    }
+    
+    .log-entry {
+      margin-bottom: 4px;
+    }
+    
+    .log-entry.info { color: #60a5fa; }
+    .log-entry.success { color: #4ade80; }
+    .log-entry.error { color: #f87171; }
+
+    .action-buttons {
+      display: flex;
+      gap: 8px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- PAGE 1: Branch Auswahl -->
+    <div id="page-1" class="page active">
+      <h1>Development Helper</h1>
+      <p class="subtitle">Branch auswählen oder erstellen</p>
+
+      <h2>Neuen Branch erstellen</h2>
+      <p style="font-size: 13px; color: #64748b; margin: -8px 0 16px 0;">
+        Wird aus <strong id="main-branch-name">...</strong> heraus erstellt
+      </p>
+      <div class="input-group">
+        <input type="text" id="new-branch-name" placeholder="z.B. update-2025-10-24">
+        <button onclick="createNewBranch()">Erstellen</button>
+      </div>
+
+      <h2>Bestehenden Branch auswählen</h2>
+      <div class="branch-list" id="branch-list">Lade Branches...</div>
+
+      <div class="section">
+        <div class="section-title">Git Status</div>
+        <div class="git-tree" id="git-tree">Lade...</div>
+        <div class="info-box warning" id="uncommitted-files" style="display: none;"></div>
+      </div>
+
+      <!-- System Check (compact footer) -->
+      <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #e2e8f0;">
+        <div id="system-check" style="font-size: 12px; color: #94a3b8; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <span style="font-weight: 500;">System:</span>
+          <span id="system-check-details"></span>
+        </div>
+      </div>
+
+      <div class="log" id="log-page1" style="display: none;"></div>
+    </div>
+
+    <!-- PAGE 2: Dependencies -->
+    <div id="page-2" class="page">
+      <h1>Dependencies</h1>
+      <p class="subtitle">Prüfe und installiere Abhängigkeiten</p>
+
+      <div class="info-box" id="npm-status" style="display: none;"></div>
+
+      <div class="action-buttons">
+        <button onclick="installDependencies()">npm ci ausführen</button>
+        <button class="secondary" onclick="skipDependencies()">Überspringen</button>
+      </div>
+
+      <div class="log" id="log-page2" style="display: none;"></div>
+    </div>
+
+    <!-- PAGE 3: Development -->
+    <div id="page-3" class="page">
+      <h1>Development</h1>
+      <p class="subtitle">Arbeiten und Änderungen verwalten</p>
+
+      <div class="section">
+        <div class="section-title">Dev Server</div>
+        <div class="info-box" id="dev-status-box">
+          <strong><span class="spinner"></span>Dev Server startet...</strong>
+          Bitte warten...
+        </div>
+        <div id="dev-buttons" style="display: none; margin-top: 12px;">
+          <button class="secondary" onclick="openDevUrl()">Im Browser öffnen</button>
+          <button class="secondary" onclick="openContentFolder()">Content Ordner öffnen</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Storybook <span style="font-size: 12px; color: #64748b; font-weight: normal;">(Komponenten-Bibliothek)</span></div>
+        <div class="info-box" id="storybook-status-box">
+          <strong><span class="spinner"></span>Storybook startet...</strong>
+          Bitte warten...
+        </div>
+        <div id="storybook-buttons" style="display: none; margin-top: 12px;">
+          <button class="secondary" onclick="openStorybookUrl()">Storybook öffnen</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Geänderte Dateien</div>
+        <div class="file-list" id="file-list">Keine Änderungen</div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Commit-Nachricht</div>
+        <div class="input-group">
+          <input type="text" id="commit-message" placeholder="z.B. Update Content - 2025-10-24">
+        </div>
+        <p style="font-size: 13px; color: #64748b; margin-top: -8px;">
+          Diese Nachricht wird beim Speichern als Commit-Name verwendet.
+        </p>
+      </div>
+
+      <div class="action-buttons">
+        <button class="secondary" onclick="saveOnly()">Nur speichern</button>
+        <button class="success" onclick="saveAndPublish()">Speichern & veröffentlichen</button>
+      </div>
+
+      <div class="log" id="log-page3" style="display: none;"></div>
+    </div>
+
+    <!-- PAGE 4: Fertig -->
+    <div id="page-4" class="page">
+      <h1>✓ Fertig!</h1>
+      <p class="subtitle">Alle Änderungen wurden gespeichert</p>
+
+      <div class="info-box success">
+        <strong>Erfolgreich abgeschlossen</strong>
+        <span id="finish-message">Änderungen wurden gespeichert und veröffentlicht.</span>
+      </div>
+
+      <p style="margin-top: 24px; color: #64748b;">
+        Du kannst den Helper jetzt schließen, erneut starten oder weiter bearbeiten.
+      </p>
+
+      <div style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;">
+        <button onclick="continueEditing()">Weiter bearbeiten</button>
+        <button class="secondary" onclick="restart()">Helper neu starten</button>
+        <button class="secondary" onclick="closeHelper()">Helper beenden</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    let currentBranch = '';
+    let selectedBranch = '';
+    let allBranches = [];
+    let changedFiles = [];
+
+    // Helper Functions
+    function showPage(page) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(`page-${page}`).classList.add('active');
+      currentPage = page;
+    }
+
+    function addLog(pageId, message, type = 'info') {
+      const logEl = document.getElementById(`log-page${pageId}`);
+      logEl.style.display = 'block';
+      const entry = document.createElement('div');
+      entry.className = `log-entry ${type}`;
+      entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+      logEl.appendChild(entry);
+      logEl.scrollTop = logEl.scrollHeight;
+    }
+
+    async function apiCall(endpoint, method = 'GET', body = null) {
+      const options = { method };
+      if (body) {
+        options.headers = { 'Content-Type': 'application/json' };
+        options.body = JSON.stringify(body);
+      }
+      const res = await fetch(endpoint, options);
+      return await res.json();
+    }
+
+    // Check system requirements
+    async function checkSystemRequirements() {
+      try {
+        const res = await apiCall('/api/system-check');
+        if (!res.success) return;
+        
+        const checks = res.checks;
+        const detailsEl = document.getElementById('system-check-details');
+        
+        let parts = [];
+        
+        // Node.js
+        if (checks.node) {
+          parts.push(`<span style="color: #16a34a;">Node.js ${checks.nodeVersion}</span>`);
+        } else {
+          parts.push(`<span style="color: #dc2626;">Node.js ✗</span>`);
+        }
+        
+        // npm
+        if (checks.npm) {
+          parts.push(`<span style="color: #16a34a;">npm ${checks.npmVersion}</span>`);
+        } else {
+          parts.push(`<span style="color: #dc2626;">npm ✗</span>`);
+        }
+        
+        // Git
+        if (checks.git) {
+          parts.push(`<span style="color: #16a34a;">Git ✓</span>`);
+        } else {
+          parts.push(`<span style="color: #f59e0b;">Git ✗</span>`);
+        }
+        
+        detailsEl.innerHTML = parts.join(' <span style="color: #cbd5e1;">•</span> ');
+      } catch (error) {
+        console.error('System check failed:', error);
+      }
+    }
+
+    // PAGE 1: Init
+    async function initPage1() {
+      // Check system requirements first
+      await checkSystemRequirements();
+      
+      addLog(1, 'Lade Git Status...', 'info');
+      
+      // Get current status
+      const status = await apiCall('/api/status');
+      currentBranch = status.currentBranch;
+
+      // Update subtitle
+      const subtitleEl = document.querySelector('#page-1 .subtitle');
+      if (status.mainBranch) {
+        subtitleEl.textContent = `Branch auswählen oder erstellen`;
+        // Also update the "create new branch" description
+        const mainBranchNameEl = document.getElementById('main-branch-name');
+        if (mainBranchNameEl) {
+          mainBranchNameEl.textContent = status.mainBranch;
+        }
+      }
+
+      // Check for uncommitted files and show details
+      if (status.files && status.files.length > 0) {
+        const filesEl = document.getElementById('uncommitted-files');
+        filesEl.style.display = 'block';
+        
+        const fileList = status.files.map(f => {
+          let statusLabel = 'geändert';
+          let statusClass = 'modified';
+          let nameStyle = '';
+          
+          // Determine status label and class
+          if (f.status === 'D') {
+            statusLabel = 'gelöscht';
+            statusClass = 'deleted';
+            nameStyle = 'text-decoration: line-through; opacity: 0.7; color: #64748b;';
+          } else if (f.status === 'A') {
+            statusLabel = 'neu';
+            statusClass = 'new';
+          } else if (f.status === 'R') {
+            statusLabel = 'umbenannt';
+            statusClass = 'modified';
+          } else if (f.status === 'M') {
+            statusLabel = 'geändert';
+            statusClass = 'modified';
+          }
+          
+          return `<div style="margin: 6px 0; display: flex; align-items: center; gap: 8px;">
+            <span style="flex: 1; color: #78350f; ${nameStyle}">${f.path}</span>
+            <span class="badge ${statusClass}">${statusLabel}</span>
+          </div>`;
+        }).join('');
+        
+        filesEl.innerHTML = `
+          <strong>⚠ ${status.files.length} ungespeicherte Änderung(en)</strong>
+          <div style="margin-top: 12px;">${fileList}</div>
+        `;
+      }
+
+      // Get git history
+      const historyRes = await apiCall('/api/git-history');
+      
+      // Get all branches (simple list for selection)
+      const branchesRes = await apiCall('/api/get-branches');
+      allBranches = branchesRes.branches || [];
+      
+      // Render git tree with history
+      renderGitTree(historyRes);
+      
+      // Render branch list
+      renderBranchList();
+
+      // Suggest branch name
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('new-branch-name').value = `update-${today}`;
+
+      addLog(1, 'Bereit!', 'success');
+    }
+
+    function renderGitTree(historyData) {
+      const treeEl = document.getElementById('git-tree');
+      treeEl.innerHTML = '';
+      
+      if (!historyData || !historyData.branches || !historyData.commits) {
+        treeEl.innerHTML = '<div style="color: #999;">Git-Historie konnte nicht geladen werden</div>';
+        return;
+      }
+
+      const { branches, commits } = historyData;
+      
+      // Show main branch first
+      const mainBranch = branches.find(b => b.name === 'main');
+      if (mainBranch) {
+        renderBranchWithCommits(treeEl, mainBranch, commits, currentBranch === 'main');
+      }
+      
+      // Show other branches
+      branches
+        .filter(b => b.name !== 'main')
+        .sort((a, b) => {
+          // Current branch first
+          if (a.name === currentBranch) return -1;
+          if (b.name === currentBranch) return 1;
+          return a.name.localeCompare(b.name);
+        })
+        .forEach(branch => {
+          renderBranchWithCommits(treeEl, branch, commits, branch.name === currentBranch);
+        });
+    }
+
+    function renderBranchWithCommits(container, branch, allCommits, isCurrent) {
+      const branchRow = document.createElement('div');
+      branchRow.className = 'git-branch-row';
+      
+      const dotClass = branch.name === 'main' ? 'main' : (isCurrent ? 'current' : 'commit');
+      const nameClass = branch.name === 'main' ? 'main' : (isCurrent ? 'current' : '');
+      
+      let metaInfo = '';
+      if (branch.commitInfo) {
+        metaInfo = `<span class="git-branch-meta">${branch.commitInfo.time}</span>`;
+      }
+      
+      branchRow.innerHTML = `
+        <div class="git-dot ${dotClass}">
+          ${branch.commitInfo ? `
+            <div class="git-tooltip">
+              <strong>${branch.commitInfo.message}</strong><br>
+              ${branch.commitInfo.author} • ${branch.commitInfo.time}<br>
+              ${branch.commitInfo.shortHash}
+            </div>
+          ` : ''}
+        </div>
+        <div class="git-branch-name ${nameClass}">
+          ${branch.name}${isCurrent ? ' (aktuell)' : ''}
+        </div>
+        ${metaInfo}
+      `;
+      
+      container.appendChild(branchRow);
+      
+      // Show merge base commit if exists and not main
+      if (branch.name !== 'main' && branch.baseCommit && branch.commitInfo) {
+        // Check if there are commits between current and merge base
+        const branchCommitIndex = allCommits.findIndex(c => c.hash === branch.currentCommit);
+        const baseCommitIndex = allCommits.findIndex(c => c.hash === branch.mergeBase);
+        
+        if (branchCommitIndex !== -1 && baseCommitIndex !== -1 && baseCommitIndex > branchCommitIndex) {
+          // Show commits in between
+          const commitsInBetween = allCommits.slice(branchCommitIndex + 1, baseCommitIndex + 1);
+          
+          commitsInBetween.forEach((commit, idx) => {
+            const commitRow = document.createElement('div');
+            commitRow.className = 'git-commit-row';
+            
+            const isLast = idx === commitsInBetween.length - 1;
+            const isMergePoint = commit.hash === branch.mergeBase;
+            
+            commitRow.innerHTML = `
+              ${idx === 0 ? '<div class="git-commit-line"></div>' : ''}
+              <div class="git-dot ${isMergePoint ? 'merge-point' : 'commit'}">
+                <div class="git-tooltip">
+                  <strong>${commit.message}</strong><br>
+                  ${commit.author} • ${commit.time}<br>
+                  ${commit.shortHash}${isMergePoint ? '<br><em>↓ Abzweigung von main</em>' : ''}
+                </div>
+              </div>
+              <div class="git-commit-info">
+                ${isMergePoint ? '↓ abgezweigt von main' : commit.message.substring(0, 40)}${commit.message.length > 40 ? '...' : ''}
+              </div>
+            `;
+            
+            container.appendChild(commitRow);
+          });
+        } else if (branch.baseCommit) {
+          // Just show merge point
+          const commitRow = document.createElement('div');
+          commitRow.className = 'git-commit-row';
+          
+          commitRow.innerHTML = `
+            <div class="git-dot merge-point">
+              <div class="git-tooltip">
+                <strong>${branch.baseCommit.message}</strong><br>
+                ${branch.baseCommit.author} • ${branch.baseCommit.time}<br>
+                ${branch.baseCommit.shortHash}<br>
+                <em>↓ Abzweigung von main</em>
+              </div>
+            </div>
+            <div class="git-commit-info">↓ abgezweigt von main</div>
+          `;
+          
+          container.appendChild(commitRow);
+        }
+      }
+    }
+
+    function renderBranchList() {
+      const listEl = document.getElementById('branch-list');
+      listEl.innerHTML = '';
+      
+      allBranches.forEach(branch => {
+        const item = document.createElement('div');
+        item.className = 'branch-item';
+        if (branch === currentBranch) {
+          item.classList.add('current');
+        }
+        
+        // Create branch name with badge if current
+        const content = document.createElement('div');
+        content.style.display = 'flex';
+        content.style.alignItems = 'center';
+        content.style.gap = '8px';
+        
+        const name = document.createElement('span');
+        name.textContent = branch;
+        content.appendChild(name);
+        
+        if (branch === currentBranch) {
+          const badge = document.createElement('span');
+          badge.className = 'badge current';
+          badge.textContent = 'aktuell';
+          content.appendChild(badge);
+        }
+        
+        item.appendChild(content);
+        item.onclick = () => selectBranch(branch);
+        listEl.appendChild(item);
+      });
+    }
+
+    async function createNewBranch() {
+      const name = document.getElementById('new-branch-name').value.trim();
+      if (!name) {
+        alert('Bitte Branch-Namen eingeben');
+        return;
+      }
+
+      addLog(1, `Erstelle Branch: ${name}...`, 'info');
+      const res = await apiCall('/api/create-branch', 'POST', { name });
+      
+      if (res.success) {
+        addLog(1, 'Branch erstellt!', 'success');
+        currentBranch = name;
+        setTimeout(() => {
+          showPage(2);
+          initPage2();
+        }, 500);
+      } else {
+        addLog(1, `Fehler: ${res.message}`, 'error');
+      }
+    }
+
+    async function selectBranch(branch) {
+      addLog(1, `Wechsle zu Branch: ${branch}...`, 'info');
+      const res = await apiCall('/api/checkout-branch', 'POST', { branch });
+      
+      if (res.success) {
+        addLog(1, 'Branch gewechselt!', 'success');
+        currentBranch = branch;
+        setTimeout(() => {
+          showPage(2);
+          initPage2();
+        }, 500);
+      } else {
+        addLog(1, `Fehler: ${res.message}`, 'error');
+      }
+    }
+
+    // PAGE 2: Dependencies
+    async function initPage2() {
+      addLog(2, 'Prüfe Dependencies...', 'info');
+      
+      // Check if npm install is needed
+      const statusBox = document.getElementById('npm-status');
+      statusBox.style.display = 'block'; // Show the box
+      const status = await checkNodeModules();
+      
+      if (status.needed) {
+        statusBox.className = 'info-box warning';
+        statusBox.innerHTML = `
+          <strong>⚠ Dependencies müssen installiert werden</strong>
+          <div style="margin-top: 6px;">${status.message}</div>
+        `;
+        addLog(2, 'npm ci sollte ausgeführt werden', 'info');
+      } else {
+        statusBox.className = 'info-box success';
+        statusBox.innerHTML = `
+          <strong>✓ Dependencies vorhanden</strong>
+          <div style="margin-top: 6px;">${status.message}</div>
+          <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid #86efac; font-size: 13px; color: #166534;">
+            💡 <strong>Tipp:</strong> Wenn npm ci erst kürzlich ausgeführt wurde, ist ein erneutes Ausführen vermutlich nicht nötig.
+          </div>
+        `;
+        addLog(2, `Dependencies OK (${status.age})`, 'success');
+      }
+    }
+
+    async function checkNodeModules() {
+      try {
+        const res = await fetch('/api/check-node-modules');
+        const data = await res.json();
+        return data; // Return full status object
+      } catch {
+        return { needed: true, reason: 'error', message: 'Fehler bei der Prüfung' };
+      }
+    }
+
+    async function installDependencies() {
+      addLog(2, 'Starte npm ci...', 'info');
+      const res = await apiCall('/api/npm-install', 'POST');
+      
+      if (res.success) {
+        addLog(2, 'Dependencies installiert!', 'success');
+        setTimeout(() => goToPage3(), 1000);
+      } else {
+        addLog(2, `Fehler: ${res.message}`, 'error');
+      }
+    }
+
+    function skipDependencies() {
+      addLog(2, 'Dependencies übersprungen', 'info');
+      goToPage3();
+    }
+
+    async function goToPage3() {
+      showPage(3);
+      await initPage3();
+    }
+
+    // PAGE 3: Development
+    async function initPage3() {
+      addLog(3, 'Starte Dev Server...', 'info');
+      
+      // Get status and update subtitle
+      const status = await apiCall('/api/status');
+      const subtitleEl = document.querySelector('#page-3 .subtitle');
+      if (status.mainBranch) {
+        subtitleEl.textContent = `Arbeiten und Änderungen verwalten`;
+      }
+      
+      // Set suggested commit message
+      const timestamp = new Date().toISOString().split('T')[0];
+      const suggestedMessage = `Update ${currentBranch} - ${timestamp}`;
+      document.getElementById('commit-message').value = suggestedMessage;
+      
+      // Start dev server
+      const res = await apiCall('/api/start-dev', 'POST');
+      if (!res.success) {
+        addLog(3, `Fehler beim Starten: ${res.message || 'Unbekannter Fehler'}`, 'error');
+        return;
+      }
+
+      if (res.ready) {
+        // Already running
+        addLog(3, 'Dev Server läuft bereits!', 'success');
+        showDevServerReady();
+      } else {
+        // Wait for server to be ready
+        addLog(3, 'Warte auf Dev Server...', 'info');
+        await waitForDevServer();
+      }
+
+      // Start Storybook
+      addLog(3, 'Starte Storybook...', 'info');
+      const storybookRes = await apiCall('/api/start-storybook', 'POST');
+      if (!storybookRes.success) {
+        addLog(3, `Storybook konnte nicht gestartet werden: ${storybookRes.message || 'Unbekannter Fehler'}`, 'warning');
+        showStorybookError();
+      } else if (storybookRes.ready) {
+        addLog(3, 'Storybook läuft bereits!', 'success');
+        showStorybookReady();
+      } else {
+        addLog(3, 'Warte auf Storybook...', 'info');
+        await waitForStorybook();
+      }
+
+      // Load changed files
+      await loadChangedFiles();
+
+      // Auto-refresh files every 5 seconds
+      setInterval(loadChangedFiles, 5000);
+    }
+
+    async function waitForDevServer() {
+      let attempts = 0;
+      const maxAttempts = 60; // 60 seconds max
+      
+      while (attempts < maxAttempts) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        const status = await apiCall('/api/dev-server-status');
+        if (status.ready) {
+          addLog(3, 'Dev Server ist bereit!', 'success');
+          showDevServerReady();
+          return;
+        }
+        
+        attempts++;
+      }
+      
+      addLog(3, 'Timeout - Dev Server antwortet nicht', 'error');
+    }
+
+    function showDevServerReady() {
+      const statusBox = document.getElementById('dev-status-box');
+      statusBox.className = 'info-box success';
+      statusBox.innerHTML = `
+        <strong>✓ Dev Server läuft</strong>
+        <div style="margin-top: 8px;">
+          <a href="http://localhost:5173" target="_blank" 
+             style="color: #14532d; text-decoration: underline; font-weight: 500;">
+            → Öffne http://localhost:5173 (in neuem Tab)
+          </a>
+        </div>
+        <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #86efac;">
+          <div style="font-size: 13px; color: #166534; margin-bottom: 8px;">
+            <strong>💡 Svelte DevTools:</strong>
+          </div>
+          <div style="font-size: 12px; color: #166534; margin-bottom: 8px;">
+            Auf der Seite kannst du die den Svelte-Inspektor aktivieren, um per Klick auf ein Element die zugehörige Datei in VS Code zu öffnen:
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 12px;">
+            <span class="badge" style="background: #dcfce7; border-color: #86efac; color: #14532d;">
+              Windows: Strg + Y
+            </span>
+            <span class="badge" style="background: #dcfce7; border-color: #86efac; color: #14532d;">
+              Mac: ⌘ + Y
+            </span>
+          </div>
+          <div style="font-size: 11px; color: #16a34a; margin-top: 8px; font-style: italic;">
+            ⚠ Svelte DevTools funktionieren nur in Firefox oder Chromium basierten Browsern (Chrome, Edge, Opera, Vivaldi, ...)
+          </div>
+        </div>
+      `;
+      
+      document.getElementById('dev-buttons').style.display = 'block';
+    }
+
+    async function waitForStorybook() {
+      let attempts = 0;
+      const maxAttempts = 60; // 60 seconds max
+      
+      while (attempts < maxAttempts) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        const status = await apiCall('/api/storybook-status');
+        if (status.ready) {
+          addLog(3, 'Storybook ist bereit!', 'success');
+          showStorybookReady();
+          return;
+        }
+        
+        attempts++;
+      }
+      
+      addLog(3, 'Timeout - Storybook antwortet nicht', 'warning');
+      showStorybookError();
+    }
+
+    function showStorybookReady() {
+      const statusBox = document.getElementById('storybook-status-box');
+      statusBox.className = 'info-box success';
+      statusBox.innerHTML = `
+        <strong>✓ Storybook läuft</strong>
+        <div style="margin-top: 8px;">
+          <a href="http://localhost:6006" target="_blank" 
+             style="color: #14532d; text-decoration: underline; font-weight: 500;">
+            → Öffne http://localhost:6006 (in neuem Tab)
+          </a>
+        </div>
+        <div style="margin-top: 12px; font-size: 13px; color: #166534;">
+          Hier findest du alle verfügbaren UI-Komponenten für dein Projekt.
+        </div>
+      `;
+      
+      document.getElementById('storybook-buttons').style.display = 'block';
+    }
+
+    function showStorybookError() {
+      const statusBox = document.getElementById('storybook-status-box');
+      statusBox.className = 'info-box warning';
+      statusBox.innerHTML = `
+        <strong>⚠ Storybook konnte nicht gestartet werden</strong>
+        <div style="margin-top: 8px; font-size: 13px;">
+          Storybook ist optional. Du kannst trotzdem mit dem Dev-Server arbeiten.
+        </div>
+      `;
+      
+      document.getElementById('storybook-buttons').style.display = 'none';
+    }
+
+    async function loadChangedFiles() {
+      const status = await apiCall('/api/status');
+      changedFiles = status.files || [];
+      
+      const listEl = document.getElementById('file-list');
+      listEl.innerHTML = '';
+      
+      if (changedFiles.length === 0) {
+        listEl.innerHTML = '<div class="info-box">Keine Änderungen vorhanden</div>';
+        return;
+      }
+
+      changedFiles.forEach(file => {
+        const item = document.createElement('div');
+        item.className = 'file-item';
+        
+        const name = document.createElement('span');
+        name.className = 'name';
+        name.textContent = file.path;
+        
+        // Determine badge text and class based on status
+        let badgeText = 'Geändert';
+        let badgeClass = 'modified';
+        
+        if (file.status === 'D') {
+          badgeText = 'Gelöscht';
+          badgeClass = 'deleted';
+          name.classList.add('deleted'); // Add deleted class for strikethrough
+        } else if (file.status === 'A') {
+          badgeText = 'Neu';
+          badgeClass = 'new';
+        } else if (file.status === 'R') {
+          badgeText = 'Umbenannt';
+          badgeClass = 'modified';
+        } else if (file.status === 'M') {
+          badgeText = 'Geändert';
+          badgeClass = 'modified';
+        }
+        
+        const badge = document.createElement('span');
+        badge.className = `badge ${badgeClass}`;
+        badge.textContent = badgeText;
+        
+        item.appendChild(name);
+        item.appendChild(badge);
+        item.onclick = () => openFileInVSCode(file.path);
+        listEl.appendChild(item);
+      });
+    }
+
+    function openDevUrl() {
+      window.open('http://localhost:5173', '_blank');
+    }
+
+    function openStorybookUrl() {
+      window.open('http://localhost:6006', '_blank');
+    }
+
+    function openContentFolder() {
+      // VS Code command to open folder
+      fetch('/api/open-vscode-folder', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ path: 'src/content' })
+      });
+    }
+
+    function openFileInVSCode(filePath) {
+      fetch('/api/open-vscode-file', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ path: filePath })
+      });
+    }
+
+    async function saveOnly() {
+      // Get commit message from input
+      const message = document.getElementById('commit-message').value.trim();
+      
+      if (!message) {
+        alert('Bitte eine Commit-Nachricht eingeben');
+        return;
+      }
+      
+      addLog(3, 'Speichere Änderungen...', 'info');
+      
+      const res = await apiCall('/api/commit-only', 'POST', { message });
+      
+      if (res.success) {
+        addLog(3, 'Änderungen gespeichert!', 'success');
+        document.getElementById('finish-message').textContent = 'Änderungen wurden gespeichert (nicht veröffentlicht).';
+        setTimeout(() => showPage(4), 1000);
+      } else {
+        addLog(3, `Fehler: ${res.message}`, 'error');
+      }
+    }
+
+    async function saveAndPublish() {
+      // Get commit message from input
+      const message = document.getElementById('commit-message').value.trim();
+      
+      if (!message) {
+        alert('Bitte eine Commit-Nachricht eingeben');
+        return;
+      }
+      
+      addLog(3, 'Speichere und veröffentliche...', 'info');
+      
+      const res = await apiCall('/api/merge', 'POST', { message });
+      
+      if (res.success) {
+        addLog(3, 'Änderungen veröffentlicht!', 'success');
+        document.getElementById('finish-message').textContent = 'Änderungen wurden gespeichert und veröffentlicht.';
+        setTimeout(() => showPage(4), 1000);
+      } else {
+        addLog(3, `Fehler: ${res.message}`, 'error');
+      }
+    }
+
+    function restart() {
+      location.reload();
+    }
+
+    function continueEditing() {
+      // Go back to page 3 where we can continue editing and committing
+      showPage(3);
+      // Refresh the edited files list
+      loadEditedFiles();
+    }
+
+    function closeHelper() {
+      // Show a friendly message
+      const confirmed = confirm('Helper beenden?\n\nDer Dev-Server und der Helper werden gestoppt.');
+      if (confirmed) {
+        // Send shutdown request
+        fetch('/api/shutdown', { method: 'POST' })
+          .then(() => {
+            // Show goodbye message
+            document.body.innerHTML = `
+              <div style="display: flex; align-items: center; justify-content: center; height: 100vh; background: #f8f9fa;">
+                <div style="text-align: center; max-width: 400px; padding: 40px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+                  <h1 style="font-size: 24px; margin-bottom: 16px;">✓ Helper beendet</h1>
+                  <p style="color: #64748b; margin-bottom: 16px;">Der Helper und der Dev-Server wurden gestoppt.</p>
+                  <p style="color: #64748b; font-size: 14px;">Du kannst dieses Fenster jetzt schließen.</p>
+                </div>
+              </div>
+            `;
+            
+            // Try to close the window
+            setTimeout(() => {
+              window.close();
+            }, 1000);
+          })
+          .catch(() => {
+            // Even if request fails, show message
+            document.body.innerHTML = `
+              <div style="display: flex; align-items: center; justify-content: center; height: 100vh; background: #f8f9fa;">
+                <div style="text-align: center; max-width: 400px; padding: 40px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+                  <h1 style="font-size: 24px; margin-bottom: 16px;">✓ Helper beendet</h1>
+                  <p style="color: #64748b; margin-bottom: 16px;">Du kannst dieses Fenster jetzt schließen.</p>
+                </div>
+              </div>
+            `;
+          });
+      }
+    }
+
+    // Init on load
+    initPage1();
+  </script>
+</body>
+</html>

@@ -1,10 +1,8 @@
-import { withThemeByClassName } from '@storybook/addon-styling';
-
-/* TODO: update import to your tailwind styles file. If you're using Angular, inject this through your angular.json config instead */
+/* Global styles for Storybook */
 import '../src/scss/app.scss';
-/** @type { import('@storybook/svelte').Preview } */
+/** @type { import('@storybook/sveltekit').Preview } */
 const preview = {
-	parameters: {
+    parameters: {
 		actions: { argTypesRegex: '^on[A-Z].*' },
 		controls: {
 			matchers: {
@@ -14,7 +12,7 @@ const preview = {
 		}
 	},
 
-	decorators: [
+    decorators: [
 		// Adds theme switching support.
 		// NOTE: requires setting "darkMode" to "class" in your tailwind config
 		// withThemeByClassName({
@@ -24,7 +22,9 @@ const preview = {
 		// 	},
 		// 	defaultTheme: 'light'
 		// })
-	]
+	],
+
+    tags: ['autodocs']
 };
 
 export default preview;

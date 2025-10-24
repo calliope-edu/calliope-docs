@@ -39,8 +39,4 @@
         position: absolute;
         top: var(--shift);
     }
-
-    .B {
-        top: 5px;
-    }
 </style>

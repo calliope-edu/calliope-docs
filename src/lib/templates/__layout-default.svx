@@ -1,3 +1,0 @@
-<main class="ui container">
-    <slot />
-</main>

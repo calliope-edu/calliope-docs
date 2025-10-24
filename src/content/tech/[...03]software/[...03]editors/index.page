@@ -50,6 +50,7 @@ Der Calliope mini kann sowohl mit blockbasierten, als auch textbasierten Editore
     <div style="grid-column: span 2;">
 
 		<table class="info">
+			<tbody>
 			<tr>
 			<td>Entwickler/Anbieter:</td><td>Microsoft Research</td>
 			</tr>
@@ -71,6 +72,7 @@ Der Calliope mini kann sowohl mit blockbasierten, als auch textbasierten Editore
 			<tr>
 			<td>Offline nutzbar:</td><td> Ja, nach dem ersten Speichern im lokalen Cache oder als Programm. Zusätzlich können Offline-Versionen für unterschiedliche Betriebssysteme <a href="https://github.com/calliope-edu/pxt-calliope/releases" target="_blank">hier</a> geladen werden.</td>
 			</tr>
+			</tbody>
 			</table>
 	</div>
 
@@ -102,6 +104,7 @@ Weitere Informationen zur Funktionsweise von Makecode, kann hier nachgelesen wer
     <div style="grid-column: span 2;">
 
 		<table class="info">
+		<tbody>
 			<tr>
 			<td>Entwickler/Anbieter:</td><td>Calliope und Lulububu (Optimierungen und Anpassung an den Calliope mini), Open Source Entwicklung von der Microbit Foundation mit vielen weiteren Personen aus der Community</td>
 			</tr>
@@ -123,6 +126,7 @@ Weitere Informationen zur Funktionsweise von Makecode, kann hier nachgelesen wer
 			<tr>
 			<td>Offline nutzbar:</td><td>Ja, einmal geladen, auch offline nutzbar.</td>
 			</tr>
+			</tbody>
 			</table>
 	</div>
 
@@ -151,6 +155,7 @@ Python ist nicht nur im Bildungsbereich weit verbreitet, sondern wird auch in de
 	<div>	<img src="/images/blocks.svg" alt="" width="200px" /></div>
     <div style="grid-column: span 2;">
 		<table class="info">
+		<tbody>
 			<tr>
 			<td>Entwickler/Anbieter:</td><td>Calliope, Scratch Foundation, Konek.to</td>
 			</tr>
@@ -171,6 +176,7 @@ Python ist nicht nur im Bildungsbereich weit verbreitet, sondern wird auch in de
 			<tr>
 			<td>Offline nutzbar:</td><td>Ja, einmal geladen, auch offline nutzbar.</td>
 			</tr>
+			</tbody>
 			</table>
 	</div>
 
@@ -201,6 +207,7 @@ Weitere Informationen findest du auf der Calliope **[Webseite](https://calliope.
     <div style="grid-column: span 2;">
 
 			<table class="info">
+			<tbody>
 				<tr>
 				<td>Entwickler/Anbieter:</td><td>Fraunhofer IAIS</td>
 				</tr>
@@ -222,6 +229,7 @@ Weitere Informationen findest du auf der Calliope **[Webseite](https://calliope.
 				<tr>
 				<td>Offline nutzbar:</td><td>Ja, es kann ein komplett eigener Server mit einem Image von Open Roberta gehostet werden:  <a href="https://www.open-roberta.org/lokale-installation/" target="_blank">Lokale Installation</a></td>
 				</tr>
+				</tbody>
 				</table>
 	</div>
 

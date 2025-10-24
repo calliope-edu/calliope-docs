@@ -3,6 +3,7 @@
     import IconExternalLink from '~icons/ri/external-link-line'
     import IconDownloadLink from '~icons/ri/download-cloud-2-line'
     import IconEmailLink from '~icons/ri/mail-line'
+    import { page } from '$app/state';
 
     export let href = '';
     export let download = false; // set download name
@@ -15,30 +16,32 @@
     $: isInternal = (browser) ? a?.host == window.location.host : (href.startsWith('http')) ? false : true;
     $: target = (isInternal) ? null : '_blank';
     $: rel = (isInternal) ? null : 'noopener noreferrer';
+
 </script>
 
-<a href={href} bind:this={a} {target} download={downloadName} {rel}>
-    <div class="a-container">
+<a href={href} bind:this={a} {target} download={downloadName} {rel} hreflang={(isDownload) ? 'en/..' : undefined}>
+    <span class="a-container">
         
         <slot />
         {#if isMailto}
-            <div class="icon">
+            <span class="icon">
                 <IconEmailLink />
-            </div>
+            </span>
         {:else}
             {#if !isInternal}
-                <div class="icon">
+                <span class="icon">
                     <IconExternalLink />
-                </div>
+                </span>
             {/if}
             {#if isDownload}
-                <div class="icon">
+                <span class="icon">
                     <IconDownloadLink />
-                </div>
+                </span>
             {/if}
         {/if}
-    </div>
+            </span>
 </a>
+
 
 <style lang="scss">
     a {

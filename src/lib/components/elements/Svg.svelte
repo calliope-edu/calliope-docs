@@ -1,6 +1,4 @@
 <script>
-    import { Image } from '@rodneylab/sveltekit-components';
-    // import { SwiperSlide } from 'swiper/svelte';
     export let src;
     export let alt = null;
     export let title = '';

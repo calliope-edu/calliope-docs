@@ -95,102 +95,219 @@
   on:click={close}
 />
 {#if !hide}
-  <aside class="toc" class:desktop class:mobile={!desktop} bind:this={aside}>
+  <aside class="toc" class:desktop class:mobile={!desktop} bind:this={aside} aria-label="Table of Contents">
     
     {#if open || desktop}
-      <div class="ui compact secondary vertical fluid menu" transition:blur>
-        <div class="item">
+      <div class="toc-container" transition:blur={{ duration: 200 }}>
+        <div class="toc-section">
         {#if title}
-        <div class="header">
+        <!-- <div class="toc-title">
           {title}
-        </div>
+        </div> -->
         {/if}
-        <!-- <div class="text-slate-700 text-sm leading-6"> -->
-          <div class="menu">
+          <div class="toc-content">
           {#each headings as heading, idx}
           {@const level = (levels[idx] - minLevel)}
-          <!-- style:transform="translateX({levels[idx] - minLevel}em)"
-          style:font-size="{2 - 0.2 * (levels[idx] - minLevel)}ex" -->
-            <!-- <li> -->
-              <a href=#{getHeadingIds(heading)}
-              class="item {`level${level}`}"
+            <a href=#{getHeadingIds(heading)}
+              class="toc-link {`level${level}`}"
               class:active={activeHeading === heading}
+              aria-current={activeHeading === heading ? 'location' : undefined}
               on:click|preventDefault={clickHandler(heading)}>
-                {#if level > 0}
-                  <!-- <svg width="3" height="24" viewBox="0 -9 3 24" class="mr-2 text-slate-400 overflow-visible group-hover:text-slate-600 text-slate-600"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg> -->
-                {/if}
+                <!-- {#if level > 0}
+                  <span class="toc-bullet"></span>
+                {/if} -->
                 <slot name="tocItem" {heading} {idx}>
                   {getHeadingTitles(heading)}
                 </slot>
-              </a>
-            <!-- </li> -->
+            </a>
           {/each}
         </div>
       </div>
-        <!-- </ul> -->
       </div>
+      {#if !desktop}
+        <button 
+          on:click|preventDefault|stopPropagation={() => (open = !open)}
+          aria-label="Close table of contents"
+          class="toc-close-btn">
+          <span>×</span>
+        </button>
+      {/if}
     {/if}
-    {#if !open && !desktop}
+    {#if !desktop}
       <button
-        on:click|preventDefault|stopPropagation={() => (open = true)}
+        on:click|preventDefault|stopPropagation={() => (open = !open)}
         aria-label={openButtonLabel}
-        class="ui button tiny fluid" style="background-color: var(--color-calliope); color: white;">
-        {title}
+        class="toc-open-btn">
+        {title || 'Table of Contents'}
       </button>
     {/if}
   </aside>
 {/if}
 
 <style lang="scss">
-  .toc {
-    // padding-left: 2rem;
-    // padding-right: 2rem; 
+ .toc {
     background: #fff;
-    border-radius: 3px;
+    border-radius: 6px;
+    // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 0.5rem;
+    width: 100%;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .toc-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .toc-section {
+    padding: 0.5rem;
+  }
+  
+  .toc-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+  }
+  
+  .toc-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  
+  .toc-link {
+    display: block;
+    padding: 0.35rem 0;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    transition: color 0.15s ease;
+    
+    &:hover {
+      color: var(--primary, #0066cc);
+      text-decoration: none;
+    }
+  }
+
+  .level0 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .level1 {
+    padding-left: 0.8rem;
+    // border-left: 2px solid #eee;
+    margin-top: 0.25rem;
+  }
+
+  .level2, .level3 {
+    padding-left: 1.6rem;
+    font-size: 0.92em;
+    color: rgba(0, 0, 0, 0.7);
   }
 
 
-.level0 {
-}
-.level1, .level2, .level3 {
-  font-size: .7em !important;
-  margin-left: 1em !important;
-  font-style: italic;
-}
 
   .active {
-    color: #005F61;
+    color: var(--primary, #0066cc);
+    font-weight: 600;
+    position: relative;
+  }
+
+  .active::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: var(--primary, #0066cc);
   }
 
   :where(aside.toc.mobile) {
     position: fixed;
-    bottom: 1em;
-    right: 1em;
-  }
-  :where(aside.toc.mobile > nav) {
-    border-radius: 3pt;
-    width: var(--toc-mobile-width, 12em);
-    bottom: -1em;
-    right: 0;
-    z-index: -1;
-    background-color: var(--toc-mobile-bg, white);
+    bottom: 1.5em;
+    right: 1.5em;
+    // max-width: 85vw;
+    max-width: 50vw;
+    z-index: 100;
   }
 
-  .header {
-      color: inherit;
+  :where(aside.toc.mobile > div) {
+    border-radius: 6px;
+    // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: white;
+    overflow: auto;
+    max-height: 80vh;
   }
-  .item {
-        color: rgba(0,0,0,.6) !important;
-        &:hover {
-            color: rgba(0,0,0,.9) !important;
-        }
-        &.active {
-        // color: var(--color-calliope) !important;
-        color: #005F61 !important;
-        }
-    }
 
-  .menu .menu {
-      margin-top: 1rem !important;
+  .toc-close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.1);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    
+    &:hover {
+      background: rgba(0,0,0,0.15);
     }
+  }
+
+  .toc-open-btn {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    padding: 1rem;
+    background-color: var(--grey, #333); 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    text-align: center;
+    
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  :where(aside.toc.mobile > div) {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  @media (max-width: 1000px) {
+    .toc-content {
+      max-height: 60vh;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      
+      /* Scrollbar styling for webkit browsers */
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 4px;
+      }
+    }
+  }
 </style>

@@ -1,25 +1,17 @@
 ---
 title: "Technische Dokumentation"
-description: "..."
+description: "Weiterleitung zur technischen Dokumentation"
 template:
 published: true
 ---
 
-<script>
-    import { goto } from '$app/navigation';
-	import { onMount, beforeUpdate  } from 'svelte';
-	import { _lang } from '$lib/scripts/store.js';
+<svelte:head>
+    <meta http-equiv="refresh" content="0; url=/tech" />
+    <link rel="canonical" href="/tech" />
+</svelte:head>
 
-    // Define the destination route
-  	const destinationRoute = `${$_lang.path}tech`;
 
-	// Use the `beforeUpdate` lifecycle function to perform redirection
-	beforeUpdate(() => {
-	    goto(destinationRoute, { replace: true });
-	});
-</script>
-
-## Wir leiten dich zur [Technischen Dokumentation]({$_lang.path}tech) weiter ...
+## Wir leiten dich zur [Technischen Dokumentation](/tech) weiter ...
 
 <style lang="scss">
 

@@ -1,11 +1,27 @@
 <script>
-	import TemplateLoader from '$lib/templates/TemplateLoader.svx'
-	
-	/** @type {import('./$types').PageData */
-	export let data;
+    import TemplateLoader from '$lib/templates/TemplateLoader.svelte'
+    import { afterNavigate } from '$app/navigation';
+    
+    /** @type {import('./$types').PageData */
+    export let data;
 
+    // Initialize with SSR data
+    // let newData = data;
+    // let initialHydrationComplete = false;
+    
+    // // This runs after every navigation, including the initial hydration
+    // afterNavigate(({ type }) => {
+    //     // Skip the initial hydration to avoid re-rendering
+    //     if (initialHydrationComplete) {
+	// 		console.log('a')
+    //         newData = data;
+    //     } else {
+	// 		console.log('b')
+    //         initialHydrationComplete = true;
+    //     }
+    // });
 </script>
 
 <TemplateLoader meta={data.meta}>
-	<svelte:component this={data.Page} _subpages={data._subpages} />
+    <svelte:component this={data.Page} _subpages={data._subpages} />
 </TemplateLoader>
