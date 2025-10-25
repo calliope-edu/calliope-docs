@@ -4,6 +4,41 @@
 
 > **Target Audience**: Developers who want to understand the technical architecture of this content-driven SvelteKit application.
 
+---
+
+## 📑 Table of Contents
+
+- [🎯 Project Philosophy](#-project-philosophy)
+- [📁 Project Structure](#-project-structure)
+- [🏗️ Core Architecture](#️-core-architecture)
+  - [1. Content Management System](#1-content-management-system)
+  - [2. Routing System](#2-routing-system)
+  - [3. MDsveX Processing Pipeline](#3-mdsvex-processing-pipeline)
+  - [4. Pre-build System](#4-pre-build-system)
+  - [5. Using Page Metadata & Navigation](#5-using-page-metadata--navigation)
+  - [6. Template System](#6-template-system)
+  - [7. Internationalization (i18n)](#7-internationalization-i18n)
+  - [8. Prerendering](#8-prerendering)
+- [🔧 Build Pipeline](#-build-pipeline)
+- [🎨 Styling System](#-styling-system)
+- [🧩 Key Components](#-key-components)
+- [📦 Asset Handling](#-asset-handling)
+- [🌐 URL Structure](#-url-structure)
+- [🛠️ Development Helper](#️-development-helper)
+- [🧪 Testing & QA](#-testing--qa)
+- [🔍 Debugging Tips](#-debugging-tips)
+- [📚 Important Files Reference](#-important-files-reference)
+- [🚀 Adding New Features](#-adding-new-features)
+- [🎓 Learning Resources](#-learning-resources)
+- [⚡ Performance Optimizations](#-performance-optimizations)
+- [🔐 Security Considerations](#-security-considerations)
+- [🌟 Best Practices](#-best-practices)
+- [🐛 Common Pitfalls](#-common-pitfalls)
+- [📞 Getting Help](#-getting-help)
+- [🎉 Conclusion](#-conclusion)
+
+---
+
 ## 🎯 Project Philosophy
 
 This project pushes SvelteKit to its limits to achieve **maximum separation of content from code**. Content editors work primarily in `/src/content/` with Markdown files and local assets, while developers maintain the application infrastructure. The system preserves full Svelte functionality, allowing both roles to work hand-in-hand without stepping on each other's toes.
@@ -336,7 +371,198 @@ getPage(path, lang)             // Single page metadata
 - Prev/Next navigation
 - Sitemap generation
 
-### 5. Template System
+---
+
+### 5. Using Page Metadata & Navigation
+
+**One of the most powerful features**: The pre-generated sitemap allows automatic creation of navigation, menus, and page listings without manual configuration.
+
+#### Available Helper Functions
+
+Import from `sitemap.js`:
+```javascript
+import { getContentTypes, getCategories, getSubpages, getPage } from '$lib/../sitemap.js';
+import { getLocale } from "$lib/paraglide/runtime";
+```
+
+**Function Overview**:
+
+```javascript
+// Get all content types for a language
+getContentTypes('de')  // → ['python', 'tech']
+
+// Get main categories in a content type
+getCategories('python', 'de')  
+// → [{ slug: 'python/module', title: 'Module', ... }, ...]
+
+// Get subpages of any path
+getSubpages('python/module', 'de')  
+// → [{ slug: 'python/module/radio', title: 'Radio', description: '...', ... }, ...]
+
+// Get single page metadata
+getPage('python/module/radio', 'de')  
+// → { slug: 'python/module/radio', title: 'Radio', description: '...', ... }
+```
+
+#### Example 1: Auto-Generated Sidebar Menu
+
+**Use case**: Display all categories and their subpages in a sidebar.
+
+```svelte
+<script>
+  import { getCategories, getSubpages } from '$lib/../sitemap.js';
+  import { getLocale } from "$lib/paraglide/runtime";
+  
+  export let contentType = 'tech';  // or 'python'
+  
+  // Get all main categories
+  $: categories = getCategories(contentType, getLocale());
+</script>
+
+<nav>
+  {#each categories as category}
+    <div class="category">
+      <h3>{category.title}</h3>
+      <ul>
+        {#each getSubpages(category.slug, getLocale()) as page}
+          <li>
+            <a href="/{page.slug}/">{page.title}</a>
+          </li>
+        {/each}
+      </ul>
+    </div>
+  {/each}
+</nav>
+```
+
+**Real implementation**: See `src/lib/components/menues/DocsMenu.svelte`
+
+#### Example 2: Content Overview Page (Cards)
+
+**Use case**: Display all subpages as clickable cards (like `docs_contents` layout).
+
+```svelte
+<script>
+  import { getSubpages } from '$lib/../sitemap.js';
+  import { page } from '$app/state';
+  import { getLocale } from "$lib/paraglide/runtime";
+  
+  // Get current path from URL
+  $: currentPath = (page?.params?.slugs || '').replace(/\/$/, '');
+  
+  // Get all subpages automatically
+  $: pages = getSubpages(currentPath, getLocale());
+</script>
+
+{#if pages && pages.length > 0}
+  <div class="cards">
+    {#each pages as subpage}
+      <a href="/{subpage.slug}/" class="card">
+        {#if subpage.image}
+          <img src="/{subpage.slug}/{subpage.image}" alt={subpage.title} />
+        {/if}
+        <h3>{subpage.title}</h3>
+        <p>{subpage.description}</p>
+      </a>
+    {/each}
+  </div>
+{/if}
+```
+
+**Real implementation**: See `src/lib/templates/__layout-docs-contents.svelte`
+
+#### Example 3: Prev/Next Navigation
+
+**Use case**: Navigate between pages in sequence.
+
+```svelte
+<script>
+  import { getCategories, getSubpages } from '$lib/../sitemap.js';
+  import { getLocale } from "$lib/paraglide/runtime";
+  
+  export let contentType = 'python';
+  export let currentSlug = 'python/module/radio';
+  
+  // Get all pages as flat list
+  $: categories = getCategories(contentType, getLocale());
+  $: allPages = categories.flatMap(cat => 
+    getSubpages(cat.slug, getLocale())
+  );
+  
+  // Find current page index
+  $: currentIndex = allPages.findIndex(p => p.slug === currentSlug);
+  
+  // Calculate prev/next
+  $: prevPage = allPages[currentIndex - 1] || null;
+  $: nextPage = allPages[currentIndex + 1] || null;
+</script>
+
+<nav>
+  {#if prevPage}
+    <a href="/{prevPage.slug}/">← {prevPage.title}</a>
+  {/if}
+  {#if nextPage}
+    <a href="/{nextPage.slug}/">{nextPage.title} →</a>
+  {/if}
+</nav>
+```
+
+**Real implementation**: See `src/lib/components/menues/DocsMenu.svelte` (calculates `prev` and `next`)
+
+#### Example 4: Dynamic Breadcrumbs
+
+**Use case**: Show navigation path based on URL structure.
+
+```svelte
+<script>
+  import { getPage } from '$lib/../sitemap.js';
+  import { page } from '$app/state';
+  import { getLocale } from "$lib/paraglide/runtime";
+  
+  $: segments = page?.params?.slugs?.split('/').filter(Boolean) || [];
+  
+  // Build breadcrumb path
+  $: breadcrumbs = segments.map((_, i) => {
+    const path = segments.slice(0, i + 1).join('/');
+    return getPage(path, getLocale());
+  }).filter(Boolean);
+</script>
+
+<nav>
+  <a href="/">Home</a>
+  {#each breadcrumbs as crumb}
+    → <a href="/{crumb.slug}/">{crumb.title}</a>
+  {/each}
+</nav>
+```
+
+#### Available Metadata Fields
+
+Each page object includes:
+
+```javascript
+{
+  slug: 'python/module/radio',      // Full path
+  title: 'Radio',                   // From frontmatter
+  description: 'Communication...',  // From frontmatter
+  image: 'thumbnail.jpg',           // From frontmatter (optional)
+  template: 'docs,default',         // Template configuration
+  subpages: [...],                  // Child pages (if any)
+  // ... other frontmatter fields
+}
+```
+
+#### Benefits
+
+- **Zero Configuration**: Navigation updates automatically when adding content
+- **DRY Principle**: Define page info once (frontmatter), use everywhere
+- **Type Safety**: Single source of truth for all page metadata
+- **Performance**: Pre-built at compile time (no runtime parsing)
+- **Flexibility**: Use in any component, create custom navigation patterns
+
+---
+
+### 6. Template System
 
 **Multi-layered template system** for flexible layouts.
 
@@ -369,7 +595,7 @@ template: docs,default
 ```
 Results in: `Default` wraps `Docs` wraps `Content`
 
-### 6. Internationalization (i18n)
+### 7. Internationalization (i18n)
 
 **Paraglide.js** handles multi-language support.
 
@@ -418,7 +644,7 @@ const href = localizeHref('/python/module', { locale: 'en' });
 3. Fall back to default file (`.page`)
 4. Fall back to other languages
 
-### 7. Prerendering
+### 8. Prerendering
 
 **Static Site Generation** via `@sveltejs/adapter-static`
 
@@ -853,7 +1079,6 @@ If prerendering fails:
 - ✅ Validate across languages
 - ✅ Check responsive design
 - ❌ Don't edit generated files (`sitemap.js`, `static_autogenerated/`)
-- ❌ Don't commit `.svelte-kit/` folder
 
 ### Performance
 - ✅ Optimize images before adding to content

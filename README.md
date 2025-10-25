@@ -2,7 +2,8 @@
 
 **English** | [Deutsch](./README.de.md)
 
-**📖 Documentation:** [Developer Guide](./DEVELOPER-README.md) · [Entwickler-Handbuch (DE)](./DEVELOPER-README.de.md) · [Helper Tool Guide](./HELPER-README.md) · [Hilfsprogramm-Anleitung (DE)](./HELPER-README.de.md)
+**📖 Documentation (English):** [Developer Guide](./DEVELOPER-README.md) · [Helper Tool Guide](./HELPER-README.md)  
+**📖 Dokumentation (Deutsch):** [Entwickler-Handbuch](./DEVELOPER-README.de.md) · [Hilfsprogramm-Anleitung](./HELPER-README.de.md)
 
 ---
 
@@ -13,6 +14,24 @@
 
 ---
 
+## 📑 Table of Contents
+
+- [🎯 What is this?](#-what-is-this)
+- [✨ Key Features](#-key-features)
+- [🏗️ How It Works](#️-how-it-works)
+- [🚀 Quick Start](#-quick-start)
+- [📖 Documentation](#-documentation)
+- [🛠️ Available Scripts](#️-available-scripts)
+- [📁 Project Structure](#-project-structure)
+- [🌍 Multi-language Support](#-multi-language-support)
+- [🎨 Using Components in Markdown](#-using-components-in-markdown)
+- [🖼️ Image Handling](#️-image-handling)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+- [🙏 Acknowledgments](#-acknowledgments)
+
+---
+
 ## 🎯 What is this?
 
 This is the technical documentation site for [Calliope mini](https://calliope.cc/) - an educational microcontroller board. The architecture treats Markdown files as a file-based CMS where:
@@ -20,6 +39,8 @@ This is the technical documentation site for [Calliope mini](https://calliope.cc
 - **Content editors** work only with Markdown files - no `+page.svelte` files, no imports, no `<script>` or `<style>` sections
 - **Developers** maintain full SvelteKit functionality and can use everything as usual
 - **Both roles** have clear boundaries without limiting each other
+
+> **Note**: This architecture is shared with and maintained for [Moliri](https://moliri.app).
 
 ## ✨ Key Features
 
@@ -198,6 +219,7 @@ Check out [DEVELOPER-README.md](./DEVELOPER-README.md) for architecture details.
 
 ## 🙏 Acknowledgments
 
+- **Architecture & Development**: [@Amerlander](https://github.com/Amerlander) - Original CMS architecture developed for [Moliri](https://moliri.app)
 - Built with [SvelteKit](https://kit.svelte.dev/)
 - Markdown processing via [MDsveX](https://mdsvex.pngwn.io/)
 - Internationalization via [Paraglide](https://inlang.com/m/gerre34r/library-inlang-paraglideJs)

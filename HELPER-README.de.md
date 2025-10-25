@@ -4,6 +4,26 @@
 
 Ein benutzerfreundliches Hilfsprogramm für die Bearbeitung von Website-Inhalten mit Git-Integration, automatischem Dev-Server und vereinfachtem Workflow.
 
+---
+
+## 📑 Inhaltsverzeichnis
+
+- [📋 Was ist der Development Helper?](#-was-ist-der-development-helper)
+- [🎯 Schnellstart](#-schnellstart)
+- [📦 Voraussetzungen](#-voraussetzungen)
+- [🔧 Installation der Abhängigkeiten](#-installation-der-abhängigkeiten)
+- [🎨 So funktioniert der Helper](#-so-funktioniert-der-helper)
+- [📚 Storybook](#-storybook)
+- [🔍 Fehlerbehebung](#-fehlerbehebung)
+- [🛠️ Erweiterte Nutzung](#️-erweiterte-nutzung)
+- [📂 Projekt-Struktur](#-projekt-struktur)
+- [🌐 Technische Details](#-technische-details)
+- [💡 Tipps](#-tipps)
+- [🆘 Support](#-support)
+- [📄 Lizenz](#-lizenz)
+
+---
+
 ## 📋 Was ist der Development Helper?
 
 Der Development Helper ist ein interaktives Tool, das dir hilft:

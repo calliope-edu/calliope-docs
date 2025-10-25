@@ -4,6 +4,26 @@
 
 A user-friendly helper tool for editing website content with Git integration, automatic dev server, and simplified workflow.
 
+---
+
+## 📑 Table of Contents
+
+- [📋 What is the Development Helper?](#-what-is-the-development-helper)
+- [🎯 Quick Start](#-quick-start)
+- [📦 Prerequisites](#-prerequisites)
+- [🔧 Installing Dependencies](#-installing-dependencies)
+- [🎨 How the Helper Works](#-how-the-helper-works)
+- [📚 Storybook](#-storybook)
+- [🔍 Troubleshooting](#-troubleshooting)
+- [🛠️ Advanced Usage](#️-advanced-usage)
+- [📂 Project Structure](#-project-structure)
+- [🌐 Technical Details](#-technical-details)
+- [💡 Tips](#-tips)
+- [🆘 Support](#-support)
+- [📄 License](#-license)
+
+---
+
 ## 📋 What is the Development Helper?
 
 The Development Helper is an interactive tool that helps you:

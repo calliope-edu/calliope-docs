@@ -2,7 +2,8 @@
 
 [English](./README.md) | **Deutsch**
 
-**📖 Dokumentation:** [Developer Guide (EN)](./DEVELOPER-README.md) · [Entwickler-Handbuch](./DEVELOPER-README.de.md) · [Helper Tool Guide (EN)](./HELPER-README.md) · [Hilfsprogramm-Anleitung](./HELPER-README.de.md)
+**📖 Dokumentation (Deutsch):** [Entwickler-Handbuch](./DEVELOPER-README.de.md) · [Hilfsprogramm-Anleitung](./HELPER-README.de.md)  
+**📖 Documentation (English):** [Developer Guide](./DEVELOPER-README.md) · [Helper Tool Guide](./HELPER-README.md)
 
 ---
 
@@ -13,6 +14,24 @@
 
 ---
 
+## 📑 Inhaltsverzeichnis
+
+- [🎯 Was ist das?](#-was-ist-das)
+- [✨ Hauptmerkmale](#-hauptmerkmale)
+- [🏗️ Wie es funktioniert](#️-wie-es-funktioniert)
+- [🚀 Schnellstart](#-schnellstart)
+- [📖 Dokumentation](#-dokumentation)
+- [🛠️ Verfügbare Scripts](#️-verfügbare-scripts)
+- [📁 Projektstruktur](#-projektstruktur)
+- [🌍 Multi-Language-Support](#-multi-language-support)
+- [🎨 Komponenten in Markdown verwenden](#-komponenten-in-markdown-verwenden)
+- [🖼️ Bilder verwenden](#️-bilder-verwenden)
+- [🤝 Beitragen](#-beitragen)
+- [📄 Lizenz](#-lizenz)
+- [🙏 Danksagungen](#-danksagungen)
+
+---
+
 ## 🎯 Was ist das?
 
 Dies ist die technische Dokumentationsseite für [Calliope mini](https://calliope.cc/) - ein Mikrocontroller-Board für Bildungszwecke. Die Architektur behandelt Markdown-Dateien als dateibasiertes CMS, bei dem:
@@ -20,6 +39,8 @@ Dies ist die technische Dokumentationsseite für [Calliope mini](https://calliop
 - **Content-Editoren** nur mit Markdown-Dateien arbeiten - keine `+page.svelte`-Dateien, keine Imports, keine `<script>`- oder `<style>`-Abschnitte
 - **Entwickler** die volle SvelteKit-Funktionalität behalten und alles wie gewohnt nutzen können
 - **Beide Rollen** klare Grenzen haben, ohne sich gegenseitig einzuschränken
+
+> **Hinweis**: Diese Architektur wird gemeinsam mit [Moliri](https://moliri.app) genutzt und dort gewartet.
 
 ## ✨ Hauptmerkmale
 
@@ -194,10 +215,11 @@ Siehe [DEVELOPER-README.md](./DEVELOPER-README.md) für Architektur-Details.
 
 ## 📄 Lizenz
 
-[Lizenz hier einfügen]
+MIT
 
 ## 🙏 Danksagungen
 
+- **Architektur & Entwicklung**: [@Amerlander](https://github.com/Amerlander) - Ursprüngliche CMS-Architektur entwickelt für [Moliri](https://moliri.app)
 - Gebaut mit [SvelteKit](https://kit.svelte.dev/)
 - Markdown-Verarbeitung via [MDsveX](https://mdsvex.pngwn.io/)
 - Internationalisierung via [Paraglide](https://inlang.com/m/gerre34r/library-inlang-paraglideJs)
