@@ -1,6 +1,8 @@
 # Developer Documentation: Calliope Docs Architecture
 
-> **Target Audience**: Developers who need to understand the technical architecture of this content-driven SvelteKit application.
+**English** | [Deutsch](./DEVELOPER-README.de.md)
+
+> **Target Audience**: Developers who want to understand the technical architecture of this content-driven SvelteKit application.
 
 ## 🎯 Project Philosophy
 

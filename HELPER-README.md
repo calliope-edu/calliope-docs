@@ -1,80 +1,82 @@
 # 🚀 Development Helper
 
-Ein benutzerfreundliches Hilfsprogramm für die Bearbeitung von Website-Inhalten mit Git-Integration, automatischem Dev-Server und vereinfachtem Workflow.
+**English** | [Deutsch](./HELPER-README.de.md)
 
-## 📋 Was ist der Development Helper?
+A user-friendly helper tool for editing website content with Git integration, automatic dev server, and simplified workflow.
 
-Der Development Helper ist ein interaktives Tool, das dir hilft:
+## 📋 What is the Development Helper?
 
-- **Branches** einfach zu erstellen und zu wechseln
-- Den **Dev-Server** automatisch zu starten
-- **Änderungen** zu verfolgen und zu speichern
-- **Inhalte zu veröffentlichen** mit einem Klick
-- **Merge-Konflikte** zu vermeiden
+The Development Helper is an interactive tool that helps you:
 
-Alles über eine übersichtliche Web-Oberfläche – **keine Terminal-Befehle nötig**!
+- **Create and switch branches** easily
+- **Start the dev server** automatically
+- **Track and save changes**
+- **Publish content** with one click
+- **Avoid merge conflicts**
+
+All through a clear web interface – **no terminal commands needed**!
 
 ---
 
-## 🎯 Schnellstart
+## 🎯 Quick Start
 
 ### Windows
 
-1. **Doppelklick** auf `Starte-Hilfsprogramm-Windows.cmd`
-2. Browser öffnet sich automatisch
-3. Fertig! 🎉
+1. **Double-click** `Starte-Hilfsprogramm-Windows.cmd`
+2. Browser opens automatically
+3. Done! 🎉
 
 ### Mac
 
-1. **Doppelklick** auf `Starte-Hilfsprogramm-Mac.command`
-2. Beim ersten Mal: Rechtsklick → "Öffnen" (Sicherheitsabfrage)
-3. Browser öffnet sich automatisch
-4. Fertig! 🎉
+1. **Double-click** `Starte-Hilfsprogramm-Mac.command`
+2. First time: Right-click → "Open" (security prompt)
+3. Browser opens automatically
+4. Done! 🎉
 
 ### Linux
 
-1. Öffne das Terminal im Projektordner
-2. Führe aus: `./Starte-Hilfsprogramm-Linux.sh`
-3. Browser öffnet sich automatisch
-4. Fertig! 🎉
+1. Open terminal in project folder
+2. Run: `./Starte-Hilfsprogramm-Linux.sh`
+3. Browser opens automatically
+4. Done! 🎉
 
 ---
 
-## 📦 Voraussetzungen
+## 📦 Prerequisites
 
-Der Development Helper benötigt folgende Software:
+The Development Helper requires the following software:
 
-### ✅ **Node.js** (erforderlich)
-- **Version:** 16 oder höher empfohlen
+### ✅ **Node.js** (required)
+- **Version:** 16 or higher recommended
 - **Download:** [nodejs.org](https://nodejs.org/)
-- **Enthält:** Node.js und npm (Paketmanager)
+- **Includes:** Node.js and npm (package manager)
 
-### ✅ **Git** (empfohlen)
+### ✅ **Git** (recommended)
 - **Download:** [git-scm.com](https://git-scm.com/)
-- **Hinweis:** Wird für Branch-Management und Veröffentlichung benötigt
+- **Note:** Required for branch management and publishing
 
-### ℹ️ Automatische Prüfung
+### ℹ️ Automatic Check
 
-Die Start-Skripte prüfen automatisch, ob alle nötigen Programme installiert sind und zeigen hilfreiche Installationsanleitungen an.
+The start scripts automatically check if all required programs are installed and show helpful installation instructions.
 
 ---
 
-## 🔧 Installation der Abhängigkeiten
+## 🔧 Installing Dependencies
 
 ### Windows
 
-#### Node.js installieren:
-1. Besuche [nodejs.org](https://nodejs.org/)
-2. Lade die **LTS-Version** herunter (Empfohlen)
-3. Führe den Installer aus
-4. Starte den Computer neu (optional, aber empfohlen)
+#### Install Node.js:
+1. Visit [nodejs.org](https://nodejs.org/)
+2. Download the **LTS version** (Recommended)
+3. Run the installer
+4. Restart your computer (optional, but recommended)
 
-#### Git installieren:
-1. Besuche [git-scm.com/download/win](https://git-scm.com/download/win)
-2. Lade den Installer herunter
-3. Führe den Installer aus (Standard-Einstellungen sind OK)
+#### Install Git:
+1. Visit [git-scm.com/download/win](https://git-scm.com/download/win)
+2. Download the installer
+3. Run the installer (default settings are OK)
 
-#### Prüfen, ob alles funktioniert:
+#### Verify everything works:
 ```cmd
 node --version
 npm --version
@@ -85,33 +87,33 @@ git --version
 
 ### Mac
 
-#### Node.js installieren:
-1. Besuche [nodejs.org](https://nodejs.org/)
-2. Lade die **LTS-Version** herunter
-3. Führe den Installer aus
+#### Install Node.js:
+1. Visit [nodejs.org](https://nodejs.org/)
+2. Download the **LTS version**
+3. Run the installer
 
-**Alternative mit Homebrew:**
+**Alternative with Homebrew:**
 ```bash
 brew install node
 ```
 
-#### Git installieren:
-Git ist oft schon vorinstalliert. Prüfe mit:
+#### Install Git:
+Git is often pre-installed. Check with:
 ```bash
 git --version
 ```
 
-Falls nicht installiert:
+If not installed:
 ```bash
 xcode-select --install
 ```
 
-Oder mit Homebrew:
+Or with Homebrew:
 ```bash
 brew install git
 ```
 
-#### Datei ausführbar machen:
+#### Make file executable:
 ```bash
 chmod +x Starte-Hilfsprogramm-Mac.command
 ```
@@ -120,7 +122,7 @@ chmod +x Starte-Hilfsprogramm-Mac.command
 
 ### Linux
 
-#### Node.js und npm installieren:
+#### Install Node.js and npm:
 
 **Ubuntu/Debian:**
 ```bash
@@ -138,7 +140,7 @@ sudo dnf install nodejs npm
 sudo pacman -S nodejs npm
 ```
 
-#### Git installieren:
+#### Install Git:
 
 **Ubuntu/Debian:**
 ```bash
@@ -155,68 +157,68 @@ sudo dnf install git
 sudo pacman -S git
 ```
 
-#### Datei ausführbar machen:
+#### Make file executable:
 ```bash
 chmod +x Starte-Hilfsprogramm-Linux.sh
 ```
 
 ---
 
-## 🎨 So funktioniert der Helper
+## 🎨 How the Helper Works
 
-### 1️⃣ **Branch auswählen**
-- Erstelle einen neuen Branch für deine Änderungen
-- Oder wähle einen bestehenden Branch aus
-- Sieh dir die Git-Historie visuell an
+### 1️⃣ **Select Branch**
+- Create a new branch for your changes
+- Or select an existing branch
+- View Git history visually
 
-### 2️⃣ **Dependencies prüfen**
-- Der Helper prüft, ob npm-Pakete installiert sind
-- Bei Bedarf: Installiere mit einem Klick
+### 2️⃣ **Check Dependencies**
+- The helper checks if npm packages are installed
+- If needed: Install with one click
 
-### 3️⃣ **Arbeiten & Bearbeiten**
-- Der Dev-Server startet automatisch
-- Öffne den Browser auf `http://localhost:5173`
-- Bearbeite Inhalte im `src/content` Ordner
-- Sieh Änderungen live im Browser
+### 3️⃣ **Work & Edit**
+- Dev server starts automatically
+- Open browser at `http://localhost:5173`
+- Edit content in `src/content` folder
+- See changes live in browser
 
-### 4️⃣ **Speichern & Veröffentlichen**
-- Sieh alle geänderten Dateien auf einen Blick
-- Gib eine Commit-Nachricht ein (wird vorgeschlagen)
-- **Nur speichern:** Änderungen im Branch speichern
-- **Speichern & veröffentlichen:** Automatisch in den Branch **PRODUCTION** mergen
+### 4️⃣ **Save & Publish**
+- See all changed files at a glance
+- Enter a commit message (automatically suggested)
+- **Save only:** Save changes in branch
+- **Save & publish:** Automatically merge into **PRODUCTION** branch
 
 ---
 
 ## 📚 Storybook
 
-- Start: In Seite „Development“ → Abschnitt „Storybook“ → „Start Storybook“
-- Öffnen: „Im Browser öffnen“ (http://localhost:6006)
-- Build: „Build Storybook“ erzeugt einen statischen Build im Ordner `storybook-static/`
+- Start: In "Development" page → "Storybook" section → "Start Storybook"
+- Open: "Open in Browser" (http://localhost:6006)
+- Build: "Build Storybook" creates a static build in `storybook-static/` folder
 
-Erforderlich: Abhängigkeiten installiert (`npm ci`) – bereits über Seite „Dependencies“ möglich.
+Required: Dependencies installed (`npm ci`) – already possible via "Dependencies" page.
 
 ---
 
-## 🔍 Fehlerbehebung
+## 🔍 Troubleshooting
 
-### "Node.js ist nicht installiert"
-→ Installiere Node.js von [nodejs.org](https://nodejs.org/)
+### "Node.js is not installed"
+→ Install Node.js from [nodejs.org](https://nodejs.org/)
 
-### "npm ist nicht installiert"
-→ npm wird mit Node.js installiert. Installiere Node.js neu.
+### "npm is not installed"
+→ npm is installed with Node.js. Reinstall Node.js.
 
-### "Git ist nicht installiert"
-→ Installiere Git von [git-scm.com](https://git-scm.com/)
+### "Git is not installed"
+→ Install Git from [git-scm.com](https://git-scm.com/)
 
 ### "Permission denied" (Mac/Linux)
-→ Mache die Datei ausführbar:
+→ Make the file executable:
 ```bash
 chmod +x Starte-Hilfsprogramm-*.sh
 chmod +x Starte-Hilfsprogramm-*.command
 ```
 
-### "Dev-Server startet nicht"
-→ Prüfe, ob Port 5173 bereits belegt ist:
+### "Dev server won't start"
+→ Check if port 5173 is already in use:
 ```bash
 # Mac/Linux
 lsof -i :5173
@@ -225,44 +227,44 @@ lsof -i :5173
 netstat -ano | findstr :5173
 ```
 
-### Browser öffnet sich nicht automatisch
-→ Öffne manuell: `http://localhost:8080`
+### Browser doesn't open automatically
+→ Open manually: `http://localhost:8080`
 
 ---
 
-## 🛠️ Erweiterte Nutzung
+## 🛠️ Advanced Usage
 
-### Helper im Hintergrund ausführen
+### Run Helper in Background
 
-Wenn du den Helper im Hintergrund laufen lassen möchtest:
+If you want to keep the helper running in the background:
 
-**Windows:** Minimiere einfach das CMD-Fenster
+**Windows:** Simply minimize the CMD window
 
 **Mac/Linux:**
 ```bash
-# Mit nohup im Hintergrund starten
+# Start in background with nohup
 nohup ./Starte-Hilfsprogramm-Linux.sh &
 ```
 
-### Helper beenden
+### Stop Helper
 
-**Windows:** Schließe das CMD-Fenster oder drücke `Strg+C`
+**Windows:** Close the CMD window or press `Ctrl+C`
 
-**Mac/Linux:** Drücke `Ctrl+C` im Terminal
+**Mac/Linux:** Press `Ctrl+C` in terminal
 
 ---
 
-## 📂 Projekt-Struktur
+## 📂 Project Structure
 
 ```
-website-tinysuperlab/
-├── helper/                    # Helper-Backend
-│   ├── server.js              # HTTP-Server
-│   ├── api.js                 # API-Endpunkte
-│   ├── utils.js               # Hilfsfunktionen
-│   └── index.html             # Web-Interface
+calliope-docs/
+├── helper/                    # Helper backend
+│   ├── server.js              # HTTP server
+│   ├── api.js                 # API endpoints
+│   ├── utils.js               # Utility functions
+│   └── index.html             # Web interface
 ├── src/
-│   └── content/               # Bearbeitbare Inhalte
+│   └── content/               # Editable content
 ├── Starte-Hilfsprogramm-Windows.cmd
 ├── Starte-Hilfsprogramm-Mac.command
 └── Starte-Hilfsprogramm-Linux.sh
@@ -270,38 +272,38 @@ website-tinysuperlab/
 
 ---
 
-## 🌐 Technische Details
+## 🌐 Technical Details
 
-- **Server:** Node.js HTTP-Server auf Port 8080
-- **Dev-Server:** Vite auf Port 5173
-- **Git-Integration:** Branch-Management, Commits, Merge
-- **UI:** Vanilla JavaScript, moderne CSS (shadcn-inspiriert)
+- **Server:** Node.js HTTP server on port 8080
+- **Dev Server:** Vite on port 5173
+- **Git Integration:** Branch management, commits, merge
+- **UI:** Vanilla JavaScript, modern CSS (shadcn-inspired)
 
 ---
 
-## 💡 Tipps
+## 💡 Tips
 
-1. **Branch-Namen:** Verwende beschreibende Namen wie `update-2025-10-24`
-2. **Commit-Nachrichten:** Sei spezifisch: "Update Produktseite MotionKit1"
-3. **Regelmäßig speichern:** Sichere deine Arbeit durch regelmäßige Commits
-4. **Nur veröffentlichen wenn fertig:** Nutze "Nur speichern" für Zwischenstände
+1. **Branch Names:** Use descriptive names like `update-2025-10-24`
+2. **Commit Messages:** Be specific: "Update product page MotionKit1"
+3. **Save Regularly:** Secure your work through regular commits
+4. **Only publish when ready:** Use "Save only" for intermediate stages
 
 ---
 
 ## 🆘 Support
 
-Bei Problemen oder Fragen:
+If you have problems or questions:
 
-1. Prüfe die [Fehlerbehebung](#-fehlerbehebung) oben
-2. Stelle sicher, dass alle Voraussetzungen erfüllt sind
-3. Kontaktiere das Entwickler-Team
-
----
-
-## 📄 Lizenz
-
-Internes Tool für das TinySuperLab-Projekt.
+1. Check the [Troubleshooting](#-troubleshooting) section above
+2. Make sure all prerequisites are met
+3. Contact the developer team
 
 ---
 
-**Viel Erfolg beim Bearbeiten! 🚀**
+## 📄 License
+
+Internal tool for the Calliope documentation project.
+
+---
+
+**Happy editing! 🚀**
