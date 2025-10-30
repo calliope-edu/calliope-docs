@@ -2,11 +2,12 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 const matter = require('gray-matter');
+const getLanguages = require('./getLanguages.cjs');
 
 // Directories
 const CONTENT_DIR = 'src/content';
 const OUTPUT_FILE = 'src/sitemap.js';
-const LANGUAGES = ['de', 'en']; // Add all languages you support
+const LANGUAGES = getLanguages(); // Load languages from store.js
 
 // Helper function to get slug from file path
 function slugFromPath(filePath) {
