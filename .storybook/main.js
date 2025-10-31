@@ -1,49 +1,39 @@
 const workaroundSvelteDocgenPluginConflictWithUnpluginIcons = (config) => {
 	if (!config.plugins) return config;
 
-	const [_internalPlugins, ...userPlugins] = config.plugins;
-	const docgenPlugin = userPlugins.find(
-		(plugin) => plugin.name === 'storybook:svelte-docgen-plugin'
+	// Remove or disable the storybook:svelte-docgen-plugin which is known to
+	// conflict with some project-specific syntax and unplugin-icons. The
+	// plugin currently throws `this.parse is not a function` during transform
+	// for some files; disabling it avoids those internal server errors while
+	// keeping Storybook usable. If component docs are needed later, we can
+	// re-enable or replace the plugin with a safe alternative.
+	config.plugins = config.plugins.filter(
+		(plugin) => plugin && plugin.name !== 'storybook:svelte-docgen-plugin'
 	);
-	if (docgenPlugin) {
-		const origTransform = docgenPlugin.transform;
-		const newTransform = (code, id, options) => {
-			if (id.startsWith('~icons/')) {
-				return;
-			}
-			return origTransform?.call(docgenPlugin, code, id, options);
-		};
-		docgenPlugin.transform = newTransform;
-		docgenPlugin.enforce = 'post';
-	}
 	return config;
 };
 
 /** @type { import('@storybook/sveltekit').StorybookConfig } */
 const config = {
-	stories: [
-		'../src/**/*.mdx',
+    stories: [
 		'../src/**/*.stories.@(js|jsx|mjs|ts|tsx|svelte)'
 	],
-	addons: [
-        '@storybook/addon-links',
-        '@storybook/addon-essentials',
-        '@storybook/addon-interactions',
-        '@storybook/addon-svelte-csf',
-        {
-			name: '@storybook/addon-styling',
-			options: {}
-		},
-		'@storybook/addon-docs',
-    ],
-	framework: {
+
+    addons: ['@storybook/addon-svelte-csf', '@storybook/addon-docs'],
+
+    framework: {
 		name: '@storybook/sveltekit',
 		options: {}
 	},
-	docs: {
-		autodocs: true
-	},
-	viteFinal(config) {
+
+    viteFinal(config) {
+		// Ensure Vite can serve files from the project root and .storybook on all platforms
+		config.server = config.server || {};
+		config.server.fs = config.server.fs || {};
+		const allow = new Set([...(config.server.fs.allow || [])]);
+		['.', './', '..', './.storybook', '.storybook'].forEach((p) => allow.add(p));
+		config.server.fs.allow = Array.from(allow);
+
 		return workaroundSvelteDocgenPluginConflictWithUnpluginIcons(config);
 	}
 };

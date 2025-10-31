@@ -9,11 +9,6 @@
         height="6"
         aria-hidden="true"
       >
-      <svg
-        width="6"
-        height="4.5"
-        aria-hidden="true"
-      >
         <slot name="path" />
       </svg>
     </div>

@@ -1,45 +1,56 @@
 <script>
     import { slugFromPath } from '$lib/scripts/util.js';
-    import { languages } from '$lib/scripts/store.js';
+    import { languagesMeta } from '$lib/scripts/store.js';
+    import { locales, localizeHref, getLocale } from '$lib/paraglide/runtime';
 
-    const modules = import.meta.glob(`../../{content/**/,content}[!!]*.page`)
-    
-	let posts = [];
+    const allModules = import.meta.glob(`../../{content/**/,content}*.page`);
+	const modules = Object.fromEntries(
+	  Object.entries(allModules).filter(([filePath]) => !filePath.includes('!'))
+	);
 
-	for (let [path, resolver] of Object.entries(modules)) {
-		const slug = slugFromPath(path);
-		// const Page = await resolver();
-		// const PageRendered = Page.default.render() // Make sure rehype plugins are parsed
+    let posts = [];
 
-        // Use fs.stat to get file metadata including the last modified date
-        // const stat = fs.stat(path);
-        // const lastModifiedDate = stat.mtime.toISOString();
+    for (let [path, resolver] of Object.entries(modules)) {
+        const slug = slugFromPath(path);
+        const languageMatch = path.match(/\.([a-z]{2})\.page$/);
+        const language = languageMatch ? languageMatch[1] : 'generic';
 
-		let pageMeta = ({
-                path,
-				slug,
-                depth: (slug.split("/").length - 1),
-                // lastModifiedDate,
-				// ...Page.metadata
-			})
-		posts.push(pageMeta);
-	}
+        let pageMeta = {
+            path,
+            slug,
+            language
+        };
+        posts.push(pageMeta);
+    }
 
-    posts.sort((a, b) => a.slug.localeCompare(b.slug));
+    // Group by slug
+    const groupedPosts = Object.values(
+        posts.reduce((acc, post) => {
+            if (!acc[post.slug]) {
+                acc[post.slug] = { slug: post.slug, languages: {}, paths: [] };
+            }
+            acc[post.slug].languages[post.language] = true;
+            acc[post.slug].paths.push(post.path);
+            return acc;
+        }, {})
+    );
 
+    // Sort by slug
+    groupedPosts.sort((a, b) => a.slug.localeCompare(b.slug));
 
-    export const sitemap = posts
-
-
+    export const sitemap = groupedPosts;
 </script>
+
 <main class="ui container">
     <table class="ui celled striped table">
         <thead>
             <tr>
                 <th>Page Slug</th>
-                {#each Object.values(languages) as language}
+                {#each Object.values(languagesMeta) as language}
                     <th>{language.name}</th>
                 {/each}
+                <th>Generic</th>
+                <th>Localized URLs</th>
             </tr>
         </thead>
         <tbody>
@@ -47,16 +58,96 @@
                 <tr>
                     <td>
                         <h2>{page.slug}</h2>
-                        <p>{page.path}</p>
+                        <ul>
+                            {#each page.paths as path}
+                                <li>{path}</li>
+                            {/each}
+                        </ul>
                     </td>
-                    {#each Object.values(languages) as language}
+                    {#each Object.keys(languagesMeta) as key}
                         <td>
-                            <a href="{language.path}{page.slug}">Seite</a>
-                            <a href="{language.path}{page.slug}.json">.json</a>
+                            {#if page.languages[key]}
+                                ✅
+                            {:else}
+                                ❌
+                            {/if}
+                            <br>
+                            <a hreflang="{key}" href="/{key}/{page.slug}/">Seite</a> |
+                            <a hreflang="{key}" href="/{key}/{page.slug}.json">.json</a>
                         </td>
                     {/each}
+                    <td>
+                        {#if page.languages.generic}
+                            ✅
+                        {:else}
+                            ❌
+                        {/if}
+                        <br>
+                        <a href="/{page.slug}/">Seite</a> |
+                        <a href="/{page.slug}.json">.json</a>
+                    </td>
+                    <td>
+                        {#if page.slug}
+                            {#each locales as localeTag}
+                                <a href={localizeHref(`/${page.slug}/`, { locale: localeTag })}>{localizeHref(`/${page.slug}/`, { locale: localeTag })}</a><br />
+                            {/each}
+                        {/if}
+                    </td>
                 </tr>
             {/each}
         </tbody>
     </table>
 </main>
+
+<style>
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: sans-serif;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    th {
+        background-color: #f0f0f0;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 0.5em;
+        font-size: 1.2em;
+    }
+
+    ul {
+        margin-top: 0;
+        padding-left: 20px;
+        list-style-type: disc;
+    }
+
+    li {
+        margin-bottom: 0.25em;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>

@@ -1,48 +1,94 @@
 <script>
-
-  import { _lang, languages } from '$lib/scripts/store.js';
-  import { page } from '$app/stores';
-  import { browser } from '$app/environment';
-
-  $: if(browser) document.documentElement.lang = $_lang.code;
-
-  $: firstSlug = $page.params.slugs?.split('/')[0] ?? '';
-  $: if(languages[firstSlug] != undefined) {
-    $_lang = languages[firstSlug];
-    if(browser) document.documentElement.lang = languages[firstSlug].code;
-  } else {
-    $_lang = languages['de']
-    if(browser) document.documentElement.lang = languages['de'].code;
-  }
-
-  // $: currentPath = `${$page.url.pathname}${$page.url.search}`.replace(/^\/(en|de)\//, '/');
-  $: currentPath = `${$page.url.pathname}`.replace(/^\/((en|de)\/)?/, '');
+  import { locales, localizeHref, getLocale, setLocale } from '$lib/paraglide/runtime';
+  import { languagesMeta } from '$lib/scripts/store.js';
+  
 </script>
 
-<svelte:head>
-    <meta http-equiv="content-language" content="{$_lang.code}">
-    {#each Object.values(languages) as language}
-      <link rel="alternate" hreflang="{language.code}" href="{language.path}{currentPath}">
-  {/each}
-</svelte:head>
-
-<div class="localeSelect" aria-label="{$_lang.code}, Select your language">
-  {#each Object.values(languages) as language}
-  {@const active = $_lang.code == language.code}
-    <a class="ui image label" class:blue={active} href="{language.path}{currentPath}" lang="{language.code}" hreflang="{language.code}">
+<div class="localeSelect" aria-label="{getLocale()}, Select your language">
+  {#each locales as locale}
+    {@const active = getLocale() === locale}
+    <a 
+      class="locale-item" 
+      class:active={active} 
+      on:click={() => {setLocale(locale);}}
+      lang="{locale}" 
+      hreflang={locale}
+      aria-current={active ? "page" : undefined}
+    >
       {#if active}
-        <i class="check icon" />
+        <span class="check-icon">✓</span>
       {/if}
-      {language.name}
-      <div class="detail">{language.code.toUpperCase()}</div>
+      <span class="language-name">{languagesMeta[locale].name}</span>
+      <div class="language-code">{locale.toUpperCase()}</div>
     </a>
-{/each}
+  {/each}
 </div>
 
 <style>
+  .localeSelect {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .locale-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: capitalize;
+    min-width: 80px;
+  }
+
+  .locale-item:hover {
+    background-color: #e3e3e3;
+    transform: translateY(-2px);
+  }
+
+  .locale-item.active {
+    background-color: #383838;
+    color: white;
+  }
+
+  .check-icon {
+    color: white;
+    margin-right: 8px;
+    font-size: 14px;
+  }
+
+  .language-name {
+    font-size: 0.9rem;
+  }
+
+  .language-code {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    margin-left: 6px;
+  }
+
+  @media (max-width: 768px) {
     .localeSelect {
-      /* position: absolute;
-      top: 0;
-      left: 0; */
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
     }
+
+    .locale-item {
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+    
+    .locale-item .language-name {
+      font-size: 1rem;
+    }
+  }
 </style>

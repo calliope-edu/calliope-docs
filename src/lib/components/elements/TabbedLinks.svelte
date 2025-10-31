@@ -1,8 +1,8 @@
 <script  context="module">export {};
 </script>
 
-<script >import { page } from '$app/stores';
-import clsx from 'clsx';
+<script >
+import { page } from '$app/stores';
 export let links = [];
 </script>
 
@@ -13,7 +13,7 @@ export let links = [];
         {@const isActive = $page.url.pathname === link.href}
         <li>
           <h2>
-            <a
+            <!-- <a
               class={clsx(
                 '-mb-px flex border-current pt-3 pb-2.5 leading-6 px-4 hover:border-b-2',
                 isActive
@@ -24,7 +24,8 @@ export let links = [];
               data-sveltekit-prefetch
             >
               {link.title}
-            </a>
+            </a> -->
+            TODO
           </h2>
         </li>
       {/each}

@@ -1,10 +1,11 @@
-<script>
+<script context="module">
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import Gap from './../../lib/components/layout/Gap.svelte';
-	import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
-	import ProseDecorator from './../Decorators/ProseDecorator.svelte';
+		const { Story } = defineMeta({
+		title: 'Basics/Farben'
+	});
 
-
-const brandColors = [
+	const brandColors = [
     {
                 name: 'Calliope',
                 shades: [
@@ -433,13 +434,9 @@ const brandColors = [
         ];
 </script>
 
-<Meta title="Basics/Farben" />
-
 <Story name="Farben">
-	<ProseDecorator>
-
-        <h3>Brandfarben</h3>
-        <div class="flex flex-col space-y-3 sm:flex-row text-xs sm:space-y-0 sm:space-x-4">
+	{#snippet template(args)}			<h3>Brandfarben</h3>
+			<div class="flex flex-col space-y-3 sm:flex-row text-xs sm:space-y-0 sm:space-x-4">
             <div class="w-16 shrink-0">
                 <div class="h-10 flex flex-col justify-center">
                     <div class="text-sm font-semibold text-slate-900"></div>
@@ -530,7 +527,5 @@ const brandColors = [
             </div>
             <Gap h=2 />
 
-        {/each}
-	</ProseDecorator>
+        {/each}	{/snippet}
 </Story>
-

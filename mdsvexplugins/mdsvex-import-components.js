@@ -2,7 +2,7 @@ import { visit } from 'unist-util-visit';
 
 const scripts = `
     import Svg from '$lib/components/elements/Svg.svelte';
-    import GitLink from '$lib/components/elements/GitLink.svelte';  
+    import GitLink from '$lib/components/elements/GitLink.svelte';
     import VersionNav from '$lib/components/BoardVersionSelector.svelte';
     import Versions from '$lib/components/BoardVersionSwitch.svelte';
     import Gap from '$lib/components/layout/Gap.svelte';
@@ -10,7 +10,7 @@ const scripts = `
     import ImageSwiper from '$lib/components/ImageSwiper.svelte';
     // import { SwiperSlide } from 'swiper/svelte';
     import Box from '$lib/components/elements/Box.svelte';
-    //import Video from '$lib/components/elements/Video.svelte';
+    import Video from '$lib/components/elements/Video.svelte';
     //import Youtube from "svelte-youtube-embed";
     import { YouTube, Vimeo, GenericEmbed } from 'sveltekit-embed'
     import Divider from '$lib/components/elements/Divider.svelte'

@@ -1,12 +1,12 @@
 <script>
-    import Blog from '$lib/templates/__layout-blog.svelte';
-    import Default from '$lib/templates/__layout-default.svx';
+    import None from '$lib/templates/__layout-none.svelte';
+    import Default from '$lib/templates/__layout-default.svelte';
     import DocsContents from '$lib/templates/__layout-docs-contents.svelte';
     import Docs from '$lib/templates/__layout-docs.svelte';
     import PageHead from '$lib/components/PageHead.svelte';
 
     let availTemplatesArray = {
-      blog: Blog,
+      none: None,
       default: Default,
       docs_contents: DocsContents,
       docs: Docs,

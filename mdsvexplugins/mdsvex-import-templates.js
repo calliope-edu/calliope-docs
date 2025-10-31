@@ -2,7 +2,7 @@ import { visit } from 'unist-util-visit';
 
 const scripts = `
 import Blog from '$lib/templates/__layout-blog.svelte';
-import Default from '$lib/templates/__layout-default.svx';
+import Default from '$lib/templates/__layout-default.svelte';
 import DocsContents from '$lib/templates/__layout-docs-contents.svelte';
 import Docs from '$lib/templates/__layout-docs.svelte';
 
@@ -21,7 +21,7 @@ export default function autoImportComponents() {
       visit(tree, 'html', (node) => {        
       if (node.value.search(TEMPLATES_SLUG) != -1) {
           node.value = node.value.replace(TEMPLATES_SLUG, scripts)
-          console.log(node.value);
+          // console.log(node.value);
       }
     });
   };

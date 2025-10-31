@@ -1,6 +1,6 @@
 <script>
     import MainMenu from '$lib/components/menues/MainMenu.svelte';
-    // import LocaleSwitch from '$lib/components/LocaleSwitch.svelte';
+    import LocaleSwitch from '$lib/components/LocaleSwitch.svelte';
     // import BoardVersionSelector from '$lib/components/BoardVersionSelector.svelte';
     // import SearchBar from '$lib/components/SearchBar.svelte';
 
@@ -19,7 +19,7 @@
     <div class="ui wide container secondary menu">
 
         <div class="item">
-            <a data-sveltekit-prefetch href="/tech">
+            <a data-sveltekit-prefetch href="/tech/">
                 <img src="/Logo_Calliope_lang.svg" style="height: 2.5rem;" alt="Calliope Logo" />
             </a>
         </div>
@@ -32,7 +32,7 @@
                 <BoardVersionSelector dropdown/>
             </div>
         </div> -->
-        <div class="ui secondary fluid right menu" style="align-items: center;">
+        <div class="fluid right menu" style="align-items: center;">
             <MainMenu />
         </div>
 
