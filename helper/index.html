@@ -615,6 +615,8 @@
     let selectedBranch = '';
     let allBranches = [];
     let changedFiles = [];
+    let devServerPort = 5173; // Default port, will be updated when server starts
+    let storybookPort = 6006; // Default port, will be updated when server starts
 
     // Helper Functions
     function showPage(page) {
@@ -1096,7 +1098,11 @@
         
         const status = await apiCall('/api/dev-server-status');
         if (status.ready) {
-          addLog(3, 'Dev Server ist bereit!', 'success');
+          // Update port if it was detected
+          if (status.port) {
+            devServerPort = status.port;
+          }
+          addLog(3, `Dev Server ist bereit auf Port ${devServerPort}!`, 'success');
           showDevServerReady();
           return;
         }
@@ -1113,9 +1119,9 @@
       statusBox.innerHTML = `
         <strong>✓ Dev Server läuft</strong>
         <div style="margin-top: 8px;">
-          <a href="http://localhost:5173" target="_blank" 
+          <a href="http://localhost:${devServerPort}" target="_blank" 
              style="color: #14532d; text-decoration: underline; font-weight: 500;">
-            → Öffne http://localhost:5173 (in neuem Tab)
+            → Öffne http://localhost:${devServerPort} (in neuem Tab)
           </a>
         </div>
         <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #86efac;">
@@ -1151,7 +1157,11 @@
         
         const status = await apiCall('/api/storybook-status');
         if (status.ready) {
-          addLog(3, 'Storybook ist bereit!', 'success');
+          // Update port if it was detected
+          if (status.port) {
+            storybookPort = status.port;
+          }
+          addLog(3, `Storybook ist bereit auf Port ${storybookPort}!`, 'success');
           showStorybookReady();
           return;
         }
@@ -1169,9 +1179,9 @@
       statusBox.innerHTML = `
         <strong>✓ Storybook läuft</strong>
         <div style="margin-top: 8px;">
-          <a href="http://localhost:6006" target="_blank" 
+          <a href="http://localhost:${storybookPort}" target="_blank" 
              style="color: #14532d; text-decoration: underline; font-weight: 500;">
-            → Öffne http://localhost:6006 (in neuem Tab)
+            → Öffne http://localhost:${storybookPort} (in neuem Tab)
           </a>
         </div>
         <div style="margin-top: 12px; font-size: 13px; color: #166534;">
@@ -1246,11 +1256,11 @@
     }
 
     function openDevUrl() {
-      window.open('http://localhost:5173', '_blank');
+      window.open(`http://localhost:${devServerPort}`, '_blank');
     }
 
     function openStorybookUrl() {
-      window.open('http://localhost:6006', '_blank');
+      window.open(`http://localhost:${storybookPort}`, '_blank');
     }
 
     function openContentFolder() {
@@ -1285,7 +1295,14 @@
       
       if (res.success) {
         addLog(3, 'Änderungen gespeichert!', 'success');
-        document.getElementById('finish-message').textContent = 'Änderungen wurden gespeichert (nicht veröffentlicht).';
+        
+        // Show preview URL if available
+        let finishMessage = 'Änderungen wurden gespeichert (nicht veröffentlicht).';
+        if (res.previewUrl) {
+          finishMessage += `<br><br><strong>Test-URL:</strong><br>Die Änderungen werden unter <a href="${res.previewUrl}" target="_blank" style="color: #0ea5e9; text-decoration: underline;">${res.previewUrl}</a> bereitgestellt.<br><span style="font-size: 13px; color: #64748b;">Es kann ein paar Minuten dauern, bis die Änderungen verfügbar sind.</span>`;
+        }
+        
+        document.getElementById('finish-message').innerHTML = finishMessage;
         setTimeout(() => showPage(4), 1000);
       } else {
         addLog(3, `Fehler: ${res.message}`, 'error');

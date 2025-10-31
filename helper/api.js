@@ -196,6 +196,9 @@ export async function handleApiRequest(req, res, url) {
     }
 
     devServerStarting = true;
+    // Reset port to default when starting (will be updated when detected)
+    devServerPort = 5173;
+    
     try {
       // Spawn dev server and capture output
       devServerProcess = spawn('npm', ['run', 'dev'], {
@@ -205,20 +208,41 @@ export async function handleApiRequest(req, res, url) {
       
       let serverReady = false;
       
-      // Listen for "localhost:" in output
+      // Listen for "localhost:" in output and extract port
       devServerProcess.stdout.on('data', (data) => {
         const output = data.toString();
-        if (output.includes('localhost:')) {
+        
+        // Strip ANSI color codes
+        const cleanOutput = output.replace(/\x1b\[[0-9;]*m/g, '');
+        
+        // Match patterns like "localhost:5173" or "http://localhost:5173"
+        // Vite outputs: "➜  Local:   http://localhost:5173/"
+        const portMatch = cleanOutput.match(/localhost:(\d+)/);
+        if (portMatch) {
+          const newPort = parseInt(portMatch[1], 10);
+          if (devServerPort !== newPort) {
+            devServerPort = newPort;
+            log(`Dev server detected on port ${devServerPort}!`, 'success');
+          }
           serverReady = true;
-          log('Dev server ready!', 'success');
         }
       });
       
       devServerProcess.stderr.on('data', (data) => {
         const output = data.toString();
-        if (output.includes('localhost:')) {
+        
+        // Strip ANSI color codes
+        const cleanOutput = output.replace(/\x1b\[[0-9;]*m/g, '');
+        
+        const portMatch = cleanOutput.match(/localhost:(\d+)/);
+        if (portMatch) {
+          const newPort = parseInt(portMatch[1], 10);
+          if (devServerPort !== newPort) {
+            devServerPort = newPort;
+            log(`Dev server detected on port ${devServerPort}!`, 'success');
+          }
           serverReady = true;
-          log('Dev server ready!', 'success');
+          log(`Dev server ready on port ${devServerPort}!`, 'success');
         }
       });
       
@@ -249,7 +273,7 @@ export async function handleApiRequest(req, res, url) {
   if (url === '/api/dev-server-status' && req.method === 'GET') {
     const ready = isProcessAlive(devServerProcess) && !devServerStarting;
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ ready, starting: devServerStarting }));
+    res.end(JSON.stringify({ ready, starting: devServerStarting, port: devServerPort }));
     return;
   }
 
@@ -280,20 +304,39 @@ export async function handleApiRequest(req, res, url) {
       
       let serverReady = false;
       
-      // Listen for "localhost:6006" in output
+      // Listen for "localhost:" in output and extract port
       storybookProcess.stdout.on('data', (data) => {
         const output = data.toString();
-        if (output.includes('localhost:6006') || output.includes('Local:')) {
+        
+        // Strip ANSI color codes
+        const cleanOutput = output.replace(/\x1b\[[0-9;]*m/g, '');
+        
+        // Match patterns like "localhost:6006" or "http://localhost:6006"
+        const portMatch = cleanOutput.match(/localhost:(\d+)/);
+        if (portMatch) {
+          const newPort = parseInt(portMatch[1], 10);
+          if (storybookPort !== newPort) {
+            storybookPort = newPort;
+            log(`Storybook detected on port ${storybookPort}!`, 'success');
+          }
           serverReady = true;
-          log('Storybook ready!', 'success');
         }
       });
       
       storybookProcess.stderr.on('data', (data) => {
         const output = data.toString();
-        if (output.includes('localhost:6006') || output.includes('Local:')) {
+        
+        // Strip ANSI color codes
+        const cleanOutput = output.replace(/\x1b\[[0-9;]*m/g, '');
+        
+        const portMatch = cleanOutput.match(/localhost:(\d+)/);
+        if (portMatch) {
+          const newPort = parseInt(portMatch[1], 10);
+          if (storybookPort !== newPort) {
+            storybookPort = newPort;
+            log(`Storybook detected on port ${storybookPort}!`, 'success');
+          }
           serverReady = true;
-          log('Storybook ready!', 'success');
         }
       });
       
@@ -324,7 +367,7 @@ export async function handleApiRequest(req, res, url) {
   if (url === '/api/storybook-status' && req.method === 'GET') {
     const ready = isProcessAlive(storybookProcess) && !storybookStarting;
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ ready, starting: storybookStarting }));
+    res.end(JSON.stringify({ ready, starting: storybookStarting, port: storybookPort }));
     return;
   }
 
@@ -394,8 +437,13 @@ export async function handleApiRequest(req, res, url) {
         const r2 = executeCommand(`git commit -m "${message || 'Update'}"`, 'Commit');
         const r3 = executeCommand(`git push origin ${currentBranch}`, 'Push');
         const success = r1.success && r2.success && r3.success;
+        
+        // Generate preview URL based on branch name
+        const DEV_BASE_URL = process.env.DEV_BASE_URL || 'website-tinysuperlab.pages.dev';
+        const previewUrl = `https://${currentBranch}.${DEV_BASE_URL}`;
+        
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success }));
+        res.end(JSON.stringify({ success, previewUrl }));
       } catch (e) {
         res.writeHead(400, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ success: false, message: e.message }));

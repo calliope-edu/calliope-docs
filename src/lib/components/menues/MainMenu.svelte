@@ -4,6 +4,7 @@
     import LocaleSwitch from '$lib/components/LocaleSwitch.svelte';
     import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
     import { page } from '$app/state';
+    import BoardVersionSelector from '$lib/components/BoardVersionSelector.svelte';
     
     let active = page?.params?.slugs ?? '';
     let menuOpen = false;
@@ -74,30 +75,36 @@
             </svg>
         </button>
     </div>
-    
-    <div class="mobile-search">
-        <SearchBar inline />
-    </div>
 
-    <ul class="mobile-menu-items">
-        {#each items as {slug, name}}
-        <li> 
-            <a
-                sveltekit:prefetch 
-                href="{slug}"
-                on:click={closeMenu}
-                class:active={isActive(slug, page?.params?.slugs) || active === slug}
-            >
-                {name}
-            </a>
-        </li>
-        {/each}
-    </ul>
-    
-    <!-- <div class="mobile-locale-switch">
-        <h3 class="locale-heading">Language</h3>
-        <LocaleSwitch onSelect={closeMenu} />
-    </div> -->
+    <div class="mobile-menu-content">
+        <div class="mobile-board-selector">
+            <BoardVersionSelector dropdown />
+        </div>
+        
+        <div class="mobile-search">
+            <SearchBar inline />
+        </div>
+
+        <ul class="mobile-menu-items">
+            {#each items as {slug, name}}
+            <li> 
+                <a
+                    sveltekit:prefetch 
+                    href="{slug}"
+                    on:click={closeMenu}
+                    class:active={isActive(slug, page?.params?.slugs) || active === slug}
+                >
+                    {name}
+                </a>
+            </li>
+            {/each}
+        </ul>
+        
+        <!-- <div class="mobile-locale-switch">
+            <h3 class="locale-heading">Language</h3>
+            <LocaleSwitch onSelect={closeMenu} />
+        </div> -->
+    </div>
 </nav>
 
 <!-- Desktop menu -->
@@ -117,6 +124,10 @@
     </ul>
     <div class="search-wrapper">
         <SearchBar />
+    </div>
+
+    <div class="item">
+        <BoardVersionSelector dropdown />
     </div>
 </nav>
 
@@ -223,8 +234,11 @@
     .mobile-menu-header {
         display: flex;
         justify-content: flex-end;
-        padding: 1rem;
+        align-items: center;
+        padding: 1rem 1rem;
         border-bottom: 1px solid #eaeaea;
+        background-color: #fafafa;
+        min-height: 60px;
     }
 
     /* Close button */
@@ -239,26 +253,67 @@
         padding: 0.5rem;
         border-radius: 50%;
         transition: background-color 0.3s ease;
+        min-width: 44px;
+        min-height: 44px;
         
         &:hover {
-            background-color: rgba(0, 0, 0, 0.05);
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        &:active {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+    }
+    
+    /* Mobile menu content wrapper */
+    .mobile-menu-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    /* Mobile board selector */
+    .mobile-board-selector {
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid #eaeaea;
+        background-color: #fafafa;
+        
+        :global(.ui.menu) {
+            margin: 0;
+        }
+        
+        :global(.ui.dropdown) {
+            font-size: 1rem;
         }
     }
     
     /* Mobile search */
     .mobile-search {
-        padding: 1rem;
+        padding: 1.25rem 1.5rem;
         border-bottom: 1px solid #eaeaea;
         
-        :global(.search-container) {
+        :global(.ui.input) {
             width: 100%;
+            
+            :global(input) {
+                width: 100%;
+                font-size: 1rem;
+                padding: 0.75rem 1rem;
+                border-radius: 8px;
+                border: 1px solid #ddd;
+                
+                &:focus {
+                    border-color: var(--primary, #0066cc);
+                    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+                }
+            }
         }
     }
     
     /* Mobile menu items */
     .mobile-menu-items {
         list-style-type: none;
-        padding: 1rem 0;
+        padding: 0.5rem 0;
         margin: 0;
         
         li {
@@ -266,21 +321,30 @@
             width: 100%;
             
             a {
-                display: block;
-                padding: 0.75rem 1.5rem;
+                display: flex;
+                align-items: center;
+                padding: 1rem 1.5rem;
                 color: var(--color-grau, #333);
                 text-decoration: none;
-                font-size: 1.1rem;
-                transition: background-color 0.3s ease;
+                font-size: 1.05rem;
+                transition: all 0.2s ease;
+                border-left: 3px solid transparent;
+                min-height: 48px;
                 
-                &:hover, &.active {
-                    background-color: rgba(0, 0, 0, 0.05);
-                    border-left: 3px solid var(--primary, #0066cc);
-                    padding-left: calc(1.5rem - 3px);
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.04);
+                    border-left-color: rgba(0, 102, 204, 0.3);
+                }
+                
+                &:active {
+                    background-color: rgba(0, 0, 0, 0.08);
                 }
                 
                 &.active {
+                    background-color: rgba(0, 102, 204, 0.08);
+                    border-left-color: var(--primary, #0066cc);
                     font-weight: 600;
+                    color: var(--primary, #0066cc);
                 }
             }
         }
@@ -288,14 +352,17 @@
     
     /* Mobile locale switch */
     .mobile-locale-switch {
-        padding: 1rem 1.5rem;
+        padding: 1.25rem 1.5rem;
         border-top: 1px solid #eaeaea;
+        margin-top: auto;
         
         .locale-heading {
-            font-size: 1rem;
-            margin: 0 0 0.75rem 0;
+            font-size: 0.9rem;
+            margin: 0 0 1rem 0;
             font-weight: 600;
-            color: var(--color-grau, #333);
+            color: var(--color-grau, #666);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
     }
     

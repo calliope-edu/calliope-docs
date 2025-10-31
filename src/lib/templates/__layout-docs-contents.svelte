@@ -59,14 +59,14 @@
                   <div class="overlay"></div>
                 </div>
               {:else}
-                <div 
+                <!-- <div 
                   class="card-placeholder pattern-{getPatternType(page.slug)}" 
                   style="--card-color: {stringToColor(page.slug)};"
                 >
                   <div class="initial-container">
                     <span class="card-initial">{getInitial(page.title, page.slug)}</span>
                   </div>
-                </div>
+                </div> -->
               {/if}
               
               <div class="card-content">

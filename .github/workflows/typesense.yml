@@ -12,6 +12,8 @@ on:
 # List of jobs
 jobs:
     typesense-scraper:
+      # Change to self-hosted if your Typesense server is on a private network
+      # runs-on: self-hosted
       runs-on: ubuntu-latest
       steps:
         - name: Await CF Pages
@@ -36,6 +38,6 @@ jobs:
           with:
             api-key: ${{ secrets.TYPESENSE_API_KEY }}
             host: ${{ secrets.TYPESENSE_URL }}
-            port: 8108
-            protocol: http
+            port: 443
+            protocol: https
             config: docsearch.config.json
