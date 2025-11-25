@@ -16,9 +16,9 @@
 
 <div class="header" class:isScrolled>
 
-    <div class="ui wide container secondary menu">
+    <div class="header-inner container">
 
-        <div class="item">
+        <div class="brand item">
             <a data-sveltekit-prefetch href="/tech/">
                 <img src="/Logo_Calliope_lang.svg" style="height: 2.5rem;" alt="Calliope Logo" />
             </a>
@@ -32,7 +32,7 @@
                 <BoardVersionSelector dropdown/>
             </div>
         </div> -->
-        <div class="fluid right menu" style="align-items: center;">
+        <div class="header-right">
             <MainMenu />
         </div>
 
@@ -57,5 +57,27 @@
             padding-top: .25rem;
             margin-bottom: 3rem;
         }
+    }
+
+    .header-inner {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-right {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
     }
 </style>

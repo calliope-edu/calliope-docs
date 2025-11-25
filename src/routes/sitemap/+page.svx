@@ -41,8 +41,8 @@
     export const sitemap = groupedPosts;
 </script>
 
-<main class="ui container">
-    <table class="ui celled striped table">
+<main class="container sitemap-page">
+    <table class="sitemap-table">
         <thead>
             <tr>
                 <th>Page Slug</th>
@@ -106,24 +106,24 @@
         padding: 20px;
         font-family: sans-serif;
     }
-    table {
+    .sitemap-table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 20px;
     }
 
-    th, td {
+    .sitemap-table th, .sitemap-table td {
         border: 1px solid #ccc;
         padding: 10px;
         text-align: left;
         vertical-align: top;
     }
 
-    th {
+    .sitemap-table thead th {
         background-color: #f0f0f0;
     }
 
-    tr:nth-child(even) {
+    .sitemap-table tbody tr:nth-child(even) {
         background-color: #f9f9f9;
     }
 

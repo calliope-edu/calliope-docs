@@ -1,5 +1,6 @@
 @use 'docsearch';
-@use 'semantic';
+// @use 'semantic';
+@use '_fomantic-replacements';
 @use 'colors';
 
 
@@ -10,6 +11,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 img {
@@ -38,4 +41,99 @@ figure {
 
 table thead  {
      background-color: #f9fafb;
+}
+
+/* =========================
+   Documentation typography
+   Improve readability for long text / docs pages (applies to .docs-center and .prose)
+   ========================= */
+.docs-center main,
+.prose {
+    color: var(--headerColor, #0f1724);
+    font-size: 1rem; /* 16px base for readable docs */
+    line-height: 1.75; /* spacious leading for text heavy pages */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    hyphens: auto;
+}
+
+.docs-center main {
+    /* limit measure for comfortable reading on wide screens */
+    max-width: 85ch;
+    margin: auto;
+}
+
+.docs-center main p,
+.prose p {
+    margin: 0 0 1.15rem 0;
+    font-size: 1rem;
+    color: #334155; /* neutral reading color */
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+.docs-center main :where(h1,h2,h3,h4,h5,h6),
+.prose :where(h1,h2,h3,h4,h5,h6) {
+    margin-top: 1.6rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.25;
+    font-weight: 700;
+    color: var(--headerColor, #0b1220);
+    letter-spacing: -0.02em;
+}
+
+.docs-center main h1, .prose h1 { font-size: 2rem; }
+.docs-center main h2, .prose h2 { font-size: 1.5rem; }
+.docs-center main h3, .prose h3 { font-size: 1.25rem; }
+.docs-center main h4, .prose h4 { font-size: 1.05rem; }
+
+.docs-center main ul, .prose ul,
+.docs-center main ol, .prose ol {
+    margin: 0.6rem 0 1rem 1.25rem;
+    padding: 0;
+}
+
+.docs-center main blockquote,
+.prose blockquote {
+    margin: 1rem 0;
+    padding: 0.9rem 1rem;
+    border-left: 4px solid var(--primary, #3b82f6);
+    background: rgba(59,130,246,0.03);
+    color: #0b1220;
+    border-radius: 6px;
+    font-style: italic;
+}
+
+/* inline code styling for readability */
+.docs-center main code,
+.prose code {
+    font-family: 'Fira Code', Consolas, 'Courier New', monospace;
+    background: #f3f4f6;
+    color: #0b1220;
+    padding: 0.12rem 0.28rem;
+    border-radius: 4px;
+    font-size: 0.95em;
+    border: 1px solid rgba(15, 23, 36, 0.04);
+}
+
+.docs-center main pre,
+.prose pre {
+    font-family: 'Fira Code', Consolas, Courier, monospace;
+    font-size: 0.92rem;
+    border-radius: 8px;
+    overflow: auto;
+}
+
+.docs-center main img,
+.prose img {
+    border-radius: 6px;
+    box-shadow: 0 4px 18px rgba(15, 23, 36, 0.06);
+}
+
+.docs-center main small,
+.prose small { color: #64748b; font-size: 0.92em; }
+
+@media (max-width: 1024px) {
+    .docs-center main { max-width: 100%; }
 }
