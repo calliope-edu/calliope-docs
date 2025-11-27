@@ -13,5 +13,5 @@
 | 2 Tasten | -  | A und B |
 | 2 Grove-Ports | 1125S-SMT-XP | I2C, UART |
 | JST Batterieanschluss | S2B-PH-SM4-TB(LF)(SN) | Stromversorgung, 3,3 V |
-| USB Micro C Anschluss | - | Stromversorgung und Programmierung | 
+| USB C Anschluss | - | Stromversorgung und Programmierung | 
 
