@@ -72,30 +72,7 @@
         overflow: hidden;
         background: var(--color-ghost, #f8f9fb);
         min-height: 300px;
-        height: 460px;
+        height: 720px;
         display: block;
-    }
-
-    /* Reduce the large margins in the in-component .pinout so it fits nicely inside the story preview.
-       Use :global() to target the class defined inside the component. */
-    .story-pinout-frame :global(.pinout) {
-        margin: 1.25rem 0 !important; /* tighten the spacing for story preview */
-        padding: 1rem !important;
-        min-width: 0 !important;
-    }
-
-    /* Ensure dots / labels inside scale down inside small frames */
-    .story-pinout-frame :global(.pinout ul) {
-        grid-template-columns: repeat(10, 1fr) !important;
-    }
-
-    /* Let the story containers shrink on very narrow viewports */
-    @media (max-width: 480px) {
-        .preview-grid {
-            gap: .5rem;
-        }
-        .frame {
-            height: 420px;
-        }
     }
 </style>
