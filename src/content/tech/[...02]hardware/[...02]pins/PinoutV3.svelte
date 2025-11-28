@@ -164,7 +164,6 @@
 	}
 	.pinout {
 		background-color: #1E1E21;
-		width: 100%;
 		min-width: fit-content;
 		position: relative;
 		margin: 10em 0em;
@@ -176,11 +175,12 @@
         display: grid;
         grid-template-columns: repeat(15, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 10px;
+        /* grid-column-gap: 10px; */
         grid-row-gap: 10px;
         margin: 0;
         padding: 0;
 		list-style: none;
+		justify-items: center;
 	}
 
 	.pinout ul li .tag {
@@ -214,6 +214,7 @@
 		list-style: none;
 		margin: 0px;
 		position: relative;
+		display: flex;
 	}
 
 	.pinout li .dot {
