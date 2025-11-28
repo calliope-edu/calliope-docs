@@ -64,7 +64,14 @@
 
 <!-- Mobile menu panel -->
 {#if menuOpen}
-<div class="mobile-menu-backdrop" on:click={closeMenu}></div>
+<div
+    class="mobile-menu-backdrop"
+    role="button"
+    tabindex="0"
+    on:click={closeMenu}
+    on:keydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); closeMenu(); } }}
+    aria-label="Close menu"
+></div>
 {/if}
 <nav class="mobile-menu" class:open={menuOpen} bind:this={mobileMenuElement}>
     <div class="mobile-menu-header">
@@ -89,8 +96,7 @@
             {#each items as {slug, name}}
             <li> 
                 <a
-                    sveltekit:prefetch 
-                    href="{slug}"
+                    href={slug}
                     on:click={closeMenu}
                     class:active={isActive(slug, page?.params?.slugs) || active === slug}
                 >
@@ -112,11 +118,11 @@
     <ul>
         {#each items as {slug, name}}
             <li>
-                <a
-                sveltekit:prefetch href="{slug}"
-                on:click={()=>{active=slug}}
-                class:active={isActive(slug, page?.params?.slugs)}
-                >
+                                <a
+                                    href={slug}
+                                    on:click={()=>{active=slug}}
+                                    class:active={isActive(slug, page?.params?.slugs)}
+                                >
                     {name}
                 </a>
             </li>
@@ -278,11 +284,10 @@
         border-bottom: 1px solid #eaeaea;
         background-color: #fafafa;
         
-        :global(.ui.menu) {
+        /* BoardVersionSelector / Dropdown content - global because may be portalled */
+        :global(.bv-menu),
+        :global(.dropdown-content) {
             margin: 0;
-        }
-        
-        :global(.ui.dropdown) {
             font-size: 1rem;
         }
     }
@@ -292,22 +297,7 @@
         padding: 1.25rem 1.5rem;
         border-bottom: 1px solid #eaeaea;
         
-        :global(.ui.input) {
-            width: 100%;
-            
-            :global(input) {
-                width: 100%;
-                font-size: 1rem;
-                padding: 0.75rem 1rem;
-                border-radius: 8px;
-                border: 1px solid #ddd;
-                
-                &:focus {
-                    border-color: var(--primary, #0066cc);
-                    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
-                }
-            }
-        }
+        /* SearchBar styling lives inside SearchBar.svelte */
     }
     
     /* Mobile menu items */
@@ -351,20 +341,7 @@
     }
     
     /* Mobile locale switch */
-    .mobile-locale-switch {
-        padding: 1.25rem 1.5rem;
-        border-top: 1px solid #eaeaea;
-        margin-top: auto;
-        
-        .locale-heading {
-            font-size: 0.9rem;
-            margin: 0 0 1rem 0;
-            font-weight: 600;
-            color: var(--color-grau, #666);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-    }
+    /* Mobile locale switch (currently not used) */
     
     /* Desktop menu */
     .desktop-menu {

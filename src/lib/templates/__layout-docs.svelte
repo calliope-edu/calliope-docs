@@ -95,7 +95,7 @@
                     </div>
 
                     <a href="https://github.com/calliope-edu/calliope-docs/edit/PRODUCTION{(meta.filepath.startsWith('/')) ? '' : '/'}{meta.filepath.split('/').map(encodeURIComponent).join('/')}" target="_blank" class="edit-link">
-                        <i class="edit icon"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="M6 22q-.825 0-1.412-.587T4 20V4q0-.825.588-1.412T6 2h8l6 6v3q-.575.125-1.075.4t-.925.7l-6 5.975V22zm8 0v-3.075l5.525-5.5q.225-.225.5-.325t.55-.1q.3 0 .575.113t.5.337l.925.925q.2.225.313.5t.112.55t-.1.563t-.325.512l-5.5 5.5zm6.575-5.6l.925-.975l-.925-.925l-.95.95zM13 9h5l-5-5l5 5l-5-5z"/></svg>
                         Auf Github Bearbeiten
                     </a>
                     
@@ -252,7 +252,7 @@
             border: 1px solid #eaecef;
             text-decoration: none;
             color: inherit;
-            width: 100%;
+            // width: 100%;
             gap: 1rem;
 
             &:hover {
@@ -376,5 +376,29 @@
 
     div :global(h1) {
         margin-bottom: 2em;
+    }
+
+    /* nicer, compact style for the edit link + smaller icon */
+    .edit-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.25rem 0.6rem;
+        border-radius: 6px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        color: #374151; /* neutral text */
+        background-color: rgba(0,0,0,0.02);
+        font-weight: 500;
+        transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+        margin-top: 0.5rem;
+    }
+
+    .edit-link svg { width: 18px; height: 18px; display: block; flex-shrink: 0; }
+
+    .edit-link:hover {
+        background-color: rgba(59, 130, 246, 0.06);
+        color: var(--primary, #3b82f6);
+        border-color: rgba(59, 130, 246, 0.12);
     }
 </style>

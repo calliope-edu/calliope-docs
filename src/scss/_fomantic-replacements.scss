@@ -1,0 +1,178 @@
+// Minimal replacement styles for commonly used Fomantic/Semantic UI classes
+// This file provides lightweight fallbacks so the project layout still works
+// after removing Fomantic UI. It's intentionally small and opinionated.
+
+/* Container */
+.ui.container,
+.container.ui {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.ui.wide.container {
+  max-width: 1400px;
+}
+
+/* Menu and items */
+.ui.menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+}
+.ui.menu .item,
+.item.ui {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+}
+
+.ui.menu.secondary {
+  background: transparent;
+}
+
+.ui.menu.right,
+.right.menu {
+  margin-left: auto;
+}
+
+.fluid.menu,
+.ui.fluid.menu {
+  width: 100%;
+}
+
+.ui.basic.buttons {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+
+.ui.button,
+button.ui,
+.mini.ui.compact.button,
+.ui.compact.button {
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #fff;
+  color: inherit;
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.35rem;
+  cursor: pointer;
+}
+.ui.button:focus,
+button.ui:focus {
+  outline: 2px solid rgba(59,130,246,0.25);
+}
+
+.ui.button.active,
+.ui.button[class*="active"] {
+  background: rgba(59,130,246,0.1);
+  border-color: rgba(59,130,246,0.3);
+}
+
+/* Labels */
+.ui.label,
+.image.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.35rem;
+  background: rgba(0,0,0,0.03);
+}
+.ui.blue.label,
+.ui.blue.image.label,
+.ui.blue.label a {
+  background: rgba(59,130,246,0.12);
+  color: #0b60d6;
+}
+.ui.label .detail,
+.detail {
+  font-size: 0.85em;
+  opacity: 0.8;
+  margin-left: 0.4rem;
+}
+
+/* Inputs with icon */
+.ui.icon.input {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.ui.icon.input input {
+  padding-left: 0.75rem;
+  padding-right: 2rem;
+}
+.ui.icon.input .icon,
+.search.icon {
+  position: absolute;
+  right: 0.5rem;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Dropdowns & menus (basic) */
+.ui.menu .menu,
+.menu {
+  display: block;
+}
+.ui.dropdown .menu,
+.ui.simple.dropdown .menu {
+  position: absolute;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 0.25rem;
+  min-width: 160px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  padding: 0.25rem 0;
+  z-index: 40;
+}
+.ui.dropdown .item,
+.ui.menu .item,
+.item {
+  padding: 0.5rem 0.75rem;
+}
+
+/* Tables: celled, striped, basic styling used in sitemap */
+.ui.table,
+.ui.celled.table,
+.table.ui {
+  width: 100%;
+  border-collapse: collapse;
+}
+.ui.table th,
+.ui.table td,
+.ui.celled.table th,
+.ui.celled.table td {
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem 0.75rem;
+  vertical-align: top;
+}
+.ui.table thead th {
+  background: #f8fafc;
+}
+.ui.striped.table tbody tr:nth-child(even) {
+  background: #fbfbfb;
+}
+
+/* Icons (fallback) */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -.125em;
+}
+
+/* small helpers used in PageHeader.svelte */
+.logo img { max-height: 3.2rem; }
+.header { background: white; }
+
+/* ensure dropdown icons align */
+.dropdown.icon { margin-left: 0.5rem; }
+
+/* Fine tune for responsive container behavior */
+@media (max-width: 640px) {
+  .ui.container { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .ui.icon.input input { width: 100%; }
+}

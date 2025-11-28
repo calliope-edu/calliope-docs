@@ -19,7 +19,7 @@
 
 </script>
 
-<a href={href} bind:this={a} {target} download={downloadName} {rel} hreflang={(isDownload) ? 'en/..' : undefined}>
+<a class={`md-link ${isInternal ? 'internal' : 'external'} ${isDownload ? 'download' : ''} ${isMailto ? 'mailto' : ''}`} href={href} bind:this={a} {target} download={downloadName} {rel} hreflang={(isDownload) ? 'en/..' : undefined}>
     <span class="a-container">
         
         <slot />
@@ -39,26 +39,56 @@
                 </span>
             {/if}
         {/if}
-            </span>
+    </span>
 </a>
 
-
 <style lang="scss">
-    a {
-        text-decoration: none; 
+    /* Modern inline link styles for markdown content */
+    a.md-link {
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        color: var(--primary, #3b82f6);
+        font-weight: 500;
+        padding: 0 0.08rem;
+        border-radius: 4px;
+        transition: background-color 140ms ease, transform 80ms ease, color 140ms ease;
 
-        &:hover {
-        text-decoration: underline; 
-        opacity: 0.7; 
+        &:hover, &:focus {
+            background-color: rgba(59, 130, 246, 0.06);
+            transform: translateY(-0.5px);
+            color: var(--primary, #3b82f6);
+            text-decoration: none;
         }
 
-        .a-container {
-            display: inline-flex; 
-            align-items: center;
-            .icon {
-                padding-left: 0.25rem; 
-            }
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(59,130,246,0.06);
         }
+
+        /* internal links look slightly more neutral than external ones */
+        &.internal { color: var(--headerColor, #111827); font-weight: 500; }
+        &.external { color: var(--primary, #3b82f6); }
+    }
+
+    a.md-link .a-container {
+        display: inline-flex; 
+        align-items: center;
+    }
+
+    /* small icons and spacing for nicer visual balance */
+    a.md-link .icon {
+        padding-left: 0.25rem;
+        display: inline-flex;
+        align-items: center;
+        color: rgba(0,0,0,0.6);
+    }
+
+    a.md-link .icon :global(svg) {
+        width: 14px;
+        height: 14px;
+        display: block;
     }
 </style>
 

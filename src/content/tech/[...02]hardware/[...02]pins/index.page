@@ -114,9 +114,9 @@ Die Ausgangspannung der Pins ist so hoch wie die VCC-Spannung.
 
     <Admonition type='note'>
         
-        Detailliertere Infos zur Stromversorgung des Calliope mini über die Pins findest du unter <a href="../stromversorgung">Stromversorgung</a>
+        Detailliertere Infos zur Stromversorgung des Calliope mini über die Pins findest du unter <a href="../stromversorgung/">Stromversorgung</a>
 
-        </Admonition>
+    </Admonition>
 
 ----
 

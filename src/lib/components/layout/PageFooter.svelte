@@ -1,5 +1,5 @@
 <footer>
-    <div class="ui container">
+    <div class="container">
         <span class="copyright">
             © {new Date().getFullYear()} <a href="https://calliope.cc">Calliope gGmbH</a>.
         </span>
