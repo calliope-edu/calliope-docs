@@ -2,8 +2,8 @@
 
 [English](./README.md) | **Deutsch**
 
-**📖 Dokumentation (Deutsch):** [Entwickler-Handbuch](./DEVELOPER-README.de.md) · [Hilfsprogramm-Anleitung](./HELPER-README.de.md)  
-**📖 Documentation (English):** [Developer Guide](./DEVELOPER-README.md) · [Helper Tool Guide](./HELPER-README.md)
+**📖 Dokumentation (Deutsch):** [Entwickler-Handbuch](./DEVELOPER-README.de.md)  
+**📖 Documentation (English):** [Developer Guide](./DEVELOPER-README.md)
 
 ---
 
@@ -117,8 +117,6 @@ Dies öffnet eine Web-Oberfläche für Branch-Management, Content-Bearbeitung un
 
 - **[DEVELOPER-README.md (EN)](./DEVELOPER-README.md)** - Umfassendes technisches Architektur-Handbuch für Entwickler (Englisch)
 - **[DEVELOPER-README.de.md](./DEVELOPER-README.de.md)** - Umfassendes technisches Architektur-Handbuch für Entwickler (Deutsch)
-- **[HELPER-README.en.md (EN)](./HELPER-README.md)** - Anleitung für das Content-Editor-Hilfsprogramm (Englisch)
-- **[HELPER-README.md](./HELPER-README.de.md)** - Anleitung für das Content-Editor-Hilfsprogramm (Deutsch)
 
 ## 🛠️ Verfügbare Scripts
 
@@ -145,7 +143,6 @@ calliope-docs/
 │   └── scss/              # 🎨 Globale Styles
 ├── prebuild/              # 🔨 Pre-Build-Scripts
 ├── mdsvexplugins/         # 🔌 Eigene MDsveX-Plugins
-├── helper/                # 🛠️ Development-Hilfsprogramm
 └── static/                # 📦 Statische Assets (Fonts, etc.)
 ```
 

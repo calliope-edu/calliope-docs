@@ -2,8 +2,8 @@
 
 **English** | [Deutsch](./README.de.md)
 
-**📖 Documentation (English):** [Developer Guide](./DEVELOPER-README.md) · [Helper Tool Guide](./HELPER-README.md)  
-**📖 Dokumentation (Deutsch):** [Entwickler-Handbuch](./DEVELOPER-README.de.md) · [Hilfsprogramm-Anleitung](./HELPER-README.de.md)
+**📖 Documentation (English):** [Developer Guide](./DEVELOPER-README.md)
+**📖 Dokumentation (Deutsch):** [Entwickler-Handbuch](./DEVELOPER-README.de.md)
 
 ---
 
@@ -49,7 +49,6 @@ This is the technical documentation site for [Calliope mini](https://calliope.cc
 - 🖼️ Co-locate images, videos, and assets with content files
 - 🌍 Multi-language support (German/English)
 - 🎨 Use Svelte components directly in Markdown (auto-imported)
-- 🔄 Simple Git-based workflow via helper tool
 - ⚡ **Automatic image optimization** - Images are automatically converted to modern formats (WebP/AVIF), resized, and optimized at build time without any manual work
 
 ### For Developers
@@ -103,22 +102,10 @@ npm run dev
 
 The site will be available at `http://localhost:5173`
 
-### Development Helper (Optional)
-
-For content editors, we provide a user-friendly helper tool:
-
-**Windows:** Double-click `Starte-Hilfsprogramm-Windows.cmd`  
-**Mac:** Double-click `Starte-Hilfsprogramm-Mac.command`  
-**Linux:** Run `./Starte-Hilfsprogramm-Linux.sh`
-
-This opens a web interface for branch management, content editing, and publishing.
-
 ## 📖 Documentation
 
 - **[DEVELOPER-README.md](./DEVELOPER-README.md)** - Comprehensive technical architecture guide for developers
 - **[DEVELOPER-README.de.md](./DEVELOPER-README.de.md)** - Umfassendes technisches Architektur-Handbuch (German)
-- **[HELPER-README.en.md](./HELPER-README.md)** - Guide for the content editor helper tool
-- **[HELPER-README.md](./HELPER-README.de.md)** - Anleitung für das Content-Editor-Hilfsprogramm (German)
 
 ## 🛠️ Available Scripts
 
@@ -145,7 +132,6 @@ calliope-docs/
 │   └── scss/              # 🎨 Global styles
 ├── prebuild/              # 🔨 Pre-build scripts
 ├── mdsvexplugins/         # 🔌 Custom MDsveX plugins
-├── helper/                # 🛠️ Development helper tool
 └── static/                # 📦 Static assets (fonts, etc.)
 ```
 
@@ -208,7 +194,7 @@ We welcome contributions! Whether you're fixing typos, adding content, or improv
 5. Open a Pull Request
 
 ### For Content Editors
-Use the helper tool (see Quick Start) or edit files in `/src/content/` directly.
+Edit files in `/src/content/` directly.
 
 ### For Developers
 Check out [DEVELOPER-README.md](./DEVELOPER-README.md) for architecture details.
