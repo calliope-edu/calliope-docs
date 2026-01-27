@@ -38,17 +38,18 @@ published: true
 
         <i>Herstellerbezeichnung: Nordic nRF51822</i>
 
-    - 256kB Flash, 16kB RAM
+    - Memory Größe: 256kB Flash, 16kB RAM
 
 
     </div>
     <div slot="mini3">
         <i>Herstellerbezeichnung: NRF52833-QIAA-R</i>
+    - Memory Größe: 512kB Flash, 128kB RAM
+
     </div>
 
     - Führt Programme aus und ist an alle Komponenten des Calliope mini angeschlossen
-    - Memory Größe: 512kB Flash, 128kB RAM
-    - Serielle Schnittstellen: ADC, I²C, PWM, SPI, UART, USB
+    - Schnittstellen: ADC, I²C, PWM, SPI, UART, USB
     - Bluetooth-Antenne, Temperaturmessung
 
 
