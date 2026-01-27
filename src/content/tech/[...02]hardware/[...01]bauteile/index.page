@@ -44,6 +44,7 @@ published: true
     </div>
     <div slot="mini3">
         <i>Herstellerbezeichnung: NRF52833-QIAA-R</i>
+        
     - Memory Größe: 512kB Flash, 128kB RAM
 
     </div>
