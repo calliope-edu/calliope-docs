@@ -43,11 +43,14 @@ published: true
     </div>
     <div slot="mini3">
         NRF52833-QIAA-R
+
+        - Memory Size: 512kB Flash, 128kB RAM
+
+
     </div>
 
     - Executes programs and is connected to all components of the mini
-    - Memory Size: 512kB Flash, 128kB RAM
-    - Serial Interfaces: ADC, I²S, PWM, SPI, UART, USB
+    - Interfaces: ADC, I²S, PWM, SPI, UART, USB
     - Bluetooth antenna, temperature measurement
 
 
