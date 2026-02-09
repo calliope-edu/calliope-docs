@@ -44,7 +44,8 @@ published: true
     <div slot="mini3">
         NRF52833-QIAA-R
 
-    - Memory Size: 512kB Flash, 128kB RAM
+        - Memory Size: 512kB Flash, 128kB RAM
+
     </div>
 
     - Executes programs and is connected to all components of the mini
