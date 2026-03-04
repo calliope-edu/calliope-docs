@@ -11,26 +11,30 @@ docMenu: python
 ```js
 audio.play(source, wait=True, pin=pin0, return_pin=None)
 ```
+
 Spielen Sie die Audioquelle bis zum Ende ab.
 
-**Parameter:**   **•Quelle-** <br>
-Es gibt drei Arten von Daten, die als Quelle verwendet werden können:
+**Parameter:** 
 
-• Ton: Das Calliope mini-Modul enthält eine Liste eingebauter Sounds, z. B. audio.play(Sound.TWINKLE). Eine vollständige Liste ist im Abschnitt Eingebaute Sounds zu finden. <br>
-• SoundEffekt: Ein Soundeffekt oder eine Iterable von Soundeffekten, die mit der Klasse audio.SoundEffect() erstellt wird. <br>
-• AudioFrame: Eine Iterable von AudioFrame-Instanzen, wie im Abschnitt Technische Details von AudioFrame beschrieben <br>
-• wait - Wenn wait True ist, wird diese Funktion blockiert, bis die Quelle erschöpft ist. <br>
-• pin - Ein optionales Argument zur Angabe des Ausgangspins kann verwendet werden, um die Vorgabe von pin0 zu überschreiben. Wenn kein Ton abgespielt werden soll, kann pin=None verwendet werden. <br>
-• return_pin - gibt einen differentiellen Steckerpin an, der anstelle von Masse mit einem externen Lautsprecher verbunden wird. <br>
+- **spurce:** Es gibt drei Arten von Daten, die als Quelle verwendet werden können:
+  - *Ton:* Das Calliope mini-Modul enthält eine Liste eingebauter Sounds, z. B. audio.play(Sound.TWINKLE). Eine vollständige Liste ist im Abschnitt Eingebaute Sounds zu finden.
+  - *SoundEffekt:* Ein Soundeffekt oder eine Iterable von Soundeffekten, die mit der Klasse audio.SoundEffect() erstellt wird.
+  - *AudioFrame:* Eine Iterable von AudioFrame-Instanzen, wie im Abschnitt Technische Details von AudioFrame beschrieben
+- **wait** - Wenn wait True ist, wird diese Funktion blockiert, bis die Quelle erschöpft ist.
+- **pin** - Ein optionales Argument zur Angabe des Ausgangspins kann verwendet werden, um die Vorgabe von pin0 zu überschreiben. Wenn kein Ton abgespielt werden soll, kann pin=None verwendet werden.
+- **return_pin** - gibt einen differentiellen Steckerpin an, der anstelle von Masse mit einem externen Lautsprecher verbunden wird.
+
 
 ```js
 audio.is_playing()
 ```
+
 Gibt zurück:        True, wenn Audio abgespielt wird, andernfalls wird False zurückgegeben. <br>
 
 ```js
 audio.stop()
 ```
+
 Stoppt die gesamte Audiowiedergabe. <br>
 
 
