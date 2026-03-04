@@ -235,21 +235,21 @@ Mit dem MEMS-Mikrofon kann die der Schalldruckpegel (SPL) und die Lautstärke ge
         <i>Herstellerbezeichnung: DRV8835</i>
         <Gap h="1" />
 
-Dieser Motortreiber besitzt 2 seperate H-Brücken Treiber und kann damit 2 Gleichspannungsmotoren von einander unabhängig steuern. Die maximale Eingangspannung geben wir mit 9V an. Der maximale Strom pro Motor beträgt 1.5A.
-Hier findest du einen Link zum [Datenblatt](https://www.ti.com/lit/ds/symlink/drv8835.pdf?ts=1697459375123)
+        Dieser Motortreiber besitzt 2 seperate H-Brücken Treiber und kann damit 2 Gleichspannungsmotoren von einander unabhängig steuern. Die maximale Eingangspannung geben wir mit 9V an. Der maximale Strom ist durch Schutzdioden begrenzt und beträgt insgesamt 1A.
+        Hier findest du einen Link zum [Datenblatt](https://www.ti.com/lit/ds/symlink/drv8835.pdf)
 
 
-**Kurz Infos:**
+        **Kurz Infos:**
 
 
-- Steuert 2 Motoren, jeder Motor kann jeweils vorwärts und rückwärts betätigt werden
-- Die Motoren können an der Pinleiste am M0+- und M1+- angeschlossen werden
-- maximale Eingangsspannung 9V; maximaler Strom 1,5A pro Motor
-- Wird im Phase/Enable Modus (Mode=1) betrieben, d.h. in der Firmware steuert ein digitales Signal die Motorenrichtung und ein [PWM](https://de.wikipedia.org/wiki/Pulsdauermodulation) Signal die Geschwindigkeit 
+        - Steuert 2 Motoren, jeder Motor kann jeweils vorwärts und rückwärts betätigt werden
+        - Die Motoren können an der Pinleiste am M0+- und M1+- angeschlossen werden
+        - maximale Eingangsspannung 9V; maximaler Strom 1A insgesamt oder 0.5A pro Motor bei zwei Motoren
+        - Wird im Phase/Enable Modus (Mode=1) betrieben, d.h. in der Firmware steuert ein digitales Signal die Motorenrichtung und ein [PWM](https://de.wikipedia.org/wiki/Pulsdauermodulation) Signal die Geschwindigkeit 
 
 
 
-Weitere Informationen sowie Schaltplan, Blockschaltbild & Pinbelegung fndest du **[Hier](https://calliope-mini.github.io/v30/)** 
+        Weitere Informationen sowie Schaltplan, Blockschaltbild & Pinbelegung fndest du **[Hier](https://calliope-mini.github.io/v30/)** 
     </div>
 </Versions>
 
