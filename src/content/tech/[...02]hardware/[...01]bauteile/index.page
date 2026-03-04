@@ -204,7 +204,8 @@ Mit dem MEMS-Mikrofon kann die der Schalldruckpegel (SPL) und die Lautstärke ge
         <Gap h="1" />
         Dieser Motortreiber besteht aus einer H-Brückenschaltung.
         Es können bis zu zwei Motoren angeschlossen werden. Wird ein Motor angeschlossen, können alle Motormodi verwendet werden. Werden zwei Motoren angeschlossen, dann müssen sich diese die H-Brücke teilen und die Motoren können nur beide gleichzeitig vor- oder zurückfahren, aber nicht entgegengesetzt laufen. 
-     
+
+
         **Ein Motor Logik:**
 
         | IN1 | IN2 | OUT1 | OUT2  | Modus     |
@@ -236,6 +237,7 @@ Mit dem MEMS-Mikrofon kann die der Schalldruckpegel (SPL) und die Lautstärke ge
 
         <i>Herstellerbezeichnung: DRV8835</i>
         <Gap h="1" />
+
 Dieser Motortreiber besitzt 2 seperate H-Brücken Treiber und kann damit 2 Gleichspannungsmotoren von einander unabhängig steuern. Die maximale Eingangspannung geben wir mit 9V an. Der maximale Strom pro Motor beträgt 1.5A.
 Hier findest du einen Link zum [Datenblatt](https://www.ti.com/lit/ds/symlink/drv8835.pdf?ts=1697459375123)
 
