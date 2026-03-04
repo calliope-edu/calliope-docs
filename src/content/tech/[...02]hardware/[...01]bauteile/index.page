@@ -201,10 +201,9 @@ Mit dem MEMS-Mikrofon kann die der Schalldruckpegel (SPL) und die Lautstärke ge
 <Versions>
     <div slot="mini1-2">
         <i>Herstellerbezeichnung: DRV8837</i>
-        <Gap h="1" />
+
         Dieser Motortreiber besteht aus einer H-Brückenschaltung.
         Es können bis zu zwei Motoren angeschlossen werden. Wird ein Motor angeschlossen, können alle Motormodi verwendet werden. Werden zwei Motoren angeschlossen, dann müssen sich diese die H-Brücke teilen und die Motoren können nur beide gleichzeitig vor- oder zurückfahren, aber nicht entgegengesetzt laufen. 
-
 
         **Ein Motor Logik:**
 
@@ -215,22 +214,20 @@ Mit dem MEMS-Mikrofon kann die der Schalldruckpegel (SPL) und die Lautstärke ge
         | 1   | 0   | H    | L     | Vorwärts  |
         | 1   | 1   | L    | L     | Bremsen   |
 
+        *H = High-Side-Schalter an, L = Low-Side-Schalter an, Z = Beide Schalter aus*
 
-
-*H = High-Side-Schalter an, L = Low-Side-Schalter an, Z = Beide Schalter aus*
-
-         [Datenblatt DRV8837](https://www.ti.com/lit/ds/symlink/drv8837.pdf?ts=1654067963185&ref_url=https%253A%252F%252Fwww.google.com%252F)
+        [Datenblatt DRV8837](https://www.ti.com/lit/ds/symlink/drv8837.pdf?ts=1654067963185&ref_url=https%253A%252F%252Fwww.google.com%252F)
      
-         <b>Zwei Motoren Logik:</b>
+        <b>Zwei Motoren Logik:</b>
 
-         | IN1 | IN2 | OUT1 | OUT2  | Motor1        | Motor2        |
-         |-----|-----|------|-------|---------------|---------------|
-         | 0   | 0   | Z    | Z     | Bremsen       | Bremsen       |
-         | 0   | 1   | L    | H     | Beschleunigen | Bremsen       |
-         | 1   | 0   | H    | L     | Bremsen       | Beschleunigen |
-         | 1   | 1   | L    | L     | Vorwärts      | Vorwärts      |
+        | IN1 | IN2 | OUT1 | OUT2  | Motor1        | Motor2        |
+        |-----|-----|------|-------|---------------|---------------|
+        | 0   | 0   | Z    | Z     | Bremsen       | Bremsen       |
+        | 0   | 1   | L    | H     | Beschleunigen | Bremsen       |
+        | 1   | 0   | H    | L     | Bremsen       | Beschleunigen |
+        | 1   | 1   | L    | L     | Vorwärts      | Vorwärts      |
 
-*H = High-Side-Schalter an, L = Lowside-Schalter an, Z = Beide Schalter aus*
+        *H = High-Side-Schalter an, L = Lowside-Schalter an, Z = Beide Schalter aus*
 
     </div>
     <div slot="mini3">
