@@ -107,13 +107,14 @@ Jedes Argument entspricht einer anderen Zeiteinheit und sie sind additiv. Mit ru
 
 Wenn innerhalb der Callback-Funktion eine Ausnahme ausgelöst wird, wird die Funktion abgebrochen. Um dies zu vermeiden, können Ausnahmen mit try/except abfangen.
 
-**Parameter:**<br>
-• callback - Funktion, die in dem angegebenen Intervall aufgerufen wird.<br>
-• days - Legt die Tagesmarke für die Terminierung fest.<br>
-• h - Legt die Stundenmarkierung für die Terminierung fest.<br>
-• min - Legt die Minutenmarkierung für die Terminierung fest.<br>
-• s - Legt die Sekundenmarke für die Terminierung fest.<br>
-• ms - Legt die Millisekundenmarkierung für die Terminierung fest.<br>
+**Parameter:**
+
+- *callback* - Funktion, die in dem angegebenen Intervall aufgerufen wird.
+- *days* - Legt die Tagesmarke für die Terminierung fest.
+- *h* - Legt die Stundenmarkierung für die Terminierung fest.
+- *min* - Legt die Minutenmarkierung für die Terminierung fest.
+- *s* - Legt die Sekundenmarke für die Terminierung fest.
+- *ms* - Legt die Millisekundenmarkierung für die Terminierung fest.
 
 
 ```js
