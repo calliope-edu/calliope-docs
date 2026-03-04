@@ -170,12 +170,12 @@ The MEMS microphone can measure sound pressure level (SPL) and volume.
     <div slot="mini3">
         DRV8835
 
-This motor driver has 2 separate H-bridge drivers and can thus independently control 2 DC motors. The maximum input voltage is 9V, and the maximum current per motor is 1.5A.
+This motor driver has 2 separate H-bridge drivers and can thus independently control 2 DC motors. The maximum input voltage is 9V. The maximum current is limited by protection diodes and is in total 1A.
 Here is a link to the [datasheet](https://www.ti.com/lit/ds/symlink/drv8835.pdf?ts=1697459375123)
 **Brief Information:**
 - Controls 2 motors, each motor can move forward and backward
 - Motors can be connected to the terminal block
-- Maximum input voltage 9V; maximum current 1.5A per motor
+- Maximum input voltage 9V; total maximum current 1A or 0.5A each for 2 motors.
 - Operates in Phase/Enable mode (Mode=1) in which the firmware controls the motor direction through a digital signal and the speed through a [PWM](https://en.wikipedia.org/wiki/Pulse-width_modulation) signal 
 
 
