@@ -1,10 +1,9 @@
+import legacyRedirects from '$lib/scripts/redirects.json';
 import { locales } from '$lib/paraglide/runtime';
 
 // Maintain old -> new content slugs here when pages are renamed.
 // Use paths without leading/trailing slashes and without locale prefixes.
-export const legacyRedirects = {
-	'tech/tools/ml-machine': 'tech/tools/ki-training'
-};
+export { legacyRedirects };
 
 function normalizeSlugs(slugs = '') {
 	return String(slugs)
