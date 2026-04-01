@@ -1,5 +1,5 @@
 import { mdsvex } from 'mdsvex';
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-cloudflare';
 
 import mdsvexConfig from './mdsvex.config.js';
 
@@ -9,12 +9,14 @@ const config = {
 		// adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
 		// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
 		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
-		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: '200.html',
-			precompress: true
-		}),
+		adapter: adapter(
+		// 	{
+		// 	pages: 'build',
+		// 	assets: 'build',
+		// 	fallback: '200.html',
+		// 	precompress: true
+		// }
+		),
 		prerender: {
 			handleHttpError: 'fail',
 			// entries:  [

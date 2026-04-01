@@ -1,5 +1,6 @@
-import { error } from '@sveltejs/kit';
+import { error, redirect } from '@sveltejs/kit';
 import { browser } from '$app/environment';
+import { resolveLegacyRedirect } from '$lib/scripts/redirects.js';
 import { slugFromPath } from '$lib/scripts/util.js';
 import { defaultLanguage } from '$lib/scripts/store.js';
 
@@ -8,6 +9,11 @@ import { locales, getLocale } from "$lib/paraglide/runtime"
 
 export async function loadPage({ params }) {
     const pageSlug = params?.slugs ?? '/';
+    const legacyRedirect = resolveLegacyRedirect(pageSlug);
+
+    if (legacyRedirect) {
+        redirect(308, legacyRedirect);
+    }
     
     // The fix: Handle initial load language detection properly
     let lang;
