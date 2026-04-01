@@ -10,11 +10,11 @@ const sitemap = {
           "subpages": [
             {
               "slug": "tech/hardware/bauteile",
-              "title": "Parts",
+              "title": "Bauteile",
               "docTitle": "Hardware",
-              "seotitle": "Calliope Mini Components: Hardware, Processors, LEDs, Buttons, Sensors, and More",
-              "description": "Explore the diverse components of Calliope mini hardware, including processors, LEDs, buttons, sensors, and more. Learn about specifications, features, and technical details. Find information on versions, datasheets, and motor drivers for an engaging programming experience.",
-              "tags": "Calliope Mini Hardware, Microcontroller Components, Processor Specifications, LED Matrix, Programmable Buttons, Sensor Integration, RGB LEDs, Audio Components, Motor Drivers, Calliope Mini Documentation",
+              "seotitle": "Calliope Mini Bauteile: Hardware, Prozessoren, LEDs, Tasten, Sensoren, und mehr",
+              "description": "Erkunde die vielfältigen Bauteile der Calliope mini Hardware, darunter Prozessoren, LEDs, Tasten, Sensoren und mehr. Erfahre mehr über Spezifikationen, Funktionen und technische Details.",
+              "tags": "Calliope Mini Hardware, Mikrocontroller-Komponenten, Prozessor-Spezifikationen, LED-Matrix, Programmierbare Tasten, Sensorintegration, RGB-LEDs, Audiokomponenten, Motortreiber, Calliope Mini Dokumentation",
               "template": "docs",
               "published": true
             },
@@ -33,7 +33,7 @@ const sitemap = {
               "title": "Stromversorgung",
               "docTitle": "Hardware",
               "seotitle": "Calliope Mini Stromversorgung: Batterien, USB-C, VM Pin",
-              "description": "Erfahre mehr über die Möglcihkeiten zur Stromversorgung des Calliope mini. Erhalte wichtige Informationen zu Strombedarf und Leistungsabgabe an den Pins und für externe Sensoren.",
+              "description": "Erfahre mehr über die Möglichkeiten zur Stromversorgung des Calliope mini. Erhalte wichtige Informationen zu Strombedarf und Leistungsabgabe an den Pins und für externe Sensoren.",
               "tags": "Calliope Mini Stromversorgung, Batterien, USB-C, VM Pin, Spannung, Strombedarf",
               "template": "docs",
               "published": true
@@ -151,11 +151,11 @@ const sitemap = {
               "published": true
             },
             {
-              "slug": "tech/tools/ml-machine",
-              "title": "ML-Machine",
+              "slug": "tech/tools/ki-training",
+              "title": "KI-Training",
               "docTitle": "Tools",
-              "seotitle": "ML-Machine",
-              "description": "Mit dem ML-Machine Tool können Bewegungsgesten, durch den Calliope mini aufgezeichnet und ein neuronales Netz trainiert werden.",
+              "seotitle": "KI-Training",
+              "description": "Mit dem KI-Training Tool können Bewegungsgesten, durch den Calliope mini aufgezeichnet und ein neuronales Netz trainiert werden.",
               "tags": "KI, AI, Machine-Learning, Neuronale Netze, maschinelles Lernen, künstliche Intelligenz, KI im Unterricht",
               "template": "docs",
               "published": true
@@ -256,11 +256,11 @@ const sitemap = {
               "published": true
             },
             {
-              "slug": "tech/tools/ml-machine",
-              "title": "ML-Machine",
+              "slug": "tech/tools/ki-training",
+              "title": "KI-Training",
               "docTitle": "Tools",
-              "seotitle": "ML-Machine",
-              "description": "Mit dem ML-Machine Tool können Bewegungsgesten, durch den Calliope mini aufgezeichnet und ein neuronales Netz trainiert werden.",
+              "seotitle": "KI-Training",
+              "description": "Mit dem KI-Training Tool können Bewegungsgesten, durch den Calliope mini aufgezeichnet und ein neuronales Netz trainiert werden.",
               "tags": "KI, AI, Machine-Learning, Neuronale Netze, maschinelles Lernen, künstliche Intelligenz, KI im Unterricht",
               "template": "docs",
               "published": true
@@ -272,13 +272,13 @@ const sitemap = {
           "template": "docs_contents",
           "published": true
         },
-        "tech/tools/ml-machine": {
-          "slug": "tech/tools/ml-machine",
-          "title": "ML-Machine",
+        "tech/tools/ki-training": {
+          "slug": "tech/tools/ki-training",
+          "title": "KI-Training",
           "subpages": [],
           "docTitle": "Tools",
-          "seotitle": "ML-Machine",
-          "description": "Mit dem ML-Machine Tool können Bewegungsgesten, durch den Calliope mini aufgezeichnet und ein neuronales Netz trainiert werden.",
+          "seotitle": "KI-Training",
+          "description": "Mit dem KI-Training Tool können Bewegungsgesten, durch den Calliope mini aufgezeichnet und ein neuronales Netz trainiert werden.",
           "tags": "KI, AI, Machine-Learning, Neuronale Netze, maschinelles Lernen, künstliche Intelligenz, KI im Unterricht",
           "template": "docs",
           "published": true
@@ -427,11 +427,11 @@ const sitemap = {
           "subpages": [
             {
               "slug": "tech/hardware/bauteile",
-              "title": "Parts",
+              "title": "Bauteile",
               "docTitle": "Hardware",
-              "seotitle": "Calliope Mini Components: Hardware, Processors, LEDs, Buttons, Sensors, and More",
-              "description": "Explore the diverse components of Calliope mini hardware, including processors, LEDs, buttons, sensors, and more. Learn about specifications, features, and technical details. Find information on versions, datasheets, and motor drivers for an engaging programming experience.",
-              "tags": "Calliope Mini Hardware, Microcontroller Components, Processor Specifications, LED Matrix, Programmable Buttons, Sensor Integration, RGB LEDs, Audio Components, Motor Drivers, Calliope Mini Documentation",
+              "seotitle": "Calliope Mini Bauteile: Hardware, Prozessoren, LEDs, Tasten, Sensoren, und mehr",
+              "description": "Erkunde die vielfältigen Bauteile der Calliope mini Hardware, darunter Prozessoren, LEDs, Tasten, Sensoren und mehr. Erfahre mehr über Spezifikationen, Funktionen und technische Details.",
+              "tags": "Calliope Mini Hardware, Mikrocontroller-Komponenten, Prozessor-Spezifikationen, LED-Matrix, Programmierbare Tasten, Sensorintegration, RGB-LEDs, Audiokomponenten, Motortreiber, Calliope Mini Dokumentation",
               "template": "docs",
               "published": true
             },
@@ -450,7 +450,7 @@ const sitemap = {
               "title": "Stromversorgung",
               "docTitle": "Hardware",
               "seotitle": "Calliope Mini Stromversorgung: Batterien, USB-C, VM Pin",
-              "description": "Erfahre mehr über die Möglcihkeiten zur Stromversorgung des Calliope mini. Erhalte wichtige Informationen zu Strombedarf und Leistungsabgabe an den Pins und für externe Sensoren.",
+              "description": "Erfahre mehr über die Möglichkeiten zur Stromversorgung des Calliope mini. Erhalte wichtige Informationen zu Strombedarf und Leistungsabgabe an den Pins und für externe Sensoren.",
               "tags": "Calliope Mini Stromversorgung, Batterien, USB-C, VM Pin, Spannung, Strombedarf",
               "template": "docs",
               "published": true
@@ -510,7 +510,7 @@ const sitemap = {
           "subpages": [],
           "docTitle": "Hardware",
           "seotitle": "Calliope Mini Stromversorgung: Batterien, USB-C, VM Pin",
-          "description": "Erfahre mehr über die Möglcihkeiten zur Stromversorgung des Calliope mini. Erhalte wichtige Informationen zu Strombedarf und Leistungsabgabe an den Pins und für externe Sensoren.",
+          "description": "Erfahre mehr über die Möglichkeiten zur Stromversorgung des Calliope mini. Erhalte wichtige Informationen zu Strombedarf und Leistungsabgabe an den Pins und für externe Sensoren.",
           "tags": "Calliope Mini Stromversorgung, Batterien, USB-C, VM Pin, Spannung, Strombedarf",
           "template": "docs",
           "published": true
@@ -528,12 +528,12 @@ const sitemap = {
         },
         "tech/hardware/bauteile": {
           "slug": "tech/hardware/bauteile",
-          "title": "Parts",
+          "title": "Bauteile",
           "subpages": [],
           "docTitle": "Hardware",
-          "seotitle": "Calliope Mini Components: Hardware, Processors, LEDs, Buttons, Sensors, and More",
-          "description": "Explore the diverse components of Calliope mini hardware, including processors, LEDs, buttons, sensors, and more. Learn about specifications, features, and technical details. Find information on versions, datasheets, and motor drivers for an engaging programming experience.",
-          "tags": "Calliope Mini Hardware, Microcontroller Components, Processor Specifications, LED Matrix, Programmable Buttons, Sensor Integration, RGB LEDs, Audio Components, Motor Drivers, Calliope Mini Documentation",
+          "seotitle": "Calliope Mini Bauteile: Hardware, Prozessoren, LEDs, Tasten, Sensoren, und mehr",
+          "description": "Erkunde die vielfältigen Bauteile der Calliope mini Hardware, darunter Prozessoren, LEDs, Tasten, Sensoren und mehr. Erfahre mehr über Spezifikationen, Funktionen und technische Details.",
+          "tags": "Calliope Mini Hardware, Mikrocontroller-Komponenten, Prozessor-Spezifikationen, LED-Matrix, Programmierbare Tasten, Sensorintegration, RGB-LEDs, Audiokomponenten, Motortreiber, Calliope Mini Dokumentation",
           "template": "docs",
           "published": true
         }
@@ -696,7 +696,7 @@ const sitemap = {
               "title": "Stromversorgung",
               "docTitle": "Hardware",
               "seotitle": "Calliope Mini Stromversorgung: Batterien, USB-C, VM Pin",
-              "description": "Erfahre mehr über die Möglcihkeiten zur Stromversorgung des Calliope mini. Erhalte wichtige Informationen zu Strombedarf und Leistungsabgabe an den Pins und für externe Sensoren.",
+              "description": "Erfahre mehr über die Möglichkeiten zur Stromversorgung des Calliope mini. Erhalte wichtige Informationen zu Strombedarf und Leistungsabgabe an den Pins und für externe Sensoren.",
               "tags": "Calliope Mini Stromversorgung, Batterien, USB-C, VM Pin, Spannung, Strombedarf",
               "template": "docs",
               "published": true
@@ -814,11 +814,11 @@ const sitemap = {
               "published": true
             },
             {
-              "slug": "tech/tools/ml-machine",
-              "title": "ML-Machine",
+              "slug": "tech/tools/ki-training",
+              "title": "KI-Training",
               "docTitle": "Tools",
-              "seotitle": "ML-Machine",
-              "description": "Mit dem ML-Machine Tool können Bewegungsgesten, durch den Calliope mini aufgezeichnet und ein neuronales Netz trainiert werden.",
+              "seotitle": "KI-Training",
+              "description": "Mit dem KI-Training Tool können Bewegungsgesten, durch den Calliope mini aufgezeichnet und ein neuronales Netz trainiert werden.",
               "tags": "KI, AI, Machine-Learning, Neuronale Netze, maschinelles Lernen, künstliche Intelligenz, KI im Unterricht",
               "template": "docs",
               "published": true
@@ -919,11 +919,11 @@ const sitemap = {
               "published": true
             },
             {
-              "slug": "tech/tools/ml-machine",
-              "title": "ML-Machine",
+              "slug": "tech/tools/ki-training",
+              "title": "KI-Training",
               "docTitle": "Tools",
-              "seotitle": "ML-Machine",
-              "description": "Mit dem ML-Machine Tool können Bewegungsgesten, durch den Calliope mini aufgezeichnet und ein neuronales Netz trainiert werden.",
+              "seotitle": "KI-Training",
+              "description": "Mit dem KI-Training Tool können Bewegungsgesten, durch den Calliope mini aufgezeichnet und ein neuronales Netz trainiert werden.",
               "tags": "KI, AI, Machine-Learning, Neuronale Netze, maschinelles Lernen, künstliche Intelligenz, KI im Unterricht",
               "template": "docs",
               "published": true
@@ -935,13 +935,13 @@ const sitemap = {
           "template": "docs_contents",
           "published": true
         },
-        "tech/tools/ml-machine": {
-          "slug": "tech/tools/ml-machine",
-          "title": "ML-Machine",
+        "tech/tools/ki-training": {
+          "slug": "tech/tools/ki-training",
+          "title": "KI-Training",
           "subpages": [],
           "docTitle": "Tools",
-          "seotitle": "ML-Machine",
-          "description": "Mit dem ML-Machine Tool können Bewegungsgesten, durch den Calliope mini aufgezeichnet und ein neuronales Netz trainiert werden.",
+          "seotitle": "KI-Training",
+          "description": "Mit dem KI-Training Tool können Bewegungsgesten, durch den Calliope mini aufgezeichnet und ein neuronales Netz trainiert werden.",
           "tags": "KI, AI, Machine-Learning, Neuronale Netze, maschinelles Lernen, künstliche Intelligenz, KI im Unterricht",
           "template": "docs",
           "published": true
@@ -1113,7 +1113,7 @@ const sitemap = {
               "title": "Stromversorgung",
               "docTitle": "Hardware",
               "seotitle": "Calliope Mini Stromversorgung: Batterien, USB-C, VM Pin",
-              "description": "Erfahre mehr über die Möglcihkeiten zur Stromversorgung des Calliope mini. Erhalte wichtige Informationen zu Strombedarf und Leistungsabgabe an den Pins und für externe Sensoren.",
+              "description": "Erfahre mehr über die Möglichkeiten zur Stromversorgung des Calliope mini. Erhalte wichtige Informationen zu Strombedarf und Leistungsabgabe an den Pins und für externe Sensoren.",
               "tags": "Calliope Mini Stromversorgung, Batterien, USB-C, VM Pin, Spannung, Strombedarf",
               "template": "docs",
               "published": true
@@ -1173,7 +1173,7 @@ const sitemap = {
           "subpages": [],
           "docTitle": "Hardware",
           "seotitle": "Calliope Mini Stromversorgung: Batterien, USB-C, VM Pin",
-          "description": "Erfahre mehr über die Möglcihkeiten zur Stromversorgung des Calliope mini. Erhalte wichtige Informationen zu Strombedarf und Leistungsabgabe an den Pins und für externe Sensoren.",
+          "description": "Erfahre mehr über die Möglichkeiten zur Stromversorgung des Calliope mini. Erhalte wichtige Informationen zu Strombedarf und Leistungsabgabe an den Pins und für externe Sensoren.",
           "tags": "Calliope Mini Stromversorgung, Batterien, USB-C, VM Pin, Spannung, Strombedarf",
           "template": "docs",
           "published": true

@@ -1,6 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const getLanguages = require('../getLanguages.cjs');
+const legacyRedirects = require('../../src/lib/scripts/redirects.json');
 
 const srcContentDir = `./src/content`;
 const src_Dir = `./static`;
@@ -64,6 +65,37 @@ function applyRename(filePath) {
     return parts.map(part => part.replace(regexRename, '')).join(path.sep);
 }
 
+function createRedirectRules() {
+    const lines = ['# Auto-generated redirect rules for renamed content pages'];
+    const uniqueRules = new Set();
+
+    for (const [oldPath, newPath] of Object.entries(legacyRedirects)) {
+        const normalizedOld = `/${oldPath}`.replace(/\/+/g, '/');
+        const normalizedNew = `/${newPath}/`.replace(/\/+/g, '/');
+        const oldWithoutSlash = normalizedOld.replace(/\/$/, '');
+        const oldWithSlash = `${oldWithoutSlash}/`;
+        const jsonOld = `${oldWithoutSlash}.json`;
+        const jsonNew = normalizedNew.replace(/\/$/, '.json');
+
+        uniqueRules.add(`${oldWithoutSlash} ${normalizedNew} 308`);
+        uniqueRules.add(`${oldWithSlash} ${normalizedNew} 308`);
+        uniqueRules.add(`${jsonOld} ${jsonNew} 308`);
+
+        for (const lang of languageFolders) {
+            const localizedOld = `/${lang}${oldWithoutSlash}`;
+            const localizedNew = `/${lang}${normalizedNew}`.replace(/\/+/g, '/');
+            uniqueRules.add(`${localizedOld} ${localizedNew} 308`);
+            uniqueRules.add(`${localizedOld}/ ${localizedNew} 308`);
+            uniqueRules.add(`${localizedOld}.json ${localizedNew.replace(/\/$/, '.json')} 308`);
+        }
+    }
+
+    lines.push(...uniqueRules);
+    lines.push('');
+
+    return lines.join('\n');
+}
+
 // Main execution
 console.log('Packing static folder...');
 
@@ -79,6 +111,9 @@ const allMediaFiles = findAllMediaFiles();
 languageFolders.forEach(lang => {
     fs.ensureDirSync(path.join(destDir, lang));
 });
+
+// Generate Cloudflare Pages redirect rules for renamed content
+fs.writeFileSync(path.join(destDir, '_redirects'), createRedirectRules());
 
 // Copy content media files to destinations with renamed paths
 allMediaFiles.forEach(file => {
