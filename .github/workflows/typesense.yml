@@ -31,7 +31,7 @@ jobs:
             commitHash: ${{ steps.push-changes.outputs.commit-hash }}
     
         - name: Checkout Repository
-          uses: actions/checkout@v3
+          uses: actions/checkout@v4
       
         - name: Run DocSearch Scraper
           uses: celsiusnarhwal/typesense-scraper@v2
