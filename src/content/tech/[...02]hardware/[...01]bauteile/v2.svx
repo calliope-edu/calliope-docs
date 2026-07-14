@@ -1,6 +1,6 @@
 | Bauteil/Komponente | Herstellerbezeichnung | Eigenschaften |
 | :------ | :-- | :------------- |
-| Anwendungsprozessor | Nordic nRF51822 | 32-bit ARM Cortex M0 processor (16MHz)<br>Memory Size: 256kB Flash, 16kB RAM |
+| Anwendungsprozessor | Nordic nRF51822-QFAC | 32-bit ARM Cortex M0 processor (16MHz)<br>Memory Size: 256kB Flash, 32kB RAM |
 | Interfaceprozessor | NXP KL26z | 512KB flash, 128KB SRAM |
 | Lagesensor | Bosch BMX055 | Accelerometer, Gyroskop, Magenetometer |
 | 5x5 LED Matrix | - | Farbe rot, Helligkeitssensor |
