@@ -34,11 +34,19 @@ published: true
 
 <Versions>
 
-    <div slot="mini1-2">
+    <div slot="mini1">
 
-        <i>Herstellerbezeichnung: Nordic nRF51822</i>
+        <i>Herstellerbezeichnung: Nordic nRF51822-QFAA</i>
 
     - Memory Größe: 256kB Flash, 16kB RAM
+
+
+    </div>
+    <div slot="mini2">
+
+        <i>Herstellerbezeichnung: Nordic nRF51822-QFAC</i>
+
+    - Memory Größe: 256kB Flash, 32kB RAM
 
 
     </div>
