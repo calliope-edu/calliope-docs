@@ -218,12 +218,12 @@ Um eine LED zu dimmen oder die Geschwindigkeit eines Motors zu varieren, müsste
 | I2C_EXT_SCL                     | C19                    | A0 SCL                  |
 | MOTOR_AIN2                      |                        | Führt dann in Motor M0. |
 | COL1                            | C4                     | C4                      |
-| Grove1.A0                       | C16                    | A1 TX                   |
+| Grove1.A0                       | C16                    | A1 RX                   |
 | COL5                            | C10                    |                         |
 | COL3                            | C18                    |                         |
 | I2C_EXT_SDA                     | C20                    | A0 SDA                  |
 | MOTOR_AIN1                      |                        | Führt dann in Motor M0. |
-| GPIO3                           | C17                    | A1 RX                   |
+| GPIO3                           | C17                    | A1 TX                   |
 | PAD3                            | P3                     | P3                      |
 | LOGO                            |                        | Touch-Logo              |
 | COL4                            | C6                     | C6                      |
