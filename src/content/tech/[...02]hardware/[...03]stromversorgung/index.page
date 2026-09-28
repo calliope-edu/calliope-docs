@@ -65,8 +65,8 @@ Der Calliope mini kann externe Geräte über die folgenden Möglichkeiten mit Sp
 
 ### Stromstärke:
     - An externe Verbraucher kann der Calliope mini bei ausgeschalteten RGB LEDs insgesamt <b>{#if $selectedBoardVersion == 3}200{:else}
-100{/if}mA </b>abgeben.
-    - Jeder Pin kann maximal 5mA Strom abgeben
+100{/if}mA </b> abgeben.
+    - Jeder Pin kann 5mA Strom abgeben {#if $selectedBoardVersion == 3}, die Displaypins C4, C6, C7, C10 und C18 sind jedoch **High Drive** Pins und geben bis ca 15mA ab. Achtung: Display deaktivieren!{/if}
     
 <!-- 
     <Admonition type='warning'>

@@ -44,6 +44,7 @@ published: true
         <li>C19, C20 werden für den linken Grove Anschluss A0 mitverwendet</li>
         <li>M0-, M1-, M0+, M1+ sind Motorpins für den Anschluss von zwei Motoren</li>
         <li>Logo Pin auf der Rückseite</li>
+        <li> Die Display Pins sind <b>High Drive</b> Pins und geben bis ca 15mA ab. <b>Achtung</b>: Display deaktieren </li>
 </div>
     </Versions>
 </ul>
