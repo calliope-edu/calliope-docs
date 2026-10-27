@@ -1,0 +1,90 @@
+---
+title: Linux
+docTitle: Software
+seotitle: "Calliope mini unter Linux verwenden"
+description: "Erfahre, wie du den Calliope mini unter Linux verwendest: Programme über das Laufwerk MINI übertragen, WebUSB im Browser einrichten und die serielle Schnittstelle auslesen."
+tags: "Calliope mini, Linux, Ubuntu, WebUSB, udev, Serial, ttyACM, Flashen"
+template: docs
+published: true
+---
+
+Der Calliope mini kann auch unter Linux programmiert und verwendet werden. Für die meisten Funktionen ist keine zusätzliche Software nötig, für WebUSB und die serielle Schnittstelle müssen aber unter Umständen Berechtigungen eingerichtet werden.
+
+## Programme übertragen
+
+Wird der Calliope mini per USB angeschlossen, erscheint er als Laufwerk **MINI**. Die meisten Desktop-Umgebungen binden das Laufwerk automatisch ein. Eine heruntergeladene `.hex`-Datei kann dann einfach auf das Laufwerk kopiert werden.
+
+Alternativ geht das auch im Terminal, z.B.:
+
+```bash
+cp programm.hex /media/$USER/MINI/
+sync
+```
+
+Der genaue Pfad kann je nach Distribution abweichen.
+
+## udev-Regeln
+
+Damit der Browser per WebUSB auf den Calliope mini zugreifen darf und das Laufwerk **MINI** automatisch mit der Option `sync` eingebunden wird (damit Dateien sofort vollständig übertragen werden), wird eine udev-Regel benötigt.
+
+<Button text="udev-Regeln herunterladen" link="/downloads/50-calliope-mini.rules"/>
+
+Die Datei nach `/etc/udev/rules.d/` kopieren, die Regeln neu laden und den Calliope mini neu anschließen:
+
+```bash
+sudo cp 50-calliope-mini.rules /etc/udev/rules.d/
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+```
+
+Die Datei enthält folgende Regeln:
+
+```
+# Segger JLink (Calliope mini V2.x)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1366", ATTRS{idProduct}=="1025", MODE="0666"
+
+# CMSIS DAP (Calliope mini V1 und V3)
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0d28", MODE="0666", GROUP="plugdev"
+
+# Skip if not a block device or if requested by other rules
+#
+SUBSYSTEM!="block", GOTO="calliope_mini_udisks_mount_options_end"
+ENV{DM_MULTIPATH_DEVICE_PATH}=="1", GOTO="calliope_mini_udisks_mount_options_end"
+ENV{DM_UDEV_DISABLE_OTHER_RULES_FLAG}=="?*", GOTO="calliope_mini_udisks_mount_options_end"
+
+#
+# Add sync option
+#
+SUBSYSTEMS=="usb", ENV{ID_FS_USAGE}=="filesystem", \
+ATTRS{idVendor}=="0d28", ENV{UDISKS_MOUNT_OPTIONS_DEFAULTS}="sync"
+
+LABEL="calliope_mini_udisks_mount_options_end"
+```
+
+## WebUSB
+
+Editoren wie MakeCode oder der Micropython Editor können Programme über WebUSB direkt auf den Calliope mini übertragen. WebUSB wird nur von Chromium-basierten Browsern (z.B. Google Chrome, Chromium, Microsoft Edge) unterstützt, nicht von Firefox. Voraussetzung sind die oben beschriebenen [udev-Regeln](#udev-regeln).
+
+#### Chromium als Snap
+
+Wird Chromium als Snap-Paket installiert (z.B. unter Ubuntu), muss der USB-Zugriff zusätzlich freigegeben werden:
+
+```bash
+sudo snap connect chromium:raw-usb
+```
+
+## Serielle Schnittstelle
+
+Über USB stellt der Calliope mini auch eine serielle Schnittstelle bereit, meist unter `/dev/ttyACM0`. Für den Zugriff muss der Benutzer Mitglied der Gruppe `dialout` sein:
+
+```bash
+sudo usermod -aG dialout $USER
+```
+
+Nach dem erneuten Anmelden können die Daten z.B. mit `screen` ausgelesen werden:
+
+```bash
+screen /dev/ttyACM0 115200
+```
+
+Weitere Informationen zur seriellen Kommunikation gibt es unter [Protokolle](../protocols/).

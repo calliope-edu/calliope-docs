@@ -118,6 +118,16 @@ const sitemap = {
               "tags": "Calliope mini, Fehlercodes, Boardsystemfehler, Speicherfehler, Garbage Collector-Fehler, JavaScript-Runtimefehler, Fehlerbehebung",
               "template": "docs",
               "published": true
+            },
+            {
+              "slug": "tech/software/linux",
+              "title": "Linux",
+              "docTitle": "Software",
+              "seotitle": "Calliope mini unter Linux verwenden",
+              "description": "Erfahre, wie du den Calliope mini unter Linux verwendest: Programme über das Laufwerk MINI übertragen, WebUSB im Browser einrichten und die serielle Schnittstelle auslesen.",
+              "tags": "Calliope mini, Linux, Ubuntu, WebUSB, udev, Serial, ttyACM, Flashen",
+              "template": "docs",
+              "published": true
             }
           ],
           "seotitle": "Calliope mini Software-Dokumentation",
@@ -358,12 +368,33 @@ const sitemap = {
               "tags": "Calliope mini, Fehlercodes, Boardsystemfehler, Speicherfehler, Garbage Collector-Fehler, JavaScript-Runtimefehler, Fehlerbehebung",
               "template": "docs",
               "published": true
+            },
+            {
+              "slug": "tech/software/linux",
+              "title": "Linux",
+              "docTitle": "Software",
+              "seotitle": "Calliope mini unter Linux verwenden",
+              "description": "Erfahre, wie du den Calliope mini unter Linux verwendest: Programme über das Laufwerk MINI übertragen, WebUSB im Browser einrichten und die serielle Schnittstelle auslesen.",
+              "tags": "Calliope mini, Linux, Ubuntu, WebUSB, udev, Serial, ttyACM, Flashen",
+              "template": "docs",
+              "published": true
             }
           ],
           "seotitle": "Calliope mini Software-Dokumentation",
           "description": "Entdecke die Softwareseite des Calliope mini, einschließlich der verfügbaren Editoren (MakeCode, Micropython, Open Roberta Lab), Firmware-Updates, unterstützter Protokolle (Bluetooth, Funk, I2C, UART/Serial, USB, SPI) und Informationen zu Fehlercodes. Hier befinden sich wesentliche Informationen, zur Programmierung und Nutzung des Calliope mini.",
           "tags": "Calliope mini, Software, Editoren, Firmware, Protokolle, Fehlercodes, Programmierung",
           "template": "docs_contents",
+          "published": true
+        },
+        "tech/software/linux": {
+          "slug": "tech/software/linux",
+          "title": "Linux",
+          "subpages": [],
+          "docTitle": "Software",
+          "seotitle": "Calliope mini unter Linux verwenden",
+          "description": "Erfahre, wie du den Calliope mini unter Linux verwendest: Programme über das Laufwerk MINI übertragen, WebUSB im Browser einrichten und die serielle Schnittstelle auslesen.",
+          "tags": "Calliope mini, Linux, Ubuntu, WebUSB, udev, Serial, ttyACM, Flashen",
+          "template": "docs",
           "published": true
         },
         "tech/software/error": {
@@ -781,6 +812,16 @@ const sitemap = {
               "tags": "Calliope mini, Fehlercodes, Boardsystemfehler, Speicherfehler, Garbage Collector-Fehler, JavaScript-Runtimefehler, Fehlerbehebung",
               "template": "docs",
               "published": true
+            },
+            {
+              "slug": "tech/software/linux",
+              "title": "Linux",
+              "docTitle": "Software",
+              "seotitle": "Calliope mini unter Linux verwenden",
+              "description": "Erfahre, wie du den Calliope mini unter Linux verwendest: Programme über das Laufwerk MINI übertragen, WebUSB im Browser einrichten und die serielle Schnittstelle auslesen.",
+              "tags": "Calliope mini, Linux, Ubuntu, WebUSB, udev, Serial, ttyACM, Flashen",
+              "template": "docs",
+              "published": true
             }
           ],
           "seotitle": "Calliope mini Software-Dokumentation",
@@ -1021,12 +1062,33 @@ const sitemap = {
               "tags": "Calliope mini, Fehlercodes, Boardsystemfehler, Speicherfehler, Garbage Collector-Fehler, JavaScript-Runtimefehler, Fehlerbehebung",
               "template": "docs",
               "published": true
+            },
+            {
+              "slug": "tech/software/linux",
+              "title": "Linux",
+              "docTitle": "Software",
+              "seotitle": "Calliope mini unter Linux verwenden",
+              "description": "Erfahre, wie du den Calliope mini unter Linux verwendest: Programme über das Laufwerk MINI übertragen, WebUSB im Browser einrichten und die serielle Schnittstelle auslesen.",
+              "tags": "Calliope mini, Linux, Ubuntu, WebUSB, udev, Serial, ttyACM, Flashen",
+              "template": "docs",
+              "published": true
             }
           ],
           "seotitle": "Calliope mini Software-Dokumentation",
           "description": "Entdecke die Softwareseite des Calliope mini, einschließlich der verfügbaren Editoren (MakeCode, Micropython, Open Roberta Lab), Firmware-Updates, unterstützter Protokolle (Bluetooth, Funk, I2C, UART/Serial, USB, SPI) und Informationen zu Fehlercodes. Hier befinden sich wesentliche Informationen, zur Programmierung und Nutzung des Calliope mini.",
           "tags": "Calliope mini, Software, Editoren, Firmware, Protokolle, Fehlercodes, Programmierung",
           "template": "docs_contents",
+          "published": true
+        },
+        "tech/software/linux": {
+          "slug": "tech/software/linux",
+          "title": "Linux",
+          "subpages": [],
+          "docTitle": "Software",
+          "seotitle": "Calliope mini unter Linux verwenden",
+          "description": "Erfahre, wie du den Calliope mini unter Linux verwendest: Programme über das Laufwerk MINI übertragen, WebUSB im Browser einrichten und die serielle Schnittstelle auslesen.",
+          "tags": "Calliope mini, Linux, Ubuntu, WebUSB, udev, Serial, ttyACM, Flashen",
+          "template": "docs",
           "published": true
         },
         "tech/software/error": {

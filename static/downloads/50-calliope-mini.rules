@@ -1,0 +1,22 @@
+# udev-Regeln für den Calliope mini
+# Installation: sudo cp 50-calliope-mini.rules /etc/udev/rules.d/
+
+# Segger JLink (Calliope mini V2.x)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1366", ATTRS{idProduct}=="1025", MODE="0666"
+
+# CMSIS DAP (Calliope mini V1 und V3)
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0d28", MODE="0666", GROUP="plugdev"
+
+# Skip if not a block device or if requested by other rules
+#
+SUBSYSTEM!="block", GOTO="calliope_mini_udisks_mount_options_end"
+ENV{DM_MULTIPATH_DEVICE_PATH}=="1", GOTO="calliope_mini_udisks_mount_options_end"
+ENV{DM_UDEV_DISABLE_OTHER_RULES_FLAG}=="?*", GOTO="calliope_mini_udisks_mount_options_end"
+
+#
+# Add sync option
+#
+SUBSYSTEMS=="usb", ENV{ID_FS_USAGE}=="filesystem", \
+ATTRS{idVendor}=="0d28", ENV{UDISKS_MOUNT_OPTIONS_DEFAULTS}="sync"
+
+LABEL="calliope_mini_udisks_mount_options_end"
